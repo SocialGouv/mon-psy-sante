@@ -31,16 +31,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment: preprod
 
-      - name: Hasura
-        uses: SocialGouv/actions/autodevops-build-register@v1
-        with:
-          dockercontext: ./hasura
-          project: ${{ env.project }}
-          dockerfile: ./hasura/Dockerfile
-          token: ${{ secrets.GITHUB_TOKEN }}
-          imageName: ${{ env.project }}/hasura
-          environment: preprod
-
   ##############################################################################
   ## DEPLOY APPLICATION OVER KUBERNETES
   ##############################################################################
@@ -50,7 +40,7 @@ jobs:
     needs: [register]
     environment:
       name: preproduction
-      url: https://sample-next-app-preprod.dev.fabrique.social.gouv.fr
+      url: https://monpsy-preprod.dev.fabrique.social.gouv.fr
     steps:
       - name: Use k8s manifests generation
         uses: SocialGouv/actions/autodevops-manifests@v1

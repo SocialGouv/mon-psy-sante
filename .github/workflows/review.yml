@@ -13,25 +13,6 @@ concurrency:
 
 jobs:
   ##############################################################################
-  ## CREATE DATABASE, SECRET AND USER
-  ##############################################################################
-  create-db:
-    name: Create DB
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get project name
-        run: |
-          echo "project=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
-
-      - name: Create DB
-        uses: SocialGouv/actions/autodevops-create-db@v1
-        with:
-          environment: dev
-          socialgouvBaseDomain: ${{ secrets.SOCIALGOUV_BASE_DOMAIN }}
-          kubeconfig: ${{ secrets.KUBECONFIG }}
-          rancherId: ${{ secrets.RANCHER_PROJECT_ID }}
-
-  ##############################################################################
   ## BUILD AND REGISTER DOCKER IMAGES
   ##############################################################################
   register:
@@ -48,15 +29,6 @@ jobs:
           project: ${{ env.project }}
           imageName: ${{ env.project }}/app
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Hasura
-        uses: SocialGouv/actions/autodevops-build-register@v1
-        with:
-          dockercontext: ./hasura
-          project: ${{ env.project }}
-          dockerfile: ./hasura/Dockerfile
-          token: ${{ secrets.GITHUB_TOKEN }}
-          imageName: ${{ env.project }}/hasura
 
   ##############################################################################
   ## GENERATE KUBERNETES MANIFESTS
