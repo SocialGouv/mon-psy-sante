@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SocialGouv/monpsy"
+    "url": "git+https://github.com/SocialGouv/mon-psy-sante"
   },
   "dependencies": {
     "@gouvfr/dsfr": "^1.2.1",
@@ -48,6 +48,7 @@
     "precommit": "lint-staged",
     "prepare": "is-ci || husky install",
     "start": "NODE_ENV=production next start",
-    "test": "jest"
+    "test": "jest",
+    "export": "next export"
   }
 }
