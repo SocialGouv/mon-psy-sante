@@ -27,9 +27,7 @@ class MyApp extends App {
     return (
       <React.Fragment>
         <Nav />
-        <div className="fr-container">
-          <Component {...pageProps} />
-        </div>
+        <Component {...pageProps} />
       </React.Fragment>
     );
   }

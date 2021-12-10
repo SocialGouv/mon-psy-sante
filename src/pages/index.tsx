@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 
-const sendEmail = function () {
+const sendEmail = function (e) {
   // @ts-ignore
   process2(
     "https://services.sarbacane.com/core/v1/forms/contacts/upsert?listID&#x3D;gK9pKC6aT7ehlKKhbmLt9A&amp;formID&#x3D;hgLXy0uPQ0GSIAjQUj4hgQ&amp;timezone&#x3D;Europe/Paris",
@@ -23,12 +23,14 @@ const sendEmail = function () {
     ""
   );
   return false;
+  e.preventDefault();
 };
 
 const Page = () => (
   <React.Fragment>
     <Head>
       <title>Mon Psy Santé</title>
+      <script type="text/javascript" src="https://forms.sbc08.com/form.js" />
     </Head>
     <div className="fr-container">
       <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-pb-4w">
@@ -37,23 +39,23 @@ const Page = () => (
           <p> En parler, c’est déjà se soigner.</p>
         </div>
       </div>
-      <div className="fr-container--fluid">
-        <div className="fr-container fr-centered">
-          <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-            <div className="fr-col-8 fr-my-4w fr-highlight">
-              <p className="fr-text">
-                La santé mentale constitue l’un des enjeux majeurs de santé
-                publique.
-              </p>
-              <p className="fr-text">
-                <strong>Mon Psy Santé</strong> s’adresse à toute la population à
-                partir de 3 ans présentant des troubles psychiques d’intensité
-                légère à modérée. A partir d’avril 2022, sur orientation d’un
-                médecin, les patients (enfants, adolescents et adultes) pourront
-                bénéficier de séances assurées par des psychologues volontaires
-                conventionnés avec l’Assurance Maladie.
-              </p>
-            </div>
+    </div>
+    <div className="fr-container--fluid fr-bg--light">
+      <div className="fr-container fr-centered">
+        <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
+          <div className="fr-col-8 fr-my-4w">
+            <p className="fr-text">
+              La santé mentale constitue l’un des enjeux majeurs de santé
+              publique.
+            </p>
+            <p className="fr-text">
+              <strong>Mon Psy Santé</strong> s’adresse à toute la population à
+              partir de 3 ans présentant des troubles psychiques d’intensité
+              légère à modérée. A partir d’avril 2022, sur orientation d’un
+              médecin, les patients (enfants, adolescents et adultes) pourront
+              bénéficier de séances assurées par des psychologues volontaires
+              conventionnés avec l’Assurance Maladie.
+            </p>
           </div>
         </div>
       </div>
@@ -85,7 +87,7 @@ const Page = () => (
       </div>
     </div>
 
-    <div className="fr-container--fluid fr-bg--light">
+    <div className="fr-container--fluid fr-bg--light2">
       <div className="fr-container fr-centered">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
           <div className="fr-col-8 fr-my-4w">
