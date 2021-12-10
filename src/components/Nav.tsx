@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const Nav = () => {
@@ -16,7 +15,7 @@ const Nav = () => {
                     </p>
                   </div>
                   <div className="fr-header__logo">
-                    <Image
+                    <img
                       src="/images/cpam.png"
                       alt="CNAM"
                       width="200"
