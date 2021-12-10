@@ -1,0 +1,48 @@
+{
+  "extends": [
+    "@socialgouv/eslint-config-recommended",
+    "@socialgouv/eslint-config-react",
+    "plugin:import/typescript"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  },
+  "rules": {
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/label-has-for": "off",
+    "import/no-unresolved": [2, {"caseSensitive": false}]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.test.js"
+      ],
+      "env": {
+        "jest": true
+      }
+    },
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "extends": [
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "no-undef": "off",
+        "@typescript-eslint/ban-ts-comment": "warn"
+      }
+    }
+  ]
+}
