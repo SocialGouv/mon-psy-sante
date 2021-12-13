@@ -11,7 +11,7 @@ const Nav = () => {
                 <div className="fr-header__brand-top">
                   <div className="fr-header__logo">
                     <p className="fr-logo">
-                      Ministère <br /> des Solidarités <br /> et de la Santé
+                      Ministère <br /> des Solidarités <br/> et de la Santé
                     </p>
                   </div>
                   <div className="fr-header__logo">
@@ -29,7 +29,7 @@ const Nav = () => {
                   </a>
                   <p className="fr-header__service-tagline">
                     Un accompagnement psychologique pour tous. En parler, c’est
-                    En parler, c’est déjà se soigner.
+                    déjà se soigner.
                   </p>
                 </div>
               </div>

@@ -22,8 +22,8 @@ const sendEmail = function (e) {
     "",
     ""
   );
-  return false;
   e.preventDefault();
+  return false;
 };
 
 const Page = () => (
@@ -33,22 +33,22 @@ const Page = () => (
       <script type="text/javascript" src="https://forms.sbc08.com/form.js" />
     </Head>
     <div className="fr-container">
-      <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-pb-4w">
+      <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
         <div className="fr-col-12 fr-pt-4w">
           <h1>Mon Psy Santé</h1>
-          <p> En parler, c’est déjà se soigner.</p>
+          <p className="fr-text--lg">En parler, c’est déjà se soigner.</p>
         </div>
       </div>
     </div>
-    <div className="fr-container--fluid fr-bg--light">
-      <div className="fr-container fr-centered">
+    <div className="fr-container--fluid ">
+      <div className="fr-container">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-          <div className="fr-col-8 fr-my-4w">
-            <p className="fr-text">
+          <div className="fr-col-12 fr-my-4w">
+            <p className="fr-text--lg">
               La santé mentale constitue l’un des enjeux majeurs de santé
               publique.
             </p>
-            <p className="fr-text">
+            <p className="fr-text--lg">
               <strong>Mon Psy Santé</strong> s’adresse à toute la population à
               partir de 3 ans présentant des troubles psychiques d’intensité
               légère à modérée. A partir d’avril 2022, sur orientation d’un
@@ -61,37 +61,27 @@ const Page = () => (
       </div>
     </div>
     <div className="fr-container--fluid">
-      <div className="fr-container fr-centered">
+      <div className="fr-container">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters fr-py-4w">
-          <div className="fr-col-12 fr-col-md-4 fr-m-2w fr-m-md-4w card white">
-            <div className="fr-card fr-enlarge-link">
-              <div className="fr-card__body">
-                <h4 className="fr-card__title">
-                  Un accès pour tous à des séances chez le psychologue
-                </h4>
-              </div>
-            </div>
+          <div className="fr-col-12 fr-col-md-4">
+            <h4>Un accès pour tous à des séances chez le psychologue</h4>
           </div>
-          <div className="fr-col-12 fr-col-md-2 fr-m-2w fr-m-md-4w" />
-          <div className="fr-col-12 fr-col-md-4 fr-m-2w fr-m-md-4w card white">
-            <div className="fr-card fr-enlarge-link">
-              <div className="fr-card__body">
-                <h4 className="fr-card__title">
-                  Un annuaire de psychologues volontaires et sélectionnés pour
-                  répondre au mieux au besoin de la population
-                </h4>
-              </div>
-            </div>
+          <div className="fr-col-12 fr-col-md-2" />
+          <div className="fr-col-12 fr-col-md-4">
+            <h4>
+              Un annuaire de psychologues volontaires et sélectionnés pour
+              répondre au mieux au besoin de la population
+            </h4>
           </div>
         </div>
       </div>
     </div>
 
-    <div className="fr-container--fluid fr-bg--light2">
+    <div className="fr-container--fluid fr-bg--light text-center">
       <div className="fr-container fr-centered">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
           <div className="fr-col-8 fr-my-4w">
-            <p className="fr-text fr-mb-4v">
+            <p className="fr-text--lg fr-mb-4v">
               A partir de début 2022, un nouveau dispositif proposera des
               séances d’accompagnement psychologique auprès d’enfants comme
               d’adultes réalisé par un psychologue volontaire conventionné avec
@@ -130,7 +120,7 @@ const Page = () => (
               </div>
             </form>
 
-            <p className="fr-text--sm fr-mt-4w">
+            <p className="fr-text--lg--sm fr-mt-4w">
               Pour savoir ce qu’on fait de votre e-mail, vous pouvez voir notre{" "}
               <a href="/donnees-personnelles-et-gestion-des-cookies#mention-donnees-perso">
                 politique de confidentialité.

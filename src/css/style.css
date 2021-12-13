@@ -2,12 +2,20 @@
   display: none;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .fr-bg--light {
   background-color: var(--background-alt-yellow-tournesol);
 }
 
 .fr-bg--light2 {
   background-color: var(--background-alt-pink-tuile);
+}
+
+.fr-bg--light input {
+  background-color: white;
 }
 
 .fr-btn--alt {
@@ -24,7 +32,7 @@ button:not([disabled]):not(:disabled):hover {
 
 a.fr-btn--alt[href]:active,
 .fr-btn--alt:active,
-button:not([disabled]):not(:disabled):active{
+button:not([disabled]):not(:disabled):active {
   background-color: #dc9486;
   background-image: none;
 }
