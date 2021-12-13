@@ -8,6 +8,7 @@ import App from "next/app";
 import React from "react";
 
 import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
@@ -28,6 +29,7 @@ class MyApp extends App {
       <React.Fragment>
         <Nav />
         <Component {...pageProps} />
+        <Footer />
       </React.Fragment>
     );
   }

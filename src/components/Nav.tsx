@@ -11,7 +11,7 @@ const Nav = () => {
                 <div className="fr-header__brand-top">
                   <div className="fr-header__logo">
                     <p className="fr-logo">
-                      Ministère <br /> des Solidarités <br/> et de la Santé
+                      Ministère <br /> des Solidarités <br /> et de la Santé
                     </p>
                   </div>
                   <div className="fr-header__logo">
