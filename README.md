@@ -1,4 +1,12 @@
 # Mon Psy Santé
 
-https://monpsy.sante.gouv.fr
+https://mon-psy.sante.gouv.fr
+
+# Run locally
+
+```
+  yarn
+  yarn build
+  npm run dev
+```
 

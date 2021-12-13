@@ -76,11 +76,11 @@ const Page = () => (
             en faire part en{" "}
             <a
               title="Contactez-nous"
-              href="mailto:monpsy@sante.gouv.fr"
+              href="mailto:mon-psy@sante.gouv.fr"
               target="_blank"
               rel="noopener noreferrer"
             >
-              nous contactant à l’adresse <strong>monpsy@sante.gouv.fr</strong>
+              nous contactant à l’adresse <strong>mon-psy@sante.gouv.fr</strong>
             </a>
             .
           </p>

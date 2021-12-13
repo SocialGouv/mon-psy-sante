@@ -36,7 +36,7 @@ const Footer = () => {
             <p className="fr-footer__content-desc fr-mt-3w">
               En cas de questions supplémentaires relative à la plateforme,
               n’hésitez pas à envoyer un message à l’adresse :{" "}
-              <strong>monpsy@sante.gouv.fr</strong>.
+              <strong>mon-psy@sante.gouv.fr</strong>.
             </p>
 
             <ul className="fr-footer__content-list">

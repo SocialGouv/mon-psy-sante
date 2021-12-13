@@ -153,7 +153,7 @@ const Page = () => (
         Pour les exercer, faites-nous parvenir une demande en précisant la date
         et l’heure précise de la requête – ces éléments sont indispensables pour
         nous permettre de retrouver votre recherche – par voie électronique à
-        l’adresse suivante : <strong>monpsy@sante.gouv.fr</strong>
+        l’adresse suivante : <strong>mon-psy@sante.gouv.fr</strong>
       </p>
 
       <p>
