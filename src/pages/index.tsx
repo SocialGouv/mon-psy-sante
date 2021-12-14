@@ -30,11 +30,31 @@ const Page = () => (
   <React.Fragment>
     <Head>
       <title>Mon Psy Santé</title>
+      <meta property="og:title" content="Mon Psy Santé" />
+
+      <meta
+        name="description"
+        content="Mon Psy Santé s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. A partir du Printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+      />
+      <meta
+        property="og:description"
+        content="Mon Psy Santé s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. A partir du Printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+      />
+
+      <meta property="og:type" content="website" />
       <script type="text/javascript" src="https://forms.sbc08.com/form.js" />
     </Head>
     <div className="fr-container">
       <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
-        <div className="fr-col-12 fr-pt-4w">
+        <div className="fr-col-6 fr-pt-4w">
+          <img
+            className="hero"
+            src="/images/Illustration.png"
+            width="500px"
+            alt="En parler, c’est déjà se soigner"
+          />
+        </div>
+        <div className="fr-col-6 fr-pt-4w">
           <h1>Mon Psy Santé</h1>
           <p className="fr-text--lg">En parler, c’est déjà se soigner.</p>
         </div>
@@ -72,6 +92,17 @@ const Page = () => (
               Un annuaire de psychologues volontaires et sélectionnés pour
               répondre au mieux au besoin de la population
             </h4>
+          </div>
+        </div>
+        <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters fr-py-4w">
+          <div className="fr-col-12 text-center">
+            <a
+              target="_blank"
+              className="fr-btn fr-mt-2w fr-mr-2w"
+              href="/documents/MonPsySante_Flyer.pdf"
+            >
+              En savoir plus
+            </a>
           </div>
         </div>
       </div>
