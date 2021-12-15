@@ -29,16 +29,16 @@ const sendEmail = function (e) {
 const Page = () => (
   <React.Fragment>
     <Head>
-      <title>Mon Psy Santé</title>
-      <meta property="og:title" content="Mon Psy Santé" />
+      <title>MonPsySanté</title>
+      <meta property="og:title" content="MonPsySanté" />
 
       <meta
         name="description"
-        content="Mon Psy Santé s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. A partir du Printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. A partir du Printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
       />
       <meta
         property="og:description"
-        content="Mon Psy Santé s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. A partir du Printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. A partir du Printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
       />
 
       <meta property="og:type" content="website" />
@@ -55,7 +55,7 @@ const Page = () => (
           />
         </div>
         <div className="fr-col-6 fr-pt-4w">
-          <h1>Mon Psy Santé</h1>
+          <h1>MonPsySanté</h1>
           <p className="fr-text--lg">En parler, c’est déjà se soigner.</p>
         </div>
       </div>
@@ -69,9 +69,9 @@ const Page = () => (
               publique.
             </p>
             <p className="fr-text--lg">
-              <strong>Mon Psy Santé</strong> s’adresse à toute la population à
+              <strong>MonPsySanté</strong> s’adresse à toute la population à
               partir de 3 ans présentant des troubles psychiques d’intensité
-              légère à modérée. A partir d’avril 2022, sur orientation d’un
+              légère à modérée. A partir du Printemps 2022, sur orientation d’un
               médecin, les patients (enfants, adolescents et adultes) pourront
               bénéficier de séances assurées par des psychologues volontaires
               conventionnés avec l’Assurance Maladie.

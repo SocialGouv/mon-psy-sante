@@ -4,7 +4,7 @@ import React from "react";
 const Page = () => (
   <React.Fragment>
     <Head>
-      <title>Données personnelles et gestion des cookies | Mon Psy Santé</title>
+      <title>Données personnelles et gestion des cookies | MonPsySanté</title>
     </Head>
     <div className="fr-container fr-my-5w">
       <h1 id="mentions-legales">Mentions légales</h1>
@@ -16,7 +16,7 @@ const Page = () => (
             situé :
           </p>
           <p className="fr-mb-2w">
-            La Plateforme Mon Psy Santé est éditée par{" "}
+            La Plateforme MonPsySanté est éditée par{" "}
             <a
               href="https://fabrique.social.gouv.fr/"
               target="_blank"
@@ -67,28 +67,6 @@ const Page = () => (
             <li>Respect des bonnes pratiques (Pilida, Opquast...)</li>
             <li>Tests manuels</li>
           </ul>
-        </div>
-        <div className="fr-mt-3w">
-          <h3>Signaler un dysfonctionnement</h3>
-          <p className="fr-mb-2w">
-            Si vous rencontrez un défaut d’accessibilité vous empêchant
-            d’accéder à un contenu ou une fonctionnalité du site, merci de nous
-            en faire part en{" "}
-            <a
-              title="Contactez-nous"
-              href="mailto:mon-psy@sante.gouv.fr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              nous contactant à l’adresse <strong>mon-psy@sante.gouv.fr</strong>
-            </a>
-            .
-          </p>
-          <p className="fr-mb-2w">
-            Si vous n’obtenez pas de réponse rapide de notre part, vous êtes en
-            droit de faire parvenir vos doléances ou une demande de saisine au
-            Défenseur des droits.
-          </p>
         </div>
         <div className="fr-mt-2w">
           <h3>En savoir plus</h3>

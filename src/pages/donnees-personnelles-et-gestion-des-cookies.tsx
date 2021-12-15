@@ -4,10 +4,10 @@ import React from "react";
 const Page = () => (
   <React.Fragment>
     <Head>
-      <title>Données personnelles et gestion des cookies | Mon Psy Santé</title>
+      <title>Données personnelles et gestion des cookies | MonPsySanté</title>
     </Head>
     <div className="fr-container fr-my-6w">
-      <h1>Données personnelles et gestion des cookies Mon Psy Santé</h1>
+      <h1>Données personnelles et gestion des cookies MonPsySanté</h1>
       <h2>Cookies et traceurs</h2>
       <h3>Qu’est-ce qu’un cookie ?</h3>
 
@@ -147,13 +147,6 @@ const Page = () => (
         <li>Droit de rectification ;</li>
         <li>Droit de limitation et droit d’opposition.</li>
       </ul>
-
-      <p>
-        Pour les exercer, faites-nous parvenir une demande en précisant la date
-        et l’heure précise de la requête – ces éléments sont indispensables pour
-        nous permettre de retrouver votre recherche – par voie électronique à
-        l’adresse suivante : <strong>mon-psy@sante.gouv.fr</strong>
-      </p>
 
       <p>
         En raison de l’obligation de sécurité et de confidentialité dans le
