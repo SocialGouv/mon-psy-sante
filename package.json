@@ -6,6 +6,10 @@
       "@commitlint/config-conventional"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SocialGouv/mon-psy-sante"
+  },
   "dependencies": {
     "@gouvfr/dsfr": "^1.2.1",
     "@sentry/nextjs": "^6.12.0",
