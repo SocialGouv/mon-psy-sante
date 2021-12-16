@@ -46,15 +46,15 @@ const Page = () => (
     </Head>
     <div className="fr-container">
       <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
-        <div className="fr-col-7 fr-pt-4w">
+        <div className="fr-col-12 fr-col-md-7 fr-px-4w">
           <img
             className="hero"
             src="/images/Illustration.svg"
-            width="600px"
+            width="100%"
             alt="En parler, c’est déjà se soigner"
           />
         </div>
-        <div className="fr-col-5 fr-pt-4w">
+        <div className="fr-col-12 fr-col-md-5">
           <h1 className="fr-mb-0">MonPsySanté</h1>
           <p className="fr-text--lg">En parler, c’est déjà se soigner.</p>
           <div className="fr-mt-4w">
@@ -121,7 +121,7 @@ const Page = () => (
     <div className="fr-container--fluid ">
       <div className="fr-container">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-          <div className="fr-col-12 fr-my-4w">
+          <div className="fr-col-12">
             <p className="fr-text--lg">
               <strong>MonPsySanté</strong> s’adresse à toute la population à
               partir de 3 ans présentant des troubles psychiques d’intensité
@@ -133,11 +133,52 @@ const Page = () => (
           </div>
         </div>
 
-        <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters fr-py-4w">
+        <div className="fr-grid-row fr-grid-row--center fr-py-4w">
+          <div className="fr-col-12 text-center">
+            <ul className="time-line-list no-bullet">
+              <li>
+                <div className="time-line-list-dot">
+                  <strong className="highlight">SEPTEMBRE 2021</strong>
+                  <p>C’est parti !</p>
+                </div>
+                <div className="time-line-list-border">
+                  <strong>
+                    Annonce du remboursement des séances de psychologues{" "}
+                  </strong>
+                </div>
+              </li>
+              <li>
+                <div className="time-line-list-dot">
+                  <strong className="highlight">DÉBUT 2022</strong>
+                  <p>Ça avance !</p>
+                </div>
+                <div className="time-line-list-border">
+                  <strong>
+                    Les psychologues volontaires peuvent candidater au
+                    dispositif via une procédure dématérialisée
+                  </strong>
+                </div>
+              </li>
+              <li>
+                <div className="time-line-list-dot">
+                  <strong className="highlight">SEPTEMBRE 2022</strong>
+                  <p>C’est en place !</p>
+                </div>
+                <div className="time-line-list-border">
+                  <strong>
+                    L’annuaire des psychologues partenaires est publié. Les
+                    parcours de prise en charge peuvent débuter
+                  </strong>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="fr-grid-row fr-grid-row--center fr-pb-8w">
           <div className="fr-col-12 text-center">
             <a
               target="_blank"
-              className="fr-btn fr-btn--secondary fr-mt-2w fr-mr-2w"
+              className="fr-btn fr-btn--secondary"
               href="/documents/MonPsySante_Flyer.pdf"
             >
               En savoir plus
@@ -190,10 +231,10 @@ const Page = () => (
               </form>
 
               <p className="fr-text--lg--sm fr-mt-4w">
-                Pour savoir ce qu’on fait de votre e-mail, vous pouvez voir
-                notre{" "}
+                Pour plus d’informations sur l’utilisation de votre email, vous
+                pouvez consulter notre{" "}
                 <a href="/donnees-personnelles-et-gestion-des-cookies#mention-donnees-perso">
-                  politique de confidentialité.
+                  politique&nbsp;de&nbsp;confidentialité.
                 </a>
               </p>
             </div>

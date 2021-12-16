@@ -4,7 +4,7 @@ import React from "react";
 const Page = () => (
   <React.Fragment>
     <Head>
-      <title>Données personnelles et gestion des cookies | MonPsySanté</title>
+      <title>Mentions légales</title>
     </Head>
     <div className="fr-container fr-my-5w">
       <h1 id="mentions-legales">Mentions légales</h1>

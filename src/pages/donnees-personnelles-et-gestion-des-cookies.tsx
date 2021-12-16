@@ -106,8 +106,8 @@ const Page = () => (
       <h3>Responsable de traitements</h3>
 
       <p>
-        «« PsyEnfantsAdo » est développé au sein de l’incubateur BetaGouv et
-        porté par la Direction interministérielle du numérique (DINUM).
+        « MonPsySanté » est développé au sein de l’incubateur BetaGouv et porté
+        par la Direction interministérielle du numérique (DINUM).
       </p>
 
       <h3>Finalités du traitement</h3>
@@ -130,8 +130,7 @@ const Page = () => (
       <h3>Durée de conservation des données</h3>
 
       <p>
-        {" "}
-        PsyEnfantsAdo conserve et diffuse vos données à caractère personnel
+        MonPsySanté conserve et diffuse vos données à caractère personnel
         jusqu’à ce que vous vous opposiez ou, le cas échéant, aussi longtemps
         que vous êtes psychologue.
       </p>
@@ -177,7 +176,7 @@ const Page = () => (
       <p>
         Le responsable de traitement s’engage à ce que les données à caractère
         personnels soient traitées par les seules personnes autorisées,
-        notamment au sein de l’équipe PsyEnfantsAdo.
+        notamment au sein de l’équipe MonPsySanté.
       </p>
     </div>
   </React.Fragment>
