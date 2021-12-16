@@ -96,8 +96,9 @@ const Page = () => (
                   width="32"
                   src="/images/survey-line.svg"
                 />
-                Faciliter la candidature des psychologues au dispositif par une
-                simplification des démarches
+                <strong className="highlight">Faciliter la candidature</strong>{" "}
+                des psychologues au dispositif par une simplification des
+                démarches
               </li>
               <li className="fr-mt-2w">
                 <img
