@@ -7,7 +7,7 @@
 }
 
 .fr-bg--light {
-  background-color: var(--background-alt-yellow-tournesol);
+  background-color: var(--background-alt-beige-gris-galet);
 }
 
 .fr-bg--light2 {
@@ -18,21 +18,10 @@
   background-color: white;
 }
 
-.fr-btn--alt {
-  background-color: #CE614A;
+.highlight {
+  color: #CE614A;
 }
 
-a.fr-btn--alt[href]:hover,
-button.fr-btn--alt:hover,
-.fr-btn--alt:hover,
-button:not([disabled]):not(:disabled):hover {
-  background-color: #d68272;
-  background-image: none;
-}
-
-a.fr-btn--alt[href]:active,
-.fr-btn--alt:active,
-button:not([disabled]):not(:disabled):active {
-  background-color: #dc9486;
-  background-image: none;
+.no-bullet {
+  list-style-type: none;
 }
