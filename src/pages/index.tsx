@@ -34,11 +34,11 @@ const Page = () => (
 
       <meta
         name="description"
-        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le Printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
       />
       <meta
         property="og:description"
-        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le Printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
       />
 
       <meta property="og:type" content="website" />
@@ -60,59 +60,72 @@ const Page = () => (
           <div className="fr-mt-4w">
             <strong>Nos objectifs</strong>
             <ul className="no-bullet">
-              <li className="fr-mt-2w">
+              <li className="fr-mt-2w fr-grid-row">
                 <img
                   aria-hidden="true"
                   alt=""
-                  className="fr-mr-1w"
+                  className="fr-mr-1w fr-col-1 fr-my-auto"
                   height="32"
                   width="32"
                   src="/images/team-line.svg"
                 />
-                <strong className="highlight">
-                  Améliorer&nbsp;la&nbsp;santé&nbsp;mentale
-                </strong>{" "}
-                de la population, enjeu majeur de la santé publique en France
+                <p className="fr-col fr-m-0">
+                  <strong className="highlight">
+                    Améliorer&nbsp;la&nbsp;santé&nbsp;mentale
+                  </strong>{" "}
+                  de la population, enjeu majeur de la santé publique en France
+                </p>
               </li>
-              <li className="fr-mt-2w">
+              <li className="fr-mt-2w fr-grid-row">
                 <img
                   aria-hidden="true"
                   alt=""
-                  className="fr-mr-1w"
+                  className="fr-mr-1w fr-col-1 fr-my-auto"
                   height="32"
                   width="32"
                   src="/images/money-euro-circle-line.svg"
                 />
-                Permettre aux patients en ayant besoin de bénéficier de{" "}
-                <strong className="highlight">séances&nbsp;remboursées</strong>{" "}
-                chez le psychologue
+                <p className="fr-col fr-m-0">
+                  Permettre aux patients en ayant besoin de bénéficier de{" "}
+                  <strong className="highlight">
+                    séances&nbsp;remboursées
+                  </strong>{" "}
+                  chez le psychologue
+                </p>
               </li>
-              <li className="fr-mt-2w">
+              <li className="fr-mt-2w fr-grid-row">
                 <img
                   aria-hidden="true"
                   alt=""
-                  className="fr-mr-1w"
+                  className="fr-mr-1w fr-col-1 fr-my-auto"
                   height="32"
                   width="32"
                   src="/images/survey-line.svg"
                 />
-                <strong className="highlight">Faciliter la candidature</strong>{" "}
-                des psychologues au dispositif par une simplification des
-                démarches
+                <p className="fr-col fr-m-0">
+                  <strong className="highlight">
+                    Faciliter la candidature
+                  </strong>{" "}
+                  des psychologues au dispositif par une simplification des
+                  démarches
+                </p>
               </li>
-              <li className="fr-mt-2w">
+              <li className="fr-mt-2w fr-grid-row">
                 <img
                   aria-hidden="true"
                   alt=""
-                  className="fr-mr-1w"
+                  className="fr-mr-1w fr-col-1 fr-my-auto"
                   height="32"
                   width="32"
                   src="/images/contacts-book-2-line.svg"
                 />
-                <strong className="highlight">
-                  Trouver&nbsp;les&nbsp;psychologues&nbsp;partenaires
-                </strong>{" "}
-                proches de chez soi via la mise en ligne d’un annuaire national
+                <p className="fr-col fr-m-0">
+                  <strong className="highlight">
+                    Trouver&nbsp;les&nbsp;psychologues&nbsp;partenaires
+                  </strong>{" "}
+                  proches de chez soi via la mise en ligne d’un annuaire
+                  national
+                </p>
               </li>
             </ul>
           </div>
@@ -126,7 +139,7 @@ const Page = () => (
             <p className="fr-text--lg">
               <strong>MonPsySanté</strong> s’adresse à toute la population à
               partir de 3 ans présentant des troubles psychiques d’intensité
-              légère à modérée. Dès le Printemps 2022, sur orientation d’un
+              légère à modérée. Dès le printemps 2022, sur orientation d’un
               médecin, les patients (enfants, adolescents et adultes) pourront
               bénéficier de séances assurées par des psychologues volontaires
               conventionnés avec l’Assurance Maladie.
@@ -162,7 +175,7 @@ const Page = () => (
               </li>
               <li>
                 <div className="time-line-list-dot">
-                  <strong className="highlight">SEPTEMBRE 2022</strong>
+                  <strong className="highlight">PRINTEMPS 2022</strong>
                   <p>C’est en place !</p>
                 </div>
                 <div className="time-line-list-border">
