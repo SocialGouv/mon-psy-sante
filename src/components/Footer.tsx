@@ -33,11 +33,6 @@ const Footer = () => {
                 Voir le code source
               </a>
             </p>
-            <p className="fr-footer__content-desc fr-mt-3w">
-              En cas de questions supplémentaires relative à la plateforme,
-              n’hésitez pas à envoyer un message à l’adresse :{" "}
-              <strong>mon-psy@sante.gouv.fr</strong>.
-            </p>
 
             <ul className="fr-footer__content-list">
               <li className="fr-footer__content-item">
@@ -97,6 +92,18 @@ const Footer = () => {
               </a>
             </li>
           </ul>
+          <div className="fr-footer__bottom-copy">
+            <p>
+              Sauf mention contraire, tous les textes de ce site sont sous{" "}
+              <a
+                href="https://github.com/etalab/licence-ouverte/blob/master/LO.md"
+                rel="noreferrer"
+                target="_blank"
+              >
+                licence etalab-2.0
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

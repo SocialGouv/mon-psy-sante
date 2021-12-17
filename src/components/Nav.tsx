@@ -25,7 +25,7 @@ const Nav = () => {
                 </div>
                 <div className="fr-header__service">
                   <a href="/" title="Retour à l’accueil">
-                    <p className="fr-header__service-title">Mon Psy Santé</p>
+                    <p className="fr-header__service-title">MonPsySanté</p>
                   </a>
                   <p className="fr-header__service-tagline">
                     Un accompagnement psychologique pour tous. En parler, c’est

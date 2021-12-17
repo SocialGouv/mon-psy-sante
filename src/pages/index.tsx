@@ -29,108 +29,233 @@ const sendEmail = function (e) {
 const Page = () => (
   <React.Fragment>
     <Head>
-      <title>Mon Psy Santé</title>
+      <title>MonPsySanté</title>
+      <meta property="og:title" content="MonPsySanté" />
+
+      <meta
+        name="description"
+        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+      />
+      <meta
+        property="og:description"
+        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+      />
+
+      <meta property="og:type" content="website" />
       <script type="text/javascript" src="https://forms.sbc08.com/form.js" />
     </Head>
     <div className="fr-container">
       <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
-        <div className="fr-col-12 fr-pt-4w">
-          <h1>Mon Psy Santé</h1>
+        <div className="fr-col-12 fr-col-md-7 fr-px-4w">
+          <img
+            className="hero"
+            src="/images/Illustration.svg"
+            width="100%"
+            alt="En parler, c’est déjà se soigner"
+          />
+        </div>
+        <div className="fr-col-12 fr-col-md-5">
+          <h1 className="fr-mb-0">MonPsySanté</h1>
           <p className="fr-text--lg">En parler, c’est déjà se soigner.</p>
+          <div className="fr-mt-4w">
+            <strong>Nos objectifs</strong>
+            <ul className="no-bullet">
+              <li className="fr-mt-2w fr-grid-row">
+                <img
+                  aria-hidden="true"
+                  alt=""
+                  className="fr-mr-1w fr-col-1 fr-my-auto"
+                  height="32"
+                  width="32"
+                  src="/images/team-line.svg"
+                />
+                <p className="fr-col fr-m-0">
+                  <strong className="highlight">
+                    Améliorer&nbsp;la&nbsp;santé&nbsp;mentale
+                  </strong>{" "}
+                  de la population, enjeu majeur de la santé publique en France
+                </p>
+              </li>
+              <li className="fr-mt-2w fr-grid-row">
+                <img
+                  aria-hidden="true"
+                  alt=""
+                  className="fr-mr-1w fr-col-1 fr-my-auto"
+                  height="32"
+                  width="32"
+                  src="/images/money-euro-circle-line.svg"
+                />
+                <p className="fr-col fr-m-0">
+                  Permettre aux patients en ayant besoin de bénéficier de{" "}
+                  <strong className="highlight">
+                    séances&nbsp;remboursées
+                  </strong>{" "}
+                  chez le psychologue
+                </p>
+              </li>
+              <li className="fr-mt-2w fr-grid-row">
+                <img
+                  aria-hidden="true"
+                  alt=""
+                  className="fr-mr-1w fr-col-1 fr-my-auto"
+                  height="32"
+                  width="32"
+                  src="/images/survey-line.svg"
+                />
+                <p className="fr-col fr-m-0">
+                  <strong className="highlight">
+                    Faciliter la candidature
+                  </strong>{" "}
+                  des psychologues au dispositif par une simplification des
+                  démarches
+                </p>
+              </li>
+              <li className="fr-mt-2w fr-grid-row">
+                <img
+                  aria-hidden="true"
+                  alt=""
+                  className="fr-mr-1w fr-col-1 fr-my-auto"
+                  height="32"
+                  width="32"
+                  src="/images/contacts-book-2-line.svg"
+                />
+                <p className="fr-col fr-m-0">
+                  <strong className="highlight">
+                    Trouver&nbsp;les&nbsp;psychologues&nbsp;partenaires
+                  </strong>{" "}
+                  proches de chez soi via la mise en ligne d’un annuaire
+                  national
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
     <div className="fr-container--fluid ">
       <div className="fr-container">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-          <div className="fr-col-12 fr-my-4w">
+          <div className="fr-col-12">
             <p className="fr-text--lg">
-              La santé mentale constitue l’un des enjeux majeurs de santé
-              publique.
-            </p>
-            <p className="fr-text--lg">
-              <strong>Mon Psy Santé</strong> s’adresse à toute la population à
+              <strong>MonPsySanté</strong> s’adresse à toute la population à
               partir de 3 ans présentant des troubles psychiques d’intensité
-              légère à modérée. A partir d’avril 2022, sur orientation d’un
+              légère à modérée. Dès le printemps 2022, sur orientation d’un
               médecin, les patients (enfants, adolescents et adultes) pourront
               bénéficier de séances assurées par des psychologues volontaires
               conventionnés avec l’Assurance Maladie.
             </p>
           </div>
         </div>
-      </div>
-    </div>
-    <div className="fr-container--fluid">
-      <div className="fr-container">
-        <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters fr-py-4w">
-          <div className="fr-col-12 fr-col-md-4">
-            <h4>Un accès pour tous à des séances chez le psychologue</h4>
+
+        <div className="fr-grid-row fr-grid-row--center fr-py-4w">
+          <div className="fr-col-12 text-center">
+            <ul className="time-line-list no-bullet">
+              <li>
+                <div className="time-line-list-dot">
+                  <strong className="highlight">SEPTEMBRE 2021</strong>
+                  <p>C’est parti !</p>
+                </div>
+                <div className="time-line-list-border">
+                  <strong>
+                    Annonce du remboursement des séances de psychologues{" "}
+                  </strong>
+                </div>
+              </li>
+              <li>
+                <div className="time-line-list-dot">
+                  <strong className="highlight">DÉBUT 2022</strong>
+                  <p>Ça avance !</p>
+                </div>
+                <div className="time-line-list-border">
+                  <strong>
+                    Les psychologues volontaires peuvent candidater au
+                    dispositif via une procédure dématérialisée
+                  </strong>
+                </div>
+              </li>
+              <li>
+                <div className="time-line-list-dot">
+                  <strong className="highlight">PRINTEMPS 2022</strong>
+                  <p>C’est en place !</p>
+                </div>
+                <div className="time-line-list-border">
+                  <strong>
+                    L’annuaire des psychologues partenaires est publié. Les
+                    parcours de prise en charge peuvent débuter
+                  </strong>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div className="fr-col-12 fr-col-md-2" />
-          <div className="fr-col-12 fr-col-md-4">
-            <h4>
-              Un annuaire de psychologues volontaires et sélectionnés pour
-              répondre au mieux au besoin de la population
-            </h4>
+        </div>
+        <div className="fr-grid-row fr-grid-row--center fr-pb-8w">
+          <div className="fr-col-12 text-center">
+            <a
+              target="_blank"
+              className="fr-btn fr-btn--secondary"
+              href="/documents/MonPsySante_Flyer.pdf"
+            >
+              En savoir plus
+            </a>
           </div>
         </div>
       </div>
-    </div>
 
-    <div className="fr-container--fluid fr-bg--light text-center">
-      <div className="fr-container fr-centered">
-        <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-          <div className="fr-col-8 fr-my-4w">
-            <p className="fr-text--lg fr-mb-4v">
-              A partir de début 2022, un nouveau dispositif proposera des
-              séances d’accompagnement psychologique auprès d’enfants comme
-              d’adultes réalisé par un psychologue volontaire conventionné avec
-              l’assurance maladie.
-            </p>
-            <p className="fr-mt-4w">
-              Vous êtes psychologue et vous souhaitez en savoir plus pour
-              candidater, laissez-nous votre email&nbsp;!
-            </p>
-            <form id="sb_form" onSubmit={sendEmail} method="post">
-              <div id="form-header-title" />
+      <div className="fr-container--fluid fr-bg--light text-center">
+        <div className="fr-container fr-centered">
+          <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
+            <div className="fr-col-8 fr-my-4w">
+              <p className="fr-text--lg fr-mb-4v">
+                Dès le printemps 2022, ce nouveau dispositif permettra aux
+                patients en ayant besoin de bénéficier d’un remboursement de
+                séances d’accompagnement réalisées par un psychologue volontaire
+                et conventionné avec l’assurance maladie.
+              </p>
+              <p className="fr-mt-4w">
+                Vous êtes psychologue et vous souhaitez en savoir plus pour
+                candidater, laissez-nous votre email&nbsp;!
+              </p>
+              <form id="sb_form" onSubmit={sendEmail} method="post">
+                <div id="form-header-title" />
 
-              <span>
-                <label htmlFor="input-email" id="label-EMAIL_ID">
-                  Votre email
-                </label>
-              </span>
-              <input
-                id="input-email"
-                type="email"
-                name="email"
-                required
-                className="fr-input"
-                sb-form-input
-              />
-              <div id="div-submitInput" className="fr-mt-2w">
-                <button
-                  id="submitInput"
-                  type="submit"
-                  value="Valider"
-                  className="fr-btn fr-btn--alt fr-h5"
-                >
-                  Valider
-                </button>
-                <div className="loader d-none" />
-              </div>
-            </form>
+                <span>
+                  <label htmlFor="input-email" id="label-EMAIL_ID">
+                    Votre email
+                  </label>
+                </span>
+                <input
+                  id="input-email"
+                  type="email"
+                  name="email"
+                  required
+                  className="fr-input"
+                  sb-form-input="true"
+                />
+                <div id="div-submitInput" className="fr-mt-2w">
+                  <button
+                    id="submitInput"
+                    type="submit"
+                    value="Valider"
+                    className="fr-btn"
+                  >
+                    Valider
+                  </button>
+                  <div className="loader d-none" />
+                </div>
+              </form>
 
-            <p className="fr-text--lg--sm fr-mt-4w">
-              Pour savoir ce qu’on fait de votre e-mail, vous pouvez voir notre{" "}
-              <a href="/donnees-personnelles-et-gestion-des-cookies#mention-donnees-perso">
-                politique de confidentialité.
-              </a>
-            </p>
+              <p className="fr-text--lg--sm fr-mt-4w">
+                Pour plus d’informations sur l’utilisation de votre email, vous
+                pouvez consulter notre{" "}
+                <a href="/donnees-personnelles-et-gestion-des-cookies#mention-donnees-perso">
+                  politique&nbsp;de&nbsp;confidentialité.
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </React.Fragment>
 );
-
 export default Page;

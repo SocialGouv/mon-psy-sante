@@ -1,6 +1,6 @@
-# Mon Psy Santé
+# MonPsySanté
 
-https://mon-psy.sante.gouv.fr
+https://monpsy.sante.gouv.fr
 
 # Run locally
 
