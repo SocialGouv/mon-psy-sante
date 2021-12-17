@@ -29,8 +29,9 @@ const Page = () => (
       <h3>Finalités du traitement</h3>
 
       <p>
-        L’objectif de l’application est de constituer une première réponse
-        d’urgence à la souffrance psychique des enfants et adolescents.
+        L’objectif est d’améliorer la santé mentale de la population, enjeu
+        majeur de la santé publique en France, en permettant aux patients en
+        ayant besoin de bénéficier de séances remboursées chez le psychologue.
       </p>
 
       <h3> Données et base juridique du traitement</h3>
