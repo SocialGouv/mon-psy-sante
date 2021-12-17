@@ -59,7 +59,7 @@ const Page = () => (
           <p className="fr-text--lg">En parler, c’est déjà se soigner.</p>
           <div className="fr-mt-4w">
             <strong>Nos objectifs</strong>
-            <ul className="no-bullet">
+            <ul className="no-bullet fr-p-0">
               <li className="fr-mt-2w fr-grid-row">
                 <img
                   aria-hidden="true"
@@ -153,7 +153,7 @@ const Page = () => (
               <li>
                 <div className="time-line-list-dot">
                   <strong className="highlight">SEPTEMBRE 2021</strong>
-                  <p>C’est parti !</p>
+                  <p className="fr-mb-1w">C’est parti !</p>
                 </div>
                 <div className="time-line-list-border">
                   <strong>
@@ -164,7 +164,7 @@ const Page = () => (
               <li>
                 <div className="time-line-list-dot">
                   <strong className="highlight">DÉBUT 2022</strong>
-                  <p>Ça avance !</p>
+                  <p className="fr-mb-1w">Ça avance !</p>
                 </div>
                 <div className="time-line-list-border">
                   <strong>
@@ -176,7 +176,7 @@ const Page = () => (
               <li>
                 <div className="time-line-list-dot">
                   <strong className="highlight">PRINTEMPS 2022</strong>
-                  <p>C’est en place !</p>
+                  <p className="fr-mb-1w">C’est en place !</p>
                 </div>
                 <div className="time-line-list-border">
                   <strong>
@@ -205,13 +205,7 @@ const Page = () => (
         <div className="fr-container fr-centered">
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
             <div className="fr-col-8 fr-my-4w">
-              <p className="fr-text--lg fr-mb-4v">
-                Dès le printemps 2022, ce nouveau dispositif permettra aux
-                patients en ayant besoin de bénéficier d’un remboursement de
-                séances d’accompagnement réalisées par un psychologue volontaire
-                et conventionné avec l’assurance maladie.
-              </p>
-              <p className="fr-mt-4w">
+              <p>
                 Vous êtes psychologue et vous souhaitez en savoir plus pour
                 candidater, laissez-nous votre email&nbsp;!
               </p>
@@ -220,7 +214,7 @@ const Page = () => (
 
                 <span>
                   <label htmlFor="input-email" id="label-EMAIL_ID">
-                    Votre email
+                    Votre email :
                   </label>
                 </span>
                 <input
