@@ -30,7 +30,7 @@ const Page = () => (
   <React.Fragment>
     <Head>
       <title>MonPsySanté</title>
-      <meta property="og:title" content="MonPsySanté"/>
+      <meta property="og:title" content="MonPsySanté" />
 
       <meta
         name="description"
@@ -41,8 +41,8 @@ const Page = () => (
         content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
       />
 
-      <meta property="og:type" content="website"/>
-      <script type="text/javascript" src="https://forms.sbc08.com/form.js"/>
+      <meta property="og:type" content="website" />
+      <script type="text/javascript" src="https://forms.sbc08.com/form.js" />
     </Head>
     <div className="fr-container">
       <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
@@ -88,7 +88,7 @@ const Page = () => (
                   src="/images/money-euro-circle-line.svg"
                 />
                 <p className="fr-col fr-m-0">
-                  Faire bénéficier, les patients en ayant besoin, de{" "}
+                  Faire bénéficier les patients en ayant besoin de{" "}
                   <strong className="highlight">
                     séances&nbsp;remboursées
                   </strong>{" "}
@@ -135,10 +135,10 @@ const Page = () => (
           <div className="fr-col-12">
             <h2>À partir de quand ?</h2>
             <p className="fr-text--lg">
-              <strong>Dès le printemps 2022</strong>, sur orientation d’un médecin, les patients
-              (enfants, adolescents et adultes) pourront bénéficier de séances
-              assurées par des psychologues volontaires conventionnés avec
-              l’Assurance Maladie.{" "}
+              <strong>Dès le printemps 2022</strong>, sur orientation d’un
+              médecin, les patients (enfants, adolescents et adultes) pourront
+              bénéficier de séances assurées par des psychologues volontaires
+              conventionnés avec l’Assurance Maladie.{" "}
               <a target="_blank" href="/documents/MonPsySante_Flyer.pdf">
                 En savoir plus
               </a>
@@ -191,11 +191,14 @@ const Page = () => (
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
             <div className="fr-col-12 fr-mt-4w">
               <h2>
-                {" "}
                 Vous êtes psychologue
-                <br/>
+                <br />
                 et vous souhaitez candidater&nbsp;?
               </h2>
+              <p className="fr-mb-0">
+                Le formulaire de candidature sera prochainement disponible en
+                ligne (fin janvier 2022).
+              </p>
               <p>
                 Laissez nous vous e-mail, et nous vous enverrons toutes les
                 informations nécessaires, dès l’ouverture des candidatures.
@@ -206,7 +209,7 @@ const Page = () => (
           <div className="fr-grid-row  fr-grid-row--gutters">
             <div className="fr-col-8 fr-by-4w">
               <form id="sb_form" onSubmit={sendEmail} method="post">
-                <div id="form-header-title"/>
+                <div id="form-header-title" />
 
                 <span>
                   <label htmlFor="input-email" id="label-EMAIL_ID">
@@ -230,7 +233,7 @@ const Page = () => (
                   >
                     Valider
                   </button>
-                  <div className="loader d-none"/>
+                  <div className="loader d-none" />
                 </div>
               </form>
 
