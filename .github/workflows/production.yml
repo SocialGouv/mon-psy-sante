@@ -34,7 +34,7 @@ jobs:
   deploy-prod:
     name: Deploy production
     runs-on: ubuntu-latest
-    needs: [ register ]
+    needs: [register]
     environment:
       name: production
       url: https://mon-psy.sante.gouv.fr
@@ -44,7 +44,9 @@ jobs:
         with:
           environment: "prod"
           rancherId: ${{ secrets.RANCHER_PROJECT_ID }}
-          socialgouvBaseDomain: ${{ secrets.SOCIALGOUV_BASE_DOMAIN }}
+          socialgouvBaseDomain: sante.gouv.fr
+        env:
+          SOCIALGOUV_PRODUCTION_NAMESPACE: monpsy
 
       - name: Use autodevops deployment
         uses: SocialGouv/actions/autodevops-deploy@v1
