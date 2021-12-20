@@ -30,7 +30,7 @@ const Page = () => (
   <React.Fragment>
     <Head>
       <title>MonPsySanté</title>
-      <meta property="og:title" content="MonPsySanté" />
+      <meta property="og:title" content="MonPsySanté"/>
 
       <meta
         name="description"
@@ -41,8 +41,8 @@ const Page = () => (
         content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
       />
 
-      <meta property="og:type" content="website" />
-      <script type="text/javascript" src="https://forms.sbc08.com/form.js" />
+      <meta property="og:type" content="website"/>
+      <script type="text/javascript" src="https://forms.sbc08.com/form.js"/>
     </Head>
     <div className="fr-container">
       <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
@@ -57,10 +57,10 @@ const Page = () => (
         <div className="fr-col-12 fr-col-md-5">
           <h1 className="fr-mb-0">MonPsySanté</h1>
           <p className="fr-text--lg">
-            Un dispositif en place à partir du printemps 2022.
+            Un dispositif en place à partir du printemps 2022
           </p>
           <div className="fr-mt-4w">
-            <strong>Nos objectifs</strong>
+            <h2>Quels objectifs ?</h2>
             <ul className="no-bullet fr-p-0">
               <li className="fr-mt-2w fr-grid-row">
                 <img
@@ -88,7 +88,7 @@ const Page = () => (
                   src="/images/money-euro-circle-line.svg"
                 />
                 <p className="fr-col fr-m-0">
-                  Permettre aux patients en ayant besoin de bénéficier de{" "}
+                  Faire bénéficier, les patients en ayant besoin, de{" "}
                   <strong className="highlight">
                     séances&nbsp;remboursées
                   </strong>{" "}
@@ -102,31 +102,14 @@ const Page = () => (
                   className="fr-mr-1w fr-col-1 fr-my-auto"
                   height="32"
                   width="32"
-                  src="/images/survey-line.svg"
-                />
-                <p className="fr-col fr-m-0">
-                  <strong className="highlight">
-                    Faciliter la candidature
-                  </strong>{" "}
-                  des psychologues au dispositif par une simplification des
-                  démarches
-                </p>
-              </li>
-              <li className="fr-mt-2w fr-grid-row">
-                <img
-                  aria-hidden="true"
-                  alt=""
-                  className="fr-mr-1w fr-col-1 fr-my-auto"
-                  height="32"
-                  width="32"
                   src="/images/contacts-book-2-line.svg"
                 />
                 <p className="fr-col fr-m-0">
+                  Mettre à disposition un{" "}
                   <strong className="highlight">
-                    Trouver&nbsp;les&nbsp;psychologues&nbsp;partenaires
+                    annuaire de psychologues partenaires{" "}
                   </strong>{" "}
-                  proches de chez soi via la mise en ligne d’un annuaire
-                  national
+                  répartis sur tout le territoire national
                 </p>
               </li>
             </ul>
@@ -138,25 +121,34 @@ const Page = () => (
       <div className="fr-container">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
           <div className="fr-col-12">
+            <h2>À qui ça s’adresse ?</h2>
+
             <p className="fr-text--lg">
               <strong>MonPsySanté</strong> s’adresse à toute la population à
               partir de 3 ans présentant des troubles psychiques d’intensité
-              légère à modérée. Dès le printemps 2022, sur orientation d’un
-              médecin, les patients (enfants, adolescents et adultes) pourront
-              bénéficier de séances assurées par des psychologues volontaires
-              conventionnés avec l’Assurance Maladie.
+              légère à modérée.
             </p>
           </div>
         </div>
 
         <div className="fr-grid-row fr-grid-row--center fr-py-4w">
-          <div className="fr-col-12 text-center">
+          <div className="fr-col-12">
+            <h2>À partir de quand ?</h2>
+            <p className="fr-text--lg">
+              <strong>Dès le printemps 2022</strong>, sur orientation d’un médecin, les patients
+              (enfants, adolescents et adultes) pourront bénéficier de séances
+              assurées par des psychologues volontaires conventionnés avec
+              l’Assurance Maladie.{" "}
+              <a target="_blank" href="/documents/MonPsySante_Flyer.pdf">
+                En savoir plus
+              </a>
+            </p>
             <ul className="time-line-list no-bullet">
-              <li>
+              <li className="before">
                 <div className="time-line-list-dot">
                   <p className="highlight">SEPTEMBRE 2021</p>
                 </div>
-                <div className="time-line-list-border">
+                <div className="time-line-list-border before">
                   <p>Annonce du remboursement des séances de psychologues </p>
                 </div>
               </li>
@@ -192,30 +184,29 @@ const Page = () => (
             </ul>
           </div>
         </div>
-        <div className="fr-grid-row fr-grid-row--center fr-pb-8w">
-          <div className="fr-col-12 text-center">
-            <a
-              target="_blank"
-              className="fr-btn fr-btn--secondary"
-              href="/documents/MonPsySante_Flyer.pdf"
-            >
-              En savoir plus
-            </a>
-          </div>
-        </div>
       </div>
 
-      <div className="fr-container--fluid fr-bg--light text-center">
-        <div className="fr-container fr-centered">
+      <div className="fr-container--fluid fr-bg--light">
+        <div className="fr-container">
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-            <div className="fr-col-8 fr-my-4w">
+            <div className="fr-col-12 fr-mt-4w">
+              <h2>
+                {" "}
+                Vous êtes psychologue
+                <br/>
+                et vous souhaitez candidater&nbsp;?
+              </h2>
               <p>
-                Vous êtes psychologue et vous souhaitez candidater&nbsp;?
                 Laissez nous vous e-mail, et nous vous enverrons toutes les
                 informations nécessaires, dès l’ouverture des candidatures.
               </p>
+            </div>
+          </div>
+
+          <div className="fr-grid-row  fr-grid-row--gutters">
+            <div className="fr-col-8 fr-by-4w">
               <form id="sb_form" onSubmit={sendEmail} method="post">
-                <div id="form-header-title" />
+                <div id="form-header-title"/>
 
                 <span>
                   <label htmlFor="input-email" id="label-EMAIL_ID">
@@ -239,7 +230,7 @@ const Page = () => (
                   >
                     Valider
                   </button>
-                  <div className="loader d-none" />
+                  <div className="loader d-none"/>
                 </div>
               </form>
 
