@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.0...v1.2.1) (2021-12-20)
+
+
+### Bug Fixes
+
+* **ci:** fix prod url ([f21d78c](https://github.com/SocialGouv/mon-psy-sante/commit/f21d78ca9a1dea67b13d35a6c57f9fb39ac6a07d))
+
 # [1.2.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.1.0...v1.2.0) (2021-12-20)
 
 
