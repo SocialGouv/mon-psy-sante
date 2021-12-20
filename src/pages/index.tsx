@@ -56,7 +56,9 @@ const Page = () => (
         </div>
         <div className="fr-col-12 fr-col-md-5">
           <h1 className="fr-mb-0">MonPsySanté</h1>
-          <p className="fr-text--lg">En parler, c’est déjà se soigner.</p>
+          <p className="fr-text--lg">
+            Un dispositif en place à partir du printemps 2022.
+          </p>
           <div className="fr-mt-4w">
             <strong>Nos objectifs</strong>
             <ul className="no-bullet fr-p-0">
@@ -152,37 +154,39 @@ const Page = () => (
             <ul className="time-line-list no-bullet">
               <li>
                 <div className="time-line-list-dot">
-                  <strong className="highlight">SEPTEMBRE 2021</strong>
-                  <p className="fr-mb-1w">C’est parti !</p>
+                  <p className="highlight">SEPTEMBRE 2021</p>
                 </div>
                 <div className="time-line-list-border">
-                  <strong>
-                    Annonce du remboursement des séances de psychologues{" "}
-                  </strong>
+                  <p>Annonce du remboursement des séances de psychologues </p>
                 </div>
               </li>
               <li>
                 <div className="time-line-list-dot">
-                  <strong className="highlight">DÉBUT 2022</strong>
-                  <p className="fr-mb-1w">Ça avance !</p>
+                  <p className="highlight">DÉBUT 2022</p>
                 </div>
                 <div className="time-line-list-border">
-                  <strong>
-                    Les psychologues volontaires peuvent candidater au
-                    dispositif via une procédure dématérialisée
-                  </strong>
+                  <p>
+                    Les{" "}
+                    <strong className="highlight">
+                      psychologues volontaires
+                    </strong>{" "}
+                    peuvent candidater au dispositif via une procédure
+                    dématérialisée
+                  </p>
                 </div>
               </li>
               <li>
                 <div className="time-line-list-dot">
-                  <strong className="highlight">PRINTEMPS 2022</strong>
-                  <p className="fr-mb-1w">C’est en place !</p>
+                  <strong className="highlight fr-text--lg fr-mb-2w">
+                    PRINTEMPS 2022
+                  </strong>
                 </div>
                 <div className="time-line-list-border">
-                  <strong>
-                    L’annuaire des psychologues partenaires est publié. Les
-                    parcours de prise en charge peuvent débuter
-                  </strong>
+                  <p>
+                    Les <strong className="highlight">patients</strong> peuvent
+                    consulter l’annuaire des psychologues. Les parcours de prise
+                    en charge peuvent débuter
+                  </p>
                 </div>
               </li>
             </ul>
@@ -206,8 +210,9 @@ const Page = () => (
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
             <div className="fr-col-8 fr-my-4w">
               <p>
-                Vous êtes psychologue et vous souhaitez en savoir plus pour
-                candidater, laissez-nous votre email&nbsp;!
+                Vous êtes psychologue et vous souhaitez candidater&nbsp;?
+                Laissez nous vous e-mail, et nous vous enverrons toutes les
+                informations nécessaires, dès l’ouverture des candidatures.
               </p>
               <form id="sb_form" onSubmit={sendEmail} method="post">
                 <div id="form-header-title" />
