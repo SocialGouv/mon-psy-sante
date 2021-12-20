@@ -79,14 +79,6 @@ const Footer = () => {
               </a>
             </li>
             <li className="fr-footer__bottom-item">
-              <a
-                className="fr-footer__bottom-link"
-                href="/donnees-personnelles-et-gestion-des-cookies"
-              >
-                Données personnelles et gestion des cookies
-              </a>
-            </li>
-            <li className="fr-footer__bottom-item">
               <a className="fr-footer__bottom-link" href="/mentions-legales">
                 Mentions légales
               </a>

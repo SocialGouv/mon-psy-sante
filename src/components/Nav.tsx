@@ -28,8 +28,7 @@ const Nav = () => {
                     <p className="fr-header__service-title">MonPsySanté</p>
                   </a>
                   <p className="fr-header__service-tagline">
-                    Un accompagnement psychologique pour tous. En parler, c’est
-                    déjà se soigner.
+                    En parler, c’est déjà se soigner.
                   </p>
                 </div>
               </div>

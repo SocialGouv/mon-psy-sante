@@ -56,10 +56,12 @@ const Page = () => (
         </div>
         <div className="fr-col-12 fr-col-md-5">
           <h1 className="fr-mb-0">MonPsySanté</h1>
-          <p className="fr-text--lg">En parler, c’est déjà se soigner.</p>
+          <p className="fr-text--lg">
+            Un dispositif en place à partir du printemps 2022
+          </p>
           <div className="fr-mt-4w">
-            <strong>Nos objectifs</strong>
-            <ul className="no-bullet">
+            <h2>Quels objectifs ?</h2>
+            <ul className="no-bullet fr-p-0">
               <li className="fr-mt-2w fr-grid-row">
                 <img
                   aria-hidden="true"
@@ -86,7 +88,7 @@ const Page = () => (
                   src="/images/money-euro-circle-line.svg"
                 />
                 <p className="fr-col fr-m-0">
-                  Permettre aux patients en ayant besoin de bénéficier de{" "}
+                  Faire bénéficier les patients en ayant besoin de{" "}
                   <strong className="highlight">
                     séances&nbsp;remboursées
                   </strong>{" "}
@@ -100,31 +102,14 @@ const Page = () => (
                   className="fr-mr-1w fr-col-1 fr-my-auto"
                   height="32"
                   width="32"
-                  src="/images/survey-line.svg"
-                />
-                <p className="fr-col fr-m-0">
-                  <strong className="highlight">
-                    Faciliter la candidature
-                  </strong>{" "}
-                  des psychologues au dispositif par une simplification des
-                  démarches
-                </p>
-              </li>
-              <li className="fr-mt-2w fr-grid-row">
-                <img
-                  aria-hidden="true"
-                  alt=""
-                  className="fr-mr-1w fr-col-1 fr-my-auto"
-                  height="32"
-                  width="32"
                   src="/images/contacts-book-2-line.svg"
                 />
                 <p className="fr-col fr-m-0">
+                  Mettre à disposition un{" "}
                   <strong className="highlight">
-                    Trouver&nbsp;les&nbsp;psychologues&nbsp;partenaires
+                    annuaire de psychologues partenaires{" "}
                   </strong>{" "}
-                  proches de chez soi via la mise en ligne d’un annuaire
-                  national
+                  répartis sur tout le territoire national
                 </p>
               </li>
             </ul>
@@ -136,91 +121,99 @@ const Page = () => (
       <div className="fr-container">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
           <div className="fr-col-12">
+            <h2>À qui ça s’adresse ?</h2>
+
             <p className="fr-text--lg">
               <strong>MonPsySanté</strong> s’adresse à toute la population à
               partir de 3 ans présentant des troubles psychiques d’intensité
-              légère à modérée. Dès le printemps 2022, sur orientation d’un
-              médecin, les patients (enfants, adolescents et adultes) pourront
-              bénéficier de séances assurées par des psychologues volontaires
-              conventionnés avec l’Assurance Maladie.
+              légère à modérée.
             </p>
           </div>
         </div>
 
         <div className="fr-grid-row fr-grid-row--center fr-py-4w">
-          <div className="fr-col-12 text-center">
+          <div className="fr-col-12">
+            <h2>À partir de quand ?</h2>
+            <p className="fr-text--lg">
+              <strong>Dès le printemps 2022</strong>, sur orientation d’un
+              médecin, les patients (enfants, adolescents et adultes) pourront
+              bénéficier de séances assurées par des psychologues volontaires
+              conventionnés avec l’Assurance Maladie.{" "}
+              <a target="_blank" href="/documents/MonPsySante_Flyer.pdf">
+                En savoir plus
+              </a>
+            </p>
             <ul className="time-line-list no-bullet">
-              <li>
+              <li className="before">
                 <div className="time-line-list-dot">
-                  <strong className="highlight">SEPTEMBRE 2021</strong>
-                  <p>C’est parti !</p>
+                  <p className="highlight">SEPTEMBRE 2021</p>
                 </div>
-                <div className="time-line-list-border">
-                  <strong>
-                    Annonce du remboursement des séances de psychologues{" "}
-                  </strong>
+                <div className="time-line-list-border before">
+                  <p>Annonce du remboursement des séances de psychologues </p>
                 </div>
               </li>
               <li>
                 <div className="time-line-list-dot">
-                  <strong className="highlight">DÉBUT 2022</strong>
-                  <p>Ça avance !</p>
+                  <p className="highlight">DÉBUT 2022</p>
                 </div>
                 <div className="time-line-list-border">
-                  <strong>
-                    Les psychologues volontaires peuvent candidater au
-                    dispositif via une procédure dématérialisée
-                  </strong>
+                  <p>
+                    Les{" "}
+                    <strong className="highlight">
+                      psychologues volontaires
+                    </strong>{" "}
+                    peuvent candidater au dispositif via une procédure
+                    dématérialisée
+                  </p>
                 </div>
               </li>
               <li>
                 <div className="time-line-list-dot">
-                  <strong className="highlight">PRINTEMPS 2022</strong>
-                  <p>C’est en place !</p>
+                  <strong className="highlight fr-text--lg fr-mb-2w">
+                    PRINTEMPS 2022
+                  </strong>
                 </div>
                 <div className="time-line-list-border">
-                  <strong>
-                    L’annuaire des psychologues partenaires est publié. Les
-                    parcours de prise en charge peuvent débuter
-                  </strong>
+                  <p>
+                    Les <strong className="highlight">patients</strong> peuvent
+                    consulter l’annuaire des psychologues. Les parcours de prise
+                    en charge peuvent débuter
+                  </p>
                 </div>
               </li>
             </ul>
           </div>
         </div>
-        <div className="fr-grid-row fr-grid-row--center fr-pb-8w">
-          <div className="fr-col-12 text-center">
-            <a
-              target="_blank"
-              className="fr-btn fr-btn--secondary"
-              href="/documents/MonPsySante_Flyer.pdf"
-            >
-              En savoir plus
-            </a>
-          </div>
-        </div>
       </div>
 
-      <div className="fr-container--fluid fr-bg--light text-center">
-        <div className="fr-container fr-centered">
+      <div className="fr-container--fluid fr-bg--light">
+        <div className="fr-container">
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-            <div className="fr-col-8 fr-my-4w">
-              <p className="fr-text--lg fr-mb-4v">
-                Dès le printemps 2022, ce nouveau dispositif permettra aux
-                patients en ayant besoin de bénéficier d’un remboursement de
-                séances d’accompagnement réalisées par un psychologue volontaire
-                et conventionné avec l’assurance maladie.
+            <div className="fr-col-12 fr-mt-4w">
+              <h2>
+                Vous êtes psychologue
+                <br />
+                et vous souhaitez candidater&nbsp;?
+              </h2>
+              <p className="fr-mb-0">
+                Le formulaire de candidature sera prochainement disponible en
+                ligne (fin janvier 2022).
               </p>
-              <p className="fr-mt-4w">
-                Vous êtes psychologue et vous souhaitez en savoir plus pour
-                candidater, laissez-nous votre email&nbsp;!
+              <p>
+                Laissez nous vous e-mail, et nous vous enverrons toutes les
+                informations nécessaires, dès l’ouverture des candidatures.
               </p>
+            </div>
+          </div>
+
+          <div className="fr-grid-row  fr-grid-row--gutters">
+            <div className="fr-col-8 fr-by-4w">
               <form id="sb_form" onSubmit={sendEmail} method="post">
                 <div id="form-header-title" />
 
                 <span>
                   <label htmlFor="input-email" id="label-EMAIL_ID">
-                    Votre email
+                    Votre email :
                   </label>
                 </span>
                 <input
