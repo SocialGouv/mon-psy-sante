@@ -43,6 +43,10 @@ const Page = () => (
 
       <meta property="og:type" content="website" />
       <script type="text/javascript" src="https://forms.sbc08.com/form.js" />
+      <meta
+        property="og:image"
+        content="https://monpsy.sante.gouv.fr/images/Illustration.svg"
+      />
     </Head>
     <div className="fr-container">
       <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
