@@ -201,7 +201,13 @@ const Page = () => (
               </h2>
               <p className="fr-mb-0">
                 Le formulaire de candidature sera prochainement disponible en
-                ligne (fin janvier 2022).
+                ligne (fin janvier 2022).{" "}
+                <a
+                  target="_blank"
+                  href="/documents/MonPsySante_Flyer-candidatures-psychologues.pdf"
+                >
+                  En savoir plus
+                </a>
               </p>
               <p>
                 Laissez nous votre e-mail, et nous vous enverrons toutes les
