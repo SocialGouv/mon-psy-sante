@@ -200,7 +200,7 @@ const Page = () => (
                 ligne (fin janvier 2022).
               </p>
               <p>
-                Laissez nous vous e-mail, et nous vous enverrons toutes les
+                Laissez nous votre e-mail, et nous vous enverrons toutes les
                 informations nécessaires, dès l’ouverture des candidatures.
               </p>
             </div>
@@ -213,7 +213,7 @@ const Page = () => (
 
                 <span>
                   <label htmlFor="input-email" id="label-EMAIL_ID">
-                    Votre email :
+                    Votre e-mail :
                   </label>
                 </span>
                 <input
@@ -238,7 +238,7 @@ const Page = () => (
               </form>
 
               <p className="fr-text--lg--sm fr-mt-4w">
-                Pour plus d’informations sur l’utilisation de votre email, vous
+                Pour plus d’informations sur l’utilisation de votre e-mail, vous
                 pouvez consulter notre{" "}
                 <a href="/donnees-personnelles-et-gestion-des-cookies#mention-donnees-perso">
                   politique&nbsp;de&nbsp;confidentialité.
