@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.1...v1.2.2) (2021-12-21)
+
+
+### Bug Fixes
+
+* **home:** add og image ([7e3ecc8](https://github.com/SocialGouv/mon-psy-sante/commit/7e3ecc85f187a03317639934462dbfbfbd35b34f))
+* **home:** text on email ([1cfc8da](https://github.com/SocialGouv/mon-psy-sante/commit/1cfc8da04635638094d5276995e388782333df03))
+
 ## [1.2.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.0...v1.2.1) (2021-12-20)
 
 
