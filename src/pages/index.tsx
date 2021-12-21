@@ -43,6 +43,10 @@ const Page = () => (
 
       <meta property="og:type" content="website" />
       <script type="text/javascript" src="https://forms.sbc08.com/form.js" />
+      <meta
+        property="og:image"
+        content="https://monpsy.sante.gouv.fr/images/Illustration.svg"
+      />
     </Head>
     <div className="fr-container">
       <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
@@ -197,10 +201,16 @@ const Page = () => (
               </h2>
               <p className="fr-mb-0">
                 Le formulaire de candidature sera prochainement disponible en
-                ligne (fin janvier 2022).
+                ligne (fin janvier 2022).{" "}
+                <a
+                  target="_blank"
+                  href="/documents/MonPsySante_Flyer-candidatures-psychologues.pdf"
+                >
+                  En savoir plus
+                </a>
               </p>
               <p>
-                Laissez nous vous e-mail, et nous vous enverrons toutes les
+                Laissez nous votre e-mail, et nous vous enverrons toutes les
                 informations nécessaires, dès l’ouverture des candidatures.
               </p>
             </div>
@@ -213,7 +223,7 @@ const Page = () => (
 
                 <span>
                   <label htmlFor="input-email" id="label-EMAIL_ID">
-                    Votre email :
+                    Votre e-mail :
                   </label>
                 </span>
                 <input
@@ -238,7 +248,7 @@ const Page = () => (
               </form>
 
               <p className="fr-text--lg--sm fr-mt-4w">
-                Pour plus d’informations sur l’utilisation de votre email, vous
+                Pour plus d’informations sur l’utilisation de votre e-mail, vous
                 pouvez consulter notre{" "}
                 <a href="/donnees-personnelles-et-gestion-des-cookies#mention-donnees-perso">
                   politique&nbsp;de&nbsp;confidentialité.
