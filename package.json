@@ -29,7 +29,7 @@
     "@commitlint/config-conventional": "^13.2.0",
     "@socialgouv/eslint-config-react": "^1.100.0",
     "@socialgouv/eslint-config-recommended": "^1.100.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.0.0",
     "eslint-config-next": "^11.1.2",
     "eslint-plugin-import": "^2.25.3",
     "jest": "^27.4.4",
