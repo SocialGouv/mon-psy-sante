@@ -15,5 +15,5 @@ ARG PRODUCTION
 
 COPY --from=builder /out /usr/share/nginx/html
 
-RUN if [ ! -z "$PRODUCTION" ]; then echo "PRODUCTION">/usr/share/nginx/html/env.html; else echo "DEV">/usr/share/nginx/html/env.html; fi
+RUN if [ ! -z "$PRODUCTION" ]; then echo "User-agent: *\nAllow: /">/usr/share/nginx/html/robots.txt; else echo "User-agent: *\nDisallow: /">/usr/share/nginx/html/robots.txt; fi
 
