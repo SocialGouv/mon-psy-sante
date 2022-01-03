@@ -1,4 +1,4 @@
-ARG PRODUCTION=false
+ARG PRODUCTION
 
 FROM node:14-alpine as builder
 
