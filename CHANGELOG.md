@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.2...v1.2.3) (2022-01-03)
+
+
+### Bug Fixes
+
+* **semantic:** release ([82ffed3](https://github.com/SocialGouv/mon-psy-sante/commit/82ffed310d28f2a20ec8d522d0f5ec7fc7a3ce05))
+
 ## [1.2.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.1...v1.2.2) (2021-12-21)
 
 
