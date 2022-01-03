@@ -29,7 +29,9 @@ jobs:
           project: ${{ env.project }}
           imageName: ${{ env.project }}/app
           token: ${{ secrets.GITHUB_TOKEN }}
-
+          dockerbuildargs: |
+            PRODUCTION=true
+            
   ##############################################################################
   ## GENERATE KUBERNETES MANIFESTS
   ##############################################################################
