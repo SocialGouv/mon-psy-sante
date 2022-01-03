@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.5...v1.3.0) (2022-01-03)
+
+
+### Features
+
+* **seo:** add google verification file ([#22](https://github.com/SocialGouv/mon-psy-sante/issues/22)) ([7134241](https://github.com/SocialGouv/mon-psy-sante/commit/71342417456f0fe4549e8d3b6e647f4fc11364fb))
+
 ## [1.2.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.4...v1.2.5) (2022-01-03)
 
 
