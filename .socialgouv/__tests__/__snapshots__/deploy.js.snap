@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deploy dev 2 1`] = `
+"---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: netpol-monpsy
+  namespace: monpsy
+spec:
+  ingress:
+    - from:
+        - podSelector: {}
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              network-policy/source: ingress-controller
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              network-policy/source: monitoring
+  podSelector: {}
+  policyTypes:
+    - Ingress
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kapp.k14s.io/disable-default-ownership-label-rules: ''
+    kapp.k14s.io/disable-default-label-scoping-rules: ''
+    app.github.com/job: '5678'
+    app.github.com/ref: refs/tags/v1.2.3
+    app.github.com/repo: socialgouv/monpsy
+    app.github.com/run: '1234'
+    app.github.com/sha: '0123456'
+  labels:
+    app: app
+    application: monpsy
+    component: nginx
+    owner: monpsy
+    team: monpsy
+  name: app
+  namespace: monpsy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      annotations:
+        kapp.k14s.io/disable-default-ownership-label-rules: ''
+        kapp.k14s.io/disable-default-label-scoping-rules: ''
+        app.github.com/job: '5678'
+        app.github.com/ref: refs/tags/v1.2.3
+        app.github.com/repo: socialgouv/monpsy
+        app.github.com/run: '1234'
+        app.github.com/sha: '0123456'
+      labels:
+        app: app
+        application: monpsy
+        component: nginx
+        owner: monpsy
+        team: monpsy
+    spec:
+      containers:
+        - image: ghcr.io/socialgouv/mon-psy-sante/app:1.2.3
+          livenessProbe:
+            failureThreshold: 6
+            httpGet:
+              path: /index.html
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 5
+          name: app
+          ports:
+            - containerPort: 80
+              name: http
+          readinessProbe:
+            failureThreshold: 15
+            httpGet:
+              path: /index.html
+              port: http
+            initialDelaySeconds: 0
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 500m
+              memory: 128Mi
+            requests:
+              cpu: 5m
+              memory: 32Mi
+          startupProbe:
+            failureThreshold: 12
+            httpGet:
+              path: /index.html
+              port: http
+            periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: app
+    application: monpsy
+    component: nginx
+    owner: monpsy
+    team: monpsy
+  name: app
+  annotations:
+    kapp.k14s.io/disable-default-ownership-label-rules: ''
+    kapp.k14s.io/disable-default-label-scoping-rules: ''
+    app.github.com/job: '5678'
+    app.github.com/ref: refs/tags/v1.2.3
+    app.github.com/repo: socialgouv/monpsy
+    app.github.com/run: '1234'
+    app.github.com/sha: '0123456'
+  namespace: monpsy
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+  selector:
+    app: app
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/tls-acme: 'true'
+    kapp.k14s.io/disable-default-ownership-label-rules: ''
+    kapp.k14s.io/disable-default-label-scoping-rules: ''
+    app.github.com/job: '5678'
+    app.github.com/ref: refs/tags/v1.2.3
+    app.github.com/repo: socialgouv/monpsy
+    app.github.com/run: '1234'
+    app.github.com/sha: '0123456'
+    nginx.ingress.kubernetes.io/configuration-snippet: >-
+      more_set_headers \\"Content-Security-Policy: default-src 'none'; connect-src
+      'self' https://*.gouv.fr https://services.sarbacane.com; font-src 'self'
+      data:; img-src 'self' data: https://forms.sbc08.com; prefetch-src 'self'
+      https://*.gouv.fr; script-src 'self' https://*.gouv.fr
+      https://*.sbc08.com; frame-src 'self' https://*.gouv.fr; style-src 'self'
+      'unsafe-inline'\\";
+
+      more_set_headers \\"X-Frame-Options: deny\\";
+
+      more_set_headers \\"X-XSS-Protection: 1; mode=block\\";
+
+      more_set_headers \\"X-Content-Type-Options: nosniff\\";
+  labels:
+    app: app
+    application: monpsy
+    component: nginx
+    owner: monpsy
+    team: monpsy
+  name: app
+  namespace: monpsy
+spec:
+  rules:
+    - host: monpsy.fabrique.social.gouv.fr
+      http:
+        paths:
+          - backend:
+              service:
+                name: app
+                port:
+                  name: http
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - monpsy.fabrique.social.gouv.fr
+      secretName: app-crt
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/permanent-redirect: https://monpsy.sante.gouv.fr$request_uri
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/tls-acme: 'true'
+  labels:
+    app.kubernetes.io/component: redirect
+    app.kubernetes.io/name: www
+  name: monpsy-redirect
+spec:
+  rules:
+    - host: www.monpsy.sante.gouv.fr
+  tls:
+    - hosts:
+        - www.monpsy.sante.gouv.fr
+      secretName: monpsy-redirect
+"
+`;
