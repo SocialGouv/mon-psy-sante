@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.3...v1.2.4) (2022-01-03)
+
+
+### Bug Fixes
+
+* **deploy:** fix redirect path ([ca858f5](https://github.com/SocialGouv/mon-psy-sante/commit/ca858f59afd1a5ccbd882a840cc160223d29faf0))
+
 ## [1.2.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.2...v1.2.3) (2022-01-03)
 
 
