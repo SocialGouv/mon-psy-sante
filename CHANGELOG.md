@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.3.0...v1.4.0) (2022-01-04)
+
+
+### Features
+
+* **all-application:** Use react-dsfr ([#23](https://github.com/SocialGouv/mon-psy-sante/issues/23)) ([5ad0d0b](https://github.com/SocialGouv/mon-psy-sante/commit/5ad0d0bb082651930949c4ced5a1ceb0598e3536))
+
 # [1.3.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.2.5...v1.3.0) (2022-01-03)
 
 
