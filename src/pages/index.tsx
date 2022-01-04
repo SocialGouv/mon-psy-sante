@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Button, TextInput } from "@dataesr/react-dsfr";
 import React from "react";
 
 const sendEmail = function (e) {
@@ -27,27 +27,7 @@ const sendEmail = function (e) {
 };
 
 const Page = () => (
-  <React.Fragment>
-    <Head>
-      <title>MonPsySanté</title>
-      <meta property="og:title" content="MonPsySanté" />
-
-      <meta
-        name="description"
-        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
-      />
-      <meta
-        property="og:description"
-        content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
-      />
-
-      <meta property="og:type" content="website" />
-      <script type="text/javascript" src="https://forms.sbc08.com/form.js" />
-      <meta
-        property="og:image"
-        content="https://monpsy.sante.gouv.fr/images/Illustration.svg"
-      />
-    </Head>
+  <>
     <div className="fr-container">
       <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
         <div className="fr-col-12 fr-col-md-7 fr-px-4w">
@@ -105,7 +85,7 @@ const Page = () => (
                 />
                 <p className="fr-col fr-m-0">
                   Mettre à disposition un{" "}
-                  <strong>annuaire de psychologues partenaires </strong>{" "}
+                  <strong>annuaire de psychologues partenaires </strong>
                   répartis sur tout le territoire national
                 </p>
               </li>
@@ -205,49 +185,29 @@ const Page = () => (
             </div>
           </div>
 
-          <div className="fr-grid-row  fr-grid-row--gutters">
-            <div className="fr-col-8 fr-by-4w">
+          <div className="fr-grid-row">
+            <div className="fr-col-8 fr-mb-4w">
               <form id="sb_form" onSubmit={sendEmail} method="post">
                 <div id="form-header-title" />
-
-                <span>
-                  <label htmlFor="input-email" id="label-EMAIL_ID">
-                    Votre e-mail :
-                  </label>
-                </span>
-                <input
-                  id="input-email"
-                  type="email"
+                <TextInput
+                  label="Votre email :"
                   name="email"
+                  placeholder="Votre email"
+                  type="email"
                   required
-                  className="fr-input"
-                  sb-form-input="true"
                 />
-                <div id="div-submitInput" className="fr-mt-2w">
-                  <button
-                    id="submitInput"
-                    type="submit"
-                    value="Valider"
-                    className="fr-btn"
-                  >
+                <div id="div-submitInput">
+                  <Button submit id="submitInput">
                     Valider
-                  </button>
+                  </Button>
                   <div className="loader d-none" />
                 </div>
               </form>
-
-              <p className="fr-text--lg--sm fr-mt-4w">
-                Pour plus d’informations sur l’utilisation de votre e-mail, vous
-                pouvez consulter notre{" "}
-                <a href="/donnees-personnelles-et-gestion-des-cookies#mention-donnees-perso">
-                  politique&nbsp;de&nbsp;confidentialité.
-                </a>
-              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </React.Fragment>
+  </>
 );
 export default Page;

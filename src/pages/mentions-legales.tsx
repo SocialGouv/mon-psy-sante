@@ -1,12 +1,12 @@
-import Head from "next/head";
-import React from "react";
+import React, { useEffect } from "react";
 
-const Page = () => (
-  <React.Fragment>
-    <Head>
-      <title>Mentions légales</title>
-    </Head>
-    <div className="fr-container fr-my-5w">
+const Page = () => {
+  useEffect(() => {
+    document.title = "Mentions légales";
+  }, []);
+
+  return (
+    <div className="fr-container fr-my-6w">
       <h1 id="mentions-legales">Mentions légales</h1>
       <div>
         <div className="fr-mt-3w">
@@ -71,6 +71,6 @@ const Page = () => (
         </div>
       </div>
     </div>
-  </React.Fragment>
-);
+  );
+};
 export default Page;
