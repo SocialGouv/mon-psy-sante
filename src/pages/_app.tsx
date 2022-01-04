@@ -7,8 +7,8 @@ import { init } from "@socialgouv/matomo-next";
 import App from "next/app";
 import React from "react";
 
-import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Nav from "../components/Nav";
 
 Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
