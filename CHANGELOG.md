@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.0...v1.4.1) (2022-01-04)
+
+
+### Bug Fixes
+
+* **footer:** add mandatory links on footer + change main logo ([#24](https://github.com/SocialGouv/mon-psy-sante/issues/24)) ([4459dfc](https://github.com/SocialGouv/mon-psy-sante/commit/4459dfc1d634df3e81d5a719da3c98d1ec18b586))
+
 # [1.4.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.3.0...v1.4.0) (2022-01-04)
 
 
