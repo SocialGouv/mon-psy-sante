@@ -8,11 +8,8 @@ const Footer = () => {
           <div className="fr-footer__brand">
             <a className="fr-logo" href="/" title="République française">
               <p className="fr-logo__title fr-mb-0">
-                Ministère
-                <br />
-                des Solidarités
-                <br />
-                et de la Santé
+                République <br />
+                Française
               </p>
             </a>
           </div>
