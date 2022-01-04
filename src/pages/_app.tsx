@@ -1,14 +1,14 @@
-import "@socialgouv/bootstrap.core/dist/socialgouv-bootstrap.min.css";
-import "@gouvfr/dsfr/dist/dsfr/dsfr.min.css";
 import "../css/style.css";
 
+import { SkiplinkItem, Skiplinks } from "@dataesr/react-dsfr";
 import * as Sentry from "@sentry/node";
 import { init } from "@socialgouv/matomo-next";
 import App from "next/app";
+import Head from "next/head";
 import React from "react";
 
-import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Nav from "../components/Nav";
 
 Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
@@ -26,11 +26,42 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <React.Fragment>
+      <>
+        <Head>
+          <link rel="shortcut icon" href="/favicon.ico" />
+          <title>MonPsySanté</title>
+          <meta property="og:title" content="MonPsySanté" />
+
+          <meta
+            name="description"
+            content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+          />
+          <meta
+            property="og:description"
+            content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+          />
+
+          <meta property="og:type" content="website" />
+          <script
+            type="text/javascript"
+            src="https://forms.sbc08.com/form.js"
+          />
+          <meta
+            property="og:image"
+            content="https://monpsy.sante.gouv.fr/images/Illustration.svg"
+          />
+        </Head>
+        <Skiplinks>
+          <SkiplinkItem href="#contenu">Contenu</SkiplinkItem>
+          <SkiplinkItem href="#header-navigation">Menu</SkiplinkItem>
+          <SkiplinkItem href="#footer">Pied de page</SkiplinkItem>
+        </Skiplinks>
         <Nav />
-        <Component {...pageProps} />
+        <div id="contenu">
+          <Component {...pageProps} />
+        </div>
         <Footer />
-      </React.Fragment>
+      </>
     );
   }
 }
