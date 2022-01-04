@@ -11,7 +11,7 @@ const Nav = () => {
   return (
     <Header>
       <HeaderBody>
-        <Logo>Ministère des Solidarités et de la Santé</Logo>
+        <Logo>République Française</Logo>
         <HeaderOperator>
           <img src="/images/cpam.png" alt="CNAM" />
         </HeaderOperator>

@@ -56,10 +56,8 @@ const Page = () => (
                   src="/images/team-line.svg"
                 />
                 <p className="fr-col fr-m-0">
-                  <strong className="highlight">
-                    Améliorer&nbsp;la&nbsp;santé&nbsp;mentale
-                  </strong>{" "}
-                  de la population, enjeu majeur de la santé publique en France
+                  <strong>Améliorer&nbsp;la&nbsp;santé&nbsp;mentale</strong> de
+                  la population, enjeu majeur de la santé publique en France
                 </p>
               </li>
               <li className="fr-mt-2w fr-grid-row">
@@ -73,10 +71,7 @@ const Page = () => (
                 />
                 <p className="fr-col fr-m-0">
                   Faire bénéficier les patients en ayant besoin de{" "}
-                  <strong className="highlight">
-                    séances&nbsp;remboursées
-                  </strong>{" "}
-                  chez le psychologue
+                  <strong>séances&nbsp;remboursées</strong> chez le psychologue
                 </p>
               </li>
               <li className="fr-mt-2w fr-grid-row">
@@ -90,9 +85,7 @@ const Page = () => (
                 />
                 <p className="fr-col fr-m-0">
                   Mettre à disposition un{" "}
-                  <strong className="highlight">
-                    annuaire de psychologues partenaires{" "}
-                  </strong>
+                  <strong>annuaire de psychologues partenaires </strong>
                   répartis sur tout le territoire national
                 </p>
               </li>
@@ -142,12 +135,8 @@ const Page = () => (
                 </div>
                 <div className="time-line-list-border">
                   <p>
-                    Les{" "}
-                    <strong className="highlight">
-                      psychologues volontaires
-                    </strong>{" "}
-                    peuvent candidater au dispositif via une procédure
-                    dématérialisée
+                    Les <strong>psychologues volontaires</strong> peuvent
+                    candidater au dispositif via une procédure dématérialisée
                   </p>
                 </div>
               </li>
@@ -159,9 +148,9 @@ const Page = () => (
                 </div>
                 <div className="time-line-list-border">
                   <p>
-                    Les <strong className="highlight">patients</strong> peuvent
-                    consulter l’annuaire des psychologues. Les parcours de prise
-                    en charge peuvent débuter
+                    Les <strong>patients</strong> peuvent consulter l’annuaire
+                    des psychologues. Les parcours de prise en charge peuvent
+                    débuter
                   </p>
                 </div>
               </li>

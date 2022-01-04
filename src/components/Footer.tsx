@@ -24,8 +24,20 @@ const FooterDescription = () => (
 );
 const footerBodyLinks = [
   {
-    link: "https://solidarites-sante.gouv.fr",
-    title: "solidarites-sante.gouv.fr",
+    link: "https://www.gouvernement.fr",
+    title: "gouvernement.fr",
+  },
+  {
+    link: "http://www.service-public.fr",
+    title: "service-public.fr",
+  },
+  {
+    link: "http://legifrance.gouv.fr",
+    title: "legifrance.gouv.fr",
+  },
+  {
+    link: "http://data.gouv.fr",
+    title: "data.gouv.fr",
   },
   {
     link: "https://www.ameli.fr",
@@ -51,7 +63,7 @@ const footerBottomLinks = [
 const Footer = () => (
   <FooterDS>
     <FooterBody description={<FooterDescription />}>
-      <Logo>Ministère des Solidarités et de la Santé</Logo>
+      <Logo>République Française</Logo>
       {footerBodyLinks.map((item) => (
         <FooterBodyItem key={item.title}>
           <a href={item.link} target="_blank" rel="noopener noreferrer">
