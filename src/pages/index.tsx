@@ -196,8 +196,8 @@ const Page = () => (
             </div>
           </div>
 
-          <div className="fr-grid-row  fr-grid-row--gutters">
-            <div className="fr-col-8 fr-by-4w">
+          <div className="fr-grid-row">
+            <div className="fr-col-8 fr-mb-4w">
               <form id="sb_form" onSubmit={sendEmail} method="post">
                 <div id="form-header-title" />
                 <TextInput
@@ -214,14 +214,6 @@ const Page = () => (
                   <div className="loader d-none" />
                 </div>
               </form>
-
-              <p className="fr-text--lg--sm fr-mt-4w">
-                Pour plus d’informations sur l’utilisation de votre e-mail, vous
-                pouvez consulter notre{" "}
-                <a href="/donnees-personnelles-et-gestion-des-cookies#mention-donnees-perso">
-                  politique&nbsp;de&nbsp;confidentialité.
-                </a>
-              </p>
             </div>
           </div>
         </div>
