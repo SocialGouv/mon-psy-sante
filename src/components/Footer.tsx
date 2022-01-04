@@ -34,6 +34,52 @@ const Footer = () => {
             <ul className="fr-footer__content-list">
               <li className="fr-footer__content-item">
                 <a
+                  href="https://www.gouvernement.fr"
+                  title="Accèder au site elysee.fr nouvelle fenêtre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="fr-footer__content-link"
+                >
+                  gouvernement.fr
+                </a>
+              </li>
+              <li className="fr-footer__content-item">
+                <a
+                  href="http://www.service-public.fr"
+                  title="Accèder au site service-public.fr nouvelle fenêtre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="fr-footer__content-link"
+                >
+                  service-public.fr
+                </a>
+              </li>
+              <li className="fr-footer__content-item">
+                <a
+                  href="http://legifrance.gouv.fr"
+                  title="Accèder au site legifrance.gouv.fr nouvelle fenêtre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="fr-footer__content-link"
+                >
+                  legifrance.gouv.fr
+                </a>
+              </li>
+              <li className="fr-footer__content-item">
+                <a
+                  href="http://data.gouv.fr"
+                  title="Accèder au site data.gouv.fr nouvelle fenêtre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="fr-footer__content-link"
+                >
+                  data.gouv.fr
+                </a>
+              </li>
+
+              <li className="fr-footer__content-item">
+                <a
+                  title="Accèder au site solidarites-sante.gouv.fr nouvelle fenêtre"
                   className="fr-footer__content-link"
                   href="https://solidarites-sante.gouv.fr"
                   target="_blank"
@@ -44,22 +90,13 @@ const Footer = () => {
               </li>
               <li className="fr-footer__content-item">
                 <a
+                  title="Accèder au siteameli.fr nouvelle fenêtre"
                   className="fr-footer__content-link"
                   href="https://www.ameli.fr"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   ameli.fr
-                </a>
-              </li>
-              <li className="fr-footer__content-item">
-                <a
-                  className="fr-footer__content-link"
-                  href="https://beta.gouv.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  beta.gouv.fr
                 </a>
               </li>
             </ul>
