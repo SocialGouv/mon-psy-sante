@@ -17,9 +17,17 @@
     "@socialgouv/matomo-next": "^1.2.2",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@zeit/next-source-maps": "^0.0.3",
+    "axios": "^0.24.0",
+    "cron": "^1.8.2",
+    "dotenv": "^10.0.0",
+    "graphql": "^16.2.0",
+    "graphql-request": "^3.7.0",
     "next": "^12.0.7",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "sequelize": "^6.12.5",
     "typescript-eslint": "^0.0.1-alpha.0"
   },
   "devDependencies": {
@@ -27,13 +35,16 @@
     "@commitlint/config-conventional": "^16.0.0",
     "@socialgouv/eslint-config-react": "^1.101.0",
     "@socialgouv/eslint-config-recommended": "^1.101.0",
+    "@types/faker": "^5.5.9",
     "@types/react": "^17.0.38",
     "eslint": "^8.6.0",
     "eslint-config-next": "^12.0.7",
     "eslint-plugin-import": "^2.25.4",
+    "faker": "^5.5.3",
     "jest": "^27.4.5",
     "lint-staged": "^12.1.5",
     "prettier": "^2.5.1",
+    "sequelize-cli": "^6.3.0",
     "typescript": "^4.5.4"
   },
   "license": "MIT",
@@ -47,6 +58,10 @@
     "lint:fix": "eslint ./src --fix",
     "precommit": "lint-staged",
     "start": "NODE_ENV=production next start",
-    "export": "next export"
+    "export": "next export",
+    "db:seed": "ts-node src/db/seeds/index.ts",
+    "db:migrate": "npx sequelize-cli db:migrate",
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "db:migrate:create": "npx sequelize migration:create --name"
   }
 }

@@ -12,8 +12,16 @@ module.exports = withSentryConfig(
     webpack: (config, { isServer /*, buildId */ }) => {
       if (!isServer) {
         config.resolve.alias["@sentry/node"] = "@sentry/browser";
+        config.resolve.fallback = { 
+          fs: false,
+          path: false,
+          os: false,
+        };  
       }
       return config;
     },
+    env: {
+      DISPLAY_DIRECTORY: process.env.DISPLAY_DIRECTORY === "true"
+    }
   })
 );

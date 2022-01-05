@@ -1,0 +1,2 @@
+# User-agent: * signifie que l'accès est accordé à tous les agents (tous les spiders), quels qu'ils soient.
+User-agent: *
