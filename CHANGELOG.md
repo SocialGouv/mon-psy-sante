@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.2...v1.4.3) (2022-01-05)
+
+
+### Bug Fixes
+
+* **footer:** License text ([#26](https://github.com/SocialGouv/mon-psy-sante/issues/26)) ([b072679](https://github.com/SocialGouv/mon-psy-sante/commit/b072679347886af2a33d1a6bdf45e77b0ee62964))
+
 ## [1.4.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.1...v1.4.2) (2022-01-05)
 
 
