@@ -110,7 +110,7 @@ const Footer = () => (
     </FooterBottom>
     <FooterCopy>
       <p>
-        Sauf mention contraire, tous les textes de ce site sont sous{" "}
+        Sauf mention contraire, tous les contenus de ce site sont sous{" "}
         <a
           href="https://github.com/etalab/licence-ouverte/blob/master/LO.md"
           rel="noreferrer"
