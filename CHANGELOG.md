@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.1...v1.4.2) (2022-01-05)
+
+
+### Bug Fixes
+
+* **header/footer:** logo CNAM ([#25](https://github.com/SocialGouv/mon-psy-sante/issues/25)) ([13712d9](https://github.com/SocialGouv/mon-psy-sante/commit/13712d93cd2f5e709068b727e662ebb4deae6d2d))
+
 ## [1.4.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.0...v1.4.1) (2022-01-04)
 
 
