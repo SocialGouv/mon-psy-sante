@@ -2,7 +2,7 @@ import { Button, Table } from "@dataesr/react-dsfr";
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 
-import { Psychologist } from "../../types/psychologist";
+import { Psychologist } from "../types/psychologist";
 
 const columns = [
   {

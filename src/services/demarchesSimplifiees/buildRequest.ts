@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 
-import { DSResponse } from "../../../types/demarcheSimplifiee";
+import { DSResponse } from "../../types/demarcheSimplifiee";
 import config from "../config";
 import { request } from "./request";
 

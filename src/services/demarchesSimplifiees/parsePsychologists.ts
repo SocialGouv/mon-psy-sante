@@ -1,4 +1,4 @@
-import { DSPsychologist, Psychologist } from "../../../types/psychologist";
+import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import config from "../config";
 import getAddressCoordinates from "../getAddressCoordinates";
 

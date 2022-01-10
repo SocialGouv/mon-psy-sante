@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
 import faker from "faker";
 
-import { Psychologist } from "../../../types/psychologist";
+import { Psychologist } from "../../types/psychologist";
 import { models } from "../models";
 
 const NUMBER_OF_PSYCHOLOGISTS = 1000;

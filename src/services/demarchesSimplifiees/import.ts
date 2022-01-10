@@ -1,5 +1,5 @@
-import { DSResponse } from "../../../types/demarcheSimplifiee";
-import { DSPsychologist, Psychologist } from "../../../types/psychologist";
+import { DSResponse } from "../../types/demarcheSimplifiee";
+import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import { requestPsychologists } from "./buildRequest";
 import parsePsychologists from "./parsePsychologists";
 

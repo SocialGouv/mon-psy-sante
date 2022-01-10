@@ -1,6 +1,6 @@
 import axios from "axios/index";
 
-import { Coordinates, CoordinatesAPI } from "../../types/coordinates";
+import { Coordinates, CoordinatesAPI } from "../types/coordinates";
 import config from "./config";
 
 const ADDRESS_DELIMITER = ";";
