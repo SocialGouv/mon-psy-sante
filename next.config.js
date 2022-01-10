@@ -20,8 +20,5 @@ module.exports = withSentryConfig(
       }
       return config;
     },
-    env: {
-      DISPLAY_DIRECTORY: process.env.DISPLAY_DIRECTORY === "true"
-    }
   })
 );

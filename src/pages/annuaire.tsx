@@ -1,15 +1,9 @@
-import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 
 import Directory from "../components/Directory";
 
-export default () => {
-  const router = useRouter();
+const Annuaire = () => {
   useEffect(() => {
-    if (!process.env.DISPLAY_DIRECTORY) {
-      router.push("/");
-    }
-
     document.title = "MonPsySanté - Annuaire";
   }, []);
 
@@ -21,3 +15,5 @@ export default () => {
     </div>
   );
 };
+
+export default Annuaire;

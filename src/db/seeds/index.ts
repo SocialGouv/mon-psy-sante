@@ -1,4 +1,3 @@
-import * as dotenv from "dotenv";
 import faker from "faker";
 
 import { Psychologist } from "../../types/psychologist";
@@ -46,5 +45,4 @@ const createAllData = async () => {
   await createPsychologists();
 };
 
-dotenv.config();
 createAllData();

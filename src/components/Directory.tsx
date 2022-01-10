@@ -1,5 +1,6 @@
 import { Button, Table } from "@dataesr/react-dsfr";
 import axios from "axios";
+import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 
 import { Psychologist } from "../types/psychologist";
@@ -40,13 +41,19 @@ const columns = [
 ];
 
 const Directory = () => {
+  const router = useRouter();
   const table = useRef(null);
   const [psychologists, setPsychologists] = useState<Psychologist[]>();
   const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
-    axios
-      .get("/api/psychologists")
-      .then((response) => setPsychologists(response.data));
+    console.log(process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY);
+    if (process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY !== "true") {
+      router.push("/");
+    } else {
+      axios
+        .get("/api/psychologists")
+        .then((response) => setPsychologists(response.data));
+    }
   }, []);
 
   if (!psychologists) {

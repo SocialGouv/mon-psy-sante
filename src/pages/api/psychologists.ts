@@ -6,7 +6,6 @@ import { getAll } from "../../services/psychologists";
 
 const psychologists = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "GET") {
-    console.log(config);
     if (!config.displayDirectory) {
       return res.status(200).json([]);
     }
