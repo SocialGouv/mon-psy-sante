@@ -1,9 +1,5 @@
 const parseBoolean = (value: string) => value === "true";
 
-console.log(
-  process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY,
-  process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY === "true"
-);
 export default {
   demarchesSimplifiees: {
     apiToken: process.env.DEMARCHES_SIMPLIFIEES_TOKEN,
