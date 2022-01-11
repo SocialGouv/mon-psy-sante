@@ -61,7 +61,7 @@
     "precommit": "lint-staged",
     "start": "NODE_ENV=production next start",
     "export": "next export",
-    "db:seed": "ts-node src/db/seeds/index.ts",
+    "db:seed": "ts-node --transpile-only src/db/seeds/index.ts",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
     "db:migrate:create": "npx sequelize migration:create --name"

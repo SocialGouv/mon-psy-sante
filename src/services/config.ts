@@ -1,9 +1,10 @@
-const parseBoolean = (value: string) => value === "true";
+import * as dotenv from "dotenv";
 
-console.log(
-  process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY,
-  process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY === "true"
-);
+dotenv.config();
+
+const parseBoolean = (value: string | undefined) => value === "true";
+
+console.log(process.env);
 export default {
   demarchesSimplifiees: {
     apiToken: process.env.DEMARCHES_SIMPLIFIEES_TOKEN,
@@ -15,6 +16,6 @@ export default {
   minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.55"),
   postgre: {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
-    url: process.env.POSTGRESQL_URL,
+    url: process.env.DATABASE_URL || "",
   },
 };

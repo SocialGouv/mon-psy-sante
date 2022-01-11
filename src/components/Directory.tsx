@@ -46,7 +46,6 @@ const Directory = () => {
   const [psychologists, setPsychologists] = useState<Psychologist[]>();
   const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY);
     if (process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY !== "true") {
       router.push("/");
     } else {
