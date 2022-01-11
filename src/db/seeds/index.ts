@@ -18,6 +18,13 @@ const createPsychologists = async () => {
         "#####"
       )} ${faker.address.city()}`,
       archived: false,
+      coordinates: {
+        coordinates: [
+          parseFloat(faker.address.longitude()),
+          parseFloat(faker.address.latitude()),
+        ],
+        type: "POINT",
+      },
       email: faker.internet.email(),
       emailPro: faker.internet.email(),
       firstName: faker.name.firstName(),
@@ -25,8 +32,6 @@ const createPsychologists = async () => {
       instructorId: faker.datatype.uuid(),
       languages: faker.lorem.word(1),
       lastName: faker.name.lastName(),
-      latitude: parseFloat(faker.address.latitude()),
-      longitude: parseFloat(faker.address.longitude()),
       phone: faker.phone.phoneNumber("0# ## ## ## ##"),
       teleconsultation: faker.datatype.boolean(),
       website: faker.helpers.randomize([

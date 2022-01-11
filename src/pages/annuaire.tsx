@@ -9,9 +9,7 @@ const Annuaire = () => {
 
   return (
     <div className="fr-container">
-      <div className="fr-grid-row fr-grid-row--center">
-        <Directory />
-      </div>
+      <Directory />
     </div>
   );
 };

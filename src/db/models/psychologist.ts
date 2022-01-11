@@ -7,6 +7,7 @@ export default (sequelize) => {
     {
       address: DataTypes.STRING,
       archived: DataTypes.BOOLEAN,
+      coordinates: DataTypes.GEOMETRY("POINT"),
       email: DataTypes.STRING,
       emailPro: DataTypes.STRING,
       firstName: DataTypes.STRING,
@@ -17,8 +18,6 @@ export default (sequelize) => {
       instructorId: DataTypes.STRING,
       languages: DataTypes.STRING,
       lastName: DataTypes.STRING,
-      latitude: DataTypes.FLOAT,
-      longitude: DataTypes.FLOAT,
       phone: DataTypes.STRING,
       teleconsultation: DataTypes.BOOLEAN,
       website: DataTypes.STRING,

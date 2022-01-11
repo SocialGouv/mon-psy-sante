@@ -1,3 +1,7 @@
+import * as dotenv from "dotenv";
+
+dotenv.config();
+
 const parseBoolean = (value: string) => value === "true";
 
 export default {

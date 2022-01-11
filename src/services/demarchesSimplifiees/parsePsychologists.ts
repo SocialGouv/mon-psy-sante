@@ -27,8 +27,10 @@ const parseDossierMetadata = async (
 
   const coordinates = await getAddressCoordinates(psychologist.address);
   if (coordinates) {
-    psychologist.longitude = coordinates.longitude;
-    psychologist.latitude = coordinates.latitude;
+    psychologist.coordinates = {
+      coordinates: [coordinates.longitude, coordinates.latitude],
+      type: "POINT",
+    };
   }
 
   return psychologist as Psychologist;

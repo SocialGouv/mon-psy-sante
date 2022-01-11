@@ -10,8 +10,7 @@ export interface Psychologist {
   teleconsultation: boolean;
   languages: string;
   website: string;
-  longitude: number;
-  latitude: number;
+  coordinates: { type: string; coordinates: [number, number] };
   instructorId: string;
 }
 
