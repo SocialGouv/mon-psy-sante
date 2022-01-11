@@ -31,4 +31,6 @@ COPY --from=builder --chown=node:node /app/.next ./.next
 
 USER node
 
+RUN yarn db:migrate
+
 CMD ["yarn", "start"]
