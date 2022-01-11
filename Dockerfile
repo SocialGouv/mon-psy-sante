@@ -22,6 +22,7 @@ ENV NODE_ENV production
 COPY --from=builder /app/next.config.js .
 COPY --from=builder /app/sentry.client.config.js .
 COPY --from=builder /app/sentry.server.config.js .
+COPY --from=builder /app/.sequelizerc .
 COPY --from=builder /app/.env.production .
 COPY --from=builder /app/package.json .
 COPY --from=builder /app/src ./src
@@ -30,7 +31,5 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder --chown=node:node /app/.next ./.next
 
 USER node
-
-RUN yarn db:migrate
 
 CMD ["yarn", "start"]

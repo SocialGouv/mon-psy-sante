@@ -5,5 +5,5 @@
   "registry": "ghcr",
   "project": "mon-psy-sante",
   "azurepg": true,
-  "devInitContainerCommand": ["yarn", "db:seed"]
+  "devInitContainerCommand": ["yarn", "db:init"]
 }
