@@ -22,7 +22,7 @@ export const importData = async (): Promise<void> => {
         { where: { id: 1 } }
       );
 
-      console.log(`{$psychologists.psychologists.length} downloaded`);
+      console.log(`${dsAPIData.psychologists.length} downloaded`);
     } else {
       console.log("No psychologists to save");
     }

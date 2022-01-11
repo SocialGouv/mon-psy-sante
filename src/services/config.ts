@@ -4,7 +4,6 @@ dotenv.config();
 
 const parseBoolean = (value: string | undefined) => value === "true";
 
-console.log(process.env);
 export default {
   demarchesSimplifiees: {
     apiToken: process.env.DEMARCHES_SIMPLIFIEES_TOKEN,

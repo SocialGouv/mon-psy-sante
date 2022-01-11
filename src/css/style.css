@@ -10,6 +10,15 @@
   background-color: var(--background-alt-pink-tuile);
 }
 
+.select-search-options {
+  background-color: var(--grey-1000) !important;
+}
+
+.map {
+  width: 100%;
+  min-height: 500px;
+}
+
 .highlight {
   color: var(--pink-tuile-main-556);
 }

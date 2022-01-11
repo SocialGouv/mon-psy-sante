@@ -1,5 +1,6 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    await queryInterface.sequelize.query(`CREATE EXTENSION IF NOT EXISTS "postgis";`)
     await queryInterface.createTable('psychologist', {
       id: {
         primaryKey: true,
@@ -13,31 +14,15 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      email: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
       archived: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
-      },
-      phone: {
-        allowNull: false,
-        type: Sequelize.STRING
       },
       address: {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      email_pro: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      teleconsultation: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN,
-      },
-      languages: {
+      phone: {
         allowNull: false,
         type: Sequelize.STRING
       },
@@ -45,13 +30,25 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      longitude: {
-        allowNull: true,
-        type: Sequelize.FLOAT,
+      cdsmsp: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
-      latitude: {
+      languages: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      teleconsultation: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+      },
+      with_children: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+      },
+      coordinates: {
         allowNull: true,
-        type: Sequelize.FLOAT,
+        type: Sequelize.GEOMETRY('POINT')
       },
       instructor_id: {
         allowNull: false,

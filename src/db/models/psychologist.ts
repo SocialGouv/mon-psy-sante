@@ -7,8 +7,8 @@ export default (sequelize) => {
     {
       address: DataTypes.STRING,
       archived: DataTypes.BOOLEAN,
-      email: DataTypes.STRING,
-      emailPro: DataTypes.STRING,
+      cdsmsp: DataTypes.STRING,
+      coordinates: DataTypes.GEOMETRY("POINT"),
       firstName: DataTypes.STRING,
       id: {
         primaryKey: true,
@@ -17,11 +17,10 @@ export default (sequelize) => {
       instructorId: DataTypes.STRING,
       languages: DataTypes.STRING,
       lastName: DataTypes.STRING,
-      latitude: DataTypes.FLOAT,
-      longitude: DataTypes.FLOAT,
       phone: DataTypes.STRING,
       teleconsultation: DataTypes.BOOLEAN,
       website: DataTypes.STRING,
+      withChildren: DataTypes.BOOLEAN,
     },
     {
       freezeTableName: true,

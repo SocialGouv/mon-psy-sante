@@ -18,21 +18,26 @@ const createPsychologists = async () => {
         "#####"
       )} ${faker.address.city()}`,
       archived: false,
-      email: faker.internet.email(),
-      emailPro: faker.internet.email(),
+      cdsmsp: faker.lorem.word(5),
+      coordinates: {
+        coordinates: [
+          parseFloat(faker.address.longitude()),
+          parseFloat(faker.address.latitude()),
+        ],
+        type: "POINT",
+      },
       firstName: faker.name.firstName(),
       id: i,
       instructorId: faker.datatype.uuid(),
       languages: faker.lorem.word(1),
       lastName: faker.name.lastName(),
-      latitude: parseFloat(faker.address.latitude()),
-      longitude: parseFloat(faker.address.longitude()),
       phone: faker.phone.phoneNumber("0# ## ## ## ##"),
       teleconsultation: faker.datatype.boolean(),
       website: faker.helpers.randomize([
         faker.internet.domainName(),
         faker.internet.url(),
       ]),
+      withChildren: faker.datatype.boolean(),
     });
   }
 
