@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.3...v1.4.4) (2022-01-08)
+
+
+### Bug Fixes
+
+* **footer:** Use DSFR Footer ([#29](https://github.com/SocialGouv/mon-psy-sante/issues/29)) ([a3bd10c](https://github.com/SocialGouv/mon-psy-sante/commit/a3bd10c0e30b0feaaea2ecedf8ccbeaf0693077c))
+
 ## [1.4.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.2...v1.4.3) (2022-01-05)
 
 
