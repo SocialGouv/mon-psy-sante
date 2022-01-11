@@ -4,12 +4,10 @@ dotenv.config();
 module.exports = {
   development: {
     dialect: "postgres",
-    url: process.env.POSTGRESQL_URL,
+    url: process.env.DATABASE_URL,
   },
   production: {
-    dialect: process.env.POSTGRES_DB_DIALECT,
-    logging: true,
-    operatorsAliases: 0,
-    url: process.env.SCALINGO_POSTGRESQL_URL,
+    dialect: "postgres",
+    url: process.env.DATABASE_URL,
   },
 };

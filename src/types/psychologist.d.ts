@@ -2,13 +2,13 @@ export interface Psychologist {
   id: number;
   firstName: string;
   lastName: string;
-  email: string;
   archived: boolean;
   phone: string;
   address: string;
-  emailPro: string;
   teleconsultation: boolean;
+  withChildren: boolean;
   languages: string;
+  cdsmsp: string;
   website: string;
   coordinates: { type: string; coordinates: [number, number] };
   instructorId: string;

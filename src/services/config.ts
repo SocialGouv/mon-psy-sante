@@ -15,6 +15,6 @@ export default {
   minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.55"),
   postgre: {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
-    url: process.env.POSTGRESQL_URL,
+    url: process.env.DATABASE_URL,
   },
 };

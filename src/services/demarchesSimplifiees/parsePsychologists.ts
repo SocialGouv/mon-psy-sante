@@ -7,18 +7,21 @@ const parseDossierMetadata = async (
 ): Promise<Psychologist> => {
   const psychologist: Partial<Psychologist> = {
     archived: dossier.archived,
-    email: dossier.usager.email,
     firstName: dossier.demandeur.prenom,
     id: dossier.number,
     instructorId: dossier.groupeInstructeur.id,
     lastName: dossier.demandeur.nom,
   };
 
+  dossier.champs.forEach((champ) =>
+    console.log(champ.id, champ.label, champ.stringValue)
+  );
+
   JSON.parse(config.demarchesSimplifiees.champs).forEach(([id, field]) => {
     const dossierChamp = dossier.champs.find((champ) => champ.id === id);
     if (dossierChamp) {
-      if (field === "teleconsultation") {
-        psychologist.teleconsultation = dossierChamp.stringValue === "true";
+      if (field === "teleconsultation" || field === "withChildren") {
+        psychologist[field] = dossierChamp.stringValue === "true";
       } else {
         psychologist[field] = dossierChamp.stringValue;
       }

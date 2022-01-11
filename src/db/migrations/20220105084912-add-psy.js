@@ -14,23 +14,27 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      email: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
       archived: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
-      },
-      phone: {
-        allowNull: false,
-        type: Sequelize.STRING
       },
       address: {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      email_pro: {
+      phone: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      website: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      cdsmsp: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      languages: {
         allowNull: false,
         type: Sequelize.STRING
       },
@@ -38,13 +42,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BOOLEAN,
       },
-      languages: {
+      with_children: {
         allowNull: false,
-        type: Sequelize.STRING
-      },
-      website: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.BOOLEAN,
       },
       coordinates: {
         allowNull: true,
