@@ -2,7 +2,7 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-const parseBoolean = (value: string) => value === "true";
+const parseBoolean = (value: string | undefined) => value === "true";
 
 export default {
   demarchesSimplifiees: {
@@ -15,6 +15,6 @@ export default {
   minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.55"),
   postgre: {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
-    url: process.env.DATABASE_URL,
+    url: process.env.DATABASE_URL || "",
   },
 };

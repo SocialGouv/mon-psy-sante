@@ -12,7 +12,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Coordinates } from "../types/coordinates";
 import { FILTER } from "../types/enums/filters";
 import { Psychologist } from "../types/psychologist";
-import { departments, getDepartment } from "./utils/departments";
+import { getDepartment } from "./utils/departments";
 
 const AROUND_ME = "Autour de moi";
 const AROUND_ME_OPTION = [{ label: AROUND_ME, value: AROUND_ME }];
@@ -109,6 +109,7 @@ const Directory = () => {
     if (filter === AROUND_ME) {
       checkGeolocationPermission();
     } else if (filter && typeof filter === "string") {
+      setGeoLoading(true);
       axios
         .get(
           `https://api-adresse.data.gouv.fr/search/?q=${filter}&postCode=${filter}`
@@ -119,6 +120,7 @@ const Directory = () => {
             latitude: coordinates[1],
             longitude: coordinates[0],
           });
+          setGeoLoading(false);
         });
     } else if (filter) {
       const coordinates = filter.split("-");
@@ -214,7 +216,10 @@ const Directory = () => {
         label="Rechercher par ville, code postal ou région"
         options={options}
       />
-      <Button disabled={!coords} onClick={() => loadPsychologists()}>
+      <Button
+        disabled={!coords && !geoLoading}
+        onClick={() => loadPsychologists()}
+      >
         Rechercher
       </Button>
       {filter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
