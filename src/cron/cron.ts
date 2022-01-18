@@ -17,11 +17,9 @@ const jobs = [
   },
 ];
 
-let activeJobs = 0;
 jobs.forEach((job) => {
   console.log(`🚀 The job "${job.name}" is ON ${job.cronTime}`);
   new cron.CronJob(job);
-  activeJobs++;
 });
 
-console.log(`Started ${activeJobs} cron jobs`);
+console.log(`Started cron jobs`);

@@ -7,5 +7,7 @@ https://monpsy.sante.gouv.fr
 ```
   yarn
   yarn build
+  yarn run db:init
   npm run dev
 ```
+
