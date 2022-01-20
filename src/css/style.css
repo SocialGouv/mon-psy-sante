@@ -3,7 +3,7 @@
 }
 
 .fr-bg--light {
-  background-color:var(--brown-cafe-creme-950);
+  background-color: var(--brown-cafe-creme-950);
 }
 
 .fr-bg--light2 {
@@ -12,6 +12,10 @@
 
 .highlight {
   color: var(--pink-tuile-main-556);
+}
+
+.fr-centered {
+  text-align: center;
 }
 
 .no-bullet {
@@ -92,4 +96,8 @@
   .time-line-list li.before:not(:last-child) .time-line-list-border:after {
     border-top: 5px solid var(--pink-tuile-main-556);
   }
+}
+
+.card {
+  height: 100%;
 }

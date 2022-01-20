@@ -29,72 +29,41 @@ const sendEmail = function (e) {
 const Page = () => (
   <>
     <div className="fr-container">
-      <div className="fr-grid-row fr-grid-row--center fr-centered fr-grid-row--middle fr-py-8w">
-        <div className="fr-col-12 fr-col-md-7 fr-px-4w">
+      <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
+        <div className="fr-col-12 fr-pt-8w">
+          <h1>En parler, c’est déjà se soigner</h1>
+          <p>
+            Faites bénéficier votre enfant d’un accompagnement psychologique
+            gratuit
+          </p>
+        </div>
+        <div className="fr-col-12 fr-col-md-3 fr-pt-6w fr-centered">
+          <a className="fr-btn fr-text--lg" href="/psychologues">
+            Je suis psychologue
+          </a>
+          <a className="fr-btn fr-mt-8w fr-text--lg" href="/medecins">
+            Je suis médecin
+          </a>
+        </div>
+        <div className="fr-col-12 fr-col-md-6 fr-centered">
           <img
             className="hero"
             src="/images/Illustration.svg"
-            width="100%"
             alt="En parler, c’est déjà se soigner"
           />
         </div>
-        <div className="fr-col-12 fr-col-md-5">
-          <h1 className="fr-mb-0">MonPsySanté</h1>
-          <p className="fr-text--lg">
-            Un dispositif en place à partir du printemps 2022
-          </p>
-          <div className="fr-mt-4w">
-            <h2>Quels objectifs ?</h2>
-            <ul className="no-bullet fr-p-0">
-              <li className="fr-mt-2w fr-grid-row">
-                <img
-                  aria-hidden="true"
-                  alt=""
-                  className="fr-mr-1w fr-col-1 fr-my-auto"
-                  height="32"
-                  width="32"
-                  src="/images/team-line.svg"
-                />
-                <p className="fr-col fr-m-0">
-                  <strong>Améliorer&nbsp;la&nbsp;santé&nbsp;mentale</strong> de
-                  la population, enjeu majeur de la santé publique en France
-                </p>
-              </li>
-              <li className="fr-mt-2w fr-grid-row">
-                <img
-                  aria-hidden="true"
-                  alt=""
-                  className="fr-mr-1w fr-col-1 fr-my-auto"
-                  height="32"
-                  width="32"
-                  src="/images/money-euro-circle-line.svg"
-                />
-                <p className="fr-col fr-m-0">
-                  Faire bénéficier les patients en ayant besoin de{" "}
-                  <strong>séances&nbsp;remboursées</strong> chez le psychologue
-                </p>
-              </li>
-              <li className="fr-mt-2w fr-grid-row">
-                <img
-                  aria-hidden="true"
-                  alt=""
-                  className="fr-mr-1w fr-col-1 fr-my-auto"
-                  height="32"
-                  width="32"
-                  src="/images/contacts-book-2-line.svg"
-                />
-                <p className="fr-col fr-m-0">
-                  Mettre à disposition un{" "}
-                  <strong>annuaire de psychologues partenaires </strong>
-                  répartis sur tout le territoire national
-                </p>
-              </li>
-            </ul>
-          </div>
+        <div className="fr-col-12 fr-col-md-3 fr-pt-6w fr-centered">
+          <a className="fr-btn fr-text--lg" href="/patients">
+            Je suis patient
+          </a>
+          <a className="fr-btn fr-mt-8w fr-text--lg" href="/parents">
+            Je suis parent
+          </a>
         </div>
+        <div className="fr-col-0 fr-col-md-1 fr-mt-4w"></div>
       </div>
     </div>
-    <div className="fr-container--fluid ">
+    <div className="fr-container--fluid">
       <div className="fr-container">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
           <div className="fr-col-12">
@@ -126,7 +95,7 @@ const Page = () => (
                   <p className="highlight">SEPTEMBRE 2021</p>
                 </div>
                 <div className="time-line-list-border before">
-                  <p>Annonce du remboursement des séances de psychologues </p>
+                  <p>Annonce du remboursement des séances de psychologues</p>
                 </div>
               </li>
               <li>

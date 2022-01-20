@@ -1,0 +1,18 @@
+import Head from "next/head";
+
+const Page = () => {
+  return (
+    <>
+      <Head>
+        <title>MonPsySanté pour les médecins</title>
+      </Head>
+      <div className="fr-container fr-my-6w">
+        <h1>Je suis médecin</h1>
+        <p className="fr-text--lead">
+          Je souhaite m’informer sur le dispositif
+        </p>
+      </div>
+    </>
+  );
+};
+export default Page;
