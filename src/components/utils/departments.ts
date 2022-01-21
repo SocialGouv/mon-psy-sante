@@ -18,6 +18,9 @@ export const getDepartment = (text: string): string => {
   if (text.startsWith("976")) {
     return "976";
   }
+  if (text.startsWith("20")) {
+    return "2A|2B";
+  }
 
   const number = +text.slice(0, 2);
   if (number > 0 && number < 96) {

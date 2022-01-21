@@ -150,31 +150,37 @@ const Directory = () => {
     }
   };
 
-  const searchDepartment = (department: string) => {
-    axios
-      .get(
-        `https://geo.api.gouv.fr/departements/${department}/communes?limit=10&fields=population,centre,departement,nom,codesPostaux`
-      )
-      .then((response) => {
-        console.log(response.data);
-        const communes = response.data
-          .flatMap((commune) =>
-            commune.codesPostaux.map((codePostal) => ({
-              centre: commune.centre,
-              codePostal,
-              departement: commune.departement,
-              nom: commune.nom,
-              population: commune.population,
-            }))
+  const searchDepartment = async (department: string) => {
+    const results = await Promise.all(
+      department
+        .split("|")
+        .map((x) =>
+          axios.get(
+            `https://geo.api.gouv.fr/departements/${x}/communes?limit=10&fields=population,centre,departement,nom,codesPostaux`
           )
-          .filter((commune) => commune.codePostal.startsWith(filterText))
-          .sort((a, b) => b.population - a.population)
-          .map((commune) => ({
-            label: `${commune.nom}, ${commune.codePostal}, ${commune.departement.nom}`,
-            value: commune.codePostal,
-          }));
-        setOptions(communes.concat(AROUND_ME_OPTION));
+        )
+    );
+
+    const communes = results
+      .flatMap((result) => result.data)
+      .flatMap((commune) =>
+        commune.codesPostaux.map((codePostal) => ({
+          centre: commune.centre,
+          codePostal,
+          departement: commune.departement,
+          nom: commune.nom,
+          population: commune.population,
+        }))
+      )
+      .filter((commune) => commune.codePostal.startsWith(filterText))
+      .sort((a, b) => b.population - a.population)
+      .map((commune) => {
+        return {
+          label: `${commune.nom}, ${commune.codePostal}, ${commune.departement.nom}`,
+          value: `${commune.codePostal} ${commune.nom}`,
+        };
       });
+    setOptions(communes.concat(AROUND_ME_OPTION));
   };
 
   useEffect(() => {
@@ -213,7 +219,7 @@ const Directory = () => {
           option.label === AROUND_ME ||
           option.label.toLowerCase().includes(label.toLowerCase())
         }
-        label="Rechercher par ville, code postal ou région"
+        label="Rechercher par ville ou code postal"
         options={options}
       />
       <Button
