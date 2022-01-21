@@ -22,7 +22,7 @@ describe("Contact page", () => {
     cy.get('[data-test-id="department-select"]')
       .type('95');
     cy.get('[data-test-id="reason-select"] > select > option')
-      .eq(3)
+      .eq(2)
       .then((element) =>
         cy
           .get('[data-test-id="reason-select"] > select')
@@ -38,12 +38,12 @@ describe("Contact page", () => {
 
     cy.wait("@contact")
 
-    cy.get('[data-test-id="alert"]').should('have.text', "Message envoyé.")
+    cy.get('[data-test-id="alert"]').should('have.text', "Votre message a bien été transmis à nos équipes, nous vous répondrons dans les plus brefs délais.")
   });
 
   it("should send a mail without reason for others", () => {
     cy.get('[data-test-id="user-type-select"] > select > option')
-      .eq(4)
+      .eq(5)
       .then((element) =>
         cy
           .get('[data-test-id="user-type-select"] > select')
@@ -68,6 +68,51 @@ describe("Contact page", () => {
 
     cy.wait("@contact")
 
-    cy.get('[data-test-id="alert"]').should('have.text', "Message envoyé.")
+    cy.get('[data-test-id="alert"]').should('have.text', "Votre message a bien été transmis à nos équipes, nous vous répondrons dans les plus brefs délais.")
+  });
+
+  it("should display public info", () => {
+    cy.get('[data-test-id="public-info"]')
+    .should('not.exist')
+
+    cy.get('[data-test-id="user-type-select"] > select > option')
+      .eq(3)
+      .then((element) =>
+        cy
+          .get('[data-test-id="user-type-select"] > select')
+          .select(element.val())
+      );
+    cy.get('[data-test-id="public-info"]')
+      .should('exist')
+  });
+
+  it("should display psychologist info", () => {
+    cy.get('[data-test-id="psychologist-info"]')
+    .should('not.exist')
+
+    cy.get('[data-test-id="user-type-select"] > select > option')
+      .eq(1)
+      .then((element) =>
+        cy
+          .get('[data-test-id="user-type-select"] > select')
+          .select(element.val())
+      );
+    cy.get('[data-test-id="psychologist-info"]')
+      .should('exist')
+  });
+
+  it("should display doctor info", () => {
+    cy.get('[data-test-id="psychologist-info"]')
+    .should('not.exist')
+
+    cy.get('[data-test-id="user-type-select"] > select > option')
+      .eq(4)
+      .then((element) =>
+        cy
+          .get('[data-test-id="user-type-select"] > select')
+          .select(element.val())
+      );
+    cy.get('[data-test-id="psychologist-info"]')
+      .should('exist')
   });
 });

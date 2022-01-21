@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import sanitizeHtml from "sanitize-html";
 
 import config from "./config";
 
@@ -15,10 +16,10 @@ const mailTransport = nodemailer.createTransport({
 
 export const sendMail = (to: string, subject: string, html: string) => {
   const mail = {
-    from: `MonPsySanté <monpsysante@fabrique.social.gouv.fr>`,
+    from: `MonPsySanté <${config.supportMail}>`,
     html,
     subject,
-    text: html.replace(/<(?:.|\n)*?>/gm, ""),
+    text: sanitizeHtml(html),
     to,
   };
 
@@ -30,6 +31,6 @@ export const sendMail = (to: string, subject: string, html: string) => {
       });
     });
   }
-  console.log("send email skipped");
+  console.log("Send email skipped");
   return Promise.resolve();
 };

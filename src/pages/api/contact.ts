@@ -2,10 +2,10 @@ import Joi from "joi";
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { handleApiError } from "../../services/api";
+import config from "../../services/config";
 import { sendMail } from "../../services/contact";
 import {
   allContactReasons,
-  allContactUserTypes,
   CONTACT_USER_TYPE,
 } from "../../types/enums/contact";
 import { DEPARTMENTS } from "../../types/enums/department";
@@ -22,17 +22,14 @@ const contactSchema = Joi.object({
     .optional()
     .when("userType", [
       {
-        is: Joi.string().valid(
-          CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED,
-          CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER
-        ),
+        is: CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER,
         then: Joi.string()
           .valid(...allContactReasons)
           .required(),
       },
     ]),
   userType: Joi.string()
-    .valid(...allContactUserTypes)
+    .valid(CONTACT_USER_TYPE.OTHER, CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER)
     .required(),
 });
 
@@ -40,7 +37,16 @@ const contact = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     await contactSchema.validateAsync(req.body);
 
-    await sendMail("xavier.desoindre@hotmail.fr", "Hello", req.body.message);
+    const subject =
+      req.body.userType === CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER
+        ? `Psychologue partenaire - ${req.body.reason}`
+        : "Question d'un autre utilisateur";
+
+    await sendMail(
+      config.supportMail,
+      subject,
+      `${req.body.message}<br/><br/>${req.body.firstName} ${req.body.lastName} -- ${req.body.department}<br/>${req.body.email}`
+    );
 
     return res.status(200).send("Success");
   }

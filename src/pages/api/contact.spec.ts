@@ -31,13 +31,18 @@ describe("Contact controller", () => {
           lastName: "Dane",
           message: "Hello you !",
           reason: CONTACT_REASON.ELIGIBILITY,
-          userType: CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED,
+          userType: CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER,
         },
         method: "POST",
       },
       resStub
     );
 
-    sinon.assert.called(sendMailStub);
+    sinon.assert.calledWith(
+      sendMailStub,
+      process.env.SUPPORT_MAIL,
+      "Psychologue partenaire - Question relative à mon éligibilité",
+      "Hello you !<br/><br/>Jane Dane -- 06 - Alpes-Maritimes<br/>jane.dane@msp.fr"
+    );
   });
 });

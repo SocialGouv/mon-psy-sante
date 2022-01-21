@@ -28,4 +28,5 @@ export default {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
     url: process.env.DATABASE_URL || "",
   },
+  supportMail: process.env.SUPPORT_MAIL,
 };
