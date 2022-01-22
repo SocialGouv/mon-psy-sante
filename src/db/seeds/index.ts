@@ -24,6 +24,8 @@ const createPsychologists = async () => {
           parseFloat(faker.address.longitude(2, -2)),
           parseFloat(faker.address.latitude(48, 44)),
         ],
+        // @ts-ignore
+        crs: { properties: { name: "EPSG:4326" }, type: "name" },
         type: "POINT",
       },
       firstName: faker.name.firstName(),

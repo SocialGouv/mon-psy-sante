@@ -8,7 +8,7 @@ export default (sequelize) => {
       address: DataTypes.STRING,
       archived: DataTypes.BOOLEAN,
       cdsmsp: DataTypes.STRING,
-      coordinates: DataTypes.GEOMETRY("POINT"),
+      coordinates: DataTypes.GEOMETRY("POINT", 4326),
       firstName: DataTypes.STRING,
       id: {
         primaryKey: true,
