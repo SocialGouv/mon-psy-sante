@@ -1,17 +1,19 @@
-import {
-  Alert,
-  Button,
-  Col,
-  SearchableSelect,
-  Table,
-} from "@dataesr/react-dsfr";
+import { Alert, Button, Col, SearchableSelect } from "@dataesr/react-dsfr";
 import axios from "axios";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
+import React, { createRef, useEffect, useRef, useState } from "react";
 
 import { Coordinates } from "../types/coordinates";
 import { FILTER } from "../types/enums/filters";
-import { Psychologist } from "../types/psychologist";
+import { Psychologist as PsychologistType } from "../types/psychologist";
+import {
+  DirectoryWrapper,
+  Psychologists,
+  Results,
+  Search,
+} from "./Directory.styles";
+import Psychologist from "./Psychologist";
+import PsychologistsMap from "./PsychologistsMap";
 import { getDepartment } from "./utils/departments";
 
 const AROUND_ME = "Autour de moi";
@@ -24,49 +26,62 @@ const geoStatusEnum = {
   UNSUPPORTED: -2,
 };
 
-const columns = [
-  {
-    label: "Nom",
-    name: "name",
-    render: (psychologist) =>
-      `${psychologist.lastName.toUpperCase()} ${psychologist.firstName}`,
-  },
-  {
-    label: "Adresse",
-    name: "address",
-  },
-];
-
 const Directory = () => {
   const router = useRouter();
-  const table = useRef(null);
 
   const [coords, setCoords] = useState<Coordinates>();
   const [geoStatus, setGeoStatus] = useState(geoStatusEnum.UNKNOWN);
   const [geoLoading, setGeoLoading] = useState(false);
   const [options, setOptions] = useState(AROUND_ME_OPTION);
+  const currentPageRef = useRef(0);
 
-  const [psychologists, setPsychologists] = useState<Psychologist[]>();
-  const [currentPage, setCurrentPage] = useState(1);
+  const [psychologists, setPsychologists] = useState<PsychologistType[]>();
+  const psychologistsRefs = useRef<any>();
+  const resultsRef = useRef(null);
+  const [selectedPsychologist, setSelectedPsychologist] = useState<number>();
+  const [mapCenter, setMapCenter] = useState<Coordinates>();
 
   const [filter, setFilter] = useState<any>("");
   const [filterText, setFilterText] = useState("");
 
-  const loadPsychologists = () => {
-    let query = "";
+  const loadPsychologists = (currentPage) => {
+    let query = `?${FILTER.PAGE_INDEX}=${currentPage}`;
     if (coords) {
-      query = `?${FILTER.LONGITUDE}=${coords.longitude}&${FILTER.LATITUDE}=${coords.latitude}`;
+      query = `${query}&${FILTER.LONGITUDE}=${coords.longitude}&${FILTER.LATITUDE}=${coords.latitude}`;
+      setMapCenter(coords);
     }
-    axios
-      .get(`/api/psychologists${query}`)
-      .then((response) => setPsychologists(response.data));
+    axios.get(`/api/psychologists${query}`).then((response) => {
+      if (currentPage === 0) {
+        const refs = {};
+        response.data.forEach((x) => (refs[x.id] = createRef()));
+        psychologistsRefs.current = refs;
+        if (resultsRef.current) {
+          resultsRef.current.scrollTo({ top: 0 });
+        }
+        setSelectedPsychologist(null);
+        setPsychologists(response.data);
+      } else {
+        response.data.forEach(
+          (x) => (psychologistsRefs.current[x.id] = createRef())
+        );
+        setPsychologists(psychologists.concat(response.data));
+      }
+
+      if (!coords) {
+        const [longitude, latitude] = response.data[0].coordinates.coordinates;
+        setMapCenter({
+          latitude,
+          longitude,
+        });
+      }
+    });
   };
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY !== "true") {
       router.push("/");
     } else {
-      loadPsychologists();
+      loadPsychologists(0);
     }
   }, []);
 
@@ -94,14 +109,12 @@ const Directory = () => {
   };
 
   const checkGeolocationPermission = () => {
-    if (!coords) {
-      if (navigator.geolocation) {
-        navigator.permissions.query({ name: "geolocation" }).then((result) => {
-          getGeolocation(result.state);
-        });
-      } else {
-        setGeoStatus(geoStatusEnum.UNSUPPORTED);
-      }
+    if (navigator.geolocation) {
+      navigator.permissions.query({ name: "geolocation" }).then((result) => {
+        getGeolocation(result.state);
+      });
+    } else {
+      setGeoStatus(geoStatusEnum.UNSUPPORTED);
     }
   };
 
@@ -138,7 +151,6 @@ const Directory = () => {
           `https://geo.api.gouv.fr/communes?nom=${filterText}&limit=10&fields=population,centre,departement,nom`
         )
         .then((response) => {
-          console.log(response.data);
           const communes = response.data
             .sort((a, b) => b.population - a.population)
             .map((commune) => ({
@@ -204,71 +216,104 @@ const Directory = () => {
     setOptions(AROUND_ME_OPTION);
   }, [filterText]);
 
+  const onClick = (psychologist: PsychologistType) => {
+    setSelectedPsychologist(psychologist.id);
+    setMapCenter({
+      latitude: psychologist.coordinates.coordinates[1],
+      longitude: psychologist.coordinates.coordinates[0],
+    });
+  };
+
+  const loadMorePsychologists = () => {
+    loadPsychologists(currentPageRef.current + 1);
+    currentPageRef.current = currentPageRef.current + 1;
+  };
+
   if (!psychologists) {
     return null;
   }
 
   return (
-    <>
-      <SearchableSelect
-        className="fr-mb-1w"
-        selected={filter}
-        onChange={setFilter}
-        onTextChange={setFilterText}
-        filter={(label, option) =>
-          option.label === AROUND_ME ||
-          option.label.toLowerCase().includes(label.toLowerCase())
-        }
-        label="Rechercher par ville ou code postal"
-        options={options}
-      />
-      <Button
-        disabled={!coords && !geoLoading}
-        onClick={() => loadPsychologists()}
-      >
-        Rechercher
-      </Button>
-      {filter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
-        <Alert
-          className="fr-mt-1w"
-          type="error"
-          description="Veuillez autoriser la géolocalisation sur votre navigateur pour utiliser cette
-                    fonctionnalité."
-        />
-      )}
-      {filter === AROUND_ME && geoStatus === geoStatusEnum.UNSUPPORTED && (
-        <Alert
-          className="fr-mt-1w"
-          type="error"
-          description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
-        />
-      )}
-      <div ref={table}>
-        <Col n="md-6 sm-12">
-          <Table
-            data-test-id="psy-table"
-            className="fr-mb-3w"
-            caption={"Psychologues"}
-            rowKey="id"
-            columns={columns}
-            data={psychologists}
-            pagination
-            paginationPosition="center"
-            page={currentPage}
-            perPage={10}
-            setPage={(p) => {
-              setCurrentPage(p);
-              table.current.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }}
-            surrendingPages={3}
+    <DirectoryWrapper>
+      <Search>
+        <Col n="md-9 sm-12">
+          <SearchableSelect
+            selected={filter}
+            onChange={setFilter}
+            onTextChange={setFilterText}
+            filter={(label, option) =>
+              option.label === AROUND_ME ||
+              option.label.toLowerCase().includes(label.toLowerCase())
+            }
+            label="Rechercher par ville ou code postal"
+            options={options}
           />
         </Col>
-        <Col n="md-6 sm-12" />
-      </div>
-    </>
+        <Col offset="md-1" n="md-2 sm-12" className="align-right">
+          <Button
+            className="fr-mt-1w"
+            disabled={!coords || geoLoading}
+            onClick={() => {
+              loadPsychologists(0);
+            }}
+          >
+            {geoLoading ? "Chargement..." : "Rechercher"}
+          </Button>
+        </Col>
+        {filter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
+          <Alert
+            className="fr-mt-1w"
+            type="error"
+            description="Veuillez autoriser la géolocalisation sur votre navigateur pour utiliser cette
+                    fonctionnalité."
+          />
+        )}
+        {filter === AROUND_ME && geoStatus === geoStatusEnum.UNSUPPORTED && (
+          <Alert
+            className="fr-mt-1w"
+            type="error"
+            description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
+          />
+        )}
+      </Search>
+      <Results>
+        <Psychologists className="fr-col-md-6 fr-col-sm-12" ref={resultsRef}>
+          {psychologists.map((psychologist) => (
+            <div
+              ref={psychologistsRefs.current[psychologist.id]}
+              key={psychologist.id}
+            >
+              <Psychologist
+                selected={selectedPsychologist === psychologist.id}
+                psychologist={psychologist}
+                onClick={() => onClick(psychologist)}
+              />
+            </div>
+          ))}
+          <Button onClick={loadMorePsychologists}>Plus de psychologues</Button>
+        </Psychologists>
+        <Col n="md-6 sm-12">
+          {mapCenter && (
+            <PsychologistsMap
+              selectPsychologist={(psychologist) => {
+                setSelectedPsychologist(psychologist.id);
+                setMapCenter({
+                  latitude: psychologist.coordinates.coordinates[1],
+                  longitude: psychologist.coordinates.coordinates[0],
+                });
+                resultsRef.current.scrollTo({
+                  top:
+                    psychologistsRefs.current[psychologist.id].current
+                      .offsetTop - resultsRef.current.offsetTop,
+                });
+              }}
+              mapCenter={[mapCenter.latitude, mapCenter.longitude]}
+              psychologists={psychologists}
+            />
+          )}
+        </Col>
+      </Results>
+    </DirectoryWrapper>
   );
 };
 

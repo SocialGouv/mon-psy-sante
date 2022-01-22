@@ -21,8 +21,8 @@ const createPsychologists = async () => {
       cdsmsp: faker.lorem.word(5),
       coordinates: {
         coordinates: [
-          parseFloat(faker.address.longitude()),
-          parseFloat(faker.address.latitude()),
+          parseFloat(faker.address.longitude(2, -2)),
+          parseFloat(faker.address.latitude(48, 44)),
         ],
         type: "POINT",
       },

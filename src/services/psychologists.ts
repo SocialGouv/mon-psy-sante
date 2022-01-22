@@ -14,7 +14,11 @@ export const getOne = async (id: string) => {
 export const getAll = async (filters: {
   [key in FILTER]?: string | string[];
 }) => {
-  const query: Sequelize.FindOptions<any> = { raw: true };
+  const query: Sequelize.FindOptions<any> = {
+    limit: 10,
+    offset: parseInt(filters[FILTER.PAGE_INDEX] as string, 10) * 10,
+    raw: true,
+  };
   if (filters[FILTER.LONGITUDE] && filters[FILTER.LATITUDE]) {
     query.attributes = {
       include: [

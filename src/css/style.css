@@ -14,6 +14,10 @@
   background-color: var(--grey-1000) !important;
 }
 
+.align-right {
+  text-align: right
+}
+
 .map {
   width: 100%;
   min-height: 500px;
