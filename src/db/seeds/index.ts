@@ -21,8 +21,8 @@ const createPsychologists = async () => {
       cdsmsp: faker.lorem.word(5),
       coordinates: {
         coordinates: [
-          parseFloat(faker.address.longitude(2, -2)),
-          parseFloat(faker.address.latitude(48, 44)),
+          parseFloat(faker.address.longitude(4, -4)),
+          parseFloat(faker.address.latitude(50, 40)),
         ],
         // @ts-ignore
         crs: { properties: { name: "EPSG:4326" }, type: "name" },

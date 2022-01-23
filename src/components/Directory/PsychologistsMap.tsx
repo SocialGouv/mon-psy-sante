@@ -1,7 +1,8 @@
 import React from "react";
-import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
-import { Psychologist } from "../types/psychologist";
+import { Psychologist as PsychologistType } from "../../types/psychologist";
+import Psychologist from "./Psychologist";
 
 function ChangeView({ center }) {
   const map = useMap();
@@ -15,8 +16,8 @@ const PsychologistsMap = ({
   selectPsychologist,
 }: {
   mapCenter: any;
-  psychologists: Psychologist[];
-  selectPsychologist: (psychologist: Psychologist) => void;
+  psychologists: PsychologistType[];
+  selectPsychologist?: (psychologist: PsychologistType) => void;
 }) => {
   return (
     <MapContainer
@@ -32,14 +33,24 @@ const PsychologistsMap = ({
         .map((psychologist) => (
           <Marker
             eventHandlers={{
-              click: () => selectPsychologist(psychologist),
+              click: () => {
+                if (selectPsychologist) {
+                  selectPsychologist(psychologist);
+                }
+              },
             }}
             key={psychologist.id}
             position={[
               psychologist.coordinates.coordinates[1],
               psychologist.coordinates.coordinates[0],
             ]}
-          />
+          >
+            {!selectPsychologist && (
+              <Popup>
+                <Psychologist psychologist={psychologist} />
+              </Popup>
+            )}
+          </Marker>
         ))}
     </MapContainer>
   );

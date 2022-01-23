@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Psychologist as PsychologistType } from "../types/psychologist";
-import { PsychologistWrapper } from "./Psychologist.styles";
+import { Psychologist as PsychologistType } from "../../types/psychologist";
 
 const infos = [
   { label: "Adresse:", value: "address" },
@@ -19,21 +18,9 @@ const infos = [
   { label: "Travail avec les enfants", value: "withChildren" },
 ];
 
-const Psychologist = ({
-  psychologist,
-  onClick,
-  selected,
-}: {
-  psychologist: PsychologistType;
-  onClick: () => void;
-  selected: boolean;
-}) => {
+const Psychologist = ({ psychologist }: { psychologist: PsychologistType }) => {
   return (
-    <PsychologistWrapper
-      selected={selected}
-      className="fr-mb-2w"
-      onClick={onClick}
-    >
+    <>
       <h2>
         {psychologist.firstName} {psychologist.lastName}
       </h2>
@@ -50,7 +37,7 @@ const Psychologist = ({
           ) : null;
         })}
       </div>
-    </PsychologistWrapper>
+    </>
   );
 };
 

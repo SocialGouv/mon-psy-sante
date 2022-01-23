@@ -47,6 +47,14 @@
   margin-top: 20px;
 }
 
+.select-search-options {
+  z-index: 1100 !important;
+}
+
+.leaflet-popup-close-button {
+  box-shadow: none !important;
+}
+
 @media (min-width: 1024px) {
   .time-line-list {
     flex-direction: row;
