@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.5.0...v1.6.0) (2022-01-23)
+
+
+### Features
+
+* **k8s:** add PG secrets ([#32](https://github.com/SocialGouv/mon-psy-sante/issues/32)) ([3fd8271](https://github.com/SocialGouv/mon-psy-sante/commit/3fd827194ddf69a957e9f919fb8386b314032148))
+
 # [1.5.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.4...v1.5.0) (2022-01-18)
 
 
