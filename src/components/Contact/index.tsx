@@ -17,7 +17,7 @@ const Contact = () => {
       <Col className="fr-col-lg-8">
         <h1>Nous contacter</h1>
         <p className="fr-text--lg">
-          Pour tout question, nous vous invitons à consulter préalablement la
+          Pour toute question, nous vous invitons à consulter préalablement la
           Foire aux Questions (FAQ).
         </p>
         <Select
