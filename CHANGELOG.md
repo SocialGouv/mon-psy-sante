@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.6.0...v1.7.0) (2022-01-24)
+
+
+### Features
+
+* **directory:** Basic directory for psychologists ([#27](https://github.com/SocialGouv/mon-psy-sante/issues/27)) ([3ffcbd8](https://github.com/SocialGouv/mon-psy-sante/commit/3ffcbd804e49a87dca938b3e310090974d72e1ec)), closes [#28](https://github.com/SocialGouv/mon-psy-sante/issues/28)
+
 # [1.6.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.5.0...v1.6.0) (2022-01-23)
 
 
