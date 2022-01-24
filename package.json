@@ -1,6 +1,6 @@
 {
   "name": "mon-psy-sante",
-  "version": "1.4.4",
+  "version": "1.7.0",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"

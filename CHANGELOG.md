@@ -1,3 +1,24 @@
+# [1.7.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.6.0...v1.7.0) (2022-01-24)
+
+
+### Features
+
+* **directory:** Basic directory for psychologists ([#27](https://github.com/SocialGouv/mon-psy-sante/issues/27)) ([3ffcbd8](https://github.com/SocialGouv/mon-psy-sante/commit/3ffcbd804e49a87dca938b3e310090974d72e1ec)), closes [#28](https://github.com/SocialGouv/mon-psy-sante/issues/28)
+
+# [1.6.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.5.0...v1.6.0) (2022-01-23)
+
+
+### Features
+
+* **k8s:** add PG secrets ([#32](https://github.com/SocialGouv/mon-psy-sante/issues/32)) ([3fd8271](https://github.com/SocialGouv/mon-psy-sante/commit/3fd827194ddf69a957e9f919fb8386b314032148))
+
+# [1.5.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.4...v1.5.0) (2022-01-18)
+
+
+### Features
+
+* **home:** update date in text ([#30](https://github.com/SocialGouv/mon-psy-sante/issues/30)) ([c1c9939](https://github.com/SocialGouv/mon-psy-sante/commit/c1c9939bcbc280fe641bbc23f88251237c6e576d))
+
 ## [1.4.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.4.3...v1.4.4) (2022-01-08)
 
 
