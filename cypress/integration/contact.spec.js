@@ -7,7 +7,7 @@ describe("Contact page", () => {
 
   it("should send a mail with reason for psychologist", () => {
     cy.get('[data-test-id="user-type-select"] > select > option')
-      .eq(2)
+      .eq(1)
       .then((element) =>
         cy
           .get('[data-test-id="user-type-select"] > select')
@@ -91,7 +91,7 @@ describe("Contact page", () => {
     .should('not.exist')
 
     cy.get('[data-test-id="user-type-select"] > select > option')
-      .eq(1)
+      .eq(2)
       .then((element) =>
         cy
           .get('[data-test-id="user-type-select"] > select')
