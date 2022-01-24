@@ -88,10 +88,9 @@ const Directory = () => {
           setGeoLoading(false);
         });
     } else if (filter) {
-      const coordinates = filter.split("-");
       setCoords({
-        latitude: coordinates[1],
-        longitude: coordinates[0],
+        latitude: filter[1],
+        longitude: filter[0],
       });
     }
   }, [filter]);

@@ -50,7 +50,7 @@ const SearchBar = ({
             .sort((a, b) => b.population - a.population)
             .map((commune) => ({
               label: `${commune.nom}, ${commune.departement.nom}`,
-              value: `${commune.centre.coordinates[0]}-${commune.centre.coordinates[1]}`,
+              value: commune.centre.coordinates,
             }));
           setOptions(communes.concat(AROUND_ME_OPTION));
         });
@@ -63,7 +63,7 @@ const SearchBar = ({
         .split("|")
         .map((x) =>
           axios.get(
-            `https://geo.api.gouv.fr/departements/${x}/communes?limit=10&fields=population,centre,departement,nom,codesPostaux`
+            `https://geo.api.gouv.fr/departements/${x}/communes?fields=population,centre,departement,nom,codesPostaux`
           )
         )
     );

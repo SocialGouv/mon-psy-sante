@@ -14,7 +14,7 @@ const infos = [
         </a>
       ) : null,
   },
-  { label: "Accepte la téléconsultation", value: "teleconsultation" },
+  { label: "Possibilité de séances à distance", value: "teleconsultation" },
   { label: "Travail avec les enfants", value: "withChildren" },
 ];
 
