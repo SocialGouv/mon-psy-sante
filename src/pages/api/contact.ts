@@ -22,14 +22,14 @@ const contactSchema = Joi.object({
     .optional()
     .when("userType", [
       {
-        is: CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER,
+        is: CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED,
         then: Joi.string()
           .valid(...allContactReasons)
           .required(),
       },
     ]),
   userType: Joi.string()
-    .valid(CONTACT_USER_TYPE.OTHER, CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER)
+    .valid(CONTACT_USER_TYPE.OTHER, CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED)
     .required(),
 });
 
@@ -38,8 +38,8 @@ const contact = async (req: NextApiRequest, res: NextApiResponse) => {
     await contactSchema.validateAsync(req.body);
 
     const subject =
-      req.body.userType === CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER
-        ? `Psychologue partenaire - ${req.body.reason}`
+      req.body.userType === CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED
+        ? `Psychologue - ${req.body.reason}`
         : "Question d'un autre utilisateur";
 
     await sendMail(

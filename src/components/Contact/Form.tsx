@@ -60,7 +60,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
   };
 
   const needReason = (type: string) =>
-    type === CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER;
+    type === CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED;
 
   return (
     <form onSubmit={submit}>

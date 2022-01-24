@@ -41,12 +41,12 @@ const Contact = () => {
             setUserType(e.target.value);
           }}
         />
-        {(userType === CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER ||
+        {(userType === CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED ||
           userType === CONTACT_USER_TYPE.OTHER) && (
           <ContactForm userType={userType} />
         )}
         {(userType === CONTACT_USER_TYPE.DOCTOR ||
-          userType === CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED) && (
+          userType === CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER) && (
           <Psychologist />
         )}
         {userType === CONTACT_USER_TYPE.PUBLIC && <Public />}

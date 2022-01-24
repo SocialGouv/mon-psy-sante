@@ -12,7 +12,7 @@ describe("/api/contact", () => {
       lastName: "Dane",
       message: "Hello you !",
       reason: CONTACT_REASON.ELIGIBILITY,
-      userType: CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER,
+      userType: CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED,
     });
 
     expect(result.status).toEqual(200);
@@ -48,14 +48,14 @@ describe("/api/contact", () => {
       label: "with psychologist and without reason",
       values: {
         reason: "",
-        userType: CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER,
+        userType: CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED,
       },
     },
     {
       label: "with psychologist and with wrong reason",
       values: {
         reason: "wrong reason",
-        userType: CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER,
+        userType: CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED,
       },
     },
   ];

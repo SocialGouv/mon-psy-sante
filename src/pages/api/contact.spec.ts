@@ -31,7 +31,7 @@ describe("Contact controller", () => {
           lastName: "Dane",
           message: "Hello you !",
           reason: CONTACT_REASON.ELIGIBILITY,
-          userType: CONTACT_USER_TYPE.PSYCHOLOGIST_PARTNER,
+          userType: CONTACT_USER_TYPE.PSYCHOLOGIST_INTERESTED,
         },
         method: "POST",
       },
@@ -41,7 +41,7 @@ describe("Contact controller", () => {
     sinon.assert.calledWith(
       sendMailStub,
       process.env.SUPPORT_MAIL,
-      "Psychologue partenaire - Question relative à mon éligibilité",
+      "Psychologue - Question relative à mon éligibilité",
       "Hello you !<br/><br/>Jane Dane -- 06 - Alpes-Maritimes<br/>jane.dane@msp.fr"
     );
   });
