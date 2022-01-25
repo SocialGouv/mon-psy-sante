@@ -1,6 +1,6 @@
 {
   "name": "mon-psy-sante",
-  "version": "1.5.0",
+  "version": "1.7.0",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -11,19 +11,33 @@
     "url": "git+https://github.com/SocialGouv/mon-psy-sante"
   },
   "dependencies": {
-    "@dataesr/react-dsfr": "^0.9.7",
+    "@dataesr/react-dsfr": "^0.9.8",
     "@sentry/nextjs": "^6.16.1",
     "@socialgouv/bootstrap.core": "^0.2.1",
     "@socialgouv/matomo-next": "^1.2.2",
-    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@types/faker": "^5.5.9",
+    "@types/sequelize": "^4.28.11",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@zeit/next-source-maps": "^0.0.3",
+    "axios": "^0.24.0",
+    "cron": "^1.8.2",
+    "dotenv": "^11.0.0",
+    "faker": "^5.5.3",
+    "graphql": "^16.2.0",
+    "graphql-request": "^3.7.0",
+    "helmet": "^5.0.1",
     "next": "^12.0.7",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "sequelize": "^6.13.0",
+    "sequelize-cli": "^6.3.0",
+    "ts-node": "^10.4.0",
     "typescript-eslint": "^0.0.1-alpha.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.0.1",
+    "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
     "@socialgouv/eslint-config-react": "^1.101.0",
     "@socialgouv/eslint-config-recommended": "^1.101.0",
@@ -31,8 +45,8 @@
     "eslint": "^8.6.0",
     "eslint-config-next": "^12.0.7",
     "eslint-plugin-import": "^2.25.4",
-    "jest": "^27.4.5",
-    "lint-staged": "^12.1.5",
+    "jest": "^27.4.7",
+    "lint-staged": "^12.1.7",
     "prettier": "^2.5.1",
     "typescript": "^4.5.4"
   },
@@ -46,7 +60,12 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "precommit": "lint-staged",
-    "start": "NODE_ENV=production next start",
-    "export": "next export"
+    "start": "yarn run db:migrate && NODE_ENV=production next start",
+    "export": "next export",
+    "db:init": "yarn run db:migrate && yarn run db:seed",
+    "db:seed": "ts-node --transpile-only src/db/seeds/index.ts",
+    "db:migrate": "npx sequelize-cli db:migrate",
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "db:migrate:create": "npx sequelize migration:create --name"
   }
 }

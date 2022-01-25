@@ -1,19 +1,35 @@
-ARG PRODUCTION
+# from https://nextjs.org/docs/deployment
 
-FROM node:14-alpine as builder
+# Builder
+FROM node:14-alpine AS builder
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
 
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 COPY . .
 
-RUN yarn install --frozen-lockfile
+RUN if [ -z "$PRODUCTION" ]; then cp .env.staging .env.production; cp ./public/robots.staging.txt ./public/robots.txt; fi
 RUN yarn build && yarn install --production --ignore-scripts --prefer-offline
-RUN yarn export
 
-FROM ghcr.io/socialgouv/docker/nginx:6.64.2
+# Production image, copy all the files and run next
+FROM node:14-alpine AS runner
+WORKDIR /app
 
-ARG PRODUCTION
+ENV NODE_ENV production
 
-COPY --from=builder /out /usr/share/nginx/html
+# You only need to copy next.config.js if you are NOT using the default configuration
+COPY --from=builder /app/next.config.js .
+COPY --from=builder /app/sentry.client.config.js .
+COPY --from=builder /app/sentry.server.config.js .
+COPY --from=builder /app/.sequelizerc .
+COPY --from=builder /app/.env.production .
+COPY --from=builder /app/package.json .
+COPY --from=builder /app/src ./src
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder --chown=node:node /app/.next ./.next
 
-# Create a robots.txt based on PRODUCTION build argument
-RUN if [ ! -z "$PRODUCTION" ]; then echo -e "User-agent: *\nAllow: /">/usr/share/nginx/html/robots.txt; else echo -e "User-agent: *\nDisallow: /">/usr/share/nginx/html/robots.txt; fi
+USER node
 
+CMD ["yarn", "start"]
