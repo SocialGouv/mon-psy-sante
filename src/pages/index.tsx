@@ -1,5 +1,4 @@
 import { Button, TextInput } from "@dataesr/react-dsfr";
-import Link from "next/link";
 import React from "react";
 
 const sendEmail = function (e) {
@@ -156,17 +155,6 @@ const Page = () => (
                 </div>
               </li>
             </ul>
-          </div>
-        </div>
-
-        <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-          <div className="fr-col-12">
-            <h2>vous avez une question ?</h2>
-
-            <p className="fr-text--lg">
-              N&lsquo;hesitez pas à nous contacter via{" "}
-              <Link href="/contact">le formulaire de contact.</Link>
-            </p>
           </div>
         </div>
       </div>

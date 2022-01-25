@@ -35,7 +35,7 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Env file
-        run: cp .env.development .env
+        run: cp .env.test .env
 
       - name: Installing DB
         run: npm run db:init

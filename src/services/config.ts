@@ -12,7 +12,6 @@ export default {
     champs: process.env.DEMARCHES_SIMPLIFIEES_CHAMPS,
     id: process.env.DEMARCHES_SIMPLIFIEES_ID,
   },
-  displayDirectory: parseBoolean(process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY),
   mail: {
     auth: {
       pass: process.env.MAIL_AUTH_PASS,
@@ -24,6 +23,7 @@ export default {
     tls: parseBoolean(process.env.MAIL_TLS),
   },
   minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.55"),
+  newFeatures: parseBoolean(process.env.NEXT_PUBLIC_NEW_FEATURES),
   postgre: {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
     url: process.env.DATABASE_URL || "",

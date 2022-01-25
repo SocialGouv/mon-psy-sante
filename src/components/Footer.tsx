@@ -55,7 +55,6 @@ const footerBottomLinks = [
     link: "/mentions-legales#accessibilite",
     title: "Accessibilité : non conforme",
   },
-  { link: "/contact", title: "Nous contacter" },
   {
     link: "/mentions-legales",
     title: "Mentions légales",
