@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.7.0...v1.7.1) (2022-01-26)
+
+
+### Bug Fixes
+
+* **annuaire:** hide directory for now ([#35](https://github.com/SocialGouv/mon-psy-sante/issues/35)) ([d4327e3](https://github.com/SocialGouv/mon-psy-sante/commit/d4327e328e5fea8b911b2e5c3ed55ace95886c2d))
+
 # [1.7.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.6.0...v1.7.0) (2022-01-24)
 
 
