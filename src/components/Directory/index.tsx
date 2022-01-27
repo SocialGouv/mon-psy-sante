@@ -65,7 +65,7 @@ const Directory = () => {
   };
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_DISPLAY_DIRECTORY !== "true") {
+    if (process.env.NEXT_PUBLIC_NEW_FEATURES !== "true") {
       router.push("/");
     } else {
       loadPsychologists(0);

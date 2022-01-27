@@ -1,3 +1,4 @@
+import { ValidationError } from "joi";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export const handleApiError = (
@@ -11,7 +12,15 @@ export const handleApiError = (
       await handler(req, res);
     } catch (error) {
       console.log(error);
-      res.status(500).json("Something went wrong...");
+
+      if (error instanceof ValidationError) {
+        return res
+          .status(400)
+          .send(error.details.map((x) => x.message).join(", "));
+      }
+
+      console.log(res, res.status(500));
+      res.status(500).send("Something went wrong...");
     }
   };
 };

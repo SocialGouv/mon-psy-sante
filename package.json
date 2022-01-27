@@ -1,6 +1,6 @@
 {
   "name": "mon-psy-sante",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -26,13 +26,16 @@
     "graphql": "^16.2.0",
     "graphql-request": "^3.7.0",
     "helmet": "^5.0.1",
+    "joi": "^17.5.0",
     "leaflet": "^1.7.1",
     "next": "^12.0.7",
+    "nodemailer": "^6.7.2",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-leaflet": "^3.2.5",
+    "sanitize-html": "^2.6.1",
     "sequelize": "^6.13.0",
     "sequelize-cli": "^6.3.0",
     "styled-components": "^5.3.3",
@@ -44,18 +47,23 @@
     "@commitlint/config-conventional": "^16.0.0",
     "@socialgouv/eslint-config-react": "^1.101.0",
     "@socialgouv/eslint-config-recommended": "^1.101.0",
+    "@types/jest": "^27.4.0",
+    "@types/mocha": "^9.1.0",
     "@types/react": "^17.0.38",
+    "cypress": "^9.3.1",
     "eslint": "^8.6.0",
     "eslint-config-next": "^12.0.7",
     "eslint-plugin-import": "^2.25.4",
     "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
     "prettier": "^2.5.1",
+    "sinon": "^12.0.1",
     "typescript": "^4.5.4"
   },
   "license": "MIT",
   "private": true,
   "scripts": {
+    "test": "jest --runInBand",
     "build": "next build",
     "dev": "next dev",
     "e2e": "yarn --cwd=./optional/e2e/runners/puppeteer",
@@ -69,6 +77,8 @@
     "db:seed": "ts-node --transpile-only src/db/seeds/index.ts",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
-    "db:migrate:create": "npx sequelize migration:create --name"
+    "db:migrate:create": "npx sequelize migration:create --name",
+    "cy": "cypress open",
+    "cy:run": "cypress run"
   }
 }
