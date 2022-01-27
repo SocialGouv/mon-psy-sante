@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.7.1...v1.8.0) (2022-01-27)
+
+
+### Features
+
+* **contact:** Add contact page ([#31](https://github.com/SocialGouv/mon-psy-sante/issues/31)) ([284a692](https://github.com/SocialGouv/mon-psy-sante/commit/284a692fb4aafe744abe9585fce2582326ad4fa2)), closes [#28](https://github.com/SocialGouv/mon-psy-sante/issues/28)
+
 ## [1.7.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.7.0...v1.7.1) (2022-01-26)
 
 
