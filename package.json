@@ -21,7 +21,7 @@
     "@zeit/next-source-maps": "^0.0.3",
     "axios": "^0.24.0",
     "cron": "^1.8.2",
-    "dotenv": "^11.0.0",
+    "dotenv": "^15.0.0",
     "faker": "^5.5.3",
     "graphql": "^16.2.0",
     "graphql-request": "^3.7.0",
