@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.8.0...v1.9.0) (2022-01-31)
+
+
+### Features
+
+* **preprod:** enable new feature on preprod so the team can test it ([42ffba0](https://github.com/SocialGouv/mon-psy-sante/commit/42ffba0fdc9804a8746e898b853dbe9e07b5f25b))
+
 # [1.8.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.7.1...v1.8.0) (2022-01-27)
 
 
