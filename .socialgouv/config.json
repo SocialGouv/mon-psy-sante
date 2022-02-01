@@ -3,7 +3,10 @@
   "type": "app",
   "subdomain": "monpsy",
   "registry": "ghcr",
-  "project": "mon-psy-sante",
+  "project": "MonPsy",
   "azurepg": true,
-  "devInitContainerCommand": ["yarn", "db:init"]
+  "devInitContainerCommand": [
+    "yarn",
+    "db:init"
+  ]
 }

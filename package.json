@@ -1,5 +1,5 @@
 {
-  "name": "mon-psy-sante",
+  "name": "monpsy",
   "version": "1.9.2",
   "commitlint": {
     "extends": [
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SocialGouv/mon-psy-sante"
+    "url": "git+https://github.com/SocialGouv/MonPsy"
   },
   "dependencies": {
     "@dataesr/react-dsfr": "^0.9.8",
