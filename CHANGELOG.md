@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.0...v1.9.1) (2022-02-01)
+
+
+### Bug Fixes
+
+* **text:** update dispositif name ([0d9166c](https://github.com/SocialGouv/mon-psy-sante/commit/0d9166c1bed4d4ed31040301fd9eafa56c731151))
+
 # [1.9.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.8.0...v1.9.0) (2022-01-31)
 
 
