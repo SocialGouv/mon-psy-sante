@@ -1,3 +1,10 @@
+## [1.9.4](https://github.com/SocialGouv/MonPsy/compare/v1.9.3...v1.9.4) (2022-02-01)
+
+
+### Bug Fixes
+
+* **flyers name:** update flyer name ([9191085](https://github.com/SocialGouv/MonPsy/commit/919108541d7350811aeba814d8a13b18a454d174))
+
 ## [1.9.3](https://github.com/SocialGouv/MonPsy/compare/v1.9.2...v1.9.3) (2022-02-01)
 
 
