@@ -1,4 +1,3 @@
-import Head from "next/head";
 import {
   Accordion,
   AccordionItem,
@@ -7,6 +6,9 @@ import {
   SideMenu,
   SideMenuLink,
 } from "@dataesr/react-dsfr";
+import Head from "next/head";
+import React from "react";
+
 import items from "../services/faq/faq";
 
 const Page = () => {
@@ -46,14 +48,14 @@ const Page = () => {
           </SideMenu>
           <Col n="md-8 sm-12">
             {Object.keys(items).map((key) => (
-              <div id={key}>
+              <div id={key} key={key}>
                 {items[key].title && <h2>{items[key].title}</h2>}
                 {items[key].sections.map((section) => (
-                  <div>
+                  <div key={section.title}>
                     {section.title && <h3>{section.title}</h3>}
                     <Accordion className="fr-mb-4w">
                       {section.faq.map((question) => (
-                        <AccordionItem title={question.q}>
+                        <AccordionItem title={question.q} key={question.q}>
                           <div
                             // eslint-disable-next-line react/no-danger
                             dangerouslySetInnerHTML={{

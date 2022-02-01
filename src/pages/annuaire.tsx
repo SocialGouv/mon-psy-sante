@@ -6,7 +6,7 @@ import Directory from "../components/Directory";
 const Annuaire = () => (
   <>
     <Head>
-      <title>MonPsySanté - Annuaire</title>
+      <title>MonPsy - Annuaire</title>
     </Head>
     <div className="fr-container">
       <Directory />
