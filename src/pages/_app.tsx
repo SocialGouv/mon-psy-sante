@@ -19,29 +19,29 @@ const MATOMO_SITE_ID = process.env.NEXT_PUBLIC_MATOMO_SITE_ID;
 
 class MyApp extends App {
   componentDidMount() {
-    init({ siteId: MATOMO_SITE_ID, url: MATOMO_URL });
+    init({siteId: MATOMO_SITE_ID, url: MATOMO_URL});
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const {Component, pageProps} = this.props;
 
     return (
       <>
         <Head>
-          <link rel="shortcut icon" href="/favicon.ico" />
-          <title>MonPsySanté</title>
-          <meta property="og:title" content="MonPsySanté" />
+          <link rel="shortcut icon" href="/favicon.ico"/>
+          <title>MonPsy</title>
+          <meta property="og:title" content="MonPsy"/>
 
           <meta
             name="description"
-            content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+            content="MonPsy s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
           />
           <meta
             property="og:description"
-            content="MonPsySanté s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+            content="MonPsy s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
           />
 
-          <meta property="og:type" content="website" />
+          <meta property="og:type" content="website"/>
           <script
             type="text/javascript"
             src="https://forms.sbc08.com/form.js"
@@ -56,11 +56,11 @@ class MyApp extends App {
           <SkiplinkItem href="#header-navigation">Menu</SkiplinkItem>
           <SkiplinkItem href="#footer">Pied de page</SkiplinkItem>
         </Skiplinks>
-        <Nav />
+        <Nav/>
         <div id="contenu">
           <Component {...pageProps} />
         </div>
-        <Footer />
+        <Footer/>
       </>
     );
   }
