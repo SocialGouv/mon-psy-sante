@@ -1,3 +1,10 @@
+## [1.9.3](https://github.com/SocialGouv/MonPsy/compare/v1.9.2...v1.9.3) (2022-02-01)
+
+
+### Bug Fixes
+
+* **sealed secret:** update prod sealed secret ([82761a5](https://github.com/SocialGouv/MonPsy/commit/82761a5e303c68112903f77917e1fbb4cd929628))
+
 ## [1.9.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.1...v1.9.2) (2022-02-01)
 
 
