@@ -60,7 +60,7 @@ const Page = () => (
             Je suis parent
           </a>
         </div>
-        <div className="fr-col-0 fr-col-md-1 fr-mt-4w"></div>
+        <div className="fr-col-0 fr-col-md-1 fr-mt-4w" />
       </div>
     </div>
     <div className="fr-container--fluid">
@@ -70,9 +70,9 @@ const Page = () => (
             <h2>À qui ça s’adresse ?</h2>
 
             <p className="fr-text--lg">
-              <strong>MonPsySanté</strong> s’adresse à toute la population à
-              partir de 3 ans présentant des troubles psychiques d’intensité
-              légère à modérée.
+              <strong>MonPsy</strong> s’adresse à toute la population à partir
+              de 3 ans présentant des troubles psychiques d’intensité légère à
+              modérée.
             </p>
           </div>
         </div>

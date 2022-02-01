@@ -1,10 +1,11 @@
 import Head from "next/head";
+import React from "react";
 
 const Page = () => {
   return (
     <>
       <Head>
-        <title>MonPsySanté pour les patients</title>
+        <title>MonPsy pour les patients</title>
       </Head>
       <div className="fr-container fr-my-6w">
         <h1>Je suis patient</h1>
@@ -20,9 +21,8 @@ const Page = () => {
             </p>
             <p>
               <strong className="fr-text--lead">2. </strong>
-              Je prends rendez-vous avec un psychologue de l’annuaire
-              MonPsySanté, psychologue partenaire conventionné par l’Assurance
-              Maladie.
+              Je prends rendez-vous avec un psychologue de l’annuaire MonPsy,
+              psychologue partenaire conventionné par l’Assurance Maladie.
             </p>
             <p>
               <strong className="fr-text--lead">3. </strong>

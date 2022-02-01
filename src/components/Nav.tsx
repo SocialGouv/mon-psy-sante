@@ -16,7 +16,7 @@ const Nav = () => {
           <img src="/images/cpam.png" alt="CNAM" width="200" height="66" />
         </HeaderOperator>
         <Service
-          title="MonPsySanté"
+          title="MonPsy"
           description="En parler, c’est déjà se soigner."
         />
       </HeaderBody>

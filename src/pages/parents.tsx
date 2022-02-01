@@ -1,10 +1,11 @@
 import Head from "next/head";
+import React from "react";
 
 const Page = () => {
   return (
     <>
       <Head>
-        <title>MonPsySanté pour les parents</title>
+        <title>MonPsy pour les parents</title>
       </Head>
       <div className="fr-container">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-my-4w">
@@ -76,7 +77,7 @@ const Page = () => {
                       </div>
                       <div className="fr-p-2w">
                         <strong className="fr-text--lg fr-mb-2w">
-                          Faites bénéficier votre enfant d'un suivi
+                          Faites bénéficier votre enfant d’un suivi
                         </strong>
                         <p>
                           Vous prenez rendez-vous avec le psychologue choisi,

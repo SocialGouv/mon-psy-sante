@@ -1,10 +1,11 @@
 import Head from "next/head";
+import React from "react";
 
 const Page = () => {
   return (
     <>
       <Head>
-        <title>MonPsySanté pour les médecins</title>
+        <title>MonPsy pour les médecins</title>
       </Head>
       <div className="fr-container fr-my-6w">
         <h1>Je suis médecin</h1>
