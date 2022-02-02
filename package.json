@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SocialGouv/MonPsy"
+    "url": "git+https://github.com/SocialGouv/mon-psy-sante"
   },
   "dependencies": {
     "@dataesr/react-dsfr": "^0.9.8",

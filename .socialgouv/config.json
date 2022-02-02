@@ -3,7 +3,7 @@
   "type": "app",
   "subdomain": "monpsy",
   "registry": "ghcr",
-  "project": "MonPsy",
+  "project": "mon-psy-sante",
   "azurepg": true,
   "devInitContainerCommand": [
     "yarn",
