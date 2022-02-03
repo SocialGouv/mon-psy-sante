@@ -14,7 +14,7 @@ const FooterDescription = () => (
   <>
     Le code source est ouvert et les contributions sont bienvenues.{" "}
     <a
-      href="https://github.com/betagouv/sante-psy"
+      href="https://github.com/socialgouv/mon-psy-sante/"
       target="_blank"
       rel="noopener noreferrer"
     >
