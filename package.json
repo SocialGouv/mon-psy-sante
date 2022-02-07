@@ -79,6 +79,7 @@
     "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
     "db:migrate:create": "npx sequelize migration:create --name",
     "cy": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "cron:launch": "ts-node --transpile-only src/cron/cron.ts"
   }
 }

@@ -11,6 +11,31 @@ const getWhereConditionAfterCursor = (cursor: string): string => {
   return "";
 };
 
+export const requestPsychologistsState = async (
+  afterCursor: string | undefined
+): Promise<DSResponse> => {
+  const paginationCondition = getWhereConditionAfterCursor(afterCursor);
+  const query = gql`
+{
+  demarche (number: ${config.demarchesSimplifiees.id}) {
+    id
+    dossiers ${paginationCondition} {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      nodes {
+          archived
+          number
+      }
+    }
+  }
+}
+`;
+
+  return request(query);
+};
+
 export const requestPsychologists = async (
   afterCursor: string | undefined
 ): Promise<DSResponse> => {

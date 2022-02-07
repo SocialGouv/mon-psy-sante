@@ -52,3 +52,16 @@ export const getAll = async (filters: {
 export const saveMany = async (psychologists: Psychologist[]) => {
   return models.Psychologist.bulkCreate(psychologists);
 };
+
+export const updateState = async (newStates: Partial<Psychologist>[]) => {
+  return Promise.all(
+    newStates.map((newState) =>
+      models.Psychologist.update(
+        {
+          archived: newState.archived,
+        },
+        { where: { id: newState.id } }
+      )
+    )
+  );
+};

@@ -15,6 +15,13 @@ const jobs = [
     start: true,
     timeZone: "Europe/Paris",
   },
+  {
+    cronTime: "0 */3 * * *",
+    name: "Import psychologist state from DS",
+    onTick: demarchesSimplifiees.importState,
+    start: true,
+    timeZone: "Europe/Paris",
+  },
 ];
 
 jobs.forEach((job) => {
