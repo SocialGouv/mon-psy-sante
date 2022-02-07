@@ -1,6 +1,6 @@
 export enum CONTACT_USER_TYPE {
   PSYCHOLOGIST_INTERESTED = "Psychologue intéressé / en cours de candidature",
-  PSYCHOLOGIST_PARTNER = "Psychologue partenaire MonPsySanté (conventionné avec l'Assurance Maladie)",
+  PSYCHOLOGIST_PARTNER = "Psychologue partenaire MonPsy (conventionné avec l'Assurance Maladie)",
   PUBLIC = "Grand public / Patient / Entourage d'un patient",
   DOCTOR = "Médecin / Professionnel de santé",
   OTHER = "Autre : institutionnels, presse, etc",

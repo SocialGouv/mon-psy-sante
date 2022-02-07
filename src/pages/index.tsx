@@ -39,7 +39,7 @@ const Page = () => (
           />
         </div>
         <div className="fr-col-12 fr-col-md-5">
-          <h1 className="fr-mb-0">MonPsySanté</h1>
+          <h1 className="fr-mb-0">MonPsy</h1>
           <p className="fr-text--lg">
             Un dispositif en place à partir du printemps 2022
           </p>
@@ -101,9 +101,9 @@ const Page = () => (
             <h2>À qui ça s’adresse ?</h2>
 
             <p className="fr-text--lg">
-              <strong>MonPsySanté</strong> s’adresse à toute la population à
-              partir de 3 ans présentant des troubles psychiques d’intensité
-              légère à modérée.
+              <strong>MonPsy</strong> s’adresse à toute la population à partir
+              de 3 ans présentant des troubles psychiques d’intensité légère à
+              modérée.
             </p>
           </div>
         </div>
