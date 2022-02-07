@@ -1,11 +1,15 @@
 import styled, { css } from "styled-components";
 
-export const DirectoryWrapper = styled.div`
+export const ResultWrapper = styled.div`
   margin-bottom: 32px;
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+`;
+
+export const DirectoryWrapper = styled.div`
+  margin-top: 24px;
 `;
 
 export const Desktop = styled.div`
@@ -31,7 +35,7 @@ export const Search = styled.div`
   flex-wrap: wrap;
   align-items: flex-end;
   flex: 0 1 auto;
-  margin: 24px 0;
+  margin-bottom: 24px;
 `;
 
 export const Psychologists = styled.div`

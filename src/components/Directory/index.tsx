@@ -5,7 +5,8 @@ import React, { createRef, useEffect, useRef, useState } from "react";
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
-import { DirectoryWrapper } from "./Directory.styles";
+import { DirectoryWrapper, ResultWrapper } from "./Directory.styles";
+import Header from "./Header";
 import ResultsDesktop from "./ResultsDesktop";
 import ResultsMobile from "./ResultsMobile";
 import SearchBar from "./SearchBar";
@@ -101,27 +102,30 @@ const Directory = () => {
 
   return (
     <DirectoryWrapper>
-      <SearchBar
-        filter={filter}
-        setFilter={setFilter}
-        coords={coords}
-        setCoords={setCoords}
-        geoLoading={geoLoading}
-        setGeoLoading={setGeoLoading}
-        loadMorePsychologists={loadMorePsychologists}
-        loadPsychologists={loadPsychologists}
-      />
-      <ResultsDesktop
-        loadMorePsychologists={loadMorePsychologists}
-        psychologists={psychologists}
-        resultsRef={resultsRef}
-        psychologistsRefs={psychologistsRefs}
-        selectedPsychologist={selectedPsychologist}
-        setSelectedPsychologist={setSelectedPsychologist}
-        mapCenter={mapCenter}
-        setMapCenter={setMapCenter}
-      />
-      <ResultsMobile psychologists={psychologists} mapCenter={mapCenter} />
+      <Header />
+      <ResultWrapper>
+        <SearchBar
+          filter={filter}
+          setFilter={setFilter}
+          coords={coords}
+          setCoords={setCoords}
+          geoLoading={geoLoading}
+          setGeoLoading={setGeoLoading}
+          loadMorePsychologists={loadMorePsychologists}
+          loadPsychologists={loadPsychologists}
+        />
+        <ResultsDesktop
+          loadMorePsychologists={loadMorePsychologists}
+          psychologists={psychologists}
+          resultsRef={resultsRef}
+          psychologistsRefs={psychologistsRefs}
+          selectedPsychologist={selectedPsychologist}
+          setSelectedPsychologist={setSelectedPsychologist}
+          mapCenter={mapCenter}
+          setMapCenter={setMapCenter}
+        />
+        <ResultsMobile psychologists={psychologists} mapCenter={mapCenter} />
+      </ResultWrapper>
     </DirectoryWrapper>
   );
 };

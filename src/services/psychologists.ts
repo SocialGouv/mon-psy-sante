@@ -11,6 +11,8 @@ export const getOne = async (id: string) => {
   });
 };
 
+export const countAll = async () => models.Psychologist.count();
+
 export const getAll = async (filters: {
   [key in FILTER]?: string | string[];
 }) => {
