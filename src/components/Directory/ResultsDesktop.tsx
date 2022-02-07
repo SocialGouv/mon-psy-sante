@@ -32,10 +32,12 @@ const ResultsDesktop = ({
 }) => {
   const onClick = (psychologist: PsychologistType) => {
     setSelectedPsychologist(psychologist.id);
-    setMapCenter({
-      latitude: psychologist.coordinates.coordinates[1],
-      longitude: psychologist.coordinates.coordinates[0],
-    });
+    if (psychologist.coordinates) {
+      setMapCenter({
+        latitude: psychologist.coordinates.coordinates[1],
+        longitude: psychologist.coordinates.coordinates[0],
+      });
+    }
   };
 
   return (

@@ -15,7 +15,7 @@ export const countAll = async () => models.Psychologist.count();
 
 export const getAll = async (filters: {
   [key in FILTER]?: string | string[];
-}) => {
+}): Promise<Psychologist[]> => {
   const query: Sequelize.FindOptions<any> = {
     limit: 10,
     offset: parseInt(filters[FILTER.PAGE_INDEX] as string, 10) * 10,
@@ -45,6 +45,7 @@ export const getAll = async (filters: {
     query.order = Sequelize.literal("distance ASC");
   }
 
+  //@ts-ignore
   return models.Psychologist.findAll(query);
 };
 
