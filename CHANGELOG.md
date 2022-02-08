@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.3...v1.11.4) (2022-02-08)
+
+
+### Bug Fixes
+
+* **env:** use production in docker file ([#50](https://github.com/SocialGouv/mon-psy-sante/issues/50)) ([9a7509c](https://github.com/SocialGouv/mon-psy-sante/commit/9a7509c6e852435f8a930653f78747cb7a6b31d9))
+
 ## [1.11.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.2...v1.11.3) (2022-02-08)
 
 
