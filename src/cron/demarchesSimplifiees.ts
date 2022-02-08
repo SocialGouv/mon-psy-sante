@@ -1,6 +1,9 @@
 import { models } from "../db/models";
-import { getPsychologistList } from "../services/demarchesSimplifiees/import";
-import { saveMany } from "../services/psychologists";
+import {
+  getPsychologistList,
+  getPsychologistState,
+} from "../services/demarchesSimplifiees/import";
+import { saveMany, updateState } from "../services/psychologists";
 
 export const importData = async (): Promise<void> => {
   try {
@@ -30,5 +33,18 @@ export const importData = async (): Promise<void> => {
     console.log("importData done");
   } catch (err) {
     console.error("ERROR: Could not import DS API data to PG", err);
+  }
+};
+
+export const importState = async (): Promise<void> => {
+  try {
+    console.log("Starting importState...");
+
+    const dsAPIData = await getPsychologistState();
+
+    await updateState(dsAPIData);
+    console.log("importState done");
+  } catch (err) {
+    console.error("ERROR: Could not import DS API state to PG", err);
   }
 };
