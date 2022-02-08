@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.0...v1.11.1) (2022-02-08)
+
+
+### Bug Fixes
+
+* **features:** hide new features ([#46](https://github.com/SocialGouv/mon-psy-sante/issues/46)) ([cec6e20](https://github.com/SocialGouv/mon-psy-sante/commit/cec6e20094bff977ea7c62fe528a215b53c1b876))
+
 # [1.11.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.10.0...v1.11.0) (2022-02-08)
 
 
