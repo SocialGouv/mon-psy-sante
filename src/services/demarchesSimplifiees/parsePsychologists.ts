@@ -13,14 +13,10 @@ const parseDossierMetadata = async (
     lastName: dossier.demandeur.nom,
   };
 
-  dossier.champs.forEach((champ) =>
-    console.log(champ.id, champ.label, champ.stringValue)
-  );
-
   JSON.parse(config.demarchesSimplifiees.champs).forEach(([id, field]) => {
     const dossierChamp = dossier.champs.find((champ) => champ.id === id);
     if (dossierChamp) {
-      if (field === "teleconsultation" || field === "withChildren") {
+      if (field === "teleconsultation" || field === "displayEmail") {
         psychologist[field] = dossierChamp.stringValue === "true";
       } else {
         psychologist[field] = dossierChamp.stringValue;

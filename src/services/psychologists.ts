@@ -1,6 +1,7 @@
 import Sequelize from "sequelize";
 
 import { models } from "../db/models";
+import { SRID } from "../types/const/geometry";
 import { FILTER } from "../types/enums/filters";
 import { Psychologist } from "../types/psychologist";
 
@@ -11,10 +12,16 @@ export const getOne = async (id: string) => {
   });
 };
 
+export const countAll = async () => models.Psychologist.count();
+
 export const getAll = async (filters: {
   [key in FILTER]?: string | string[];
-}) => {
-  const query: Sequelize.FindOptions<any> = { raw: true };
+}): Promise<Psychologist[]> => {
+  const query: Sequelize.FindOptions<any> = {
+    limit: 10,
+    offset: parseInt(filters[FILTER.PAGE_INDEX] as string, 10) * 10,
+    raw: true,
+  };
   if (filters[FILTER.LONGITUDE] && filters[FILTER.LATITUDE]) {
     query.attributes = {
       include: [
@@ -29,7 +36,7 @@ export const getAll = async (filters: {
                 filters[FILTER.LONGITUDE],
                 filters[FILTER.LATITUDE]
               ),
-              4326
+              SRID
             )
           ),
           "distance",
@@ -39,6 +46,7 @@ export const getAll = async (filters: {
     query.order = Sequelize.literal("distance ASC");
   }
 
+  //@ts-ignore
   return models.Psychologist.findAll(query);
 };
 
