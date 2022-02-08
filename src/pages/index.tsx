@@ -171,6 +171,7 @@ const Page = () => (
               <a
                 target="_blank"
                 href="https://www.filsantejeunes.com/tchat-individuel"
+                rel="noreferrer"
               >
                 Chat individuel
               </a>{" "}
@@ -189,7 +190,11 @@ const Page = () => (
               Permanence d’écoute téléphonique 24h/24 et 7j/7 pour les personnes
               en détresse (tel: <a href="tel:+33972394050"> 09 72 39 40 50</a>)
             </p>
-            <a href="https://www.sos-amitie.com/chat/" target="_blank">
+            <a
+              href="https://www.sos-amitie.com/chat/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Chat
             </a>
             du lundi au dimanche de 13h à 3h du matin.

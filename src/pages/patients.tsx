@@ -1,4 +1,5 @@
 import React from "react";
+
 import HeadTag from "../components/HeadTag";
 
 const Page = () => {
@@ -355,6 +356,7 @@ const Page = () => {
                 <a
                   href="https://www.filsantejeunes.com/ca-va-pas/mal-etre"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   filsantejeunes.com/mal-etre
                 </a>{" "}
