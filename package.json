@@ -80,6 +80,6 @@
     "db:migrate:create": "npx sequelize migration:create --name",
     "cy": "cypress open",
     "cy:run": "cypress run",
-    "cron:launch": "ts-node --transpile-only src/cron/cron.ts"
+    "cron:launch": "ts-node --transpile-only src/cron/launch.ts"
   }
 }
