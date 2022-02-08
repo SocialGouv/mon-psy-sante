@@ -5,6 +5,8 @@ FROM node:14-alpine AS builder
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+ARG PRODUCTION
+
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 COPY . .
