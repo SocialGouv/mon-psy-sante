@@ -9,7 +9,7 @@ COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 COPY . .
 
-RUN if [ -z "$PRODUCTION" ]; then cp .env.staging .env.production; cp ./public/robots.staging.txt ./public/robots.txt; fi
+RUN if [ -z "$PRODUCTION" ]; then echo "Copy staging values"; cp .env.staging .env.production; cp ./public/robots.staging.txt ./public/robots.txt; fi
 RUN yarn build && yarn install --production --ignore-scripts --prefer-offline
 
 # Production image, copy all the files and run next

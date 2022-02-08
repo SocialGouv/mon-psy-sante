@@ -20,5 +20,5 @@ spec:
             - secretRef:
                 name: azure-pg-user 
             command:
-              - yarn run cron:launch -- importState
+              - ["yarn", "run", "cron:launch", "--", "importState"]
           restartPolicy: Never
