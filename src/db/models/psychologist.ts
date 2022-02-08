@@ -1,5 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 
+import { SRID } from "../../types/const/geometry";
+
 export default (sequelize) => {
   class Psychologist extends Model {}
 
@@ -8,7 +10,7 @@ export default (sequelize) => {
       address: DataTypes.STRING,
       archived: DataTypes.BOOLEAN,
       cdsmsp: DataTypes.STRING,
-      coordinates: DataTypes.GEOMETRY("POINT", 4326),
+      coordinates: DataTypes.GEOMETRY("POINT", SRID),
       displayEmail: DataTypes.BOOLEAN,
       email: DataTypes.STRING,
       firstName: DataTypes.STRING,

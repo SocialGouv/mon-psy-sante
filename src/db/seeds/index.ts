@@ -1,5 +1,6 @@
 import faker from "faker";
 
+import { SRID } from "../../types/const/geometry";
 import { Psychologist } from "../../types/psychologist";
 import { models } from "../models";
 
@@ -25,7 +26,7 @@ const createPsychologists = async () => {
           parseFloat(faker.address.latitude(50, 40)),
         ],
         // @ts-ignore
-        crs: { properties: { name: "EPSG:4326" }, type: "name" },
+        crs: { properties: { name: `EPSG:${SRID}` }, type: "name" },
         type: "POINT",
       },
       displayEmail: faker.datatype.boolean(),

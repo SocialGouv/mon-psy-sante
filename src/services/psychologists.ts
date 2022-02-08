@@ -1,6 +1,7 @@
 import Sequelize from "sequelize";
 
 import { models } from "../db/models";
+import { SRID } from "../types/const/geometry";
 import { FILTER } from "../types/enums/filters";
 import { Psychologist } from "../types/psychologist";
 
@@ -35,7 +36,7 @@ export const getAll = async (filters: {
                 filters[FILTER.LONGITUDE],
                 filters[FILTER.LATITUDE]
               ),
-              4326
+              SRID
             )
           ),
           "distance",
