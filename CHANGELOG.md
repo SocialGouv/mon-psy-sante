@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.1...v1.11.2) (2022-02-08)
+
+
+### Bug Fixes
+
+* **cron:** use a proper .env file ([#48](https://github.com/SocialGouv/mon-psy-sante/issues/48)) ([5a78911](https://github.com/SocialGouv/mon-psy-sante/commit/5a78911c90fdd176e1fca093fbdb4c7d537b807e))
+
 ## [1.11.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.0...v1.11.1) (2022-02-08)
 
 
