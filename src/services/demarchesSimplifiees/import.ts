@@ -1,6 +1,9 @@
 import { DSResponse } from "../../types/demarcheSimplifiee";
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
-import { requestPsychologists } from "./buildRequest";
+import {
+  requestPsychologists,
+  requestPsychologistsState,
+} from "./buildRequest";
 import parsePsychologists from "./parsePsychologists";
 
 const getAllPsychologistList = async (
@@ -47,4 +50,19 @@ export const getPsychologistList = async (
   console.timeEnd(time);
 
   return results;
+};
+
+export const getPsychologistState = async (): Promise<
+  Partial<Psychologist>[]
+> => {
+  const time = `Fetching all psychologists state from DS (query id #${Math.random().toString()})`;
+
+  console.time(time);
+  const list = await getAllPsychologistList(requestPsychologistsState);
+  console.timeEnd(time);
+
+  return list.psychologists.map((dossier) => ({
+    archived: dossier.archived,
+    id: dossier.number,
+  }));
 };

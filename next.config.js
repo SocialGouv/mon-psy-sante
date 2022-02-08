@@ -5,7 +5,7 @@ const csp = {
   'default-src': ["'none'"],
   'connect-src': ["'self'", "https://*.gouv.fr", "https://services.sarbacane.com"],
   'font-src': ["'self'", "data:"],
-  'img-src': ["'self'",  "data:", "https://forms.sbc08.com"],
+  'img-src': ["'self'",  "data:", "https://forms.sbc08.com", 'https://*.tile.openstreetmap.org/'],
   'prefetch-src': ["'self'", "https://*.gouv.fr"],
   'script-src': ["'self'", "https://*.gouv.fr", "https://*.sbc08.com"],
   'frame-src': ["'self'", "https://*.gouv.fr"],

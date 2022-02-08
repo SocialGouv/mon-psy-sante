@@ -11,7 +11,12 @@ const psychologists = async (req: NextApiRequest, res: NextApiResponse) => {
     }
     const filters = req.query;
     const psychologists = await getAll(filters);
-    return res.status(200).json(psychologists);
+    return res.status(200).json(
+      psychologists.map((psy) => ({
+        ...psy,
+        email: psy.displayEmail ? psy.email : undefined,
+      }))
+    );
   }
 };
 

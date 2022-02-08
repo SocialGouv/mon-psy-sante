@@ -1,3 +1,171 @@
+## [1.11.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.2...v1.11.3) (2022-02-08)
+
+
+### Bug Fixes
+
+* **cron:** use a proper .env file ([#49](https://github.com/SocialGouv/mon-psy-sante/issues/49)) ([e05b02d](https://github.com/SocialGouv/mon-psy-sante/commit/e05b02db401492b23dfabab657e4df56ba6a3308))
+
+## [1.11.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.1...v1.11.2) (2022-02-08)
+
+
+### Bug Fixes
+
+* **cron:** use a proper .env file ([#48](https://github.com/SocialGouv/mon-psy-sante/issues/48)) ([5a78911](https://github.com/SocialGouv/mon-psy-sante/commit/5a78911c90fdd176e1fca093fbdb4c7d537b807e))
+
+## [1.11.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.0...v1.11.1) (2022-02-08)
+
+
+### Bug Fixes
+
+* **features:** hide new features ([#46](https://github.com/SocialGouv/mon-psy-sante/issues/46)) ([cec6e20](https://github.com/SocialGouv/mon-psy-sante/commit/cec6e20094bff977ea7c62fe528a215b53c1b876))
+
+# [1.11.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.10.0...v1.11.0) (2022-02-08)
+
+
+### Features
+
+* **cron:** Add a cron to check psy state on DS ([#45](https://github.com/SocialGouv/mon-psy-sante/issues/45)) ([e1ff927](https://github.com/SocialGouv/mon-psy-sante/commit/e1ff9274c5e309d547c69582f4a8348b9aa1f4b7)), closes [#28](https://github.com/SocialGouv/mon-psy-sante/issues/28)
+
+# [1.10.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.5...v1.10.0) (2022-02-08)
+
+
+### Features
+
+* **annuaire:** Improve psy views ([#34](https://github.com/SocialGouv/mon-psy-sante/issues/34)) ([0da2d20](https://github.com/SocialGouv/mon-psy-sante/commit/0da2d2035149b8680106d8d1f6372245ef150f51)), closes [#28](https://github.com/SocialGouv/mon-psy-sante/issues/28)
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
+
+
+### Bug Fixes
+
+* **footer link:** fix link to repo on footer ([17132d4](https://github.com/SocialGouv/mon-psy-sante/commit/17132d41035b2263c7e39beadf7137750b72343b))
+* **name:** revert renaming as the namespace on rancher is different (leave old name for now) ([dbf70fd](https://github.com/SocialGouv/mon-psy-sante/commit/dbf70fdf439240aa3c84fc651ffc04171a42a551))
+
+## [1.9.4](https://github.com/SocialGouv/MonPsy/compare/v1.9.3...v1.9.4) (2022-02-01)
+
+
+### Bug Fixes
+
+* **flyers name:** update flyer name ([9191085](https://github.com/SocialGouv/MonPsy/commit/919108541d7350811aeba814d8a13b18a454d174))
+
+## [1.9.3](https://github.com/SocialGouv/MonPsy/compare/v1.9.2...v1.9.3) (2022-02-01)
+
+
+### Bug Fixes
+
+* **sealed secret:** update prod sealed secret ([82761a5](https://github.com/SocialGouv/MonPsy/commit/82761a5e303c68112903f77917e1fbb4cd929628))
+
+## [1.9.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.1...v1.9.2) (2022-02-01)
+
+
+### Bug Fixes
+
+* **text:** update dispositif name (lint !) ([8e2e46f](https://github.com/SocialGouv/mon-psy-sante/commit/8e2e46f03a1041ad243029ff5b3fa7d8ba503b9f))
+
 ## [1.9.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.0...v1.9.1) (2022-02-01)
 
 

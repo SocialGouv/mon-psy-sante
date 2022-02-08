@@ -10,7 +10,7 @@ export enum CONTACT_REASON {
   ELIGIBILITY = "Question relative à mon éligibilité",
   GLOBAL = "Question générale sur le fonctionnement du dispositif",
   APPLICATION = "Question relative à l'avancement de ma candidature",
-  OTHER = "Autres",
+  OTHER = "Autre",
 }
 
 export const allContactUserTypes = Object.values(CONTACT_USER_TYPE);
