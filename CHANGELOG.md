@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.5...v1.10.0) (2022-02-08)
+
+
+### Features
+
+* **annuaire:** Improve psy views ([#34](https://github.com/SocialGouv/mon-psy-sante/issues/34)) ([0da2d20](https://github.com/SocialGouv/mon-psy-sante/commit/0da2d2035149b8680106d8d1f6372245ef150f51)), closes [#28](https://github.com/SocialGouv/mon-psy-sante/issues/28)
+
 ## [1.9.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.4...v1.9.5) (2022-02-03)
 
 
