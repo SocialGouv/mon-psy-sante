@@ -1,15 +1,22 @@
-import React from "react";
 import Link from "next/link";
+import React from "react";
+
+import HeadTag from "../components/HeadTag";
 
 const Page = () => (
   <>
+    <HeadTag
+      title="MonPsy : Le dispositif de remboursement des séances chez le psychologue"
+      description="MonPsy s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès avril&nbsp;2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+      image="Psychologist-hero.svg"
+    />
     <section>
       <div className="fr-container">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
           <div className="fr-col-12 fr-col-md-6">
             <h1>MonPsy</h1>
             <p className="fr-text--lead">
-              <strong>A partir d'avril&nbsp;2022,</strong> l’accès à un
+              <strong>A partir d’avril&nbsp;2022,</strong> l’accès à un
               accompagnement psychologique pour tous (dès 3 ans)
             </p>
             <p className="fr-mt-10w">

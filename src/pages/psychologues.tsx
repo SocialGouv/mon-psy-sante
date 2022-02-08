@@ -1,12 +1,14 @@
-import Head from "next/head";
 import React from "react";
+import HeadTag from "../components/HeadTag";
 
 const Page = () => {
   return (
     <>
-      <Head>
-        <title>MonPsy pour les psychologues</title>
-      </Head>
+      <HeadTag
+        title="Je souhaite rejoindre le réseau des psychologues partenaires | MonPsy"
+        description="Les psychologues volontaires peuvent s’engager dans « MonPsy » pour faire bénéficier les patients d’un accompagnement psychologique remboursé par l’Assurance Maladie."
+        image="psy.svg"
+      />
       <section>
         <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
@@ -321,7 +323,7 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      En fonction de l'état de santé du patient, je réalise
+                      En fonction de l’état de santé du patient, je réalise
                       ensuite jusqu’à 7 séances de suivi remboursées
                     </p>
                   </div>

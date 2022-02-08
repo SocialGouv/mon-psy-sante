@@ -1,14 +1,15 @@
-import Head from "next/head";
 import React from "react";
+
+import HeadTag from "../components/HeadTag";
 
 const Page = () => {
   return (
     <>
-      <Head>
-        <title>
-          Je suis médecin, je souhaite orienter au mieux mes patients | MonPsy
-        </title>
-      </Head>
+      <HeadTag
+        title="Je suis médecin, je souhaite orienter au mieux mes patients"
+        description=" MonPsy permet aux médecins d’orienter les patients présentant des troubles psychiques d’intensité légère à modérée vers des psychologues conventionnés avec l’Assurance Maladie."
+        image="doctor.svg"
+      />
       <section>
         <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
