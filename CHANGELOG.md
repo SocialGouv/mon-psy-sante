@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.10.0...v1.11.0) (2022-02-08)
+
+
+### Features
+
+* **cron:** Add a cron to check psy state on DS ([#45](https://github.com/SocialGouv/mon-psy-sante/issues/45)) ([e1ff927](https://github.com/SocialGouv/mon-psy-sante/commit/e1ff9274c5e309d547c69582f4a8348b9aa1f4b7)), closes [#28](https://github.com/SocialGouv/mon-psy-sante/issues/28)
+
 # [1.10.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.9.5...v1.10.0) (2022-02-08)
 
 
