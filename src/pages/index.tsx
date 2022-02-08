@@ -1,182 +1,224 @@
-import { Button, TextInput } from "@dataesr/react-dsfr";
 import React from "react";
-
-const sendEmail = function (e) {
-  // @ts-ignore
-  process2(
-    "https://services.sarbacane.com/core/v1/forms/contacts/upsert?listID&#x3D;gK9pKC6aT7ehlKKhbmLt9A&amp;formID&#x3D;hgLXy0uPQ0GSIAjQUj4hgQ&amp;timezone&#x3D;Europe/Paris",
-    "https://forms.sbc08.com/",
-    "5a5873edb85b530da84d23f7",
-    "false",
-    "message",
-    "",
-    "https://services.sarbacane.com/core/v1/transactional/sendmessage/optin",
-    "Merci",
-    "Votre email a bien été enregistré.",
-    "Vous allez recevoir un email",
-    "Vous devrez cliquer sur le lien de confirmation pour valider votre inscription",
-    "Erreur",
-    "Une erreur inattendue s%27est produite.",
-    "Le formulaire est en cours d%27édition, veuillez patienter quelques minutes avant d%27essayer à nouveau.",
-    "",
-    "",
-    ""
-  );
-  e.preventDefault();
-  return false;
-};
+import Link from "next/link";
 
 const Page = () => (
   <>
-    <div className="fr-container">
-      <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
-        <div className="fr-col-12 fr-pt-8w">
-          <h1>En parler, c’est déjà se soigner</h1>
-          <p>
-            Faites bénéficier votre enfant d’un accompagnement psychologique
-            gratuit
-          </p>
-        </div>
-        <div className="fr-col-12 fr-col-md-3 fr-pt-6w fr-centered">
-          <a className="fr-btn fr-text--lg" href="/psychologues">
-            Je suis psychologue
-          </a>
-          <a className="fr-btn fr-mt-8w fr-text--lg" href="/medecins">
-            Je suis médecin
-          </a>
-        </div>
-        <div className="fr-col-12 fr-col-md-6 fr-centered">
-          <img
-            className="hero"
-            src="/images/Illustration.svg"
-            alt="En parler, c’est déjà se soigner"
-          />
-        </div>
-        <div className="fr-col-12 fr-col-md-3 fr-pt-6w fr-centered">
-          <a className="fr-btn fr-text--lg" href="/patients">
-            Je suis patient
-          </a>
-          <a className="fr-btn fr-mt-8w fr-text--lg" href="/parents">
-            Je suis parent
-          </a>
-        </div>
-        <div className="fr-col-0 fr-col-md-1 fr-mt-4w" />
-      </div>
-    </div>
-    <div className="fr-container--fluid">
+    <section>
       <div className="fr-container">
+        <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
+          <div className="fr-col-12 fr-col-md-6">
+            <h1>MonPsy</h1>
+            <p className="fr-text--lead">
+              <strong>A partir d'avril&nbsp;2022,</strong> l’accès à un
+              accompagnement psychologique pour tous (dès 3 ans)
+            </p>
+            <p className="fr-mt-10w">
+              Sur orientation d’un médecin, jusqu’à 8 séances remboursées chez
+              un psychologue partenaire.
+            </p>
+          </div>
+          <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-4">
+            <img
+              className="fr-mt-2w"
+              src="/images/Psychologist-hero.svg"
+              alt="En parler, c’est déjà se soigner"
+            />
+
+            <button className="fr-btn fr-btn--lg fr-fi-play-line fr-btn--icon-left fr-btn--secondary fr-mt-2w">
+              Découvrir MonPsy en vidéo
+            </button>
+            <span className="d-block">Durée : </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="fr-container--fluid fr-bg--light fr-py-10w">
+        <div className="fr-container">
+          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+            <div className="fr-col-12 fr-col-md-3">
+              <div className="fr-card fr-enlarge-link fr-pt-3w">
+                <div className="fr-card__body">
+                  <h4 className="fr-card__title">
+                    <Link href="/patients" passHref>
+                      <a href="/patients" className="fr-card__link">
+                        Je suis angoissé.e, déprimé.e
+                      </a>
+                    </Link>
+                  </h4>
+                  <p className="fr-card__desc">
+                    Bénéficiez de l’accompagnement d’un psychologue
+                  </p>
+                </div>
+                <div className="fr-card__img">
+                  <img src="/images/patient-home.svg" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-3">
+              <div className="fr-card fr-enlarge-link fr-pt-3w">
+                <div className="fr-card__body">
+                  <h4 className="fr-card__title">
+                    <Link href="/psychologues" passHref>
+                      <a href="/psychologues" className="fr-card__link">
+                        Je suis psychologues
+                      </a>
+                    </Link>
+                  </h4>
+                  <p className="fr-card__desc">
+                    Rejoignez le réseau des psychologues partenaires
+                  </p>
+                </div>
+                <div className="fr-card__img">
+                  <img src="/images/psy-home.svg" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-3">
+              <div className="fr-card fr-enlarge-link fr-pt-3w">
+                <div className="fr-card__body">
+                  <h4 className="fr-card__title">
+                    <Link href="/medecins" passHref>
+                      <a href="/medecins" className="fr-card__link">
+                        Je suis médecin
+                      </a>
+                    </Link>
+                  </h4>
+                  <p className="fr-card__desc">
+                    Participez au dispositif en orientant au mieux vos patients
+                  </p>
+                </div>
+                <div className="fr-card__img">
+                  <img src="/images/doctor-home.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="fr-container fr-callout fr-callout--pink-tuile fr-my-6w">
+        <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
+          <div className="fr-col-12 fr-col-md-5">
+            <p>
+              Le dispositif ne concerne pas les urgences et les personnes
+              présentant un risque suicidaire.
+            </p>
+          </div>
+          <div className="fr-col-12 fr-col-md-2 fr-centered">
+            <span
+              className="fr-fi-arrow-right-line fr-fi--lg"
+              aria-hidden="true"
+            />
+          </div>
+
+          <div className="fr-col-12 fr-col-md-5">
+            <p>
+              Si je suis en détresse et/ou j’ai des pensées suicidaires, je
+              contacte sans attendre le 3114
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="fr-container fr-py-6w">
         <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
           <div className="fr-col-12">
-            <h2>À qui ça s’adresse ?</h2>
-
-            <p className="fr-text--lg">
-              <strong>MonPsy</strong> s’adresse à toute la population à partir
-              de 3 ans présentant des troubles psychiques d’intensité légère à
-              modérée.
+            <h2>Services d’écoute anonymes et gratuits</h2>
+          </div>
+          <div className="fr-col-12 fr-col-md-4 fr-px-2w">
+            <div className="fr-centered fr-my-2w fr-py-4w">
+              <img src="/images/logo-3114.svg" alt="Logo 3114" height="80" />
+            </div>
+            <p>
+              Je suis en détresse et/ou j’ai des pensées suicidaires. Je veux
+              aider un proche en souffrance.
+            </p>
+            <p>
+              J’appelle le <a href="tel:3114">3114</a>, accessible 24h/24 et
+              7j/7 gratuitement en France entière
+            </p>
+            <p>
+              Un professionnel de soins formé spécifiquement à la prévention du
+              suicide sera à mon écoute afin de faire le point et me proposer
+              des ressources adaptées à mes besoins.
             </p>
           </div>
-        </div>
+          <div className="fr-col-12 fr-col-md-4 fr-px-2w">
+            <div className="fr-centered fr-my-2w">
+              <img
+                src="/images/Filsantejeunes.jpg"
+                height="140"
+                alt="Logo Fil santé jeunes"
+              />
+            </div>
+            <p>
+              Permanence d’écoute téléphonique tous les jours de 9h à 23h pour
+              les 12-25 ans sur les thèmes de la santé, de la sexualité, de
+              l’amour, du mal être, etc.
+            </p>
 
-        <div className="fr-grid-row fr-grid-row--center fr-py-4w">
+            <p>
+              <a
+                target="_blank"
+                href="https://www.filsantejeunes.com/tchat-individuel"
+              >
+                Chat individuel
+              </a>{" "}
+              ouvert tous les jours de 9 h à 22h
+            </p>
+          </div>
+          <div className="fr-col-12 fr-col-md-4 fr-px-2w">
+            <div className="fr-centered fr-my-2w">
+              <img
+                src="/images/SOSAmitie.png"
+                height="140"
+                alt="Logo SOS Amitié"
+              />
+            </div>
+            <p>
+              Permanence d’écoute téléphonique 24h/24 et 7j/7 pour les personnes
+              en détresse (tel: <a href="tel:+33972394050"> 09 72 39 40 50</a>)
+            </p>
+            <a href="https://www.sos-amitie.com/chat/" target="_blank">
+              Chat
+            </a>
+            du lundi au dimanche de 13h à 3h du matin.
+          </div>
           <div className="fr-col-12">
-            <h2>À partir de quand ?</h2>
-            <p className="fr-text--lg">
-              <strong>Dès le printemps 2022</strong>, sur orientation d’un
-              médecin, les patients (enfants, adolescents et adultes) pourront
-              bénéficier de séances assurées par des psychologues volontaires
-              conventionnés avec l’Assurance Maladie.{" "}
-              <a target="_blank" href="/documents/MonPsySante_Flyer.pdf">
-                En savoir plus
-              </a>
-            </p>
-            <ul className="time-line-list no-bullet">
-              <li className="before">
-                <div className="time-line-list-dot">
-                  <p className="highlight">SEPTEMBRE 2021</p>
-                </div>
-                <div className="time-line-list-border before">
-                  <p>Annonce du remboursement des séances de psychologues</p>
-                </div>
-              </li>
-              <li>
-                <div className="time-line-list-dot">
-                  <p className="highlight">DÉBUT 2022</p>
-                </div>
-                <div className="time-line-list-border">
-                  <p>
-                    Les <strong>psychologues volontaires</strong> peuvent
-                    candidater au dispositif via une procédure dématérialisée
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div className="time-line-list-dot">
-                  <strong className="highlight fr-text--lg fr-mb-2w">
-                    PRINTEMPS 2022
-                  </strong>
-                </div>
-                <div className="time-line-list-border">
-                  <p>
-                    Les <strong>patients</strong> peuvent consulter l’annuaire
-                    des psychologues. Les parcours de prise en charge peuvent
-                    débuter
-                  </p>
-                </div>
-              </li>
-            </ul>
+            <h2>Information sur la santé mentale</h2>
           </div>
-        </div>
-      </div>
-
-      <div className="fr-container--fluid fr-bg--light">
-        <div className="fr-container">
-          <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-            <div className="fr-col-12 fr-mt-4w">
-              <h2>
-                Vous êtes psychologue
-                <br />
-                et vous souhaitez candidater&nbsp;?
-              </h2>
-              <p className="fr-mb-0">
-                Le formulaire de candidature sera prochainement disponible en
-                ligne (février 2022).{" "}
-                <a
-                  target="_blank"
-                  href="/documents/MonPsySante_Flyer-candidatures-psychologues.pdf"
-                >
-                  En savoir plus
-                </a>
-              </p>
+          <div className="fr-col-4">
+            <div>
               <p>
-                Laissez nous votre e-mail, et nous vous enverrons toutes les
-                informations nécessaires, dès l’ouverture des candidatures.
+                <div className="fr-centered fr-my-2w">
+                  <img
+                    src="/images/Psycom.png"
+                    height="140"
+                    alt="Logo Psycom"
+                  />
+                </div>
               </p>
             </div>
           </div>
-
-          <div className="fr-grid-row">
-            <div className="fr-col-8 fr-mb-4w">
-              <form id="sb_form" onSubmit={sendEmail} method="post">
-                <div id="form-header-title" />
-                <TextInput
-                  label="Votre email :"
-                  name="email"
-                  placeholder="Votre email"
-                  type="email"
-                  required
-                />
-                <div id="div-submitInput">
-                  <Button submit id="submitInput">
-                    Valider
-                  </Button>
-                  <div className="loader d-none" />
+          <div className="fr-col-4 fr-col-offset-1">
+            <div>
+              <p>
+                <div className="fr-centered fr-my-2w">
+                  <img
+                    src="/images/Sante-publique-France-logo.svg"
+                    height="140"
+                    alt="Logo Santé publique France"
+                  />
                 </div>
-              </form>
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </>
 );
 export default Page;
