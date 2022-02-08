@@ -4,7 +4,6 @@ import { SkiplinkItem, Skiplinks } from "@dataesr/react-dsfr";
 import * as Sentry from "@sentry/node";
 import { init } from "@socialgouv/matomo-next";
 import App from "next/app";
-import Head from "next/head";
 import React from "react";
 
 import Footer from "../components/Footer";
