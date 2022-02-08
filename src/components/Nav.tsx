@@ -1,8 +1,10 @@
 import {
   Header,
   HeaderBody,
+  HeaderNav,
   HeaderOperator,
   Logo,
+  NavItem,
   Service,
 } from "@dataesr/react-dsfr";
 import React from "react";
@@ -20,6 +22,12 @@ const Nav = () => {
           description="En parler, c’est déjà se soigner."
         />
       </HeaderBody>
+      <HeaderNav>
+        <NavItem title="Acceuil" link="/" />
+        <NavItem title="Je suis angoissé(e) ou déprimé(e)" link="/patients" />
+        <NavItem title="Je suis psychologue" link="/psychologues" />
+        <NavItem title="Je suis médecin" link="/medecins" />
+      </HeaderNav>
     </Header>
   );
 };
