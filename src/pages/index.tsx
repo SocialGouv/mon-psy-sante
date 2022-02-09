@@ -116,7 +116,7 @@ const Page = () => (
               médecin, les patients (enfants, adolescents et adultes) pourront
               bénéficier de séances assurées par des psychologues volontaires
               conventionnés avec l’Assurance Maladie.{" "}
-              <a target="_blank" href="/documents/MonPsySante_Flyer.pdf">
+              <a target="_blank" href="/documents/MonPsy_Flyer.pdf">
                 En savoir plus
               </a>
             </p>
@@ -173,7 +173,7 @@ const Page = () => (
                 ligne (février 2022).{" "}
                 <a
                   target="_blank"
-                  href="/documents/MonPsySante_Flyer-candidatures-psychologues.pdf"
+                  href="/documents/MonPsy_Flyer-candidatures-psychologues.pdf"
                 >
                   En savoir plus
                 </a>
