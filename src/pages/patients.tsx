@@ -35,7 +35,7 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="fr-col-3">
+            <div className="fr-col-4 fr-py-8w">
               <img
                 src="/images/patient.svg"
                 alt="Je suis angoissé(e) ou déprimé(e) illustration"
@@ -319,7 +319,7 @@ const Page = () => {
               <h2>J’ai moins de 18 ans </h2>
             </div>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters">
+          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
             <div className="fr-col-8">
               <p>
                 <strong>
@@ -334,14 +334,15 @@ const Page = () => {
               </p>
               <p>Mes parents peuvent m’accompagner chez le psychologue.</p>
             </div>
-            <div className="fr-col-4">
+            <div className="fr-col-4 fr-centered">
               <img
                 src="/images/children.svg"
+                height="250"
                 alt="Je suis angoissé(e) ou déprimé(e) illustration"
               />
             </div>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters">
+          <div className="fr-grid-row fr-grid-row--gutters fr-mt-4w">
             <div className="fr-col-3">
               <img
                 src="/images/Filsantejeunes.jpg"

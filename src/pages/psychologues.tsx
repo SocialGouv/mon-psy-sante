@@ -216,9 +216,13 @@ const Page = () => {
               </h3>
             </div>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters">
-            <div className="fr-col-3">
-              <img src="/images/children-psy.svg" alt="Enfants illustration" />
+          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
+            <div className="fr-col-3 fr-centered">
+              <img
+                src="/images/children-psy.svg"
+                height="160"
+                alt="Enfants illustration"
+              />
             </div>
             <div className="fr-col-9">
               <p>
@@ -229,7 +233,7 @@ const Page = () => {
               </p>
             </div>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters">
+          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-my-4w">
             <div className="fr-col-8">
               <p>
                 <strong>Et des adultes</strong> en souffrance psychique
@@ -251,12 +255,14 @@ const Page = () => {
             <div className="fr-col-2">
               <img
                 src="/images/patient-home.svg"
+                height="300"
                 alt="Patient femme illustration"
               />
             </div>
             <div className="fr-col-2">
               <img
                 src="/images/patient-male.svg"
+                height="300"
                 alt="Patient homme illustration"
               />
             </div>

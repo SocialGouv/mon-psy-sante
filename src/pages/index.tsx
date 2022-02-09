@@ -58,7 +58,12 @@ const Page = () => (
                   </p>
                 </div>
                 <div className="fr-card__img">
-                  <img src="/images/patient-home.svg" alt="" />
+                  <img
+                    src="/images/patient-home.svg"
+                    height="158"
+                    width="65"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -78,7 +83,7 @@ const Page = () => (
                   </p>
                 </div>
                 <div className="fr-card__img">
-                  <img src="/images/psy-home.svg" alt="" />
+                  <img src="/images/psy-home.svg" height="158" alt="" />
                 </div>
               </div>
             </div>
@@ -98,7 +103,7 @@ const Page = () => (
                   </p>
                 </div>
                 <div className="fr-card__img">
-                  <img src="/images/doctor-home.svg" alt="" />
+                  <img src="/images/doctor-home.svg" height="158" alt="" />
                 </div>
               </div>
             </div>

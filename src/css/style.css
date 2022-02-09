@@ -55,3 +55,8 @@
 .leaflet-popup-close-button {
   box-shadow: none !important;
 }
+
+.fr-card .fr-card__img img {
+  width: auto;
+  margin: auto;
+}

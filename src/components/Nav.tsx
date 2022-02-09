@@ -23,7 +23,7 @@ const Nav = () => {
         />
       </HeaderBody>
       <HeaderNav>
-        <NavItem title="Acceuil" link="/" />
+        <NavItem title="Accueil" link="/" />
         <NavItem title="Je suis angoissé(e) ou déprimé(e)" link="/patients" />
         <NavItem title="Je suis psychologue" link="/psychologues" />
         <NavItem title="Je suis médecin" link="/medecins" />
