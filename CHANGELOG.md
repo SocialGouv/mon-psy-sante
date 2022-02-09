@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.4...v1.11.5) (2022-02-09)
+
+
+### Bug Fixes
+
+* **flyers:** was broken after file renamed ([336f053](https://github.com/SocialGouv/mon-psy-sante/commit/336f0534f654c23f9a89e46cf79cc0c3cc93c666))
+
 ## [1.11.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.3...v1.11.4) (2022-02-08)
 
 
