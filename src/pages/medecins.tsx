@@ -170,7 +170,8 @@ const Page = () => {
                       Un modèle de ces deux courriers accessible{" "}
                       <a
                         className="fr-link fr-fi-download-line fr-link--icon-left"
-                        href="/documents/Courrier d'adressage_VF.docx"
+                        target="_blank"
+                        href="/documents/Courrier_d_adressage.docx"
                       >
                         ici
                       </a>
@@ -206,13 +207,38 @@ const Page = () => {
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12">
               <p>
-                Si le patient a de nouveau besoin d’un accompagnement
-                psychologique remboursé, je peux le ré-adresser{" "}
-                <strong>
-                  dans la limite de 8 séances remboursées par année civile
-                </strong>
-                . Je vérifie donc avec lui le nombre de séances réalisées dans
-                l’année.
+                A la fin de l’accompagnement,{" "}
+                <strong>je me concerte avec le psychologue partenaire </strong>{" "}
+                et, le cas échéant, avec un psychiatre pour réévaluer et adapter
+                la prise en charge du patient.
+              </p>
+              <p>Différents cas peuvent se présenter&nbsp;:</p>
+              <ul>
+                <li>
+                  la nécessité d’une consultation avec un psychiatre (en libéral
+                  ou à l’hôpital) pour une évaluation plus approfondie
+                </li>
+                <li>
+                  la nécessité d’une prise en charge la plus adaptée: centre
+                  médico-psychologique (CMP), CMP infanto-juvéniles, service de
+                  psychiatrie ou pédopsychiatrie, maison des adolescents…
+                </li>
+                <li>
+                  une évolution favorable ne nécessitant pas nécessairement un
+                  nouvel accompagnement psychologique
+                </li>
+                <li>un nouvel accompagnement psychologique</li>
+              </ul>
+
+              <p>
+                Dans ce dernier cas, je peux ré-adresser le patient dans la
+                limite de 8 séances remboursées par année civile. Je vérifie
+                donc avec lui le nombre de séances réalisées dans l’année.
+              </p>
+
+              <p>
+                Le patient peut aussi décider de poursuivre avec son psychologue
+                dans un cadre non remboursé.
               </p>
             </div>
           </div>

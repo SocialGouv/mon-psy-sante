@@ -271,30 +271,33 @@ const Page = () => {
                 Je suis dans une des situations suivantes&nbsp;:
                 <ul>
                   <li>
-                    Bénéficiaire de la Complémentaire Santé Solidaire (CSS) ou
-                    l’Aide Médicale d’Etat (AME)&nbsp;? de
+                    Bénéficiaire de la Complémentaire Santé Solidaire (CSS)
                   </li>
+
+                  <li>Bénéficiaire de l’Aide Médicale d’Etat (AME)</li>
+
                   <li>
-                    Soins en lien avec&nbsp;:
-                    <ul>
-                      <li>une affection de longue durée (ALD)&nbsp;?</li>
-                      <li>
-                        une maternité (à partir du 6<sup>ème</sup> mois de
-                        grossesse)?
-                      </li>
-                      <li>
-                        un accident du travail-maladie professionnelle
-                        (AT-MP)&nbsp;?
-                      </li>
-                      <li>une invalidité?</li>
-                    </ul>
+                    Soins en lien avec une maladie : Affection de Longue Durée
+                    (ALD) ou accident causé par un tiers
+                  </li>
+
+                  <li>
+                    Soins en lien avec une maternité (à partir du 6ème mois de
+                    grossesse)
+                  </li>
+
+                  <li>
+                    Soins en lien avec un accident du travail ou une maladie
+                    professionnelle (AT-MP)
                   </li>
                 </ul>
               </p>
+
               <p className="fr-mb-2w">
-                Mon médecin précise sur le courrier d’adressage que je peux
-                bénéficier du Tiers payant et que je ne fais pas l’avance des
-                frais.
+                Mon médecin précise sur le courrier d’adressage que je suis dans
+                une des trois dernières situations (des soins en lien avc une
+                maladie, une maternité ou un AT-MP) et que je ne fais pas
+                l’avance des frais.
               </p>
               <p className="fr-mb-2w">
                 J’apporte, lors de la première séance chez le psychologue, mon
@@ -392,7 +395,8 @@ const Page = () => {
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left"
-                  href="/documents/MonPsy_Flyer.pdf"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer tout public_2021.pdf"
                 >
                   Flyer d’information
                 </a>

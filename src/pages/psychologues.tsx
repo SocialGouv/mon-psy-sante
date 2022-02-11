@@ -97,7 +97,7 @@ const Page = () => {
                     <a
                       className="fr-link fr-fi-download-line fr-link--icon-left"
                       target="_blank"
-                      href="/documents/MonPsy_Flyer-candidatures-psychologues.pdf"
+                      href="/documents/MonPsy_Flyer-candidatures-psychologues_2022.pdf"
                     >
                       Brochure informative
                     </a>
@@ -417,25 +417,28 @@ const Page = () => {
               <ul>
                 <li>Bénéficiaire de la Complémentaire Santé Solidaire (CSS)</li>
                 <li>Bénéficiaire de l’Aide Médicale d’Etat (AME)</li>
-                <li> Soins en lien avec une affection de longue durée (ALD)</li>
+                <li>
+                  Soins en lien avec une maladie : Affection de Longue Durée
+                  (ALD) ou accident causé par un tiers
+                </li>
                 <li>
                   Soins en lien avec une maternité (à partir du 6ème mois de
                   grossesse)
                 </li>
                 <li>
-                  Soins en lien avec un accident du travail-maladie
+                  Soins en lien avec un accident du travail ou une maladie
                   professionnelle (AT-MP)
                 </li>
-                <li>Soins en lien avec une invalidité.</li>
               </ul>
               <p>
                 Ces patients ne me paient pas en fin de séances, mais{" "}
-                <strong>doivent signer la feuille de soins.</strong>
+                <strong>doivent signer la feuille de soins.</strong>.
               </p>
 
               <p>
-                Pour être rémunéré(e), j’envoie la feuille de soins signée par
-                le patient, accompagnée du courrier d’adressage à ma CPAM.
+                Pour être rémunéré(e), j’envoie la feuille de soins papier
+                complétée et signée par le patient, accompagnée du courrier
+                d’adressage à l’organisme d’assurance maladie de mon patient.
               </p>
 
               <p>
@@ -459,6 +462,11 @@ const Page = () => {
                 >
                   Je consulte la FAQ
                 </a>
+              </p>
+            </div>
+            <div className="fr-col-12">
+              <p className="fr-text--lead">
+                Je souhaite accéder à la documentation&nbsp;? (à venir)
               </p>
             </div>
           </div>
