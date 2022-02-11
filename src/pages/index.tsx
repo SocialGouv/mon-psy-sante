@@ -83,7 +83,7 @@ const Page = () => (
                   </p>
                 </div>
                 <div className="fr-card__img">
-                  <img src="/images/psy-home.svg" height="158" alt=""/>
+                  <img src="/images/psy-home.svg" height="158" alt="" />
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@ const Page = () => (
                   </p>
                 </div>
                 <div className="fr-card__img">
-                  <img src="/images/doctor-home.svg" height="158" alt=""/>
+                  <img src="/images/doctor-home.svg" height="158" alt="" />
                 </div>
               </div>
             </div>
@@ -142,7 +142,7 @@ const Page = () => (
           </div>
           <div className="fr-col-12 fr-col-md-4 fr-px-2w">
             <div className="fr-centered fr-my-2w fr-py-4w">
-              <img src="/images/logo-3114.svg" alt="Logo 3114" height="80"/>
+              <img src="/images/logo-3114.svg" alt="Logo 3114" height="80" />
             </div>
             <p>
               Je suis en détresse et/ou j’ai des pensées suicidaires. Je veux
