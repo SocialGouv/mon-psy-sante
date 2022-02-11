@@ -33,7 +33,7 @@ const Page = () => {
           <div className="fr-container">
             <h2>Rejoignez le réseau des psychologues partenaires&nbsp;!</h2>
             <div className="fr-grid-row fr-grid-row--gutters">
-              <div className="fr-col-8">
+              <div className="fr-col-7">
                 <p className="fr-mb-1v">
                   <strong>Je souhaite m’engager?</strong>
                 </p>
@@ -73,9 +73,9 @@ const Page = () => {
                   Maladie).
                 </p>
               </div>
-              <div className="fr-col-3 fr-col-offset-1">
-                <div className="fr-bg--dark fr-p-4w fr-centered">
-                  <button className="fr-btn fr-btn--lg fr-mb-4w">
+              <div className="fr-col-4 fr-col-offset-1">
+                <div className="fr-callout fr-centered">
+                  <button className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w">
                     Je candidate
                   </button>
                   <p>
@@ -193,7 +193,7 @@ const Page = () => {
               <p>
                 Le médecin identifie les situations d’urgence, présentant un
                 risque suicidaire ou avec des critères de gravité pour orienter
-                vers une prise en charge adaptée : psychiatre, hôpital,
+                vers une prise en charge adaptée&nbsp;: psychiatre, hôpital,
                 structure spécialisée dans la prise en charge de psycho-trauma…
               </p>
 
@@ -237,7 +237,7 @@ const Page = () => {
             <div className="fr-col-8">
               <p>
                 <strong>Et des adultes</strong> en souffrance psychique
-                d’intensité légère à modérée présentant :
+                d’intensité légère à modérée présentant&nbsp;:
               </p>
               <ul>
                 <li>Soit un trouble anxieux</li>
@@ -404,7 +404,7 @@ const Page = () => {
               </h2>
               <p className="fr-mb-1v">
                 Pour les situations suivantes, le patient bénéficie du Tiers
-                Payant obligatoire :
+                Payant obligatoire&nbsp;:
               </p>
               <ul>
                 <li>Bénéficiaire de la Complémentaire Santé Solidaire (CSS)</li>

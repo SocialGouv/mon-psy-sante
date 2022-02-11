@@ -59,7 +59,7 @@ const Page = () => {
             <div className="fr-col-8">
               <p>
                 <strong>Et les adultes</strong> en souffrance psychique
-                d’intensité légère à modérée présentant :
+                d’intensité légère à modérée présentant&nbsp;:
               </p>
               <ul>
                 <li>Soit un trouble anxieux</li>

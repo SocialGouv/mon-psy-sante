@@ -34,7 +34,7 @@ const Page = () => (
             <button className="fr-btn fr-btn--lg fr-fi-play-line fr-btn--icon-left fr-btn--secondary fr-mt-2w">
               Découvrir MonPsy en vidéo
             </button>
-            <span className="d-block">Durée : </span>
+            <span className="d-block">Durée&nbsp;: 2min</span>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ const Page = () => (
                   <h4 className="fr-card__title">
                     <Link href="/patients" passHref>
                       <a href="/patients" className="fr-card__link">
-                        Je suis angoissé.e, déprimé.e
+                        Je suis angoissé(e), déprimé(e)
                       </a>
                     </Link>
                   </h4>
@@ -74,7 +74,7 @@ const Page = () => (
                   <h4 className="fr-card__title">
                     <Link href="/psychologues" passHref>
                       <a href="/psychologues" className="fr-card__link">
-                        Je suis psychologues
+                        Je suis psychologue
                       </a>
                     </Link>
                   </h4>
@@ -83,7 +83,7 @@ const Page = () => (
                   </p>
                 </div>
                 <div className="fr-card__img">
-                  <img src="/images/psy-home.svg" height="158" alt="" />
+                  <img src="/images/psy-home.svg" height="158" alt=""/>
                 </div>
               </div>
             </div>
@@ -99,11 +99,11 @@ const Page = () => (
                     </Link>
                   </h4>
                   <p className="fr-card__desc">
-                    Participez au dispositif en orientant au mieux vos patients
+                    Orientez au mieux vos patients
                   </p>
                 </div>
                 <div className="fr-card__img">
-                  <img src="/images/doctor-home.svg" height="158" alt="" />
+                  <img src="/images/doctor-home.svg" height="158" alt=""/>
                 </div>
               </div>
             </div>
@@ -114,8 +114,8 @@ const Page = () => (
         <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
           <div className="fr-col-12 fr-col-md-5">
             <p>
-              Le dispositif ne concerne pas les urgences et les personnes
-              présentant un risque suicidaire.
+              Le dispositif ne concerne pas les <strong>urgences</strong> et les
+              personnes présentant un <strong>risque suicidaire</strong>.
             </p>
           </div>
           <div className="fr-col-12 fr-col-md-2 fr-centered">
@@ -128,7 +128,7 @@ const Page = () => (
           <div className="fr-col-12 fr-col-md-5">
             <p>
               Si je suis en détresse et/ou j’ai des pensées suicidaires, je
-              contacte sans attendre le 3114
+              contacte sans attendre le <strong>3114</strong>
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ const Page = () => (
           </div>
           <div className="fr-col-12 fr-col-md-4 fr-px-2w">
             <div className="fr-centered fr-my-2w fr-py-4w">
-              <img src="/images/logo-3114.svg" alt="Logo 3114" height="80" />
+              <img src="/images/logo-3114.svg" alt="Logo 3114" height="80"/>
             </div>
             <p>
               Je suis en détresse et/ou j’ai des pensées suicidaires. Je veux
@@ -193,7 +193,8 @@ const Page = () => (
             </div>
             <p>
               Permanence d’écoute téléphonique 24h/24 et 7j/7 pour les personnes
-              en détresse (tel: <a href="tel:+33972394050"> 09 72 39 40 50</a>)
+              en détresse (tel&nbsp;:&nbsp;
+              <a href="tel:+33972394050">09&nbsp;72&nbsp;39&nbsp;40&nbsp;50</a>)
             </p>
             <a
               href="https://www.sos-amitie.com/chat/"
@@ -211,11 +212,19 @@ const Page = () => (
             <div>
               <p>
                 <div className="fr-centered fr-my-2w">
-                  <img
-                    src="/images/Psycom.png"
-                    height="140"
-                    alt="Logo Psycom"
-                  />
+                  <a
+                    target="_blank"
+                    className="fr-link"
+                    title="Psycom"
+                    href="https://www.psycom.org/"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src="/images/Psycom.png"
+                      height="140"
+                      alt="Logo Psycom"
+                    />
+                  </a>
                 </div>
               </p>
             </div>
@@ -224,11 +233,19 @@ const Page = () => (
             <div>
               <p>
                 <div className="fr-centered fr-my-2w">
-                  <img
-                    src="/images/Sante-publique-France-logo.svg"
-                    height="140"
-                    alt="Logo Santé publique France"
-                  />
+                  <a
+                    target="_blank"
+                    className="fr-link"
+                    title="Santé publique France"
+                    href="https://www.psycom.org/https://www.santepubliquefrance.fr/maladies-et-traumatismes/sante-mentale"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src="/images/Sante-publique-France-logo.svg"
+                      height="140"
+                      alt="Logo Santé publique France"
+                    />
+                  </a>
                 </div>
               </p>
             </div>

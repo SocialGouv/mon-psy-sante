@@ -59,6 +59,10 @@ const footerBottomLinks = [
     link: "/mentions-legales",
     title: "Mentions légales",
   },
+  {
+    link: "/contact",
+    title: "Nous contacter",
+  },
 ];
 
 const Footer = () => (

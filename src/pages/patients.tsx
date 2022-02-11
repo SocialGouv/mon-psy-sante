@@ -17,15 +17,15 @@ const Page = () => {
               <h1>Je suis angoissé(e) ou déprimé(e)</h1>
               <p>Je souhaite bénéficier de l’accompagnement d’un psychologue</p>
               <p className="fr-text--lead">
-                Le dispositif MonPsy sera opérationnel à partir d’{" "}
+                Le dispositif MonPsy sera accessible à partir d’
                 <strong>avril&nbsp;2022</strong>.
               </p>
               <div className="fr-highlight fr-highlight--yellow-tournesol fr-my-4w fr-py-2w fr-pr-6w">
                 <p>
                   <strong>Toute personne angoissée ou déprimée</strong> (dès 3
                   ans) peut bénéficier d’un accompagnement par un psychologue
-                  partenaire (conventionné avec l’Assurance Maladie): jusqu’à 8
-                  séances par an.
+                  partenaire (conventionné avec l’Assurance Maladie)&nbsp;:
+                  jusqu’à 8 séances par an.
                 </p>
                 <p className="fr-mt-2w">
                   Pour en bénéficier, je dois{" "}
@@ -51,9 +51,9 @@ const Page = () => {
               <h2>Quel est le rôle du médecin&nbsp;?</h2>
               <p>
                 Le médecin identifie les <strong>situations d’urgence</strong>,
-                présentant un <strong>risque suicidaire</strong> ou avec des
+                présentant un <strong>risque suicidaire</strong> ou avec des{" "}
                 <strong>critères de gravité</strong> pour orienter vers une
-                prise en charge adaptée : psychiatre, hôpital, structure
+                prise en charge adaptée&nbsp;: psychiatre, hôpital, structure
                 spécialisée dans la prise en charge de psycho-trauma…
               </p>
               <p>
@@ -91,8 +91,8 @@ const Page = () => {
               <div className="fr-callout fr-callout--pink-tuile fr-my-2w">
                 <p>
                   Les coordonnées des psychologues partenaires, conventionnés
-                  avec l’Assurance Maladie, seront disponibles à partir du
-                  printemps 2022.
+                  avec l’Assurance Maladie, seront disponibles à partir d’avril
+                  2022.
                 </p>
               </div>
             </div>
@@ -113,11 +113,11 @@ const Page = () => {
                     Je prends rendez-vous avec mon médecin
                   </h3>
                   <div className="fr-card__desc">
-                    <p> Je suis angoissé.e ou déprimé.e.</p>
+                    <p>Je suis angoissé(e) ou déprimé(e).</p>
                     <p>
                       Le médecin <strong>évalue mon état de santé.</strong>
                     </p>
-                    <p> Il peut m’orienter vers un psychologue partenaire.</p>
+                    <p>Il peut m’orienter vers un psychologue partenaire.</p>
                     <p>
                       Il me remet un <strong>courrier d’adressage.</strong>
                     </p>
@@ -223,12 +223,13 @@ const Page = () => {
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12">
               <p>
-                <strong>A la fin de l’accompagnement: </strong>
+                <strong>A la fin de l’accompagnement&nbsp;: </strong>
               </p>
               <ul>
                 <li>
-                  Mon médecin et mon psychologue échangent entre eux pour faire
-                  le point sur ma situation et m’orienter au mieux.
+                  Avec mon accord, mon médecin et mon psychologue échangent
+                  entre eux pour faire le point sur ma situation et m’orienter
+                  au mieux.
                 </li>
                 <li>
                   En cas de non amélioration, mon médecin m’oriente vers la
@@ -267,19 +268,19 @@ const Page = () => {
                 Dans quels cas, je n’ai pas besoin d’avancer de frais&nbsp;?
               </h2>
               <p>
-                Je suis dans une des situations suivantes :
+                Je suis dans une des situations suivantes&nbsp;:
                 <ul>
                   <li>
                     Bénéficiaire de la Complémentaire Santé Solidaire (CSS) ou
-                    de
+                    l’Aide Médicale d’Etat (AME)&nbsp;? de
                   </li>
                   <li>
-                    {" "}
-                    l’Aide Médicale d’Etat (AME)&nbsp;? Soins en lien avec :
+                    Soins en lien avec&nbsp;:
                     <ul>
                       <li>une affection de longue durée (ALD)&nbsp;?</li>
                       <li>
-                        une maternité (à partir du 6ème mois de grossesse)?
+                        une maternité (à partir du 6<sup>ème</sup> mois de
+                        grossesse)?
                       </li>
                       <li>
                         un accident du travail-maladie professionnelle
@@ -290,22 +291,24 @@ const Page = () => {
                   </li>
                 </ul>
               </p>
-              <p>
+              <p className="fr-mb-2w">
                 Mon médecin précise sur le courrier d’adressage que je peux
                 bénéficier du Tiers payant et que je ne fais pas l’avance des
                 frais.
               </p>
-              <p>
+              <p className="fr-mb-2w">
                 J’apporte, lors de la première séance chez le psychologue, mon
                 attestation de droits à jour et je donne au psychologue le
                 courrier d’adressage de mon médecin.
               </p>
-              <p>A la fin de chaque séance, je signe la feuille de soins.</p>
-              <p>
+              <p className="fr-mb-2w">
+                A la fin de chaque séance, je signe la feuille de soins.
+              </p>
+              <p className="fr-mb-2w">
                 Le psychologue est rémunéré directement par mon organisme
                 d’assurance maladie.
               </p>
-              <p className="fr-mt-2w">
+              <p>
                 <strong>Je n’ai rien à régler à la fin de la séance.</strong>
               </p>
             </div>
@@ -324,7 +327,7 @@ const Page = () => {
               <p>
                 <strong>
                   Le médecin doit demander l’accord des titulaires de l’autorité
-                  parentale (des parents){" "}
+                  parentale (des parents ou tuteurs){" "}
                 </strong>{" "}
                 avant de m’orienter vers un accompagnement psychologique.
               </p>
@@ -332,7 +335,10 @@ const Page = () => {
                 Je peux identifier sur l’annuaire les psychologues partenaires
                 qui souhaitent recevoir des enfants et des adolescents.
               </p>
-              <p>Mes parents peuvent m’accompagner chez le psychologue.</p>
+              <p>
+                Mes parents ou tuteurs peuvent m’accompagner chez le
+                psychologue.
+              </p>
             </div>
             <div className="fr-col-4 fr-centered">
               <img
