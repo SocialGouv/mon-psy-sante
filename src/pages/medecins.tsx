@@ -17,7 +17,7 @@ const Page = () => {
               <h1>Je suis médecin</h1>
               <p>Je souhaite orienter au mieux mes patients</p>
               <p className="fr-text--lead fr-mt-10w">
-                Le dispositif MonPsy sera opérationnel à partir d’
+                Le dispositif MonPsy sera accessible à partir d’
                 <strong>avril&nbsp;2022</strong>.
               </p>
             </div>
@@ -48,7 +48,7 @@ const Page = () => {
             </div>
             <div className="fr-col-9">
               <p>
-                <strong>Les enfants dès 3ans et des adolescents</strong>{" "}
+                <strong>Les enfants dès 3 ans et des adolescents</strong>{" "}
                 présentant une situation de mal-être ou souffrance psychique
                 d’intensité légère à modérée, qui a pu susciter l’inquiétude de
                 l’entourage (famille, milieu scolaire, médecin, etc).
@@ -114,7 +114,7 @@ const Page = () => {
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-4w">
           <div className="fr-container">
-            <h2>Comment j’accompagne mon patient dans son parcours?</h2>
+            <h2>Comment j’accompagne mon patient dans son parcour&nbsp;?</h2>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12 fr-col-md-3">
@@ -133,7 +133,7 @@ const Page = () => {
 
                     <p>
                       Si le patient présente des troubles psychiques d’intensité
-                      légère à modérée, je lui propose un accompagnement par
+                      légère à modérée, je lui propose un accompagnement par un
                       psychologue partenaire.
                     </p>
 
@@ -154,18 +154,17 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>Je remets à mon patient: </p>
-                    <ul>
-                      <li>
-                        un courrier d’adressage nécessaire au remboursement de 8
-                        séances maximum. Le nombre de séances est déterminé par
-                        le psychologue.
-                      </li>
-                      <li>
-                        un courrier d’accompagnement avec le contexte, les
-                        éléments cliniques et le motif de l’adressage à
-                        destination du psychologue partenaire du dispositif
-                      </li>
-                    </ul>
+
+                    <p>
+                      un courrier d’adressage nécessaire au remboursement de 8
+                      séances maximum. Le nombre de séances est déterminé par le
+                      psychologue.
+                    </p>
+                    <p>
+                      un courrier d’accompagnement avec le contexte, les
+                      éléments cliniques et le motif de l’adressage à
+                      destination du psychologue partenaire du dispositif
+                    </p>
 
                     <p>
                       Un modèle de ces deux courriers accessible{" "}
@@ -195,7 +194,7 @@ const Page = () => {
                     <p>
                       <strong>En cas de non amélioration des symptômes</strong>,
                       une concertation avec le psychologue et un psychiatre est
-                      utile pour prévoir de la suite de la prise en charge.
+                      nécessaire pour prévoir de la suite de la prise en charge.
                     </p>
                   </div>
                 </div>

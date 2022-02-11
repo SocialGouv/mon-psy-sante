@@ -35,7 +35,7 @@ const Page = () => {
             <div className="fr-grid-row fr-grid-row--gutters">
               <div className="fr-col-7">
                 <p className="fr-mb-1v">
-                  <strong>Je souhaite m’engager?</strong>
+                  <strong>Je souhaite m’engage&nbsp;?</strong>
                 </p>
                 <p>
                   En rejoignant MonPsy, je permets à des publics, qui n’auraient
@@ -45,7 +45,7 @@ const Page = () => {
 
                 <p className="fr-mb-1v">
                   <strong>
-                    Je souhaite participer à un échange pluriprofessionnel?
+                    Je souhaite participer à un échange pluriprofessionne&nbsp;?
                   </strong>
                 </p>
                 <p>
@@ -59,12 +59,15 @@ const Page = () => {
                   <strong>Je souhaite bénéficier de visibilité?</strong>
                 </p>
                 <p>
-                  Mes coordonnées apparaissent sur l’annuaire MonPsy mis en
-                  ligne par le Ministère de la Santé et l’Assurance Maladie.
+                  Mes coordonnées apparaissent publiquement sur l’annuaire
+                  MonPsy mis en ligne par le Ministère de la Santé et
+                  l’Assurance Maladie.
                 </p>
 
                 <p className="fr-mb-1v">
-                  <strong>Je souhaite choisir mon niveau d’engagement?</strong>
+                  <strong>
+                    Je souhaite choisir mon niveau d’engagemen&nbsp;?
+                  </strong>
                 </p>
                 <p>
                   Je décide du temps consacré au dispositif MonPsy. L’activité
@@ -86,21 +89,25 @@ const Page = () => {
                   <p>
                     <a
                       className="fr-link fr-fi-download-line fr-link--icon-left"
-                      href="/documents/MonPsy_Flyer-candidatures-psychologues.pdf"
-                    >
-                      Brochure informative
-                    </a>
-                    <a
-                      className="fr-link fr-fi-download-line fr-link--icon-left"
+                      target="_blank"
                       href="/documents/MonPsy_Flyer-Démarches simplifiées_2022.pdf"
                     >
                       Tutoriel Démarches Simplifiées
+                    </a>
+                    <a
+                      className="fr-link fr-fi-download-line fr-link--icon-left"
+                      target="_blank"
+                      href="/documents/MonPsy_Flyer-candidatures-psychologues.pdf"
+                    >
+                      Brochure informative
                     </a>
                   </p>
                 </div>
               </div>
               <div className="fr-col-12">
-                <h2>Quelles sont les étapes&nbsp;?</h2>
+                <h2>
+                  Quelles sont les étapes pour être psychologue partenair&nbsp;?
+                </h2>
               </div>
             </div>
           </div>
@@ -112,8 +119,8 @@ const Page = () => {
                   <h3 className="fr-card__title fr-mb-4w">Candidature</h3>
                   <div className="fr-card__desc">
                     <p>
-                      <strong>Je complète le formulaire et dépose</strong> les
-                      pièces justificatives
+                      <strong>Je complète le formulaire</strong> et dépose les
+                      pièces justificatives <a target="_blank">ici</a>
                     </p>
                   </div>
                 </div>
@@ -226,7 +233,7 @@ const Page = () => {
             </div>
             <div className="fr-col-9">
               <p>
-                <strong>Des enfants dès 3ans et des adolescents</strong>{" "}
+                <strong>Des enfants dès 3 ans et des adolescents</strong>{" "}
                 présentant une situation de mal-être ou souffrance psychique
                 d’intensité légère à modérée, qui a pu susciter l’inquiétude de
                 l’entourage (famille, milieu scolaire, médecin, etc).
@@ -254,7 +261,7 @@ const Page = () => {
             </div>
             <div className="fr-col-2">
               <img
-                src="/images/patient-home.svg"
+                src="/images/patient-full.svg"
                 height="300"
                 alt="Patient femme illustration"
               />
@@ -267,8 +274,8 @@ const Page = () => {
               />
             </div>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters">
-            <div className="fr-col-12">
+          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+            <div className="fr-callout fr-callout--pink-tuile fr-my-2w fr-p-4w fr-col-12 fr-col-lg-8">
               <p>
                 <strong>Les patients en situation d’urgence</strong>, présentant
                 un{" "}
@@ -282,7 +289,7 @@ const Page = () => {
 
               <p>
                 Pour plus de précisions, je me réfère au guide à destination des
-                psychologues. LIEN MANQUANT
+                psychologues. (à venir)
               </p>
             </div>
           </div>
@@ -296,12 +303,13 @@ const Page = () => {
             </h2>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-md fr-ml-md-4w">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">
-                    Je reçois un patient pour un entretien d’évaluation{" "}
+                    Je reçois un patient en présentiel pour un entretien
+                    d’évaluation{" "}
                   </h3>
                   <div className="fr-card__desc">
                     <p>
@@ -313,7 +321,7 @@ const Page = () => {
                       Lors d’une première séance remboursée, je réalise un
                       entretien d’évaluation pour{" "}
                       <strong>
-                        déterminer le nombrede séances nécessaires
+                        déterminer le nombre de séances nécessaires
                       </strong>
                       .
                     </p>
@@ -321,7 +329,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-md">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
@@ -337,7 +345,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-md">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
@@ -369,7 +377,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-md fr-mr-md-4w">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">4</strong>
@@ -378,14 +386,14 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      A la fin de l’accompagnement, j’adresse au médecin, un
+                      A la fin de l’accompagnement, j’adresse au médecin, un{" "}
                       <strong>compte-rendu de fin de prise en charge</strong>.
                     </p>
 
                     <p>
                       <strong>En cas de non amélioration des symptômes</strong>,
                       une concertation avec le médecin et un psychiatre est
-                      utile pour prévoir de la suite de la prise en charge.
+                      nécessaire pour prévoir la suite de la prise en charge.
                     </p>
                   </div>
                 </div>
@@ -427,9 +435,7 @@ const Page = () => {
 
               <p>
                 Pour être rémunéré(e), j’envoie la feuille de soins signée par
-                le patient, accompagnée du courrier d’adressage à ma CPAM (via
-                mon espace ameli.pro, par voie postale ou un lecteur de carte
-                vitale).
+                le patient, accompagnée du courrier d’adressage à ma CPAM.
               </p>
 
               <p>
@@ -442,18 +448,17 @@ const Page = () => {
         </div>
       </section>
       <section>
-        <div className="fr-container fr-callout fr-callout--pink-tuile fr-my-6w">
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
+        <div className="fr-container fr-my-6w">
+          <div className="fr-grid-row fr-grid-row--gutters">
             <div className="fr-col-12">
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
-                  href="/faq/psy"
+                  href="/faq/doctor"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ
                 </a>
-                LIENS MANQUANTS
               </p>
             </div>
           </div>
