@@ -1,3 +1,10 @@
+## [1.11.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.5...v1.11.6) (2022-02-13)
+
+
+### Bug Fixes
+
+* **cron:** Import public from DS ([#58](https://github.com/SocialGouv/mon-psy-sante/issues/58)) ([7260bbb](https://github.com/SocialGouv/mon-psy-sante/commit/7260bbbed9b145472fd8f2d6745bf78ddf4e2b5c))
+
 ## [1.11.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.4...v1.11.5) (2022-02-09)
 
 
