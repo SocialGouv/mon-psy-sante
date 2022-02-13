@@ -1,13 +1,14 @@
 import bcrypt from "bcryptjs";
 
 import { models } from "../db/models";
-import { UserActionResponse } from "../types/userAccount";
+import { UserAccount, UserActionResponse } from "../types/userAccount";
 
 export const login = async (
   email: string,
   password: string
 ): Promise<UserActionResponse> => {
-  const user = await models.UserAccount.findOne({
+  // @ts-ignore
+  const user: UserAccount = await models.UserAccount.findOne({
     where: { email },
   });
 

@@ -8,11 +8,22 @@ import { Psychologist } from "../types/psychologist";
 export const getOne = async (id: string) => {
   return models.Psychologist.findOne({
     raw: true,
-    where: { id },
+    where: { archived: false, id },
   });
 };
 
-export const countAll = async () => models.Psychologist.count();
+export const getByInstructor = async (
+  group: string
+): Promise<Psychologist[]> => {
+  // @ts-ignore
+  return models.Psychologist.findAll({
+    raw: true,
+    where: { archived: false, instructorId: group },
+  });
+};
+
+export const countAll = async () =>
+  models.Psychologist.count({ where: { archived: false } });
 
 export const getAll = async (filters: {
   [key in FILTER]?: string | string[];
@@ -21,6 +32,7 @@ export const getAll = async (filters: {
     limit: 10,
     offset: parseInt(filters[FILTER.PAGE_INDEX] as string, 10) * 10,
     raw: true,
+    where: { archived: false },
   };
   if (filters[FILTER.LONGITUDE] && filters[FILTER.LATITUDE]) {
     query.attributes = {

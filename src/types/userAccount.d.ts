@@ -2,6 +2,7 @@ export interface UserAccount {
   email: string;
   id: string;
   group: string;
+  password: string;
 }
 
 export interface UserActionResponse {
