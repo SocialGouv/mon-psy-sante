@@ -34,7 +34,10 @@ const infos = [
       ) : null,
   },
   { label: "Possibilité de séances à distance", value: "teleconsultation" },
-  { label: "Accompagnement des", value: (psy) => psy.public.toLowerCase() },
+  {
+    label: "Accompagnement des",
+    value: (psy) => psy.public && psy.public.toLowerCase(),
+  },
   { label: "Langue(s) parlée(s):", value: "languages" },
   { label: "Nom du CDS ou de la MSP:", value: "cdsmsp" },
 ];
