@@ -1,3 +1,4 @@
+import bcrypt from "bcryptjs";
 import faker from "@faker-js/faker";
 
 import { SRID } from "../../types/const/geometry";
@@ -9,6 +10,8 @@ const NUMBER_OF_PSYCHOLOGISTS = 1000;
 const deleteAll = async () => {
   await models.Psychologist.destroy({ where: {} });
 };
+
+const groupIds = [...Array(5).keys()].map(() => faker.datatype.uuid());
 
 const createPsychologists = async () => {
   const psychologists: Psychologist[] = [];
@@ -33,7 +36,7 @@ const createPsychologists = async () => {
       email: faker.internet.exampleEmail(),
       firstName: faker.name.firstName(),
       id: i,
-      instructorId: faker.datatype.uuid(),
+      instructorId: faker.random.arrayElement(groupIds),
       languages: faker.lorem.word(1),
       lastName: faker.name.lastName(),
       phone: faker.phone.phoneNumber("0# ## ## ## ##"),
@@ -54,10 +57,22 @@ const createPsychologists = async () => {
   await models.Psychologist.bulkCreate(psychologists);
 };
 
+const createUsers = async () => {
+  const salt = await bcrypt.genSalt(10);
+
+  await models.UserAccount.bulkCreate(
+    groupIds.map((group, index) => ({
+      email: `${index}@test.fr`,
+      group,
+      password: bcrypt.hashSync(`admin${index}`, salt),
+    }))
+  );
+};
+
 const createAllData = async () => {
   await deleteAll();
 
-  await createPsychologists();
+  await Promise.all([createPsychologists(), createUsers()]);
 };
 
 createAllData();
