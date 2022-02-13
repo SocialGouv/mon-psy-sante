@@ -1,4 +1,4 @@
-import faker from "faker";
+import faker from "@faker-js/faker";
 
 import { SRID } from "../../types/const/geometry";
 import { Psychologist } from "../../types/psychologist";
@@ -50,6 +50,7 @@ const createPsychologists = async () => {
     });
   }
 
+  //@ts-ignore
   await models.Psychologist.bulkCreate(psychologists);
 };
 
