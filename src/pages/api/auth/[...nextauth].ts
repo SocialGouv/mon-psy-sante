@@ -6,15 +6,13 @@ import { login } from "../../../services/userAccount";
 const options = {
   callbacks: {
     async jwt({ token, user }) {
-      console.log("jwt");
       return {
         ...token,
         ...user,
       };
     },
-    redirect: ({ url, baseUrl }) => url || baseUrl,
+    redirect: ({ url }) => url || "/admin",
     async session({ session, token }) {
-      console.log("session");
       if (token) {
         return {
           ...session,

@@ -18,14 +18,13 @@ export const getServerSideProps: GetServerSideProps<LoginProps> = async (
   context
 ) => {
   const userSession = await getSession(context);
-  console.log(userSession);
   if (userSession) {
-    return { redirect: { destination: "/", permanent: false } };
+    return { redirect: { destination: "/admin", permanent: false } };
   }
 
   return {
     props: {
-      callbackUrl: (context.query.callbackUrl as string) || "/",
+      callbackUrl: (context.query.callbackUrl as string) || "/admin",
       error: (context.query.error as string) || null,
     },
   };

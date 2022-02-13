@@ -1,7 +1,6 @@
-import bcrypt from "bcryptjs";
 import faker from "@faker-js/faker";
+import bcrypt from "bcryptjs";
 
-import { SRID } from "../../types/const/geometry";
 import { Psychologist } from "../../types/psychologist";
 import { models } from "../models";
 
@@ -45,6 +44,7 @@ export const getOnePsychologist = (
     "Enfants/adolescents",
   ]),
   teleconsultation: faker.datatype.boolean(),
+  visible: true,
   website: faker.helpers.randomize([
     faker.internet.domainName(),
     faker.internet.url(),

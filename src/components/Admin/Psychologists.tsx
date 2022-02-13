@@ -63,7 +63,7 @@ const Psychologists = ({
       render: (psychologist) => (
         <Button
           onClick={() => {
-            router.push(`/admin/psychologist/${psychologist.id}`);
+            router.push(`/admin/psychologists/${psychologist.id}`);
           }}
         >
           Modifier

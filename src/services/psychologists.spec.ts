@@ -17,6 +17,8 @@ describe("Service psychologists", () => {
     await models.Psychologist.bulkCreate([
       getOnePsychologist({ archived: true, instructorId: "1" }),
       getOnePsychologist({ archived: true, instructorId: "2" }),
+      getOnePsychologist({ instructorId: "1", visible: false }),
+      getOnePsychologist({ instructorId: "2", visible: false }),
       getOnePsychologist({ archived: false, instructorId: "1" }),
       getOnePsychologist({ archived: false, instructorId: "2" }),
       getOnePsychologist({ archived: false, instructorId: "2" }),
@@ -24,7 +26,11 @@ describe("Service psychologists", () => {
 
     await models.Psychologist.bulkCreate(
       [...Array(20).keys()].map(() =>
-        getOnePsychologist({ archived: false, instructorId: "osef" })
+        getOnePsychologist({
+          archived: false,
+          instructorId: "osef",
+          visible: true,
+        })
       )
     );
   });
