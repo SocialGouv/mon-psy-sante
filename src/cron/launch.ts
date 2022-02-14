@@ -13,6 +13,7 @@ if (process.argv.length < 3) {
 
 const cronJobs = {
   importData: demarchesSimplifiees.importData,
+  importState: demarchesSimplifiees.importState,
 };
 
 const jobName = process.argv[2];

@@ -6,7 +6,9 @@ export interface Psychologist {
   phone: string;
   address: string;
   teleconsultation: boolean;
-  withChildren: boolean;
+  displayEmail: boolean;
+  email: string;
+  public: string;
   languages: string;
   cdsmsp: string;
   website: string;

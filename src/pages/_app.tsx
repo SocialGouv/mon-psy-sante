@@ -4,7 +4,6 @@ import { SkiplinkItem, Skiplinks } from "@dataesr/react-dsfr";
 import * as Sentry from "@sentry/node";
 import { init } from "@socialgouv/matomo-next";
 import App from "next/app";
-import Head from "next/head";
 import React from "react";
 
 import Footer from "../components/Footer";
@@ -27,30 +26,6 @@ class MyApp extends App {
 
     return (
       <>
-        <Head>
-          <link rel="shortcut icon" href="/favicon.ico" />
-          <title>MonPsy</title>
-          <meta property="og:title" content="MonPsy" />
-
-          <meta
-            name="description"
-            content="MonPsy s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
-          />
-          <meta
-            property="og:description"
-            content="MonPsy s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès le printemps 2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
-          />
-
-          <meta property="og:type" content="website" />
-          <script
-            type="text/javascript"
-            src="https://forms.sbc08.com/form.js"
-          />
-          <meta
-            property="og:image"
-            content="https://monpsy.sante.gouv.fr/images/Illustration.svg"
-          />
-        </Head>
         <Skiplinks>
           <SkiplinkItem href="#contenu">Contenu</SkiplinkItem>
           <SkiplinkItem href="#header-navigation">Menu</SkiplinkItem>

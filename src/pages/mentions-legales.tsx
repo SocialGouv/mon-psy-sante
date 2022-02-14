@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>MonPsySanté pour les psychologues</title>
+        <title>MonPsy pour les psychologues</title>
       </Head>
       <div className="fr-container fr-my-6w">
         <h1 id="mentions-legales">Mentions légales</h1>
@@ -27,7 +27,7 @@ const Page = () => {
           </div>
           <div className="fr-mt-3w">
             <h2>Hébergement du site</h2>
-            Ce site est hébergé par : <br />
+            Ce site est hébergé par&nbsp;: <br />
             <p className="fr-mb-2w">
               Microsoft Azure <br />
               37 Quai du Président Roosevelt <br />
@@ -56,7 +56,7 @@ const Page = () => {
               En savoir plus
               <br />
               Pour en savoir plus sur la politique d’accessibilité numérique de
-              l’État :
+              l’État&nbsp;:
               http://references.modernisation.gouv.fr/accessibilite-numerique
             </p>
           </div>

@@ -1,6 +1,5 @@
 import { Col, Row, Select } from "@dataesr/react-dsfr";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import {
   allContactUserTypes,
@@ -11,14 +10,7 @@ import Psychologist from "./Psychologist";
 import Public from "./Public";
 
 const Contact = () => {
-  const router = useRouter();
   const [userType, setUserType] = useState("");
-
-  useEffect(() => {
-    if (process.env.NEXT_PUBLIC_NEW_FEATURES !== "true") {
-      router.push("/");
-    }
-  }, []);
 
   return (
     <Row className="fr-my-4w" justifyContent="center">
