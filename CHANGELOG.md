@@ -1,3 +1,10 @@
+## [1.11.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.6...v1.11.7) (2022-02-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @dataesr/react-dsfr to v0.9.9 ([#59](https://github.com/SocialGouv/mon-psy-sante/issues/59)) ([6273864](https://github.com/SocialGouv/mon-psy-sante/commit/6273864fa33467e7a3881b342ea75455085326e9))
+
 ## [1.11.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.5...v1.11.6) (2022-02-13)
 
 
