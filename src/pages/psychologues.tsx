@@ -35,7 +35,7 @@ const Page = () => {
             <div className="fr-grid-row fr-grid-row--gutters">
               <div className="fr-col-7">
                 <p className="fr-mb-1v">
-                  <strong>Je souhaite m’engage&nbsp;?</strong>
+                  <strong>Je souhaite m’engager&nbsp;?</strong>
                 </p>
                 <p>
                   En rejoignant MonPsy, je permets à des publics, qui n’auraient
@@ -45,7 +45,8 @@ const Page = () => {
 
                 <p className="fr-mb-1v">
                   <strong>
-                    Je souhaite participer à un échange pluriprofessionne&nbsp;?
+                    Je souhaite participer à un échange
+                    pluriprofessionnel&nbsp;?
                   </strong>
                 </p>
                 <p>
@@ -56,7 +57,7 @@ const Page = () => {
                 </p>
 
                 <p className="fr-mb-1v">
-                  <strong>Je souhaite bénéficier de visibilité?</strong>
+                  <strong>Je souhaite bénéficier de visibilité&nbsp;?</strong>
                 </p>
                 <p>
                   Mes coordonnées apparaissent publiquement sur l’annuaire
@@ -66,7 +67,7 @@ const Page = () => {
 
                 <p className="fr-mb-1v">
                   <strong>
-                    Je souhaite choisir mon niveau d’engagemen&nbsp;?
+                    Je souhaite choisir mon niveau d’engagement&nbsp;?
                   </strong>
                 </p>
                 <p>
@@ -106,7 +107,8 @@ const Page = () => {
               </div>
               <div className="fr-col-12">
                 <h2>
-                  Quelles sont les étapes pour être psychologue partenair&nbsp;?
+                  Quelles sont les étapes pour être psychologue
+                  partenaire&nbsp;?
                 </h2>
               </div>
             </div>
@@ -119,8 +121,8 @@ const Page = () => {
                   <h3 className="fr-card__title fr-mb-4w">Candidature</h3>
                   <div className="fr-card__desc">
                     <p>
-                      <strong>Je complète le formulaire</strong> et dépose les
-                      pièces justificatives <a target="_blank">ici</a>
+                      <strong>Je complète le formulaire</strong> et{" "}
+                      <a target="_blank">dépose les pièces justificatives</a>
                     </p>
                   </div>
                 </div>
@@ -432,7 +434,7 @@ const Page = () => {
               </ul>
               <p>
                 Ces patients ne me paient pas en fin de séances, mais{" "}
-                <strong>doivent signer la feuille de soins.</strong>.
+                <strong>doivent signer la feuille de soins</strong>.
               </p>
 
               <p>

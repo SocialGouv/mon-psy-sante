@@ -351,13 +351,21 @@ const Page = () => {
               />
             </div>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-mt-4w">
+          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-mt-4w">
             <div className="fr-col-3">
-              <img
-                src="/images/Filsantejeunes.jpg"
-                height="140"
-                alt="Logo Fil santé jeunes"
-              />
+              <a
+                target="_blank"
+                className="fr-link"
+                title="Fil santé jeunes"
+                href="https://www.filsantejeunes.com/"
+                rel="noreferrer"
+              >
+                <img
+                  src="/images/Filsantejeunes.jpg"
+                  height="140"
+                  alt="Logo Fil santé jeunes"
+                />
+              </a>
             </div>
             <div className="fr-col-9">
               <p>

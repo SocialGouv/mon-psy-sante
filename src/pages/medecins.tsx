@@ -76,14 +76,14 @@ const Page = () => {
             </div>
             <div className="fr-col-2">
               <img
-                src="/images/patient-home.svg"
+                src="/images/patient-woman.svg"
                 height="300"
                 alt="Patient femme illustration"
               />
             </div>
             <div className="fr-col-2">
               <img
-                src="/images/patient-male.svg"
+                src="/images/patient-man.svg"
                 height="300"
                 alt="Patient homme illustration"
               />
@@ -114,7 +114,7 @@ const Page = () => {
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-4w">
           <div className="fr-container">
-            <h2>Comment j’accompagne mon patient dans son parcour&nbsp;?</h2>
+            <h2>Comment j’accompagne mon patient dans son parcours&nbsp;?</h2>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12 fr-col-md-3">
