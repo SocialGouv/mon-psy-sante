@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 import HeadTag from "../components/HeadTag";
-import VideoButton from "../components/VideoButon";
+import VideoButton from "../components/VideoButton";
 
 const Page = () => {
   const [video, setVideo] = useState("hide");
