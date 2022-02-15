@@ -8,7 +8,7 @@ describe("FAQ", () => {
 
     cy.get("h2").should(
       "have.text",
-      "PatientsMédecinsPsychologues"
+      "Présentation du dispositif MonPsyMédecinPatientPsychologues"
     );
   });
 });
