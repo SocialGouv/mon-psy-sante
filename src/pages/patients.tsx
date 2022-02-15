@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HeadTag from "../components/HeadTag";
 
 const Page = () => {
+  const [video, setVideo] = useState("hide");
+
   return (
     <>
       <HeadTag
@@ -11,7 +13,7 @@ const Page = () => {
         image="patient.svg"
       />
       <section>
-        <div className="fr-container fr-my-6w">
+        <div className="fr-container fr-mt-4w fr-mb-8w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-8">
               <h1>Je suis angoissé(e) ou déprimé(e)</h1>
@@ -35,13 +37,33 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="fr-col-4 fr-py-8w">
+            <div className="fr-col-4">
               <img
                 src="/images/patient.svg"
                 alt="Je suis angoissé(e) ou déprimé(e) illustration"
               />
+              {video === "hide" && (
+                <>
+                  <button
+                    className="fr-btn fr-btn--lg fr-fi-play-line fr-btn--icon-left fr-btn--secondary fr-mt-2w"
+                    onClick={() => setVideo("show")}
+                  >
+                    Découvrir MonPsy en vidéo
+                  </button>
+                  <span className="d-block">Durée&nbsp;: 2min</span>
+                </>
+              )}
             </div>
           </div>
+          {video === "show" && (
+            <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
+              <div className="fr-col-8">
+                <video width="100%" controls autoPlay>
+                  <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
+                </video>
+              </div>
+            </div>
+          )}
         </div>
       </section>
       <section>
