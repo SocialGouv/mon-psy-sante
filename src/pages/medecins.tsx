@@ -6,8 +6,8 @@ const Page = () => {
   return (
     <>
       <HeadTag
-        title="Je suis médecin, je souhaite orienter au mieux mes patients"
-        description=" MonPsy permet aux médecins d’orienter les patients présentant des troubles psychiques d’intensité légère à modérée vers des psychologues conventionnés avec l’Assurance Maladie."
+        title="Médecin : orienter mes patients vers le dispositif | MonPsy"
+        description="Orientez vos patients en souffrance psychique d’intensité légère à modérée, vers « MonPsy », un accompagnement remboursé avec un psychologue conventionné."
         image="doctor.svg"
       />
       <section>

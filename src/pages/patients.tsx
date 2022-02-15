@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import HeadTag from "../components/HeadTag";
+import VideoButton from "../components/VideoButon";
 
 const Page = () => {
   const [video, setVideo] = useState("hide");
@@ -8,8 +9,8 @@ const Page = () => {
   return (
     <>
       <HeadTag
-        title="Je souhaite bénéficier de l’accompagnement d’un psychologue | MonPsy"
-        description="MonPsy permet aux patients qui en ont besoin de bénéficier de séances remboursées avec un psychologue partenaire, conventionné avec l’Assurance Maladie. "
+        title="Enfant ou Adulte : bénéficier d’un soutien psychologique | MonPsy"
+        description="Vous vous sentez angoissé(e), déprimé(e), consultez votre médecin. Il peut vous proposer un accompagnement psychologique remboursé MonPsy. A partir de 3 ans."
         image="patient.svg"
       />
       <section>
@@ -43,15 +44,7 @@ const Page = () => {
                 alt="Je suis angoissé(e) ou déprimé(e) illustration"
               />
               {video === "hide" && (
-                <>
-                  <button
-                    className="fr-btn fr-btn--lg fr-fi-play-line fr-btn--icon-left fr-btn--secondary fr-mt-2w"
-                    onClick={() => setVideo("show")}
-                  >
-                    Découvrir MonPsy en vidéo
-                  </button>
-                  <span className="d-block">Durée&nbsp;: 2min</span>
-                </>
+                <VideoButton onClick={() => setVideo("show")} />
               )}
             </div>
           </div>
@@ -289,31 +282,27 @@ const Page = () => {
               <h2>
                 Dans quels cas, je n’ai pas besoin d’avancer de frais&nbsp;?
               </h2>
-              <p>
-                Je suis dans une des situations suivantes&nbsp;:
-                <ul>
-                  <li>
-                    Bénéficiaire de la Complémentaire Santé Solidaire (CSS)
-                  </li>
+              <p>Je suis dans une des situations suivantes&nbsp;:</p>
+              <ul>
+                <li>Bénéficiaire de la Complémentaire Santé Solidaire (CSS)</li>
 
-                  <li>Bénéficiaire de l’Aide Médicale d’Etat (AME)</li>
+                <li>Bénéficiaire de l’Aide Médicale d’Etat (AME)</li>
 
-                  <li>
-                    Soins en lien avec une maladie : Affection de Longue Durée
-                    (ALD) ou accident causé par un tiers
-                  </li>
+                <li>
+                  Soins en lien avec une maladie : Affection de Longue Durée
+                  (ALD) ou accident causé par un tiers
+                </li>
 
-                  <li>
-                    Soins en lien avec une maternité (à partir du 6ème mois de
-                    grossesse)
-                  </li>
+                <li>
+                  Soins en lien avec une maternité (à partir du 6ème mois de
+                  grossesse)
+                </li>
 
-                  <li>
-                    Soins en lien avec un accident du travail ou une maladie
-                    professionnelle (AT-MP)
-                  </li>
-                </ul>
-              </p>
+                <li>
+                  Soins en lien avec un accident du travail ou une maladie
+                  professionnelle (AT-MP)
+                </li>
+              </ul>
 
               <p className="fr-mb-2w">
                 Mon médecin précise sur le courrier d’adressage que je suis dans

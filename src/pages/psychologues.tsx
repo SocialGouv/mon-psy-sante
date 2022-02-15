@@ -6,8 +6,8 @@ const Page = () => {
   return (
     <>
       <HeadTag
-        title="Je souhaite rejoindre le réseau des psychologues partenaires | MonPsy"
-        description="Les psychologues volontaires peuvent s’engager dans « MonPsy » pour faire bénéficier les patients d’un accompagnement psychologique remboursé par l’Assurance Maladie."
+        title="Rejoindre le réseau de psychologues partenaires | MonPsy"
+        description="Rejoignez le réseau de psychologues partenaires MonPsy, et proposez aux patients un accompagnement psychologique remboursé par l’Assurance Maladie."
         image="psy.svg"
       />
       <section>
@@ -32,7 +32,7 @@ const Page = () => {
         <div className="fr-container--fluid fr-bg--light2 fr-py-4w">
           <div className="fr-container">
             <h2>Rejoignez le réseau des psychologues partenaires&nbsp;!</h2>
-            <div className="fr-grid-row fr-grid-row--gutters">
+            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
               <div className="fr-col-7">
                 <p className="fr-mb-1v">
                   <strong>Je souhaite m’engager&nbsp;?</strong>
@@ -78,10 +78,13 @@ const Page = () => {
                 </p>
               </div>
               <div className="fr-col-4 fr-col-offset-1">
-                <div className="fr-callout fr-centered">
-                  <button className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w">
+                <div className="fr-callout fr-callout-white fr-centered">
+                  <a
+                    className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w"
+                    target="_blank"
+                  >
                     Je candidate
-                  </button>
+                  </a>
                   <p>
                     Pour accompagner des patients dans le cadre du dispositif
                     MonPsy, il est nécessaire d’être conventionné avec
@@ -89,14 +92,14 @@ const Page = () => {
                   </p>
                   <p>
                     <a
-                      className="fr-link fr-fi-download-line fr-link--icon-left"
+                      className="fr-link fr-fi-download-line fr-link--icon-left fr-mt-2w"
                       target="_blank"
                       href="/documents/MonPsy_Flyer-Démarches simplifiées_2022.pdf"
                     >
                       Tutoriel Démarches Simplifiées
                     </a>
                     <a
-                      className="fr-link fr-fi-download-line fr-link--icon-left"
+                      className="fr-link fr-fi-download-line fr-link--icon-left fr-mt-2w"
                       target="_blank"
                       href="/documents/MonPsy_Flyer-candidatures-psychologues_2022.pdf"
                     >

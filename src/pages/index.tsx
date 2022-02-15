@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 import HeadTag from "../components/HeadTag";
+import VideoButton from "../components/VideoButon";
 
 const Page = () => {
   const [video, setVideo] = useState("hide");
@@ -9,18 +10,20 @@ const Page = () => {
     <>
       <HeadTag
         title="MonPsy : Le dispositif de remboursement des séances chez le psychologue"
-        description="MonPsy s’adresse à toute la population à partir de 3 ans présentant des troubles psychiques d’intensité légère à modérée. Dès avril&nbsp;2022, sur orientation d’un médecin, les patients (enfants, adolescents et adultes) pourront bénéficier de séances assurées par des psychologues volontaires conventionnés avec l’Assurance Maladie."
+        description="MonPsy est un dispositif du Ministère de la Santé permettant à chacun de bénéficier de séances remboursées avec un psychologue conventionné avec l’Assurance Maladie."
         image="Psychologist-hero.svg"
       />
       <section>
         <div className="fr-container">
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
             <div className="fr-col-12 fr-col-md-6">
-              <h1>MonPsy</h1>
-              <p className="fr-text--lead">
-                <strong>A partir d’avril&nbsp;2022,</strong> l’accès à un
-                accompagnement psychologique pour tous (dès 3 ans)
-              </p>
+              <h1>
+                MonPsy&nbsp;
+                <span className="fr-text--lead d-block fr-mt-3w">
+                  <strong>A partir d’avril&nbsp;2022,</strong> l’accès à un
+                  accompagnement psychologique pour tous (dès 3 ans)
+                </span>
+              </h1>
               <p className="fr-mt-10w">
                 Sur orientation d’un médecin, jusqu’à 8 séances remboursées chez
                 un psychologue partenaire.
@@ -32,17 +35,8 @@ const Page = () => {
                 src="/images/Psychologist-hero.svg"
                 alt="En parler, c’est déjà se soigner"
               />
-
               {video === "hide" && (
-                <>
-                  <button
-                    className="fr-btn fr-btn--lg fr-fi-play-line fr-btn--icon-left fr-btn--secondary fr-mt-2w"
-                    onClick={() => setVideo("show")}
-                  >
-                    Découvrir MonPsy en vidéo
-                  </button>
-                  <span className="d-block">Durée&nbsp;: 2min</span>
-                </>
+                <VideoButton onClick={() => setVideo("show")} />
               )}
             </div>
           </div>
@@ -64,13 +58,13 @@ const Page = () => {
               <div className="fr-col-12 fr-col-md-3">
                 <div className="fr-card fr-enlarge-link fr-pt-3w">
                   <div className="fr-card__body">
-                    <h4 className="fr-card__title">
+                    <h2 className="fr-card__title">
                       <Link href="/patients" passHref>
                         <a href="/patients" className="fr-card__link">
                           Je suis angoissé(e), déprimé(e)
                         </a>
                       </Link>
-                    </h4>
+                    </h2>
                     <p className="fr-card__desc">
                       Bénéficiez de l’accompagnement d’un psychologue
                     </p>
@@ -89,13 +83,13 @@ const Page = () => {
               <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-3">
                 <div className="fr-card fr-enlarge-link fr-pt-3w">
                   <div className="fr-card__body">
-                    <h4 className="fr-card__title">
+                    <h2 className="fr-card__title">
                       <Link href="/psychologues" passHref>
                         <a href="/psychologues" className="fr-card__link">
                           Je suis psychologue
                         </a>
                       </Link>
-                    </h4>
+                    </h2>
                     <p className="fr-card__desc">
                       Rejoignez le réseau des psychologues partenaires
                     </p>
@@ -109,13 +103,13 @@ const Page = () => {
               <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-3">
                 <div className="fr-card fr-enlarge-link fr-pt-3w">
                   <div className="fr-card__body">
-                    <h4 className="fr-card__title">
+                    <h2 className="fr-card__title">
                       <Link href="/medecins" passHref>
                         <a href="/medecins" className="fr-card__link">
                           Je suis médecin
                         </a>
                       </Link>
-                    </h4>
+                    </h2>
                     <p className="fr-card__desc">
                       Orientez au mieux vos patients
                     </p>
