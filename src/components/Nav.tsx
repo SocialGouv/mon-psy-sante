@@ -15,7 +15,7 @@ const Nav = () => {
       <HeaderBody>
         <Logo splitCharacter={10}>République Française</Logo>
         <HeaderOperator>
-          <img src="/images/cpam.png" alt="CNAM" width="200" height="66" />
+          <img src="/images/cnam.png" alt="CNAM" width="200" height="66" />
         </HeaderOperator>
         <Service
           title="MonPsy"

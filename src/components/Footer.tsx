@@ -70,7 +70,7 @@ const Footer = () => (
     <FooterBody description={<FooterDescription />}>
       <Logo splitCharacter={10}>République Française</Logo>
       <FooterOperator>
-        <img src="/images/cpam.png" alt="CNAM" width="200" height="66" />
+        <img src="/images/cnam.png" alt="CNAM" width="200" height="66" />
       </FooterOperator>
       {footerBodyLinks.map((item) => (
         <FooterBodyItem key={item.title}>

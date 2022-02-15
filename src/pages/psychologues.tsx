@@ -462,7 +462,7 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
-                  href="/faq/doctor"
+                  href="/faq#psy"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ
@@ -471,7 +471,21 @@ const Page = () => {
             </div>
             <div className="fr-col-12">
               <p className="fr-text--lead">
-                Je souhaite accéder à la documentation&nbsp;? (à venir)
+                Je souhaite accéder à la documentation&nbsp;?
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer-Feuille de soin_2022_V2.pdf"
+                >
+                  Comment compléter une feuille de soins?
+                </a>
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                >
+                  Echelles d’évaluation
+                </a>
               </p>
             </div>
           </div>

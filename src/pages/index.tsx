@@ -256,6 +256,19 @@ const Page = () => {
                 <a
                   target="_blank"
                   className="fr-link"
+                  title="Ameli"
+                  href="https://www.ameli.fr/paris/assure/themes-de-sante/a"
+                  rel="noreferrer"
+                >
+                  <img src="/images/cnam.png" alt="Logo CNAM" height="140" />
+                </a>
+              </div>
+            </div>
+            <div className="fr-col-4">
+              <div className="fr-centered fr-my-2w">
+                <a
+                  target="_blank"
+                  className="fr-link"
                   title="Psycom"
                   href="https://www.psycom.org/"
                   rel="noreferrer"
@@ -268,7 +281,7 @@ const Page = () => {
                 </a>
               </div>
             </div>
-            <div className="fr-col-4 fr-col-offset-1">
+            <div className="fr-col-4">
               <div className="fr-centered fr-my-2w">
                 <a
                   target="_blank"
