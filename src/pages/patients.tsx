@@ -51,6 +51,7 @@ const Page = () => {
           {video === "show" && (
             <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
               <div className="fr-col-8">
+                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                 <video width="100%" controls autoPlay>
                   <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
                 </video>

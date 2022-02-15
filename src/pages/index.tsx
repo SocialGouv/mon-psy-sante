@@ -48,6 +48,7 @@ const Page = () => {
               className="fr-pb-8w"
             >
               <div className="fr-col-8">
+                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                 <video width="100%" controls autoPlay>
                   <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
                 </video>
