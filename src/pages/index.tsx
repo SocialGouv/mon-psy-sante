@@ -1,3 +1,4 @@
+import { Container, Row } from "@dataesr/react-dsfr";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -14,8 +15,8 @@ const Page = () => {
         image="Psychologist-hero.svg"
       />
       <section>
-        <div className="fr-container">
-          <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
+        <Container>
+          <Row justifyContent="center" alignItems="middle" className="fr-pb-8w">
             <div className="fr-col-12 fr-col-md-6">
               <h1>
                 MonPsy&nbsp;
@@ -39,22 +40,26 @@ const Page = () => {
                 <VideoButton onClick={() => setVideo("show")} />
               )}
             </div>
-          </div>
+          </Row>
           {video === "show" && (
-            <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
+            <Row
+              justifyContent="center"
+              alignItems="middle"
+              className="fr-pb-8w"
+            >
               <div className="fr-col-8">
                 <video width="100%" controls autoPlay>
                   <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
                 </video>
               </div>
-            </div>
+            </Row>
           )}
-        </div>
+        </Container>
       </section>
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-10w">
-          <div className="fr-container">
-            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+          <Container>
+            <Row justifyContent="center" alignItems="middle" gutters>
               <div className="fr-col-12 fr-col-md-3">
                 <div className="fr-card fr-enlarge-link fr-pt-3w">
                   <div className="fr-card__body">
@@ -119,8 +124,8 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </Row>
+          </Container>
         </div>
         <div className="fr-container fr-callout fr-callout--pink-tuile fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">

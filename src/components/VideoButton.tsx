@@ -1,5 +1,5 @@
-import React from "react";
 import { Button } from "@dataesr/react-dsfr";
+import React from "react";
 
 const VideoButton = ({ onClick }: { onClick: () => void }) => {
   return (
