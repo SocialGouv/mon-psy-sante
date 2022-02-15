@@ -13,7 +13,7 @@ const Page = () => {
       <section>
         <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
-            <div className="fr-col-7">
+            <div className="fr-col-12 fr-col-lg-7">
               <h1>Je suis médecin</h1>
               <p>Je souhaite orienter au mieux mes patients</p>
               <p className="fr-text--lead fr-mt-10w">
@@ -21,7 +21,7 @@ const Page = () => {
                 <strong>avril&nbsp;2022</strong>.
               </p>
             </div>
-            <div className="fr-col-5">
+            <div className="fr-col-12 fr-col-lg-5">
               <img
                 src="/images/doctor.svg"
                 alt="Je suis médecin illustration"

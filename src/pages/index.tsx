@@ -251,7 +251,7 @@ const Page = () => {
             <div className="fr-col-12">
               <h2>Information sur la santé mentale</h2>
             </div>
-            <div className="fr-col-4">
+            <div className="fr-col-12 fr-col-lg-4">
               <div className="fr-centered fr-my-2w">
                 <a
                   target="_blank"
@@ -260,11 +260,11 @@ const Page = () => {
                   href="https://www.ameli.fr/paris/assure/themes-de-sante/a"
                   rel="noreferrer"
                 >
-                  <img src="/images/cnam.png" alt="Logo CNAM" height="140" />
+                  <img src="/images/cnam.png" alt="Logo CNAM" height="90" />
                 </a>
               </div>
             </div>
-            <div className="fr-col-4">
+            <div className="fr-col-12 fr-col-lg-4">
               <div className="fr-centered fr-my-2w">
                 <a
                   target="_blank"
@@ -281,7 +281,7 @@ const Page = () => {
                 </a>
               </div>
             </div>
-            <div className="fr-col-4">
+            <div className="fr-col-12 fr-col-lg-4">
               <div className="fr-centered fr-my-2w">
                 <a
                   target="_blank"

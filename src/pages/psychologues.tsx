@@ -13,13 +13,13 @@ const Page = () => {
       <section>
         <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
-            <div className="fr-col-7">
+            <div className="fr-col-12 fr-col-lg-7">
               <h1>Je suis psychologue</h1>
               <p>
                 Je souhaite rejoindre le réseau des psychologues partenaires
               </p>
             </div>
-            <div className="fr-col-5">
+            <div className="fr-col-12 fr-col-lg-5">
               <img
                 src="/images/psy.svg"
                 alt="Je suis psychologue illustration"

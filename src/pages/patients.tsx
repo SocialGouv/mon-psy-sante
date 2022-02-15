@@ -16,7 +16,7 @@ const Page = () => {
       <section>
         <div className="fr-container fr-mt-4w fr-mb-8w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
-            <div className="fr-col-8">
+            <div className="fr-col-12 fr-col-lg-8">
               <h1>Je suis angoissé(e) ou déprimé(e)</h1>
               <p>Je souhaite bénéficier de l’accompagnement d’un psychologue</p>
               <p className="fr-text--lead">
@@ -38,7 +38,7 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="fr-col-4">
+            <div className="fr-col-12 fr-col-lg-4">
               <img
                 src="/images/patient.svg"
                 alt="Je suis angoissé(e) ou déprimé(e) illustration"
@@ -62,7 +62,7 @@ const Page = () => {
       <section>
         <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters">
-            <div className="fr-col-6">
+            <div className="fr-col-12 fr-col-lg-6">
               <h2>Quel est le rôle du médecin&nbsp;?</h2>
               <p>
                 Le médecin identifie les <strong>situations d’urgence</strong>,
@@ -84,7 +84,7 @@ const Page = () => {
                 des universités ou encore d’un médecin hospitalier.
               </p>
             </div>
-            <div className="fr-col-6">
+            <div className="fr-col-12 fr-col-lg-6">
               <h2>Quel est le rôle du psychologue partenaire&nbsp;?</h2>
               <p className="fr-m-0">
                 Je me sens anxieux(se), angoissé(e) ou déprimé(e)&nbsp;?

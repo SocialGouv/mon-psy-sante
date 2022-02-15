@@ -1,14 +1,19 @@
 import React from "react";
+import { Button } from "@dataesr/react-dsfr";
 
 const VideoButton = ({ onClick }: { onClick: () => void }) => {
   return (
     <>
-      <button
-        className="fr-btn fr-btn--lg fr-fi-play-line fr-btn--icon-left fr-btn--secondary fr-mt-2w"
+      <Button
+        size="lg"
+        secondary
+        icon="fr-fi-play-line"
+        iconPosition="left"
         onClick={onClick}
+        title="Découvrir MonPsy en vidéo"
       >
         Découvrir MonPsy en vidéo
-      </button>
+      </Button>
       <span className="d-block">Durée&nbsp;: 2min</span>
     </>
   );
