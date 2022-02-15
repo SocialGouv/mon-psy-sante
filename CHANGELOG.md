@@ -1,3 +1,10 @@
+## [1.11.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.7...v1.11.8) (2022-02-15)
+
+
+### Bug Fixes
+
+* **contact:** Sanitize HTML in mail ([#64](https://github.com/SocialGouv/mon-psy-sante/issues/64)) ([1bf45ee](https://github.com/SocialGouv/mon-psy-sante/commit/1bf45eeffad32873ddda57ba49442c3e40e3a9e3))
+
 ## [1.11.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.6...v1.11.7) (2022-02-14)
 
 
