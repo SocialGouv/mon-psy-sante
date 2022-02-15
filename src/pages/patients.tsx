@@ -338,7 +338,7 @@ const Page = () => {
             </div>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-            <div className="fr-col-8">
+            <div className="fr-col-12 fr-col-lg-8">
               <p>
                 <strong>
                   Le médecin doit demander l’accord des titulaires de l’autorité
@@ -355,7 +355,7 @@ const Page = () => {
                 psychologue.
               </p>
             </div>
-            <div className="fr-col-4 fr-centered">
+            <div className="fr-col-12 fr-col-lg-4 fr-centered">
               <img
                 src="/images/children.svg"
                 height="250"
@@ -364,7 +364,7 @@ const Page = () => {
             </div>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-mt-4w">
-            <div className="fr-col-3">
+            <div className="fr-col-12 fr-col-lg-3">
               <a
                 target="_blank"
                 className="fr-link"
@@ -379,7 +379,7 @@ const Page = () => {
                 />
               </a>
             </div>
-            <div className="fr-col-9">
+            <div className="fr-col-12 fr-col-lg-9">
               <p>
                 <strong>J’ai plus de 12 ans,</strong> je peux aller directement
                 sur{" "}

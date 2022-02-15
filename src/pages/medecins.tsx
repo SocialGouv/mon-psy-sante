@@ -39,14 +39,14 @@ const Page = () => {
           </div>
 
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-            <div className="fr-col-3 fr-centered">
+            <div className="fr-col-12 fr-col-lg-3 fr-centered">
               <img
                 src="/images/children-psy.svg"
                 height="160"
                 alt="Enfants illustration"
               />
             </div>
-            <div className="fr-col-9">
+            <div className="fr-col-12 fr-col-lg-9">
               <p>
                 <strong>Les enfants dès 3 ans et des adolescents</strong>{" "}
                 présentant une situation de mal-être ou souffrance psychique
@@ -56,7 +56,7 @@ const Page = () => {
             </div>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-my-4w">
-            <div className="fr-col-8">
+            <div className="fr-col-12 fr-col-lg-8">
               <p>
                 <strong>Et les adultes</strong> en souffrance psychique
                 d’intensité légère à modérée présentant&nbsp;:
@@ -74,14 +74,14 @@ const Page = () => {
                 </li>
               </ul>
             </div>
-            <div className="fr-col-2">
+            <div className="fr-col-6 fr-col-lg-2">
               <img
                 src="/images/patient-woman.svg"
                 height="300"
                 alt="Patient femme illustration"
               />
             </div>
-            <div className="fr-col-2">
+            <div className="fr-col-6 fr-col-lg-2">
               <img
                 src="/images/patient-man.svg"
                 height="300"

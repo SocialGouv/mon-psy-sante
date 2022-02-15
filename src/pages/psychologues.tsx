@@ -33,7 +33,7 @@ const Page = () => {
           <div className="fr-container">
             <h2>Rejoignez le réseau des psychologues partenaires&nbsp;!</h2>
             <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-              <div className="fr-col-7">
+              <div className="fr-col-12 fr-col-lg-7">
                 <p className="fr-mb-1v">
                   <strong>Je souhaite m’engager&nbsp;?</strong>
                 </p>
@@ -77,7 +77,7 @@ const Page = () => {
                   Maladie).
                 </p>
               </div>
-              <div className="fr-col-4 fr-col-offset-1">
+              <div className="fr-col-12 fr-col-lg-4 fr-col-lg-offset-1">
                 <div className="fr-callout fr-callout-white fr-centered">
                   <a
                     className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w"
@@ -229,14 +229,14 @@ const Page = () => {
             </div>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-            <div className="fr-col-3 fr-centered">
+            <div className="fr-col-12 fr-col-lg-3 fr-centered">
               <img
                 src="/images/children-psy.svg"
                 height="160"
                 alt="Enfants illustration"
               />
             </div>
-            <div className="fr-col-9">
+            <div className="fr-col-12 fr-col-lg-9">
               <p>
                 <strong>Des enfants dès 3 ans et des adolescents</strong>{" "}
                 présentant une situation de mal-être ou souffrance psychique
@@ -246,7 +246,7 @@ const Page = () => {
             </div>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-my-4w">
-            <div className="fr-col-8">
+            <div className="fr-col-12 fr-col-lg-8">
               <p>
                 <strong>Et des adultes</strong> en souffrance psychique
                 d’intensité légère à modérée présentant&nbsp;:
@@ -264,14 +264,14 @@ const Page = () => {
                 </li>
               </ul>
             </div>
-            <div className="fr-col-2">
+            <div className="fr-col-6 fr-col-lg-2">
               <img
                 src="/images/patient-woman.svg"
                 height="280"
                 alt="Patient femme illustration"
               />
             </div>
-            <div className="fr-col-2">
+            <div className="fr-col-6 fr-col-lg-2">
               <img
                 src="/images/patient-man.svg"
                 height="300"
