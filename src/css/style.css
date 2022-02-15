@@ -21,7 +21,7 @@
 
 .fr-callout.fr-callout-white {
   background-color: white;
-  box-shadow: inset .25rem 0 0 0 var(--border-default-pink-tuile);;
+  box-shadow: inset .25rem 0 0 0 var(--border-default-pink-tuile);
 }
 
 h1 .fr-text--lead {
