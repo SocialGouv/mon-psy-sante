@@ -54,12 +54,12 @@ const Page = () => {
                   <div key={section.title}>
                     {section.title && <h3>{section.title}</h3>}
                     <Accordion className="fr-mb-4w">
-                      {section.faq.map((question) => (
-                        <AccordionItem title={question.q} key={question.q}>
+                      {section.faq.map(({ question, answer }) => (
+                        <AccordionItem title={question} key={question}>
                           <div
                             // eslint-disable-next-line react/no-danger
                             dangerouslySetInnerHTML={{
-                              __html: question.r,
+                              __html: answer,
                             }}
                           />
                         </AccordionItem>
