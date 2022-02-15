@@ -263,14 +263,14 @@ const Page = () => {
             </div>
             <div className="fr-col-2">
               <img
-                src="/images/patient-full.svg"
-                height="300"
+                src="/images/patient-woman.svg"
+                height="280"
                 alt="Patient femme illustration"
               />
             </div>
             <div className="fr-col-2">
               <img
-                src="/images/patient-male.svg"
+                src="/images/patient-man.svg"
                 height="300"
                 alt="Patient homme illustration"
               />
