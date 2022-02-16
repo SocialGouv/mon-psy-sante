@@ -24,6 +24,13 @@ export default [
   },
   {
     answer:
+      "<p>Dans les cas des troubles peu sévères, l’accompagnement psychologique de soutien est recommandé dans la littérature scientifique. L’accompagnement psychologique de soutien représente une forme de thérapie relationnelle basée sur l’empathie, la confiance et le soutien. Celle-ci comprend une dimension d’écoute, de compréhension, de conseil, d’information et d’explication.</p>" +
+      "<p>Si vous le jugez pertinent et selon les souhaits et ressources psychologiques du patient ces séances peuvent prendre la forme d’une psychothérapie brève qui s’appuient sur des modèles de thérapie individuelle, de couple ou plus largement familiale.</p>" +
+      "<p>Pour rappel, les modalités d’intervention du psychologue relèvent de son libre choix en référence au Code de déontologie des psychologues (version actualisée et consolidée au 9 septembre 2021).</p>",
+    question: "Qu’est-ce que l’accompagnement psychologique ?",
+  },
+  {
+    answer:
       "<p>Si l’un de vos patients est susceptible de pouvoir bénéficier de ce dispositif, vous devez l’inviter à contacter son médecin pour que celui-ci lui délivre un courrier d’adressage. Ce document est nécessaire pour bénéficier d’un remboursement par l’Assurance Maladie.</p><p>En dehors de ce dispositif, vous pouvez continuer à recevoir vos patients habituels ou de nouveaux patients (qui ne seraient pas orientés par leur médecin) et appliquer vos tarifs usuels.</p>",
     question:
       "Je prends déjà en charge des patients. Puis-je continuer à les suivre dans le cadre de ce dispositif ?",
@@ -41,7 +48,7 @@ export default [
   },
   {
     answer:
-      "<p>A la fin de l’accompagnement, sur la base du compte-rendu transmis au médecin, vous échangez avec lui. En cas de non-amélioration après les 8 séances, cette concertation intègre un psychiatre pour analyser et réévaluer la prise en charge du patient.</p><p>Différents cas peuvent se présenter : <ul><li>la nécessité d’une consultation avec un psychiatre (en libéral ou à l’hôpital) pour une évaluation plus approfondie </li><li>la nécessité d’une prise en charge la plus adaptée: centre médico-psychologique (CMP), CMP infanto-juvéniles, service de psychiatrie ou pédopsychiatrie, maison des adolescents…</li><li>une évolution favorable ne nécessitant pas nécessairement un nouvel accompagnement psychologique</li><li>un nouvel accompagnement psychologique</li></ul></p><p>Dans ce dernier cas, le médecin peut réadresser le patient dans la limite de 8 séances remboursées par année civile.</p><p>Le patient peut aussi décider de poursuivre une prise en charge avec vous dans un cadre non remboursé. Vous vous devez de l’informer en amont des tarifs pratiqués dans ce cadre non conventionné.</p>",
+      "<p>A la fin de l’accompagnement, sur la base du compte-rendu transmis au médecin, vous échangez avec lui. En cas de non-amélioration après les 8 séances, cette concertation intègre un psychiatre pour analyser et réévaluer la prise en charge du patient.</p><p>Différents cas peuvent se présenter : <ul><li>la nécessité d’une consultation avec un psychiatre (en libéral ou à l’hôpital) pour une évaluation plus approfondie </li><li>la nécessité d’une prise en charge la plus adaptée: centre médico-psychologique (CMP), CMP infanto-juvéniles, service de psychiatrie ou pédopsychiatrie, maison des adolescents…</li><li>une évolution favorable ne nécessitant pas de un nouvel accompagnement psychologique</li><li>un nouvel accompagnement psychologique</li></ul></p><p>Dans ce dernier cas, le médecin peut réadresser le patient dans la limite de 8 séances remboursées par année civile.</p><p>Le patient peut aussi décider de poursuivre une prise en charge avec vous dans un cadre non remboursé. Vous vous devez de l’informer en amont des tarifs pratiqués dans ce cadre non conventionné. Si celui-ci n’en a pas les moyens, vous pouvez l’orienter vers une structure hospitalière de type centre médico-psychologique.</p>",
     question: "Quelles sont les suites possibles de cet accompagnement ?",
   },
   {

@@ -1,3 +1,4 @@
+import { Container } from "@dataesr/react-dsfr";
 import React from "react";
 
 import HeadTag from "../components/HeadTag";
@@ -11,7 +12,7 @@ const Page = () => {
         image="doctor.svg"
       />
       <section>
-        <div className="fr-container fr-my-6w">
+        <Container spacing="my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-12 fr-col-lg-7">
               <h1>Je suis médecin</h1>
@@ -28,10 +29,10 @@ const Page = () => {
               />
             </div>
           </div>
-        </div>
+        </Container>
       </section>
       <section>
-        <div className="fr-container fr-my-6w">
+        <Container spacing="my-6w">
           <div className="fr-grid-row fr-grid-row--gutters">
             <div className="fr-col-12">
               <h2>Quels sont les patients concernés&nbsp;?</h2>
@@ -109,13 +110,13 @@ const Page = () => {
               </p>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-4w">
-          <div className="fr-container">
+          <Container>
             <h2>Comment j’accompagne mon patient dans son parcours&nbsp;?</h2>
-          </div>
+          </Container>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12 fr-col-md-3">
               <div className="fr-card fr-centered fr-card--no-arrow">
@@ -203,7 +204,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="fr-container fr-my-4w">
+        <Container spacing="my-4w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12">
               <p>
@@ -242,7 +243,7 @@ const Page = () => {
               </p>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
       <section>
         <div className="fr-container fr-callout fr-callout--pink-tuile fr-my-6w">

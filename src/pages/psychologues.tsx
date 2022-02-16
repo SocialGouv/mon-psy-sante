@@ -475,7 +475,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Flyer-Feuille de soin_2022_V2.pdf"
+                  href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
                 >
                   Comment compléter une feuille de soins?
                 </a>
