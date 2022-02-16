@@ -15,23 +15,10 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Foire aux questions MonPsySanté</title>
+        <title>Foire aux questions MonPsy</title>
       </Head>
       <div className="fr-container fr-my-6w">
-        <h1>Information sur le dispositif MonPsySanté</h1>
-        <p className="fr-text--lead">
-          Je souhaite m’informer sur le dispositif
-        </p>
-        <p>
-          La santé mentale constitue l’un des enjeux majeurs de santé publique.
-          MonPsySanté s’adresse à toute la population dès l’âge de 3 ans,
-          résidant en France et présentant des troubles anxieux ou dépressifs
-          légers à modérés. Sur adressage d’un médecin, enfants comme adultes
-          pourront bénéficier de séances d’accompagnement par des psychologues
-          partenaires du dispositifet dont la prise en charge sera assurée par
-          l’Assurance Maladie avec la participation des organismes
-          complémentaires.
-        </p>
+        <h1>Information sur le dispositif MonPsy</h1>
         <Row spacing="mt-3w">
           <SideMenu
             buttonLabel="Dans cette rubrique"
