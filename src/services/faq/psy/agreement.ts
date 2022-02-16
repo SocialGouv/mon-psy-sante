@@ -32,6 +32,6 @@ export default [
     answer:
       "<p>Une fois conventionné(e), en cas de question (sur la facturation par exemple), vous pouvez contacter votre caisse primaire d’assurance maladie (CPAM) en vous connectant sur votre espace ameli.pro ou en appelant le 36 08 (service gratuit + prix de l‘appel).</p>",
     question:
-      "En tant que professionnel conventionné(e), qui dois-je contacter pour toute questio&nbsp;?",
+      "En tant que professionnel conventionné(e), qui dois-je contacter pour toute question ?",
   },
 ];
