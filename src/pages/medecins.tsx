@@ -196,8 +196,9 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      A la fin de l’accompagnement, le psychologue m’adresse, un
-                      compte-rendu de fin de prise en charge.
+                      <strong>A la fin de l’accompagnement</strong>, le
+                      psychologue m’adresse, un compte-rendu de fin de prise en
+                      charge.
                     </p>
                     <p>
                       <strong>En cas de non amélioration des symptômes</strong>,
@@ -231,8 +232,8 @@ const Page = () => {
                   psychiatrie ou pédopsychiatrie, maison des adolescents…
                 </li>
                 <li>
-                  une évolution favorable ne nécessitant pas nécessairement un
-                  nouvel accompagnement psychologique
+                  une évolution favorable ne nécessitant pas de nouvel
+                  accompagnement psychologique
                 </li>
                 <li>un nouvel accompagnement psychologique</li>
               </ul>

@@ -82,6 +82,9 @@ const Page = () => {
                   <a
                     className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w"
                     target="_blank"
+                    href="https://www.demarches-simplifiees.fr/commencer/monpsy"
+                    title="Je Candidate"
+                    rel="noreferrer"
                   >
                     Candidater
                   </a>
@@ -125,7 +128,14 @@ const Page = () => {
                   <div className="fr-card__desc">
                     <p>
                       <strong>Je complète le formulaire</strong> et{" "}
-                      <a target="_blank">dépose les pièces justificatives</a>
+                      <a
+                        target="_blank"
+                        title="Je Candidate"
+                        href="https://www.demarches-simplifiees.fr/commencer/monpsy"
+                        rel="noreferrer"
+                      >
+                        dépose les pièces justificatives
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -141,10 +151,8 @@ const Page = () => {
                       <strong>Des experts analysent l’éligibilité :</strong>
                     </p>
                     <ul className="align-left no-bullet">
-                      <li>- inscription comme psychologue au registre ADELI</li>
-                      <li>
-                        - parcours attesté/consolidé en psychologie clinique
-                      </li>
+                      <li>- psychologue inscrit au registre ADELI</li>
+                      <li>- parcours consolidé en psychologie clinique</li>
                       <li>- au moins 3 ans d’expérience clinique</li>
                     </ul>
                   </div>
@@ -226,13 +234,15 @@ const Page = () => {
                 maternelle et infantile), des services de santé des universités
                 ou encore d’un médecin hospitalier.
               </p>
-              <h3>
-                Quels patients vais-je recevoir dans le cadre du
-                dispositif&nbsp;?
-              </h3>
             </div>
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
+            <div className="fr-col-12">
+              <h2>
+                Quels patients vais-je recevoir dans le cadre du
+                dispositif&nbsp;?
+              </h2>
+            </div>
             <div className="fr-col-12 fr-col-lg-3 fr-centered">
               <img
                 src="/images/children-psy.svg"

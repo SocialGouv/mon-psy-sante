@@ -10,7 +10,7 @@ const Page = () => {
   return (
     <>
       <HeadTag
-        title="MonPsy : Le dispositif de remboursement des séances chez le psychologue"
+        title="MonPsy : Le dispositif de remboursement des séances chez le psychologue | Ministère de la Santé"
         description="MonPsy est un dispositif du Ministère de la Santé permettant à chacun de bénéficier de séances remboursées avec un psychologue conventionné avec l’Assurance Maladie."
         image="Psychologist-hero.svg"
       />
