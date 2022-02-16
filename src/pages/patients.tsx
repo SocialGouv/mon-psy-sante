@@ -120,8 +120,8 @@ const Page = () => {
           <div className="fr-container">
             <h2>Quelles sont les étapes de mon accompagnement&nbsp;?</h2>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-            <div className="fr-col-10 fr-col-lg-2">
+          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-3w">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
@@ -141,7 +141,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
@@ -161,7 +161,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
@@ -185,7 +185,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">4</strong>
@@ -210,7 +210,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">5</strong>

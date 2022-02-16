@@ -20,7 +20,7 @@ export default [
     answer:
       "<p>Le médecin repère les patients nécessitant une prise en charge psychologique. Si le patient correspond aux indications (notamment absence de risque suicidaire), il peut l’orienter vers un accompagnement psychologique adapté. A l’inverse, en cas de troubles sévères ou de situation d’urgence, le patient est orienté vers une prise en charge psychiatrique plus spécialisée.</p><p>Le patient prend rendez-vous avec le psychologue partenaire de son choix sur <a href='/annuaire'>l’annuaire</a>. Le psychologue partenaire détermine en fonction de l’entretien d’évaluation le nombre de séances nécessaires, dans la limite d’un entretien d’évaluation et 7 séances de suivi.</p>",
     question:
-      "Quel est le parcours du patient? Qui choisit le nombre de séances ?",
+      "Quel est le parcours du patien&nbsp;? Qui choisit le nombre de séances ?",
   },
   {
     answer:
@@ -48,7 +48,7 @@ export default [
   },
   {
     answer:
-      "<p>A la fin de l’accompagnement, sur la base du compte-rendu transmis au médecin, vous échangez avec lui. En cas de non-amélioration après les 8 séances, cette concertation intègre un psychiatre pour analyser et réévaluer la prise en charge du patient.</p><p>Différents cas peuvent se présenter : <ul><li>la nécessité d’une consultation avec un psychiatre (en libéral ou à l’hôpital) pour une évaluation plus approfondie </li><li>la nécessité d’une prise en charge la plus adaptée: centre médico-psychologique (CMP), CMP infanto-juvéniles, service de psychiatrie ou pédopsychiatrie, maison des adolescents…</li><li>une évolution favorable ne nécessitant pas de un nouvel accompagnement psychologique</li><li>un nouvel accompagnement psychologique</li></ul></p><p>Dans ce dernier cas, le médecin peut réadresser le patient dans la limite de 8 séances remboursées par année civile.</p><p>Le patient peut aussi décider de poursuivre une prise en charge avec vous dans un cadre non remboursé. Vous vous devez de l’informer en amont des tarifs pratiqués dans ce cadre non conventionné. Si celui-ci n’en a pas les moyens, vous pouvez l’orienter vers une structure hospitalière de type centre médico-psychologique.</p>",
+      "<p>A la fin de l’accompagnement, sur la base du compte-rendu transmis au médecin, vous échangez avec lui. En cas de non-amélioration après les 8 séances, cette concertation intègre un psychiatre pour analyser et réévaluer la prise en charge du patient.</p><p>Différents cas peuvent se présenter : <ul><li>la nécessité d’une consultation avec un psychiatre (en libéral ou à l’hôpital) pour une évaluation plus approfondie </li><li>la nécessité d’une prise en charge la plus adaptée: centre médico-psychologique (CMP), CMP infanto-juvéniles, service de psychiatrie ou pédopsychiatrie, maison des adolescents…</li><li>une évolution favorable ne nécessitant pas de un nouvel accompagnement psychologique</li><li>un nouvel accompagnement psychologique</li></ul></p><p>Dans ce dernier cas, le médecin peut réadresser le patient dans la limite de 8 séances remboursées par année civile.</p><p>Le patient peut aussi décider de poursuivre une prise en charge avec vous dans un cadre non remboursé. Vous vous devez de l’informer en amont des tarifs pratiqués dans ce cadre non conventionné.</p><p>Si celui-ci n’en a pas les moyens, vous pouvez l’orienter vers une structure hospitalière de type centre médico-psychologique.</p>",
     question: "Quelles sont les suites possibles de cet accompagnement ?",
   },
   {

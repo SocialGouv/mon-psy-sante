@@ -116,8 +116,8 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-            <div className="fr-col-10 fr-col-lg-2">
+          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-3w">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
@@ -131,7 +131,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
@@ -147,7 +147,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
@@ -162,7 +162,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">4</strong>
@@ -178,7 +178,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="fr-col-10 fr-col-lg-2">
+            <div className="fr-col-10 fr-col-lg">
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">5</strong>
@@ -477,7 +477,7 @@ const Page = () => {
                   target="_blank"
                   href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
                 >
-                  Comment compléter une feuille de soins?
+                  Comment compléter une feuille de soins&nbsp;?
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"

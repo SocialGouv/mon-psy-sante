@@ -60,7 +60,7 @@ const Page = () => {
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-10w">
           <Container>
-            <Row justifyContent="center" alignItems="middle" gutters>
+            <Row justifyContent="center" gutters>
               <div className="fr-col-12 fr-col-md-3">
                 <div className="fr-card fr-enlarge-link fr-pt-3w">
                   <div className="fr-card__body">
