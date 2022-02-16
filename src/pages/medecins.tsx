@@ -134,13 +134,16 @@ const Page = () => {
 
                     <p>
                       Si le patient présente des troubles psychiques d’intensité
-                      légère à modérée, je lui propose un accompagnement par un
-                      psychologue partenaire.
+                      légère à modérée, je lui propose un{" "}
+                      <strong>
+                        accompagnement par un psychologue partenaire.
+                      </strong>
                     </p>
 
                     <p>
-                      Le cas échéant, je m’assure du consentement des titulaires
-                      de l’autorité parentale.
+                      Le cas échéant, je m’assure du{" "}
+                      <strong>consentement</strong> des titulaires de l’autorité
+                      parentale.
                     </p>
                   </div>
                 </div>
@@ -156,16 +159,19 @@ const Page = () => {
                   <div className="fr-card__desc">
                     <p>Je remets à mon patient: </p>
 
-                    <p>
-                      un courrier d’adressage nécessaire au remboursement de 8
-                      séances maximum. Le nombre de séances est déterminé par le
-                      psychologue.
-                    </p>
-                    <p>
-                      un courrier d’accompagnement avec le contexte, les
-                      éléments cliniques et le motif de l’adressage à
-                      destination du psychologue partenaire du dispositif
-                    </p>
+                    <ul className="align-left no-bullet">
+                      <li>
+                        - un <strong>courrier d’adressage</strong> nécessaire au
+                        remboursement de 8 séances maximum. Le nombre de séances
+                        est déterminé par le psychologue.
+                      </li>
+                      <li>
+                        - un <strong>courrier d’accompagnement</strong> avec le
+                        contexte, les éléments cliniques et le motif de
+                        l’adressage à destination du psychologue partenaire du
+                        dispositif
+                      </li>
+                    </ul>
 
                     <p>
                       Un modèle de ces deux courriers accessible{" "}
@@ -299,6 +305,18 @@ const Page = () => {
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ
+                </a>
+              </p>
+            </div>
+            <div className="fr-col-12">
+              <p className="fr-text--lead">
+                Je souhaite accéder à la documentation&nbsp;?
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                >
+                  Echelles d’évaluation
                 </a>
               </p>
             </div>

@@ -83,7 +83,7 @@ const Page = () => {
                     className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w"
                     target="_blank"
                   >
-                    Je candidate
+                    Candidater
                   </a>
                   <p>
                     Pour accompagner des patients dans le cadre du dispositif
@@ -135,14 +135,18 @@ const Page = () => {
               <div className="fr-card fr-centered fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
-                  <h3 className="fr-card__title fr-mb-4w">
-                    Analyse de l’éligibilité{" "}
-                  </h3>
+                  <h3 className="fr-card__title fr-mb-4w">Éligibilité</h3>
                   <div className="fr-card__desc">
                     <p>
-                      <strong>Des experts analysent l’éligibilité</strong>{" "}
-                      (parcours, diplômes, expérience clinique)
+                      <strong>Des experts analysent l’éligibilité :</strong>
                     </p>
+                    <ul className="align-left no-bullet">
+                      <li>- inscription comme psychologue au registre ADELI</li>
+                      <li>
+                        - parcours attesté/consolidé en psychologie clinique
+                      </li>
+                      <li>- au moins 3 ans d’expérience clinique</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -475,9 +479,9 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
+                  href="/documents/MonPsy_Guide psychologue_2022.pdf"
                 >
-                  Comment compléter une feuille de soins&nbsp;?
+                  Guide pour les psychologues
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
@@ -485,6 +489,13 @@ const Page = () => {
                   href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
                 >
                   Echelles d’évaluation
+                </a>
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
+                >
+                  Comment compléter une feuille de soins&nbsp;?
                 </a>
               </p>
             </div>

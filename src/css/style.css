@@ -36,6 +36,10 @@ h1 .fr-text--lead {
   text-align: right
 }
 
+.align-left {
+  text-align: left
+}
+
 .map {
   width: 100%;
   min-height: 500px;
