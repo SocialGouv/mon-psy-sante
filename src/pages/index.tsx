@@ -263,7 +263,7 @@ const Page = () => {
                   target="_blank"
                   className="fr-link"
                   title="Ameli"
-                  href="https://www.ameli.fr/paris/assure/themes-de-sante/a"
+                  href="https://www.ameli.fr/paris/assure/sante/themes/depression-troubles-depressifs"
                   rel="noreferrer"
                 >
                   <img src="/images/cnam.png" alt="Logo CNAM" height="90" />
