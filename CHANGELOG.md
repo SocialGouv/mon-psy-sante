@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.9...v1.12.0) (2022-02-17)
+
+
+### Features
+
+* **landings:** add landings by targets ([#36](https://github.com/SocialGouv/mon-psy-sante/issues/36)) ([378da31](https://github.com/SocialGouv/mon-psy-sante/commit/378da31e808cabc9f2b5fda486c26378e99b8046))
+
 ## [1.11.9](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.8...v1.11.9) (2022-02-16)
 
 
