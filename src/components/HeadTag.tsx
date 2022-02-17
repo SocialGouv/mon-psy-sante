@@ -13,7 +13,7 @@ const HeadTag = ({ title, description, image }: HeadProps) => (
     <meta property="og:title" content={title} />
 
     <meta name="description" content={description} />
-    <meta name="og:description" content={description} />
+    <meta property="og:description" content={description} />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     <meta property="og:type" content="website" />

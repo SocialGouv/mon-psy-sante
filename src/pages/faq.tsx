@@ -24,20 +24,20 @@ const Page = () => {
             buttonLabel="Dans cette rubrique"
             className="fr-sidemenu--sticky fr-col-md-4 fr-col-sm-12 fr-mb-3w"
           >
-            {Object.keys(items).map(
-              (key) =>
-                items[key].title && (
-                  <SideMenuLink href={"/faq#" + key}>
-                    {items[key].title}
+            {items.map(
+              (item) =>
+                item.title && (
+                  <SideMenuLink href={"/faq#" + item.key}>
+                    {item.title}
                   </SideMenuLink>
                 )
             )}
           </SideMenu>
           <Col n="md-8 sm-12">
-            {Object.keys(items).map((key) => (
-              <div id={key} key={key}>
-                {items[key].title && <h2>{items[key].title}</h2>}
-                {items[key].sections.map((section) => (
+            {items.map((item) => (
+              <div id={item.key} key={item.key}>
+                {item.title && <h2>{item.title}</h2>}
+                {item.sections.map((section) => (
                   <div key={section.title}>
                     {section.title && <h3>{section.title}</h3>}
                     <Accordion className="fr-mb-4w">

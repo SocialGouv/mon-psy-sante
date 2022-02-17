@@ -17,25 +17,16 @@ import ending from "./psy/ending";
 import patient from "./psy/patient";
 import registration from "./psy/registration";
 
-const items = {
-  general: {
+const items = [
+  {
+    key: "general",
     sections: [{ faq: general }],
     title: "Présentation du dispositif MonPsy",
   },
-  medecin: {
+  {
+    key: "patient",
     sections: [
-      { faq: orientation, title: "Orientation du patient" },
-      { faq: practices, title: "Bonnes pratiques" },
-      {
-        faq: exchange,
-        title: "Echanges avec le psychologue et suite de la prise en charge",
-      },
-    ],
-    title: "Médecin",
-  },
-  patient: {
-    sections: [
-      { faq: eligibility, title: "Eligibilité" },
+      { faq: eligibility, title: "Éligibilité" },
       { faq: begin, title: "Début du parcours" },
       { faq: accompaniment, title: "Accompagnement par le psychologue" },
       { faq: reimbursment, title: "Remboursement" },
@@ -46,7 +37,8 @@ const items = {
     ],
     title: "Patient",
   },
-  psychologue: {
+  {
+    key: "psychologue",
     sections: [
       { faq: eligibility, title: "Éligibilité" },
       { faq: registration, title: "Candidature" },
@@ -62,8 +54,20 @@ const items = {
       { faq: billing, title: "Facturation & remboursement" },
       { faq: ending, title: "Retrait du dispositif" },
     ],
-    title: "Psychologues",
+    title: "Psychologue",
   },
-};
+  {
+    key: "medecin",
+    sections: [
+      { faq: orientation, title: "Orientation du patient" },
+      { faq: practices, title: "Bonnes pratiques" },
+      {
+        faq: exchange,
+        title: "Echanges avec le psychologue et suite de la prise en charge",
+      },
+    ],
+    title: "Médecin",
+  },
+];
 
 export default items;
