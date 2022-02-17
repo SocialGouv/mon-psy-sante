@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.0...v1.12.1) (2022-02-17)
+
+
+### Bug Fixes
+
+* **video:** update csp rule to fix vidéo ([7a90c6b](https://github.com/SocialGouv/mon-psy-sante/commit/7a90c6bc3cf27ad72a6ce01eaf59f5f9d8082a21))
+
 # [1.12.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.9...v1.12.0) (2022-02-17)
 
 
