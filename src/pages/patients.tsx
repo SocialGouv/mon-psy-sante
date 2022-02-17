@@ -23,7 +23,7 @@ const Page = () => {
                 Le dispositif MonPsy sera accessible à partir d’
                 <strong>avril&nbsp;2022</strong>.
               </p>
-              <div className="fr-highlight fr-highlight--yellow-tournesol fr-my-4w fr-py-2w fr-pr-6w">
+              <div className="fr-highlight fr-highlight--yellow-tournesol fr-mt-4w fr-pr-6w">
                 <p>
                   <strong>Toute personne angoissée ou déprimée</strong> (dès 3
                   ans) peut bénéficier d’un accompagnement par un psychologue
@@ -41,6 +41,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-4">
               <img
                 src="/images/patient.svg"
+                height="380"
                 alt="Je suis angoissé(e) ou déprimé(e) illustration"
               />
               {video === "hide" && (
@@ -51,9 +52,14 @@ const Page = () => {
           {video === "show" && (
             <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
               <div className="fr-col-8">
-                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                 <video width="100%" controls autoPlay>
                   <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
+                  <track
+                    default
+                    kind="captions"
+                    srcLang="fr"
+                    src="/images/Video-MonPsy.mp4.vtt"
+                  />
                 </video>
               </div>
             </div>

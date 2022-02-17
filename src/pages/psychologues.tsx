@@ -22,6 +22,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-5">
               <img
                 src="/images/psy.svg"
+                height="380"
                 alt="Je suis psychologue illustration"
               />
             </div>
@@ -77,7 +78,7 @@ const Page = () => {
                   Maladie).
                 </p>
               </div>
-              <div className="fr-col-12 fr-col-lg-4 fr-col-lg-offset-1">
+              <div className="fr-col-12 fr-col-lg-4 fr-col-offset-lg-1">
                 <div className="fr-callout fr-callout-white fr-centered">
                   <a
                     className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w"
@@ -486,28 +487,28 @@ const Page = () => {
             <div className="fr-col-12">
               <p className="fr-text--lead">
                 Je souhaite accéder à la documentation&nbsp;?
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                  target="_blank"
-                  href="/documents/MonPsy_Guide psychologue_2022.pdf"
-                >
-                  Guide pour les psychologues
-                </a>
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                  target="_blank"
-                  href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
-                >
-                  Echelles d’évaluation
-                </a>
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                  target="_blank"
-                  href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
-                >
-                  Comment compléter une feuille de soins&nbsp;?
-                </a>
               </p>
+              <a
+                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                target="_blank"
+                href="/documents/MonPsy_Guide psychologue_2022.pdf"
+              >
+                Guide pour les psychologues
+              </a>
+              <a
+                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                target="_blank"
+                href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+              >
+                Echelles d’évaluation
+              </a>
+              <a
+                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                target="_blank"
+                href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
+              >
+                Comment compléter une feuille de soins&nbsp;?
+              </a>
             </div>
           </div>
         </div>
