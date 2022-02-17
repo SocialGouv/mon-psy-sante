@@ -65,7 +65,6 @@
     "test": "jest --runInBand",
     "build": "next build",
     "dev": "next dev",
-    "e2e": "yarn --cwd=./optional/e2e/runners/puppeteer",
     "k8s": "yarn --silent --cwd .socialgouv",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
