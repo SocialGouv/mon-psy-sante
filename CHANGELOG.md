@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.1...v1.12.2) (2022-02-17)
+
+
+### Bug Fixes
+
+* **layout:** fix faq items order + fix css load to avoid flickering on page load ([#65](https://github.com/SocialGouv/mon-psy-sante/issues/65)) ([9382715](https://github.com/SocialGouv/mon-psy-sante/commit/9382715967ae60edef65d4dfac6bd296dd4aa359))
+
 ## [1.12.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.0...v1.12.1) (2022-02-17)
 
 
