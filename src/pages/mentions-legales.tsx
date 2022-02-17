@@ -57,7 +57,13 @@ const Page = () => {
               <br />
               Pour en savoir plus sur la politique d’accessibilité numérique de
               l’État&nbsp;:
-              http://references.modernisation.gouv.fr/accessibilite-numerique
+              <a
+                href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                numerique.gouv.fr/publications/rgaa-accessibilite
+              </a>
             </p>
           </div>
           <div className="fr-mt-3w">

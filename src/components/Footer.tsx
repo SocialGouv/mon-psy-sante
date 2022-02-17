@@ -20,6 +20,14 @@ const FooterDescription = () => (
     >
       Voir le code source
     </a>
+    . Illustrations de{" "}
+    <a
+      href="https://storyset.com/work"
+      target="_blank"
+      rel="noreferrer nofollow noopener"
+    >
+      Freepik Storyset
+    </a>
     .
   </>
 );

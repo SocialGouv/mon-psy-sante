@@ -1,3 +1,4 @@
+import "@gouvfr/dsfr/dist/dsfr/dsfr.min.css";
 import "../css/style.css";
 
 import { SkiplinkItem, Skiplinks } from "@dataesr/react-dsfr";

@@ -2,7 +2,7 @@
 export default [
   {
     answer:
-      "<p>Pour permettre une prise en charge coordonnée, vous transmettez au patient, avec le courrier d’adressage, un courrier d'accompagnement destiné au psychologue (modèle disponible ici).  Ce document, que le psychologue conserve, a vocation à l’informer du contexte, des éléments cliniques et des motifs de l’adressage, éventuellement des scores ou d’échelles.</p><p>En retour, le psychologue vous informe du nombre de séances prévues avec le patient. </p>",
+      "<p>Pour permettre une prise en charge coordonnée, vous transmettez au patient, avec le courrier d’adressage, un courrier d'accompagnement destiné au psychologue (modèle disponible <a href='/documents/Courrier_d_adressage.docx' target='_blank'>ici</a>).  Ce document, que le psychologue conserve, a vocation à l’informer du contexte, des éléments cliniques et des motifs de l’adressage, éventuellement des scores ou d’échelles.</p><p>En retour, le psychologue vous informe du nombre de séances prévues avec le patient. </p>",
     question:
       "Quels échanges en début de prise en charge avec le psychologue ?",
   },
