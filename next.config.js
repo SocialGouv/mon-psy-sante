@@ -1,11 +1,11 @@
 const nextSourceMaps = require("@zeit/next-source-maps");
-const { withSentryConfig } = require("@sentry/nextjs");
+const {withSentryConfig} = require("@sentry/nextjs");
 
 const csp = {
-  'default-src': ["'none'"],
+  'default-src': ["'self'"],
   'connect-src': ["'self'", "https://*.gouv.fr", "https://services.sarbacane.com"],
   'font-src': ["'self'", "data:"],
-  'img-src': ["'self'",  "data:", "https://forms.sbc08.com", 'https://*.tile.openstreetmap.org/'],
+  'img-src': ["'self'", "data:", "https://forms.sbc08.com", 'https://*.tile.openstreetmap.org/'],
   'prefetch-src': ["'self'", "https://*.gouv.fr"],
   'script-src': ["'self'", "https://*.gouv.fr", "https://*.sbc08.com"],
   'frame-src': ["'self'", "https://*.gouv.fr"],
@@ -25,14 +25,14 @@ module.exports = withSentryConfig(
       disableClientWebpackPlugin: true,
       disableServerWebpackPlugin: true,
     },
-    webpack: (config, { isServer /*, buildId */ }) => {
+    webpack: (config, {isServer /*, buildId */}) => {
       if (!isServer) {
         config.resolve.alias["@sentry/node"] = "@sentry/browser";
-        config.resolve.fallback = { 
+        config.resolve.fallback = {
           fs: false,
           path: false,
           os: false,
-        };  
+        };
       }
       return config;
     },
@@ -41,10 +41,11 @@ module.exports = withSentryConfig(
         {
           source: '/:path*',
           headers: [{
-						key: "Content-Security-Policy",
-						value: Object.keys(csp).map(key => `${key} ${csp[key].join(" ")}`).join(";")
-					}],
+            key: "Content-Security-Policy",
+            value: Object.keys(csp).map(key => `${key} ${csp[key].join(" ")}`).join(";")
+          }],
         },
       ]
-    },  })
+    },
+  })
 );

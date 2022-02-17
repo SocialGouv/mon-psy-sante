@@ -11,7 +11,7 @@ const Page = () => {
         <h1 id="mentions-legales">Mentions légales</h1>
         <div>
           <div className="fr-mt-3w">
-            <h2>Éditeur de la Plateforme</h2>
+            <h2>Éditeur</h2>
             <p className="fr-mb-0">
               Ce site est édité par la Direction de la Sécurité Sociale:
             </p>
