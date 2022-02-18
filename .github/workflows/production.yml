@@ -47,6 +47,7 @@ jobs:
           environment: "prod"
           rancherId: ${{ secrets.RANCHER_PROJECT_ID }}
           socialgouvBaseDomain: sante.gouv.fr
+          pgUserSecretPrefix: pg-user
         env:
           SOCIALGOUV_PRODUCTION_NAMESPACE: monpsy
 
