@@ -9,7 +9,7 @@ const updateSchema = Joi.object({
   address: Joi.string().required(),
   cdsmsp: Joi.string().allow(""),
   displayEmail: Joi.boolean().required(),
-  email: Joi.string().allow(""),
+  email: Joi.string().allow("").email(),
   firstName: Joi.string().required(),
   languages: Joi.string().allow(""),
   lastName: Joi.string().required(),
@@ -29,9 +29,12 @@ const psychologist = async (req: NextApiRequest, res: NextApiResponse) => {
       return res.status(401).send("Opération impossible");
     }
     const id = req.query.id as string;
-    const psychologist = await getOne(id);
+    const existingPsychologist = await getOne(id);
 
-    if (!psychologist || psychologist.instructorId !== session.user.group) {
+    if (
+      !existingPsychologist ||
+      existingPsychologist.instructorId !== session.user.group
+    ) {
       return res.status(404).send("Psychologue non trouvé");
     }
 

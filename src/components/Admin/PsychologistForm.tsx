@@ -139,7 +139,6 @@ const PsychologistForm = ({ psychologist }: { psychologist: Psychologist }) => {
                     }
                   />
                 );
-                break;
               default:
                 return (
                   <TextInput

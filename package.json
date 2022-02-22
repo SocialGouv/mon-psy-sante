@@ -23,9 +23,11 @@
     "bcryptjs": "^2.4.3",
     "cron": "^1.8.2",
     "dotenv": "^11.0.0",
+    "got": "11.8.3",
     "graphql": "^16.3.0",
     "graphql-request": "^4.0.0",
     "helmet": "^5.0.2",
+    "jest-dev-server": "^6.0.3",
     "joi": "^17.6.0",
     "leaflet": "^1.7.1",
     "next": "12.0.7",
@@ -40,6 +42,7 @@
     "sequelize": "^6.16.1",
     "sequelize-cli": "^6.4.1",
     "styled-components": "^5.3.3",
+    "tough-cookie": "^4.0.0",
     "ts-node": "^10.5.0",
     "typescript-eslint": "^0.0.1-alpha.0"
   },
@@ -65,6 +68,7 @@
   "private": true,
   "scripts": {
     "test": "jest --runInBand",
+    "test:api": "jest --config jest.config-api.js --testTimeout=50000 ./src/__tests__/api/ --runInBand",
     "build": "next build",
     "dev": "next dev",
     "e2e": "yarn --cwd=./optional/e2e/runners/puppeteer",
