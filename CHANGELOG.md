@@ -1,3 +1,10 @@
+## [1.12.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.2...v1.12.3) (2022-02-22)
+
+
+### Bug Fixes
+
+* **k8s:** use external pg-user ([#68](https://github.com/SocialGouv/mon-psy-sante/issues/68)) ([7b99dfb](https://github.com/SocialGouv/mon-psy-sante/commit/7b99dfb33842007a89a495e221a4627ad6a769b7))
+
 ## [1.12.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.1...v1.12.2) (2022-02-17)
 
 
