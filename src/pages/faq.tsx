@@ -15,7 +15,7 @@ import items from "../services/faq/faq";
 const Page = () => {
   const router = useRouter();
 
-  const getOpenTab = () => {
+  const getActiveTab = () => {
     const tab = router.query.tab;
     const index = items.findIndex((item) => item.key === tab);
     return index >= 0 ? index : 0;
@@ -30,7 +30,7 @@ const Page = () => {
         <h1>Information sur le dispositif MonPsy</h1>
         <Row spacing="mt-3w">
           <Col>
-            <Tabs defaultActiveTab={getOpenTab()}>
+            <Tabs defaultActiveTab={getActiveTab()}>
               {items.map((item) => (
                 <Tab label={item.title} key={item.key}>
                   {item.title && <h2>{item.title}</h2>}
@@ -61,4 +61,7 @@ const Page = () => {
   );
 };
 
+Page.getInitialProps = async () => {
+  return {};
+};
 export default Page;
