@@ -87,7 +87,14 @@ const SearchBar = ({
           value: `${commune.codePostal} ${commune.nom}`,
         };
       });
-    setOptions(communes.concat(AROUND_ME_OPTION));
+    setOptions(
+      communes
+        .filter(
+          (commune, index) =>
+            communes.findIndex((x) => x.value === commune.value) === index
+        )
+        .concat(AROUND_ME_OPTION)
+    );
   };
 
   const success = (pos) => {
