@@ -15,11 +15,12 @@ const mailTransport = nodemailer.createTransport({
 });
 
 export const sendMail = (to: string, subject: string, html: string) => {
+  const sanitizedHTML = sanitizeHtml(html);
   const mail = {
     from: `MonPsy <${config.supportMail}>`,
-    html,
+    html: sanitizedHTML,
     subject,
-    text: sanitizeHtml(html),
+    text: sanitizedHTML,
     to,
   };
 

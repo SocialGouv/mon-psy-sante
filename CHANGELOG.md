@@ -1,3 +1,45 @@
+## [1.12.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.1...v1.12.2) (2022-02-17)
+
+
+### Bug Fixes
+
+* **layout:** fix faq items order + fix css load to avoid flickering on page load ([#65](https://github.com/SocialGouv/mon-psy-sante/issues/65)) ([9382715](https://github.com/SocialGouv/mon-psy-sante/commit/9382715967ae60edef65d4dfac6bd296dd4aa359))
+
+## [1.12.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.0...v1.12.1) (2022-02-17)
+
+
+### Bug Fixes
+
+* **video:** update csp rule to fix vidéo ([7a90c6b](https://github.com/SocialGouv/mon-psy-sante/commit/7a90c6bc3cf27ad72a6ce01eaf59f5f9d8082a21))
+
+# [1.12.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.9...v1.12.0) (2022-02-17)
+
+
+### Features
+
+* **landings:** add landings by targets ([#36](https://github.com/SocialGouv/mon-psy-sante/issues/36)) ([378da31](https://github.com/SocialGouv/mon-psy-sante/commit/378da31e808cabc9f2b5fda486c26378e99b8046))
+
+## [1.11.9](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.8...v1.11.9) (2022-02-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency axios to ^0.26.0 ([#40](https://github.com/SocialGouv/mon-psy-sante/issues/40)) ([b069489](https://github.com/SocialGouv/mon-psy-sante/commit/b069489d402e428513df7f85d359a7e81a9436f1))
+
+## [1.11.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.7...v1.11.8) (2022-02-15)
+
+
+### Bug Fixes
+
+* **contact:** Sanitize HTML in mail ([#64](https://github.com/SocialGouv/mon-psy-sante/issues/64)) ([1bf45ee](https://github.com/SocialGouv/mon-psy-sante/commit/1bf45eeffad32873ddda57ba49442c3e40e3a9e3))
+
+## [1.11.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.6...v1.11.7) (2022-02-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @dataesr/react-dsfr to v0.9.9 ([#59](https://github.com/SocialGouv/mon-psy-sante/issues/59)) ([6273864](https://github.com/SocialGouv/mon-psy-sante/commit/6273864fa33467e7a3881b342ea75455085326e9))
+
 ## [1.11.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.11.5...v1.11.6) (2022-02-13)
 
 

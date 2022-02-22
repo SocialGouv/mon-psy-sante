@@ -1,6 +1,6 @@
 {
   "name": "monpsy",
-  "version": "1.11.6",
+  "version": "1.12.2",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/SocialGouv/mon-psy-sante"
   },
   "dependencies": {
-    "@dataesr/react-dsfr": "0.9.8",
+    "@dataesr/react-dsfr": "0.9.9",
     "@faker-js/faker": "^6.0.0-alpha.6",
     "@sentry/nextjs": "^6.17.7",
     "@socialgouv/bootstrap.core": "^0.2.1",
@@ -71,7 +71,6 @@
     "test:api": "jest --config jest.config-api.js --testTimeout=50000 ./src/__tests__/api/ --runInBand",
     "build": "next build",
     "dev": "next dev",
-    "e2e": "yarn --cwd=./optional/e2e/runners/puppeteer",
     "k8s": "yarn --silent --cwd .socialgouv",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
