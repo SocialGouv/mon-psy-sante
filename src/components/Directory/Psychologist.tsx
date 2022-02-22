@@ -38,7 +38,19 @@ const infos = [
     label: "Accompagnement des",
     value: (psy) => psy.public && psy.public.toLowerCase(),
   },
-  { label: "Langue(s) parlée(s):", value: "languages" },
+  {
+    label: "Langue(s) parlée(s):",
+    value: (psy) => {
+      const frenchRegexp = /fran[çc]ais/g;
+      if (
+        !psy.languages ||
+        frenchRegexp.test(psy.languages.trim().toLowerCase())
+      ) {
+        return null;
+      }
+      return psy.languages;
+    },
+  },
   { label: "Nom de la structure (CDS/MSP):", value: "cdsmsp" },
 ];
 
