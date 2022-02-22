@@ -1,8 +1,6 @@
 import got, { Got } from "got";
 import tough from "tough-cookie";
 
-import config from "../../services/config";
-
 const getCsrfToken = (client: Got) =>
   client(`${process.env.NEXTAUTH_URL}/api/auth/csrf`).then(
     (response) => JSON.parse(response.body).csrfToken
