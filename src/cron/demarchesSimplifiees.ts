@@ -1,7 +1,9 @@
 import * as Sentry from "@sentry/nextjs";
 
 import { models } from "../db/models";
+import filterDossiersToVerif from "../services/demarchesSimplifiees/dossiers";
 import {
+  getDossiersInConstruction,
   getPsychologistFromListIds,
   getPsychologistList,
   getPsychologistState,
@@ -70,5 +72,18 @@ export const importState = async (): Promise<void> => {
   } catch (err) {
     Sentry.captureException(err);
     console.error("ERROR importState: ", err);
+  }
+};
+
+export const verifFolders = async (): Promise<void> => {
+  try {
+    console.log("Starting verifFolders...");
+
+    const dossiersInConstruction = await getDossiersInConstruction();
+    const dossiersToVerify = filterDossiersToVerif(dossiersInConstruction);
+
+    console.log("importState done");
+  } catch (err) {
+    console.error("ERROR: Could not import DS API state to PG", err);
   }
 };

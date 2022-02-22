@@ -44,4 +44,9 @@ export interface DSPsychologist {
     label: string;
     stringValue: string;
   }[];
+  annotations?: {
+    id: string;
+    label: string;
+    stringValue: string;
+  }[];
 }
