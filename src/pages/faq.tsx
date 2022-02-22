@@ -35,7 +35,7 @@ const Page = () => {
                 <Tab label={item.title} key={item.key}>
                   {item.title && <h2>{item.title}</h2>}
                   {item.sections.map((section, i) => (
-                    <div key={i}>
+                    <div key={i + item.title}>
                       {section.title && <h3>{section.title}</h3>}
                       <Accordion className="fr-mb-4w">
                         {section.faq.map(({ question, answer }) => (
@@ -61,7 +61,5 @@ const Page = () => {
   );
 };
 
-Page.getInitialProps = async () => {
-  return {};
-};
+Page.getInitialProps = async () => ({});
 export default Page;
