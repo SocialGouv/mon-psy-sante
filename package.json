@@ -19,7 +19,7 @@
     "@types/sequelize": "^4.28.11",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "@zeit/next-source-maps": "^0.0.3",
-    "axios": "^0.25.0",
+    "axios": "^0.26.0",
     "bcryptjs": "^2.4.3",
     "cron": "^1.8.2",
     "dotenv": "^11.0.0",

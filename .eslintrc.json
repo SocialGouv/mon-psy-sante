@@ -27,7 +27,7 @@
         "caseSensitive": false
       }
     ],
-    "react/display-name": "off"
+    "react/display-name": "off",
     "jsx-a11y/label-has-associated-control": "off"
   },
   "overrides": [
