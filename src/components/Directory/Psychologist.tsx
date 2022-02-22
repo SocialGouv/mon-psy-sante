@@ -39,7 +39,7 @@ const infos = [
     value: (psy) => psy.public && psy.public.toLowerCase(),
   },
   { label: "Langue(s) parlée(s):", value: "languages" },
-  { label: "Nom du CDS ou de la MSP:", value: "cdsmsp" },
+  { label: "Nom de la structure (CDS/MSP):", value: "cdsmsp" },
 ];
 
 const Psychologist = ({ psychologist }: { psychologist: PsychologistType }) => {
