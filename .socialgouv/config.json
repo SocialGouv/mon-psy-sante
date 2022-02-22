@@ -4,9 +4,6 @@
   "subdomain": "monpsy",
   "registry": "ghcr",
   "project": "mon-psy-sante",
-  "azurepg": true,
-  "devInitContainerCommand": [
-    "yarn",
-    "db:init"
-  ]
+  "pg": true,
+  "devInitContainerCommand": ["yarn", "db:init"]
 }

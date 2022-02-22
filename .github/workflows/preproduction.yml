@@ -37,7 +37,7 @@ jobs:
   deploy:
     name: Deploy application
     runs-on: ubuntu-latest
-    needs: [ register ]
+    needs: [register]
     environment:
       name: preproduction
       url: https://mon-psy-sante-preprod.dev.fabrique.social.gouv.fr
@@ -48,6 +48,7 @@ jobs:
           environment: "preprod"
           rancherId: ${{ secrets.RANCHER_PROJECT_ID }}
           socialgouvBaseDomain: ${{ secrets.SOCIALGOUV_BASE_DOMAIN }}
+          pgUserSecretPrefix: pg-user
 
       - name: Use autodevops deployment
         uses: SocialGouv/actions/autodevops-deploy@v1
