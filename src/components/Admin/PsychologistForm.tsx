@@ -24,7 +24,7 @@ const editableFields = [
   { field: "email", label: "Email" },
   {
     field: "displayEmail",
-    label: "Montrer l'email",
+    label: "Rendre visible l'email",
     type: "boolean",
   },
   {
