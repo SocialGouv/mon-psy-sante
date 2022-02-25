@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.3...v1.13.0) (2022-02-25)
+
+
+### Features
+
+* **faq:** add tab to FAQ page ([#72](https://github.com/SocialGouv/mon-psy-sante/issues/72)) ([5c2d020](https://github.com/SocialGouv/mon-psy-sante/commit/5c2d020e6e12a0879878db39372c2857da3f6eba))
+
 ## [1.12.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.2...v1.12.3) (2022-02-22)
 
 
