@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.14.0...v1.15.0) (2022-02-28)
+
+
+### Features
+
+* **annuaire:** new filters ([#76](https://github.com/SocialGouv/mon-psy-sante/issues/76)) ([401d271](https://github.com/SocialGouv/mon-psy-sante/commit/401d27171a22eb1c73868a04a7091ad6465bb6a2))
+
 # [1.14.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.13.0...v1.14.0) (2022-02-28)
 
 
