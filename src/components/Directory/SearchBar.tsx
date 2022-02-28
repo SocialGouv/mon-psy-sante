@@ -1,13 +1,13 @@
 import { Alert, Button, Col, SearchableSelect } from "@dataesr/react-dsfr";
-import axios from "axios";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
+import {
+  AROUND_ME,
+  AROUND_ME_OPTION,
+  search,
+} from "../../services/frontend/geo.api";
 import { Coordinates } from "../../types/coordinates";
-import { getDepartment } from "../utils/departments";
 import { Search } from "./Directory.styles";
-
-const AROUND_ME = "Autour de moi";
-const AROUND_ME_OPTION = [{ label: AROUND_ME, value: AROUND_ME }];
 
 const geoStatusEnum = {
   DENIED: -1,
@@ -38,57 +38,6 @@ const SearchBar = ({
   const [filterText, setFilterText] = useState("");
   const [geoStatus, setGeoStatus] = useState(geoStatusEnum.UNKNOWN);
   const [options, setOptions] = useState(AROUND_ME_OPTION);
-
-  const searchCommunes = () => {
-    if (filterText.length > 2 && filterText !== AROUND_ME) {
-      axios
-        .get(
-          `https://geo.api.gouv.fr/communes?nom=${filterText}&limit=10&fields=population,centre,departement,nom`
-        )
-        .then((response) => {
-          const communes = response.data
-            .sort((a, b) => b.population - a.population)
-            .map((commune) => ({
-              label: `${commune.nom}, ${commune.departement.nom}`,
-              value: commune.centre.coordinates,
-            }));
-          setOptions(communes.concat(AROUND_ME_OPTION));
-        });
-    }
-  };
-
-  const searchDepartment = async (department: string) => {
-    const results = await Promise.all(
-      department
-        .split("|")
-        .map((x) =>
-          axios.get(
-            `https://geo.api.gouv.fr/departements/${x}/communes?fields=population,centre,departement,nom,codesPostaux`
-          )
-        )
-    );
-
-    const communes = results
-      .flatMap((result) => result.data)
-      .flatMap((commune) =>
-        commune.codesPostaux.map((codePostal) => ({
-          centre: commune.centre,
-          codePostal,
-          departement: commune.departement,
-          nom: commune.nom,
-          population: commune.population,
-        }))
-      )
-      .filter((commune) => commune.codePostal.startsWith(filterText))
-      .sort((a, b) => b.population - a.population)
-      .map((commune) => {
-        return {
-          label: `${commune.nom}, ${commune.codePostal}, ${commune.departement.nom}`,
-          value: `${commune.codePostal} ${commune.nom}`,
-        };
-      });
-    setOptions(communes.concat(AROUND_ME_OPTION));
-  };
 
   const success = (pos) => {
     const { longitude, latitude } = pos.coords;
@@ -134,20 +83,7 @@ const SearchBar = ({
       return;
     }
 
-    if (filterText) {
-      if (isNaN(+filterText)) {
-        searchCommunes();
-        return;
-      }
-
-      const department = getDepartment(filterText);
-      if (department) {
-        searchDepartment(department);
-        return;
-      }
-    }
-
-    setOptions(AROUND_ME_OPTION);
+    search(filterText, setOptions);
   }, [filterText]);
 
   return (

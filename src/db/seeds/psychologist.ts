@@ -4,6 +4,18 @@ import { Psychologist } from "../../types/psychologist";
 
 export const groupIds = [...Array(5).keys()].map(() => faker.datatype.uuid());
 
+const languages = [
+  "Francais",
+  "francais",
+  "Français",
+  "français",
+  "Francais ",
+  " Francais",
+  "Francais et allemand ",
+  "Anglais",
+  "",
+];
+
 export const getOnePsychologist = (
   override?: Partial<Psychologist>
 ): Psychologist => ({
@@ -26,7 +38,7 @@ export const getOnePsychologist = (
   firstName: faker.name.firstName(),
   id: faker.datatype.number(),
   instructorId: faker.random.arrayElement(groupIds),
-  languages: faker.lorem.word(1),
+  languages: faker.random.arrayElement(languages),
   lastName: faker.name.lastName(),
   phone: faker.phone.phoneNumber("0# ## ## ## ##"),
   public: faker.random.arrayElement([
