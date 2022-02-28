@@ -1,3 +1,17 @@
+# [1.13.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.3...v1.13.0) (2022-02-25)
+
+
+### Features
+
+* **faq:** add tab to FAQ page ([#72](https://github.com/SocialGouv/mon-psy-sante/issues/72)) ([5c2d020](https://github.com/SocialGouv/mon-psy-sante/commit/5c2d020e6e12a0879878db39372c2857da3f6eba))
+
+## [1.12.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.2...v1.12.3) (2022-02-22)
+
+
+### Bug Fixes
+
+* **k8s:** use external pg-user ([#68](https://github.com/SocialGouv/mon-psy-sante/issues/68)) ([7b99dfb](https://github.com/SocialGouv/mon-psy-sante/commit/7b99dfb33842007a89a495e221a4627ad6a769b7))
+
 ## [1.12.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.1...v1.12.2) (2022-02-17)
 
 

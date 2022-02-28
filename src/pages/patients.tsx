@@ -266,7 +266,7 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
-                  href="/faq#patient"
+                  href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ
@@ -408,7 +408,7 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
-                  href="/faq#patient"
+                  href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ

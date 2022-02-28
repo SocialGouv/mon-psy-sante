@@ -21,7 +21,7 @@ const items = [
   {
     key: "general",
     sections: [{ faq: general }],
-    title: "Présentation du dispositif MonPsy",
+    title: "Présentation",
   },
   {
     key: "patient",
