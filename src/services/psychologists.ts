@@ -4,15 +4,28 @@ import { models } from "../db/models";
 import { SRID } from "../types/const/geometry";
 import { FILTER } from "../types/enums/filters";
 import { Psychologist } from "../types/psychologist";
+import getAddressCoordinates from "./getAddressCoordinates";
 
-export const getOne = async (id: string) => {
+export const getOne = async (id: string): Promise<Psychologist> => {
+  // @ts-ignore
   return models.Psychologist.findOne({
     raw: true,
-    where: { id },
+    where: { archived: false, id },
   });
 };
 
-export const countAll = async () => models.Psychologist.count();
+export const getByInstructor = async (
+  group: string
+): Promise<Psychologist[]> => {
+  // @ts-ignore
+  return models.Psychologist.findAll({
+    raw: true,
+    where: { archived: false, instructorId: group },
+  });
+};
+
+export const countAll = async () =>
+  models.Psychologist.count({ where: { archived: false, visible: true } });
 
 export const getAll = async (filters: {
   [key in FILTER]?: string | string[];
@@ -21,6 +34,7 @@ export const getAll = async (filters: {
     limit: 10,
     offset: parseInt(filters[FILTER.PAGE_INDEX] as string, 10) * 10,
     raw: true,
+    where: { archived: false, visible: true },
   };
   if (filters[FILTER.LONGITUDE] && filters[FILTER.LATITUDE]) {
     query.attributes = {
@@ -53,6 +67,36 @@ export const getAll = async (filters: {
 export const saveMany = async (psychologists: Psychologist[]) => {
   //@ts-ignore
   return models.Psychologist.bulkCreate(psychologists);
+};
+
+export const update = async (
+  id: string,
+  psychologist: Partial<Psychologist>
+) => {
+  const coordinates = await getAddressCoordinates(psychologist.address);
+  return models.Psychologist.update(
+    {
+      address: psychologist.address,
+      cdsmsp: psychologist.cdsmsp,
+      coordinates: coordinates
+        ? {
+            coordinates: [coordinates.longitude, coordinates.latitude],
+            type: "POINT",
+          }
+        : null,
+      displayEmail: psychologist.displayEmail,
+      email: psychologist.email,
+      firstName: psychologist.firstName,
+      languages: psychologist.languages,
+      lastName: psychologist.lastName,
+      phone: psychologist.phone,
+      public: psychologist.public,
+      teleconsultation: psychologist.teleconsultation,
+      visible: psychologist.visible,
+      website: psychologist.website,
+    },
+    { where: { id } }
+  );
 };
 
 export const updateState = async (newStates: Partial<Psychologist>[]) => {

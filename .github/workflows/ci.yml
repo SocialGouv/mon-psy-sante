@@ -49,5 +49,8 @@ jobs:
       - name: Unit test
         run: npm run test
 
+      - name: API test
+        run: npm run test:api
+
       - name: E2E test
         run: npm run cy:run

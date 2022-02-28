@@ -24,6 +24,7 @@ export default (sequelize) => {
       phone: DataTypes.STRING,
       public: DataTypes.STRING,
       teleconsultation: DataTypes.BOOLEAN,
+      visible: DataTypes.BOOLEAN,
       website: DataTypes.STRING,
     },
     {

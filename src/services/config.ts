@@ -24,6 +24,7 @@ export default {
   },
   minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.55"),
   newFeatures: parseBoolean(process.env.NEXT_PUBLIC_NEW_FEATURES),
+  nextAuthUrl: process.env.NEXTAUTH_URL,
   postgre: {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
     url: process.env.DATABASE_URL || "",
