@@ -2,8 +2,8 @@ import Sequelize, { Op } from "sequelize";
 
 import { models } from "../db/models";
 import { SRID } from "../types/const/geometry";
-import { PUBLIC } from "../types/enums/contact";
 import { FILTER } from "../types/enums/filters";
+import { PUBLIC } from "../types/enums/public";
 import { Psychologist } from "../types/psychologist";
 import getAddressCoordinates from "./getAddressCoordinates";
 
@@ -32,14 +32,18 @@ const DEFAULT_PAGE_SIZE = 50;
 export const getAll = async (filters: {
   [key in FILTER]?: string | string[];
 }): Promise<Psychologist[]> => {
+  const pageSize = filters[FILTER.PAGE_SIZE]
+    ? parseInt(filters[FILTER.PAGE_SIZE] as string, 10)
+    : DEFAULT_PAGE_SIZE;
+
+  const where: any = { archived: false, visible: true };
   const query: Sequelize.FindOptions<any> = {
-    limit: DEFAULT_PAGE_SIZE,
-    offset:
-      parseInt(filters[FILTER.PAGE_INDEX] as string, 10) * DEFAULT_PAGE_SIZE,
+    limit: pageSize,
+    offset: parseInt(filters[FILTER.PAGE_INDEX] as string, 10) * pageSize,
     raw: true,
-    where: { archived: false, visible: true },
+    where,
   };
-  const where: any = {};
+
   if (filters[FILTER.TELECONSULTATION]) {
     where.teleconsultation = true;
   }
@@ -74,7 +78,6 @@ export const getAll = async (filters: {
     query.order = Sequelize.literal("distance ASC");
   }
 
-  query.where = where;
   //@ts-ignore
   return models.Psychologist.findAll(query);
 };
