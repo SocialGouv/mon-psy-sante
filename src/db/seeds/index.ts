@@ -8,18 +8,6 @@ const deleteAll = async () => {
   await models.Psychologist.destroy({ where: {} });
 };
 
-const languages = [
-  "Francais",
-  "francais",
-  "Français",
-  "français",
-  "Francais ",
-  " Francais",
-  "Francais et allemand ",
-  "Anglais",
-  "",
-];
-
 const createPsychologists = async () => {
   const psychologists: Psychologist[] = [];
 

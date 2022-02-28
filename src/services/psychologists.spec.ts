@@ -70,13 +70,13 @@ describe("Service psychologists", () => {
   describe("getAll", () => {
     it("Should return all non archived psychologists", async () => {
       const results = await getAll({ [FILTER.PAGE_INDEX]: "0" });
-      expect(results.length).toEqual(10);
+      expect(results.length).toEqual(23);
       results.forEach((result) => expect(result.archived).toBe(false));
     });
 
     it("Should return paginated psychologists", async () => {
       const results = await getAll({ [FILTER.PAGE_INDEX]: "2" });
-      expect(results.length).toEqual(3);
+      expect(results.length).toEqual(0);
       results.forEach((result) => expect(result.archived).toBe(false));
     });
 
