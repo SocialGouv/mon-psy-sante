@@ -1,5 +1,6 @@
 import faker from "@faker-js/faker";
 
+import { allPublics } from "../../types/enums/public";
 import { Psychologist } from "../../types/psychologist";
 
 export const groupIds = [...Array(5).keys()].map(() => faker.datatype.uuid());
@@ -36,16 +37,12 @@ export const getOnePsychologist = (
   displayEmail: faker.datatype.boolean(),
   email: faker.internet.exampleEmail(),
   firstName: faker.name.firstName(),
-  id: faker.datatype.number(),
+  id: faker.datatype.number({ max: 2147483647 }),
   instructorId: faker.random.arrayElement(groupIds),
   languages: faker.random.arrayElement(languages),
   lastName: faker.name.lastName(),
   phone: faker.phone.phoneNumber("0# ## ## ## ##"),
-  public: faker.random.arrayElement([
-    "Adultes",
-    "Adultes et enfants/adolescents",
-    "Enfants/adolescents",
-  ]),
+  public: faker.random.arrayElement(allPublics),
   teleconsultation: faker.datatype.boolean(),
   visible: true,
   website: faker.helpers.randomize([
