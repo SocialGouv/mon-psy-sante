@@ -1,34 +1,47 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { Callout, CalloutText, CalloutTitle } from "@dataesr/react-dsfr";
+import React from "react";
 
 const Header = () => {
-  const [count, setCount] = useState();
-
-  useEffect(() => {
-    axios.get(`/api/psychologists/count`).then((response) => {
-      setCount(response.data);
-    });
-  }, []);
-
   return (
     <div>
       <h1>Annuaire</h1>
-      <h2>Trouver un psychologue partenaire près de chez soi</h2>
-      <h3>
-        {`Il y a actuellement ${count || "..."} partenaires du dispositif
-        d'accompagnement.`}
-      </h3>
+      <h2>Trouver un psychologue partenaire près de chez soi.</h2>
       <p>
-        La liste est mise à jour quotidiennement, revenez la consulter si vous
-        n&lsquo;avez pas pu trouver de psychologue. Une fois muni(e) d’un
-        courrier d’adressage signé par un médecin proposant une prise en charge
-        psychologique, vous pourrez contacter un psychologue partenaire par
-        téléphone ou via son site web. Il n’est pas possible de bénéficier d’un
-        remboursement par l’Assurance Maladie sans ce courrier d’adressage. Le
-        psychologue, que vous choisissez, peut exercer dans votre département ou
-        dans un autre département, notamment dans le cas d&lsquo;un suivi à
-        distance.
+        Accéder rapidement aux coordonnées des psychologues partenaires du
+        dispositif MonPsy.
+        <br />
+        La liste des psychologues partenaires est actualisée régulièrement.
       </p>
+      <Callout className="fr-mb-4w">
+        <CalloutTitle>A lire, avant de prendre rendez-vous :</CalloutTitle>
+        <CalloutText size="md">
+          <ul>
+            <li>
+              Une consultation préalable chez le médecin est <b>obligatoire</b>{" "}
+              afin de bénéficier du remboursement.
+            </li>
+            <li>
+              <b>8 séances</b> sont remboursées au maximum par année civile
+            </li>
+            <li>
+              Le souhait de certains psychologues{" "}
+              <b>d’accueillir des enfants et des adolescents</b> est indiqué
+              dans l’annuaire
+            </li>
+            <li>
+              Certains psychologues peuvent réaliser des{" "}
+              <b>séances de suivi à distance</b>. La 1ère séance d’entretien
+              initial est réalisée uniquement en présentiel.
+            </li>
+          </ul>
+          <b>
+            Le jour de mon rendez-vous, j’apporte le courrier d’adressage rédigé
+            par mon médecin
+          </b>{" "}
+          (ainsi que mon attestation de Carte Vitale papier indiquant vos
+          droits, si je bénéficie d’une exonération d’avance de frais).
+        </CalloutText>
+      </Callout>
     </div>
   );
 };
