@@ -15,6 +15,7 @@ import {
 } from "../../services/frontend/geo.api";
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
+import { allPublics } from "../../types/enums/public";
 import { Search, SubSearch } from "./Directory.styles";
 
 const geoStatusEnum = {
@@ -122,11 +123,7 @@ const SearchBar = ({
               })
             }
             label="Accompagnant des"
-            options={[
-              "Adultes",
-              "Adultes et enfants/adolescents",
-              "Enfants/adolescents",
-            ].map((option) => ({
+            options={allPublics.map((option) => ({
               label: option.replace("et", "ou"),
               value: option,
             }))}

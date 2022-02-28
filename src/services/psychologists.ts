@@ -2,6 +2,7 @@ import Sequelize, { Op } from "sequelize";
 
 import { models } from "../db/models";
 import { SRID } from "../types/const/geometry";
+import { PUBLIC } from "../types/enums/contact";
 import { FILTER } from "../types/enums/filters";
 import { Psychologist } from "../types/psychologist";
 import getAddressCoordinates from "./getAddressCoordinates";
@@ -45,7 +46,7 @@ export const getAll = async (filters: {
 
   if (filters[FILTER.PUBLIC]) {
     where.public = {
-      [Op.or]: [filters[FILTER.PUBLIC], "Adultes et enfants/adolescents"],
+      [Op.or]: [filters[FILTER.PUBLIC], PUBLIC.BOTH],
     };
   }
 

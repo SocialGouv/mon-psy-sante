@@ -4,6 +4,7 @@ import React, { createRef, useEffect, useRef, useState } from "react";
 
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
+import { PUBLIC } from "../../types/enums/public";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 import { DirectoryWrapper, ResultWrapper } from "./Directory.styles";
 import Header from "./Header";
@@ -28,7 +29,7 @@ const Directory = () => {
   const [positionFilter, setPositionFilter] = useState<any>("");
   const [otherFilters, setOtherFilters] = useState({
     [FILTER.TELECONSULTATION]: false,
-    [FILTER.PUBLIC]: "Adultes et enfants/adolescents",
+    [FILTER.PUBLIC]: PUBLIC.BOTH,
   });
 
   const loadMorePsychologists = () => {
@@ -46,7 +47,7 @@ const Directory = () => {
     if (otherFilters[FILTER.TELECONSULTATION]) {
       query = `${query}&${FILTER.TELECONSULTATION}=true`;
     }
-    if (otherFilters[FILTER.PUBLIC] !== "Adultes et enfants/adolescents") {
+    if (otherFilters[FILTER.PUBLIC] !== PUBLIC.BOTH) {
       query = `${query}&${FILTER.PUBLIC}=${otherFilters[FILTER.PUBLIC]}`;
     }
     axios.get(`/api/psychologists${query}`).then((response) => {
