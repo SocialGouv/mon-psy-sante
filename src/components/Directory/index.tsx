@@ -25,7 +25,11 @@ const Directory = () => {
   const [selectedPsychologist, setSelectedPsychologist] = useState<number>();
   const [mapCenter, setMapCenter] = useState<Coordinates>();
 
-  const [filter, setFilter] = useState<any>("");
+  const [positionFilter, setPositionFilter] = useState<any>("");
+  const [otherFilters, setOtherFilters] = useState({
+    [FILTER.TELECONSULTATION]: false,
+    [FILTER.PUBLIC]: "Adultes et enfants/adolescents",
+  });
 
   const loadMorePsychologists = () => {
     loadPsychologists(currentPageRef.current + 1);
@@ -37,6 +41,13 @@ const Directory = () => {
     if (coords) {
       query = `${query}&${FILTER.LONGITUDE}=${coords.longitude}&${FILTER.LATITUDE}=${coords.latitude}`;
       setMapCenter(coords);
+    }
+
+    if (otherFilters[FILTER.TELECONSULTATION]) {
+      query = `${query}&${FILTER.TELECONSULTATION}=true`;
+    }
+    if (otherFilters[FILTER.PUBLIC] !== "Adultes et enfants/adolescents") {
+      query = `${query}&${FILTER.PUBLIC}=${otherFilters[FILTER.PUBLIC]}`;
     }
     axios.get(`/api/psychologists${query}`).then((response) => {
       if (currentPage === 0) {
@@ -68,17 +79,19 @@ const Directory = () => {
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_NEW_FEATURES !== "true") {
       router.push("/");
-    } else {
-      loadPsychologists(0);
     }
   }, []);
 
   useEffect(() => {
-    if (filter && typeof filter === "string") {
+    if (positionFilter === "Autour de moi") {
+      return;
+    }
+
+    if (positionFilter && typeof positionFilter === "string") {
       setGeoLoading(true);
       axios
         .get(
-          `https://api-adresse.data.gouv.fr/search/?q=${filter}&postCode=${filter}`
+          `https://api-adresse.data.gouv.fr/search/?q=${positionFilter}&postCode=${positionFilter}`
         )
         .then((response) => {
           const coordinates = response.data.features[0].geometry.coordinates;
@@ -88,25 +101,23 @@ const Directory = () => {
           });
           setGeoLoading(false);
         });
-    } else if (filter) {
+    } else if (positionFilter) {
       setCoords({
-        latitude: filter[1],
-        longitude: filter[0],
+        latitude: positionFilter[1],
+        longitude: positionFilter[0],
       });
     }
-  }, [filter]);
-
-  if (!psychologists) {
-    return null;
-  }
+  }, [positionFilter]);
 
   return (
     <DirectoryWrapper>
       <Header />
       <ResultWrapper>
         <SearchBar
-          filter={filter}
-          setFilter={setFilter}
+          positionFilter={positionFilter}
+          setPositionFilter={setPositionFilter}
+          otherFilters={otherFilters}
+          setOtherFilters={setOtherFilters}
           coords={coords}
           setCoords={setCoords}
           geoLoading={geoLoading}
@@ -114,17 +125,24 @@ const Directory = () => {
           loadMorePsychologists={loadMorePsychologists}
           loadPsychologists={loadPsychologists}
         />
-        <ResultsDesktop
-          loadMorePsychologists={loadMorePsychologists}
-          psychologists={psychologists}
-          resultsRef={resultsRef}
-          psychologistsRefs={psychologistsRefs}
-          selectedPsychologist={selectedPsychologist}
-          setSelectedPsychologist={setSelectedPsychologist}
-          mapCenter={mapCenter}
-          setMapCenter={setMapCenter}
-        />
-        <ResultsMobile psychologists={psychologists} mapCenter={mapCenter} />
+        {psychologists && psychologists.length > 0 && (
+          <>
+            <ResultsDesktop
+              loadMorePsychologists={loadMorePsychologists}
+              psychologists={psychologists}
+              resultsRef={resultsRef}
+              psychologistsRefs={psychologistsRefs}
+              selectedPsychologist={selectedPsychologist}
+              setSelectedPsychologist={setSelectedPsychologist}
+              mapCenter={mapCenter}
+              setMapCenter={setMapCenter}
+            />
+            <ResultsMobile
+              psychologists={psychologists}
+              mapCenter={mapCenter}
+            />
+          </>
+        )}
       </ResultWrapper>
     </DirectoryWrapper>
   );

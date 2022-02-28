@@ -1,4 +1,11 @@
-import { Alert, Button, Col, SearchableSelect } from "@dataesr/react-dsfr";
+import {
+  Alert,
+  Button,
+  Col,
+  SearchableSelect,
+  Select,
+} from "@dataesr/react-dsfr";
+import axios from "axios";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import {
@@ -7,7 +14,8 @@ import {
   search,
 } from "../../services/frontend/geo.api";
 import { Coordinates } from "../../types/coordinates";
-import { Search } from "./Directory.styles";
+import { FILTER } from "../../types/enums/filters";
+import { Search, SubSearch } from "./Directory.styles";
 
 const geoStatusEnum = {
   DENIED: -1,
@@ -17,8 +25,10 @@ const geoStatusEnum = {
 };
 
 const SearchBar = ({
-  filter,
-  setFilter,
+  positionFilter,
+  setPositionFilter,
+  otherFilters,
+  setOtherFilters,
   coords,
   setCoords,
   geoLoading,
@@ -26,8 +36,10 @@ const SearchBar = ({
   loadMorePsychologists,
   loadPsychologists,
 }: {
-  filter: string;
-  setFilter: Dispatch<SetStateAction<string>>;
+  positionFilter: string;
+  setPositionFilter: Dispatch<SetStateAction<string>>;
+  otherFilters: any;
+  setOtherFilters: Dispatch<SetStateAction<any>>;
   coords: Coordinates;
   setCoords: Dispatch<SetStateAction<Coordinates>>;
   geoLoading: boolean;
@@ -73,13 +85,13 @@ const SearchBar = ({
   };
 
   useEffect(() => {
-    if (filter === AROUND_ME) {
+    if (positionFilter === AROUND_ME) {
       checkGeolocationPermission();
     }
-  }, [filter]);
+  }, [positionFilter]);
 
   useEffect(() => {
-    if (filter) {
+    if (positionFilter) {
       return;
     }
 
@@ -90,8 +102,8 @@ const SearchBar = ({
     <Search>
       <Col n="md-9 12">
         <SearchableSelect
-          selected={filter}
-          onChange={setFilter}
+          selected={positionFilter}
+          onChange={setPositionFilter}
           onTextChange={setFilterText}
           filter={(label, option) =>
             option.label === AROUND_ME ||
@@ -100,6 +112,47 @@ const SearchBar = ({
           label="Rechercher par ville ou code postal"
           options={options}
         />
+        <SubSearch>
+          <Select
+            selected={otherFilters[FILTER.PUBLIC]}
+            onChange={(e) =>
+              setOtherFilters({
+                ...otherFilters,
+                [FILTER.PUBLIC]: e.target.value,
+              })
+            }
+            label="Accompagnant des"
+            options={[
+              "Adultes",
+              "Adultes et enfants/adolescents",
+              "Enfants/adolescents",
+            ].map((option) => ({
+              label: option.replace("et", "ou"),
+              value: option,
+            }))}
+          />
+          <div>
+            <label className="fr-label">Uniquement à distance</label>
+            <div className="fr-toggle">
+              <input
+                id="checkbox-teleconsultation"
+                type="checkbox"
+                className="fr-toggle__input"
+                checked={otherFilters[FILTER.TELECONSULTATION]}
+                onChange={(e) =>
+                  setOtherFilters({
+                    ...otherFilters,
+                    [FILTER.TELECONSULTATION]: e.target.checked,
+                  })
+                }
+              />
+              <label
+                className="fr-toggle__label"
+                htmlFor="checkbox-teleconsultation"
+              />
+            </div>
+          </div>
+        </SubSearch>
       </Col>
       <Col offset="md-1" n="md-2 12" className="align-right">
         <Button
@@ -119,7 +172,7 @@ const SearchBar = ({
           {geoLoading ? "Chargement..." : "Rechercher"}
         </Button>
       </Col>
-      {filter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
+      {positionFilter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
         <Alert
           className="fr-mt-1w"
           type="error"
@@ -127,13 +180,14 @@ const SearchBar = ({
                 fonctionnalité."
         />
       )}
-      {filter === AROUND_ME && geoStatus === geoStatusEnum.UNSUPPORTED && (
-        <Alert
-          className="fr-mt-1w"
-          type="error"
-          description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
-        />
-      )}
+      {positionFilter === AROUND_ME &&
+        geoStatus === geoStatusEnum.UNSUPPORTED && (
+          <Alert
+            className="fr-mt-1w"
+            type="error"
+            description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
+          />
+        )}
     </Search>
   );
 };

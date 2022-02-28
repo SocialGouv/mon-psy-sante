@@ -1,4 +1,4 @@
-import Sequelize from "sequelize";
+import Sequelize, { Op } from "sequelize";
 
 import { models } from "../db/models";
 import { SRID } from "../types/const/geometry";
@@ -38,6 +38,17 @@ export const getAll = async (filters: {
     raw: true,
     where: { archived: false, visible: true },
   };
+  const where: any = {};
+  if (filters[FILTER.TELECONSULTATION]) {
+    where.teleconsultation = true;
+  }
+
+  if (filters[FILTER.PUBLIC]) {
+    where.public = {
+      [Op.or]: [filters[FILTER.PUBLIC], "Adultes et enfants/adolescents"],
+    };
+  }
+
   if (filters[FILTER.LONGITUDE] && filters[FILTER.LATITUDE]) {
     query.attributes = {
       include: [
@@ -62,6 +73,7 @@ export const getAll = async (filters: {
     query.order = Sequelize.literal("distance ASC");
   }
 
+  query.where = where;
   //@ts-ignore
   return models.Psychologist.findAll(query);
 };
