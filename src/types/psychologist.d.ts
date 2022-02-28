@@ -7,6 +7,7 @@ export interface Psychologist {
   address: string;
   teleconsultation: boolean;
   displayEmail: boolean;
+  visible: boolean;
   email: string;
   public: string;
   languages: string;
