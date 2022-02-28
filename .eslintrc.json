@@ -21,14 +21,14 @@
     "jsx-a11y/anchor-is-valid": "off",
     "react/prop-types": "off",
     "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     "import/no-unresolved": [
       2,
       {
         "caseSensitive": false
       }
     ],
-    "react/display-name": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "react/display-name": "off"
   },
   "overrides": [
     {

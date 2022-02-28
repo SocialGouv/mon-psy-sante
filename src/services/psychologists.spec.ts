@@ -4,6 +4,7 @@ import sinon from "sinon";
 import { models } from "../db/models";
 import { getOnePsychologist } from "../db/seeds/psychologist";
 import { FILTER } from "../types/enums/filters";
+import { allPublics, PUBLIC } from "../types/enums/public";
 import { Psychologist } from "../types/psychologist";
 import * as address from "./getAddressCoordinates";
 import {
@@ -18,36 +19,38 @@ import {
 describe("Service psychologists", () => {
   beforeEach(async () => {
     await models.Psychologist.destroy({ where: {} });
+    const archiveds = [true, false];
+    const visibles = [true, false];
+    const teleconsultations = [true, false];
+    const instructorIds = ["1", "2", "3"];
 
-    const psychologists = [
-      getOnePsychologist({ archived: true, instructorId: "1" }),
-      getOnePsychologist({ archived: true, instructorId: "2" }),
-      getOnePsychologist({ instructorId: "1", visible: false }),
-      getOnePsychologist({ instructorId: "2", visible: false }),
-      getOnePsychologist({ archived: false, instructorId: "1" }),
-      getOnePsychologist({ archived: false, instructorId: "2" }),
-      getOnePsychologist({ archived: false, instructorId: "2" }),
-    ];
+    // 2 x 2 x 2 x 3 x 3 = 72 psys
+    const psychologists = archiveds.flatMap((archived) =>
+      visibles.flatMap((visible) =>
+        teleconsultations.flatMap((teleconsultation) =>
+          instructorIds.flatMap((instructorId) =>
+            allPublics.map((p) =>
+              getOnePsychologist({
+                archived,
+                instructorId,
+                public: p,
+                teleconsultation,
+                visible,
+              })
+            )
+          )
+        )
+      )
+    );
 
     //@ts-ignore
     await models.Psychologist.bulkCreate(psychologists);
-
-    await models.Psychologist.bulkCreate(
-      // @ts-ignore
-      [...Array(20).keys()].map(() =>
-        getOnePsychologist({
-          archived: false,
-          instructorId: "osef",
-          visible: true,
-        })
-      )
-    );
   });
 
   describe("getByInstructor", () => {
     it("Should return non archived psychologist of an instructor", async () => {
       const results = await getByInstructor("2");
-      expect(results.length).toEqual(3);
+      expect(results.length).toEqual(12);
       results.forEach((psychologist) => {
         expect(psychologist.instructorId).toEqual("2");
         expect(psychologist.archived).toEqual(false);
@@ -63,21 +66,79 @@ describe("Service psychologists", () => {
   describe("countAll", () => {
     it("Should count non archived psychologists", async () => {
       const results = await countAll();
-      expect(results).toEqual(23);
+      expect(results).toEqual(18);
     });
   });
 
   describe("getAll", () => {
-    it("Should return all non archived psychologists", async () => {
-      const results = await getAll({ [FILTER.PAGE_INDEX]: "0" });
+    it("Should return all non archived, visible psychologists", async () => {
+      const results = await getAll({
+        [FILTER.PAGE_INDEX]: "0",
+        [FILTER.PAGE_SIZE]: "10",
+      });
       expect(results.length).toEqual(10);
       results.forEach((result) => expect(result.archived).toBe(false));
+      results.forEach((result) => expect(result.visible).toBe(true));
     });
 
     it("Should return paginated psychologists", async () => {
-      const results = await getAll({ [FILTER.PAGE_INDEX]: "2" });
-      expect(results.length).toEqual(3);
+      const results = await getAll({
+        [FILTER.PAGE_INDEX]: "1",
+        [FILTER.PAGE_SIZE]: "10",
+      });
+      expect(results.length).toEqual(8);
       results.forEach((result) => expect(result.archived).toBe(false));
+      results.forEach((result) => expect(result.visible).toBe(true));
+    });
+
+    it("Should return empty psychologists if extra page", async () => {
+      const results = await getAll({
+        [FILTER.PAGE_INDEX]: "2",
+        [FILTER.PAGE_SIZE]: "10",
+      });
+      expect(results.length).toEqual(0);
+    });
+
+    it("Should filter by teleconsultation", async () => {
+      const results = await getAll({
+        [FILTER.PAGE_INDEX]: "0",
+        [FILTER.TELECONSULTATION]: "true",
+      });
+
+      expect(results.length).toEqual(9);
+      results.forEach((result) => expect(result.archived).toBe(false));
+      results.forEach((result) => expect(result.visible).toBe(true));
+      results.forEach((result) => expect(result.teleconsultation).toBe(true));
+    });
+
+    it("Should filter by public", async () => {
+      const results = await getAll({
+        [FILTER.PAGE_INDEX]: "0",
+        [FILTER.PUBLIC]: PUBLIC.ADULTES,
+      });
+
+      expect(results.length).toEqual(12);
+      results.forEach((result) => expect(result.archived).toBe(false));
+      results.forEach((result) => expect(result.visible).toBe(true));
+      results.forEach((result) =>
+        expect(result.public).not.toBe(PUBLIC.ENFANTS)
+      );
+    });
+
+    it("Should filter by everything", async () => {
+      const results = await getAll({
+        [FILTER.PAGE_INDEX]: "0",
+        [FILTER.PUBLIC]: PUBLIC.ENFANTS,
+        [FILTER.TELECONSULTATION]: "true",
+      });
+
+      expect(results.length).toEqual(6);
+      results.forEach((result) => expect(result.archived).toBe(false));
+      results.forEach((result) => expect(result.visible).toBe(true));
+      results.forEach((result) => expect(result.teleconsultation).toBe(true));
+      results.forEach((result) =>
+        expect(result.public).not.toBe(PUBLIC.ADULTES)
+      );
     });
 
     it.skip("Should sort by distance", () => {

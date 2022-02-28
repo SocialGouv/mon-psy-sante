@@ -1,3 +1,17 @@
+# [1.15.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.14.0...v1.15.0) (2022-02-28)
+
+
+### Features
+
+* **annuaire:** new filters ([#76](https://github.com/SocialGouv/mon-psy-sante/issues/76)) ([401d271](https://github.com/SocialGouv/mon-psy-sante/commit/401d27171a22eb1c73868a04a7091ad6465bb6a2))
+
+# [1.14.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.13.0...v1.14.0) (2022-02-28)
+
+
+### Features
+
+* **annuaire:** Improve display ([#75](https://github.com/SocialGouv/mon-psy-sante/issues/75)) ([4691294](https://github.com/SocialGouv/mon-psy-sante/commit/46912948f9a4d3a522e2d3dd5b938a618c3cb434))
+
 # [1.13.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.12.3...v1.13.0) (2022-02-25)
 
 
