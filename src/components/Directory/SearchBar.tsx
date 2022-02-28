@@ -5,7 +5,6 @@ import {
   SearchableSelect,
   Select,
 } from "@dataesr/react-dsfr";
-import axios from "axios";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import {
