@@ -98,7 +98,7 @@ const searchDepartments = async (
     .sort((a, b) => b.population - a.population)
     .map((commune) => {
       return {
-        label: `${commune.nom}, ${commune.codePostal}, ${commune.departement.nom}`,
+        label: `${commune.nom}, ${commune.codePostal}, ${commune.departement?.nom}`,
         value: `${commune.codePostal} ${commune.nom}`,
       };
     });
