@@ -7,6 +7,7 @@ https://monpsy.sante.gouv.fr
 First you need to run a docker with a postgre DB
 
 ```
+  cp .env.test .env
   docker-compose up
 ```
 
