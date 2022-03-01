@@ -9,6 +9,8 @@ const limit = pLimit(5);
 const extractDepartmentNumber = (dep: string): string => {
   return dep.split(" - ")[0];
 };
+const CHAMPS = JSON.parse(config.demarchesSimplifiees.champs);
+
 export const parseDossierMetadata = async (
   dossier: DSPsychologist
 ): Promise<Psychologist> => {
@@ -21,7 +23,7 @@ export const parseDossierMetadata = async (
     lastName: dossier.demandeur.nom,
   };
 
-  JSON.parse(config.demarchesSimplifiees.champs).forEach(([id, field]) => {
+  CHAMPS.forEach(([id, field]) => {
     const dossierChamp = dossier.champs.find((champ) => champ.id === id);
     if (dossierChamp) {
       if (field === "teleconsultation" || field === "displayEmail") {
