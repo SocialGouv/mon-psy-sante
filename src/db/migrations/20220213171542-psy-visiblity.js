@@ -1,14 +1,14 @@
-'use strict';
+"use strict";
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     await queryInterface.addColumn("psychologist", "visible", {
       type: Sequelize.BOOLEAN,
-      defaultValue: true
-    })
+      defaultValue: true,
+    });
   },
 
-  async down (queryInterface, Sequelize) {
-    await queryInterface.removeColumn("psychologist", "visible")
-  }
+  async down(queryInterface) {
+    await queryInterface.removeColumn("psychologist", "visible");
+  },
 };

@@ -11,6 +11,7 @@ export default (sequelize) => {
       archived: DataTypes.BOOLEAN,
       cdsmsp: DataTypes.STRING,
       coordinates: DataTypes.GEOMETRY("POINT", SRID),
+      department: DataTypes.STRING,
       displayEmail: DataTypes.BOOLEAN,
       email: DataTypes.STRING,
       firstName: DataTypes.STRING,

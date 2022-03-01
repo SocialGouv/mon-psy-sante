@@ -1,12 +1,20 @@
+import pLimit from "p-limit";
+
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import config from "../config";
 import getAddressCoordinates from "../getAddressCoordinates";
 
-const parseDossierMetadata = async (
+const limit = pLimit(5);
+
+const extractDepartmentNumber = (dep: string): string => {
+  return dep.split(" - ")[0];
+};
+export const parseDossierMetadata = async (
   dossier: DSPsychologist
 ): Promise<Psychologist> => {
   const psychologist: Partial<Psychologist> = {
     archived: dossier.archived,
+    department: extractDepartmentNumber(dossier.groupeInstructeur.label),
     firstName: dossier.demandeur.prenom,
     id: dossier.number,
     instructorId: dossier.groupeInstructeur.id,
@@ -39,10 +47,9 @@ const parsePsychologists = async (
   dsPsychologists: DSPsychologist[]
 ): Promise<Psychologist[]> => {
   console.log(`Parsing ${dsPsychologists.length} psychologists from DS API`);
-
   return Promise.all(
     dsPsychologists.map(async (dsPsychologist) =>
-      parseDossierMetadata(dsPsychologist)
+      limit(() => parseDossierMetadata(dsPsychologist))
     )
   );
 };

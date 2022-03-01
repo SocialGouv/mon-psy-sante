@@ -1,7 +1,9 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.sequelize.query(`CREATE EXTENSION IF NOT EXISTS "postgis";`)
-    await queryInterface.createTable('psychologist', {
+    await queryInterface.sequelize.query(
+      `CREATE EXTENSION IF NOT EXISTS "postgis";`
+    );
+    await queryInterface.createTable("psychologist", {
       id: {
         primaryKey: true,
         type: Sequelize.INTEGER,
@@ -20,23 +22,27 @@ module.exports = {
       },
       address: {
         allowNull: false,
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+      },
+      department: {
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       phone: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       website: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       cdsmsp: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       languages: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       teleconsultation: {
         allowNull: false,
@@ -48,11 +54,11 @@ module.exports = {
       },
       coordinates: {
         allowNull: true,
-        type: Sequelize.GEOMETRY('POINT')
+        type: Sequelize.GEOMETRY("POINT"),
       },
       instructor_id: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       created_at: {
         allowNull: false,
@@ -65,7 +71,7 @@ module.exports = {
     });
   },
 
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('psychologist');
+  down: async (queryInterface) => {
+    await queryInterface.dropTable("psychologist");
   },
 };
