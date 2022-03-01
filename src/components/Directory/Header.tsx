@@ -1,4 +1,4 @@
-import { Callout, CalloutText, CalloutTitle } from "@dataesr/react-dsfr";
+import { Callout, CalloutTitle } from "@dataesr/react-dsfr";
 import React from "react";
 
 const Header = () => {
@@ -14,33 +14,34 @@ const Header = () => {
       </p>
       <Callout className="fr-mb-4w">
         <CalloutTitle>A lire, avant de prendre rendez-vous :</CalloutTitle>
-        <CalloutText size="md">
+        <div className="fr-callout__text fr-text--md">
           <ul>
             <li>
-              Une consultation préalable chez le médecin est <b>obligatoire</b>{" "}
-              afin de bénéficier du remboursement.
+              Une consultation préalable chez le médecin est{" "}
+              <strong>obligatoire</strong> afin de bénéficier du remboursement.
             </li>
             <li>
-              <b>8 séances</b> sont remboursées au maximum par année civile
+              <strong>8 séances</strong> sont remboursées au maximum par année
+              civile.
             </li>
             <li>
               Le souhait de certains psychologues{" "}
-              <b>d’accueillir des enfants et des adolescents</b> est indiqué
-              dans l’annuaire
+              <strong>d’accueillir des enfants et des adolescents</strong> est
+              indiqué dans l’annuaire.
             </li>
             <li>
               Certains psychologues peuvent réaliser des{" "}
-              <b>séances de suivi à distance</b>. La 1ère séance d’entretien
-              initial est réalisée uniquement en présentiel.
+              <strong>séances de suivi à distance</strong>. La 1ère séance
+              d’entretien initial est réalisée uniquement en présentiel.
             </li>
           </ul>
-          <b>
+          <strong>
             Le jour de mon rendez-vous, j’apporte le courrier d’adressage rédigé
             par mon médecin
-          </b>{" "}
+          </strong>{" "}
           (ainsi que mon attestation de Carte Vitale papier indiquant vos
           droits, si je bénéficie d’une exonération d’avance de frais).
-        </CalloutText>
+        </div>
       </Callout>
     </div>
   );

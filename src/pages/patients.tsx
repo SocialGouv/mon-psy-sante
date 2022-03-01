@@ -108,12 +108,19 @@ const Page = () => {
                 ou de dépendance.
               </p>
               {process.env.NEXT_PUBLIC_NEW_FEATURES === "true" ? (
-                <Button
-                  icon="fr-fi-search-line"
-                  onClick={() => router.push("/annuaire")}
-                >
-                  Je trouve un psychologue partenaire près de chez moi
-                </Button>
+                <div>
+                  <p>
+                    <strong>
+                      Je trouve un psychologue partenaire près de chez moi
+                    </strong>
+                  </p>
+                  <Button
+                    icon="fr-fi-search-line"
+                    onClick={() => router.push("/annuaire")}
+                  >
+                    Trouver un psychologue
+                  </Button>
+                </div>
               ) : (
                 <div className="fr-callout fr-callout--pink-tuile fr-my-2w">
                   <p>

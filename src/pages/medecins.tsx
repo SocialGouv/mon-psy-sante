@@ -257,7 +257,7 @@ const Page = () => {
               icon="fr-fi-search-line"
               onClick={() => router.push("/annuaire")}
             >
-              Je trouve un psychologue partenaire près de chez moi
+              Trouver un psychologue partenaire
             </Button>
           ) : (
             <div className="fr-container fr-callout fr-callout--pink-tuile fr-my-6w">
