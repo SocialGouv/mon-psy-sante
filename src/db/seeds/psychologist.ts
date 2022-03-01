@@ -43,6 +43,7 @@ export const getOnePsychologist = (
   lastName: faker.name.lastName(),
   phone: faker.phone.phoneNumber("0# ## ## ## ##"),
   public: faker.random.arrayElement(allPublics),
+  state: "accepte",
   teleconsultation: faker.datatype.boolean(),
   visible: true,
   website: faker.helpers.randomize([
