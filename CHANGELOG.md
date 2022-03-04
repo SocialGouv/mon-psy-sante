@@ -1,3 +1,10 @@
+## [1.15.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.1...v1.15.2) (2022-03-04)
+
+
+### Bug Fixes
+
+* **faq:** display right section for patient faq ([#88](https://github.com/SocialGouv/mon-psy-sante/issues/88)) ([5d1e4b2](https://github.com/SocialGouv/mon-psy-sante/commit/5d1e4b2a52c17d8a87e6df117f6d5887fe4c0534))
+
 ## [1.15.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.0...v1.15.1) (2022-03-01)
 
 
