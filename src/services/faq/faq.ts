@@ -9,6 +9,7 @@ import difficulty from "./patient/difficulty";
 import end from "./patient/end";
 import information from "./patient/information";
 import reimbursment from "./patient/reimbursment";
+import eligibilityPatient from "./patient/eligibility";
 import agreement from "./psy/agreement";
 import billing from "./psy/billing";
 import psyDoctor from "./psy/doctor";
@@ -40,7 +41,7 @@ const items = [
   {
     key: "psychologue",
     sections: [
-      { faq: eligibility, title: "Éligibilité" },
+      { faq: eligibilityPatient, title: "Éligibilité" },
       { faq: registration, title: "Candidature" },
       { faq: agreement, title: "Conventionnement avec l’Assurance Maladie" },
       {
