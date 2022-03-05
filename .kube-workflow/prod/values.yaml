@@ -1,0 +1,12 @@
+app:
+  host: monpsy.sante.gouv.fr
+  redirectFrom:
+    - www.monpsy.sante.gouv.fr
+  replicas: 2
+  resources:
+    limits:
+      cpu: 1
+      memory: 768Mi
+    requests:
+      cpu: 200m
+      memory: 256Mi

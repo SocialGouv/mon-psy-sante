@@ -24,7 +24,6 @@ jobs:
       - name: Application
         uses: SocialGouv/actions/autodevops-build-register@v1
         with:
-          project: ${{ env.project }}
           imageName: ${{ env.project }}/app
           token: ${{ secrets.GITHUB_TOKEN }}
           dockerbuildargs: |
@@ -41,20 +40,10 @@ jobs:
       name: production
       url: https://monpsy.sante.gouv.fr
     steps:
-      - name: Use k8s manifests generation
-        uses: SocialGouv/actions/autodevops-manifests@v1
+      - uses: SocialGouv/kube-workflow@master
         with:
-          environment: "prod"
-          rancherId: ${{ secrets.RANCHER_PROJECT_ID }}
-          socialgouvBaseDomain: sante.gouv.fr
-          pgUserSecretPrefix: pg-user
-        env:
-          SOCIALGOUV_PRODUCTION_NAMESPACE: monpsy
-
-      - name: Use autodevops deployment
-        uses: SocialGouv/actions/autodevops-deploy@v1
-        with:
-          environment: "prod"
+          environment: prod
           token: ${{ secrets.GITHUB_TOKEN }}
           kubeconfig: ${{ secrets.KUBECONFIG }}
-          rancherId: ${{ secrets.RANCHER_PROJECT_ID }}
+          rancherProjectId: ${{ secrets.RANCHER_PROJECT_ID }}
+          rancherProjectName: ${{ secrets.RANCHER_PROJECT_NAME }}
