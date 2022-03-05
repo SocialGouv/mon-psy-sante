@@ -27,7 +27,7 @@ function MarkerWithIcon({
   selectedPsychologist,
 }) {
   const [icon, setIcon] = useState(yellowIcon);
-  const [zindex, setZindex] = useState(yellowIcon);
+  const [zindex, setZindex] = useState(1);
   useEffect(() => {
     if (selectedPsychologist === psychologist.id) {
       setIcon(orangeIcon);
@@ -79,7 +79,10 @@ const PsychologistsMap = ({
       style={{ height: "100%", minHeight: "300px", width: "100%" }}
     >
       <ChangeView center={mapCenter} mapZoom={mapZoom} />
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
       {psychologists
         .filter((psychologist) => psychologist.coordinates)
         .map((psychologist) => (
