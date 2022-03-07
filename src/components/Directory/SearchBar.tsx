@@ -60,12 +60,13 @@ const SearchBar = ({
 
   const errors = () => {
     setGeoStatus(geoStatusEnum.DENIED);
+    setGeoLoading(false);
   };
 
   const getGeolocation = (state) => {
     if (state === "granted") {
       setGeoLoading(true);
-      navigator.geolocation.getCurrentPosition(success);
+      navigator.geolocation.getCurrentPosition(success, errors);
     } else if (state === "prompt") {
       setGeoLoading(true);
       navigator.geolocation.getCurrentPosition(success, errors);
@@ -170,6 +171,7 @@ const SearchBar = ({
       </Col>
       {positionFilter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
         <Alert
+          title="Géolocalisation indisponible"
           className="fr-mt-1w"
           type="error"
           description="Veuillez autoriser la géolocalisation sur votre navigateur pour utiliser cette
@@ -179,6 +181,7 @@ const SearchBar = ({
       {positionFilter === AROUND_ME &&
         geoStatus === geoStatusEnum.UNSUPPORTED && (
           <Alert
+            title="Géolocalisation indisponible"
             className="fr-mt-1w"
             type="error"
             description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."

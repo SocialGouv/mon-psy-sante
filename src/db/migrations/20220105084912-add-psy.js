@@ -16,6 +16,18 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      email: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      display_email: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+      },
+      public: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       archived: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
@@ -33,22 +45,18 @@ module.exports = {
         type: Sequelize.STRING,
       },
       website: {
-        allowNull: false,
-        type: Sequelize.STRING,
+        allowNull: true,
+        type: Sequelize.TEXT,
       },
       cdsmsp: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING,
       },
       languages: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING,
       },
       teleconsultation: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN,
-      },
-      with_children: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
       },
@@ -67,6 +75,11 @@ module.exports = {
       updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
+      },
+      visible: {
+        allowNull: true,
+        type: Sequelize.BOOLEAN,
+        defaultValue: true,
       },
     });
   },
