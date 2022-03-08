@@ -6,6 +6,7 @@ import accompaniment from "./patient/accompaniment";
 import begin from "./patient/begin";
 import children from "./patient/children";
 import difficulty from "./patient/difficulty";
+import eligibilityPatient from "./patient/eligibility";
 import end from "./patient/end";
 import information from "./patient/information";
 import reimbursment from "./patient/reimbursment";
@@ -40,7 +41,7 @@ const items = [
   {
     key: "psychologue",
     sections: [
-      { faq: eligibility, title: "Éligibilité" },
+      { faq: eligibilityPatient, title: "Éligibilité" },
       { faq: registration, title: "Candidature" },
       { faq: agreement, title: "Conventionnement avec l’Assurance Maladie" },
       {
