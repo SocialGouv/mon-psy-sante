@@ -11,6 +11,7 @@ const parseDossierMetadata = async (
     id: dossier.number,
     instructorId: dossier.groupeInstructeur.id,
     lastName: dossier.demandeur.nom,
+    state: dossier.state,
   };
 
   JSON.parse(config.demarchesSimplifiees.champs).forEach(([id, field]) => {
