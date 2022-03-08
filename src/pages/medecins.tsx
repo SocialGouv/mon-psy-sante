@@ -253,8 +253,11 @@ const Page = () => {
             </div>
           </div>
           {process.env.NEXT_PUBLIC_NEW_FEATURES === "true" ? (
-            <Button onClick={() => router.push("/annuaire")}>
-              Je trouve un psychologue partenaire près de chez moi
+            <Button
+              icon="fr-fi-search-line"
+              onClick={() => router.push("/annuaire")}
+            >
+              Trouver un psychologue partenaire
             </Button>
           ) : (
             <div className="fr-container fr-callout fr-callout--pink-tuile fr-my-6w">

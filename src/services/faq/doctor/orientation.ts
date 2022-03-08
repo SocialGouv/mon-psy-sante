@@ -24,7 +24,7 @@ export default [
   },
   {
     answer:
-      "<p>Dans le cadre du dispositif MonPsy, le patient (ou le titulaire de l’autorité parentale) choisit le psychologue réalisant son accompagnement parmi les psychologues partenaires listés sur le site <a href='/annuaire'>« monpsy.sante.gouv.fr »</a> (à venir). L’annuaire est régulièrement actualisé en fonction de l’entrée dans le dispositif de nouveaux psychologues.</p><p>Ces psychologues sont inscrits au répertoire ADELI et conventionnés avec l’Assurance Maladie.</p><p>Si vous le souhaitez, ou s’il vous le demande, vous pouvez aider le patient (ou la famille) dans le choix du psychologue.</p>",
+      "<p>Dans le cadre du dispositif MonPsy, le patient (ou le titulaire de l’autorité parentale) choisit le psychologue réalisant son accompagnement parmi les psychologues partenaires listés sur le site <a href='/annuaire' rel='nofollow noopener'>« monpsy.sante.gouv.fr »</a> (à venir). L’annuaire est régulièrement actualisé en fonction de l’entrée dans le dispositif de nouveaux psychologues.</p><p>Ces psychologues sont inscrits au répertoire ADELI et conventionnés avec l’Assurance Maladie.</p><p>Si vous le souhaitez, ou s’il vous le demande, vous pouvez aider le patient (ou la famille) dans le choix du psychologue.</p>",
     question: "Vers quels psychologues orienter un patient ?",
   },
   {

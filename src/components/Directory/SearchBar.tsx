@@ -128,7 +128,9 @@ const SearchBar = ({
             }))}
           />
           <div>
-            <label className="fr-label">Uniquement à distance</label>
+            <label className="fr-label">
+              Possibilité de séances à distance
+            </label>
             <div className="fr-toggle">
               <input
                 id="checkbox-teleconsultation"
