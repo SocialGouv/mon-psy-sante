@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.5...v1.16.0) (2022-03-08)
+
+
+### Features
+
+* **annuaire:** Updated texts ([#78](https://github.com/SocialGouv/mon-psy-sante/issues/78)) ([a735bac](https://github.com/SocialGouv/mon-psy-sante/commit/a735bacceabfffbf139c266913f9444dcfa9c275))
+
 ## [1.15.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.4...v1.15.5) (2022-03-08)
 
 
