@@ -42,7 +42,7 @@ const ResultsDesktop = ({
 
   return (
     <Desktop>
-      <Psychologists className="fr-col-6" ref={resultsRef}>
+      <Psychologists className="fr-col-6 fr-mr-2w" ref={resultsRef}>
         {psychologists.map((psychologist) => (
           <div
             ref={psychologistsRefs.current[psychologist.id]}
@@ -50,7 +50,7 @@ const ResultsDesktop = ({
           >
             <PsychologistWrapper
               selected={selectedPsychologist === psychologist.id}
-              className="fr-mb-2w"
+              className="fr-mb-2w fr-p-4w"
               onClick={() => onClick(psychologist)}
             >
               <Psychologist psychologist={psychologist} />

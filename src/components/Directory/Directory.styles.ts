@@ -1,15 +1,10 @@
 import styled, { css } from "styled-components";
 
 export const ResultWrapper = styled.div`
-  margin-bottom: 32px;
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-`;
-
-export const DirectoryWrapper = styled.div`
-  margin-top: 24px;
 `;
 
 export const Desktop = styled.div`
@@ -30,14 +25,6 @@ export const Mobile = styled.div`
   }
 `;
 
-export const Search = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  flex: 0 1 auto;
-  margin-bottom: 24px;
-`;
-
 export const SubSearch = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -47,14 +34,11 @@ export const SubSearch = styled.div`
 `;
 
 export const Psychologists = styled.div`
-  overflow: scroll;
-  margin-right: 16px;
+  overflow-y: scroll;
 `;
 
 export const PsychologistWrapper = styled.div`
   cursor: pointer;
-  background-color: var(--background-default-white);
-  padding: 24px;
 
   &:hover {
     background-color: var(--background-contrast-grey);

@@ -6,7 +6,7 @@ import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
 import { PUBLIC } from "../../types/enums/public";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
-import { DirectoryWrapper, ResultWrapper } from "./Directory.styles";
+import { ResultWrapper } from "./Directory.styles";
 import Header from "./Header";
 import ResultsDesktop from "./ResultsDesktop";
 import ResultsMobile from "./ResultsMobile";
@@ -111,22 +111,23 @@ const Directory = () => {
   }, [positionFilter]);
 
   return (
-    <DirectoryWrapper>
+    <>
       <Header />
-      <ResultWrapper>
-        <SearchBar
-          positionFilter={positionFilter}
-          setPositionFilter={setPositionFilter}
-          otherFilters={otherFilters}
-          setOtherFilters={setOtherFilters}
-          coords={coords}
-          setCoords={setCoords}
-          geoLoading={geoLoading}
-          setGeoLoading={setGeoLoading}
-          loadMorePsychologists={loadMorePsychologists}
-          loadPsychologists={loadPsychologists}
-        />
-        {psychologists && psychologists.length > 0 && (
+
+      <SearchBar
+        positionFilter={positionFilter}
+        setPositionFilter={setPositionFilter}
+        otherFilters={otherFilters}
+        setOtherFilters={setOtherFilters}
+        coords={coords}
+        setCoords={setCoords}
+        geoLoading={geoLoading}
+        setGeoLoading={setGeoLoading}
+        loadMorePsychologists={loadMorePsychologists}
+        loadPsychologists={loadPsychologists}
+      />
+      <ResultWrapper className="fr-mb-8w">
+        {psychologists?.length > 0 && (
           <>
             <ResultsDesktop
               loadMorePsychologists={loadMorePsychologists}
@@ -145,7 +146,7 @@ const Directory = () => {
           </>
         )}
       </ResultWrapper>
-    </DirectoryWrapper>
+    </>
   );
 };
 

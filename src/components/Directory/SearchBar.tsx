@@ -2,6 +2,7 @@ import {
   Alert,
   Button,
   Col,
+  Row,
   SearchableSelect,
   Select,
 } from "@dataesr/react-dsfr";
@@ -15,7 +16,7 @@ import {
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
 import { allPublics } from "../../types/enums/public";
-import { Search, SubSearch } from "./Directory.styles";
+import { SubSearch } from "./Directory.styles";
 
 const geoStatusEnum = {
   DENIED: -1,
@@ -100,7 +101,7 @@ const SearchBar = ({
   }, [filterText]);
 
   return (
-    <Search>
+    <Row className="fr-pb-6w" alignItems="middle">
       <Col n="md-9 12">
         <SearchableSelect
           selected={positionFilter}
@@ -151,7 +152,7 @@ const SearchBar = ({
           </div>
         </SubSearch>
       </Col>
-      <Col offset="md-1" n="md-2 12" className="align-right">
+      <Col n="md-3 12" className="align-center">
         <Button
           secondary
           className="fr-hidden-md fr-mt-1w"
@@ -187,7 +188,7 @@ const SearchBar = ({
             description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
           />
         )}
-    </Search>
+    </Row>
   );
 };
 

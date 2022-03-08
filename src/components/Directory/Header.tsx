@@ -11,7 +11,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div>
+    <div className="fr-mt-6w">
       <h1>Annuaire</h1>
       <h2>Trouver un psychologue partenaire près de chez soi</h2>
       <h3>
