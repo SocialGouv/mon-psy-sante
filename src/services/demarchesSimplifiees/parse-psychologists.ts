@@ -1,3 +1,4 @@
+import Joi from "joi";
 import pLimit from "p-limit";
 
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
@@ -10,15 +11,10 @@ const extractDepartmentNumber = (dep: string): string => {
   return dep.split(" - ")[0];
 };
 const CHAMPS = JSON.parse(config.demarchesSimplifiees.champs);
-const isWebsite = new RegExp(
-  "^(https?:\\/\\/)?" + // protocol
-    "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
-    "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
-    "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
-    "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
-    "(\\#[-a-z\\d_]*)?$", // fragment locator
-  "i"
-);
+const websiteSchema = Joi.object({
+  website: Joi.string().uri().required(),
+});
+
 const isFrench = new RegExp("(français|francais)", "g");
 
 const parsers = {
@@ -26,7 +22,8 @@ const parsers = {
   languages: (value) =>
     !value || value.trim().toLowerCase().match(isFrench) ? undefined : value,
   teleconsultation: (value) => value === "true",
-  website: (value) => (value && value.match(isWebsite) ? value : undefined),
+  website: (value) =>
+    websiteSchema.validate({ website: value }).error ? undefined : value,
 };
 const parseChampValue = (field, value) =>
   parsers[field] ? parsers[field](value) : value;

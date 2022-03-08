@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { parseDossierMetadata } from "../demarchesSimplifiees/parsePsychologists";
+import { parseDossierMetadata } from "../demarchesSimplifiees/parse-psychologists";
 
 jest.mock("axios");
 describe("parseDossierMetadata", () => {

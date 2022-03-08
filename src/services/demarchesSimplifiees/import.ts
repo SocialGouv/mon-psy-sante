@@ -4,7 +4,7 @@ import {
   requestPsychologists,
   requestPsychologistsState,
 } from "./buildRequest";
-import parsePsychologists from "./parsePsychologists";
+import parsePsychologists from "./parse-psychologists";
 
 const getAllPsychologistList = async (
   graphqlFunction: (string) => Promise<DSResponse>,
