@@ -1,3 +1,10 @@
+## [1.15.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.2...v1.15.3) (2022-03-08)
+
+
+### Bug Fixes
+
+* **ds:** import Psy state ([#86](https://github.com/SocialGouv/mon-psy-sante/issues/86)) ([69220bb](https://github.com/SocialGouv/mon-psy-sante/commit/69220bbc9d68d3eeedbacb92d88d621dd77d9f33))
+
 ## [1.15.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.1...v1.15.2) (2022-03-04)
 
 
