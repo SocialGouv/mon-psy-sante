@@ -1,3 +1,10 @@
+## [1.15.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.4...v1.15.5) (2022-03-08)
+
+
+### Bug Fixes
+
+* **faq:** fix eligibility ([#90](https://github.com/SocialGouv/mon-psy-sante/issues/90)) ([efbbeac](https://github.com/SocialGouv/mon-psy-sante/commit/efbbeacfbbdca75dbc2a373da48c76d690edf9b2))
+
 ## [1.15.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.3...v1.15.4) (2022-03-08)
 
 
