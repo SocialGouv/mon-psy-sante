@@ -26,6 +26,7 @@ export const requestPsychologistsState = async (
       }
       nodes {
           archived
+          state
           number
       }
     }

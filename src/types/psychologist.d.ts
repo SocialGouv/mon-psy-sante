@@ -16,6 +16,7 @@ export interface Psychologist {
   coordinates: { type: string; coordinates: [number, number] };
   instructorId: string;
   department: string;
+  state: string;
 }
 
 export interface DSPsychologist {

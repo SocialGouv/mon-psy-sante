@@ -81,6 +81,10 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: true,
       },
+      state: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
     });
   },
 

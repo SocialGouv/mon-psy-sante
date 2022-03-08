@@ -38,6 +38,7 @@ export const parseDossierMetadata = async (
     id: dossier.number,
     instructorId: dossier.groupeInstructeur.id,
     lastName: dossier.demandeur.nom,
+    state: dossier.state,
   };
 
   CHAMPS.forEach(([id, field]) => {
