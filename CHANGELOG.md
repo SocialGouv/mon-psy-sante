@@ -1,3 +1,17 @@
+## [1.15.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.4...v1.15.5) (2022-03-08)
+
+
+### Bug Fixes
+
+* **faq:** fix eligibility ([#90](https://github.com/SocialGouv/mon-psy-sante/issues/90)) ([efbbeac](https://github.com/SocialGouv/mon-psy-sante/commit/efbbeacfbbdca75dbc2a373da48c76d690edf9b2))
+
+## [1.15.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.3...v1.15.4) (2022-03-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dotenv to v16 ([#81](https://github.com/SocialGouv/mon-psy-sante/issues/81)) ([fe311ea](https://github.com/SocialGouv/mon-psy-sante/commit/fe311ea51ac63df6ac59c1465b01cf528fe01f6b))
+
 ## [1.15.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.2...v1.15.3) (2022-03-08)
 
 
