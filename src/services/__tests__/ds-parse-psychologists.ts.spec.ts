@@ -42,6 +42,7 @@ describe("parseDossierMetadata", () => {
       id: 0,
       instructorId: "123",
       lastName: "Smith",
+      state: "Accepted",
       teleconsultation: true,
     });
 
