@@ -23,5 +23,5 @@ spec:
                 - yarn
                 - run
                 - cron:launch
-                - importData
+                - importState
           restartPolicy: Never

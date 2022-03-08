@@ -64,5 +64,6 @@ export const getPsychologistState = async (): Promise<
   return list.psychologists.map((dossier) => ({
     archived: dossier.archived,
     id: dossier.number,
+    state: dossier.state,
   }));
 };
