@@ -27,7 +27,7 @@ const items = [
   {
     key: "patient",
     sections: [
-      { faq: eligibility, title: "Éligibilité" },
+      { faq: eligibilityPatient, title: "Éligibilité" },
       { faq: begin, title: "Début du parcours" },
       { faq: accompaniment, title: "Accompagnement par le psychologue" },
       { faq: reimbursment, title: "Remboursement" },
@@ -41,7 +41,7 @@ const items = [
   {
     key: "psychologue",
     sections: [
-      { faq: eligibilityPatient, title: "Éligibilité" },
+      { faq: eligibility, title: "Éligibilité" },
       { faq: registration, title: "Candidature" },
       { faq: agreement, title: "Conventionnement avec l’Assurance Maladie" },
       {
