@@ -3,15 +3,11 @@ import React, { Dispatch, MutableRefObject, SetStateAction } from "react";
 
 import { Coordinates } from "../../types/coordinates";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
-import {
-  Desktop,
-  Psychologists,
-  PsychologistWrapper,
-} from "./Directory.styles";
+import { Desktop, Psychologists } from "./Directory.styles";
 import Psychologist from "./Psychologist";
 import PsychologistsMap from "./PsychologistsMap";
 
-const ResultsDesktop = ({
+const Results = ({
   psychologists,
   loadMorePsychologists,
   resultsRef,
@@ -42,26 +38,30 @@ const ResultsDesktop = ({
 
   return (
     <Desktop>
-      <Psychologists className="fr-col-6 fr-mr-2w" ref={resultsRef}>
+      <Psychologists
+        ref={resultsRef}
+        className="fr-col-12 fr-col-md-5 fr-mr-2w"
+      >
         {psychologists.map((psychologist) => (
           <div
             ref={psychologistsRefs.current[psychologist.id]}
             key={psychologist.id}
           >
-            <PsychologistWrapper
-              selected={selectedPsychologist === psychologist.id}
-              className="fr-mb-2w fr-p-4w"
-              onClick={() => onClick(psychologist)}
-            >
-              <Psychologist psychologist={psychologist} />
-            </PsychologistWrapper>
+            <div className="fr-mb-2w">
+              <Psychologist
+                psychologist={psychologist}
+                onClick={onClick}
+                selected={selectedPsychologist === psychologist.id}
+              />
+            </div>
           </div>
         ))}
         <Button onClick={loadMorePsychologists}>Plus de psychologues</Button>
       </Psychologists>
-      <Col n="6">
+      <Col n="12 md-7">
         {mapCenter && (
           <PsychologistsMap
+            selectedPsychologist={selectedPsychologist}
             selectPsychologist={(psychologist) => {
               setSelectedPsychologist(psychologist.id);
               setMapCenter({
@@ -83,4 +83,4 @@ const ResultsDesktop = ({
   );
 };
 
-export default ResultsDesktop;
+export default Results;

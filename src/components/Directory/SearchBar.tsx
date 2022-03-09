@@ -101,7 +101,7 @@ const SearchBar = ({
   }, [filterText]);
 
   return (
-    <Row className="fr-pb-6w" alignItems="middle">
+    <Row className="fr-pb-4w" alignItems="middle">
       <Col n="md-9 12">
         <SearchableSelect
           selected={positionFilter}
@@ -155,13 +155,6 @@ const SearchBar = ({
         </SubSearch>
       </Col>
       <Col n="md-3 12" className="align-center">
-        <Button
-          secondary
-          className="fr-hidden-md fr-mt-1w"
-          onClick={loadMorePsychologists}
-        >
-          Plus de psychologues
-        </Button>
         <Button
           className="fr-ml-1w fr-mt-1w"
           disabled={!coords || geoLoading}

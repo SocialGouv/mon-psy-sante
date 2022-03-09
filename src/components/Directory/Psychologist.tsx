@@ -1,4 +1,5 @@
 import React from "react";
+import styled, { css } from "styled-components";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 
@@ -35,27 +36,58 @@ const infos = [
   { label: "Nom de la structure (CDS/MSP):", value: "cdsmsp" },
 ];
 
-const Psychologist = ({ psychologist }: { psychologist: PsychologistType }) => {
+const Psychologist = ({
+  psychologist,
+  selected,
+  onClick,
+}: {
+  psychologist: PsychologistType;
+  selected?: boolean;
+  onClick?: (psychologist: PsychologistType) => void;
+}) => {
   return (
-    <>
-      <h2>
-        {psychologist.firstName} {psychologist.lastName}
-      </h2>
-      <div>
-        {infos.map((info) => {
-          const value =
-            typeof info.value === "string"
-              ? psychologist[info.value]
-              : info.value(psychologist);
-          return value ? (
-            <p key={info.label} className="fr-my-1w">
-              {info.label} {value}
-            </p>
-          ) : null;
-        })}
+    <PsychologistTile
+      selected={selected}
+      className="fr-tile fr-tile--horizontal "
+      onClick={() => onClick(psychologist)}
+    >
+      <div className="fr-tile__body">
+        <p className="fr-tile__title">
+          {psychologist.firstName} {psychologist.lastName}
+        </p>
+        <div className="fr-tile__desc">
+          {infos.map((info) => {
+            const value =
+              typeof info.value === "string"
+                ? psychologist[info.value]
+                : info.value(psychologist);
+            return (
+              value && (
+                <p key={info.label} className="fr-my-0">
+                  {info.label} {value}
+                </p>
+              )
+            );
+          })}
+        </div>
       </div>
-    </>
+    </PsychologistTile>
   );
 };
+
+const PsychologistTile = styled.div`
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--border-default-grey),
+    inset 0 -0.25rem 0 0 var(--pink-tuile-main-556);
+
+  &:hover {
+    background-color: var(--pink-tuile-950);
+  }
+
+  ${(props) =>
+    css`
+      ${props.selected ? "background: var(--pink-tuile-950)" : ""}
+    `}
+`;
 
 export default Psychologist;
