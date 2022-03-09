@@ -1,9 +1,9 @@
+import * as L from "leaflet";
 import React, { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 import Psychologist from "./Psychologist";
-import * as L from "leaflet";
 
 function ChangeView({ center }) {
   const map = useMap();
@@ -33,7 +33,7 @@ function MarkerWithIcon({
       setIcon(yellowIcon);
       setZindex(1);
     }
-  }, [selectedPsychologist]);
+  }, [selectedPsychologist, psychologist.id]);
 
   return (
     <Marker
