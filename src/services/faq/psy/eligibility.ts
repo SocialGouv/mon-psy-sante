@@ -7,7 +7,7 @@ export default [
   },
   {
     answer:
-      "<p>Le dispositif ne concerne que les professionnels disposant du titre règlementé de psychologue. Certains psychologues détiennent aussi d’autres qualifications qu’ils peuvent mentionner dans leur formulaire de candidature.</p><p>Les psychothérapeutes agréés par les ARS ou les psychanalystes, s’ils n’ont pas un parcours attesté/ consolidé en psychologie clinique ou en psychopathologie et ne sont pas inscrits au registre ADELI, ne sont pas éligibles au dispositif MonPsy.</p>",
+      "<p>Les psychothérapeutes agréés par les ARS ou les psychanalystes ne sont pas éligibles au dispositif MonPsy.</p>",
     question:
       "Faut-il nécessairement être psychologue ? Qu’en est-il des psychothérapeutes agréés par les ARS ?",
   },
