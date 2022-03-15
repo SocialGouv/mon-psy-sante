@@ -509,6 +509,13 @@ const Page = () => {
               >
                 Comment compléter une feuille de soins&nbsp;?
               </a>
+              <a
+                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                target="_blank"
+                href="/documents/MonPsy_Fiche-Memo_Psy.pdf"
+              >
+                Fiche mémo pour les psychologues
+              </a>
             </div>
           </div>
         </div>
