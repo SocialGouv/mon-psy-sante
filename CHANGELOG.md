@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.17.1...v1.18.0) (2022-03-15)
+
+
+### Features
+
+* **track file:** add vtt file to video for subtitles + small fixes ([#96](https://github.com/SocialGouv/mon-psy-sante/issues/96)) ([bee4a1c](https://github.com/SocialGouv/mon-psy-sante/commit/bee4a1c568cd1c274ceb5c5884bb47df109bc52c))
+
 ## [1.17.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.17.0...v1.17.1) (2022-03-15)
 
 
