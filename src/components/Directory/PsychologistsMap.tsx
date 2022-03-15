@@ -1,4 +1,5 @@
-import React from "react";
+import * as L from "leaflet";
+import React, { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
@@ -10,47 +11,86 @@ function ChangeView({ center }) {
   return null;
 }
 
+const orangeIcon = new L.Icon({
+    iconUrl: "/images/marker-icon-orange.png",
+  }),
+  yellowIcon = new L.Icon({
+    iconUrl: "/images/marker-icon-yellow.png",
+  });
+
+function MarkerWithIcon({
+  selectPsychologist,
+  psychologist,
+  selectedPsychologist,
+}) {
+  const [icon, setIcon] = useState(yellowIcon);
+  const [zindex, setZindex] = useState(yellowIcon);
+  useEffect(() => {
+    if (selectedPsychologist === psychologist.id) {
+      setIcon(orangeIcon);
+      setZindex(100);
+    } else {
+      setIcon(yellowIcon);
+      setZindex(1);
+    }
+  }, [selectedPsychologist, psychologist.id]);
+
+  return (
+    <Marker
+      eventHandlers={{
+        click: () => {
+          if (selectPsychologist) {
+            selectPsychologist(psychologist);
+          }
+        },
+      }}
+      key={psychologist.id}
+      position={[
+        psychologist.coordinates.coordinates[1],
+        psychologist.coordinates.coordinates[0],
+      ]}
+      // @ts-ignore
+      icon={icon}
+      zIndexOffset={zindex}
+    >
+      {!selectPsychologist && (
+        <Popup>
+          <Psychologist psychologist={psychologist} />
+        </Popup>
+      )}
+    </Marker>
+  );
+}
+
 const PsychologistsMap = ({
   mapCenter,
   psychologists,
   selectPsychologist,
+  selectedPsychologist,
 }: {
   mapCenter: any;
   psychologists: PsychologistType[];
   selectPsychologist?: (psychologist: PsychologistType) => void;
+  selectedPsychologist: number;
 }) => {
   return (
     <MapContainer
       center={mapCenter}
       zoom={12}
       scrollWheelZoom={false}
-      style={{ height: "100%", width: "100%" }}
+      style={{ height: "100%", width: "100%", minHeight: "300px" }}
     >
       <ChangeView center={mapCenter} />
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {psychologists
         .filter((psychologist) => psychologist.coordinates)
         .map((psychologist) => (
-          <Marker
-            eventHandlers={{
-              click: () => {
-                if (selectPsychologist) {
-                  selectPsychologist(psychologist);
-                }
-              },
-            }}
+          <MarkerWithIcon
             key={psychologist.id}
-            position={[
-              psychologist.coordinates.coordinates[1],
-              psychologist.coordinates.coordinates[0],
-            ]}
-          >
-            {!selectPsychologist && (
-              <Popup>
-                <Psychologist psychologist={psychologist} />
-              </Popup>
-            )}
-          </Marker>
+            selectPsychologist={selectPsychologist}
+            psychologist={psychologist}
+            selectedPsychologist={selectedPsychologist}
+          />
         ))}
     </MapContainer>
   );

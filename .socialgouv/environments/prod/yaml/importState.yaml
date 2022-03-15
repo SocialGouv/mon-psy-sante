@@ -1,12 +1,12 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  namespace: mon-psy-sante-preprod
-  name: import-data
+  namespace: mon-psy-sante
+  name: import-state
   labels:
     app: mon-psy
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "0 */3 * * *"
   jobTemplate:
     spec:
       template:
@@ -23,6 +23,5 @@ spec:
                 - yarn
                 - run
                 - cron:launch
-                - importData
+                - importState
           restartPolicy: Never
-          concurrencyPolicy: Forbid

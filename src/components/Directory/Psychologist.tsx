@@ -1,16 +1,7 @@
 import React from "react";
+import styled, { css } from "styled-components";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
-
-const isWebsite = new RegExp(
-  "^(https?:\\/\\/)?" + // protocol
-    "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
-    "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
-    "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
-    "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
-    "(\\#[-a-z\\d_]*)?$", // fragment locator
-  "i"
-);
 
 const infos = [
   { label: "Adresse:", value: "address" },
@@ -18,20 +9,20 @@ const infos = [
   {
     label: "Email:",
     value: (psy) =>
-      psy.email ? (
+      psy.email && (
         <a href={`mailto:${psy.email}`} rel="noreferrer" target="_blank">
           {psy.email}
         </a>
-      ) : null,
+      ),
   },
   {
     label: "Site internet:",
     value: (psy) =>
-      psy.website && isWebsite.test(psy.website) ? (
+      psy.website && (
         <a href={psy.website} rel="noreferrer" target="_blank">
           {psy.website}
         </a>
-      ) : null,
+      ),
   },
   { label: "Possibilité de séances à distance", value: "teleconsultation" },
   {
@@ -40,41 +31,63 @@ const infos = [
   },
   {
     label: "Langue(s) parlée(s):",
-    value: (psy) => {
-      const frenchRegexp = /fran[çc]ais/g;
-      if (
-        !psy.languages ||
-        frenchRegexp.test(psy.languages.trim().toLowerCase())
-      ) {
-        return null;
-      }
-      return psy.languages;
-    },
+    value: "languages",
   },
   { label: "Nom de la structure (CDS/MSP):", value: "cdsmsp" },
 ];
 
-const Psychologist = ({ psychologist }: { psychologist: PsychologistType }) => {
+const Psychologist = ({
+  psychologist,
+  selected,
+  onClick,
+}: {
+  psychologist: PsychologistType;
+  selected?: boolean;
+  onClick?: (psychologist: PsychologistType) => void;
+}) => {
   return (
-    <>
-      <h2>
-        {psychologist.firstName} {psychologist.lastName}
-      </h2>
-      <div>
-        {infos.map((info) => {
-          const value =
-            typeof info.value === "string"
-              ? psychologist[info.value]
-              : info.value(psychologist);
-          return value ? (
-            <p key={info.label} className="fr-my-1w">
-              {info.label} {value}
-            </p>
-          ) : null;
-        })}
+    <PsychologistTile
+      selected={selected}
+      className="fr-tile fr-tile--horizontal "
+      onClick={() => onClick(psychologist)}
+    >
+      <div className="fr-tile__body">
+        <p className="fr-tile__title">
+          {psychologist.firstName} {psychologist.lastName}
+        </p>
+        <div className="fr-tile__desc">
+          {infos.map((info) => {
+            const value =
+              typeof info.value === "string"
+                ? psychologist[info.value]
+                : info.value(psychologist);
+            return (
+              value && (
+                <p key={info.label} className="fr-my-0">
+                  {info.label} {value}
+                </p>
+              )
+            );
+          })}
+        </div>
       </div>
-    </>
+    </PsychologistTile>
   );
 };
+
+const PsychologistTile = styled.div`
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--border-default-grey),
+    inset 0 -0.25rem 0 0 var(--pink-tuile-main-556);
+
+  &:hover {
+    background-color: var(--pink-tuile-950);
+  }
+
+  ${(props) =>
+    css`
+      ${props.selected ? "background: var(--pink-tuile-950)" : ""}
+    `}
+`;
 
 export default Psychologist;

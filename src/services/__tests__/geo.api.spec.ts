@@ -1,7 +1,7 @@
 /* eslint-disable jest/no-conditional-expect */
 import { assert, stub } from "sinon";
 
-import { AROUND_ME, AROUND_ME_OPTION, search } from "./geo.api";
+import { AROUND_ME, AROUND_ME_OPTION, search } from "../frontend/geo.api";
 
 describe("service geo.api", () => {
   let actionStub;

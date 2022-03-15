@@ -140,7 +140,7 @@ const Page = () => {
                 les personnes présentant un <strong>risque suicidaire</strong>.
               </p>
             </div>
-            <div className="fr-col-12 fr-col-md-2 fr-centered">
+            <div className="fr-col-12 fr-col-md-2 align-center">
               <span
                 className="fr-fi-arrow-right-line fr-fi--lg"
                 aria-hidden="true"
@@ -163,7 +163,7 @@ const Page = () => {
               <h2>Services d’écoute anonymes et gratuits</h2>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
-              <div className="fr-centered fr-my-2w fr-py-4w">
+              <div className="align-center fr-my-2w fr-py-4w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -193,7 +193,7 @@ const Page = () => {
               </p>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -226,7 +226,7 @@ const Page = () => {
               </p>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -262,7 +262,7 @@ const Page = () => {
               <h2>Information sur la santé mentale</h2>
             </div>
             <div className="fr-col-12 fr-col-lg-4">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -275,7 +275,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-12 fr-col-lg-4">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -292,7 +292,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-12 fr-col-lg-4">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"

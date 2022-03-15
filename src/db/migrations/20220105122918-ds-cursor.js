@@ -1,6 +1,6 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('ds_cursor', {
+    await queryInterface.createTable("ds_cursor", {
       id: {
         primaryKey: true,
         type: Sequelize.INTEGER,
@@ -19,15 +19,17 @@ module.exports = {
       },
     });
 
-    await queryInterface.bulkInsert('ds_cursor', [{
-      id: 1,
-      cursor: undefined,
-      created_at: new Date(),
-      updated_at: new Date(),
-    }])
+    await queryInterface.bulkInsert("ds_cursor", [
+      {
+        id: 1,
+        cursor: undefined,
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+    ]);
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('ds_cursor');
-  }
+    await queryInterface.dropTable("ds_cursor");
+  },
 };

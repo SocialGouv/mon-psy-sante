@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.17.0...v1.17.1) (2022-03-15)
+
+
+### Bug Fixes
+
+* **cron:** add limit to importData script so it does not overload the api-address api + add script to extract stats by departments ([#92](https://github.com/SocialGouv/mon-psy-sante/issues/92)) ([12a7d4a](https://github.com/SocialGouv/mon-psy-sante/commit/12a7d4adffd6a05612915f964d173a5c8d3f74d8))
+
 # [1.17.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.16.0...v1.17.0) (2022-03-11)
 
 

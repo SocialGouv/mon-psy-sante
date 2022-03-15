@@ -32,6 +32,10 @@ h1 .fr-text--lead {
   background-color: var(--grey-1000) !important;
 }
 
+.align-center {
+  text-align: center;
+}
+
 .align-right {
   text-align: right
 }
@@ -47,10 +51,6 @@ h1 .fr-text--lead {
 
 .highlight {
   color: var(--pink-tuile-main-556);
-}
-
-.fr-centered {
-  text-align: center;
 }
 
 .no-bullet {
