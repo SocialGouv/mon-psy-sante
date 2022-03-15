@@ -3,15 +3,27 @@ import {
   AccordionItem,
   Col,
   Row,
-  SideMenu,
-  SideMenuLink,
+  Tab,
+  Tabs,
 } from "@dataesr/react-dsfr";
 import Head from "next/head";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 import items from "../services/faq/faq";
 
 const Page = () => {
+  const router = useRouter();
+
+  const [tabIndex, setTabIndex] = useState(-1);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    const tab = router.query.tab;
+    const index = items.findIndex((item) => item.key === tab);
+    setTabIndex(index >= 0 ? index : 0);
+  }, [router.isReady, router.query.tab]);
+
   return (
     <>
       <Head>
@@ -20,46 +32,38 @@ const Page = () => {
       <div className="fr-container fr-my-6w">
         <h1>Information sur le dispositif MonPsy</h1>
         <Row spacing="mt-3w">
-          <SideMenu
-            buttonLabel="Dans cette rubrique"
-            className="fr-sidemenu--sticky fr-col-md-4 fr-col-sm-12 fr-mb-3w"
-          >
-            {items.map(
-              (item) =>
-                item.title && (
-                  <SideMenuLink href={"/faq#" + item.key}>
-                    {item.title}
-                  </SideMenuLink>
-                )
-            )}
-          </SideMenu>
-          <Col n="md-8 sm-12">
-            {items.map((item) => (
-              <div id={item.key} key={item.key}>
-                {item.title && <h2>{item.title}</h2>}
-                {item.sections.map((section) => (
-                  <div key={section.title}>
-                    {section.title && <h3>{section.title}</h3>}
-                    <Accordion className="fr-mb-4w">
-                      {section.faq.map(({ question, answer }) => (
-                        <AccordionItem title={question} key={question}>
-                          <div
-                            // eslint-disable-next-line react/no-danger
-                            dangerouslySetInnerHTML={{
-                              __html: answer,
-                            }}
-                          />
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </div>
+          <Col>
+            {tabIndex >= 0 && (
+              <Tabs defaultActiveTab={tabIndex}>
+                {items.map((item) => (
+                  <Tab label={item.title} key={item.key}>
+                    {item.title && <h2>{item.title}</h2>}
+                    {item.sections.map((section, i) => (
+                      <div key={i + item.title}>
+                        {section.title && <h3>{section.title}</h3>}
+                        <Accordion className="fr-mb-4w">
+                          {section.faq.map(({ question, answer }) => (
+                            <AccordionItem title={question} key={question}>
+                              <div
+                                // eslint-disable-next-line react/no-danger
+                                dangerouslySetInnerHTML={{
+                                  __html: answer,
+                                }}
+                              />
+                            </AccordionItem>
+                          ))}
+                        </Accordion>
+                      </div>
+                    ))}
+                  </Tab>
                 ))}
-              </div>
-            ))}
+              </Tabs>
+            )}
           </Col>
         </Row>
       </div>
     </>
   );
 };
+
 export default Page;

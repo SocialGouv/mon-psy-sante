@@ -6,6 +6,7 @@ import accompaniment from "./patient/accompaniment";
 import begin from "./patient/begin";
 import children from "./patient/children";
 import difficulty from "./patient/difficulty";
+import eligibilityPatient from "./patient/eligibility";
 import end from "./patient/end";
 import information from "./patient/information";
 import reimbursment from "./patient/reimbursment";
@@ -21,12 +22,12 @@ const items = [
   {
     key: "general",
     sections: [{ faq: general }],
-    title: "Présentation du dispositif MonPsy",
+    title: "Présentation",
   },
   {
     key: "patient",
     sections: [
-      { faq: eligibility, title: "Éligibilité" },
+      { faq: eligibilityPatient, title: "Éligibilité" },
       { faq: begin, title: "Début du parcours" },
       { faq: accompaniment, title: "Accompagnement par le psychologue" },
       { faq: reimbursment, title: "Remboursement" },

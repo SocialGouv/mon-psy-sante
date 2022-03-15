@@ -1,11 +1,12 @@
 /* eslint-disable jest/no-conditional-expect */
 import axios from "axios";
 
+import config from "../../services/config";
 import { CONTACT_REASON, CONTACT_USER_TYPE } from "../../types/enums/contact";
 
 describe("/api/contact", () => {
   it("should return a 200 when everything is filled for a Psychologist", async () => {
-    const result = await axios.post("http://localhost:3000/api/contact", {
+    const result = await axios.post(`${config.nextAuthUrl}/api/contact`, {
       department: "06 - Alpes-Maritimes",
       email: "jane.dane@msp.fr",
       firstName: "Jane",
@@ -19,7 +20,7 @@ describe("/api/contact", () => {
   });
 
   it("should return a 200 when everything is filled for an other person", async () => {
-    const result = await axios.post("http://localhost:3000/api/contact", {
+    const result = await axios.post(`${config.nextAuthUrl}/api/contact`, {
       department: "06 - Alpes-Maritimes",
       email: "jane.dane@msp.fr",
       firstName: "Jane",
@@ -73,12 +74,12 @@ describe("/api/contact", () => {
         };
 
         const resutSuccess = await axios.post(
-          "http://localhost:3000/api/contact",
+          `${config.nextAuthUrl}/api/contact`,
           defaultValues
         );
         expect(resutSuccess.status).toEqual(200);
 
-        await axios.post("http://localhost:3000/api/contact", {
+        await axios.post(`${config.nextAuthUrl}/api/contact`, {
           ...defaultValues,
           ...error.values,
         });

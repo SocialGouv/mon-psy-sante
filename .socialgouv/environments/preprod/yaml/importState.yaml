@@ -12,16 +12,16 @@ spec:
       template:
         spec:
           containers:
-          - name: mon-psy
-            image: ghcr.io/socialgouv/mon-psy-sante/app:latest
-            envFrom:
-            - secretRef:
-                name: app-sealed-secret
-            - secretRef:
-                name: azure-pg-user
-            command:
-              - yarn
-              - run
-              - cron:launch
-              - importData
+            - name: mon-psy
+              image: ghcr.io/socialgouv/mon-psy-sante/app:latest
+              envFrom:
+                - secretRef:
+                    name: app-sealed-secret
+                - secretRef:
+                    name: pg-user
+              command:
+                - yarn
+                - run
+                - cron:launch
+                - importState
           restartPolicy: Never

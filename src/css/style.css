@@ -73,3 +73,7 @@ h1 .fr-text--lead {
   width: auto;
   margin: auto;
 }
+
+.select-search-input input {
+  margin-top: 0.5rem;
+}

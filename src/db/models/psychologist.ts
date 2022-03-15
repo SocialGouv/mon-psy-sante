@@ -23,7 +23,9 @@ export default (sequelize) => {
       lastName: DataTypes.STRING,
       phone: DataTypes.STRING,
       public: DataTypes.STRING,
+      state: DataTypes.STRING,
       teleconsultation: DataTypes.BOOLEAN,
+      visible: DataTypes.BOOLEAN,
       website: DataTypes.STRING,
     },
     {

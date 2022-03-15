@@ -12,14 +12,12 @@ export const handleApiError = (
       await handler(req, res);
     } catch (error) {
       console.log(error);
-
       if (error instanceof ValidationError) {
         return res
           .status(400)
           .send(error.details.map((x) => x.message).join(", "));
       }
 
-      console.log(res, res.status(500));
       res.status(500).send("Something went wrong...");
     }
   };

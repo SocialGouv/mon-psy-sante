@@ -7,6 +7,7 @@ export interface Psychologist {
   address: string;
   teleconsultation: boolean;
   displayEmail: boolean;
+  visible: boolean;
   email: string;
   public: string;
   languages: string;
@@ -14,6 +15,7 @@ export interface Psychologist {
   website: string;
   coordinates: { type: string; coordinates: [number, number] };
   instructorId: string;
+  state: string;
 }
 
 export interface DSPsychologist {

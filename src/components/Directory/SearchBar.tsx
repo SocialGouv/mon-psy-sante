@@ -1,13 +1,21 @@
-import { Alert, Button, Col, SearchableSelect } from "@dataesr/react-dsfr";
-import axios from "axios";
+import {
+  Alert,
+  Button,
+  Col,
+  SearchableSelect,
+  Select,
+} from "@dataesr/react-dsfr";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
+import {
+  AROUND_ME,
+  AROUND_ME_OPTION,
+  search,
+} from "../../services/frontend/geo.api";
 import { Coordinates } from "../../types/coordinates";
-import { getDepartment } from "../utils/departments";
-import { Search } from "./Directory.styles";
-
-const AROUND_ME = "Autour de moi";
-const AROUND_ME_OPTION = [{ label: AROUND_ME, value: AROUND_ME }];
+import { FILTER } from "../../types/enums/filters";
+import { allPublics } from "../../types/enums/public";
+import { Search, SubSearch } from "./Directory.styles";
 
 const geoStatusEnum = {
   DENIED: -1,
@@ -17,8 +25,10 @@ const geoStatusEnum = {
 };
 
 const SearchBar = ({
-  filter,
-  setFilter,
+  positionFilter,
+  setPositionFilter,
+  otherFilters,
+  setOtherFilters,
   coords,
   setCoords,
   geoLoading,
@@ -26,8 +36,10 @@ const SearchBar = ({
   loadMorePsychologists,
   loadPsychologists,
 }: {
-  filter: string;
-  setFilter: Dispatch<SetStateAction<string>>;
+  positionFilter: string;
+  setPositionFilter: Dispatch<SetStateAction<string>>;
+  otherFilters: any;
+  setOtherFilters: Dispatch<SetStateAction<any>>;
   coords: Coordinates;
   setCoords: Dispatch<SetStateAction<Coordinates>>;
   geoLoading: boolean;
@@ -38,57 +50,6 @@ const SearchBar = ({
   const [filterText, setFilterText] = useState("");
   const [geoStatus, setGeoStatus] = useState(geoStatusEnum.UNKNOWN);
   const [options, setOptions] = useState(AROUND_ME_OPTION);
-
-  const searchCommunes = () => {
-    if (filterText.length > 2 && filterText !== AROUND_ME) {
-      axios
-        .get(
-          `https://geo.api.gouv.fr/communes?nom=${filterText}&limit=10&fields=population,centre,departement,nom`
-        )
-        .then((response) => {
-          const communes = response.data
-            .sort((a, b) => b.population - a.population)
-            .map((commune) => ({
-              label: `${commune.nom}, ${commune.departement.nom}`,
-              value: commune.centre.coordinates,
-            }));
-          setOptions(communes.concat(AROUND_ME_OPTION));
-        });
-    }
-  };
-
-  const searchDepartment = async (department: string) => {
-    const results = await Promise.all(
-      department
-        .split("|")
-        .map((x) =>
-          axios.get(
-            `https://geo.api.gouv.fr/departements/${x}/communes?fields=population,centre,departement,nom,codesPostaux`
-          )
-        )
-    );
-
-    const communes = results
-      .flatMap((result) => result.data)
-      .flatMap((commune) =>
-        commune.codesPostaux.map((codePostal) => ({
-          centre: commune.centre,
-          codePostal,
-          departement: commune.departement,
-          nom: commune.nom,
-          population: commune.population,
-        }))
-      )
-      .filter((commune) => commune.codePostal.startsWith(filterText))
-      .sort((a, b) => b.population - a.population)
-      .map((commune) => {
-        return {
-          label: `${commune.nom}, ${commune.codePostal}, ${commune.departement.nom}`,
-          value: `${commune.codePostal} ${commune.nom}`,
-        };
-      });
-    setOptions(communes.concat(AROUND_ME_OPTION));
-  };
 
   const success = (pos) => {
     const { longitude, latitude } = pos.coords;
@@ -124,38 +85,25 @@ const SearchBar = ({
   };
 
   useEffect(() => {
-    if (filter === AROUND_ME) {
+    if (positionFilter === AROUND_ME) {
       checkGeolocationPermission();
     }
-  }, [filter]);
+  }, [positionFilter]);
 
   useEffect(() => {
-    if (filter) {
+    if (positionFilter) {
       return;
     }
 
-    if (filterText) {
-      if (isNaN(+filterText)) {
-        searchCommunes();
-        return;
-      }
-
-      const department = getDepartment(filterText);
-      if (department) {
-        searchDepartment(department);
-        return;
-      }
-    }
-
-    setOptions(AROUND_ME_OPTION);
+    search(filterText, setOptions);
   }, [filterText]);
 
   return (
     <Search>
       <Col n="md-9 12">
         <SearchableSelect
-          selected={filter}
-          onChange={setFilter}
+          selected={positionFilter}
+          onChange={setPositionFilter}
           onTextChange={setFilterText}
           filter={(label, option) =>
             option.label === AROUND_ME ||
@@ -164,6 +112,45 @@ const SearchBar = ({
           label="Rechercher par ville ou code postal"
           options={options}
         />
+        <SubSearch>
+          <Select
+            selected={otherFilters[FILTER.PUBLIC]}
+            onChange={(e) =>
+              setOtherFilters({
+                ...otherFilters,
+                [FILTER.PUBLIC]: e.target.value,
+              })
+            }
+            label="Accompagnant des"
+            options={allPublics.map((option) => ({
+              label: option.replace("et", "ou"),
+              value: option,
+            }))}
+          />
+          <div>
+            <label className="fr-label">
+              Possibilité de séances à distance
+            </label>
+            <div className="fr-toggle">
+              <input
+                id="checkbox-teleconsultation"
+                type="checkbox"
+                className="fr-toggle__input"
+                checked={otherFilters[FILTER.TELECONSULTATION]}
+                onChange={(e) =>
+                  setOtherFilters({
+                    ...otherFilters,
+                    [FILTER.TELECONSULTATION]: e.target.checked,
+                  })
+                }
+              />
+              <label
+                className="fr-toggle__label"
+                htmlFor="checkbox-teleconsultation"
+              />
+            </div>
+          </div>
+        </SubSearch>
       </Col>
       <Col offset="md-1" n="md-2 12" className="align-right">
         <Button
@@ -183,7 +170,7 @@ const SearchBar = ({
           {geoLoading ? "Chargement..." : "Rechercher"}
         </Button>
       </Col>
-      {filter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
+      {positionFilter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
         <Alert
           className="fr-mt-1w"
           type="error"
@@ -191,13 +178,14 @@ const SearchBar = ({
                 fonctionnalité."
         />
       )}
-      {filter === AROUND_ME && geoStatus === geoStatusEnum.UNSUPPORTED && (
-        <Alert
-          className="fr-mt-1w"
-          type="error"
-          description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
-        />
-      )}
+      {positionFilter === AROUND_ME &&
+        geoStatus === geoStatusEnum.UNSUPPORTED && (
+          <Alert
+            className="fr-mt-1w"
+            type="error"
+            description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
+          />
+        )}
     </Search>
   );
 };

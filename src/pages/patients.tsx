@@ -1,9 +1,12 @@
+import { Button } from "@dataesr/react-dsfr";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 import HeadTag from "../components/HeadTag";
 import VideoButton from "../components/VideoButton";
 
 const Page = () => {
+  const router = useRouter();
   const [video, setVideo] = useState("hide");
 
   return (
@@ -110,13 +113,29 @@ const Page = () => {
                 présentant un risque suicidaire ou avec des critères de gravité
                 ou de dépendance.
               </p>
-              <div className="fr-callout fr-callout--pink-tuile fr-my-2w">
-                <p>
-                  Les coordonnées des psychologues partenaires, conventionnés
-                  avec l’Assurance Maladie, seront disponibles à partir d’avril
-                  2022.
-                </p>
-              </div>
+              {process.env.NEXT_PUBLIC_NEW_FEATURES === "true" ? (
+                <div>
+                  <p>
+                    <strong>
+                      Je trouve un psychologue partenaire près de chez moi
+                    </strong>
+                  </p>
+                  <Button
+                    icon="fr-fi-search-line"
+                    onClick={() => router.push("/annuaire")}
+                  >
+                    Trouver un psychologue
+                  </Button>
+                </div>
+              ) : (
+                <div className="fr-callout fr-callout--pink-tuile fr-my-2w">
+                  <p>
+                    Les coordonnées des psychologues partenaires, conventionnés
+                    avec l’Assurance Maladie, seront disponibles à partir
+                    d’avril 2022.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -272,7 +291,7 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
-                  href="/faq#patient"
+                  href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ
@@ -414,7 +433,7 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
-                  href="/faq#patient"
+                  href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ
