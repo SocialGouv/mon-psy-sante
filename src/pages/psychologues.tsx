@@ -78,7 +78,7 @@ const Page = () => {
                 </p>
               </div>
               <div className="fr-col-12 fr-col-lg-4 fr-col-lg-offset-1">
-                <div className="fr-callout fr-callout-white fr-centered">
+                <div className="fr-callout fr-callout-white align-center">
                   <a
                     className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w"
                     target="_blank"
@@ -121,7 +121,7 @@ const Page = () => {
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-3w">
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">Candidature</h3>
@@ -142,7 +142,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">Éligibilité</h3>
@@ -160,7 +160,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">Conventionnement </h3>
@@ -175,7 +175,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">4</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -191,7 +191,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">5</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -243,7 +243,7 @@ const Page = () => {
                 dispositif&nbsp;?
               </h2>
             </div>
-            <div className="fr-col-12 fr-col-lg-3 fr-centered">
+            <div className="fr-col-12 fr-col-lg-3 align-center">
               <img
                 src="/images/children-psy.svg"
                 height="160"
@@ -323,7 +323,7 @@ const Page = () => {
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-10 fr-col-md fr-ml-md-4w">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -349,7 +349,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-md">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -365,7 +365,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-md">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -397,7 +397,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-md fr-mr-md-4w">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">4</strong>
                   <h3 className="fr-card__title fr-mb-4w">

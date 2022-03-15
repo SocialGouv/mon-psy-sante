@@ -15,6 +15,7 @@ export interface Psychologist {
   website: string;
   coordinates: { type: string; coordinates: [number, number] };
   instructorId: string;
+  department: string;
   state: string;
 }
 

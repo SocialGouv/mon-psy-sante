@@ -1,12 +1,12 @@
 /* eslint-disable jest/no-conditional-expect */
-import sinon from "sinon";
+import { stub } from "sinon";
 
-import { models } from "../db/models";
-import { getOnePsychologist } from "../db/seeds/psychologist";
-import { FILTER } from "../types/enums/filters";
-import { allPublics, PUBLIC } from "../types/enums/public";
-import { Psychologist } from "../types/psychologist";
-import * as address from "./getAddressCoordinates";
+import { models } from "../../db/models";
+import { getOnePsychologist } from "../../db/seeds/psychologist";
+import { FILTER } from "../../types/enums/filters";
+import { allPublics, PUBLIC } from "../../types/enums/public";
+import { Psychologist } from "../../types/psychologist";
+import * as address from "../getAddressCoordinates";
 import {
   countAll,
   getAll,
@@ -14,7 +14,7 @@ import {
   saveMany,
   update,
   updateState,
-} from "./psychologists";
+} from "../psychologists";
 
 describe("Service psychologists", () => {
   beforeEach(async () => {
@@ -175,7 +175,7 @@ describe("Service psychologists", () => {
   describe("update", () => {
     let getAddressCoordinatesStub;
     beforeEach(() => {
-      getAddressCoordinatesStub = sinon.stub(address, "default");
+      getAddressCoordinatesStub = stub(address, "default");
     });
 
     afterEach(() => {

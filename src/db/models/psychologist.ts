@@ -7,10 +7,11 @@ export default (sequelize) => {
 
   Psychologist.init(
     {
-      address: DataTypes.STRING,
+      address: DataTypes.TEXT,
       archived: DataTypes.BOOLEAN,
       cdsmsp: DataTypes.STRING,
       coordinates: DataTypes.GEOMETRY("POINT", SRID),
+      department: DataTypes.STRING,
       displayEmail: DataTypes.BOOLEAN,
       email: DataTypes.STRING,
       firstName: DataTypes.STRING,
@@ -26,7 +27,7 @@ export default (sequelize) => {
       state: DataTypes.STRING,
       teleconsultation: DataTypes.BOOLEAN,
       visible: DataTypes.BOOLEAN,
-      website: DataTypes.STRING,
+      website: DataTypes.TEXT,
     },
     {
       freezeTableName: true,

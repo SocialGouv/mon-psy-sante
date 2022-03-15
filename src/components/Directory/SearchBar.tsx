@@ -2,6 +2,7 @@ import {
   Alert,
   Button,
   Col,
+  Row,
   SearchableSelect,
   Select,
 } from "@dataesr/react-dsfr";
@@ -15,7 +16,7 @@ import {
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
 import { allPublics } from "../../types/enums/public";
-import { Search, SubSearch } from "./Directory.styles";
+import { SubSearch } from "./Directory.styles";
 
 const geoStatusEnum = {
   DENIED: -1,
@@ -60,12 +61,13 @@ const SearchBar = ({
 
   const errors = () => {
     setGeoStatus(geoStatusEnum.DENIED);
+    setGeoLoading(false);
   };
 
   const getGeolocation = (state) => {
     if (state === "granted") {
       setGeoLoading(true);
-      navigator.geolocation.getCurrentPosition(success);
+      navigator.geolocation.getCurrentPosition(success, errors);
     } else if (state === "prompt") {
       setGeoLoading(true);
       navigator.geolocation.getCurrentPosition(success, errors);
@@ -99,7 +101,7 @@ const SearchBar = ({
   }, [filterText]);
 
   return (
-    <Search>
+    <Row className="fr-pb-4w" alignItems="middle">
       <Col n="md-9 12">
         <SearchableSelect
           selected={positionFilter}
@@ -152,14 +154,7 @@ const SearchBar = ({
           </div>
         </SubSearch>
       </Col>
-      <Col offset="md-1" n="md-2 12" className="align-right">
-        <Button
-          secondary
-          className="fr-hidden-md fr-mt-1w"
-          onClick={loadMorePsychologists}
-        >
-          Plus de psychologues
-        </Button>
+      <Col n="md-3 12" className="align-center">
         <Button
           className="fr-ml-1w fr-mt-1w"
           disabled={!coords || geoLoading}
@@ -172,6 +167,7 @@ const SearchBar = ({
       </Col>
       {positionFilter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
         <Alert
+          title="Géolocalisation indisponible"
           className="fr-mt-1w"
           type="error"
           description="Veuillez autoriser la géolocalisation sur votre navigateur pour utiliser cette
@@ -181,12 +177,13 @@ const SearchBar = ({
       {positionFilter === AROUND_ME &&
         geoStatus === geoStatusEnum.UNSUPPORTED && (
           <Alert
+            title="Géolocalisation indisponible"
             className="fr-mt-1w"
             type="error"
             description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
           />
         )}
-    </Search>
+    </Row>
   );
 };
 

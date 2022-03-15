@@ -33,6 +33,7 @@
     "next": "12.0.7",
     "next-auth": "^4.2.1",
     "nodemailer": "^6.7.2",
+    "p-limit": "3.1.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "react": "^17.0.2",
@@ -84,6 +85,7 @@
     "db:migrate:create": "npx sequelize migration:create --name",
     "cy": "cypress open",
     "cy:run": "cypress run",
-    "cron:launch": "ts-node --transpile-only src/cron/launch.ts"
+    "cron:launch": "ts-node --transpile-only src/cron/launch.ts",
+    "script:extract-departments": "ts-node --transpile-only scripts/stats-departements.js"
   }
 }
