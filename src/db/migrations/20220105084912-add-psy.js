@@ -17,7 +17,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       email: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING,
       },
       display_email: {
@@ -62,7 +62,7 @@ module.exports = {
       },
       coordinates: {
         allowNull: true,
-        type: Sequelize.GEOMETRY("POINT"),
+        type: Sequelize.GEOMETRY("POINT", 4326),
       },
       instructor_id: {
         allowNull: false,

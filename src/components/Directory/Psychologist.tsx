@@ -3,39 +3,6 @@ import styled, { css } from "styled-components";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 
-const infos = [
-  { label: "Adresse:", value: "address" },
-  { label: "Téléphone:", value: "phone" },
-  {
-    label: "Email:",
-    value: (psy) =>
-      psy.email && (
-        <a href={`mailto:${psy.email}`} rel="noreferrer" target="_blank">
-          {psy.email}
-        </a>
-      ),
-  },
-  {
-    label: "Site internet:",
-    value: (psy) =>
-      psy.website && (
-        <a href={psy.website} rel="noreferrer" target="_blank">
-          {psy.website}
-        </a>
-      ),
-  },
-  { label: "Possibilité de séances à distance", value: "teleconsultation" },
-  {
-    label: "Accompagnement des",
-    value: (psy) => psy.public && psy.public.toLowerCase(),
-  },
-  {
-    label: "Langue(s) parlée(s):",
-    value: "languages",
-  },
-  { label: "Nom de la structure (CDS/MSP):", value: "cdsmsp" },
-];
-
 const Psychologist = ({
   psychologist,
   selected,
@@ -52,23 +19,62 @@ const Psychologist = ({
       onClick={() => onClick(psychologist)}
     >
       <div className="fr-tile__body">
-        <p className="fr-tile__title">
-          {psychologist.firstName} {psychologist.lastName}
-        </p>
+        <div className="fr-tile__title ">
+          <p className="fr-text--lead highlight">
+            {psychologist.firstName} {psychologist.lastName}
+          </p>
+          <p className="fr-tile__desc">
+            Accompagne des {psychologist.public.toLowerCase()}
+          </p>
+        </div>
         <div className="fr-tile__desc">
-          {infos.map((info) => {
-            const value =
-              typeof info.value === "string"
-                ? psychologist[info.value]
-                : info.value(psychologist);
-            return (
-              value && (
-                <p key={info.label} className="fr-my-0">
-                  {info.label} {value}
-                </p>
-              )
-            );
-          })}
+          <p className="fr-my-0">
+            {/*<span className="fr-fi-refresh-line" aria-hidden="true" />*/}
+            {psychologist.address}
+          </p>
+          <p className="fr-my-0">
+            {psychologist.phone}{" "}
+            {psychologist.website && (
+              <a
+                className="fr-ml-2w"
+                href={psychologist.website}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Site internet
+              </a>
+            )}
+          </p>
+          {psychologist.email && (
+            <p className="fr-my-0">
+              <a
+                href={`mailto:${psychologist.email}`}
+                rel="noreferrer"
+                target="_blank"
+              >
+                {psychologist.email}
+              </a>
+            </p>
+          )}
+          <div className="fr-p-1w" />
+          {psychologist.teleconsultation && (
+            <p className="fr-my-0 text-grey">
+              <img
+                aria-hidden="true"
+                alt=""
+                className="fr-mr-1w"
+                height="20"
+                width="20"
+                src="/images/icones/vidicon-fill.svg"
+              />
+              Possibilité de séances à distance
+            </p>
+          )}
+          {psychologist.languages && (
+            <p className="fr-my-0">
+              Langue(s) parlée(s): {psychologist.languages}
+            </p>
+          )}
         </div>
       </div>
     </PsychologistTile>
