@@ -45,7 +45,9 @@ yarn cron:launch importData
 
 To re-run the migration from 0
 
-DROP public schema recreate public schema RUN
+- DROP public schema
+- recreate public schema
+- RUN
 
       grant usage on schema public to public;
       grant create on schema public to public;
