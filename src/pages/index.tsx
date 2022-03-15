@@ -51,7 +51,6 @@ const Page = () => {
                 <video width="100%" controls autoPlay>
                   <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
                   <track
-                    default
                     kind="captions"
                     srcLang="fr"
                     src="/images/Video-MonPsy.mp4.vtt"
