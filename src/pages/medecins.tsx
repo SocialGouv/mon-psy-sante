@@ -27,6 +27,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-5">
               <img
                 src="/images/doctor.svg"
+                height="380"
                 alt="Je suis médecin illustration"
               />
             </div>
@@ -80,7 +81,7 @@ const Page = () => {
             <div className="fr-col-6 fr-col-lg-2">
               <img
                 src="/images/patient-woman.svg"
-                height="300"
+                height="280"
                 alt="Patient femme illustration"
               />
             </div>
