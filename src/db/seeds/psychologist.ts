@@ -40,7 +40,6 @@ export const getOnePsychologist = (
         parseFloat(faker.address.longitude(4, -4)),
         parseFloat(faker.address.latitude(50, 40)),
       ],
-      // @ts-ignore
       crs: { properties: { name: "EPSG:4326" }, type: "name" },
       type: "POINT",
     },
