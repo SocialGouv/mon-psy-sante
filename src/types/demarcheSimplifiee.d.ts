@@ -11,11 +11,3 @@ export interface DSResponse {
     };
   };
 }
-
-export enum DossierState {
-  enConstruction = "en_construction",
-  enInstruction = "en_instruction",
-  accepte = "accepte",
-  refuse = "refuse",
-  sansSuite = "sans_suite",
-}
