@@ -29,8 +29,7 @@ const getAddressCoordinates = async (address: string): Promise<Coordinates> => {
   if (response && response.data.features && response.data.features.length > 0) {
     const feature = response.data.features[0];
     const [longitude, latitude] = feature.geometry.coordinates;
-    const { score, label } = feature.properties;
-    console.debug(`"${firstAddress}" ; "${label}" ; "${score}"`);
+    const { score } = feature.properties;
 
     if (score > config.minScoreAddress) {
       return Promise.resolve({
@@ -41,7 +40,7 @@ const getAddressCoordinates = async (address: string): Promise<Coordinates> => {
     // Insufficient score
     return Promise.resolve(null);
   }
-  console.debug(`Address not found or error: "${firstAddress}"`);
+  console.debug(`Error: address not found or error: "${firstAddress}"`);
   return Promise.resolve(null);
 };
 

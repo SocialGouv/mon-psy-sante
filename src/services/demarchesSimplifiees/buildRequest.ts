@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 
-import { DSResponse } from "../../types/demarcheSimplifiee";
+import { DossierState, DSResponse } from "../../types/demarcheSimplifiee";
 import config from "../config";
 import { request } from "./request";
 
@@ -37,7 +37,7 @@ export const requestPsychologistsState = async (
   return request(query);
 };
 
-export const requestPsychologists = async (
+export const requestPsychologistsAcceptes = async (
   afterCursor: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
@@ -45,7 +45,7 @@ export const requestPsychologists = async (
     {
       demarche (number: ${config.demarchesSimplifiees.id}) {
         id
-        dossiers ${paginationCondition} {
+        dossiers (state: ${DossierState.accepte}${paginationCondition}) {
           pageInfo {
             hasNextPage
             endCursor

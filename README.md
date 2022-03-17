@@ -42,3 +42,13 @@ Run the cron to import data
 DEMARCHES_SIMPLIFIEES_TOKEN=XXX DEMARCHES_SIMPLIFIEES_ID=52209
 yarn cron:launch importData
 ```
+
+To re-run the migration from 0
+
+- DROP public schema
+- recreate public schema
+- RUN
+
+      grant usage on schema public to public;
+      grant create on schema public to public;
+      CREATE EXTENSION postgis;

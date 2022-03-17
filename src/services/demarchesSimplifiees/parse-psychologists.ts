@@ -14,11 +14,15 @@ const CHAMPS = JSON.parse(config.demarchesSimplifiees.champs);
 const websiteSchema = Joi.object({
   website: Joi.string().uri().required(),
 });
-
+const emailSchema = Joi.object({
+  email: Joi.string().email().required(),
+});
 const isFrench = new RegExp("(français|francais)", "g");
 
 const parsers = {
   displayEmail: (value) => value === "true",
+  email: (value) =>
+    emailSchema.validate({ email: value }).error ? undefined : value,
   languages: (value) =>
     !value || value.trim().toLowerCase().match(isFrench) ? undefined : value,
   teleconsultation: (value) => value === "true",

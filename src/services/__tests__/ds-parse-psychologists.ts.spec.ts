@@ -54,6 +54,25 @@ describe("parseDossierMetadata", () => {
   const createDossier = () => JSON.parse(JSON.stringify(dossier));
 
   it.each`
+    input                | resultValue
+    ${undefined}         | ${undefined}
+    ${null}              | ${undefined}
+    ${"non"}             | ${undefined}
+    ${"wrong:wrong"}     | ${undefined}
+    ${"wrong@com"}       | ${undefined}
+    ${"valid@email.com"} | ${"valid@email.com"}
+  `("should parse email champs for $input", async ({ input, resultValue }) => {
+    const dossierWithWebsite = createDossier();
+    dossierWithWebsite.champs.push({
+      id: "Q2hhbXAtMTYwMTE4Ng==",
+      label: "Votre email",
+      stringValue: input,
+    });
+    const result = await parseDossierMetadata(dossierWithWebsite);
+
+    expect(result.email).toEqual(resultValue);
+  });
+  it.each`
     input                  | resultValue
     ${undefined}           | ${undefined}
     ${null}                | ${undefined}
