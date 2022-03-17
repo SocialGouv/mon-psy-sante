@@ -28,10 +28,7 @@ const Psychologist = ({
           </p>
         </div>
         <div className="fr-tile__desc">
-          <p className="fr-my-0">
-            {/*<span className="fr-fi-refresh-line" aria-hidden="true" />*/}
-            {psychologist.address}
-          </p>
+          <p className="fr-my-0">{psychologist.address}</p>
           <p className="fr-my-0">
             {psychologist.phone}{" "}
             {psychologist.website && (
