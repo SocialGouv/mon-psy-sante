@@ -13,7 +13,11 @@ export interface Psychologist {
   languages: string;
   cdsmsp: string;
   website: string;
-  coordinates: { type: string; coordinates: [number, number] };
+  coordinates: {
+    type: string;
+    coordinates: [number, number];
+    crs: { type: string; properties: { name: string } };
+  };
   instructorId: string;
   department: string;
   state: string;

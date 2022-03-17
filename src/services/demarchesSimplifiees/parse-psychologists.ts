@@ -1,6 +1,7 @@
 import Joi from "joi";
 import pLimit from "p-limit";
 
+import { SRID } from "../../types/const/geometry";
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import config from "../config";
 import getAddressCoordinates from "../getAddressCoordinates";
@@ -57,6 +58,7 @@ export const parseDossierMetadata = async (
   if (coordinates) {
     psychologist.coordinates = {
       coordinates: [coordinates.longitude, coordinates.latitude],
+      crs: { properties: { name: "EPSG:" + SRID }, type: "name" },
       type: "POINT",
     };
   }
