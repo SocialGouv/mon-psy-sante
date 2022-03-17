@@ -1,3 +1,10 @@
+## [1.19.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.2...v1.19.3) (2022-03-17)
+
+
+### Bug Fixes
+
+* **map:** better design for pin on map + better matching on city search ([#101](https://github.com/SocialGouv/mon-psy-sante/issues/101)) ([b24c598](https://github.com/SocialGouv/mon-psy-sante/commit/b24c5987ede1f56712edb2db9d9346274511e420))
+
 ## [1.19.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.1...v1.19.2) (2022-03-17)
 
 
