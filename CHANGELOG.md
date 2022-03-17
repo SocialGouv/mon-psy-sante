@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.18.0...v1.19.0) (2022-03-17)
+
+
+### Features
+
+* **annuaire:** update annuaire layout & only fetch accepted dossiers ([#97](https://github.com/SocialGouv/mon-psy-sante/issues/97)) ([e4657d4](https://github.com/SocialGouv/mon-psy-sante/commit/e4657d4cf4a289af7e73453ab0a343302920c704))
+
 # [1.18.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.17.1...v1.18.0) (2022-03-15)
 
 
