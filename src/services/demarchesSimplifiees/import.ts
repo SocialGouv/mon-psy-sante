@@ -42,7 +42,10 @@ export const getPsychologistList = async (
   const time = `Fetching all psychologists from DS (query id #${Math.random().toString()})`;
 
   console.time(time);
-  const list = await getAllPsychologistList(requestPsychologistsAcceptes, cursor);
+  const list = await getAllPsychologistList(
+    requestPsychologistsAcceptes,
+    cursor
+  );
   const results = {
     lastCursor: list.lastCursor,
     psychologists: await parsePsychologists(list.psychologists),
