@@ -12,10 +12,14 @@ function ChangeView({ center }) {
 }
 
 const orangeIcon = new L.Icon({
-    iconUrl: "/images/marker-icon-orange.png",
+    iconAnchor: [28, 56],
+    iconSize: [56, 56],
+    iconUrl: "/images/icones/marker-icon-big.svg",
   }),
   yellowIcon = new L.Icon({
-    iconUrl: "/images/marker-icon-yellow.png",
+    iconAnchor: [21, 42],
+    iconSize: [42, 42],
+    iconUrl: "/images/icones/marker-icon.svg",
   });
 
 function MarkerWithIcon({

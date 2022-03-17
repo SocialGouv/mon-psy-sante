@@ -34,7 +34,6 @@ const SearchBar = ({
   setCoords,
   geoLoading,
   setGeoLoading,
-  loadMorePsychologists,
   loadPsychologists,
 }: {
   positionFilter: string;
@@ -45,7 +44,6 @@ const SearchBar = ({
   setCoords: Dispatch<SetStateAction<Coordinates>>;
   geoLoading: boolean;
   setGeoLoading: Dispatch<SetStateAction<boolean>>;
-  loadMorePsychologists: () => void;
   loadPsychologists: (page: number) => void;
 }) => {
   const [filterText, setFilterText] = useState("");
@@ -129,28 +127,26 @@ const SearchBar = ({
               value: option,
             }))}
           />
-          <div>
-            <label className="fr-label">
+
+          <div className="fr-toggle">
+            <input
+              id="checkbox-teleconsultation"
+              type="checkbox"
+              className="fr-toggle__input"
+              checked={otherFilters[FILTER.TELECONSULTATION]}
+              onChange={(e) =>
+                setOtherFilters({
+                  ...otherFilters,
+                  [FILTER.TELECONSULTATION]: e.target.checked,
+                })
+              }
+            />
+            <label
+              className="fr-toggle__label"
+              htmlFor="checkbox-teleconsultation"
+            >
               Possibilité de séances à distance
             </label>
-            <div className="fr-toggle">
-              <input
-                id="checkbox-teleconsultation"
-                type="checkbox"
-                className="fr-toggle__input"
-                checked={otherFilters[FILTER.TELECONSULTATION]}
-                onChange={(e) =>
-                  setOtherFilters({
-                    ...otherFilters,
-                    [FILTER.TELECONSULTATION]: e.target.checked,
-                  })
-                }
-              />
-              <label
-                className="fr-toggle__label"
-                htmlFor="checkbox-teleconsultation"
-              />
-            </div>
           </div>
         </SubSearch>
       </Col>
