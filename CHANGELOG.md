@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.0...v1.19.1) (2022-03-17)
+
+
+### Bug Fixes
+
+* **cron:** fix enum import ([#99](https://github.com/SocialGouv/mon-psy-sante/issues/99)) ([885e845](https://github.com/SocialGouv/mon-psy-sante/commit/885e8452ef90989a9a0965a6daa430c2f53b28ae))
+
 # [1.19.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.18.0...v1.19.0) (2022-03-17)
 
 
