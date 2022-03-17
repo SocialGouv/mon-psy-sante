@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.1...v1.19.2) (2022-03-17)
+
+
+### Bug Fixes
+
+* **coordinates:** add SRID when saving coordinates in DB ([#100](https://github.com/SocialGouv/mon-psy-sante/issues/100)) ([253162b](https://github.com/SocialGouv/mon-psy-sante/commit/253162ba0a2e0ad678a76f90c98dd06e1f65ae8f))
+
 ## [1.19.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.0...v1.19.1) (2022-03-17)
 
 
