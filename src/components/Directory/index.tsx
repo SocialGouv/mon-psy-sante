@@ -122,7 +122,6 @@ const Directory = () => {
         setCoords={setCoords}
         geoLoading={geoLoading}
         setGeoLoading={setGeoLoading}
-        loadMorePsychologists={loadMorePsychologists}
         loadPsychologists={loadPsychologists}
       />
       <ResultWrapper className="fr-mb-8w">
