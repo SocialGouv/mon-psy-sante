@@ -1,7 +1,8 @@
 import { gql } from "graphql-request";
+
+import { DSResponse } from "../../types/demarcheSimplifiee";
 import config from "../config";
 import { request } from "./request";
-import { DSResponse } from "../../types/demarcheSimplifiee";
 
 enum DossierState {
   enConstruction = "en_construction",
