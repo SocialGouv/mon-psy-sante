@@ -1,9 +1,8 @@
 import * as L from "leaflet";
 import React, { useEffect, useState } from "react";
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
-import Psychologist from "./Psychologist";
 
 function ChangeView({ center }) {
   const map = useMap();
@@ -48,7 +47,6 @@ function MarkerWithIcon({
           }
         },
       }}
-      key={psychologist.id}
       position={[
         psychologist.coordinates.coordinates[1],
         psychologist.coordinates.coordinates[0],
@@ -56,13 +54,7 @@ function MarkerWithIcon({
       // @ts-ignore
       icon={icon}
       zIndexOffset={zindex}
-    >
-      {!selectPsychologist && (
-        <Popup>
-          <Psychologist psychologist={psychologist} />
-        </Popup>
-      )}
-    </Marker>
+    ></Marker>
   );
 }
 
@@ -82,7 +74,7 @@ const PsychologistsMap = ({
       center={mapCenter}
       zoom={12}
       scrollWheelZoom={false}
-      style={{ height: "100%", width: "100%", minHeight: "300px" }}
+      style={{ height: "100%", minHeight: "300px", width: "100%" }}
     >
       <ChangeView center={mapCenter} />
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
