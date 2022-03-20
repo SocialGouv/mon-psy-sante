@@ -38,10 +38,14 @@ export const getAll = async (filters: {
     ? parseInt(filters[FILTER.PAGE_SIZE] as string, 10)
     : DEFAULT_PAGE_SIZE;
 
+  const pageIndex = filters[FILTER.PAGE_INDEX]
+    ? parseInt(filters[FILTER.PAGE_INDEX] as string, 10)
+    : 0;
+
   const where: any = { archived: false, state: "accepte", visible: true };
   const query: Sequelize.FindOptions<any> = {
     limit: pageSize,
-    offset: parseInt(filters[FILTER.PAGE_INDEX] as string, 10) * pageSize,
+    offset: pageIndex * pageSize,
     raw: true,
     where,
   };

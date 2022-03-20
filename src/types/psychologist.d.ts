@@ -21,7 +21,7 @@ export interface Psychologist {
   instructorId: string;
   department: string;
   state: string;
-  distance: number;
+  distance?: number;
 }
 
 export interface DSPsychologist {
