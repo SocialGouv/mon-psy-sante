@@ -54,7 +54,7 @@ function MarkerWithIcon({
       // @ts-ignore
       icon={icon}
       zIndexOffset={zindex}
-    ></Marker>
+    />
   );
 }
 
