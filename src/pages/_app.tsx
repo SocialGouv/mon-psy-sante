@@ -1,5 +1,5 @@
 import "@gouvfr/dsfr/dist/dsfr/dsfr.min.css";
-import "../css/style.css";
+import "../../public/css/style.css";
 
 import { SkiplinkItem, Skiplinks } from "@dataesr/react-dsfr";
 import * as Sentry from "@sentry/node";
