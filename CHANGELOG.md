@@ -1,3 +1,10 @@
+## [1.19.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.3...v1.19.4) (2022-03-20)
+
+
+### Bug Fixes
+
+* **token:** update DS token + add spinner when loading psy + show message if no psy in selected zone ([#102](https://github.com/SocialGouv/mon-psy-sante/issues/102)) ([d4ea78b](https://github.com/SocialGouv/mon-psy-sante/commit/d4ea78b55e538e82d41515344534b3ad1d64b4af))
+
 ## [1.19.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.2...v1.19.3) (2022-03-17)
 
 
