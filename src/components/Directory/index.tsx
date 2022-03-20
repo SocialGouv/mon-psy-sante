@@ -44,6 +44,8 @@ const Directory = () => {
     let query = `?${FILTER.PAGE_INDEX}=${currentPage}`;
     setNoPsychologist(false);
     setIsLoading(true);
+    setPsychologists([]);
+
     query = `${query}&${FILTER.LONGITUDE}=${coords.longitude}&${FILTER.LATITUDE}=${coords.latitude}`;
     setMapCenter(coords);
 
