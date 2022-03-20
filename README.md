@@ -52,3 +52,7 @@ To re-run the migration from 0
       grant usage on schema public to public;
       grant create on schema public to public;
       CREATE EXTENSION postgis;
+
+## To update sealed secret
+
+https://socialgouv.github.io/sre-tools/

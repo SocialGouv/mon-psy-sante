@@ -25,17 +25,6 @@ const geoStatusEnum = {
   UNSUPPORTED: -2,
 };
 
-const normalize = (text) =>
-  text
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[\W_]+/g, "")
-    .toLowerCase();
-
-export const filterOptions = (label, option) =>
-  option.label === AROUND_ME ||
-  normalize(option.label).includes(normalize(label));
-
 const SearchBar = ({
   positionFilter,
   setPositionFilter,
@@ -116,7 +105,7 @@ const SearchBar = ({
           selected={positionFilter}
           onChange={setPositionFilter}
           onTextChange={setFilterText}
-          filter={filterOptions}
+          filter={() => true}
           label="Rechercher par ville ou code postal"
           options={options}
         />

@@ -1,3 +1,4 @@
+import { Alert } from "@dataesr/react-dsfr";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { createRef, useEffect, useRef, useState } from "react";
@@ -6,6 +7,7 @@ import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
 import { PUBLIC } from "../../types/enums/public";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
+import Spinner from "../Spinner";
 import { ResultWrapper } from "./Directory.styles";
 import Header from "./Header";
 import Results from "./Results";
@@ -23,6 +25,8 @@ const Directory = () => {
   const psychologistsRefs = useRef<any>();
   const resultsRef = useRef(null);
   const [selectedPsychologist, setSelectedPsychologist] = useState<number>();
+  const [noPsychologist, setNoPsychologist] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [mapCenter, setMapCenter] = useState<Coordinates>();
 
   const [positionFilter, setPositionFilter] = useState<any>("");
@@ -38,10 +42,10 @@ const Directory = () => {
 
   const loadPsychologists = (currentPage) => {
     let query = `?${FILTER.PAGE_INDEX}=${currentPage}`;
-    if (coords) {
-      query = `${query}&${FILTER.LONGITUDE}=${coords.longitude}&${FILTER.LATITUDE}=${coords.latitude}`;
-      setMapCenter(coords);
-    }
+    setNoPsychologist(false);
+    setIsLoading(true);
+    query = `${query}&${FILTER.LONGITUDE}=${coords.longitude}&${FILTER.LATITUDE}=${coords.latitude}`;
+    setMapCenter(coords);
 
     if (otherFilters[FILTER.TELECONSULTATION]) {
       query = `${query}&${FILTER.TELECONSULTATION}=true`;
@@ -50,8 +54,13 @@ const Directory = () => {
       query = `${query}&${FILTER.PUBLIC}=${otherFilters[FILTER.PUBLIC]}`;
     }
     axios.get(`/api/psychologists${query}`).then((response) => {
+      setIsLoading(false);
       if (currentPage === 0) {
         const refs = {};
+        if (!response.data.length) {
+          setNoPsychologist(true);
+          return;
+        }
         response.data.forEach((x) => (refs[x.id] = createRef()));
         psychologistsRefs.current = refs;
         if (resultsRef.current) {
@@ -64,14 +73,6 @@ const Directory = () => {
           (x) => (psychologistsRefs.current[x.id] = createRef())
         );
         setPsychologists(psychologists.concat(response.data));
-      }
-
-      if (!coords) {
-        const [longitude, latitude] = response.data[0].coordinates.coordinates;
-        setMapCenter({
-          latitude,
-          longitude,
-        });
       }
     });
   };
@@ -135,6 +136,15 @@ const Directory = () => {
             setSelectedPsychologist={setSelectedPsychologist}
             mapCenter={mapCenter}
             setMapCenter={setMapCenter}
+          />
+        )}
+        {isLoading && <Spinner />}
+
+        {noPsychologist && (
+          <Alert
+            title="Pas encore de psycologues disponibles dans cette zone"
+            className="fr-mt-1w"
+            description="Nous mettons à jour cette liste régulièrement."
           />
         )}
       </ResultWrapper>
