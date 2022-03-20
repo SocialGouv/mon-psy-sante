@@ -24,14 +24,10 @@ export const sendMail = (to: string, subject: string, html: string) => {
     to,
   };
 
-  if (config.mail.enabled) {
-    return new Promise((resolve, reject) => {
-      mailTransport.sendMail(mail, (error, info) => {
-        console.log(error, info);
-        return error ? reject(error) : resolve(info);
-      });
+  return new Promise((resolve, reject) => {
+    mailTransport.sendMail(mail, (error, info) => {
+      console.log("Send email", error, info);
+      return error ? reject(error) : resolve(info);
     });
-  }
-  console.log("Send email skipped");
-  return Promise.resolve();
+  });
 };
