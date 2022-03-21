@@ -1,3 +1,10 @@
+## [1.19.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.4...v1.19.5) (2022-03-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency got to v12.0.2 ([#105](https://github.com/SocialGouv/mon-psy-sante/issues/105)) ([acfe4ac](https://github.com/SocialGouv/mon-psy-sante/commit/acfe4aca4ee4c127a435d40fc174f45d447c5d25))
+
 ## [1.19.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.3...v1.19.4) (2022-03-20)
 
 
