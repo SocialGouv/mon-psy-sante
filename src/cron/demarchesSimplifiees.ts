@@ -1,3 +1,5 @@
+import * as Sentry from "@sentry/nextjs";
+
 import { models } from "../db/models";
 import {
   getPsychologistList,
@@ -32,6 +34,7 @@ export const importData = async (): Promise<void> => {
 
     console.log("importData done");
   } catch (err) {
+    Sentry.captureException(err);
     console.error("ERROR: Could not import DS API data to PG", err);
   }
 };
@@ -45,6 +48,7 @@ export const importState = async (): Promise<void> => {
     await updateState(dsAPIData);
     console.log("importState done");
   } catch (err) {
+    Sentry.captureException(err);
     console.error("ERROR: Could not import DS API state to PG", err);
   }
 };

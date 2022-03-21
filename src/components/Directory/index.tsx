@@ -44,6 +44,8 @@ const Directory = () => {
     let query = `?${FILTER.PAGE_INDEX}=${currentPage}`;
     setNoPsychologist(false);
     setIsLoading(true);
+    setPsychologists([]);
+
     query = `${query}&${FILTER.LONGITUDE}=${coords.longitude}&${FILTER.LATITUDE}=${coords.latitude}`;
     setMapCenter(coords);
 
@@ -142,7 +144,7 @@ const Directory = () => {
 
         {noPsychologist && (
           <Alert
-            title="Pas encore de psycologues disponibles dans cette zone"
+            title="Pas encore de psychologues disponibles dans cette zone"
             className="fr-mt-1w"
             description="Nous mettons à jour cette liste régulièrement."
           />
