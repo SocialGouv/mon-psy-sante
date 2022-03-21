@@ -144,7 +144,7 @@ const Directory = () => {
 
         {noPsychologist && (
           <Alert
-            title="Pas encore de psycologues disponibles dans cette zone"
+            title="Pas encore de psychologues disponibles dans cette zone"
             className="fr-mt-1w"
             description="Nous mettons à jour cette liste régulièrement."
           />
