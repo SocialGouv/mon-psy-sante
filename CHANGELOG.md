@@ -1,3 +1,10 @@
+## [1.19.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.5...v1.19.6) (2022-03-21)
+
+
+### Bug Fixes
+
+* **psy listing:** reset psy results display on each search ([#104](https://github.com/SocialGouv/mon-psy-sante/issues/104)) ([cfbe5ba](https://github.com/SocialGouv/mon-psy-sante/commit/cfbe5ba82a9df5f6bc804f275eacabbcdb071fc6))
+
 ## [1.19.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.4...v1.19.5) (2022-03-21)
 
 
