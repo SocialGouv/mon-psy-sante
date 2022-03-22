@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.20.0...v1.21.0) (2022-03-22)
+
+
+### Features
+
+* **dossier import:** format email, firstName & lastName + log error from cron ([#108](https://github.com/SocialGouv/mon-psy-sante/issues/108)) ([344c4de](https://github.com/SocialGouv/mon-psy-sante/commit/344c4de8bd40bcb8f958a0b7abe58306e6656d48))
+
 # [1.20.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.6...v1.20.0) (2022-03-22)
 
 
