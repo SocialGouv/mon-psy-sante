@@ -13,12 +13,10 @@ const psychologists = async (req: NextApiRequest, res: NextApiResponse) => {
     const psychologists = await getAll(filters);
 
     return res.status(200).json(
-      psychologists
-        .filter((psy) => psy.distance < 1)
-        .map((psy) => ({
-          ...psy,
-          email: psy.displayEmail ? psy.email : undefined,
-        }))
+      psychologists.map((psy) => ({
+        ...psy,
+        email: psy.displayEmail ? psy.email : undefined,
+      }))
     );
   }
 };

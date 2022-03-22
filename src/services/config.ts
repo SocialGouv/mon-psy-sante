@@ -22,7 +22,7 @@ export default {
     port: parseInt(process.env.MAIL_PORT || "25", 10),
     tls: parseBoolean(process.env.MAIL_TLS),
   },
-  minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.55"),
+  minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.30"),
   newFeatures: parseBoolean(process.env.NEXT_PUBLIC_NEW_FEATURES),
   nextAuthUrl: process.env.NEXTAUTH_URL,
   postgre: {

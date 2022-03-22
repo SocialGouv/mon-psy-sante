@@ -17,7 +17,7 @@ const getAllPsychologistList = async (
   const apiResponse = await graphqlFunction(cursor);
 
   const { pageInfo, nodes } = apiResponse.demarche.dossiers;
-
+  console.log("Fetch", apiResponse.demarche.dossiers.nodes.length, "dossiers");
   const nextAccumulator = accumulator.concat(nodes);
 
   if (pageInfo.hasNextPage) {
@@ -39,7 +39,7 @@ export const getPsychologistList = async (
   psychologists: Psychologist[];
   lastCursor: string;
 }> => {
-  const time = `Fetching all psychologists from DS (query id #${Math.random().toString()})`;
+  const time = `Fetching all psychologists from DS (query id #${Math.random().toString()} with cursor ${cursor})`;
 
   console.time(time);
   const list = await getAllPsychologistList(

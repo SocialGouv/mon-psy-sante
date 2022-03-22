@@ -99,7 +99,7 @@ const SearchBar = ({
   }, [filterText]);
 
   return (
-    <Row className="fr-pb-4w" alignItems="middle">
+    <Row className="fr-pb-2w" alignItems="middle">
       <Col n="md-9 12">
         <SearchableSelect
           selected={positionFilter}

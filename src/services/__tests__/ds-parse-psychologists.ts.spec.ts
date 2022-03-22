@@ -41,7 +41,7 @@ describe("parseDossierMetadata", () => {
       firstName: "Anne",
       id: 0,
       instructorId: "123",
-      lastName: "Smith",
+      lastName: "SMITH",
       state: "Accepted",
       teleconsultation: true,
     });
@@ -61,6 +61,7 @@ describe("parseDossierMetadata", () => {
     ${"wrong:wrong"}     | ${undefined}
     ${"wrong@com"}       | ${undefined}
     ${"valid@email.com"} | ${"valid@email.com"}
+    ${"vaLiD@EMAIL.com"} | ${"valid@email.com"}
   `("should parse email champs for $input", async ({ input, resultValue }) => {
     const dossierWithWebsite = createDossier();
     dossierWithWebsite.champs.push({
@@ -80,6 +81,7 @@ describe("parseDossierMetadata", () => {
     ${"doctolib"}          | ${undefined}
     ${"https://valid.com"} | ${"https://valid.com"}
     ${"http://valid.com"}  | ${"http://valid.com"}
+    ${"http://VALID.com"}  | ${"http://valid.com"}
   `(
     "should parse website champs for $input",
     async ({ input, resultValue }) => {
@@ -120,6 +122,42 @@ describe("parseDossierMetadata", () => {
       const result = await parseDossierMetadata(dossierWithLangue);
 
       expect(result.languages).toEqual(resultValue);
+    }
+  );
+
+  it.each`
+    input                               | resultValue
+    ${"Laurence"}                       | ${"Laurence"}
+    ${"lauREnce"}                       | ${"Laurence"}
+    ${"Marie-Christine"}                | ${"Marie-Christine"}
+    ${"marie-christine"}                | ${"Marie-Christine"}
+    ${"MARIE-CHRISTINE"}                | ${"Marie-Christine"}
+    ${"MARIE CHRISTINE"}                | ${"Marie Christine"}
+    ${"MARIE CHRISTINE Anne-CHARlotte"} | ${"Marie Christine Anne-Charlotte"}
+  `(
+    "should format firsName champs for $input",
+    async ({ input, resultValue }) => {
+      const dossierWithLangue = createDossier();
+      dossierWithLangue.demandeur.prenom = input;
+      const result = await parseDossierMetadata(dossierWithLangue);
+
+      expect(result.firstName).toEqual(resultValue);
+    }
+  );
+
+  it.each`
+    input                       | resultValue
+    ${"Dupont"}                 | ${"DUPONT"}
+    ${"DuPOnt"}                 | ${"DUPONT"}
+    ${"DuPOnt de la particule"} | ${"DUPONT DE LA PARTICULE"}
+  `(
+    "should format firsName champs for $input",
+    async ({ input, resultValue }) => {
+      const dossierWithLangue = createDossier();
+      dossierWithLangue.demandeur.nom = input;
+      const result = await parseDossierMetadata(dossierWithLangue);
+
+      expect(result.lastName).toEqual(resultValue);
     }
   );
 });

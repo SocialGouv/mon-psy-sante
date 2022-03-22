@@ -20,15 +20,29 @@ const emailSchema = Joi.object({
 });
 const isFrench = new RegExp("(français|francais)", "g");
 
+const capitalizeFirstLetter = (word) =>
+  word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+
+function formatFirstName(string) {
+  return string
+    .split(" ")
+    .map((word) => word.split("-").map(capitalizeFirstLetter).join("-"))
+    .join(" ");
+}
+
 const parsers = {
   displayEmail: (value) => value === "true",
   email: (value) =>
-    emailSchema.validate({ email: value }).error ? undefined : value,
+    emailSchema.validate({ email: value }).error
+      ? undefined
+      : value.toLowerCase(),
   languages: (value) =>
     !value || value.trim().toLowerCase().match(isFrench) ? undefined : value,
   teleconsultation: (value) => value === "true",
   website: (value) =>
-    websiteSchema.validate({ website: value }).error ? undefined : value,
+    websiteSchema.validate({ website: value }).error
+      ? undefined
+      : value.toLowerCase(),
 };
 const parseChampValue = (field, value) =>
   parsers[field] ? parsers[field](value) : value;
@@ -39,10 +53,10 @@ export const parseDossierMetadata = async (
   const psychologist: Partial<Psychologist> = {
     archived: dossier.archived,
     department: extractDepartmentNumber(dossier.groupeInstructeur.label),
-    firstName: dossier.demandeur.prenom,
+    firstName: formatFirstName(dossier.demandeur.prenom),
     id: dossier.number,
     instructorId: dossier.groupeInstructeur.id,
-    lastName: dossier.demandeur.nom,
+    lastName: dossier.demandeur.nom.toUpperCase(),
     state: dossier.state,
   };
 

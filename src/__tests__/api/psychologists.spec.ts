@@ -9,7 +9,7 @@ describe("/api/psychologists", () => {
     );
 
     expect(result.status).toEqual(200);
-    expect(result.data).toEqual([]);
+    expect(result.data.length).toBeGreaterThan(1);
   });
   it("should return some results if coordinates passed", async () => {
     const result = await axios.get(
@@ -18,6 +18,5 @@ describe("/api/psychologists", () => {
 
     expect(result.status).toEqual(200);
     expect(result.data.length).toBeGreaterThan(1);
-    expect(result.data.filter((psy) => psy.distance > 1).length).toEqual(0);
   });
 });
