@@ -8,9 +8,11 @@ export default (sequelize) => {
   Psychologist.init(
     {
       address: DataTypes.TEXT,
+      secondAddress: DataTypes.TEXT,
       archived: DataTypes.BOOLEAN,
       cdsmsp: DataTypes.STRING,
       coordinates: DataTypes.GEOMETRY("POINT", SRID),
+      secondAddressCoordinates: DataTypes.GEOMETRY("POINT", SRID),
       department: DataTypes.STRING,
       displayEmail: DataTypes.BOOLEAN,
       email: DataTypes.STRING,

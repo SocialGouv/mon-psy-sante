@@ -193,6 +193,8 @@ describe("Service psychologists", () => {
 
       const updateableFields = [
         "address",
+        "secondAddress",
+        "coordinates",
         "cdsmsp",
         "displayEmail",
         "email",
@@ -212,7 +214,7 @@ describe("Service psychologists", () => {
       });
 
       Object.keys(updatedPsy).forEach((key) => {
-        if (key === "coordinates") {
+        if (key === "coordinates" || key === "secondAddressCoordinates") {
           expect(updatedPsy[key].coordinates).toEqual([123, 456]);
           expect(updatedPsy[key].type).toEqual("Point");
         } else if (updateableFields.includes(key)) {
