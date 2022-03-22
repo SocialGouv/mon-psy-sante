@@ -98,26 +98,38 @@ describe("parseDossierMetadata", () => {
   );
 
   it.each`
-    input                 | resultValue
-    ${undefined}          | ${undefined}
-    ${null}               | ${undefined}
-    ${""}                 | ${undefined}
-    ${"FRANCAIS"}         | ${undefined}
-    ${"Francais"}         | ${undefined}
-    ${"francais"}         | ${undefined}
-    ${"FRANÇAIS"}         | ${undefined}
-    ${"français"}         | ${undefined}
-    ${"langue française"} | ${undefined}
-    ${"anglais"}          | ${"anglais"}
-    ${"other other"}      | ${"other other"}
+    languages                       | languagesOther | resultValue
+    ${undefined}                    | ${undefined}   | ${undefined}
+    ${null}                         | ${undefined}   | ${undefined}
+    ${""}                           | ${undefined}   | ${undefined}
+    ${undefined}                    | ${"Francais"}  | ${undefined}
+    ${null}                         | ${"Francais"}  | ${undefined}
+    ${""}                           | ${"Francais"}  | ${undefined}
+    ${"FRANCAIS"}                   | ${undefined}   | ${undefined}
+    ${"Francais"}                   | ${undefined}   | ${undefined}
+    ${"francais"}                   | ${undefined}   | ${undefined}
+    ${"FRANÇAIS"}                   | ${undefined}   | ${undefined}
+    ${"français"}                   | ${undefined}   | ${undefined}
+    ${"langue française"}           | ${undefined}   | ${undefined}
+    ${"anglais"}                    | ${undefined}   | ${"anglais"}
+    ${"Anglais"}                    | ${"espagnol"}  | ${"Anglais, espagnol"}
+    ${"other other"}                | ${undefined}   | ${"other other"}
+    ${"Anglais, Italien"}           | ${"Japonais"}  | ${"Anglais, Italien, Japonais"}
+    ${"Francais, Anglais, Italien"} | ${undefined}   | ${"Anglais, Italien"}
+    ${"Francais et Italien"}        | ${undefined}   | ${"Italien"}
   `(
-    "should parse languages champs for $input",
-    async ({ input, resultValue }) => {
+    "should parse languages champs for $languages & $languagesOther",
+    async ({ languages, languagesOther, resultValue }) => {
       const dossierWithLangue = createDossier();
       dossierWithLangue.champs.push({
         id: "Q2hhbXAtMTY2MDM0Nw==",
         label: "Langues de réalisation des séances (optionnel) ?",
-        stringValue: input,
+        stringValue: languages,
+      });
+      dossierWithLangue.champs.push({
+        id: "Q2hhbXAtMjM0NjQzNA==",
+        label: "Si autre(s) langue(s), préciser :",
+        stringValue: languagesOther,
       });
       const result = await parseDossierMetadata(dossierWithLangue);
 
