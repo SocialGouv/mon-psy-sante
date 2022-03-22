@@ -1,13 +1,20 @@
 /* eslint-disable jest/no-conditional-expect */
-import {stub} from "sinon";
+import { stub } from "sinon";
 
-import {models} from "../../db/models";
-import {getOnePsychologist} from "../../db/seeds/psychologist";
-import {FILTER} from "../../types/enums/filters";
-import {allPublics, PUBLIC} from "../../types/enums/public";
-import {Psychologist} from "../../types/psychologist";
+import { models } from "../../db/models";
+import { getOnePsychologist } from "../../db/seeds/psychologist";
+import { FILTER } from "../../types/enums/filters";
+import { allPublics, PUBLIC } from "../../types/enums/public";
+import { Psychologist } from "../../types/psychologist";
 import * as address from "../getAddressCoordinates";
-import {countAll, getAll, getByInstructor, saveMany, update, updateState,} from "../psychologists";
+import {
+  countAll,
+  getAll,
+  getByInstructor,
+  saveMany,
+  update,
+  updateState,
+} from "../psychologists";
 
 describe("Service psychologists", () => {
   beforeEach(async () => {

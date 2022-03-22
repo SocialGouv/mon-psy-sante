@@ -104,7 +104,7 @@ const Psychologist = ({
                 width="18"
                 src="/images/icones/chat-fill.svg"
               />
-              {psychologist.languages}
+              Langue(s): {psychologist.languages}
             </p>
           )}
         </div>
