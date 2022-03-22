@@ -34,7 +34,7 @@ const getAddressCoordinates = async (
   );
   const response = await axios.get<CoordinatesAPI>(url).catch(extractError);
 
-  if (response && response.data.features?.length > 0) {
+  if (response && response?.data.features?.length > 0) {
     const feature = response.data.features[0];
     const [longitude, latitude] = feature.geometry.coordinates;
     const { score } = feature.properties;

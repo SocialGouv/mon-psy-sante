@@ -1,20 +1,13 @@
 /* eslint-disable jest/no-conditional-expect */
-import { stub } from "sinon";
+import {stub} from "sinon";
 
-import { models } from "../../db/models";
-import { getOnePsychologist } from "../../db/seeds/psychologist";
-import { FILTER } from "../../types/enums/filters";
-import { allPublics, PUBLIC } from "../../types/enums/public";
-import { Psychologist } from "../../types/psychologist";
+import {models} from "../../db/models";
+import {getOnePsychologist} from "../../db/seeds/psychologist";
+import {FILTER} from "../../types/enums/filters";
+import {allPublics, PUBLIC} from "../../types/enums/public";
+import {Psychologist} from "../../types/psychologist";
 import * as address from "../getAddressCoordinates";
-import {
-  countAll,
-  getAll,
-  getByInstructor,
-  saveMany,
-  update,
-  updateState,
-} from "../psychologists";
+import {countAll, getAll, getByInstructor, saveMany, update, updateState,} from "../psychologists";
 
 describe("Service psychologists", () => {
   beforeEach(async () => {
@@ -193,6 +186,8 @@ describe("Service psychologists", () => {
 
       const updateableFields = [
         "address",
+        "secondAddress",
+        "coordinates",
         "cdsmsp",
         "displayEmail",
         "email",
@@ -200,6 +195,7 @@ describe("Service psychologists", () => {
         "languages",
         "lastName",
         "phone",
+        "public",
         "public",
         "teleconsultation",
         "visible",
@@ -212,7 +208,7 @@ describe("Service psychologists", () => {
       });
 
       Object.keys(updatedPsy).forEach((key) => {
-        if (key === "coordinates") {
+        if (key === "coordinates" || key === "secondAddressCoordinates") {
           expect(updatedPsy[key].coordinates).toEqual([123, 456]);
           expect(updatedPsy[key].type).toEqual("Point");
         } else if (updateableFields.includes(key)) {
