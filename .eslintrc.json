@@ -28,7 +28,8 @@
         "caseSensitive": false
       }
     ],
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "sort-keys-fix/sort-keys-fix": "off"
   },
   "overrides": [
     {

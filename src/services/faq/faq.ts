@@ -39,6 +39,24 @@ const items = [
     title: "Patient",
   },
   {
+    documents: [
+      {
+        url: "/documents/MonPsy_Guide psychologue_2022.pdf",
+        title: "Guide pour les psychologues",
+      },
+      {
+        url: "/documents/MonPsy_Livret_échelles évaluations_2022.pdf",
+        title: "Echelles d’évaluation",
+      },
+      {
+        url: "/documents/MonPsy_Flyer-Feuille de soin_2022.pdf",
+        title: "Comment compléter une feuille de soins ?",
+      },
+      {
+        url: "/documents/MonPsy_Fiche-Memo_Psy.pdf",
+        title: "Fiche mémo pour les psychologues",
+      },
+    ],
     key: "psychologue",
     sections: [
       { faq: eligibility, title: "Éligibilité" },
@@ -59,6 +77,12 @@ const items = [
   },
   {
     key: "medecin",
+    documents: [
+      {
+        title: "Echelles d’évaluation",
+        url: "/documents/MonPsy_Livret_échelles évaluations_2022.pdf",
+      },
+    ],
     sections: [
       { faq: orientation, title: "Orientation du patient" },
       { faq: practices, title: "Bonnes pratiques" },

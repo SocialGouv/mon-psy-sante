@@ -255,7 +255,7 @@ const Page = () => {
                 rel="noreferrer"
               >
                 Chat
-              </a>
+              </a>{" "}
               du lundi au dimanche de 13h à 3h du matin.
             </div>
             <div className="fr-col-12">
