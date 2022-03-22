@@ -28,8 +28,26 @@ const Psychologist = ({
           </p>
         </div>
         <div className="fr-tile__desc">
-          <p className="fr-my-0">{psychologist.address}</p>
           <p className="fr-my-0">
+            <Icon
+              aria-hidden="true"
+              alt=""
+              className="fr-mr-1w"
+              height="18"
+              width="18"
+              src="/images/icones/map-pin-fill.svg"
+            />
+            {psychologist.address}
+          </p>
+          <p className="fr-my-0">
+            <Icon
+              aria-hidden="true"
+              alt=""
+              className="fr-mr-1w"
+              height="18"
+              width="18"
+              src="/images/icones/phone-fill.svg"
+            />
             {psychologist.phone}{" "}
             {psychologist.website && (
               <a
@@ -44,6 +62,14 @@ const Psychologist = ({
           </p>
           {psychologist.email && (
             <p className="fr-my-0">
+              <Icon
+                aria-hidden="true"
+                alt=""
+                className="fr-mr-1w"
+                height="18"
+                width="18"
+                src="/images/icones/mail-fill.svg"
+              />
               <a
                 href={`mailto:${psychologist.email}`}
                 rel="noreferrer"
@@ -56,20 +82,29 @@ const Psychologist = ({
           <div className="fr-p-1w" />
           {psychologist.teleconsultation && (
             <p className="fr-my-0 text-grey">
-              <img
+              <Icon
                 aria-hidden="true"
                 alt=""
                 className="fr-mr-1w"
-                height="20"
-                width="20"
+                height="18"
+                width="18"
                 src="/images/icones/vidicon-fill.svg"
               />
               Possibilité de séances à distance
             </p>
           )}
           {psychologist.languages && (
-            <p className="fr-my-0">
-              Langue(s) parlée(s): {psychologist.languages}
+            <p className="fr-my-0 text-grey">
+              <Icon
+                aria-hidden="true"
+                title="Langue(s) parlée(s) en plus du français"
+                alt=""
+                className="fr-mr-1w"
+                height="18"
+                width="18"
+                src="/images/icones/chat-fill.svg"
+              />
+              {psychologist.languages}
             </p>
           )}
         </div>
@@ -91,6 +126,11 @@ const PsychologistTile = styled.div`
     css`
       ${props.selected ? "background: var(--pink-tuile-950)" : ""}
     `}
+`;
+
+const Icon = styled.img`
+  position: relative;
+  top: 6px;
 `;
 
 export default Psychologist;

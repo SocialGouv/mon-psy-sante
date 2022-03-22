@@ -57,11 +57,6 @@ h1 .fr-text--lead {
   color: var(--grey-425);
 }
 
-.text-grey img {
-  position: relative;
-  top: 4px;
-}
-
 .no-bullet {
   list-style-type: none;
 }
