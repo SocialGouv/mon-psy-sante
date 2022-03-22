@@ -203,7 +203,6 @@ describe("Service psychologists", () => {
         "lastName",
         "phone",
         "public",
-        "public",
         "teleconsultation",
         "visible",
         "website",

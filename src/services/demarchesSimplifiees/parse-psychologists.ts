@@ -74,7 +74,7 @@ const addOtherLanguages = (
 ) => {
   const dossierChamp = getDossierChamp(dossier, CHAMP_LANGUAGE_OTHER);
   const otherLanguage = parseChampValue("languages", dossierChamp?.stringValue);
-  if (otherLanguage !== undefined) {
+  if (otherLanguage) {
     psychologist.languages = psychologist.languages
       ? psychologist.languages + ", " + otherLanguage
       : otherLanguage;
