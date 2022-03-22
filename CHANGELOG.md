@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.21.0...v1.22.0) (2022-03-22)
+
+
+### Features
+
+* **import data:** handle second address ([#109](https://github.com/SocialGouv/mon-psy-sante/issues/109)) ([0606059](https://github.com/SocialGouv/mon-psy-sante/commit/0606059ce87a4729173695fe540b3f21331c5da6))
+
 # [1.21.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.20.0...v1.21.0) (2022-03-22)
 
 
