@@ -68,6 +68,19 @@ const formatCoordinates = (coordinates: Coordinates): CoordinatesPostgis => {
 const getDossierChamp = (dossier: DSPsychologist, id) =>
   dossier.champs.find((champ) => champ.id === id);
 
+const addOtherLanguages = (
+  dossier: DSPsychologist,
+  psychologist: Partial<Psychologist>
+) => {
+  const dossierChamp = getDossierChamp(dossier, CHAMP_LANGUAGE_OTHER);
+  const otherLanguage = parseChampValue("languages", dossierChamp?.stringValue);
+  if (otherLanguage !== undefined) {
+    psychologist.languages = psychologist.languages
+      ? psychologist.languages + ", " + otherLanguage
+      : otherLanguage;
+  }
+};
+
 export const parseDossierMetadata = async (
   dossier: DSPsychologist
 ): Promise<Psychologist> => {
@@ -88,14 +101,7 @@ export const parseDossierMetadata = async (
       psychologist[field] = parsedValue;
     }
   });
-
-  const dossierChamp = getDossierChamp(dossier, CHAMP_LANGUAGE_OTHER);
-  const otherLanguage = parseChampValue("languages", dossierChamp?.stringValue);
-  if (otherLanguage !== undefined) {
-    psychologist.languages = psychologist.languages
-      ? psychologist.languages + ", " + otherLanguage
-      : otherLanguage;
-  }
+  addOtherLanguages(dossier, psychologist);
 
   const coordinates = await getAddressCoordinates(
     dossier.number.toString(),
