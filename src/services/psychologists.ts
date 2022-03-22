@@ -99,12 +99,27 @@ export const update = async (
   id: string,
   psychologist: Partial<Psychologist>
 ) => {
-  const coordinates = await getAddressCoordinates(psychologist.address);
+  const displayName = psychologist.firstName + " " + psychologist.lastName;
+  const coordinates = await getAddressCoordinates(
+    displayName,
+    psychologist.address
+  );
+  const secondAddressCoordinates = await getAddressCoordinates(
+    displayName,
+    psychologist.secondAddress
+  );
   return models.Psychologist.update(
     {
       address: psychologist.address,
+      secondAddress: psychologist.secondAddress,
       cdsmsp: psychologist.cdsmsp,
       coordinates: coordinates
+        ? {
+            coordinates: [coordinates.longitude, coordinates.latitude],
+            type: "POINT",
+          }
+        : null,
+      secondAddressCoordinates: secondAddressCoordinates
         ? {
             coordinates: [coordinates.longitude, coordinates.latitude],
             type: "POINT",

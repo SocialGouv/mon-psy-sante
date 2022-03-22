@@ -6,9 +6,9 @@ import config from "./config";
 
 const ADDRESS_DELIMITER = ";";
 
-const logError = (mesg: string) => {
-  Sentry.captureMessage(mesg);
-  console.log(mesg);
+const logError = (msg: string) => {
+  Sentry.captureMessage(msg);
+  console.log(msg);
 };
 const extractError = (error: Error | AxiosError): void => {
   if (axios.isAxiosError(error)) {
@@ -24,7 +24,10 @@ const extractError = (error: Error | AxiosError): void => {
   }
 };
 
-const getAddressCoordinates = async (address: string): Promise<Coordinates> => {
+const getAddressCoordinates = async (
+  displayName: string,
+  address: string
+): Promise<Coordinates> => {
   const firstAddress = address.split(ADDRESS_DELIMITER)[0];
   const url = encodeURI(
     `https://api-adresse.data.gouv.fr/search/?q=${firstAddress}&limit=1`
@@ -42,10 +45,14 @@ const getAddressCoordinates = async (address: string): Promise<Coordinates> => {
         longitude,
       });
     }
-    logError(`Error: score insuffisant: "${firstAddress}": ${score}`);
+    logError(
+      `Error: score insuffisant: ${displayName} "${firstAddress}": ${score}`
+    );
     return Promise.resolve(null);
   }
-  logError(`Error: address not found or error: "${firstAddress}"`);
+  logError(
+    `Error: address not found or error: ${displayName} "${firstAddress}"`
+  );
   return Promise.resolve(null);
 };
 

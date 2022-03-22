@@ -14,3 +14,9 @@ export interface CoordinatesAPI {
     };
   }[];
 }
+
+export type CoordinatesPostgis = {
+  type: string;
+  coordinates: [number, number];
+  crs: { type: string; properties: { name: string } };
+};

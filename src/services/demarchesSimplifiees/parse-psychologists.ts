@@ -5,6 +5,7 @@ import { SRID } from "../../types/const/geometry";
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import config from "../config";
 import getAddressCoordinates from "../getAddressCoordinates";
+import { Coordinates, CoordinatesPostgis } from "../../types/coordinates";
 
 const limit = pLimit(5);
 
@@ -47,6 +48,14 @@ const parsers = {
 const parseChampValue = (field, value) =>
   parsers[field] ? parsers[field](value) : value;
 
+const formatCoordinates = (coordinates: Coordinates): CoordinatesPostgis => {
+  return {
+    coordinates: [coordinates.longitude, coordinates.latitude],
+    crs: { properties: { name: "EPSG:" + SRID }, type: "name" },
+    type: "POINT",
+  };
+};
+
 export const parseDossierMetadata = async (
   dossier: DSPsychologist
 ): Promise<Psychologist> => {
@@ -68,15 +77,23 @@ export const parseDossierMetadata = async (
     }
   });
 
-  const coordinates = await getAddressCoordinates(psychologist.address);
+  const coordinates = await getAddressCoordinates(
+    dossier.number.toString(),
+    psychologist.address
+  );
   if (coordinates) {
-    psychologist.coordinates = {
-      coordinates: [coordinates.longitude, coordinates.latitude],
-      crs: { properties: { name: "EPSG:" + SRID }, type: "name" },
-      type: "POINT",
-    };
+    psychologist.coordinates = formatCoordinates(coordinates);
   }
 
+  if (psychologist.secondAddress) {
+    const coordinates = await getAddressCoordinates(
+      dossier.number.toString(),
+      psychologist.secondAddress
+    );
+    if (coordinates) {
+      psychologist.secondAddressCoordinates = formatCoordinates(coordinates);
+    }
+  }
   return psychologist as Psychologist;
 };
 

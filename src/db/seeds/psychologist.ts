@@ -33,9 +33,20 @@ export const getOnePsychologist = (
     address: `${faker.address.streetAddress()} ${faker.address.zipCode(
       "#####"
     )} ${faker.address.city()}`,
+    secondAddress: `${faker.address.streetAddress()} ${faker.address.zipCode(
+      "#####"
+    )} ${faker.address.city()}`,
     archived: false,
     cdsmsp: faker.lorem.word(5),
     coordinates: {
+      coordinates: [
+        parseFloat(faker.address.longitude(4, -4)),
+        parseFloat(faker.address.latitude(50, 40)),
+      ],
+      crs: { properties: { name: "EPSG:4326" }, type: "name" },
+      type: "POINT",
+    },
+    secondAddressCoordinates: {
       coordinates: [
         parseFloat(faker.address.longitude(4, -4)),
         parseFloat(faker.address.latitude(50, 40)),

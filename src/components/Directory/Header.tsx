@@ -8,7 +8,7 @@ const Header = () => {
       <h2>Trouver un psychologue partenaire près de chez soi.</h2>
       <p>La liste des psychologues partenaires est actualisée régulièrement.</p>
       <Callout className="fr-mb-4w fr-callout--pink-tuile">
-        <CalloutTitle>A lire, avant de prendre rendez-vous :</CalloutTitle>
+        <CalloutTitle>A noter</CalloutTitle>
         <div className="fr-callout__text fr-text--md">
           <ul>
             <li>
@@ -29,13 +29,15 @@ const Header = () => {
               <strong>séances de suivi à distance</strong>. La 1ère séance
               d’entretien initial est réalisée uniquement en présentiel.
             </li>
+            <li>
+              <strong>
+                Le jour du rendez-vous, bien apporter le courrier d’adressage
+                rédigé par mon médecin
+              </strong>{" "}
+              (ainsi que mon attestation de Carte Vitale papier indiquant vos
+              droits, si je bénéficie d’une exonération d’avance de frais).
+            </li>
           </ul>
-          <strong>
-            Le jour de mon rendez-vous, j’apporte le courrier d’adressage rédigé
-            par mon médecin
-          </strong>{" "}
-          (ainsi que mon attestation de Carte Vitale papier indiquant vos
-          droits, si je bénéficie d’une exonération d’avance de frais).
         </div>
       </Callout>
     </div>

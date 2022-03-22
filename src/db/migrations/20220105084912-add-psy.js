@@ -36,6 +36,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT,
       },
+      second_address: {
+        allowNull: true,
+        type: Sequelize.TEXT,
+      },
       department: {
         allowNull: false,
         type: Sequelize.STRING,
@@ -61,6 +65,10 @@ module.exports = {
         type: Sequelize.BOOLEAN,
       },
       coordinates: {
+        allowNull: true,
+        type: Sequelize.GEOMETRY("POINT", 4326),
+      },
+      second_address_coordinates: {
         allowNull: true,
         type: Sequelize.GEOMETRY("POINT", 4326),
       },
