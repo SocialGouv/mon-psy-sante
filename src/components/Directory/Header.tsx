@@ -6,12 +6,7 @@ const Header = () => {
     <div className="fr-mt-6w">
       <h1>Annuaire</h1>
       <h2>Trouver un psychologue partenaire près de chez soi.</h2>
-      <p>
-        Accéder rapidement aux coordonnées des psychologues partenaires du
-        dispositif MonPsy.
-        <br />
-        La liste des psychologues partenaires est actualisée régulièrement.
-      </p>
+      <p>La liste des psychologues partenaires est actualisée régulièrement.</p>
       <Callout className="fr-mb-4w fr-callout--pink-tuile">
         <CalloutTitle>A lire, avant de prendre rendez-vous :</CalloutTitle>
         <div className="fr-callout__text fr-text--md">

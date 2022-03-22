@@ -59,9 +59,8 @@ const Directory = () => {
       setIsLoading(false);
       if (currentPage === 0) {
         const refs = {};
-        if (!response.data.length) {
+        if (response.data[0].distance > 1) {
           setNoPsychologist(true);
-          return;
         }
         response.data.forEach((x) => (refs[x.id] = createRef()));
         psychologistsRefs.current = refs;
@@ -128,6 +127,15 @@ const Directory = () => {
         loadPsychologists={loadPsychologists}
       />
       <ResultWrapper className="fr-mb-8w">
+        {noPsychologist && (
+          <Alert
+            title="Pas encore de psychologues partenaires dans cette zone"
+            className="fr-mb-4w"
+            description="Nous mettons à jour cette liste régulièrement.
+N'hésitez pas à dézoomer sur la carte (cliquer sur -) pour voir les psychologues proches de chez vous.
+A noter, certains psychologues acceptent les séances à distance après la 1ère rencontre physique"
+          />
+        )}
         {psychologists?.length > 0 && (
           <Results
             loadMorePsychologists={loadMorePsychologists}
@@ -141,14 +149,6 @@ const Directory = () => {
           />
         )}
         {isLoading && <Spinner />}
-
-        {noPsychologist && (
-          <Alert
-            title="Pas encore de psychologues disponibles dans cette zone"
-            className="fr-mt-1w"
-            description="Nous mettons à jour cette liste régulièrement."
-          />
-        )}
       </ResultWrapper>
     </>
   );
