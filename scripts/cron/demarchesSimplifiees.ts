@@ -1,11 +1,11 @@
 import * as Sentry from "@sentry/nextjs";
 
-import { models } from "../db/models";
+import { models } from "../../src/db/models";
 import {
   getPsychologistList,
   getPsychologistState,
-} from "../services/demarchesSimplifiees/import";
-import { saveMany, updateState } from "../services/psychologists";
+} from "../../src/services/demarchesSimplifiees/import";
+import { saveMany, updateState } from "../../src/services/psychologists";
 
 export const importData = async (): Promise<void> => {
   try {

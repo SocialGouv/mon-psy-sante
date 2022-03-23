@@ -1,4 +1,3 @@
-const nextSourceMaps = require("@zeit/next-source-maps");
 const { withSentryConfig } = require("@sentry/nextjs");
 
 const csp = {
@@ -26,39 +25,29 @@ if (process.env.NODE_ENV !== "production") {
   csp["script-src"].push("'unsafe-eval'");
 }
 
-module.exports = withSentryConfig(
-  nextSourceMaps({
-    // by default, sentry tries to upload sourcemaps at build time
-    // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/#configure-source-maps
-    sentry: {
-      disableClientWebpackPlugin: true,
-      disableServerWebpackPlugin: true,
-    },
-    webpack: (config, { isServer /*, buildId */ }) => {
-      if (!isServer) {
-        config.resolve.alias["@sentry/node"] = "@sentry/browser";
-        config.resolve.fallback = {
-          fs: false,
-          path: false,
-          os: false,
-        };
-      }
-      return config;
-    },
-    async headers() {
-      return [
-        {
-          source: "/:path*",
-          headers: [
-            {
-              key: "Content-Security-Policy",
-              value: Object.keys(csp)
-                .map((key) => `${key} ${csp[key].join(" ")}`)
-                .join(";"),
-            },
-          ],
-        },
-      ];
-    },
-  })
-);
+const moduleExports = {
+  reactStrictMode: true,
+  sentry: {
+    disableClientWebpackPlugin: true,
+    disableServerWebpackPlugin: true,
+  },
+};
+
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: Object.keys(csp)
+              .map((key) => `${key} ${csp[key].join(" ")}`)
+              .join(";"),
+          },
+        ],
+      },
+    ];
+  },
+  ...withSentryConfig(moduleExports, { silent: true }),
+};

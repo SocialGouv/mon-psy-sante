@@ -14,11 +14,11 @@
     "@dataesr/react-dsfr": "0.9.9",
     "@faker-js/faker": "^6.0.0-alpha.6",
     "@sentry/nextjs": "^6.17.7",
+    "@sentry/node": "^6.19.1",
     "@socialgouv/bootstrap.core": "^0.2.1",
     "@socialgouv/matomo-next": "^1.2.2",
     "@types/sequelize": "^4.28.11",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
-    "@zeit/next-source-maps": "^0.0.3",
     "axios": "^0.26.0",
     "bcryptjs": "^2.4.3",
     "cron": "^1.8.2",
@@ -85,7 +85,7 @@
     "db:migrate:create": "npx sequelize migration:create --name",
     "cy": "cypress open",
     "cy:run": "cypress run",
-    "cron:launch": "ts-node --transpile-only src/cron/launch.ts",
+    "cron:launch": "ts-node --transpile-only scripts/cron/launch.ts",
     "script:extract-departments": "ts-node --transpile-only scripts/stats-departements.js"
   }
 }
