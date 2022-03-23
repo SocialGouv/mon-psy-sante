@@ -6,23 +6,24 @@ const Header = () => {
     <div className="fr-mt-6w">
       <h1>Annuaire</h1>
       <h2>Trouver un psychologue partenaire près de chez soi.</h2>
-      <p>La liste des psychologues partenaires est actualisée régulièrement.</p>
+      <p>
+        Plus de 1000 psychologues sont volontaires pour participer au
+        dispositif. Plusieurs candidatures sont en cours d’examen. La liste des
+        psychologues partenaires est actualisée régulièrement.
+      </p>
       <Callout className="fr-mb-4w fr-callout--pink-tuile">
         <CalloutTitle>A noter</CalloutTitle>
         <div className="fr-callout__text fr-text--md">
           <ul>
             <li>
-              Une consultation préalable chez le médecin est{" "}
-              <strong>obligatoire</strong> afin de bénéficier du remboursement.
+              Une orientation préalable par un médecin est{" "}
+              <strong>obligatoire</strong>. Elle se traduit par la remise d’un
+              courrier d’adressage nécessaire pour pouvoir bénéficier d’un
+              remboursement.
             </li>
             <li>
               <strong>8 séances</strong> sont remboursées au maximum par année
               civile.
-            </li>
-            <li>
-              Le souhait de certains psychologues{" "}
-              <strong>d’accueillir des enfants et des adolescents</strong> est
-              indiqué dans l’annuaire.
             </li>
             <li>
               Certains psychologues peuvent réaliser des{" "}
@@ -31,11 +32,11 @@ const Header = () => {
             </li>
             <li>
               <strong>
-                Le jour du rendez-vous, bien apporter le courrier d’adressage
-                rédigé par mon médecin
+                Le jour du rendez-vous, pensez à apporter le courrier
+                d’adressage rédigé par un médecin
               </strong>{" "}
-              (ainsi que mon attestation de Carte Vitale papier indiquant vos
-              droits, si je bénéficie d’une exonération d’avance de frais).
+              (ainsi que l’attestation de Carte Vitale papier indiquant les
+              droits, en cas d’exonération d’avance de frais).
             </li>
           </ul>
         </div>
