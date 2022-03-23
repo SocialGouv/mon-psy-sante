@@ -1,3 +1,10 @@
+## [1.22.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.0...v1.22.1) (2022-03-23)
+
+
+### Bug Fixes
+
+* **text:** update text on annuaire header ([#110](https://github.com/SocialGouv/mon-psy-sante/issues/110)) ([677928c](https://github.com/SocialGouv/mon-psy-sante/commit/677928ca98d6a737c3a48bb83061670fc8f1c7e1))
+
 # [1.22.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.21.0...v1.22.0) (2022-03-22)
 
 
