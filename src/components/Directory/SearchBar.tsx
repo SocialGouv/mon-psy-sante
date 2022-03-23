@@ -118,7 +118,7 @@ const SearchBar = ({
                 [FILTER.PUBLIC]: e.target.value,
               })
             }
-            label="Accompagnant des"
+            label="Souhait du psychologue d'accompagner des"
             options={allPublics.map((option) => ({
               label: option.replace("et", "ou"),
               value: option,
