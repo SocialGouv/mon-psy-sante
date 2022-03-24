@@ -24,6 +24,7 @@ if (process.env.NODE_ENV !== "production") {
   csp["script-src"].push("'unsafe-eval'");
 }
 const moduleExports = {
+  reactStrictMode: true,
   sentry: {
     disableClientWebpackPlugin: true,
     disableServerWebpackPlugin: true,
