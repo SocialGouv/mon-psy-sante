@@ -90,7 +90,9 @@ export const getAll = async (filters: {
 
 export const saveMany = async (psychologists: Psychologist[]) => {
   //@ts-ignore
-  return models.Psychologist.bulkCreate(psychologists);
+  return models.Psychologist.bulkCreate(psychologists, {
+    updateOnDuplicate: ["id"],
+  });
 };
 
 export const update = async (
