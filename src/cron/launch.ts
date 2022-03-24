@@ -4,10 +4,12 @@ import * as demarchesSimplifiees from "./demarchesSimplifiees";
 
 const runJob = async (job): Promise<void> => {
   const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
+  const SENTRY_ENV = process.env.NEXT_PUBLIC_SENTRY_ENV;
 
   console.log(`Initializing Sentry with url: ${SENTRY_DSN}`);
   Sentry.init({
     dsn: SENTRY_DSN,
+    environment: SENTRY_ENV ?? "development",
   });
 
   await job();
