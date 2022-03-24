@@ -1,3 +1,10 @@
+## [1.22.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.3...v1.22.4) (2022-03-24)
+
+
+### Bug Fixes
+
+* **cron:** move back cron in src folder ([#116](https://github.com/SocialGouv/mon-psy-sante/issues/116)) ([8e9f6f0](https://github.com/SocialGouv/mon-psy-sante/commit/8e9f6f05246f9c99e672bdda78b9b6e50315231a))
+
 ## [1.22.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.2...v1.22.3) (2022-03-24)
 
 
