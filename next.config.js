@@ -43,6 +43,7 @@ module.exports = {
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
+      config.resolve.alias["@sentry/node"] = "@sentry/browser"
       config.resolve.fallback = {
         fs: false,
         path: false,
