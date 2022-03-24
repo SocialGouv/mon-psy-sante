@@ -43,7 +43,7 @@ module.exports = {
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      config.resolve.alias["@sentry/node"] = "@sentry/browser"
+      config.resolve.alias["@sentry/node"] = "@sentry/browser";
       config.resolve.fallback = {
         fs: false,
         path: false,
@@ -54,6 +54,7 @@ module.exports = {
   },
   ...withSentryConfig(
     {
+      reactStrictMode: true,
       sentry: {
         disableClientWebpackPlugin: true,
         disableServerWebpackPlugin: true,
