@@ -1,5 +1,4 @@
 const { withSentryConfig } = require("@sentry/nextjs");
-
 const csp = {
   "default-src": ["'self'"],
   "connect-src": [
@@ -24,16 +23,22 @@ const csp = {
 if (process.env.NODE_ENV !== "production") {
   csp["script-src"].push("'unsafe-eval'");
 }
-
 const moduleExports = {
-  reactStrictMode: true,
   sentry: {
     disableClientWebpackPlugin: true,
     disableServerWebpackPlugin: true,
   },
-};
-
-module.exports = {
+  webpack: (config, { isServer /*, buildId */ }) => {
+    if (!isServer) {
+      config.resolve.alias["@sentry/node"] = "@sentry/browser";
+      config.resolve.fallback = {
+        fs: false,
+        path: false,
+        os: false,
+      };
+    }
+    return config;
+  },
   async headers() {
     return [
       {
@@ -49,5 +54,6 @@ module.exports = {
       },
     ];
   },
-  ...withSentryConfig(moduleExports, { silent: true }),
 };
+
+module.exports = withSentryConfig(moduleExports, { silent: true });

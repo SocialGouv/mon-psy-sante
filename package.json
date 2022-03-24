@@ -13,7 +13,7 @@
   "dependencies": {
     "@dataesr/react-dsfr": "0.9.9",
     "@faker-js/faker": "^6.0.0-alpha.6",
-    "@sentry/nextjs": "^6.17.7",
+    "@sentry/nextjs": "^6.17.9",
     "@socialgouv/bootstrap.core": "^0.2.1",
     "@socialgouv/matomo-next": "^1.2.2",
     "@types/sequelize": "^4.28.11",
