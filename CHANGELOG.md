@@ -1,3 +1,10 @@
+## [1.22.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.5...v1.22.6) (2022-03-24)
+
+
+### Bug Fixes
+
+* **lockfile:** fix yarn lockfile ([f6301bf](https://github.com/SocialGouv/mon-psy-sante/commit/f6301bf87c457d88471c2ade1772652474329636))
+
 ## [1.22.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.4...v1.22.5) (2022-03-24)
 
 
