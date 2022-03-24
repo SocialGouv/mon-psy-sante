@@ -1,3 +1,10 @@
+## [1.22.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.2...v1.22.3) (2022-03-24)
+
+
+### Bug Fixes
+
+* **docker:** and do not fails on uniq constraint ([#114](https://github.com/SocialGouv/mon-psy-sante/issues/114)) ([2d7ba65](https://github.com/SocialGouv/mon-psy-sante/commit/2d7ba652fbbd51b9337db8e2ed22931b209ac424))
+
 ## [1.22.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.1...v1.22.2) (2022-03-24)
 
 
