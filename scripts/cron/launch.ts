@@ -1,6 +1,15 @@
+import * as Sentry from "@sentry/nextjs";
+
 import * as demarchesSimplifiees from "./demarchesSimplifiees";
 
 const runJob = async (job): Promise<void> => {
+  const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
+
+  console.log(`Initializing Sentry with url: ${SENTRY_DSN}`);
+  Sentry.init({
+    dsn: SENTRY_DSN,
+  });
+
   await job();
   process.exit(0);
 };

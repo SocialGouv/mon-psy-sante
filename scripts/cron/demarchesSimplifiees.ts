@@ -1,11 +1,11 @@
 import * as Sentry from "@sentry/nextjs";
 
-import { models } from "../db/models";
+import { models } from "../../src/db/models";
 import {
   getPsychologistList,
   getPsychologistState,
-} from "../services/demarchesSimplifiees/import";
-import { saveMany, updateState } from "../services/psychologists";
+} from "../../src/services/demarchesSimplifiees/import";
+import { saveMany, updateState } from "../../src/services/psychologists";
 
 export const importData = async (): Promise<void> => {
   try {
@@ -26,13 +26,9 @@ export const importData = async (): Promise<void> => {
         },
         { where: { id: 1 } }
       );
-
-      console.log(`${dsAPIData.psychologists.length} saved`);
-    } else {
-      console.log("No psychologists to save");
     }
 
-    console.log("importData done");
+    console.log(`Import done, ${dsAPIData.psychologists.length} saved`);
   } catch (err) {
     Sentry.captureException(err);
     console.error("ERROR: Could not import DS API data to PG", err);
