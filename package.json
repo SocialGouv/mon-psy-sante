@@ -84,7 +84,7 @@
     "db:migrate:create": "npx sequelize migration:create --name",
     "cy": "cypress open",
     "cy:run": "cypress run",
-    "cron:launch": "ts-node --transpile-only scripts/cron/launch.ts",
+    "cron:launch": "ts-node --transpile-only src/cron/launch.ts",
     "script:extract-departments": "ts-node --transpile-only scripts/stats-departements.js"
   }
 }
