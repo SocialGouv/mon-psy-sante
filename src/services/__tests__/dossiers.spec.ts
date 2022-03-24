@@ -59,6 +59,6 @@ describe("Dossier service", () => {
   it('should filter dossiers with no text in "Conclusions Vérifications automatiques" annotations and no messages', () => {
     const result = filterDossiersToVerif(listDossier);
     expect(result.length).toEqual(1);
-    expect(result[0].annotations[0].stringValue).toEqual("Deja traité");
+    expect(result[0].annotations[0].stringValue).toEqual("");
   });
 });

@@ -7,7 +7,7 @@ const filterDossiersToVerif = (
     return psychologist.annotations.find(
       (annotation) =>
         annotation.label === "Conclusions Vérifications automatiques" &&
-        annotation.stringValue !== ""
+        annotation.stringValue === ""
     );
   });
 };
