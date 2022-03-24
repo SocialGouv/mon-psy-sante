@@ -1,3 +1,10 @@
+## [1.22.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.1...v1.22.2) (2022-03-24)
+
+
+### Bug Fixes
+
+* **sentry:** fix sentry on next + handle sentry on cron jobs ([#111](https://github.com/SocialGouv/mon-psy-sante/issues/111)) ([785df54](https://github.com/SocialGouv/mon-psy-sante/commit/785df54c936658fbb483f7c0dd39dd5b2a2f04b9))
+
 ## [1.22.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.0...v1.22.1) (2022-03-23)
 
 
