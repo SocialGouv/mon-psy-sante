@@ -1,10 +1,9 @@
 import pLimit from "p-limit";
 
-import { DossierState, DSResponse } from "../../types/demarcheSimplifiee";
+import { DSResponse } from "../../types/demarcheSimplifiee";
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import {
   requestDossiersWithAnnotations,
-  requestPsychologists,
   requestPsychologistsAcceptes,
   requestPsychologistsById,
   requestPsychologistsState,
@@ -100,7 +99,7 @@ export const getDossiersInConstruction = async (): Promise<
 
   console.time(time);
   const list = await getAllPsychologistList((cursor) =>
-    requestDossiersWithAnnotations(cursor, DossierState.enConstruction)
+    requestDossiersWithAnnotations(cursor)
   );
   console.timeEnd(time);
 

@@ -1,8 +1,16 @@
 import { gql } from "graphql-request";
 
-import { DossierState, DSResponse } from "../../types/demarcheSimplifiee";
+import { DSResponse } from "../../types/demarcheSimplifiee";
 import config from "../config";
 import { request } from "./request";
+
+enum DossierState {
+  enConstruction = "en_construction",
+  enInstruction = "en_instruction",
+  accepte = "accepte",
+  refuse = "refuse",
+  sansSuite = "sans_suite",
+}
 
 const getWhereConditionAfterCursor = (cursor: string): string => {
   if (cursor) {
@@ -115,24 +123,27 @@ export const requestPsychologistsById = async (
 };
 
 export const requestDossiersWithAnnotations = async (
-  afterCursor: string | undefined,
-  state: DossierState
+  afterCursor: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
   const query = gql`
   {
     demarche (number: ${config.demarchesSimplifiees.id}) {
-      dossiers (state: ${state}${paginationCondition}) {
+      dossiers (state: ${DossierState.enConstruction}${paginationCondition}) {
         pageInfo {
           hasNextPage
           endCursor
         }
         nodes {
-          id
+          number
           champs {
             id
             label
             stringValue
+          }
+          groupeInstructeur {
+            id
+            label
           }
           annotations {
             id

@@ -8,6 +8,7 @@ import {
   getPsychologistList,
   getPsychologistState,
 } from "../services/demarchesSimplifiees/import";
+import parsePsychologists from "../services/demarchesSimplifiees/parse-psychologists";
 import {
   countAll,
   filterIdsNotInDb,
@@ -80,7 +81,18 @@ export const verifFolders = async (): Promise<void> => {
     console.log("Starting verifFolders...");
 
     const dossiersInConstruction = await getDossiersInConstruction();
-    const dossiersToVerify = filterDossiersToVerif(dossiersInConstruction);
+    const dossiersToVerify = await parsePsychologists(
+      filterDossiersToVerif(dossiersInConstruction)
+    );
+
+    dossiersToVerify.forEach((dossier) => {
+      if (!dossier.coordinates) {
+        console.log(dossier.id, "(adresse principale):", dossier.address);
+      }
+      if (dossier.secondAddress && !dossier.secondAddressCoordinates) {
+        console.log(dossier.id, "(adresse secondaire):", dossier.secondAddress);
+      }
+    });
 
     console.log("importState done");
   } catch (err) {
