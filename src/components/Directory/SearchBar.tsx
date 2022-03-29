@@ -15,7 +15,7 @@ import {
 } from "../../services/frontend/geo.api";
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
-import { allPublics } from "../../types/enums/public";
+import { allPublicsFilters } from "../../types/enums/public";
 import { SubSearch } from "./Directory.styles";
 
 const geoStatusEnum = {
@@ -119,9 +119,9 @@ const SearchBar = ({
               })
             }
             label="Souhait du psychologue d'accompagner des"
-            options={allPublics.map((option) => ({
-              label: option.replace("et", "ou"),
-              value: option,
+            options={allPublicsFilters.map((option) => ({
+              label: option.label || option.value,
+              value: option.value,
             }))}
           />
 
