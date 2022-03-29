@@ -89,3 +89,38 @@ export const requestPsychologistsAcceptes = async (
 
   return request(query);
 };
+
+export const requestPsychologistsById = async (
+  id: number
+): Promise<DSResponse> => {
+  const query = gql`
+    {
+      dossier (number: ${id}) {
+        archived
+        number
+        groupeInstructeur {
+          id
+          label
+        }
+        state
+        champs {
+          id
+          label
+          stringValue
+        }
+        usager {
+          email
+        }
+        demandeur {
+          ... on PersonnePhysique {
+            civilite
+            nom
+            prenom
+          }
+        }
+      }
+    }
+  `;
+
+  return request(query);
+};

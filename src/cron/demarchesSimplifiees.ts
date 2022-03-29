@@ -2,10 +2,15 @@ import * as Sentry from "@sentry/nextjs";
 
 import { models } from "../db/models";
 import {
+  getPsychologistFromListIds,
   getPsychologistList,
   getPsychologistState,
 } from "../services/demarchesSimplifiees/import";
-import { saveMany, updateState } from "../services/psychologists";
+import {
+  filterIdsNotInDb,
+  saveMany,
+  updateState,
+} from "../services/psychologists";
 
 export const importData = async (): Promise<void> => {
   try {
@@ -42,9 +47,17 @@ export const importState = async (): Promise<void> => {
     const dsAPIData = await getPsychologistState();
 
     await updateState(dsAPIData);
-    console.log("importState done");
+    const missingPsy: number[] = await filterIdsNotInDb(
+      dsAPIData.filter((psy) => psy.state === "accepte")
+    );
+    if (missingPsy.length) {
+      const missingPsyData = await getPsychologistFromListIds(missingPsy);
+      await saveMany(missingPsyData);
+      console.log(`Added ${missingPsy.length} missing psys`);
+    }
+    console.log(`importState done.`);
   } catch (err) {
     Sentry.captureException(err);
-    console.error("ERROR: Could not import DS API state to PG", err);
+    console.error("ERROR importState: ", err);
   }
 };
