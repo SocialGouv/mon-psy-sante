@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.7...v1.23.0) (2022-03-29)
+
+
+### Features
+
+* **importState:** save missing psy (as importData seems to miss some psy) ([#123](https://github.com/SocialGouv/mon-psy-sante/issues/123)) ([5bbcd35](https://github.com/SocialGouv/mon-psy-sante/commit/5bbcd356a5b7994fcf45d7e7f505f1e7da981ee3))
+
 ## [1.22.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.6...v1.22.7) (2022-03-29)
 
 
