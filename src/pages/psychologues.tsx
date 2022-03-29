@@ -184,7 +184,7 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      Dès avril&nbsp;2022, mes coordonnées sont{" "}
+                      Dès le 5&nbsp;avril&nbsp;2022, mes coordonnées sont{" "}
                       <strong>publiées sur le site</strong> monpsy.sante.gouv.fr
                     </p>
                   </div>

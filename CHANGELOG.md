@@ -1,3 +1,10 @@
+## [1.22.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.6...v1.22.7) (2022-03-29)
+
+
+### Bug Fixes
+
+* **text:** update date on site + add some docs ([#121](https://github.com/SocialGouv/mon-psy-sante/issues/121)) ([b91e7b3](https://github.com/SocialGouv/mon-psy-sante/commit/b91e7b3e5da1f9344e0defeed949f249f980c69c))
+
 ## [1.22.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.5...v1.22.6) (2022-03-24)
 
 
