@@ -29,7 +29,7 @@ const Psychologist = ({
             <Icon
               aria-hidden="true"
               alt=""
-              className="fr-mr-1w"
+              className="fr-mr-1w fr-mb-1v"
               height="18"
               width="18"
               src="/images/icones/map-pin-fill.svg"
