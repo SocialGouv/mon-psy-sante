@@ -23,8 +23,8 @@ const Page = () => {
               <h1>Je suis angoissé(e) ou déprimé(e)</h1>
               <p>Je souhaite bénéficier de l’accompagnement d’un psychologue</p>
               <p className="fr-text--lead">
-                Le dispositif MonPsy sera accessible à partir d’
-                <strong>avril&nbsp;2022</strong>.
+                Le dispositif MonPsy sera accessible à partir du{" "}
+                <strong>5&nbsp;avril&nbsp;2022</strong>.
               </p>
               <div className="fr-highlight fr-highlight--yellow-tournesol fr-mt-4w fr-pr-6w">
                 <p>
@@ -131,8 +131,8 @@ const Page = () => {
                 <div className="fr-callout fr-callout--pink-tuile fr-my-2w">
                   <p>
                     Les coordonnées des psychologues partenaires, conventionnés
-                    avec l’Assurance Maladie, seront disponibles à partir
-                    d’avril 2022.
+                    avec l’Assurance Maladie, seront disponibles à partir du{" "}
+                    5&nbsp;avril&nbsp;2022.
                   </p>
                 </div>
               )}
@@ -291,6 +291,13 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer grand public.pdf"
+                >
+                  Flyer Grand Public
+                </a>
+                <a
                   href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
@@ -433,17 +440,17 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer grand public.pdf"
+                >
+                  Flyer Grand Public
+                </a>
+                <a
                   href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ
-                </a>
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left"
-                  target="_blank"
-                  href="/documents/MonPsy_Flyer tout public_2021.pdf"
-                >
-                  Flyer d’information
                 </a>
               </p>
             </div>
