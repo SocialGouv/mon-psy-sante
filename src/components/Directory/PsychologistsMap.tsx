@@ -4,9 +4,9 @@ import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 
-function ChangeView({ center }) {
+function ChangeView({ center, mapZoom }) {
   const map = useMap();
-  map.setView(center);
+  map.setView(center, mapZoom);
   return null;
 }
 
@@ -63,20 +63,22 @@ const PsychologistsMap = ({
   psychologists,
   selectPsychologist,
   selectedPsychologist,
+  mapZoom,
 }: {
-  mapCenter: any;
+  mapCenter: [number, number];
   psychologists: PsychologistType[];
   selectPsychologist?: (psychologist: PsychologistType) => void;
   selectedPsychologist: number;
+  mapZoom: number;
 }) => {
   return (
     <MapContainer
       center={mapCenter}
-      zoom={12}
+      zoom={mapZoom}
       scrollWheelZoom={false}
       style={{ height: "100%", minHeight: "300px", width: "100%" }}
     >
-      <ChangeView center={mapCenter} />
+      <ChangeView center={mapCenter} mapZoom={mapZoom} />
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {psychologists
         .filter((psychologist) => psychologist.coordinates)
