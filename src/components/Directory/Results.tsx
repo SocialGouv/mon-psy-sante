@@ -16,6 +16,8 @@ const Results = ({
   setSelectedPsychologist,
   mapCenter,
   setMapCenter,
+  mapZoom,
+  setMapZoom,
 }: {
   psychologists: PsychologistType[];
   loadMorePsychologists: () => void;
@@ -25,14 +27,17 @@ const Results = ({
   setSelectedPsychologist: Dispatch<SetStateAction<number>>;
   mapCenter: Coordinates;
   setMapCenter: Dispatch<SetStateAction<Coordinates>>;
+  mapZoom: number;
+  setMapZoom: Dispatch<SetStateAction<number>>;
 }) => {
-  const onClick = (psychologist: PsychologistType) => {
+  const selectPsy = (psychologist: PsychologistType) => {
     setSelectedPsychologist(psychologist.id);
     if (psychologist.coordinates) {
       setMapCenter({
         latitude: psychologist.coordinates.coordinates[1],
         longitude: psychologist.coordinates.coordinates[0],
       });
+      setMapZoom(14);
     }
   };
 
@@ -50,7 +55,7 @@ const Results = ({
             <div className="fr-mb-2w">
               <Psychologist
                 psychologist={psychologist}
-                onClick={onClick}
+                onClick={selectPsy}
                 selected={selectedPsychologist === psychologist.id}
               />
             </div>
@@ -63,11 +68,7 @@ const Results = ({
           <PsychologistsMap
             selectedPsychologist={selectedPsychologist}
             selectPsychologist={(psychologist) => {
-              setSelectedPsychologist(psychologist.id);
-              setMapCenter({
-                latitude: psychologist.coordinates.coordinates[1],
-                longitude: psychologist.coordinates.coordinates[0],
-              });
+              selectPsy(psychologist);
               resultsRef.current.scrollTo({
                 top:
                   psychologistsRefs.current[psychologist.id].current.offsetTop -
@@ -76,6 +77,7 @@ const Results = ({
             }}
             mapCenter={[mapCenter.latitude, mapCenter.longitude]}
             psychologists={psychologists}
+            mapZoom={mapZoom}
           />
         )}
       </Col>

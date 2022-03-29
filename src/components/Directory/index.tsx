@@ -28,6 +28,7 @@ const Directory = () => {
   const [noPsychologist, setNoPsychologist] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [mapCenter, setMapCenter] = useState<Coordinates>();
+  const [mapZoom, setMapZoom] = useState<number>(12);
 
   const [positionFilter, setPositionFilter] = useState<any>("");
   const [otherFilters, setOtherFilters] = useState({
@@ -39,6 +40,20 @@ const Directory = () => {
     loadPsychologists(currentPageRef.current + 1);
     currentPageRef.current = currentPageRef.current + 1;
   };
+
+  const APPROX_50_KM = 0.5;
+  const APPROX_40_KM = 0.4;
+
+  function setupMapAccordingToPsy(distance) {
+    if (distance > APPROX_50_KM) {
+      setNoPsychologist(true);
+      setMapZoom(8);
+    } else if (distance > APPROX_40_KM) {
+      setMapZoom(10);
+    } else {
+      setMapZoom(12);
+    }
+  }
 
   const loadPsychologists = (currentPage) => {
     let query = `?${FILTER.PAGE_INDEX}=${currentPage}`;
@@ -57,11 +72,10 @@ const Directory = () => {
     }
     axios.get(`/api/psychologists${query}`).then((response) => {
       setIsLoading(false);
+
       if (currentPage === 0) {
         const refs = {};
-        if (response.data[0].distance > 1) {
-          setNoPsychologist(true);
-        }
+        setupMapAccordingToPsy(response.data[0].distance);
         response.data.forEach((x) => (refs[x.id] = createRef()));
         psychologistsRefs.current = refs;
         if (resultsRef.current) {
@@ -146,6 +160,8 @@ A noter, certains psychologues acceptent les séances à distance après la 1èr
             setSelectedPsychologist={setSelectedPsychologist}
             mapCenter={mapCenter}
             setMapCenter={setMapCenter}
+            mapZoom={mapZoom}
+            setMapZoom={setMapZoom}
           />
         )}
         {isLoading && <Spinner />}
