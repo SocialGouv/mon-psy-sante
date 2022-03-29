@@ -113,29 +113,19 @@ const Page = () => {
                 présentant un risque suicidaire ou avec des critères de gravité
                 ou de dépendance.
               </p>
-              {process.env.NEXT_PUBLIC_NEW_FEATURES === "true" ? (
-                <div>
-                  <p>
-                    <strong>
-                      Je trouve un psychologue partenaire près de chez moi
-                    </strong>
-                  </p>
-                  <Button
-                    icon="fr-fi-search-line"
-                    onClick={() => router.push("/annuaire")}
-                  >
-                    Trouver un psychologue
-                  </Button>
-                </div>
-              ) : (
-                <div className="fr-callout fr-callout--pink-tuile fr-my-2w">
-                  <p>
-                    Les coordonnées des psychologues partenaires, conventionnés
-                    avec l’Assurance Maladie, seront disponibles à partir
-                    d’avril 2022.
-                  </p>
-                </div>
-              )}
+              <div>
+                <p>
+                  <strong>
+                    Je trouve un psychologue partenaire près de chez moi
+                  </strong>
+                </p>
+                <Button
+                  icon="fr-fi-search-line"
+                  onClick={() => router.push("/annuaire")}
+                >
+                  Trouver un psychologue
+                </Button>
+              </div>
             </div>
           </div>
         </div>

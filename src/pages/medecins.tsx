@@ -253,26 +253,12 @@ const Page = () => {
               </p>
             </div>
           </div>
-          {process.env.NEXT_PUBLIC_NEW_FEATURES === "true" ? (
-            <Button
-              icon="fr-fi-search-line"
-              onClick={() => router.push("/annuaire")}
-            >
-              Trouver un psychologue partenaire
-            </Button>
-          ) : (
-            <div className="fr-container fr-callout fr-callout--pink-tuile fr-my-6w">
-              <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-                <div className="fr-col-12">
-                  <p className="fr-text--lead">
-                    Les coordonnées des psychologues partenaires, conventionnés
-                    avec l’Assurance Maladie, seront disponibles à partir du
-                    printemps 2022.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
+          <Button
+            icon="fr-fi-search-line"
+            onClick={() => router.push("/annuaire")}
+          >
+            Trouver un psychologue partenaire
+          </Button>
         </Container>
       </section>
       <section>

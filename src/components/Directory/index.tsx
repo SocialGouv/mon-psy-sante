@@ -79,12 +79,6 @@ const Directory = () => {
   };
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_NEW_FEATURES !== "true") {
-      router.push("/");
-    }
-  }, []);
-
-  useEffect(() => {
     if (positionFilter === "Autour de moi") {
       return;
     }

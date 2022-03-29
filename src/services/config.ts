@@ -23,7 +23,6 @@ export default {
     tls: parseBoolean(process.env.MAIL_TLS),
   },
   minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.30"),
-  newFeatures: parseBoolean(process.env.NEXT_PUBLIC_NEW_FEATURES),
   nextAuthUrl: process.env.NEXTAUTH_URL,
   postgre: {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
