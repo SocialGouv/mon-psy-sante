@@ -1,3 +1,4 @@
+import pLimit from "p-limit";
 import Sequelize, { Op } from "sequelize";
 
 import { models } from "../db/models";
@@ -6,6 +7,8 @@ import { FILTER } from "../types/enums/filters";
 import { PUBLIC } from "../types/enums/public";
 import { Psychologist } from "../types/psychologist";
 import getAddressCoordinates from "./getAddressCoordinates";
+
+const limit = pLimit(5);
 
 export const getOne = async (id: string): Promise<Psychologist> => {
   // @ts-ignore
@@ -143,13 +146,28 @@ export const update = async (
 export const updateState = async (newStates: Partial<Psychologist>[]) => {
   return Promise.all(
     newStates.map((newState) =>
-      models.Psychologist.update(
-        {
-          archived: newState.archived,
-          state: newState.state,
-        },
-        { where: { id: newState.id } }
+      limit(() =>
+        models.Psychologist.update(
+          {
+            archived: newState.archived,
+            state: newState.state,
+          },
+          { where: { id: newState.id } }
+        )
       )
     )
   );
+};
+
+export const filterIdsNotInDb = async (psy): Promise<number[]> => {
+  // @ts-ignore
+  const psyInDb: { id: number }[] = await models.Psychologist.findAll({
+    attributes: ["id"],
+    raw: true,
+    where: { state: "accepte" },
+  });
+
+  return psy
+    .filter((psy) => !psyInDb.find((fromDb) => psy.id === fromDb.id))
+    .map((psy) => psy.id);
 };
