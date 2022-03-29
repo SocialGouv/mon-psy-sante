@@ -62,7 +62,7 @@ const Psychologist = ({
               />
               <a
                 href={`mailto:${psychologist.email}`}
-                rel="noreferrer"
+                rel="noreferrer nofollow"
                 target="_blank"
               >
                 {psychologist.email}
