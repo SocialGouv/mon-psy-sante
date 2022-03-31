@@ -1,4 +1,11 @@
-import React from "react";
+import {
+  Button,
+  Modal,
+  ModalClose,
+  ModalContent,
+  ModalTitle,
+} from "@dataesr/react-dsfr";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
@@ -12,33 +19,25 @@ const Psychologist = ({
   selected?: boolean;
   onClick?: (psychologist: PsychologistType) => void;
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <PsychologistTile
       selected={selected}
       className="fr-tile fr-tile--horizontal "
       onClick={() => onClick(psychologist)}
     >
-      <div className="fr-tile__body">
-        <div className="fr-tile__title ">
-          <p className="fr-text--lead highlight">
-            {psychologist.firstName} {psychologist.lastName}
-          </p>
-        </div>
-        <div className="fr-tile__desc">
-          <p className="fr-my-0">
-            <Icon
-              aria-hidden="true"
-              alt=""
-              className="fr-mr-1w fr-mb-1v"
-              height="18"
-              width="18"
-              src="/images/icones/map-pin-fill.svg"
-            />
-            {psychologist.address}
-          </p>
-          <p className="fr-text--sm fr-text--bold fr-mt-1w">
-            Pour prendre rendez-vous :
-          </p>
+      <Modal isOpen={isOpen} hide={() => setIsOpen(false)}>
+        <ModalClose
+          hide={() => setIsOpen(false)}
+          title="Close the modal window"
+        >
+          Fermer
+        </ModalClose>
+        <ModalTitle icon="ri-arrow-right-fill">
+          Pour prendre rendez-vous
+        </ModalTitle>
+        <ModalContent>
           <p className="fr-my-0">
             <Icon
               aria-hidden="true"
@@ -85,6 +84,38 @@ const Psychologist = ({
               </a>
             </p>
           )}
+        </ModalContent>
+      </Modal>
+      <div className="fr-tile__body">
+        <div className="fr-tile__title ">
+          <p className="fr-text--lead highlight">
+            {psychologist.firstName} {psychologist.lastName}
+          </p>
+        </div>
+        <div className="fr-tile__desc">
+          <p className="fr-my-0">
+            <Icon
+              aria-hidden="true"
+              alt=""
+              className="fr-mr-1w fr-mb-1v"
+              height="18"
+              width="18"
+              src="/images/icones/map-pin-fill.svg"
+            />
+            {psychologist.address}
+          </p>
+
+          <>
+            <Button
+              secondary
+              size="sm"
+              title="Voir le contact"
+              className="fr-mt-1w"
+              onClick={() => setIsOpen(true)}
+            >
+              Voir le contact pour prendre rendez-vous
+            </Button>
+          </>
           <div className="fr-p-1w" />
           <p className="fr-my-0 text-grey">
             <Icon
