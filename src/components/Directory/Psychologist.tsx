@@ -23,21 +23,21 @@ const Psychologist = ({
           <p className="fr-text--lead highlight">
             {psychologist.firstName} {psychologist.lastName}
           </p>
-          <p className="fr-tile__desc">
-            Accompagne des {psychologist.public.toLowerCase()}
-          </p>
         </div>
         <div className="fr-tile__desc">
           <p className="fr-my-0">
             <Icon
               aria-hidden="true"
               alt=""
-              className="fr-mr-1w"
+              className="fr-mr-1w fr-mb-1v"
               height="18"
               width="18"
               src="/images/icones/map-pin-fill.svg"
             />
             {psychologist.address}
+          </p>
+          <p className="fr-text--sm fr-text--bold fr-mt-1w">
+            Pour prendre rendez-vous :
           </p>
           <p className="fr-my-0">
             <Icon
@@ -49,16 +49,6 @@ const Psychologist = ({
               src="/images/icones/phone-fill.svg"
             />
             {psychologist.phone}{" "}
-            {psychologist.website && (
-              <a
-                className="fr-ml-2w"
-                href={psychologist.website}
-                rel="noreferrer"
-                target="_blank"
-              >
-                Site internet
-              </a>
-            )}
           </p>
           {psychologist.email && (
             <p className="fr-my-0">
@@ -72,20 +62,47 @@ const Psychologist = ({
               />
               <a
                 href={`mailto:${psychologist.email}`}
-                rel="noreferrer"
+                rel="noreferrer nofollow"
                 target="_blank"
               >
                 {psychologist.email}
               </a>
             </p>
           )}
+          {psychologist.website && (
+            <p className="fr-my-0">
+              <Icon
+                aria-hidden="true"
+                alt=""
+                className="fr-mr-1w"
+                height="18"
+                width="18"
+                src="/images/icones/computer-line.svg"
+              />
+
+              <a href={psychologist.website} rel="noreferrer" target="_blank">
+                Site internet
+              </a>
+            </p>
+          )}
           <div className="fr-p-1w" />
+          <p className="fr-my-0 text-grey">
+            <Icon
+              aria-hidden="true"
+              alt=""
+              className="fr-mr-1w fr-mb-1v"
+              height="20"
+              width="20"
+              src="/images/icones/team-fill.svg"
+            />
+            Accompagne des {psychologist.public.toLowerCase()}
+          </p>
           {psychologist.teleconsultation && (
             <p className="fr-my-0 text-grey">
               <Icon
                 aria-hidden="true"
                 alt=""
-                className="fr-mr-1w"
+                className="fr-mr-1w fr-mb-1v"
                 height="18"
                 width="18"
                 src="/images/icones/vidicon-fill.svg"
@@ -99,7 +116,7 @@ const Psychologist = ({
                 aria-hidden="true"
                 title="Langue(s) parlée(s) en plus du français"
                 alt=""
-                className="fr-mr-1w"
+                className="fr-mr-1w fr-mb-1v"
                 height="18"
                 width="18"
                 src="/images/icones/chat-fill.svg"

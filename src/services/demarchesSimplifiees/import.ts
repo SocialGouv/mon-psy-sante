@@ -1,11 +1,15 @@
+import pLimit from "p-limit";
+
 import { DSResponse } from "../../types/demarcheSimplifiee";
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import {
   requestPsychologistsAcceptes,
+  requestPsychologistsById,
   requestPsychologistsState,
 } from "./buildRequest";
 import parsePsychologists from "./parse-psychologists";
 
+const limit = pLimit(5);
 const getAllPsychologistList = async (
   graphqlFunction: (string) => Promise<DSResponse>,
   cursor: string | undefined = undefined,
@@ -53,6 +57,23 @@ export const getPsychologistList = async (
   console.timeEnd(time);
 
   return results;
+};
+
+function fetchPsyById(ids: number[]) {
+  return Promise.all(
+    ids.map(async (id) => limit(() => requestPsychologistsById(id)))
+  );
+}
+
+function mapPsyData(psyData: any[]) {
+  return psyData.map((psy) => psy.dossier).flat();
+}
+
+export const getPsychologistFromListIds = async (
+  ids: number[]
+): Promise<Psychologist[]> => {
+  const psyData = await fetchPsyById(ids);
+  return await parsePsychologists(mapPsyData(psyData));
 };
 
 export const getPsychologistState = async (): Promise<

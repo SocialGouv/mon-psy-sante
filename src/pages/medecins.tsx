@@ -20,8 +20,8 @@ const Page = () => {
               <h1>Je suis médecin</h1>
               <p>Je souhaite orienter au mieux mes patients</p>
               <p className="fr-text--lead fr-mt-10w">
-                Le dispositif MonPsy sera accessible à partir d’
-                <strong>avril&nbsp;2022</strong>.
+                Le dispositif MonPsy sera accessible à partir du{" "}
+                <strong>5&nbsp;avril&nbsp;2022</strong>.
               </p>
             </div>
             <div className="fr-col-12 fr-col-lg-5">
@@ -108,8 +108,14 @@ const Page = () => {
               </p>
 
               <p>
-                Pour plus de précisions, référez vous au guide à destination des
-                médecins (à venir)
+                Pour plus de précisions, référez vous au{" "}
+                <a
+                  className="fr-link"
+                  target="_blank"
+                  href="/documents/MonPsy_Guide médecin_2022.pdf"
+                >
+                  guide à destination des médecins
+                </a>
               </p>
             </div>
           </div>
@@ -308,6 +314,20 @@ const Page = () => {
             <div className="fr-col-12">
               <p className="fr-text--lead">
                 Je souhaite accéder à la documentation&nbsp;?
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Guide médecin_2022.pdf"
+                >
+                  Guide pour les médecins
+                </a>
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                >
+                  Fiche mémo pour les médecins
+                </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"

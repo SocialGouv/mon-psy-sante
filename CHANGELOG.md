@@ -1,3 +1,24 @@
+## [1.23.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.23.0...v1.23.1) (2022-03-31)
+
+
+### Bug Fixes
+
+* **text:** update text + add 3 new questions to FAQ ([#124](https://github.com/SocialGouv/mon-psy-sante/issues/124)) ([e7daeed](https://github.com/SocialGouv/mon-psy-sante/commit/e7daeedf88e1e26b3a5c7e27719602e3309525c2))
+
+# [1.23.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.7...v1.23.0) (2022-03-29)
+
+
+### Features
+
+* **importState:** save missing psy (as importData seems to miss some psy) ([#123](https://github.com/SocialGouv/mon-psy-sante/issues/123)) ([5bbcd35](https://github.com/SocialGouv/mon-psy-sante/commit/5bbcd356a5b7994fcf45d7e7f505f1e7da981ee3))
+
+## [1.22.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.6...v1.22.7) (2022-03-29)
+
+
+### Bug Fixes
+
+* **text:** update date on site + add some docs ([#121](https://github.com/SocialGouv/mon-psy-sante/issues/121)) ([b91e7b3](https://github.com/SocialGouv/mon-psy-sante/commit/b91e7b3e5da1f9344e0defeed949f249f980c69c))
+
 ## [1.22.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.5...v1.22.6) (2022-03-24)
 
 

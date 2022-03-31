@@ -20,11 +20,11 @@ const Page = () => {
         <div className="fr-container fr-mt-4w fr-mb-8w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-12 fr-col-lg-8">
-              <h1>Je suis angoissé(e) ou déprimé(e)</h1>
+              <h1>Je ne me sens pas bien</h1>
               <p>Je souhaite bénéficier de l’accompagnement d’un psychologue</p>
               <p className="fr-text--lead">
-                Le dispositif MonPsy sera accessible à partir d’
-                <strong>avril&nbsp;2022</strong>.
+                Le dispositif MonPsy sera accessible à partir du{" "}
+                <strong>5&nbsp;avril&nbsp;2022</strong>.
               </p>
               <div className="fr-highlight fr-highlight--yellow-tournesol fr-mt-4w fr-pr-6w">
                 <p>
@@ -45,7 +45,7 @@ const Page = () => {
               <img
                 src="/images/patient.svg"
                 height="380"
-                alt="Je suis angoissé(e) ou déprimé(e) illustration"
+                alt="Je ne me sens pas bien illustration"
               />
               {video === "hide" && (
                 <VideoButton onClick={() => setVideo("show")} />
@@ -144,7 +144,7 @@ const Page = () => {
                     Je prends rendez-vous avec mon médecin
                   </h3>
                   <div className="fr-card__desc">
-                    <p>Je suis angoissé(e) ou déprimé(e).</p>
+                    <p>Je ne me sens pas bien.</p>
                     <p>
                       Le médecin <strong>évalue mon état de santé.</strong>
                     </p>
@@ -281,6 +281,13 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer grand public.pdf"
+                >
+                  Flyer Grand Public
+                </a>
+                <a
                   href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
@@ -374,7 +381,7 @@ const Page = () => {
               <img
                 src="/images/children.svg"
                 height="250"
-                alt="Je suis angoissé(e) ou déprimé(e) illustration"
+                alt="Je ne me sens pas bien illustration"
               />
             </div>
           </div>
@@ -423,17 +430,17 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer grand public.pdf"
+                >
+                  Flyer Grand Public
+                </a>
+                <a
                   href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ
-                </a>
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left"
-                  target="_blank"
-                  href="/documents/MonPsy_Flyer tout public_2021.pdf"
-                >
-                  Flyer d’information
                 </a>
               </p>
             </div>
