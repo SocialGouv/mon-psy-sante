@@ -13,8 +13,6 @@ import Results from "./Results";
 import SearchBar from "./SearchBar";
 
 const Directory = () => {
-  const currentPageRef = useRef(0);
-
   const [coords, setCoords] = useState<Coordinates>();
   const [geoLoading, setGeoLoading] = useState(false);
 
