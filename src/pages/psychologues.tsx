@@ -308,8 +308,15 @@ const Page = () => {
               </p>
 
               <p>
-                Pour plus de précisions, je me réfère au guide à destination des
-                psychologues. (à venir)
+                Pour plus de précisions, je me réfère au{" "}
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Guide psychologue_2022.pdf"
+                >
+                  guide à destination des psychologues
+                </a>
+                .
               </p>
             </div>
           </div>

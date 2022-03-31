@@ -71,7 +71,7 @@ const Page = () => {
                     <h2 className="fr-card__title">
                       <Link href="/patients" passHref>
                         <a href="/patients" className="fr-card__link">
-                          Je suis angoissé(e), déprimé(e)
+                          Je ne me sens pas bien
                         </a>
                       </Link>
                     </h2>
