@@ -12,11 +12,22 @@ const csp = {
     "data:",
     "https://forms.sbc08.com",
     "https://*.tile.openstreetmap.org/",
+    "https://www.ssa.gov",
   ],
   "prefetch-src": ["'self'", "https://*.gouv.fr"],
-  "script-src": ["'self'", "https://*.gouv.fr", "https://*.sbc08.com"],
+  "script-src": [
+    "'self'",
+    "https://*.gouv.fr",
+    "https://*.sbc08.com",
+    "https://www.ssa.gov",
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
+  ],
   "frame-src": ["'self'", "https://*.gouv.fr"],
-  "style-src": ["'self'", "'unsafe-inline'"],
+  "style-src": [
+    "'self'",
+    "'unsafe-inline'",
+    "https://www.ssa.gov/accessibility/andi/andi.css",
+  ],
 };
 
 // In dev we allow 'unsafe-eval', so HMR doesn't trigger the CSP
