@@ -2,7 +2,7 @@
 export default [
   {
     answer:
-      "<p>A partir d’avril 2022, l’ensemble des personnes âgées de 3 ans ou plus (enfants, adolescents et adultes), souffrant de troubles psychiques d’intensité légère à modérée, peuvent, après consultation d’un médecin, bénéficier de la prise en charge d’un accompagnement psychologique réalisé par un psychologue partenaire.<p>Vous êtes concerné(e) :<ul><li>Si vous êtes angoissé(e), anxieux(se) ou déprimé(e)</li><li>Si vous êtes en situation de mal-être </li><li>Si vous avez un problème de consommation de tabac, d’alcool ou de cannabis </li><li>Si vous avez un trouble du comportement alimentaire </li></ul></p><p>Le médecin évalue si ce dispositif d’accompagnement psychologique est pour vous, ou s’il est préférable de vous orienter directement vers des soins plus spécialisés.</p>",
+      "<p> L’ensemble des personnes âgées de 3 ans ou plus (enfants, adolescents et adultes), souffrant de troubles psychiques d’intensité légère à modérée, peuvent, après consultation d’un médecin, bénéficier de la prise en charge d’un accompagnement psychologique réalisé par un psychologue partenaire.<p>Vous êtes concerné(e) :<ul><li>Si vous êtes angoissé(e), anxieux(se) ou déprimé(e)</li><li>Si vous êtes en situation de mal-être </li><li>Si vous avez un problème de consommation de tabac, d’alcool ou de cannabis </li><li>Si vous avez un trouble du comportement alimentaire </li></ul></p><p>Le médecin évalue si ce dispositif d’accompagnement psychologique est pour vous, ou s’il est préférable de vous orienter directement vers des soins plus spécialisés.</p>",
     question: "Suis-je concerné(e) par le dispositif ?",
   },
   {
