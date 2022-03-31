@@ -11,7 +11,8 @@ const Psychologist = () => {
         <a href="https://espacepro.ameli.fr/" rel="noreferrer" target="_blank">
           ameli.pro
         </a>{" "}
-        ou à appeler le <b>36 08 (service gratuit + prix de l&lsquo;appel)</b>.
+        ou à appeler le{" "}
+        <strong>36 08 (service gratuit + prix de l&lsquo;appel)</strong>.
       </CalloutText>
     </Callout>
   );

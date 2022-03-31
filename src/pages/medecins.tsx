@@ -19,10 +19,6 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-7">
               <h1>Je suis médecin</h1>
               <p>Je souhaite orienter au mieux mes patients</p>
-              <p className="fr-text--lead fr-mt-10w">
-                Le dispositif MonPsy sera accessible à partir du{" "}
-                <strong>5&nbsp;avril&nbsp;2022</strong>.
-              </p>
             </div>
             <div className="fr-col-12 fr-col-lg-5">
               <img
