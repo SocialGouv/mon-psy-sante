@@ -39,4 +39,13 @@ export default [
     question:
       "Mon patient peut-il bénéficier de la prise en charge des transports pour se rendre chez un psychologue ? Dois-je faire une prescription de transport ?",
   },
+  {
+    answer:
+      "<p>Les psychologues du travail sont formés pour gérer ces situations.</p>" +
+      "<p>Le rôle du médecin du travail étant exclusivement préventif (article L.4622-3 du code du travail), il n’a donc pas vocation à adresser directement les travailleurs en souffrance psychique. En effet, les services de santé au travail ont pour mission exclusive d'éviter toute altération de la santé des travailleurs du fait de leur travail.</p>" +
+      "<p>Il est donc préférable, dans ce cas précis, que le médecin du travail propose au travailleur d’aller consulter soit le psychologue du travail, soit le médecin traitant.</p>" +
+      "<p>Si, toutefois, la situation le nécessite (absence de psychologue du travail et situation nécessitant une réponse rapide : risques psychosociaux ou harcèlement), le médecin du travail peut, à titre exceptionnel, après évaluation de l’état de santé et vérification de l’éligibilité, orienter la personne vers le dispositif MonPsy. </p>",
+    question:
+      "Un médecin du travail peut-il adresser un patient à un psychologue partenaire dans le cadre du dispositif MonPsy ?",
+  },
 ];

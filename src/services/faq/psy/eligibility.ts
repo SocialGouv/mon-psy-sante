@@ -25,6 +25,23 @@ export default [
   },
   {
     answer:
+      "<p>Il n’est pas possible pour un psychologue salarié d’un établissement de santé de participer au dispositif MonPsy.</p>" +
+      "<p>En effet, seuls les psychologues libéraux ou salariés d’une structure d’exercice coordonné (maison de santé ou centre de santé), sont éligibles au dispositif.</p>" +
+      "<p>Toutefois, si le psychologue salarié d’un établissement de santé exerce à temps partiel, il peut participer au dispositif sur son temps d’activité libérale ou de salarié d’une structure d’exercice coordonné.</p>",
+    question:
+      "Un psychologue salarié d’un établissement de santé peut-il participer au dispositif MonPsy ?",
+  },
+  {
+    answer:
+      "<p>Oui, un psychologue participant déjà à un autre dispositif (ex : la mesure 31 du Ségur de la Santé « renforcement en psychologues des MSP ») peut tout à fait devenir partenaire du dispositif MonPsy.</p>" +
+      "<p>Dans ce cas, le psychologue devra distinguer :</p>" +
+      "<ul><li>Les patients suivis dans le cadre de MonPsy dont les séances feront l’objet d’un remboursement direct par la CPAM</li>" +
+      "<li>Les patients suivis dans un autre cadre et bénéficiant donc de leurs propres modalités de financement (exemple pour la mesure 31 du Ségur : financement par dotation de l’ARS versée à la MSP)</li></ul>",
+    question:
+      "Un psychologue participant à des dispositifs pré-existants (ex : mesure 31 du Ségur de la Santé) peut-il être partenaire dans le cadre de MonPsy ?",
+  },
+  {
+    answer:
       "<p>Si vous souhaitez être référencé(e) pour accompagner les enfants ou les adolescents, vous devez avoir une expérience clinique auprès d’enfants ou d’adolescents. Il vous revient d’apprécier si cette expérience est suffisante pour prendre en charge des enfants et des adolescents. En tant que psychologue partenaire, votre souhait de pouvoir recevoir des enfants et adolescents sera indiqué dans l’annuaire accessible au public.</p>",
     question:
       "Puis-je participer au dispositif si je n’ai pas d’expérience avec les enfants et/ou les adolescents ?",
