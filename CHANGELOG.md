@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.23.1...v1.24.0) (2022-03-31)
+
+
+### Features
+
+* **annuaire:** remove load more psy functionality (voir plus de psy - pagination) to avoid people to crawl all the data ([#126](https://github.com/SocialGouv/mon-psy-sante/issues/126)) ([4107379](https://github.com/SocialGouv/mon-psy-sante/commit/4107379022147e825d4ccb8dddb37c46d626bb41))
+
 ## [1.23.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.23.0...v1.23.1) (2022-03-31)
 
 
