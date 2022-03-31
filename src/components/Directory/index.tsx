@@ -1,6 +1,5 @@
 import { Alert } from "@dataesr/react-dsfr";
 import axios from "axios";
-import { useRouter } from "next/router";
 import React, { createRef, useEffect, useRef, useState } from "react";
 
 import { Coordinates } from "../../types/coordinates";
@@ -14,8 +13,6 @@ import Results from "./Results";
 import SearchBar from "./SearchBar";
 
 const Directory = () => {
-  const router = useRouter();
-
   const currentPageRef = useRef(0);
 
   const [coords, setCoords] = useState<Coordinates>();
