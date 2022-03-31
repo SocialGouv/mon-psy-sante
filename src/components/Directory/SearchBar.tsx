@@ -44,7 +44,7 @@ const SearchBar = ({
   setCoords: Dispatch<SetStateAction<Coordinates>>;
   geoLoading: boolean;
   setGeoLoading: Dispatch<SetStateAction<boolean>>;
-  loadPsychologists: (page: number) => void;
+  loadPsychologists: () => void;
 }) => {
   const [filterText, setFilterText] = useState("");
   const [geoStatus, setGeoStatus] = useState(geoStatusEnum.UNKNOWN);
@@ -151,9 +151,7 @@ const SearchBar = ({
         <Button
           className="fr-ml-1w fr-mt-1w"
           disabled={!coords || geoLoading}
-          onClick={() => {
-            loadPsychologists(0);
-          }}
+          onClick={loadPsychologists}
         >
           {geoLoading ? "Chargement..." : "Rechercher"}
         </Button>
