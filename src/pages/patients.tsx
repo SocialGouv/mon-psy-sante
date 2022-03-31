@@ -20,7 +20,7 @@ const Page = () => {
         <div className="fr-container fr-mt-4w fr-mb-8w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-12 fr-col-lg-8">
-              <h1>Je suis angoissé(e) ou déprimé(e)</h1>
+              <h1>Je ne me sens pas bien</h1>
               <p>Je souhaite bénéficier de l’accompagnement d’un psychologue</p>
               <p className="fr-text--lead">
                 Le dispositif MonPsy sera accessible à partir du{" "}
@@ -45,7 +45,7 @@ const Page = () => {
               <img
                 src="/images/patient.svg"
                 height="380"
-                alt="Je suis angoissé(e) ou déprimé(e) illustration"
+                alt="Je ne me sens pas bien illustration"
               />
               {video === "hide" && (
                 <VideoButton onClick={() => setVideo("show")} />
@@ -154,7 +154,7 @@ const Page = () => {
                     Je prends rendez-vous avec mon médecin
                   </h3>
                   <div className="fr-card__desc">
-                    <p>Je suis angoissé(e) ou déprimé(e).</p>
+                    <p>Je ne me sens pas bien.</p>
                     <p>
                       Le médecin <strong>évalue mon état de santé.</strong>
                     </p>
@@ -391,7 +391,7 @@ const Page = () => {
               <img
                 src="/images/children.svg"
                 height="250"
-                alt="Je suis angoissé(e) ou déprimé(e) illustration"
+                alt="Je ne me sens pas bien illustration"
               />
             </div>
           </div>

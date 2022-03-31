@@ -110,7 +110,7 @@ const Page = () => {
               <p>
                 Pour plus de précisions, référez vous au{" "}
                 <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  className="fr-link"
                   target="_blank"
                   href="/documents/MonPsy_Guide médecin_2022.pdf"
                 >
