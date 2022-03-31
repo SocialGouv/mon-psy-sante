@@ -33,11 +33,6 @@ const Directory = () => {
     [FILTER.PUBLIC]: PUBLIC.BOTH,
   });
 
-  const loadMorePsychologists = () => {
-    loadPsychologists(currentPageRef.current + 1);
-    currentPageRef.current = currentPageRef.current + 1;
-  };
-
   const APPROX_50_KM = 0.5;
   const APPROX_40_KM = 0.4;
 
@@ -52,8 +47,8 @@ const Directory = () => {
     }
   }
 
-  const loadPsychologists = (currentPage) => {
-    let query = `?${FILTER.PAGE_INDEX}=${currentPage}`;
+  const loadPsychologists = () => {
+    let query = `?`;
     setNoPsychologist(false);
     setIsLoading(true);
     setPsychologists([]);
@@ -70,22 +65,15 @@ const Directory = () => {
     axios.get(`/api/psychologists${query}`).then((response) => {
       setIsLoading(false);
 
-      if (currentPage === 0) {
-        const refs = {};
-        setupMapAccordingToPsy(response.data[0].distance);
-        response.data.forEach((x) => (refs[x.id] = createRef()));
-        psychologistsRefs.current = refs;
-        if (resultsRef.current) {
-          resultsRef.current.scrollTo({ top: 0 });
-        }
-        setSelectedPsychologist(null);
-        setPsychologists(response.data);
-      } else {
-        response.data.forEach(
-          (x) => (psychologistsRefs.current[x.id] = createRef())
-        );
-        setPsychologists(psychologists.concat(response.data));
+      const refs = {};
+      setupMapAccordingToPsy(response.data[0].distance);
+      response.data.forEach((x) => (refs[x.id] = createRef()));
+      psychologistsRefs.current = refs;
+      if (resultsRef.current) {
+        resultsRef.current.scrollTo({ top: 0 });
       }
+      setSelectedPsychologist(null);
+      setPsychologists(response.data);
     });
   };
 
@@ -143,7 +131,6 @@ A noter, certains psychologues acceptent les séances à distance après la 1èr
         )}
         {psychologists?.length > 0 && (
           <Results
-            loadMorePsychologists={loadMorePsychologists}
             psychologists={psychologists}
             resultsRef={resultsRef}
             psychologistsRefs={psychologistsRefs}

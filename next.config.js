@@ -51,6 +51,10 @@ const moduleExports = {
     }
     return config;
   },
+  i18n: {
+    locales: ["fr"],
+    defaultLocale: "fr",
+  },
   async headers() {
     return [
       {

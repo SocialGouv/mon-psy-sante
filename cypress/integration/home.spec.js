@@ -5,6 +5,7 @@ describe("Home & landing pages", () => {
     cy.get("h1").should(
       "have.text",
       "L’accès à un accompagnement psychologique pour tous (dès 3 ans)"
+      "MonPsy A partir du 5 avril 2022, l’accès à un accompagnement psychologique pour tous (dès 3 ans)"
     );
 
     cy.get("nav")

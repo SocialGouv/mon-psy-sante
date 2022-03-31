@@ -1,4 +1,4 @@
-import { Button, Col } from "@dataesr/react-dsfr";
+import { Col } from "@dataesr/react-dsfr";
 import React, { Dispatch, MutableRefObject, SetStateAction } from "react";
 
 import { Coordinates } from "../../types/coordinates";
@@ -9,7 +9,6 @@ import PsychologistsMap from "./PsychologistsMap";
 
 const Results = ({
   psychologists,
-  loadMorePsychologists,
   resultsRef,
   psychologistsRefs,
   selectedPsychologist,
@@ -20,7 +19,6 @@ const Results = ({
   setMapZoom,
 }: {
   psychologists: PsychologistType[];
-  loadMorePsychologists: () => void;
   resultsRef: MutableRefObject<any>;
   psychologistsRefs: any;
   selectedPsychologist: number;
@@ -61,7 +59,6 @@ const Results = ({
             </div>
           </div>
         ))}
-        <Button onClick={loadMorePsychologists}>Plus de psychologues</Button>
       </Psychologists>
       <Col n="12 md-7">
         {mapCenter && (
