@@ -6,21 +6,21 @@ https://monpsy.sante.gouv.fr
 
 First you need to run a docker with a postgre DB
 
-```
+```sh
   cp .env.test .env
   docker-compose up
 ```
 
 then you need to prepare the project
 
-```
+```sh
   yarn
   yarn run db:init
 ```
 
 and finally you can run the project locally with
 
-```
+```sh
   yarn run dev
 ```
 
