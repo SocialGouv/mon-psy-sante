@@ -28,7 +28,7 @@ and finally you can run the project locally with
 
 If a docker has been run with seed data, first clear it
 
-```
+```sh
 docker-compose down
 docker volume rm mon-psy-sante_db_data
 docker-compose up
