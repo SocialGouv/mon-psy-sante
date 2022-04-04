@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.26.0...v1.27.0) (2022-04-04)
+
+
+### Features
+
+* **annuaire:** go live with annuaire :rocket: ([#122](https://github.com/SocialGouv/mon-psy-sante/issues/122)) ([ae16f99](https://github.com/SocialGouv/mon-psy-sante/commit/ae16f99ffc214c4c2033f7ab0fb853fbb2e33af6))
+
 # [1.26.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.25.1...v1.26.0) (2022-04-04)
 
 
