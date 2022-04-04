@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.25.1...v1.26.0) (2022-04-04)
+
+
+### Features
+
+* **scripts:** add script to extract email + update logs on import scripts ([#133](https://github.com/SocialGouv/mon-psy-sante/issues/133)) ([ea4e0dc](https://github.com/SocialGouv/mon-psy-sante/commit/ea4e0dcb59fe128af92bf0cc0325731a1137bfa3))
+
 ## [1.25.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.25.0...v1.25.1) (2022-03-31)
 
 
