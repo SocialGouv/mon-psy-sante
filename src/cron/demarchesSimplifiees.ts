@@ -62,7 +62,6 @@ export const importState = async (): Promise<void> => {
       dsAPIData.filter((psy) => psy.state === "accepte")
     );
     if (missingPsy.length) {
-      console.log(missingPsy);
       const missingPsyData = await getPsychologistFromListIds(missingPsy);
       await saveMany(missingPsyData);
       console.log(`Added ${missingPsy.length} missing psys`);
