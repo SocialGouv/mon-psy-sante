@@ -29,7 +29,6 @@ export const importData = async (): Promise<void> => {
 
     //@ts-ignore
     const dsAPIData = await getPsychologistList(latestCursor.cursor);
-    console.log(dsAPIData);
     if (dsAPIData.psychologists.length > 0) {
       await saveMany(dsAPIData.psychologists);
       console.log(`${dsAPIData.psychologists.length} saved`);
