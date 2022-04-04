@@ -1,6 +1,5 @@
 import { Alert } from "@dataesr/react-dsfr";
 import axios from "axios";
-import { useRouter } from "next/router";
 import React, { createRef, useEffect, useRef, useState } from "react";
 
 import { Coordinates } from "../../types/coordinates";
@@ -14,8 +13,6 @@ import Results from "./Results";
 import SearchBar from "./SearchBar";
 
 const Directory = () => {
-  const router = useRouter();
-
   const [coords, setCoords] = useState<Coordinates>();
   const [geoLoading, setGeoLoading] = useState(false);
 
@@ -77,12 +74,6 @@ const Directory = () => {
       setPsychologists(response.data);
     });
   };
-
-  useEffect(() => {
-    if (process.env.NEXT_PUBLIC_NEW_FEATURES !== "true") {
-      router.push("/");
-    }
-  }, []);
 
   useEffect(() => {
     if (positionFilter === "Autour de moi") {

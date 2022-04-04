@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { handleApiError } from "../../../services/api";
-import config from "../../../services/config";
 import { getAll } from "../../../services/psychologists";
 import { API_ENDPOINT_FILTER } from "../../../types/enums/filters";
 
@@ -12,9 +11,6 @@ function hasParamsNotAllowed(filters) {
 
 const psychologists = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "GET") {
-    if (!config.newFeatures) {
-      return res.status(200).json([]);
-    }
     const filters = req.query;
     if (hasParamsNotAllowed(filters)) {
       return res.status(400).send("Query params not alloaed");

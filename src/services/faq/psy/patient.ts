@@ -18,7 +18,7 @@ export default [
   },
   {
     answer:
-      "<p>Le médecin repère les patients nécessitant une prise en charge psychologique. Si le patient correspond aux indications (notamment absence de risque suicidaire), il peut l’orienter vers un accompagnement psychologique adapté. A l’inverse, en cas de troubles sévères ou de situation d’urgence, le patient est orienté vers une prise en charge psychiatrique plus spécialisée.</p><p>Le patient prend rendez-vous avec le psychologue partenaire de son choix sur <a href='/annuaire' rel='nofollow noopener'>l’annuaire</a>. Le psychologue partenaire détermine en fonction de l’entretien d’évaluation le nombre de séances nécessaires, dans la limite d’un entretien d’évaluation et 7 séances de suivi.</p>",
+      "<p>Le médecin repère les patients nécessitant une prise en charge psychologique. Si le patient correspond aux indications (notamment absence de risque suicidaire), il peut l’orienter vers un accompagnement psychologique adapté. A l’inverse, en cas de troubles sévères ou de situation d’urgence, le patient est orienté vers une prise en charge psychiatrique plus spécialisée.</p><p>Le patient prend rendez-vous avec le psychologue partenaire de son choix sur <a href='/annuaire' rel='nofollow noopener'> l'annuaire</a>. Le psychologue partenaire détermine en fonction de l’entretien d’évaluation le nombre de séances nécessaires, dans la limite d’un entretien d’évaluation et 7 séances de suivi.</p>",
     question:
       "Quel est le parcours du patient ? Qui choisit le nombre de séances ?",
   },

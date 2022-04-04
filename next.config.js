@@ -1,20 +1,11 @@
 const { withSentryConfig } = require("@sentry/nextjs");
 const csp = {
   "default-src": ["'self'"],
-  "connect-src": [
-    "'self'",
-    "https://*.gouv.fr",
-    "https://services.sarbacane.com",
-  ],
+  "connect-src": ["'self'", "https://*.gouv.fr"],
   "font-src": ["'self'", "data:"],
-  "img-src": [
-    "'self'",
-    "data:",
-    "https://forms.sbc08.com",
-    "https://*.tile.openstreetmap.org/",
-  ],
+  "img-src": ["'self'", "data:", "https://*.tile.openstreetmap.org/"],
   "prefetch-src": ["'self'", "https://*.gouv.fr"],
-  "script-src": ["'self'", "https://*.gouv.fr", "https://*.sbc08.com"],
+  "script-src": ["'self'", "https://*.gouv.fr"],
   "frame-src": ["'self'", "https://*.gouv.fr"],
   "style-src": ["'self'", "'unsafe-inline'"],
 };

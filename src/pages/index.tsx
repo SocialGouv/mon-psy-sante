@@ -21,8 +21,8 @@ const Page = () => {
               <h1>
                 MonPsy&nbsp;
                 <span className="fr-text--lead d-block fr-mt-3w">
-                  <strong>A partir du 5&nbsp;avril&nbsp;2022,</strong> l’accès à
-                  un accompagnement psychologique pour tous (dès 3 ans)
+                  L’accès à un accompagnement psychologique pour tous (dès 3
+                  ans)
                 </span>
               </h1>
               <p className="fr-mt-10w">

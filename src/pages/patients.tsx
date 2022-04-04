@@ -22,10 +22,6 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-8">
               <h1>Je ne me sens pas bien</h1>
               <p>Je souhaite bénéficier de l’accompagnement d’un psychologue</p>
-              <p className="fr-text--lead">
-                Le dispositif MonPsy sera accessible à partir du{" "}
-                <strong>5&nbsp;avril&nbsp;2022</strong>.
-              </p>
               <div className="fr-highlight fr-highlight--yellow-tournesol fr-mt-4w fr-pr-6w">
                 <p>
                   <strong>Toute personne angoissée ou déprimée</strong> (dès 3
@@ -113,29 +109,19 @@ const Page = () => {
                 présentant un risque suicidaire ou avec des critères de gravité
                 ou de dépendance.
               </p>
-              {process.env.NEXT_PUBLIC_NEW_FEATURES === "true" ? (
-                <div>
-                  <p>
-                    <strong>
-                      Je trouve un psychologue partenaire près de chez moi
-                    </strong>
-                  </p>
-                  <Button
-                    icon="fr-fi-search-line"
-                    onClick={() => router.push("/annuaire")}
-                  >
-                    Trouver un psychologue
-                  </Button>
-                </div>
-              ) : (
-                <div className="fr-callout fr-callout--pink-tuile fr-my-2w">
-                  <p>
-                    Les coordonnées des psychologues partenaires, conventionnés
-                    avec l’Assurance Maladie, seront disponibles à partir du{" "}
-                    5&nbsp;avril&nbsp;2022.
-                  </p>
-                </div>
-              )}
+              <div>
+                <p>
+                  <strong>
+                    Je trouve un psychologue partenaire près de chez moi
+                  </strong>
+                </p>
+                <Button
+                  icon="fr-fi-search-line"
+                  onClick={() => router.push("/annuaire")}
+                >
+                  Trouver un psychologue
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -176,7 +162,10 @@ const Page = () => {
                   <div className="fr-card__desc">
                     <p>
                       Je contacte un psychologue partenaire de{" "}
-                      <strong>l’annuaire MonPsy</strong>.
+                      <a href="/annuaire" rel="nofollow">
+                        l’annuaire MonPsy
+                      </a>
+                      .
                     </p>
                     <p>
                       Je peux choisir un psychologue qui réalise des séances à

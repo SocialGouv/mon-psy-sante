@@ -184,8 +184,10 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      Dès le 5&nbsp;avril&nbsp;2022, mes coordonnées sont{" "}
-                      <strong>publiées sur le site</strong> monpsy.sante.gouv.fr
+                      Une fois conventionné, mes coordonnées sont publiées sur{" "}
+                      <a href="/annuaire" rel="nofollow">
+                        l’annuaire MonPsy
+                      </a>
                     </p>
                   </div>
                 </div>
