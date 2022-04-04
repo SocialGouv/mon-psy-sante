@@ -1,12 +1,16 @@
-const fs = require("fs");
-const _ = require("lodash");
-const { getAll, countAll } = require("../src/services/psychologists");
+import fs from "fs";
+import _ from "lodash";
 
-const file = fs.createWriteStream("departments-stats.csv");
+import { requestPsychologistsState } from "../src/services/demarchesSimplifiees/buildRequest";
+import { getAllPsychologistList } from "../src/services/demarchesSimplifiees/import";
 import { DEPARTMENTS } from "../src/types/enums/department";
 
+const file = fs.createWriteStream("departments-stats.csv");
+
+const extractDepNumber = (dep) => dep.split(" - ")[0];
+
 const deps = DEPARTMENTS.map((dep) => {
-  return { count: 0, name: dep, department: dep.split(" - ")[0] };
+  return { count: 0, name: dep, department: extractDepNumber(dep) };
 });
 
 function log(text, count) {
@@ -22,14 +26,22 @@ function displayList(list) {
 
 log("Dep", "total");
 (async () => {
-  const count = await countAll();
-  console.log(`Fetching ${count} psy`);
-  const psychologists = await getAll({ pagesize: count, pageindex: 0 }).catch(
-    (e) => {
-      console.log("Error while fetching psy: ", e);
-      process.exit(-1);
-    }
+  const requestPsychologistsStateWithDep = _.bind(
+    requestPsychologistsState,
+    null,
+    _,
+    `groupeInstructeur {
+        label
+     }`
   );
+  const result = await getAllPsychologistList(
+    requestPsychologistsStateWithDep
+  ).catch((e) => {
+    console.log(e);
+    process.exit(-1);
+  });
+
+  const psychologists = result.psychologists;
   console.log(psychologists[0]);
   const sansSuite = _.filter(psychologists, { state: "sans_suite" });
   const refuse = _.filter(psychologists, { state: "refuse" });
@@ -42,8 +54,10 @@ log("Dep", "total");
   );
 
   valids.forEach((psy) => {
-    const dep = _.find(deps, { department: psy.department });
-    if (!dep) console.log(">>>>>>>>>", psy.department);
+    const dep = _.find(deps, {
+      department: extractDepNumber(psy.groupeInstructeur.label),
+    });
+    if (!dep) console.log(">>>>>>>>>", psy.groupeInstructeur.label);
     dep.count++;
   });
 

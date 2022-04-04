@@ -20,7 +20,8 @@ const getWhereConditionAfterCursor = (cursor: string): string => {
 };
 
 export const requestPsychologistsState = async (
-  afterCursor: string | undefined
+  afterCursor: string | undefined,
+  extraInfos?: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
   const query = gql`
@@ -36,6 +37,7 @@ export const requestPsychologistsState = async (
           archived
           state
           number
+          ${extraInfos ?? ""}
       }
     }
   }

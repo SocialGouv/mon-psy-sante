@@ -1,6 +1,6 @@
 {
   "name": "monpsy",
-  "version": "1.25.0",
+  "version": "1.25.1",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -22,7 +22,7 @@
     "bcryptjs": "^2.4.3",
     "cron": "^1.8.2",
     "dotenv": "^16.0.0",
-    "got": "12.0.2",
+    "got": "12.0.3",
     "graphql": "^16.3.0",
     "graphql-request": "^4.0.0",
     "helmet": "^5.0.2",
@@ -85,7 +85,7 @@
     "cy": "cypress open",
     "cy:run": "cypress run",
     "cron:launch": "ts-node --transpile-only src/cron/launch.ts",
-    "script:extract-departments": "ts-node --transpile-only scripts/stats-departements.js",
+    "script:extract-departments": "ts-node --transpile-only scripts/stats-departements.ts",
     "script:extract-emails-acceptes": "ts-node --transpile-only scripts/extract-emails-acceptes.ts"
   }
 }
