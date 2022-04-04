@@ -10,7 +10,7 @@ import {
 import parsePsychologists from "./parse-psychologists";
 
 const limit = pLimit(5);
-const getAllPsychologistList = async (
+export const getAllPsychologistList = async (
   graphqlFunction: (string) => Promise<DSResponse>,
   cursor: string | undefined = undefined,
   accumulator: DSPsychologist[] = []
@@ -43,7 +43,7 @@ export const getPsychologistList = async (
   psychologists: Psychologist[];
   lastCursor: string;
 }> => {
-  const time = `Fetching all psychologists from DS (query id #${Math.random().toString()} with cursor ${cursor})`;
+  const time = `Fetch all psychologists from DS (query id #${Math.random().toString()} with cursor ${cursor})`;
 
   console.time(time);
   const list = await getAllPsychologistList(
@@ -79,7 +79,7 @@ export const getPsychologistFromListIds = async (
 export const getPsychologistState = async (): Promise<
   Partial<Psychologist>[]
 > => {
-  const time = `Fetching all psychologists state from DS (query id #${Math.random().toString()})`;
+  const time = `Fetch all psychologists state from DS (query id #${Math.random().toString()})`;
 
   console.time(time);
   const list = await getAllPsychologistList(requestPsychologistsState);
