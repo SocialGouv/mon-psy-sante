@@ -1,3 +1,10 @@
+## [1.27.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.2...v1.27.3) (2022-04-05)
+
+
+### Bug Fixes
+
+* **annuaire:** on mobile fix scroll down on psy list + update text ([#137](https://github.com/SocialGouv/mon-psy-sante/issues/137)) ([8586724](https://github.com/SocialGouv/mon-psy-sante/commit/8586724f5832f66547f26fe34999a6e00bf05a21))
+
 ## [1.27.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.1...v1.27.2) (2022-04-05)
 
 
