@@ -40,7 +40,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-4">
               <img
                 src="/images/patient.svg"
-                height="380"
+                height="360"
                 alt="Je ne me sens pas bien illustration"
               />
               {video === "hide" && (

@@ -22,7 +22,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-5">
               <img
                 src="/images/psy.svg"
-                height="380"
+                height="360"
                 alt="Je suis psychologue illustration"
               />
             </div>
