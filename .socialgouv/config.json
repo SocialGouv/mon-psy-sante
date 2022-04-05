@@ -18,13 +18,13 @@
   },
   "probes": {
     "livenessProbe": {
-      "timeoutDelay": 10
+      "timeoutSeconds": 10
     },
     "readinessProbe": {
-      "timeoutDelay": 10
+      "timeoutSeconds": 10
     },
     "startupProbe": {
-      "timeoutDelay": 10
+      "timeoutSeconds": 10
     }
   }
 }
