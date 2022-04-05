@@ -5,5 +5,26 @@
   "registry": "ghcr",
   "project": "mon-psy-sante",
   "pg": true,
-  "devInitContainerCommand": ["yarn", "db:init"]
+  "devInitContainerCommand": ["yarn", "db:init"],
+  "resources": {
+    "requests": {
+      "cpu": "500Mi",
+      "memory": "512Mi"
+    },
+    "limits": {
+      "cpu": "1",
+      "memory": "1024Mi"
+    }
+  },
+  "probes": {
+    "livenessProbe": {
+      "timeoutDelay": 10
+    },
+    "readinessProbe": {
+      "timeoutDelay": 10
+    },
+    "startupProbe": {
+      "timeoutDelay": 10
+    }
+  }
 }
