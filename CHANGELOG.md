@@ -1,3 +1,10 @@
+## [1.27.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.1...v1.27.2) (2022-04-05)
+
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v18 (major) ([#130](https://github.com/SocialGouv/mon-psy-sante/issues/130)) ([7aea25c](https://github.com/SocialGouv/mon-psy-sante/commit/7aea25c3e680a5e3c94df277fa92b56294e0e899))
+
 ## [1.27.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.0...v1.27.1) (2022-04-05)
 
 
