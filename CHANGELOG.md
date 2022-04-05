@@ -1,3 +1,10 @@
+## [1.27.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.3...v1.27.4) (2022-04-05)
+
+
+### Bug Fixes
+
+* **location:** fix frontend error on some browser ([d8ab3ed](https://github.com/SocialGouv/mon-psy-sante/commit/d8ab3edd3124e35f722a1a91e11da728e3ae895c))
+
 ## [1.27.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.2...v1.27.3) (2022-04-05)
 
 
