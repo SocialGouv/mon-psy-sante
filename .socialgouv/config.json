@@ -8,7 +8,7 @@
   "devInitContainerCommand": ["yarn", "db:init"],
   "resources": {
     "requests": {
-      "cpu": "500Mi",
+      "cpu": "0.5",
       "memory": "512Mi"
     },
     "limits": {
