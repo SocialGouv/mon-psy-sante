@@ -205,11 +205,6 @@ const Page = () => {
                       Je peux recevoir des patients dans le cadre de
                       MonPsy&nbsp;!
                     </p>
-                    <p>
-                      A la fin de l’accompagnement, en accord avec le patient,
-                      j’adresse au médecin, un compte-rendu de fin de prise en
-                      charge.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -420,7 +415,8 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      A la fin de l’accompagnement, j’adresse au médecin, un{" "}
+                      A la fin de l’accompagnement, en accord avec le patient,
+                      j’adresse au médecin, un{" "}
                       <strong>compte-rendu de fin de prise en charge</strong>.
                     </p>
 

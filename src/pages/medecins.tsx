@@ -201,19 +201,14 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      <strong>A la fin de l’accompagnement</strong>, le
-                      psychologue m’adresse, un compte-rendu de fin de prise en
-                      charge.
+                      <strong>A la fin de l’accompagnement</strong>, en accord
+                      avec le patient, le psychologue m’adresse, un compte-rendu
+                      de fin de prise en charge.
                     </p>
                     <p>
                       <strong>En cas de non amélioration des symptômes</strong>,
                       une concertation avec le psychologue et un psychiatre est
                       nécessaire pour prévoir de la suite de la prise en charge.
-                    </p>
-                    <p>
-                      A la fin de l’accompagnement, en accord avec le patient,
-                      le psychologue m’adresse, un compte-rendu de fin de prise
-                      en charge.
                     </p>
                   </div>
                 </div>
