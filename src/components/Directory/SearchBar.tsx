@@ -75,7 +75,7 @@ const SearchBar = ({
   };
 
   const checkGeolocationPermission = () => {
-    if (navigator.geolocation) {
+    if (navigator.geolocation && navigator.permissions) {
       navigator.permissions.query({ name: "geolocation" }).then((result) => {
         getGeolocation(result.state);
       });
