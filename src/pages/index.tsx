@@ -17,7 +17,7 @@ const Page = () => {
       <section>
         <Container>
           <Row justifyContent="center" alignItems="middle" className="fr-pb-8w">
-            <div className="fr-col-12 fr-col-md-6">
+            <div className="fr-col-12 fr-col-md-6 fr-pt-4w">
               <h1>
                 MonPsy&nbsp;
                 <span className="fr-text--lead d-block fr-mt-3w">
@@ -174,7 +174,7 @@ const Page = () => {
                   <img
                     src="/images/logo-3114.svg"
                     alt="Logo 3114"
-                    height="80"
+                    height="70"
                   />
                 </a>
               </div>

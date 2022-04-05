@@ -23,7 +23,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-5">
               <img
                 src="/images/doctor.svg"
-                height="380"
+                height="360"
                 alt="Je suis médecin illustration"
               />
             </div>
@@ -132,7 +132,7 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      Je suis médecin traitant (généraliste, pédiatre,
+                      Je suis médecin traitant ou non (généraliste, pédiatre,
                       gériatre….), scolaire, de PMI, des services de santé des
                       universités ou encore d’un médecin hospitalier.
                     </p>
@@ -209,6 +209,11 @@ const Page = () => {
                       <strong>En cas de non amélioration des symptômes</strong>,
                       une concertation avec le psychologue et un psychiatre est
                       nécessaire pour prévoir de la suite de la prise en charge.
+                    </p>
+                    <p>
+                      A la fin de l’accompagnement, en accord avec le patient,
+                      le psychologue m’adresse, un compte-rendu de fin de prise
+                      en charge.
                     </p>
                   </div>
                 </div>
