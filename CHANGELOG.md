@@ -1,3 +1,10 @@
+## [1.27.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.4...v1.27.5) (2022-04-05)
+
+
+### Bug Fixes
+
+* **text:** "en accord avec le patient" ([#139](https://github.com/SocialGouv/mon-psy-sante/issues/139)) ([be12a04](https://github.com/SocialGouv/mon-psy-sante/commit/be12a040b85fde7d8782981c674fa0f8949bca51))
+
 ## [1.27.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.3...v1.27.4) (2022-04-05)
 
 
