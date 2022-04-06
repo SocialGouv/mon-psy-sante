@@ -43,7 +43,7 @@ const Results = ({
     <Desktop>
       <Psychologists
         ref={resultsRef}
-        className="fr-col-12 fr-col-md-5 fr-mr-2w"
+        className="fr-col-12 fr-col-md-5 fr-mr-2w fr-mt-2w fr-mt-md-0"
       >
         {psychologists.map((psychologist) => (
           <div

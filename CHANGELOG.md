@@ -1,3 +1,38 @@
+## [1.27.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.4...v1.27.5) (2022-04-05)
+
+
+### Bug Fixes
+
+* **text:** "en accord avec le patient" ([#139](https://github.com/SocialGouv/mon-psy-sante/issues/139)) ([be12a04](https://github.com/SocialGouv/mon-psy-sante/commit/be12a040b85fde7d8782981c674fa0f8949bca51))
+
+## [1.27.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.3...v1.27.4) (2022-04-05)
+
+
+### Bug Fixes
+
+* **location:** fix frontend error on some browser ([d8ab3ed](https://github.com/SocialGouv/mon-psy-sante/commit/d8ab3edd3124e35f722a1a91e11da728e3ae895c))
+
+## [1.27.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.2...v1.27.3) (2022-04-05)
+
+
+### Bug Fixes
+
+* **annuaire:** on mobile fix scroll down on psy list + update text ([#137](https://github.com/SocialGouv/mon-psy-sante/issues/137)) ([8586724](https://github.com/SocialGouv/mon-psy-sante/commit/8586724f5832f66547f26fe34999a6e00bf05a21))
+
+## [1.27.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.1...v1.27.2) (2022-04-05)
+
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v18 (major) ([#130](https://github.com/SocialGouv/mon-psy-sante/issues/130)) ([7aea25c](https://github.com/SocialGouv/mon-psy-sante/commit/7aea25c3e680a5e3c94df277fa92b56294e0e899))
+
+## [1.27.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.0...v1.27.1) (2022-04-05)
+
+
+### Bug Fixes
+
+* increase ressources ([#136](https://github.com/SocialGouv/mon-psy-sante/issues/136)) ([e5987e1](https://github.com/SocialGouv/mon-psy-sante/commit/e5987e1a11332db4677193e19016b5459d9cd525))
+
 # [1.27.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.26.0...v1.27.0) (2022-04-04)
 
 

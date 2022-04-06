@@ -1,6 +1,6 @@
 {
   "name": "monpsy",
-  "version": "1.27.0",
+  "version": "1.27.5",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -31,9 +31,9 @@
     "p-limit": "3.1.0",
     "pg-hstore": "^2.3.4",
     "pg": "^8.7.3",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-leaflet": "^3.2.5",
-    "react": "^17.0.2",
     "sanitize-html": "^2.7.0",
     "sequelize-cli": "^6.4.1",
     "sequelize": "^6.16.1",

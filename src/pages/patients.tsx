@@ -40,7 +40,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-4">
               <img
                 src="/images/patient.svg"
-                height="380"
+                height="360"
                 alt="Je ne me sens pas bien illustration"
               />
               {video === "hide" && (
@@ -84,10 +84,10 @@ const Page = () => {
                 </strong>
               </p>
               <p>
-                Il peut s’agir, par exemple, de votre médecin traitant
-                (généraliste, pédiatre, gériatre….), d’un médecin scolaire, de
-                PMI (protection maternelle et infantile), des services de santé
-                des universités ou encore d’un médecin hospitalier.
+                Il peut s’agir, par exemple, de votre médecin (généraliste,
+                pédiatre, gériatre….), d’un médecin scolaire, de PMI (protection
+                maternelle et infantile), des services de santé des universités
+                ou encore d’un médecin hospitalier.
               </p>
             </div>
             <div className="fr-col-12 fr-col-lg-6">
@@ -310,10 +310,7 @@ const Page = () => {
 
                 <li>Bénéficiaire de l’Aide Médicale d’Etat (AME)</li>
 
-                <li>
-                  Soins en lien avec une maladie : Affection de Longue Durée
-                  (ALD) ou accident causé par un tiers
-                </li>
+                <li>Soins en lien avec une Affection de Longue Durée (ALD)</li>
 
                 <li>
                   Soins en lien avec une maternité (à partir du 6ème mois de

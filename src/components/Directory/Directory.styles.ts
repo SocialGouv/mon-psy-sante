@@ -27,4 +27,5 @@ export const SubSearch = styled.div`
 export const Psychologists = styled.div`
   overflow-y: scroll;
   height: 100vh;
+  max-height: 100vh;
 `;

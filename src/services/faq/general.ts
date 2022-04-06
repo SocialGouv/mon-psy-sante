@@ -2,7 +2,7 @@
 export default [
   {
     answer:
-      "<p><strong>MonPsy est un dispositif pérenne, qui concerne toute la population dès l’âge de 3 ans.</strong></p><p>Sur orientation d’un médecin, chacun peut, en fonction de ses besoins, bénéficier d’un accompagnement psychologique par un psychologue partenaire. Le remboursement des séances est assuré par l’Assurance Maladie avec la participation des organismes complémentaires. MonPsy sera accessible pour les patients dès le <strong> 5 avril 2022 </strong>.</p>",
+      "<p><strong>MonPsy est un dispositif pérenne, qui concerne toute la population dès l’âge de 3 ans.</strong></p><p>Sur orientation d’un médecin, chacun peut, en fonction de ses besoins, bénéficier d’un accompagnement psychologique par un psychologue partenaire. Le remboursement des séances est assuré par l’Assurance Maladie avec la participation des organismes complémentaires. MonPsy est accessible pour les patients depuis le <strong> 5 avril 2022 </strong>.</p>",
     question: "Le dispositif MonPsy, c’est quoi ?",
   },
   {

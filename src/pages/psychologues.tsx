@@ -22,7 +22,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-5">
               <img
                 src="/images/psy.svg"
-                height="380"
+                height="360"
                 alt="Je suis psychologue illustration"
               />
             </div>
@@ -232,7 +232,7 @@ const Page = () => {
               </p>
 
               <p>
-                Il peut s’agir, par exemple, d’un médecin traitant (généraliste,
+                Il peut s’agir, par exemple, d’un médecin (généraliste,
                 pédiatre, gériatre…), d’un médecin scolaire, de PMI (protection
                 maternelle et infantile), des services de santé des universités
                 ou encore d’un médecin hospitalier.
@@ -415,7 +415,8 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      A la fin de l’accompagnement, j’adresse au médecin, un{" "}
+                      A la fin de l’accompagnement, en accord avec le patient,
+                      j’adresse au médecin, un{" "}
                       <strong>compte-rendu de fin de prise en charge</strong>.
                     </p>
 
@@ -446,10 +447,7 @@ const Page = () => {
               <ul>
                 <li>Bénéficiaire de la Complémentaire Santé Solidaire (CSS)</li>
                 <li>Bénéficiaire de l’Aide Médicale d’Etat (AME)</li>
-                <li>
-                  Soins en lien avec une maladie : Affection de Longue Durée
-                  (ALD) ou accident causé par un tiers
-                </li>
+                <li>Soins en lien avec une Affection de Longue Durée (ALD)</li>
                 <li>
                   Soins en lien avec une maternité (à partir du 6ème mois de
                   grossesse)
