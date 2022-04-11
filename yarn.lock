@@ -1187,19 +1187,6 @@
   resolved "https://registry.yarnpkg.com/@sinonjs/text-encoding/-/text-encoding-0.7.1.tgz#8da5c6530915653f3a1f38fd5f101d8c3f8079c5"
   integrity sha512-+iTbntw2IZPb/anVDbypzfQa+ay64MW0Zo8aJ8gZPWMMK6/OubMVb6lUPMagqjOPnmtauXnFCACVl3O7ogjeqQ==
 
-"@socialgouv/bootstrap.core@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@socialgouv/bootstrap.core/-/bootstrap.core-0.2.1.tgz#f4e5b67a3ae9e3bc3deeb3049e90f1c639ce4a2f"
-  integrity sha512-xS0pId6O7Z2HxSYGh1fZg6xG5tGk43PKAVYvv1eDlZAMjGUFlqzwSnu5vcv0QQdz7lczZTeKhq4+os790N6n8g==
-  dependencies:
-    "@socialgouv/bootstrap.tokens" "^0.2.0"
-    bootstrap "^4.4.1"
-
-"@socialgouv/bootstrap.tokens@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@socialgouv/bootstrap.tokens/-/bootstrap.tokens-0.2.0.tgz#ee1aa1df50b0b18dba0b645610d862fdb312d5b3"
-  integrity sha512-bBN7oGhmYGA61gyWTqTwSXh3YWkN1RWlMFAfi3NQa6L8ziJsSCgN5yk4FVpBq6uRFDQz061PgH8mlyGAyxwVqg==
-
 "@socialgouv/eslint-config-react@^1.104.0":
   version "1.104.0"
   resolved "https://registry.yarnpkg.com/@socialgouv/eslint-config-react/-/eslint-config-react-1.104.0.tgz#12040204f3d3a55eb5a4b8ffe50c94bc5d803f51"
@@ -1327,6 +1314,11 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
+"@types/geojson@*":
+  version "7946.0.8"
+  resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.8.tgz#30744afdb385e2945e22f3b033f897f76b1f12ca"
+  integrity sha512-1rkryxURpr6aWP7R786/UQOkJ3PcpQiWkAXBmdWc7ryFWqN6a4xfK7BtjXvFBKO9LjQ+MWQSWxYeZX1OApnArA==
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.5.tgz#21ffba0d98da4350db64891f92a9e5db3cdb4e15"
@@ -1382,6 +1374,13 @@
   integrity sha512-FXCJgyyN3ivVgRoml4h94G/p3kY+u/B86La+QptcqJaWtBWtmc6TtkNfS40n9bIvyLteHh7zXOtgbobORKPbDg==
   dependencies:
     "@types/node" "*"
+
+"@types/leaflet@^1.7.9":
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.7.9.tgz#7993d34f14cfa88c45b3d490daba39a3a1be9a2b"
+  integrity sha512-H8vPgD49HKzqM41ArHGZM70g/tfhp8W+JcPxfnF+5H/Xvp+xiP+KQOUNWU8U89fqS1Jj3cpRY/+nbnaHFzwnFA==
+  dependencies:
+    "@types/geojson" "*"
 
 "@types/lodash@*":
   version "4.14.178"
@@ -2050,11 +2049,6 @@ bn.js@^5.0.0, bn.js@^5.1.1:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.2.0.tgz#358860674396c6997771a9d051fcc1b57d4ae002"
   integrity sha512-D7iWRBvnZE8ecXiLj/9wbxH7Tk79fAh8IHaTNq1RWRixsS02W+5qS+iE9yq6RYl0asXx5tw0bLhmT5pIfbSquw==
-
-bootstrap@^4.4.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.1.tgz#bc25380c2c14192374e8dec07cf01b2742d222a2"
-  integrity sha512-0dj+VgI9Ecom+rvvpNZ4MUZJz8dcX7WCX+eTID9+/8HgOkv3dsRzi8BGeZJCQU6flWQVYxwTQnEZFrmJSEO7og==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
