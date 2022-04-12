@@ -24,8 +24,10 @@ const Page = () => {
               <p>Je souhaite bénéficier de l’accompagnement d’un psychologue</p>
               <div className="fr-highlight fr-highlight--yellow-tournesol fr-mt-4w fr-pr-6w">
                 <p>
-                  <strong>Toute personne</strong> (dès 3 ans) peut bénéficier
-                  d’un accompagnement par un psychologue partenaire
+                  <strong>
+                    Toute personne (dès 3 ans) peut bénéficier d’un
+                    accompagnement par un psychologue partenaire
+                  </strong>{" "}
                   (conventionné avec l’Assurance Maladie)&nbsp;: jusqu’à 8
                   séances par an.
                 </p>
@@ -92,10 +94,12 @@ const Page = () => {
               sociales, familiales, professionnelles ou financières, etc.
             </p>
             <p className="fr-mb-2w">
-              Les troubles psychiques d’intensité légère à modérée concernent,
-              en France, environ 10 millions de personnes. En cas de doute sur
-              la possibilité de bénéficier du dispositif, je pose la question à
-              mon médecin.
+              <strong>
+                Les troubles psychiques d’intensité légère à modérée concernent,
+                en France, environ 10 millions de personnes.
+              </strong>{" "}
+              En cas de doute sur la possibilité de bénéficier du dispositif, je
+              pose la question à mon médecin.
             </p>
           </div>
         </div>
@@ -130,9 +134,9 @@ const Page = () => {
             </div>
             <div className="fr-col-12 fr-col-lg-5 fr-col-offset-1">
               <h2>Quel est le rôle du psychologue partenaire&nbsp;?</h2>
-              <p className="fr-text--lead">
-                Je ne me sens pas bien, le psychologue partenaire est là pour
-                m’aider.
+              <p>
+                Je ne me sens pas bien,{" "}
+                <strong>le psychologue partenaire est là pour m’aider.</strong>
               </p>
               <p>
                 Le psychologue et le médecin se concertent, avec mon accord,
