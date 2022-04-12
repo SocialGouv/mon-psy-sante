@@ -1,3 +1,10 @@
+## [1.27.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.6...v1.27.7) (2022-04-12)
+
+
+### Bug Fixes
+
+* **city input:** use react autocomplete instead of SearchableSelect which does not work on safari ([#144](https://github.com/SocialGouv/mon-psy-sante/issues/144)) ([fee518a](https://github.com/SocialGouv/mon-psy-sante/commit/fee518ad2f13901e92e760f5792cbedc59b81f93))
+
 ## [1.27.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.5...v1.27.6) (2022-04-12)
 
 
