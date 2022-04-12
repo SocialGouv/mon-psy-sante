@@ -1,3 +1,11 @@
+## [1.27.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.5...v1.27.6) (2022-04-12)
+
+
+### Bug Fixes
+
+* **text:** update page patient + update FAQ ([#146](https://github.com/SocialGouv/mon-psy-sante/issues/146)) ([27dee64](https://github.com/SocialGouv/mon-psy-sante/commit/27dee644f17ad6fe5842d2de68cdeea428f50e5f))
+* add OSM attribution ([#134](https://github.com/SocialGouv/mon-psy-sante/issues/134)) ([c61edc9](https://github.com/SocialGouv/mon-psy-sante/commit/c61edc98b8afc30aec9775a063ae6f4b63dad807))
+
 ## [1.27.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.4...v1.27.5) (2022-04-05)
 
 
