@@ -56,3 +56,27 @@ To re-run the migration from 0
 ## To update sealed secret
 
 https://socialgouv.github.io/sre-tools/
+
+## How to connect app to db on bastion
+
+- open ssh tunnel :
+
+```
+ssh -l localhost:54320:<server>.postgres.database.azure.com:5432 <USER>@fabrique-bastion
+```
+
+- dans la connection Sequelize, deactivate ssl :
+
+```
+  dialectOptions: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
+```
+
+- set la var d'env DATABASE_URL pour pointer vers localhost et le protocole est `postgre`:
+
+```
+DATABASE_URL=postgres://<USER_NAME>:<PASSWORD>@localhost:54320/prod
+```

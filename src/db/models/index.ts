@@ -9,6 +9,11 @@ const sequelize = new Sequelize(config.postgre.url, {
     freezeTableName: true,
   },
   dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
   logging: config.postgre.logging ? console.log : false,
 });
 
