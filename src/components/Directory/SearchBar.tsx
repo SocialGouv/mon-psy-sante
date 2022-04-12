@@ -95,21 +95,41 @@ const SearchBar = ({
   return (
     <Row className="fr-pb-2w" alignItems="middle">
       <Col n="md-9 12">
-        <ReactAutocomplete
-          inputProps={{ className: "fr-select" }}
-          wrapperStyle={{ width: "100%" }}
-          getItemValue={(item) => item.label}
-          items={options}
-          renderItem={(item) => (
-            <option className="select-search-option">{item.label}</option>
-          )}
-          value={filterText}
-          onChange={(e) => setFilterText(e.target.value)}
-          onSelect={(val) => {
-            setFilterText(val);
-            setPositionFilter(val);
-          }}
-        />
+        <div className="fr-select-group">
+          <label className="fr-label fr-mb-2v" htmlFor="city-search">
+            Rechercher par ville ou code postal
+          </label>
+          <div className="select-search-input">
+            <ReactAutocomplete
+              id="city-search"
+              inputProps={{ className: "fr-select" }}
+              wrapperStyle={{}}
+              getItemValue={(item) => item.label}
+              items={options}
+              renderItem={(item, isHighlighted) => (
+                <option
+                  key={item.label}
+                  className={`select-search-option ${
+                    isHighlighted ? "select-search-option__selected" : ""
+                  }`}
+                >
+                  {item.label}
+                </option>
+              )}
+              renderMenu={(items) => (
+                <div className="select-search-options midlength-input select-search-options__visible">
+                  {items}
+                </div>
+              )}
+              value={filterText}
+              onChange={(e) => setFilterText(e.target.value)}
+              onSelect={(val) => {
+                setFilterText(val);
+                setPositionFilter(val);
+              }}
+            />
+          </div>
+        </div>
         <SubSearch>
           <Select
             selected={otherFilters[FILTER.PUBLIC]}
