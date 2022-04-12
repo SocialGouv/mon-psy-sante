@@ -1,12 +1,6 @@
-import {
-  Alert,
-  Button,
-  Col,
-  Row,
-  SearchableSelect,
-  Select,
-} from "@dataesr/react-dsfr";
+import { Alert, Button, Col, Row, Select } from "@dataesr/react-dsfr";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import ReactAutocomplete from "react-autocomplete";
 
 import {
   AROUND_ME,
@@ -101,14 +95,43 @@ const SearchBar = ({
   return (
     <Row className="fr-pb-2w" alignItems="middle">
       <Col n="md-9 12">
-        <SearchableSelect
-          selected={positionFilter}
-          onChange={setPositionFilter}
-          onTextChange={setFilterText}
-          filter={() => true}
-          label="Rechercher par ville ou code postal"
-          options={options}
-        />
+        <div className="fr-select-group">
+          <label className="fr-label fr-mb-2v" htmlFor="city-search">
+            Rechercher par ville ou code postal
+          </label>
+          <div className="select-search-input">
+            <ReactAutocomplete
+              id="city-search"
+              inputProps={{ className: "fr-select" }}
+              wrapperStyle={{}}
+              getItemValue={(item) => item.label}
+              items={options}
+              renderItem={(item, isHighlighted) => (
+                <li
+                  role="option"
+                  key={item.label}
+                  aria-selected={isHighlighted}
+                  className={`select-search-option ${
+                    isHighlighted ? "select-search-option__selected" : ""
+                  }`}
+                >
+                  {item.label}
+                </li>
+              )}
+              renderMenu={(items) => (
+                <ul className="select-search-options midlength-input select-search-options__visible no-bullet fr-p-0">
+                  {items}
+                </ul>
+              )}
+              value={filterText}
+              onChange={(e) => setFilterText(e.target.value)}
+              onSelect={(val) => {
+                setFilterText(val);
+                setPositionFilter(val);
+              }}
+            />
+          </div>
+        </div>
         <SubSearch>
           <Select
             selected={otherFilters[FILTER.PUBLIC]}
