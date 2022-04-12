@@ -107,19 +107,21 @@ const SearchBar = ({
               getItemValue={(item) => item.label}
               items={options}
               renderItem={(item, isHighlighted) => (
-                <option
+                <li
+                  role="option"
                   key={item.label}
+                  aria-selected={isHighlighted}
                   className={`select-search-option ${
                     isHighlighted ? "select-search-option__selected" : ""
                   }`}
                 >
                   {item.label}
-                </option>
+                </li>
               )}
               renderMenu={(items) => (
-                <div className="select-search-options midlength-input select-search-options__visible">
+                <ul className="select-search-options midlength-input select-search-options__visible no-bullet fr-p-0">
                   {items}
-                </div>
+                </ul>
               )}
               value={filterText}
               onChange={(e) => setFilterText(e.target.value)}
