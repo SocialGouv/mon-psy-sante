@@ -5,7 +5,7 @@ import ReactAutocomplete from "react-autocomplete";
 import {
   AROUND_ME,
   AROUND_ME_OPTION,
-  search,
+  searchCity,
 } from "../../services/frontend/geo.api";
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
@@ -84,14 +84,6 @@ const SearchBar = ({
     }
   }, [positionFilter]);
 
-  useEffect(() => {
-    if (positionFilter) {
-      return;
-    }
-
-    search(filterText, setOptions);
-  }, [filterText]);
-
   return (
     <Row className="fr-pb-2w" alignItems="middle">
       <Col n="md-9 12">
@@ -119,15 +111,18 @@ const SearchBar = ({
                 </li>
               )}
               renderMenu={(items) => (
-                <ul className="select-search-options midlength-input select-search-options__visible no-bullet fr-p-0">
+                <ul className="select-search-options select-search-options__visible no-bullet fr-p-0">
                   {items}
                 </ul>
               )}
               value={filterText}
-              onChange={(e) => setFilterText(e.target.value)}
-              onSelect={(val) => {
+              onChange={(e) => {
+                setFilterText(e.target.value);
+                searchCity(filterText, setOptions);
+              }}
+              onSelect={(val, item) => {
                 setFilterText(val);
-                setPositionFilter(val);
+                setPositionFilter(item.value);
               }}
             />
           </div>
