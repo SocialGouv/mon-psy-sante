@@ -115,7 +115,7 @@ const searchDepartments = async (
 
   return Promise.resolve();
 };
-export const search = async (
+export const searchCity = async (
   filter: string,
   action: React.Dispatch<
     React.SetStateAction<

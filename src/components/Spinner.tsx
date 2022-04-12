@@ -28,10 +28,10 @@ const SpinnerWithEffect = styled.div`
   text-align: center;
 
   .spinner {
-    color: var(--blue-france-950);
+    color: var(--info-950);
     height: 50px;
     width: 50px;
-    fill: var(--blue-france-main-525);
+    fill: var(--info-main-525);
   }
 
   .animation-spin {
