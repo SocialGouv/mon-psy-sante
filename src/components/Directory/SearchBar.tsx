@@ -94,7 +94,10 @@ const SearchBar = ({
           <div className="select-search-input">
             <ReactAutocomplete
               id="city-search"
-              inputProps={{ className: "fr-select" }}
+              inputProps={{
+                className: "fr-select",
+                placeholder: "Ville ou code postal",
+              }}
               wrapperStyle={{}}
               getItemValue={(item) => item.label}
               items={options}
