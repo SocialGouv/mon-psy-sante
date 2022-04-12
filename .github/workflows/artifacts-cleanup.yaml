@@ -2,7 +2,8 @@ name: Remove old artifacts
 
 on:
   workflow_dispatch:
-  schedule: '0 1 * * *'
+  schedule:
+    - cron: '0 1 * * *'
 
 jobs:
   remove-old-artifacts:
