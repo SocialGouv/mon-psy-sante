@@ -36,6 +36,7 @@
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "react": "^18.0.0",
+    "react-autocomplete": "^1.8.1",
     "react-dom": "^18.0.0",
     "react-leaflet": "^3.2.5",
     "sanitize-html": "^2.7.0",

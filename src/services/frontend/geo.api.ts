@@ -23,7 +23,7 @@ const searchCommunes = (
         .sort((a, b) => b.population - a.population)
         .map((commune) => ({
           label: `${commune.nom}, ${commune.departement?.nom}`,
-          value: commune.centre.coordinates,
+          value: commune.centre?.coordinates,
         }));
       action(communes.concat(AROUND_ME_OPTION));
     });

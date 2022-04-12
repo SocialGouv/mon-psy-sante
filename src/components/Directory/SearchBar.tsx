@@ -1,12 +1,6 @@
-import {
-  Alert,
-  Button,
-  Col,
-  Row,
-  SearchableSelect,
-  Select,
-} from "@dataesr/react-dsfr";
+import { Alert, Button, Col, Row, Select } from "@dataesr/react-dsfr";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import ReactAutocomplete from "react-autocomplete";
 
 import {
   AROUND_ME,
@@ -101,13 +95,20 @@ const SearchBar = ({
   return (
     <Row className="fr-pb-2w" alignItems="middle">
       <Col n="md-9 12">
-        <SearchableSelect
-          selected={positionFilter}
-          onChange={setPositionFilter}
-          onTextChange={setFilterText}
-          filter={() => true}
-          label="Rechercher par ville ou code postal"
-          options={options}
+        <ReactAutocomplete
+          inputProps={{ className: "fr-select" }}
+          wrapperStyle={{ width: "100%" }}
+          getItemValue={(item) => item.label}
+          items={options}
+          renderItem={(item) => (
+            <option className="select-search-option">{item.label}</option>
+          )}
+          value={filterText}
+          onChange={(e) => setFilterText(e.target.value)}
+          onSelect={(val) => {
+            setFilterText(val);
+            setPositionFilter(val);
+          }}
         />
         <SubSearch>
           <Select
