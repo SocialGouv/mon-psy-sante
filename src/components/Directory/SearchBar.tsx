@@ -121,7 +121,7 @@ const SearchBar = ({
               value={filterText}
               onChange={(e) => {
                 setFilterText(e.target.value);
-                searchCity(filterText, setOptions);
+                searchCity(e.target.value, setOptions);
               }}
               onSelect={(val, item) => {
                 setFilterText(val);
