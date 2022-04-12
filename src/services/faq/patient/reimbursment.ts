@@ -17,7 +17,7 @@ export default [
   },
   {
     answer:
-      "<p>Dans le cadre de ce dispositif, l’Assurance Maladie prend en charge 60% du coût des séances, c’est-à-dire 24€ pour la première séance et 18€ pour les séances de suivi. </p><p>Votre mutuelle ou votre assurance complémentaire, dans le cadre des contrats de complémentaire santé responsable (couvrant 95% des assurés), finance à hauteur de 40% le coût des séances.</p>",
+      "<p>Dans le cadre de ce dispositif, l’Assurance Maladie prend en charge 60% du coût des séances, c’est-à-dire 24€ pour la première séance et 18€ pour les séances de suivi. </p><p>Votre mutuelle ou votre assurance complémentaire, dans le cadre des contrats de complémentaire santé responsable (couvrant 95% des assurés), finance à hauteur de 40% le coût des séances.</p><p>Pour les assurés affiliés au Régime Local Alsace-Moselle, le régime local prend en charge 90% du coût des séances. Si vous disposez d’une complémentaire santé responsable, elle complète cette prise en charge pour qu’il ne reste rien à votre charge.</p>",
     question:
       "Comment le coût des séances est-il pris en charge pour la part « complémentaire » ?",
   },

@@ -24,10 +24,12 @@ const Page = () => {
               <p>Je souhaite bénéficier de l’accompagnement d’un psychologue</p>
               <div className="fr-highlight fr-highlight--yellow-tournesol fr-mt-4w fr-pr-6w">
                 <p>
-                  <strong>Toute personne angoissée ou déprimée</strong> (dès 3
-                  ans) peut bénéficier d’un accompagnement par un psychologue
-                  partenaire (conventionné avec l’Assurance Maladie)&nbsp;:
-                  jusqu’à 8 séances par an.
+                  <strong>
+                    Toute personne (dès 3 ans) peut bénéficier d’un
+                    accompagnement par un psychologue partenaire
+                  </strong>{" "}
+                  (conventionné avec l’Assurance Maladie)&nbsp;: jusqu’à 8
+                  séances par an.
                 </p>
                 <p className="fr-mt-2w">
                   Pour en bénéficier, je dois{" "}
@@ -63,6 +65,43 @@ const Page = () => {
               </div>
             </div>
           )}
+
+          <div className="fr-col-12">
+            <h2>Suis-je concerné(e)&nbsp;?</h2>
+            <ul className="fr-mb-2w">
+              <li>Je me sens anxieux(se), angoissé(e) ou déprimé(e)</li>
+              <li>Je suis en situation de mal-être</li>
+              <li>
+                J’ai un problème de consommation de tabac, d’alcool ou de
+                cannabis
+              </li>
+              <li>
+                J’ai un trouble du comportement alimentaire (anorexie, boulimie,
+                modification brutale du poids)
+              </li>
+            </ul>
+            <p className="fr-mb-2w">
+              Différentes manifestations peuvent survenir : difficultés à
+              m’endormir ou à rester endormi(e), difficultés pour me concentrer,
+              manque d’appétit, stress, nervosité, inquiétude, irritabilité,
+              agitation, addiction, fatigue, manque d’énergie, dormir trop,
+              manger trop, etc.
+            </p>
+            <p className="fr-mb-2w">
+              Ces situations peuvent survenir sans raison apparente, mais
+              également suite à une rupture, le décès d’un proche, un épuisement
+              professionnel, une agression, une maladie, des difficultés
+              sociales, familiales, professionnelles ou financières, etc.
+            </p>
+            <p className="fr-mb-2w">
+              <strong>
+                Les troubles psychiques d’intensité légère à modérée concernent,
+                en France, environ 10 millions de personnes.
+              </strong>{" "}
+              En cas de doute sur la possibilité de bénéficier du dispositif, je
+              pose la question à mon médecin.
+            </p>
+          </div>
         </div>
       </section>
       <section>
@@ -72,10 +111,13 @@ const Page = () => {
               <h2>Quel est le rôle du médecin&nbsp;?</h2>
               <p>
                 Le médecin identifie les <strong>situations d’urgence</strong>,
-                présentant un <strong>risque suicidaire</strong> ou avec des{" "}
-                <strong>critères de gravité</strong> pour orienter vers une
-                prise en charge adaptée&nbsp;: psychiatre, hôpital, structure
-                spécialisée dans la prise en charge de psycho-trauma…
+                (
+                <strong>
+                  risque suicidaire ou présence de critères de gravité
+                </strong>
+                ) pour orienter vers une prise en charge adaptée&nbsp;:
+                psychiatre, hôpital, structure spécialisée dans la prise en
+                charge de psycho&#8209;trauma…
               </p>
               <p>
                 C’est pourquoi, dans ce cadre,{" "}
@@ -90,38 +132,32 @@ const Page = () => {
                 ou encore d’un médecin hospitalier.
               </p>
             </div>
-            <div className="fr-col-12 fr-col-lg-6">
+            <div className="fr-col-12 fr-col-lg-5 fr-col-offset-lg-1">
               <h2>Quel est le rôle du psychologue partenaire&nbsp;?</h2>
-              <p className="fr-m-0">
-                Je me sens anxieux(se), angoissé(e) ou déprimé(e)&nbsp;?
-              </p>
-              <p className="fr-m-0">Je suis en situation de mal-être&nbsp;?</p>
-              <p className="fr-m-0">
-                J’ai un problème de consommation de tabac, d’alcool ou de
-                cannabis&nbsp;?
-              </p>
-              <p>J’ai un trouble du comportement alimentaire&nbsp;?</p>
-              <p className="fr-text--lead">
-                Le psychologue partenaire est là pour m’aider.
+              <p>
+                Je ne me sens pas bien,{" "}
+                <strong>le psychologue partenaire est là pour m’aider.</strong>
               </p>
               <p>
-                Dans ce cadre, il ne gère pas les situations d’urgence,
-                présentant un risque suicidaire ou avec des critères de gravité
-                ou de dépendance.
+                Le psychologue et le médecin se concertent, avec mon accord,
+                pour repérer (au départ, en cours ou en fin de prise en charge)
+                les situations qui relèvent d’une prise en charge spécialisée.
+                C’est notamment le cas pour les situations d’urgence (risque
+                suicidaire ou présence de critères de gravité).
               </p>
-              <div>
-                <p>
-                  <strong>
-                    Je trouve un psychologue partenaire près de chez moi
-                  </strong>
-                </p>
-                <Button
-                  icon="fr-fi-search-line"
-                  onClick={() => router.push("/annuaire")}
-                >
-                  Trouver un psychologue
-                </Button>
-              </div>
+            </div>
+            <div className="fr-col-12">
+              <p>
+                <strong>
+                  Je trouve un psychologue partenaire près de chez moi
+                </strong>
+              </p>
+              <Button
+                icon="fr-fi-search-line"
+                onClick={() => router.push("/annuaire")}
+              >
+                Trouver un psychologue
+              </Button>
             </div>
           </div>
         </div>
