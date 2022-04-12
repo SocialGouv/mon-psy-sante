@@ -25,7 +25,7 @@ describe("Home & landing pages", () => {
     cy.url().should("include", "/patients");
 
     cy.get("h1").should("have.text", "Je ne me sens pas bien");
-    cy.get("h2").first().should("have.text", "Quel est le rôle du médecin ?");
+    cy.get("h2").first().should("have.text", "Suis-je concerné(e) ?");
   });
 
   it("robots.txt should be visible", () => {
