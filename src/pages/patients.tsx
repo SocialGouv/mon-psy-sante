@@ -132,7 +132,7 @@ const Page = () => {
                 ou encore d’un médecin hospitalier.
               </p>
             </div>
-            <div className="fr-col-12 fr-col-lg-5 fr-col-offset-1">
+            <div className="fr-col-12 fr-col-lg-5 fr-col-offset-lg-1">
               <h2>Quel est le rôle du psychologue partenaire&nbsp;?</h2>
               <p>
                 Je ne me sens pas bien,{" "}
