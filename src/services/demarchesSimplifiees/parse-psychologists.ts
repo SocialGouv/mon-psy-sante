@@ -30,6 +30,7 @@ const capitalizeFirstLetter = (word) =>
 
 function formatFirstName(string) {
   return string
+    .trim()
     .split(" ")
     .map((word) => word.split("-").map(capitalizeFirstLetter).join("-"))
     .join(" ");
@@ -90,7 +91,7 @@ export const parseDossierMetadata = async (
     firstName: formatFirstName(dossier.demandeur.prenom),
     id: dossier.number,
     instructorId: dossier.groupeInstructeur.id,
-    lastName: dossier.demandeur.nom.toUpperCase(),
+    lastName: dossier.demandeur.nom.toUpperCase().trim(),
     state: dossier.state,
   };
 
