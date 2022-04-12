@@ -1,3 +1,10 @@
+## [1.27.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.7...v1.27.8) (2022-04-12)
+
+
+### Bug Fixes
+
+* **city search:** fix dropdown when searching city ([#150](https://github.com/SocialGouv/mon-psy-sante/issues/150)) ([92907aa](https://github.com/SocialGouv/mon-psy-sante/commit/92907aabf1a5f1d7777038058e1fa92c5e3db069))
+
 ## [1.27.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.6...v1.27.7) (2022-04-12)
 
 
