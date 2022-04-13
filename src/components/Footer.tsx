@@ -33,6 +33,14 @@ const FooterDescription = () => (
 );
 const footerBodyLinks = [
   {
+    link: "https://solidarites-sante.gouv.fr",
+    title: "solidarites-sante.gouv.fr",
+  },
+  {
+    link: "https://www.ameli.fr",
+    title: "ameli.fr",
+  },
+  {
     link: "https://www.gouvernement.fr",
     title: "gouvernement.fr",
   },
@@ -47,14 +55,6 @@ const footerBodyLinks = [
   {
     link: "http://data.gouv.fr",
     title: "data.gouv.fr",
-  },
-  {
-    link: "https://solidarites-sante.gouv.fr",
-    title: "solidarites-sante.gouv.fr",
-  },
-  {
-    link: "https://www.ameli.fr",
-    title: "ameli.fr",
   },
 ];
 

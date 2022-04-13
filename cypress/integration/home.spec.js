@@ -4,17 +4,17 @@ describe("Home & landing pages", () => {
 
     cy.get("h1").should(
       "have.text",
-      "MonPsy A partir d’avril 2022, l’accès à un accompagnement psychologique pour tous (dès 3 ans)"
+      "MonPsy L’accès à un accompagnement psychologique pour tous (dès 3 ans)"
     );
 
     cy.get("nav")
       .first()
       .should(
         "have.text",
-        "AccueilJe suis angoissé(e) ou déprimé(e)Je suis psychologueJe suis médecinFoire aux questions"
+        "AccueilJe ne me sens pas bienJe suis psychologueJe suis médecinFoire aux questions"
       );
 
-    cy.get("h2").first().should("have.text", "Je suis angoissé(e), déprimé(e)");
+    cy.get("h2").first().should("have.text", "Je ne me sens pas bien");
   });
 
   it("Patient page should be visible", () => {
@@ -24,8 +24,8 @@ describe("Home & landing pages", () => {
 
     cy.url().should("include", "/patients");
 
-    cy.get("h1").should("have.text", "Je suis angoissé(e) ou déprimé(e)");
-    cy.get("h2").first().should("have.text", "Quel est le rôle du médecin ?");
+    cy.get("h1").should("have.text", "Je ne me sens pas bien");
+    cy.get("h2").first().should("have.text", "Suis-je concerné(e) ?");
   });
 
   it("robots.txt should be visible", () => {

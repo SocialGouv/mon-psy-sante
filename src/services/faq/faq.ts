@@ -6,9 +6,10 @@ import accompaniment from "./patient/accompaniment";
 import begin from "./patient/begin";
 import children from "./patient/children";
 import difficulty from "./patient/difficulty";
+import eligibilityPatient from "./patient/eligibility";
 import end from "./patient/end";
 import information from "./patient/information";
-import reimbursment from "./patient/reimbursment";
+import reimbursement from "./patient/reimbursment";
 import agreement from "./psy/agreement";
 import billing from "./psy/billing";
 import psyDoctor from "./psy/doctor";
@@ -26,18 +27,42 @@ const items = [
   {
     key: "patient",
     sections: [
-      { faq: eligibility, title: "Éligibilité" },
+      { faq: eligibilityPatient, title: "Éligibilité" },
       { faq: begin, title: "Début du parcours" },
       { faq: accompaniment, title: "Accompagnement par le psychologue" },
-      { faq: reimbursment, title: "Remboursement" },
+      { faq: reimbursement, title: "Remboursement" },
       { faq: end, title: "Fin du parcours" },
       { faq: children, title: "Patients de moins de 18 ans" },
       { faq: difficulty, title: "En cas de difficulté" },
       { faq: information, title: "Information sur la santé mentale" },
     ],
     title: "Patient",
+    documents: [
+      {
+        url: "/documents/MonPsy_Flyer grand public.pdf",
+        title: " Flyer Grand Public",
+      },
+    ],
   },
   {
+    documents: [
+      {
+        url: "/documents/MonPsy_Guide psychologue_2022.pdf",
+        title: "Guide pour les psychologues",
+      },
+      {
+        url: "/documents/MonPsy_Livret_échelles évaluations_2022.pdf",
+        title: "Echelles d’évaluation",
+      },
+      {
+        url: "/documents/MonPsy_Flyer-Feuille de soin_2022.pdf",
+        title: "Comment compléter une feuille de soins ?",
+      },
+      {
+        url: "/documents/MonPsy_Fiche-Memo_Psy.pdf",
+        title: "Fiche mémo pour les psychologues",
+      },
+    ],
     key: "psychologue",
     sections: [
       { faq: eligibility, title: "Éligibilité" },
@@ -58,6 +83,20 @@ const items = [
   },
   {
     key: "medecin",
+    documents: [
+      {
+        title: "Guide pour les médecins",
+        url: "/documents/MonPsy_Guide médecin_2022.pdf",
+      },
+      {
+        title: "Fiche mémo pour les médecins",
+        url: "/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf",
+      },
+      {
+        title: "Echelles d’évaluation",
+        url: "/documents/MonPsy_Livret_échelles évaluations_2022.pdf",
+      },
+    ],
     sections: [
       { faq: orientation, title: "Orientation du patient" },
       { faq: practices, title: "Bonnes pratiques" },

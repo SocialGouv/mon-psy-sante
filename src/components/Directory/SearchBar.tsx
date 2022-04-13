@@ -1,21 +1,16 @@
-import {
-  Alert,
-  Button,
-  Col,
-  SearchableSelect,
-  Select,
-} from "@dataesr/react-dsfr";
+import { Alert, Button, Col, Row, Select } from "@dataesr/react-dsfr";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import ReactAutocomplete from "react-autocomplete";
 
 import {
   AROUND_ME,
   AROUND_ME_OPTION,
-  search,
+  searchCity,
 } from "../../services/frontend/geo.api";
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
-import { allPublics } from "../../types/enums/public";
-import { Search, SubSearch } from "./Directory.styles";
+import { allPublicsFilters } from "../../types/enums/public";
+import { SubSearch } from "./Directory.styles";
 
 const geoStatusEnum = {
   DENIED: -1,
@@ -33,7 +28,6 @@ const SearchBar = ({
   setCoords,
   geoLoading,
   setGeoLoading,
-  loadMorePsychologists,
   loadPsychologists,
 }: {
   positionFilter: string;
@@ -44,8 +38,7 @@ const SearchBar = ({
   setCoords: Dispatch<SetStateAction<Coordinates>>;
   geoLoading: boolean;
   setGeoLoading: Dispatch<SetStateAction<boolean>>;
-  loadMorePsychologists: () => void;
-  loadPsychologists: (page: number) => void;
+  loadPsychologists: () => void;
 }) => {
   const [filterText, setFilterText] = useState("");
   const [geoStatus, setGeoStatus] = useState(geoStatusEnum.UNKNOWN);
@@ -60,12 +53,13 @@ const SearchBar = ({
 
   const errors = () => {
     setGeoStatus(geoStatusEnum.DENIED);
+    setGeoLoading(false);
   };
 
   const getGeolocation = (state) => {
     if (state === "granted") {
       setGeoLoading(true);
-      navigator.geolocation.getCurrentPosition(success);
+      navigator.geolocation.getCurrentPosition(success, errors);
     } else if (state === "prompt") {
       setGeoLoading(true);
       navigator.geolocation.getCurrentPosition(success, errors);
@@ -75,7 +69,7 @@ const SearchBar = ({
   };
 
   const checkGeolocationPermission = () => {
-    if (navigator.geolocation) {
+    if (navigator.geolocation && navigator.permissions) {
       navigator.permissions.query({ name: "geolocation" }).then((result) => {
         getGeolocation(result.state);
       });
@@ -90,28 +84,52 @@ const SearchBar = ({
     }
   }, [positionFilter]);
 
-  useEffect(() => {
-    if (positionFilter) {
-      return;
-    }
-
-    search(filterText, setOptions);
-  }, [filterText]);
-
   return (
-    <Search>
+    <Row className="fr-pb-2w" alignItems="middle">
       <Col n="md-9 12">
-        <SearchableSelect
-          selected={positionFilter}
-          onChange={setPositionFilter}
-          onTextChange={setFilterText}
-          filter={(label, option) =>
-            option.label === AROUND_ME ||
-            option.label.toLowerCase().includes(label.toLowerCase())
-          }
-          label="Rechercher par ville ou code postal"
-          options={options}
-        />
+        <div className="fr-select-group">
+          <label className="fr-label fr-mb-2v" htmlFor="city-search">
+            Rechercher par ville ou code postal
+          </label>
+          <div className="select-search-input">
+            <ReactAutocomplete
+              id="city-search"
+              inputProps={{
+                className: "fr-select",
+                placeholder: "Ville ou code postal",
+              }}
+              wrapperStyle={{}}
+              getItemValue={(item) => item.label}
+              items={options}
+              renderItem={(item, isHighlighted) => (
+                <li
+                  role="option"
+                  key={item.label}
+                  aria-selected={isHighlighted}
+                  className={`select-search-option ${
+                    isHighlighted ? "select-search-option__selected" : ""
+                  }`}
+                >
+                  {item.label}
+                </li>
+              )}
+              renderMenu={(items) => (
+                <ul className="select-search-options select-search-options__visible no-bullet fr-p-0">
+                  {items}
+                </ul>
+              )}
+              value={filterText}
+              onChange={(e) => {
+                setFilterText(e.target.value);
+                searchCity(e.target.value, setOptions);
+              }}
+              onSelect={(val, item) => {
+                setFilterText(val);
+                setPositionFilter(item.value);
+              }}
+            />
+          </div>
+        </div>
         <SubSearch>
           <Select
             selected={otherFilters[FILTER.PUBLIC]}
@@ -121,55 +139,47 @@ const SearchBar = ({
                 [FILTER.PUBLIC]: e.target.value,
               })
             }
-            label="Accompagnant des"
-            options={allPublics.map((option) => ({
-              label: option.replace("et", "ou"),
-              value: option,
+            label="Souhait du psychologue d'accompagner des"
+            options={allPublicsFilters.map((option) => ({
+              label: option.label || option.value,
+              value: option.value,
             }))}
           />
-          <div>
-            <label className="fr-label">Uniquement à distance</label>
-            <div className="fr-toggle">
-              <input
-                id="checkbox-teleconsultation"
-                type="checkbox"
-                className="fr-toggle__input"
-                checked={otherFilters[FILTER.TELECONSULTATION]}
-                onChange={(e) =>
-                  setOtherFilters({
-                    ...otherFilters,
-                    [FILTER.TELECONSULTATION]: e.target.checked,
-                  })
-                }
-              />
-              <label
-                className="fr-toggle__label"
-                htmlFor="checkbox-teleconsultation"
-              />
-            </div>
+
+          <div className="fr-toggle">
+            <input
+              id="checkbox-teleconsultation"
+              type="checkbox"
+              className="fr-toggle__input"
+              checked={otherFilters[FILTER.TELECONSULTATION]}
+              onChange={(e) =>
+                setOtherFilters({
+                  ...otherFilters,
+                  [FILTER.TELECONSULTATION]: e.target.checked,
+                })
+              }
+            />
+            <label
+              className="fr-toggle__label"
+              htmlFor="checkbox-teleconsultation"
+            >
+              Possibilité de séances à distance
+            </label>
           </div>
         </SubSearch>
       </Col>
-      <Col offset="md-1" n="md-2 12" className="align-right">
-        <Button
-          secondary
-          className="fr-hidden-md fr-mt-1w"
-          onClick={loadMorePsychologists}
-        >
-          Plus de psychologues
-        </Button>
+      <Col n="md-3 12" className="align-center">
         <Button
           className="fr-ml-1w fr-mt-1w"
           disabled={!coords || geoLoading}
-          onClick={() => {
-            loadPsychologists(0);
-          }}
+          onClick={loadPsychologists}
         >
           {geoLoading ? "Chargement..." : "Rechercher"}
         </Button>
       </Col>
       {positionFilter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
         <Alert
+          title="Géolocalisation indisponible"
           className="fr-mt-1w"
           type="error"
           description="Veuillez autoriser la géolocalisation sur votre navigateur pour utiliser cette
@@ -179,12 +189,13 @@ const SearchBar = ({
       {positionFilter === AROUND_ME &&
         geoStatus === geoStatusEnum.UNSUPPORTED && (
           <Alert
+            title="Géolocalisation indisponible"
             className="fr-mt-1w"
             type="error"
             description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
           />
         )}
-    </Search>
+    </Row>
   );
 };
 

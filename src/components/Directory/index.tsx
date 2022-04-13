@@ -1,22 +1,18 @@
+import { Alert } from "@dataesr/react-dsfr";
 import axios from "axios";
-import { useRouter } from "next/router";
 import React, { createRef, useEffect, useRef, useState } from "react";
 
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
 import { PUBLIC } from "../../types/enums/public";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
-import { DirectoryWrapper, ResultWrapper } from "./Directory.styles";
+import Spinner from "../Spinner";
+import { ResultWrapper } from "./Directory.styles";
 import Header from "./Header";
-import ResultsDesktop from "./ResultsDesktop";
-import ResultsMobile from "./ResultsMobile";
+import Results from "./Results";
 import SearchBar from "./SearchBar";
 
 const Directory = () => {
-  const router = useRouter();
-
-  const currentPageRef = useRef(0);
-
   const [coords, setCoords] = useState<Coordinates>();
   const [geoLoading, setGeoLoading] = useState(false);
 
@@ -24,7 +20,10 @@ const Directory = () => {
   const psychologistsRefs = useRef<any>();
   const resultsRef = useRef(null);
   const [selectedPsychologist, setSelectedPsychologist] = useState<number>();
+  const [noPsychologist, setNoPsychologist] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [mapCenter, setMapCenter] = useState<Coordinates>();
+  const [mapZoom, setMapZoom] = useState<number>(12);
 
   const [positionFilter, setPositionFilter] = useState<any>("");
   const [otherFilters, setOtherFilters] = useState({
@@ -32,17 +31,28 @@ const Directory = () => {
     [FILTER.PUBLIC]: PUBLIC.BOTH,
   });
 
-  const loadMorePsychologists = () => {
-    loadPsychologists(currentPageRef.current + 1);
-    currentPageRef.current = currentPageRef.current + 1;
-  };
+  const APPROX_50_KM = 0.5;
+  const APPROX_40_KM = 0.4;
 
-  const loadPsychologists = (currentPage) => {
-    let query = `?${FILTER.PAGE_INDEX}=${currentPage}`;
-    if (coords) {
-      query = `${query}&${FILTER.LONGITUDE}=${coords.longitude}&${FILTER.LATITUDE}=${coords.latitude}`;
-      setMapCenter(coords);
+  function setupMapAccordingToPsy(distance) {
+    if (distance > APPROX_50_KM) {
+      setNoPsychologist(true);
+      setMapZoom(8);
+    } else if (distance > APPROX_40_KM) {
+      setMapZoom(10);
+    } else {
+      setMapZoom(12);
     }
+  }
+
+  const loadPsychologists = () => {
+    let query = `?`;
+    setNoPsychologist(false);
+    setIsLoading(true);
+    setPsychologists([]);
+
+    query = `${query}&${FILTER.LONGITUDE}=${coords.longitude}&${FILTER.LATITUDE}=${coords.latitude}`;
+    setMapCenter(coords);
 
     if (otherFilters[FILTER.TELECONSULTATION]) {
       query = `${query}&${FILTER.TELECONSULTATION}=true`;
@@ -51,37 +61,19 @@ const Directory = () => {
       query = `${query}&${FILTER.PUBLIC}=${otherFilters[FILTER.PUBLIC]}`;
     }
     axios.get(`/api/psychologists${query}`).then((response) => {
-      if (currentPage === 0) {
-        const refs = {};
-        response.data.forEach((x) => (refs[x.id] = createRef()));
-        psychologistsRefs.current = refs;
-        if (resultsRef.current) {
-          resultsRef.current.scrollTo({ top: 0 });
-        }
-        setSelectedPsychologist(null);
-        setPsychologists(response.data);
-      } else {
-        response.data.forEach(
-          (x) => (psychologistsRefs.current[x.id] = createRef())
-        );
-        setPsychologists(psychologists.concat(response.data));
-      }
+      setIsLoading(false);
 
-      if (!coords) {
-        const [longitude, latitude] = response.data[0].coordinates.coordinates;
-        setMapCenter({
-          latitude,
-          longitude,
-        });
+      const refs = {};
+      setupMapAccordingToPsy(response.data[0].distance);
+      response.data.forEach((x) => (refs[x.id] = createRef()));
+      psychologistsRefs.current = refs;
+      if (resultsRef.current) {
+        resultsRef.current.scrollTo({ top: 0 });
       }
+      setSelectedPsychologist(null);
+      setPsychologists(response.data);
     });
   };
-
-  useEffect(() => {
-    if (process.env.NEXT_PUBLIC_NEW_FEATURES !== "true") {
-      router.push("/");
-    }
-  }, []);
 
   useEffect(() => {
     if (positionFilter === "Autour de moi") {
@@ -111,41 +103,46 @@ const Directory = () => {
   }, [positionFilter]);
 
   return (
-    <DirectoryWrapper>
+    <>
       <Header />
-      <ResultWrapper>
-        <SearchBar
-          positionFilter={positionFilter}
-          setPositionFilter={setPositionFilter}
-          otherFilters={otherFilters}
-          setOtherFilters={setOtherFilters}
-          coords={coords}
-          setCoords={setCoords}
-          geoLoading={geoLoading}
-          setGeoLoading={setGeoLoading}
-          loadMorePsychologists={loadMorePsychologists}
-          loadPsychologists={loadPsychologists}
-        />
-        {psychologists && psychologists.length > 0 && (
-          <>
-            <ResultsDesktop
-              loadMorePsychologists={loadMorePsychologists}
-              psychologists={psychologists}
-              resultsRef={resultsRef}
-              psychologistsRefs={psychologistsRefs}
-              selectedPsychologist={selectedPsychologist}
-              setSelectedPsychologist={setSelectedPsychologist}
-              mapCenter={mapCenter}
-              setMapCenter={setMapCenter}
-            />
-            <ResultsMobile
-              psychologists={psychologists}
-              mapCenter={mapCenter}
-            />
-          </>
+
+      <SearchBar
+        positionFilter={positionFilter}
+        setPositionFilter={setPositionFilter}
+        otherFilters={otherFilters}
+        setOtherFilters={setOtherFilters}
+        coords={coords}
+        setCoords={setCoords}
+        geoLoading={geoLoading}
+        setGeoLoading={setGeoLoading}
+        loadPsychologists={loadPsychologists}
+      />
+      <ResultWrapper className="fr-mb-8w">
+        {noPsychologist && (
+          <Alert
+            title="Pas encore de psychologues partenaires dans cette zone"
+            className="fr-mb-4w"
+            description="Nous mettons à jour cette liste régulièrement.
+N'hésitez pas à dézoomer sur la carte (cliquer sur -) pour voir les psychologues proches de chez vous.
+A noter, certains psychologues acceptent les séances à distance après la 1ère rencontre physique"
+          />
         )}
+        {psychologists?.length > 0 && (
+          <Results
+            psychologists={psychologists}
+            resultsRef={resultsRef}
+            psychologistsRefs={psychologistsRefs}
+            selectedPsychologist={selectedPsychologist}
+            setSelectedPsychologist={setSelectedPsychologist}
+            mapCenter={mapCenter}
+            setMapCenter={setMapCenter}
+            mapZoom={mapZoom}
+            setMapZoom={setMapZoom}
+          />
+        )}
+        {isLoading && <Spinner />}
       </ResultWrapper>
-    </DirectoryWrapper>
+    </>
   );
 };
 

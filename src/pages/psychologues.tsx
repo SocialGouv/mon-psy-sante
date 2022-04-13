@@ -22,6 +22,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-5">
               <img
                 src="/images/psy.svg"
+                height="360"
                 alt="Je suis psychologue illustration"
               />
             </div>
@@ -77,8 +78,8 @@ const Page = () => {
                   Maladie).
                 </p>
               </div>
-              <div className="fr-col-12 fr-col-lg-4 fr-col-lg-offset-1">
-                <div className="fr-callout fr-callout-white fr-centered">
+              <div className="fr-col-12 fr-col-lg-4 fr-col-offset-lg-1">
+                <div className="fr-callout fr-callout-white align-center">
                   <a
                     className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w"
                     target="_blank"
@@ -121,7 +122,7 @@ const Page = () => {
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-3w">
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">Candidature</h3>
@@ -142,7 +143,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">Éligibilité</h3>
@@ -160,7 +161,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">Conventionnement </h3>
@@ -175,7 +176,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">4</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -183,15 +184,17 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      Dès avril&nbsp;2022, mes coordonnées sont{" "}
-                      <strong>publiées sur le site</strong> monpsy.sante.gouv.fr
+                      Une fois conventionné, mes coordonnées sont publiées sur{" "}
+                      <a href="/annuaire" rel="nofollow">
+                        l’annuaire MonPsy
+                      </a>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">5</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -229,7 +232,7 @@ const Page = () => {
               </p>
 
               <p>
-                Il peut s’agir, par exemple, d’un médecin traitant (généraliste,
+                Il peut s’agir, par exemple, d’un médecin (généraliste,
                 pédiatre, gériatre…), d’un médecin scolaire, de PMI (protection
                 maternelle et infantile), des services de santé des universités
                 ou encore d’un médecin hospitalier.
@@ -243,7 +246,7 @@ const Page = () => {
                 dispositif&nbsp;?
               </h2>
             </div>
-            <div className="fr-col-12 fr-col-lg-3 fr-centered">
+            <div className="fr-col-12 fr-col-lg-3 align-center">
               <img
                 src="/images/children-psy.svg"
                 height="160"
@@ -307,8 +310,15 @@ const Page = () => {
               </p>
 
               <p>
-                Pour plus de précisions, je me réfère au guide à destination des
-                psychologues. (à venir)
+                Pour plus de précisions, je me réfère au{" "}
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Guide psychologue_2022.pdf"
+                >
+                  guide à destination des psychologues
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -323,7 +333,7 @@ const Page = () => {
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-10 fr-col-md fr-ml-md-4w">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -349,7 +359,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-md">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -365,7 +375,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-md">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -397,7 +407,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-md fr-mr-md-4w">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">4</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -405,7 +415,8 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      A la fin de l’accompagnement, j’adresse au médecin, un{" "}
+                      A la fin de l’accompagnement, en accord avec le patient,
+                      j’adresse au médecin, un{" "}
                       <strong>compte-rendu de fin de prise en charge</strong>.
                     </p>
 
@@ -436,10 +447,7 @@ const Page = () => {
               <ul>
                 <li>Bénéficiaire de la Complémentaire Santé Solidaire (CSS)</li>
                 <li>Bénéficiaire de l’Aide Médicale d’Etat (AME)</li>
-                <li>
-                  Soins en lien avec une maladie : Affection de Longue Durée
-                  (ALD) ou accident causé par un tiers
-                </li>
+                <li>Soins en lien avec une Affection de Longue Durée (ALD)</li>
                 <li>
                   Soins en lien avec une maternité (à partir du 6ème mois de
                   grossesse)
@@ -486,28 +494,35 @@ const Page = () => {
             <div className="fr-col-12">
               <p className="fr-text--lead">
                 Je souhaite accéder à la documentation&nbsp;?
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                  target="_blank"
-                  href="/documents/MonPsy_Guide psychologue_2022.pdf"
-                >
-                  Guide pour les psychologues
-                </a>
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                  target="_blank"
-                  href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
-                >
-                  Echelles d’évaluation
-                </a>
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                  target="_blank"
-                  href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
-                >
-                  Comment compléter une feuille de soins&nbsp;?
-                </a>
               </p>
+              <a
+                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                target="_blank"
+                href="/documents/MonPsy_Guide psychologue_2022.pdf"
+              >
+                Guide pour les psychologues
+              </a>
+              <a
+                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                target="_blank"
+                href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+              >
+                Echelles d’évaluation
+              </a>
+              <a
+                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                target="_blank"
+                href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
+              >
+                Comment compléter une feuille de soins&nbsp;?
+              </a>
+              <a
+                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                target="_blank"
+                href="/documents/MonPsy_Fiche-Memo_Psy.pdf"
+              >
+                Fiche mémo pour les psychologues
+              </a>
             </div>
           </div>
         </div>

@@ -1,4 +1,3 @@
-/* eslint-disable jest/no-conditional-expect */
 import axios from "axios";
 
 import config from "../../services/config";
@@ -62,30 +61,32 @@ describe("/api/contact", () => {
   ];
   errors.map((error) =>
     it(`Should return a 400 for a contact ${error.label}`, async () => {
-      expect.assertions(2);
-      try {
-        const defaultValues = {
-          department: "06 - Alpes-Maritimes",
-          email: "jane.dane@msp.fr",
-          firstName: "Jane",
-          lastName: "Dane",
-          message: "Hello you !",
-          userType: CONTACT_USER_TYPE.OTHER,
-        };
+      let result;
 
-        const resutSuccess = await axios.post(
-          `${config.nextAuthUrl}/api/contact`,
-          defaultValues
-        );
-        expect(resutSuccess.status).toEqual(200);
+      const defaultValues = {
+        department: "06 - Alpes-Maritimes",
+        email: "jane.dane@msp.fr",
+        firstName: "Jane",
+        lastName: "Dane",
+        message: "Hello you !",
+        userType: CONTACT_USER_TYPE.OTHER,
+      };
 
-        await axios.post(`${config.nextAuthUrl}/api/contact`, {
+      const resutSuccess = await axios.post(
+        `${config.nextAuthUrl}/api/contact`,
+        defaultValues
+      );
+      expect(resutSuccess.status).toEqual(200);
+
+      await axios
+        .post(`${config.nextAuthUrl}/api/contact`, {
           ...defaultValues,
           ...error.values,
+        })
+        .catch((e) => {
+          result = e;
         });
-      } catch (e) {
-        expect(e.response.status).toEqual(400);
-      }
+      expect(result.response.status).toEqual(400);
     })
   );
 });

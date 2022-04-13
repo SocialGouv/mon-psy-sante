@@ -22,8 +22,10 @@ const searchCommunes = (
       const communes = response.data
         .sort((a, b) => b.population - a.population)
         .map((commune) => ({
-          label: `${commune.nom}, ${commune.departement.nom}`,
-          value: commune.centre.coordinates,
+          label:
+            commune.nom +
+            (commune.departement ? `, ${commune.departement.nom}` : ""),
+          value: commune.centre?.coordinates,
         }));
       action(communes.concat(AROUND_ME_OPTION));
     });
@@ -82,7 +84,6 @@ const searchDepartments = async (
         )
       )
   );
-
   const communes = results
     .flatMap((result) => result.data)
     .flatMap((commune) =>
@@ -98,7 +99,7 @@ const searchDepartments = async (
     .sort((a, b) => b.population - a.population)
     .map((commune) => {
       return {
-        label: `${commune.nom}, ${commune.codePostal}, ${commune.departement.nom}`,
+        label: `${commune.nom}, ${commune.codePostal}, ${commune.departement?.nom}`,
         value: `${commune.codePostal} ${commune.nom}`,
       };
     });
@@ -114,8 +115,7 @@ const searchDepartments = async (
 
   return Promise.resolve();
 };
-
-export const search = async (
+export const searchCity = async (
   filter: string,
   action: React.Dispatch<
     React.SetStateAction<

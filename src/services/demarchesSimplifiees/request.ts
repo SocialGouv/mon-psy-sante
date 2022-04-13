@@ -24,8 +24,7 @@ const logErrorsFromDS = (apiResponse: {
 
 export const request = async (query: string, variables = undefined) => {
   try {
-    const result = await graphQLClient.request(query, variables);
-    return result;
+    return await graphQLClient.request(query, variables);
   } catch (err) {
     console.error("API has returned error", err);
     logErrorsFromDS(err);

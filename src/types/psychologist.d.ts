@@ -1,3 +1,5 @@
+import { CoordinatesPostgis } from "./coordinates";
+
 export interface Psychologist {
   id: number;
   firstName: string;
@@ -5,6 +7,7 @@ export interface Psychologist {
   archived: boolean;
   phone: string;
   address: string;
+  secondAddress: string;
   teleconsultation: boolean;
   displayEmail: boolean;
   visible: boolean;
@@ -13,8 +16,12 @@ export interface Psychologist {
   languages: string;
   cdsmsp: string;
   website: string;
-  coordinates: { type: string; coordinates: [number, number] };
+  coordinates: CoordinatesPostgis;
+  secondAddressCoordinates: CoordinatesPostgis;
   instructorId: string;
+  department: string;
+  state: string;
+  distance?: number;
 }
 
 export interface DSPsychologist {

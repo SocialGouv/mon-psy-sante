@@ -4,29 +4,40 @@ import { DSResponse } from "../../types/demarcheSimplifiee";
 import config from "../config";
 import { request } from "./request";
 
+enum DossierState {
+  enConstruction = "en_construction",
+  enInstruction = "en_instruction",
+  accepte = "accepte",
+  refuse = "refuse",
+  sansSuite = "sans_suite",
+}
+
 const getWhereConditionAfterCursor = (cursor: string): string => {
   if (cursor) {
-    return `(after: "${cursor}")`;
+    return ` after: "${cursor}"`;
   }
   return "";
 };
 
 export const requestPsychologistsState = async (
-  afterCursor: string | undefined
+  afterCursor: string | undefined,
+  extraInfos?: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
   const query = gql`
 {
   demarche (number: ${config.demarchesSimplifiees.id}) {
     id
-    dossiers ${paginationCondition} {
+    dossiers ${paginationCondition ? "(" + paginationCondition + ")" : ""} {
       pageInfo {
         hasNextPage
         endCursor
       }
       nodes {
           archived
+          state
           number
+          ${extraInfos ?? ""}
       }
     }
   }
@@ -36,7 +47,7 @@ export const requestPsychologistsState = async (
   return request(query);
 };
 
-export const requestPsychologists = async (
+export const requestPsychologistsAcceptes = async (
   afterCursor: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
@@ -44,7 +55,7 @@ export const requestPsychologists = async (
     {
       demarche (number: ${config.demarchesSimplifiees.id}) {
         id
-        dossiers ${paginationCondition} {
+        dossiers (state: ${DossierState.accepte}${paginationCondition}) {
           pageInfo {
             hasNextPage
             endCursor
@@ -72,6 +83,41 @@ export const requestPsychologists = async (
                   prenom
                 }
               }
+          }
+        }
+      }
+    }
+  `;
+
+  return request(query);
+};
+
+export const requestPsychologistsById = async (
+  id: number
+): Promise<DSResponse> => {
+  const query = gql`
+    {
+      dossier (number: ${id}) {
+        archived
+        number
+        groupeInstructeur {
+          id
+          label
+        }
+        state
+        champs {
+          id
+          label
+          stringValue
+        }
+        usager {
+          email
+        }
+        demandeur {
+          ... on PersonnePhysique {
+            civilite
+            nom
+            prenom
           }
         }
       }

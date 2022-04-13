@@ -1,3 +1,291 @@
+## [1.27.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.7...v1.27.8) (2022-04-12)
+
+
+### Bug Fixes
+
+* **city search:** fix dropdown when searching city ([#150](https://github.com/SocialGouv/mon-psy-sante/issues/150)) ([92907aa](https://github.com/SocialGouv/mon-psy-sante/commit/92907aabf1a5f1d7777038058e1fa92c5e3db069))
+
+## [1.27.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.6...v1.27.7) (2022-04-12)
+
+
+### Bug Fixes
+
+* **city input:** use react autocomplete instead of SearchableSelect which does not work on safari ([#144](https://github.com/SocialGouv/mon-psy-sante/issues/144)) ([fee518a](https://github.com/SocialGouv/mon-psy-sante/commit/fee518ad2f13901e92e760f5792cbedc59b81f93))
+
+## [1.27.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.5...v1.27.6) (2022-04-12)
+
+
+### Bug Fixes
+
+* **text:** update page patient + update FAQ ([#146](https://github.com/SocialGouv/mon-psy-sante/issues/146)) ([27dee64](https://github.com/SocialGouv/mon-psy-sante/commit/27dee644f17ad6fe5842d2de68cdeea428f50e5f))
+* add OSM attribution ([#134](https://github.com/SocialGouv/mon-psy-sante/issues/134)) ([c61edc9](https://github.com/SocialGouv/mon-psy-sante/commit/c61edc98b8afc30aec9775a063ae6f4b63dad807))
+
+## [1.27.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.4...v1.27.5) (2022-04-05)
+
+
+### Bug Fixes
+
+* **text:** "en accord avec le patient" ([#139](https://github.com/SocialGouv/mon-psy-sante/issues/139)) ([be12a04](https://github.com/SocialGouv/mon-psy-sante/commit/be12a040b85fde7d8782981c674fa0f8949bca51))
+
+## [1.27.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.3...v1.27.4) (2022-04-05)
+
+
+### Bug Fixes
+
+* **location:** fix frontend error on some browser ([d8ab3ed](https://github.com/SocialGouv/mon-psy-sante/commit/d8ab3edd3124e35f722a1a91e11da728e3ae895c))
+
+## [1.27.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.2...v1.27.3) (2022-04-05)
+
+
+### Bug Fixes
+
+* **annuaire:** on mobile fix scroll down on psy list + update text ([#137](https://github.com/SocialGouv/mon-psy-sante/issues/137)) ([8586724](https://github.com/SocialGouv/mon-psy-sante/commit/8586724f5832f66547f26fe34999a6e00bf05a21))
+
+## [1.27.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.1...v1.27.2) (2022-04-05)
+
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v18 (major) ([#130](https://github.com/SocialGouv/mon-psy-sante/issues/130)) ([7aea25c](https://github.com/SocialGouv/mon-psy-sante/commit/7aea25c3e680a5e3c94df277fa92b56294e0e899))
+
+## [1.27.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.0...v1.27.1) (2022-04-05)
+
+
+### Bug Fixes
+
+* increase ressources ([#136](https://github.com/SocialGouv/mon-psy-sante/issues/136)) ([e5987e1](https://github.com/SocialGouv/mon-psy-sante/commit/e5987e1a11332db4677193e19016b5459d9cd525))
+
+# [1.27.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.26.0...v1.27.0) (2022-04-04)
+
+
+### Features
+
+* **annuaire:** go live with annuaire :rocket: ([#122](https://github.com/SocialGouv/mon-psy-sante/issues/122)) ([ae16f99](https://github.com/SocialGouv/mon-psy-sante/commit/ae16f99ffc214c4c2033f7ab0fb853fbb2e33af6))
+
+# [1.26.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.25.1...v1.26.0) (2022-04-04)
+
+
+### Features
+
+* **scripts:** add script to extract email + update logs on import scripts ([#133](https://github.com/SocialGouv/mon-psy-sante/issues/133)) ([ea4e0dc](https://github.com/SocialGouv/mon-psy-sante/commit/ea4e0dcb59fe128af92bf0cc0325731a1137bfa3))
+
+## [1.25.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.25.0...v1.25.1) (2022-03-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency got to v12.0.3 ([#120](https://github.com/SocialGouv/mon-psy-sante/issues/120)) ([17eebfc](https://github.com/SocialGouv/mon-psy-sante/commit/17eebfc2353809d3d00c77e8ed8badcd55b95e90))
+
+# [1.25.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.24.0...v1.25.0) (2022-03-31)
+
+
+### Features
+
+* **accessibility:** update text for accessibility + make html in french + hide contacts info on annuaire ([#127](https://github.com/SocialGouv/mon-psy-sante/issues/127)) ([7e1ca01](https://github.com/SocialGouv/mon-psy-sante/commit/7e1ca01f4928d13b384f08d6d60cc12eb80edc3e))
+
+# [1.24.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.23.1...v1.24.0) (2022-03-31)
+
+
+### Features
+
+* **annuaire:** remove load more psy functionality (voir plus de psy - pagination) to avoid people to crawl all the data ([#126](https://github.com/SocialGouv/mon-psy-sante/issues/126)) ([4107379](https://github.com/SocialGouv/mon-psy-sante/commit/4107379022147e825d4ccb8dddb37c46d626bb41))
+
+## [1.23.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.23.0...v1.23.1) (2022-03-31)
+
+
+### Bug Fixes
+
+* **text:** update text + add 3 new questions to FAQ ([#124](https://github.com/SocialGouv/mon-psy-sante/issues/124)) ([e7daeed](https://github.com/SocialGouv/mon-psy-sante/commit/e7daeedf88e1e26b3a5c7e27719602e3309525c2))
+
+# [1.23.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.7...v1.23.0) (2022-03-29)
+
+
+### Features
+
+* **importState:** save missing psy (as importData seems to miss some psy) ([#123](https://github.com/SocialGouv/mon-psy-sante/issues/123)) ([5bbcd35](https://github.com/SocialGouv/mon-psy-sante/commit/5bbcd356a5b7994fcf45d7e7f505f1e7da981ee3))
+
+## [1.22.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.6...v1.22.7) (2022-03-29)
+
+
+### Bug Fixes
+
+* **text:** update date on site + add some docs ([#121](https://github.com/SocialGouv/mon-psy-sante/issues/121)) ([b91e7b3](https://github.com/SocialGouv/mon-psy-sante/commit/b91e7b3e5da1f9344e0defeed949f249f980c69c))
+
+## [1.22.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.5...v1.22.6) (2022-03-24)
+
+
+### Bug Fixes
+
+* **lockfile:** fix yarn lockfile ([f6301bf](https://github.com/SocialGouv/mon-psy-sante/commit/f6301bf87c457d88471c2ade1772652474329636))
+
+## [1.22.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.4...v1.22.5) (2022-03-24)
+
+
+### Bug Fixes
+
+* **cron:** handle sentry env in cron jobs ([#117](https://github.com/SocialGouv/mon-psy-sante/issues/117)) ([3acb15c](https://github.com/SocialGouv/mon-psy-sante/commit/3acb15ca143b403377ed77bd73a2fb44e87dfda7))
+
+## [1.22.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.3...v1.22.4) (2022-03-24)
+
+
+### Bug Fixes
+
+* **cron:** move back cron in src folder ([#116](https://github.com/SocialGouv/mon-psy-sante/issues/116)) ([8e9f6f0](https://github.com/SocialGouv/mon-psy-sante/commit/8e9f6f05246f9c99e672bdda78b9b6e50315231a))
+
+## [1.22.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.2...v1.22.3) (2022-03-24)
+
+
+### Bug Fixes
+
+* **docker:** and do not fails on uniq constraint ([#114](https://github.com/SocialGouv/mon-psy-sante/issues/114)) ([2d7ba65](https://github.com/SocialGouv/mon-psy-sante/commit/2d7ba652fbbd51b9337db8e2ed22931b209ac424))
+
+## [1.22.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.1...v1.22.2) (2022-03-24)
+
+
+### Bug Fixes
+
+* **sentry:** fix sentry on next + handle sentry on cron jobs ([#111](https://github.com/SocialGouv/mon-psy-sante/issues/111)) ([785df54](https://github.com/SocialGouv/mon-psy-sante/commit/785df54c936658fbb483f7c0dd39dd5b2a2f04b9))
+
+## [1.22.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.22.0...v1.22.1) (2022-03-23)
+
+
+### Bug Fixes
+
+* **text:** update text on annuaire header ([#110](https://github.com/SocialGouv/mon-psy-sante/issues/110)) ([677928c](https://github.com/SocialGouv/mon-psy-sante/commit/677928ca98d6a737c3a48bb83061670fc8f1c7e1))
+
+# [1.22.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.21.0...v1.22.0) (2022-03-22)
+
+
+### Features
+
+* **import data:** handle second address ([#109](https://github.com/SocialGouv/mon-psy-sante/issues/109)) ([0606059](https://github.com/SocialGouv/mon-psy-sante/commit/0606059ce87a4729173695fe540b3f21331c5da6))
+
+# [1.21.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.20.0...v1.21.0) (2022-03-22)
+
+
+### Features
+
+* **dossier import:** format email, firstName & lastName + log error from cron ([#108](https://github.com/SocialGouv/mon-psy-sante/issues/108)) ([344c4de](https://github.com/SocialGouv/mon-psy-sante/commit/344c4de8bd40bcb8f958a0b7abe58306e6656d48))
+
+# [1.20.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.6...v1.20.0) (2022-03-22)
+
+
+### Features
+
+* **faq docs:** add docs on top of FAQ tabs ([#107](https://github.com/SocialGouv/mon-psy-sante/issues/107)) ([72f2361](https://github.com/SocialGouv/mon-psy-sante/commit/72f2361afd2ab4cd8279747fa60083dd75416704))
+
+## [1.19.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.5...v1.19.6) (2022-03-21)
+
+
+### Bug Fixes
+
+* **psy listing:** reset psy results display on each search ([#104](https://github.com/SocialGouv/mon-psy-sante/issues/104)) ([cfbe5ba](https://github.com/SocialGouv/mon-psy-sante/commit/cfbe5ba82a9df5f6bc804f275eacabbcdb071fc6))
+
+## [1.19.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.4...v1.19.5) (2022-03-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency got to v12.0.2 ([#105](https://github.com/SocialGouv/mon-psy-sante/issues/105)) ([acfe4ac](https://github.com/SocialGouv/mon-psy-sante/commit/acfe4aca4ee4c127a435d40fc174f45d447c5d25))
+
+## [1.19.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.3...v1.19.4) (2022-03-20)
+
+
+### Bug Fixes
+
+* **token:** update DS token + add spinner when loading psy + show message if no psy in selected zone ([#102](https://github.com/SocialGouv/mon-psy-sante/issues/102)) ([d4ea78b](https://github.com/SocialGouv/mon-psy-sante/commit/d4ea78b55e538e82d41515344534b3ad1d64b4af))
+
+## [1.19.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.2...v1.19.3) (2022-03-17)
+
+
+### Bug Fixes
+
+* **map:** better design for pin on map + better matching on city search ([#101](https://github.com/SocialGouv/mon-psy-sante/issues/101)) ([b24c598](https://github.com/SocialGouv/mon-psy-sante/commit/b24c5987ede1f56712edb2db9d9346274511e420))
+
+## [1.19.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.1...v1.19.2) (2022-03-17)
+
+
+### Bug Fixes
+
+* **coordinates:** add SRID when saving coordinates in DB ([#100](https://github.com/SocialGouv/mon-psy-sante/issues/100)) ([253162b](https://github.com/SocialGouv/mon-psy-sante/commit/253162ba0a2e0ad678a76f90c98dd06e1f65ae8f))
+
+## [1.19.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.19.0...v1.19.1) (2022-03-17)
+
+
+### Bug Fixes
+
+* **cron:** fix enum import ([#99](https://github.com/SocialGouv/mon-psy-sante/issues/99)) ([885e845](https://github.com/SocialGouv/mon-psy-sante/commit/885e8452ef90989a9a0965a6daa430c2f53b28ae))
+
+# [1.19.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.18.0...v1.19.0) (2022-03-17)
+
+
+### Features
+
+* **annuaire:** update annuaire layout & only fetch accepted dossiers ([#97](https://github.com/SocialGouv/mon-psy-sante/issues/97)) ([e4657d4](https://github.com/SocialGouv/mon-psy-sante/commit/e4657d4cf4a289af7e73453ab0a343302920c704))
+
+# [1.18.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.17.1...v1.18.0) (2022-03-15)
+
+
+### Features
+
+* **track file:** add vtt file to video for subtitles + small fixes ([#96](https://github.com/SocialGouv/mon-psy-sante/issues/96)) ([bee4a1c](https://github.com/SocialGouv/mon-psy-sante/commit/bee4a1c568cd1c274ceb5c5884bb47df109bc52c))
+
+## [1.17.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.17.0...v1.17.1) (2022-03-15)
+
+
+### Bug Fixes
+
+* **cron:** add limit to importData script so it does not overload the api-address api + add script to extract stats by departments ([#92](https://github.com/SocialGouv/mon-psy-sante/issues/92)) ([12a7d4a](https://github.com/SocialGouv/mon-psy-sante/commit/12a7d4adffd6a05612915f964d173a5c8d3f74d8))
+
+# [1.17.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.16.0...v1.17.0) (2022-03-11)
+
+
+### Features
+
+* **docs:** update documents + text faq ([#94](https://github.com/SocialGouv/mon-psy-sante/issues/94)) ([40ac3fb](https://github.com/SocialGouv/mon-psy-sante/commit/40ac3fbf4ced3680d3b4949a04e82d673992fc70))
+
+# [1.16.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.5...v1.16.0) (2022-03-08)
+
+
+### Features
+
+* **annuaire:** Updated texts ([#78](https://github.com/SocialGouv/mon-psy-sante/issues/78)) ([a735bac](https://github.com/SocialGouv/mon-psy-sante/commit/a735bacceabfffbf139c266913f9444dcfa9c275))
+
+## [1.15.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.4...v1.15.5) (2022-03-08)
+
+
+### Bug Fixes
+
+* **faq:** fix eligibility ([#90](https://github.com/SocialGouv/mon-psy-sante/issues/90)) ([efbbeac](https://github.com/SocialGouv/mon-psy-sante/commit/efbbeacfbbdca75dbc2a373da48c76d690edf9b2))
+
+## [1.15.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.3...v1.15.4) (2022-03-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dotenv to v16 ([#81](https://github.com/SocialGouv/mon-psy-sante/issues/81)) ([fe311ea](https://github.com/SocialGouv/mon-psy-sante/commit/fe311ea51ac63df6ac59c1465b01cf528fe01f6b))
+
+## [1.15.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.2...v1.15.3) (2022-03-08)
+
+
+### Bug Fixes
+
+* **ds:** import Psy state ([#86](https://github.com/SocialGouv/mon-psy-sante/issues/86)) ([69220bb](https://github.com/SocialGouv/mon-psy-sante/commit/69220bbc9d68d3eeedbacb92d88d621dd77d9f33))
+
+## [1.15.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.1...v1.15.2) (2022-03-04)
+
+
+### Bug Fixes
+
+* **faq:** display right section for patient faq ([#88](https://github.com/SocialGouv/mon-psy-sante/issues/88)) ([5d1e4b2](https://github.com/SocialGouv/mon-psy-sante/commit/5d1e4b2a52c17d8a87e6df117f6d5887fe4c0534))
+
+## [1.15.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.15.0...v1.15.1) (2022-03-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency got to v12 ([#82](https://github.com/SocialGouv/mon-psy-sante/issues/82)) ([0cb1038](https://github.com/SocialGouv/mon-psy-sante/commit/0cb1038a599ea1d8775ab7944b0e1f2451902a97))
+
 # [1.15.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.14.0...v1.15.0) (2022-02-28)
 
 

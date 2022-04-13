@@ -2,7 +2,7 @@
 export default [
   {
     answer:
-      "<p>Les psychologues qui souhaitent accompagner des enfants et adolescents sont listés dans l’annuaire. Il suffit de filtrer les résultats de l’annuaire par public cible : adultes ou enfants/adolescents (à venir).</p>",
+      "<p>Les psychologues qui souhaitent accompagner des enfants et adolescents sont listés dans l’annuaire. Il suffit de filtrer les résultats de l’annuaire par public cible : adultes ou enfants/adolescents.</p>",
     question:
       "Comment choisir un psychologue qui souhaite suivre des enfants et adolescents ?",
   },

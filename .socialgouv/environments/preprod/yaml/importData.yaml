@@ -6,7 +6,7 @@ metadata:
   labels:
     app: mon-psy
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "0 */1 * * *"
   jobTemplate:
     spec:
       template:
@@ -25,3 +25,4 @@ spec:
                 - cron:launch
                 - importData
           restartPolicy: Never
+          concurrencyPolicy: Forbid

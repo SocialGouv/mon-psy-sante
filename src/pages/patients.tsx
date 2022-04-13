@@ -20,18 +20,16 @@ const Page = () => {
         <div className="fr-container fr-mt-4w fr-mb-8w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-12 fr-col-lg-8">
-              <h1>Je suis angoissé(e) ou déprimé(e)</h1>
+              <h1>Je ne me sens pas bien</h1>
               <p>Je souhaite bénéficier de l’accompagnement d’un psychologue</p>
-              <p className="fr-text--lead">
-                Le dispositif MonPsy sera accessible à partir d’
-                <strong>avril&nbsp;2022</strong>.
-              </p>
-              <div className="fr-highlight fr-highlight--yellow-tournesol fr-my-4w fr-py-2w fr-pr-6w">
+              <div className="fr-highlight fr-highlight--yellow-tournesol fr-mt-4w fr-pr-6w">
                 <p>
-                  <strong>Toute personne angoissée ou déprimée</strong> (dès 3
-                  ans) peut bénéficier d’un accompagnement par un psychologue
-                  partenaire (conventionné avec l’Assurance Maladie)&nbsp;:
-                  jusqu’à 8 séances par an.
+                  <strong>
+                    Toute personne (dès 3 ans) peut bénéficier d’un
+                    accompagnement par un psychologue partenaire
+                  </strong>{" "}
+                  (conventionné avec l’Assurance Maladie)&nbsp;: jusqu’à 8
+                  séances par an.
                 </p>
                 <p className="fr-mt-2w">
                   Pour en bénéficier, je dois{" "}
@@ -44,7 +42,8 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-4">
               <img
                 src="/images/patient.svg"
-                alt="Je suis angoissé(e) ou déprimé(e) illustration"
+                height="360"
+                alt="Je ne me sens pas bien illustration"
               />
               {video === "hide" && (
                 <VideoButton onClick={() => setVideo("show")} />
@@ -54,13 +53,55 @@ const Page = () => {
           {video === "show" && (
             <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
               <div className="fr-col-8">
-                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                 <video width="100%" controls autoPlay>
                   <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
+                  <track
+                    default
+                    kind="captions"
+                    srcLang="fr"
+                    src="/images/Video-MonPsy.mp4.vtt"
+                  />
                 </video>
               </div>
             </div>
           )}
+
+          <div className="fr-col-12">
+            <h2>Suis-je concerné(e)&nbsp;?</h2>
+            <ul className="fr-mb-2w">
+              <li>Je me sens anxieux(se), angoissé(e) ou déprimé(e)</li>
+              <li>Je suis en situation de mal-être</li>
+              <li>
+                J’ai un problème de consommation de tabac, d’alcool ou de
+                cannabis
+              </li>
+              <li>
+                J’ai un trouble du comportement alimentaire (anorexie, boulimie,
+                modification brutale du poids)
+              </li>
+            </ul>
+            <p className="fr-mb-2w">
+              Différentes manifestations peuvent survenir : difficultés à
+              m’endormir ou à rester endormi(e), difficultés pour me concentrer,
+              manque d’appétit, stress, nervosité, inquiétude, irritabilité,
+              agitation, addiction, fatigue, manque d’énergie, dormir trop,
+              manger trop, etc.
+            </p>
+            <p className="fr-mb-2w">
+              Ces situations peuvent survenir sans raison apparente, mais
+              également suite à une rupture, le décès d’un proche, un épuisement
+              professionnel, une agression, une maladie, des difficultés
+              sociales, familiales, professionnelles ou financières, etc.
+            </p>
+            <p className="fr-mb-2w">
+              <strong>
+                Les troubles psychiques d’intensité légère à modérée concernent,
+                en France, environ 10 millions de personnes.
+              </strong>{" "}
+              En cas de doute sur la possibilité de bénéficier du dispositif, je
+              pose la question à mon médecin.
+            </p>
+          </div>
         </div>
       </section>
       <section>
@@ -70,10 +111,13 @@ const Page = () => {
               <h2>Quel est le rôle du médecin&nbsp;?</h2>
               <p>
                 Le médecin identifie les <strong>situations d’urgence</strong>,
-                présentant un <strong>risque suicidaire</strong> ou avec des{" "}
-                <strong>critères de gravité</strong> pour orienter vers une
-                prise en charge adaptée&nbsp;: psychiatre, hôpital, structure
-                spécialisée dans la prise en charge de psycho-trauma…
+                (
+                <strong>
+                  risque suicidaire ou présence de critères de gravité
+                </strong>
+                ) pour orienter vers une prise en charge adaptée&nbsp;:
+                psychiatre, hôpital, structure spécialisée dans la prise en
+                charge de psycho&#8209;trauma…
               </p>
               <p>
                 C’est pourquoi, dans ce cadre,{" "}
@@ -82,44 +126,38 @@ const Page = () => {
                 </strong>
               </p>
               <p>
-                Il peut s’agir, par exemple, de votre médecin traitant
-                (généraliste, pédiatre, gériatre….), d’un médecin scolaire, de
-                PMI (protection maternelle et infantile), des services de santé
-                des universités ou encore d’un médecin hospitalier.
+                Il peut s’agir, par exemple, de votre médecin (généraliste,
+                pédiatre, gériatre….), d’un médecin scolaire, de PMI (protection
+                maternelle et infantile), des services de santé des universités
+                ou encore d’un médecin hospitalier.
               </p>
             </div>
-            <div className="fr-col-12 fr-col-lg-6">
+            <div className="fr-col-12 fr-col-lg-5 fr-col-offset-lg-1">
               <h2>Quel est le rôle du psychologue partenaire&nbsp;?</h2>
-              <p className="fr-m-0">
-                Je me sens anxieux(se), angoissé(e) ou déprimé(e)&nbsp;?
-              </p>
-              <p className="fr-m-0">Je suis en situation de mal-être&nbsp;?</p>
-              <p className="fr-m-0">
-                J’ai un problème de consommation de tabac, d’alcool ou de
-                cannabis&nbsp;?
-              </p>
-              <p>J’ai un trouble du comportement alimentaire&nbsp;?</p>
-              <p className="fr-text--lead">
-                Le psychologue partenaire est là pour m’aider.
+              <p>
+                Je ne me sens pas bien,{" "}
+                <strong>le psychologue partenaire est là pour m’aider.</strong>
               </p>
               <p>
-                Dans ce cadre, il ne gère pas les situations d’urgence,
-                présentant un risque suicidaire ou avec des critères de gravité
-                ou de dépendance.
+                Le psychologue et le médecin se concertent, avec mon accord,
+                pour repérer (au départ, en cours ou en fin de prise en charge)
+                les situations qui relèvent d’une prise en charge spécialisée.
+                C’est notamment le cas pour les situations d’urgence (risque
+                suicidaire ou présence de critères de gravité).
               </p>
-              {process.env.NEXT_PUBLIC_NEW_FEATURES === "true" ? (
-                <Button onClick={() => router.push("/annuaire")}>
+            </div>
+            <div className="fr-col-12">
+              <p>
+                <strong>
                   Je trouve un psychologue partenaire près de chez moi
-                </Button>
-              ) : (
-                <div className="fr-callout fr-callout--pink-tuile fr-my-2w">
-                  <p>
-                    Les coordonnées des psychologues partenaires, conventionnés
-                    avec l’Assurance Maladie, seront disponibles à partir
-                    d’avril 2022.
-                  </p>
-                </div>
-              )}
+                </strong>
+              </p>
+              <Button
+                icon="fr-fi-search-line"
+                onClick={() => router.push("/annuaire")}
+              >
+                Trouver un psychologue
+              </Button>
             </div>
           </div>
         </div>
@@ -131,14 +169,14 @@ const Page = () => {
           </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-3w">
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Je prends rendez-vous avec mon médecin
                   </h3>
                   <div className="fr-card__desc">
-                    <p>Je suis angoissé(e) ou déprimé(e).</p>
+                    <p>Je ne me sens pas bien.</p>
                     <p>
                       Le médecin <strong>évalue mon état de santé.</strong>
                     </p>
@@ -151,7 +189,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -160,7 +198,10 @@ const Page = () => {
                   <div className="fr-card__desc">
                     <p>
                       Je contacte un psychologue partenaire de{" "}
-                      <strong>l’annuaire MonPsy</strong>.
+                      <a href="/annuaire" rel="nofollow">
+                        l’annuaire MonPsy
+                      </a>
+                      .
                     </p>
                     <p>
                       Je peux choisir un psychologue qui réalise des séances à
@@ -171,7 +212,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -195,7 +236,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">4</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -220,7 +261,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">5</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -275,6 +316,13 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer grand public.pdf"
+                >
+                  Flyer Grand Public
+                </a>
+                <a
                   href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
@@ -298,10 +346,7 @@ const Page = () => {
 
                 <li>Bénéficiaire de l’Aide Médicale d’Etat (AME)</li>
 
-                <li>
-                  Soins en lien avec une maladie : Affection de Longue Durée
-                  (ALD) ou accident causé par un tiers
-                </li>
+                <li>Soins en lien avec une Affection de Longue Durée (ALD)</li>
 
                 <li>
                   Soins en lien avec une maternité (à partir du 6ème mois de
@@ -364,11 +409,11 @@ const Page = () => {
                 psychologue.
               </p>
             </div>
-            <div className="fr-col-12 fr-col-lg-4 fr-centered">
+            <div className="fr-col-12 fr-col-lg-4 align-center">
               <img
                 src="/images/children.svg"
                 height="250"
-                alt="Je suis angoissé(e) ou déprimé(e) illustration"
+                alt="Je ne me sens pas bien illustration"
               />
             </div>
           </div>
@@ -417,17 +462,17 @@ const Page = () => {
               <p className="fr-text--lead">
                 J’ai des questions&nbsp;?{" "}
                 <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer grand public.pdf"
+                >
+                  Flyer Grand Public
+                </a>
+                <a
                   href="/faq?tab=patient"
                   className="fr-link fr-fi-question-line fr-link--icon-left"
                 >
                   Je consulte la FAQ
-                </a>
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left"
-                  target="_blank"
-                  href="/documents/MonPsy_Flyer tout public_2021.pdf"
-                >
-                  Flyer d’information
                 </a>
               </p>
             </div>

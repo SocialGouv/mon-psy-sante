@@ -1,12 +1,12 @@
 /* eslint-disable jest/no-conditional-expect */
-import sinon from "sinon";
+import { stub } from "sinon";
 
-import { models } from "../db/models";
-import { getOnePsychologist } from "../db/seeds/psychologist";
-import { FILTER } from "../types/enums/filters";
-import { allPublics, PUBLIC } from "../types/enums/public";
-import { Psychologist } from "../types/psychologist";
-import * as address from "./getAddressCoordinates";
+import { models } from "../../db/models";
+import { getOnePsychologist } from "../../db/seeds/psychologist";
+import { FILTER } from "../../types/enums/filters";
+import { allPublics, PUBLIC } from "../../types/enums/public";
+import { Psychologist } from "../../types/psychologist";
+import * as address from "../getAddressCoordinates";
 import {
   countAll,
   getAll,
@@ -14,11 +14,12 @@ import {
   saveMany,
   update,
   updateState,
-} from "./psychologists";
+} from "../psychologists";
 
 describe("Service psychologists", () => {
   beforeEach(async () => {
     await models.Psychologist.destroy({ where: {} });
+    const states = ["accepte", "en_instruction", "refuse"];
     const archiveds = [true, false];
     const visibles = [true, false];
     const teleconsultations = [true, false];
@@ -26,17 +27,20 @@ describe("Service psychologists", () => {
 
     // 2 x 2 x 2 x 3 x 3 = 72 psys
     const psychologists = archiveds.flatMap((archived) =>
-      visibles.flatMap((visible) =>
-        teleconsultations.flatMap((teleconsultation) =>
-          instructorIds.flatMap((instructorId) =>
-            allPublics.map((p) =>
-              getOnePsychologist({
-                archived,
-                instructorId,
-                public: p,
-                teleconsultation,
-                visible,
-              })
+      states.flatMap((state) =>
+        visibles.flatMap((visible) =>
+          teleconsultations.flatMap((teleconsultation) =>
+            instructorIds.flatMap((instructorId) =>
+              allPublics.map((p) =>
+                getOnePsychologist({
+                  archived,
+                  instructorId,
+                  public: p,
+                  state,
+                  teleconsultation,
+                  visible,
+                })
+              )
             )
           )
         )
@@ -171,7 +175,7 @@ describe("Service psychologists", () => {
   describe("update", () => {
     let getAddressCoordinatesStub;
     beforeEach(() => {
-      getAddressCoordinatesStub = sinon.stub(address, "default");
+      getAddressCoordinatesStub = stub(address, "default");
     });
 
     afterEach(() => {
@@ -189,6 +193,8 @@ describe("Service psychologists", () => {
 
       const updateableFields = [
         "address",
+        "secondAddress",
+        "coordinates",
         "cdsmsp",
         "displayEmail",
         "email",
@@ -208,7 +214,7 @@ describe("Service psychologists", () => {
       });
 
       Object.keys(updatedPsy).forEach((key) => {
-        if (key === "coordinates") {
+        if (key === "coordinates" || key === "secondAddressCoordinates") {
           expect(updatedPsy[key].coordinates).toEqual([123, 456]);
           expect(updatedPsy[key].type).toEqual("Point");
         } else if (updateableFields.includes(key)) {
@@ -242,21 +248,41 @@ describe("Service psychologists", () => {
 
     beforeEach(async () => {
       const psychologists = [
-        getOnePsychologist({ archived: true, id: 1, instructorId }),
-        getOnePsychologist({ archived: false, id: 2, instructorId }),
-        getOnePsychologist({ archived: true, id: 3, instructorId }),
-        getOnePsychologist({ archived: false, id: 4, instructorId }),
+        getOnePsychologist({
+          archived: true,
+          id: 1,
+          instructorId,
+          state: "initial",
+        }),
+        getOnePsychologist({
+          archived: false,
+          id: 2,
+          instructorId,
+          state: "initial",
+        }),
+        getOnePsychologist({
+          archived: true,
+          id: 3,
+          instructorId,
+          state: "initial",
+        }),
+        getOnePsychologist({
+          archived: false,
+          id: 4,
+          instructorId,
+          state: "initial",
+        }),
       ];
 
       //@ts-ignore
       await models.Psychologist.bulkCreate(psychologists);
     });
 
-    it("Should only update archived value", async () => {
+    it("Should only update state & archived value", async () => {
       await updateState([
-        { archived: true, id: 0 },
-        { archived: false, id: 1 },
-        { archived: true, id: 2 },
+        { archived: true, id: 0, state: "final" },
+        { archived: false, id: 1, state: "final" },
+        { archived: true, id: 2, state: "final" },
       ]);
 
       // @ts-ignore
@@ -266,9 +292,17 @@ describe("Service psychologists", () => {
 
       expect(psychologists.find((psy) => psy.id === 0)).toEqual(undefined);
       expect(psychologists.find((psy) => psy.id === 1).archived).toEqual(false);
+      expect(psychologists.find((psy) => psy.id === 1).state).toEqual("final");
       expect(psychologists.find((psy) => psy.id === 2).archived).toEqual(true);
+      expect(psychologists.find((psy) => psy.id === 2).state).toEqual("final");
       expect(psychologists.find((psy) => psy.id === 3).archived).toEqual(true);
+      expect(psychologists.find((psy) => psy.id === 3).state).toEqual(
+        "initial"
+      );
       expect(psychologists.find((psy) => psy.id === 4).archived).toEqual(false);
+      expect(psychologists.find((psy) => psy.id === 4).state).toEqual(
+        "initial"
+      );
     });
   });
 });

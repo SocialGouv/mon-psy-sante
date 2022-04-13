@@ -19,14 +19,11 @@ const Page = () => {
             <div className="fr-col-12 fr-col-lg-7">
               <h1>Je suis médecin</h1>
               <p>Je souhaite orienter au mieux mes patients</p>
-              <p className="fr-text--lead fr-mt-10w">
-                Le dispositif MonPsy sera accessible à partir d’
-                <strong>avril&nbsp;2022</strong>.
-              </p>
             </div>
             <div className="fr-col-12 fr-col-lg-5">
               <img
                 src="/images/doctor.svg"
+                height="360"
                 alt="Je suis médecin illustration"
               />
             </div>
@@ -42,7 +39,7 @@ const Page = () => {
           </div>
 
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-            <div className="fr-col-12 fr-col-lg-3 fr-centered">
+            <div className="fr-col-12 fr-col-lg-3 align-center">
               <img
                 src="/images/children-psy.svg"
                 height="160"
@@ -80,7 +77,7 @@ const Page = () => {
             <div className="fr-col-6 fr-col-lg-2">
               <img
                 src="/images/patient-woman.svg"
-                height="300"
+                height="280"
                 alt="Patient femme illustration"
               />
             </div>
@@ -107,8 +104,14 @@ const Page = () => {
               </p>
 
               <p>
-                Pour plus de précisions, référez vous au guide à destination des
-                médecins (à venir)
+                Pour plus de précisions, référez vous au{" "}
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left "
+                  target="_blank"
+                  href="/documents/MonPsy_Guide médecin_2022.pdf"
+                >
+                  guide à destination des médecins
+                </a>
               </p>
             </div>
           </div>
@@ -121,7 +124,7 @@ const Page = () => {
           </Container>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12 fr-col-md-3">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -129,7 +132,7 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      Je suis médecin traitant (généraliste, pédiatre,
+                      Je suis médecin traitant ou non (généraliste, pédiatre,
                       gériatre….), scolaire, de PMI, des services de santé des
                       universités ou encore d’un médecin hospitalier.
                     </p>
@@ -152,7 +155,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-12 fr-col-md-3">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -190,7 +193,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-12 fr-col-md-3">
-              <div className="fr-card fr-centered fr-card--no-arrow">
+              <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">
@@ -198,9 +201,9 @@ const Page = () => {
                   </h3>
                   <div className="fr-card__desc">
                     <p>
-                      <strong>A la fin de l’accompagnement</strong>, le
-                      psychologue m’adresse, un compte-rendu de fin de prise en
-                      charge.
+                      <strong>A la fin de l’accompagnement</strong>, en accord
+                      avec le patient, le psychologue m’adresse, un compte-rendu
+                      de fin de prise en charge.
                     </p>
                     <p>
                       <strong>En cas de non amélioration des symptômes</strong>,
@@ -252,23 +255,12 @@ const Page = () => {
               </p>
             </div>
           </div>
-          {process.env.NEXT_PUBLIC_NEW_FEATURES === "true" ? (
-            <Button onClick={() => router.push("/annuaire")}>
-              Je trouve un psychologue partenaire près de chez moi
-            </Button>
-          ) : (
-            <div className="fr-container fr-callout fr-callout--pink-tuile fr-my-6w">
-              <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-                <div className="fr-col-12">
-                  <p className="fr-text--lead">
-                    Les coordonnées des psychologues partenaires, conventionnés
-                    avec l’Assurance Maladie, seront disponibles à partir du
-                    printemps 2022.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
+          <Button
+            icon="fr-fi-search-line"
+            onClick={() => router.push("/annuaire")}
+          >
+            Trouver un psychologue partenaire
+          </Button>
         </Container>
       </section>
       <section>
@@ -318,6 +310,20 @@ const Page = () => {
             <div className="fr-col-12">
               <p className="fr-text--lead">
                 Je souhaite accéder à la documentation&nbsp;?
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Guide médecin_2022.pdf"
+                >
+                  Guide pour les médecins
+                </a>
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                >
+                  Fiche mémo pour les médecins
+                </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"

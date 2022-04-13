@@ -17,12 +17,12 @@ const Page = () => {
       <section>
         <Container>
           <Row justifyContent="center" alignItems="middle" className="fr-pb-8w">
-            <div className="fr-col-12 fr-col-md-6">
+            <div className="fr-col-12 fr-col-md-6 fr-pt-4w">
               <h1>
                 MonPsy&nbsp;
                 <span className="fr-text--lead d-block fr-mt-3w">
-                  <strong>A partir d’avril&nbsp;2022,</strong> l’accès à un
-                  accompagnement psychologique pour tous (dès 3 ans)
+                  L’accès à un accompagnement psychologique pour tous (dès 3
+                  ans)
                 </span>
               </h1>
               <p className="fr-mt-10w">
@@ -48,9 +48,13 @@ const Page = () => {
               className="fr-pb-8w"
             >
               <div className="fr-col-8">
-                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                 <video width="100%" controls autoPlay>
                   <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
+                  <track
+                    kind="captions"
+                    srcLang="fr"
+                    src="/images/Video-MonPsy.mp4.vtt"
+                  />
                 </video>
               </div>
             </Row>
@@ -67,7 +71,7 @@ const Page = () => {
                     <h2 className="fr-card__title">
                       <Link href="/patients" passHref>
                         <a href="/patients" className="fr-card__link">
-                          Je suis angoissé(e), déprimé(e)
+                          Je ne me sens pas bien
                         </a>
                       </Link>
                     </h2>
@@ -136,7 +140,7 @@ const Page = () => {
                 les personnes présentant un <strong>risque suicidaire</strong>.
               </p>
             </div>
-            <div className="fr-col-12 fr-col-md-2 fr-centered">
+            <div className="fr-col-12 fr-col-md-2 align-center">
               <span
                 className="fr-fi-arrow-right-line fr-fi--lg"
                 aria-hidden="true"
@@ -159,7 +163,7 @@ const Page = () => {
               <h2>Services d’écoute anonymes et gratuits</h2>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
-              <div className="fr-centered fr-my-2w fr-py-4w">
+              <div className="align-center fr-my-2w fr-py-4w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -170,7 +174,7 @@ const Page = () => {
                   <img
                     src="/images/logo-3114.svg"
                     alt="Logo 3114"
-                    height="80"
+                    height="70"
                   />
                 </a>
               </div>
@@ -189,7 +193,7 @@ const Page = () => {
               </p>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -222,7 +226,7 @@ const Page = () => {
               </p>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -251,14 +255,14 @@ const Page = () => {
                 rel="noreferrer"
               >
                 Chat
-              </a>
+              </a>{" "}
               du lundi au dimanche de 13h à 3h du matin.
             </div>
             <div className="fr-col-12">
               <h2>Information sur la santé mentale</h2>
             </div>
             <div className="fr-col-12 fr-col-lg-4">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -271,7 +275,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-12 fr-col-lg-4">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -288,7 +292,7 @@ const Page = () => {
               </div>
             </div>
             <div className="fr-col-12 fr-col-lg-4">
-              <div className="fr-centered fr-my-2w">
+              <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"

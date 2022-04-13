@@ -38,6 +38,21 @@ const Page = () => {
                 {items.map((item) => (
                   <Tab label={item.title} key={item.key}>
                     {item.title && <h2>{item.title}</h2>}
+                    {item.documents && (
+                      <div className="fr-mb-2w">
+                        {item.documents.map((doc) => (
+                          <a
+                            key={item.title}
+                            className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                            target="_blank"
+                            href={doc.url}
+                            rel="noreferrer"
+                          >
+                            {doc.title}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                     {item.sections.map((section, i) => (
                       <div key={i + item.title}>
                         {section.title && <h3>{section.title}</h3>}

@@ -1,73 +1,71 @@
-import { Button, Col } from "@dataesr/react-dsfr";
+import { Col } from "@dataesr/react-dsfr";
 import React, { Dispatch, MutableRefObject, SetStateAction } from "react";
 
 import { Coordinates } from "../../types/coordinates";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
-import {
-  Desktop,
-  Psychologists,
-  PsychologistWrapper,
-} from "./Directory.styles";
+import { Desktop, Psychologists } from "./Directory.styles";
 import Psychologist from "./Psychologist";
 import PsychologistsMap from "./PsychologistsMap";
 
-const ResultsDesktop = ({
+const Results = ({
   psychologists,
-  loadMorePsychologists,
   resultsRef,
   psychologistsRefs,
   selectedPsychologist,
   setSelectedPsychologist,
   mapCenter,
   setMapCenter,
+  mapZoom,
+  setMapZoom,
 }: {
   psychologists: PsychologistType[];
-  loadMorePsychologists: () => void;
   resultsRef: MutableRefObject<any>;
   psychologistsRefs: any;
   selectedPsychologist: number;
   setSelectedPsychologist: Dispatch<SetStateAction<number>>;
   mapCenter: Coordinates;
   setMapCenter: Dispatch<SetStateAction<Coordinates>>;
+  mapZoom: number;
+  setMapZoom: Dispatch<SetStateAction<number>>;
 }) => {
-  const onClick = (psychologist: PsychologistType) => {
+  const selectPsy = (psychologist: PsychologistType) => {
     setSelectedPsychologist(psychologist.id);
     if (psychologist.coordinates) {
       setMapCenter({
         latitude: psychologist.coordinates.coordinates[1],
         longitude: psychologist.coordinates.coordinates[0],
       });
+      setMapZoom(14);
     }
   };
 
   return (
     <Desktop>
-      <Psychologists className="fr-col-6" ref={resultsRef}>
+      <Psychologists
+        ref={resultsRef}
+        className="fr-col-12 fr-col-md-5 fr-mr-2w fr-mt-2w fr-mt-md-0"
+      >
         {psychologists.map((psychologist) => (
           <div
             ref={psychologistsRefs.current[psychologist.id]}
             key={psychologist.id}
           >
-            <PsychologistWrapper
-              selected={selectedPsychologist === psychologist.id}
-              className="fr-mb-2w"
-              onClick={() => onClick(psychologist)}
-            >
-              <Psychologist psychologist={psychologist} />
-            </PsychologistWrapper>
+            <div className="fr-mb-2w">
+              <Psychologist
+                psychologist={psychologist}
+                onClick={selectPsy}
+                selected={selectedPsychologist === psychologist.id}
+              />
+            </div>
           </div>
         ))}
-        <Button onClick={loadMorePsychologists}>Plus de psychologues</Button>
       </Psychologists>
-      <Col n="6">
+      <Col n="12 md-7">
         {mapCenter && (
           <PsychologistsMap
+            selectedPsychologist={selectedPsychologist}
             selectPsychologist={(psychologist) => {
-              setSelectedPsychologist(psychologist.id);
-              setMapCenter({
-                latitude: psychologist.coordinates.coordinates[1],
-                longitude: psychologist.coordinates.coordinates[0],
-              });
+              selectPsy(psychologist);
               resultsRef.current.scrollTo({
                 top:
                   psychologistsRefs.current[psychologist.id].current.offsetTop -
@@ -76,6 +74,7 @@ const ResultsDesktop = ({
             }}
             mapCenter={[mapCenter.latitude, mapCenter.longitude]}
             psychologists={psychologists}
+            mapZoom={mapZoom}
           />
         )}
       </Col>
@@ -83,4 +82,4 @@ const ResultsDesktop = ({
   );
 };
 
-export default ResultsDesktop;
+export default Results;

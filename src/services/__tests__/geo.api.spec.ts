@@ -1,7 +1,7 @@
 /* eslint-disable jest/no-conditional-expect */
 import { assert, stub } from "sinon";
 
-import { AROUND_ME, AROUND_ME_OPTION, search } from "./geo.api";
+import { AROUND_ME, AROUND_ME_OPTION, searchCity } from "../frontend/geo.api";
 
 describe("service geo.api", () => {
   let actionStub;
@@ -121,8 +121,7 @@ describe("service geo.api", () => {
   testsCases.forEach((testCase) => {
     // eslint-disable-next-line jest/valid-title
     it(testCase.label, async () => {
-      jest.setTimeout(10000);
-      await search(testCase.case, actionStub)
+      await searchCity(testCase.case, actionStub)
         .then(() => {
           testCase.results
             ? actionStub.calledWithMatch((result) => {
@@ -138,8 +137,7 @@ describe("service geo.api", () => {
   });
 
   it("should remove duplicates when searching by department", async () => {
-    jest.setTimeout(10000);
-    await search("69", actionStub)
+    await searchCity("69", actionStub)
       .then(() => {
         actionStub.calledWithMatch((result) => {
           expect(result.length).toEqual(279);
@@ -156,7 +154,7 @@ describe("service geo.api", () => {
   });
 
   it("should default to around me", async () => {
-    await search("17 rue de n'importe quoi", actionStub)
+    await searchCity("17 rue de n'importe quoi", actionStub)
       .then(() => {
         actionStub.calledWithMatch((result) => {
           expect(result).toEqual(AROUND_ME_OPTION);

@@ -32,6 +32,10 @@ h1 .fr-text--lead {
   background-color: var(--grey-1000) !important;
 }
 
+.align-center {
+  text-align: center;
+}
+
 .align-right {
   text-align: right
 }
@@ -49,8 +53,8 @@ h1 .fr-text--lead {
   color: var(--pink-tuile-main-556);
 }
 
-.fr-centered {
-  text-align: center;
+.text-grey {
+  color: var(--grey-425);
 }
 
 .no-bullet {
@@ -61,10 +65,6 @@ h1 .fr-text--lead {
   height: 100%;
 }
 
-.select-search-options {
-  z-index: 1100 !important;
-}
-
 .leaflet-popup-close-button {
   box-shadow: none !important;
 }
@@ -72,8 +72,4 @@ h1 .fr-text--lead {
 .fr-card .fr-card__img img {
   width: auto;
   margin: auto;
-}
-
-.select-search-input input {
-  margin-top: 0.5rem;
 }

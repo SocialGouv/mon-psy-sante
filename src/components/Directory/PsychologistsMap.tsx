@@ -1,56 +1,97 @@
-import React from "react";
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import * as L from "leaflet";
+import React, { useEffect, useState } from "react";
+import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
-import Psychologist from "./Psychologist";
 
-function ChangeView({ center }) {
+function ChangeView({ center, mapZoom }) {
   const map = useMap();
-  map.setView(center);
+  map.setView(center, mapZoom);
   return null;
+}
+
+const orangeIcon = new L.Icon({
+    iconAnchor: [28, 56],
+    iconSize: [56, 56],
+    iconUrl: "/images/icones/marker-icon-big.svg",
+  }),
+  yellowIcon = new L.Icon({
+    iconAnchor: [21, 42],
+    iconSize: [42, 42],
+    iconUrl: "/images/icones/marker-icon.svg",
+  });
+
+function MarkerWithIcon({
+  selectPsychologist,
+  psychologist,
+  selectedPsychologist,
+}) {
+  const [icon, setIcon] = useState(yellowIcon);
+  const [zindex, setZindex] = useState(1);
+  useEffect(() => {
+    if (selectedPsychologist === psychologist.id) {
+      setIcon(orangeIcon);
+      setZindex(100);
+    } else {
+      setIcon(yellowIcon);
+      setZindex(1);
+    }
+  }, [selectedPsychologist, psychologist.id]);
+
+  return (
+    <Marker
+      eventHandlers={{
+        click: () => {
+          if (selectPsychologist) {
+            selectPsychologist(psychologist);
+          }
+        },
+      }}
+      position={[
+        psychologist.coordinates.coordinates[1],
+        psychologist.coordinates.coordinates[0],
+      ]}
+      // @ts-ignore
+      icon={icon}
+      zIndexOffset={zindex}
+    />
+  );
 }
 
 const PsychologistsMap = ({
   mapCenter,
   psychologists,
   selectPsychologist,
+  selectedPsychologist,
+  mapZoom,
 }: {
-  mapCenter: any;
+  mapCenter: [number, number];
   psychologists: PsychologistType[];
   selectPsychologist?: (psychologist: PsychologistType) => void;
+  selectedPsychologist: number;
+  mapZoom: number;
 }) => {
   return (
     <MapContainer
       center={mapCenter}
-      zoom={12}
+      zoom={mapZoom}
       scrollWheelZoom={false}
-      style={{ height: "100%", width: "100%" }}
+      style={{ height: "100%", minHeight: "300px", width: "100%" }}
     >
-      <ChangeView center={mapCenter} />
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <ChangeView center={mapCenter} mapZoom={mapZoom} />
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
       {psychologists
         .filter((psychologist) => psychologist.coordinates)
         .map((psychologist) => (
-          <Marker
-            eventHandlers={{
-              click: () => {
-                if (selectPsychologist) {
-                  selectPsychologist(psychologist);
-                }
-              },
-            }}
+          <MarkerWithIcon
             key={psychologist.id}
-            position={[
-              psychologist.coordinates.coordinates[1],
-              psychologist.coordinates.coordinates[0],
-            ]}
-          >
-            {!selectPsychologist && (
-              <Popup>
-                <Psychologist psychologist={psychologist} />
-              </Popup>
-            )}
-          </Marker>
+            selectPsychologist={selectPsychologist}
+            psychologist={psychologist}
+            selectedPsychologist={selectedPsychologist}
+          />
         ))}
     </MapContainer>
   );

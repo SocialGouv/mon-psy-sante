@@ -7,7 +7,7 @@ export default [
   },
   {
     answer:
-      "<p>Le dispositif ne concerne que les professionnels disposant du titre règlementé de psychologue. Certains psychologues détiennent aussi d’autres qualifications qu’ils peuvent mentionner dans leur formulaire de candidature.</p><p>Les psychothérapeutes agréés par les ARS ou les psychanalystes, s’ils n’ont pas un parcours attesté/ consolidé en psychologie clinique ou en psychopathologie et ne sont pas inscrits au registre ADELI, ne sont pas éligibles au dispositif MonPsy.</p>",
+      "<p>Les psychothérapeutes agréés par les ARS ou les psychanalystes ne sont pas éligibles au dispositif MonPsy.</p>",
     question:
       "Faut-il nécessairement être psychologue ? Qu’en est-il des psychothérapeutes agréés par les ARS ?",
   },
@@ -22,6 +22,23 @@ export default [
       "<p>Si votre employeur est d’accord, il est tout à fait possible de participer au dispositif en tant que psychologue salarié(e) d’une structure d’exercice coordonné (maison de santé pluriprofessionnelle ou centre de santé). Il est alors nécessaire de l’indiquer dans le questionnaire de candidature et la convention sera tripartite (psychologue, structure et Assurance Maladie).</p><p>Il est aussi possible de devenir un psychologue partenaire dans le cadre de son activité libérale et de son activité salariée.</p>",
     question:
       "Puis-je participer au dispositif en tant que salarié(e) d’une structure d’exercice coordonné ?",
+  },
+  {
+    answer:
+      "<p>Il n’est pas possible pour un psychologue salarié d’un établissement de santé de participer au dispositif MonPsy.</p>" +
+      "<p>En effet, seuls les psychologues libéraux ou salariés d’une structure d’exercice coordonné (maison de santé ou centre de santé), sont éligibles au dispositif.</p>" +
+      "<p>Toutefois, si le psychologue salarié d’un établissement de santé exerce à temps partiel, il peut participer au dispositif sur son temps d’activité libérale ou de salarié d’une structure d’exercice coordonné.</p>",
+    question:
+      "Un psychologue salarié d’un établissement de santé peut-il participer au dispositif MonPsy ?",
+  },
+  {
+    answer:
+      "<p>Oui, un psychologue participant déjà à un autre dispositif (ex : la mesure 31 du Ségur de la Santé « renforcement en psychologues des MSP ») peut tout à fait devenir partenaire du dispositif MonPsy.</p>" +
+      "<p>Dans ce cas, le psychologue devra distinguer :</p>" +
+      "<ul><li>Les patients suivis dans le cadre de MonPsy dont les séances feront l’objet d’un remboursement direct par la CPAM</li>" +
+      "<li>Les patients suivis dans un autre cadre et bénéficiant donc de leurs propres modalités de financement (exemple pour la mesure 31 du Ségur : financement par dotation de l’ARS versée à la MSP)</li></ul>",
+    question:
+      "Un psychologue participant à des dispositifs pré-existants (ex : mesure 31 du Ségur de la Santé) peut-il être partenaire dans le cadre de MonPsy ?",
   },
   {
     answer:
