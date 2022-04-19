@@ -1,3 +1,10 @@
+# [1.28.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.9...v1.28.0) (2022-04-19)
+
+
+### Features
+
+* **hide availability:** add new question with PsyEnfantAdo stats + hide contact if psy is un-available + upgrade react dsfr + leaflet ([#154](https://github.com/SocialGouv/mon-psy-sante/issues/154)) ([65e5326](https://github.com/SocialGouv/mon-psy-sante/commit/65e5326c9fc727a3985aa3e8b59e5e572385dc95))
+
 ## [1.27.9](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.8...v1.27.9) (2022-04-19)
 
 
