@@ -30,7 +30,7 @@ export const getByInstructor = async (
 
 export const countAll = async () =>
   models.Psychologist.count({
-    where: { archived: false, state: "accepte", visible: true },
+    where: { archived: false, state: "accepte" },
   });
 
 const DEFAULT_PAGE_SIZE = 50;
@@ -45,7 +45,7 @@ export const getAll = async (filters: {
     ? parseInt(filters[FILTER.PAGE_INDEX] as string, 10)
     : 0;
 
-  const where: any = { archived: false, state: "accepte", visible: true };
+  const where: any = { archived: false, state: "accepte" };
   const query: Sequelize.FindOptions<any> = {
     limit: pageSize,
     offset: pageIndex * pageSize,
