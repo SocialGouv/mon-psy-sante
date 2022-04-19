@@ -1,24 +1,17 @@
 /* eslint-disable jest/no-conditional-expect */
-import { stub } from "sinon";
+import {stub} from "sinon";
 
-import { models } from "../../db/models";
-import { getOnePsychologist } from "../../db/seeds/psychologist";
-import { FILTER } from "../../types/enums/filters";
-import { allPublics, PUBLIC } from "../../types/enums/public";
-import { Psychologist } from "../../types/psychologist";
+import {models} from "../../db/models";
+import {getOnePsychologist} from "../../db/seeds/psychologist";
+import {FILTER} from "../../types/enums/filters";
+import {allPublics, PUBLIC} from "../../types/enums/public";
+import {Psychologist} from "../../types/psychologist";
 import * as address from "../getAddressCoordinates";
-import {
-  countAll,
-  getAll,
-  getByInstructor,
-  saveMany,
-  update,
-  updateState,
-} from "../psychologists";
+import {countAll, getAll, getByInstructor, saveMany, update, updateState,} from "../psychologists";
 
 describe("Service psychologists", () => {
   beforeEach(async () => {
-    await models.Psychologist.destroy({ where: {} });
+    await models.Psychologist.destroy({where: {}});
     const states = ["accepte", "en_instruction", "refuse"];
     const archiveds = [true, false];
     const visibles = [true, false];
@@ -26,11 +19,11 @@ describe("Service psychologists", () => {
     const instructorIds = ["1", "2", "3"];
 
     // 2 x 2 x 2 x 3 x 3 = 72 psys
-    const psychologists = archiveds.map((archived) =>
-      states.map((state) =>
-        visibles.map((visible) =>
-          teleconsultations.map((teleconsultation) =>
-            instructorIds.map((instructorId) =>
+    const psychologists = archiveds.flatMap((archived) =>
+      states.flatMap((state) =>
+        visibles.flatMap((visible) =>
+          teleconsultations.flatMap((teleconsultation) =>
+            instructorIds.flatMap((instructorId) =>
               allPublics.map((p) =>
                 getOnePsychologist({
                   archived,
@@ -154,17 +147,17 @@ describe("Service psychologists", () => {
     const instructorId = "saved";
 
     it("Should save all values", async () => {
-      await models.Psychologist.destroy({ where: {} });
+      await models.Psychologist.destroy({where: {}});
 
       await saveMany([
-        getOnePsychologist({ id: 1, instructorId }),
-        getOnePsychologist({ id: 2, instructorId }),
+        getOnePsychologist({id: 1, instructorId}),
+        getOnePsychologist({id: 2, instructorId}),
       ]);
 
       // @ts-ignore
       const savedPsychologists: Psychologist[] =
         await models.Psychologist.findAll({
-          where: { instructorId },
+          where: {instructorId},
         });
       expect(savedPsychologists.length).toEqual(2);
       expect(savedPsychologists[0].instructorId).toEqual(instructorId);
@@ -183,7 +176,7 @@ describe("Service psychologists", () => {
     });
 
     it("Should update only updatable fields", async () => {
-      getAddressCoordinatesStub.returns({ latitude: 456, longitude: 123 });
+      getAddressCoordinatesStub.returns({latitude: 456, longitude: 123});
       const initialPsy = getOnePsychologist();
       // @ts-ignore
       await models.Psychologist.create(initialPsy);
@@ -210,7 +203,7 @@ describe("Service psychologists", () => {
 
       const updatedPsy = await models.Psychologist.findOne({
         raw: true,
-        where: { id: initialPsy.id },
+        where: {id: initialPsy.id},
       });
 
       Object.keys(updatedPsy).forEach((key) => {
@@ -235,7 +228,7 @@ describe("Service psychologists", () => {
 
       const updatedPsy = await models.Psychologist.findOne({
         raw: true,
-        where: { id: initialPsy.id },
+        where: {id: initialPsy.id},
       });
 
       // @ts-ignore
@@ -280,14 +273,14 @@ describe("Service psychologists", () => {
 
     it("Should only update state & archived value", async () => {
       await updateState([
-        { archived: true, id: 0, state: "final" },
-        { archived: false, id: 1, state: "final" },
-        { archived: true, id: 2, state: "final" },
+        {archived: true, id: 0, state: "final"},
+        {archived: false, id: 1, state: "final"},
+        {archived: true, id: 2, state: "final"},
       ]);
 
       // @ts-ignore
       const psychologists: Psychologist[] = await models.Psychologist.findAll({
-        where: { instructorId },
+        where: {instructorId},
       });
 
       expect(psychologists.find((psy) => psy.id === 0)).toEqual(undefined);
