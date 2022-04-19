@@ -47,7 +47,8 @@ export default [
   {
     answer:
       "<p>Le dispositif a permis d'accompagner 4 500 enfants et adolescents en souffrance psychique. Les psychologues volontaires partenaires du dispositif ont réalisé, dans ce cadre, 32 500 séances. Source : CNAM - chiffres non exhaustifs en date du 31/03/22.</p>",
-    question: "Quels sont les enseignements du dispositif temporaire PsyEnfantAdo ?",
+    question:
+      "Quels sont les enseignements du dispositif temporaire PsyEnfantAdo ?",
   },
   {
     answer:
