@@ -1,14 +1,20 @@
-import {Button, Modal, ModalClose, ModalContent, ModalTitle,} from "@dataesr/react-dsfr";
-import React, {useState} from "react";
-import styled, {css} from "styled-components";
+import {
+  Button,
+  Modal,
+  ModalClose,
+  ModalContent,
+  ModalTitle,
+} from "@dataesr/react-dsfr";
+import React, { useState } from "react";
+import styled, { css } from "styled-components";
 
-import {Psychologist as PsychologistType} from "../../types/psychologist";
+import { Psychologist as PsychologistType } from "../../types/psychologist";
 
 const Psychologist = ({
-                        psychologist,
-                        selected,
-                        onClick,
-                      }: {
+  psychologist,
+  selected,
+  onClick,
+}: {
   psychologist: PsychologistType;
   selected?: boolean;
   onClick?: (psychologist: PsychologistType) => void;
@@ -99,7 +105,7 @@ const Psychologist = ({
             {psychologist.address}
           </p>
 
-          {psychologist.visible ?
+          {psychologist.visible ? (
             <Button
               secondary
               size="sm"
@@ -109,11 +115,13 @@ const Psychologist = ({
             >
               Voir le contact pour prendre rendez-vous
             </Button>
-            :
-            <p className="fr-badge fr-badge--no-icon fr-badge--sm fr-mt-2w">Aucune disponibilité actuellement</p>
-          }
+          ) : (
+            <p className="fr-badge fr-badge--no-icon fr-badge--sm fr-mt-2w">
+              Aucune disponibilité actuellement
+            </p>
+          )}
 
-          <div className="fr-p-1w"/>
+          <div className="fr-p-1w" />
           <p className="fr-my-0 text-grey">
             <Icon
               aria-hidden="true"
@@ -161,7 +169,7 @@ const Psychologist = ({
 const PsychologistTile = styled.div`
   cursor: pointer;
   box-shadow: inset 0 0 0 1px var(--border-default-grey),
-  inset 0 -0.25rem 0 0 var(--pink-tuile-main-556);
+    inset 0 -0.25rem 0 0 var(--pink-tuile-main-556);
 
   &:hover {
     background-color: var(--pink-tuile-950);
