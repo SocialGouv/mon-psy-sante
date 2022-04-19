@@ -1,11 +1,11 @@
 import pLimit from "p-limit";
-import Sequelize, { Op } from "sequelize";
+import Sequelize, {Op} from "sequelize";
 
-import { models } from "../db/models";
-import { SRID } from "../types/const/geometry";
-import { FILTER } from "../types/enums/filters";
-import { PUBLIC } from "../types/enums/public";
-import { Psychologist } from "../types/psychologist";
+import {models} from "../db/models";
+import {SRID} from "../types/const/geometry";
+import {FILTER} from "../types/enums/filters";
+import {PUBLIC} from "../types/enums/public";
+import {Psychologist} from "../types/psychologist";
 import getAddressCoordinates from "./getAddressCoordinates";
 
 const limit = pLimit(5);
@@ -14,7 +14,7 @@ export const getOne = async (id: string): Promise<Psychologist> => {
   // @ts-ignore
   return models.Psychologist.findOne({
     raw: true,
-    where: { archived: false, id },
+    where: {archived: false, id},
   });
 };
 
@@ -24,13 +24,13 @@ export const getByInstructor = async (
   // @ts-ignore
   return models.Psychologist.findAll({
     raw: true,
-    where: { archived: false, instructorId: group, state: "accepte" },
+    where: {archived: false, instructorId: group, state: "accepte"},
   });
 };
 
 export const countAll = async () =>
   models.Psychologist.count({
-    where: { archived: false, state: "accepte", visible: true },
+    where: {archived: false, state: "accepte"},
   });
 
 const DEFAULT_PAGE_SIZE = 50;
@@ -45,7 +45,7 @@ export const getAll = async (filters: {
     ? parseInt(filters[FILTER.PAGE_INDEX] as string, 10)
     : 0;
 
-  const where: any = { archived: false, state: "accepte", visible: true };
+  const where: any = {archived: false, state: "accepte"};
   const query: Sequelize.FindOptions<any> = {
     limit: pageSize,
     offset: pageIndex * pageSize,
@@ -118,15 +118,15 @@ export const update = async (
       cdsmsp: psychologist.cdsmsp,
       coordinates: coordinates
         ? {
-            coordinates: [coordinates.longitude, coordinates.latitude],
-            type: "POINT",
-          }
+          coordinates: [coordinates.longitude, coordinates.latitude],
+          type: "POINT",
+        }
         : null,
       secondAddressCoordinates: secondAddressCoordinates
         ? {
-            coordinates: [coordinates.longitude, coordinates.latitude],
-            type: "POINT",
-          }
+          coordinates: [coordinates.longitude, coordinates.latitude],
+          type: "POINT",
+        }
         : null,
       displayEmail: psychologist.displayEmail,
       email: psychologist.email,
@@ -139,7 +139,7 @@ export const update = async (
       visible: psychologist.visible,
       website: psychologist.website,
     },
-    { where: { id } }
+    {where: {id}}
   );
 };
 
@@ -152,7 +152,7 @@ export const updateState = async (newStates: Partial<Psychologist>[]) => {
             archived: newState.archived,
             state: newState.state,
           },
-          { where: { id: newState.id } }
+          {where: {id: newState.id}}
         )
       )
     )
@@ -164,7 +164,7 @@ export const filterIdsNotInDb = async (psy): Promise<number[]> => {
   const psyInDb: { id: number }[] = await models.Psychologist.findAll({
     attributes: ["id"],
     raw: true,
-    where: { state: "accepte" },
+    where: {state: "accepte"},
   });
 
   return psy
