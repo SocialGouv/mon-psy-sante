@@ -1,3 +1,10 @@
+## [1.27.9](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.8...v1.27.9) (2022-04-19)
+
+
+### Bug Fixes
+
+* **data formatting:** trim firstNames & lastNames ([#151](https://github.com/SocialGouv/mon-psy-sante/issues/151)) ([7cec060](https://github.com/SocialGouv/mon-psy-sante/commit/7cec060b1fe81e51bd945bdde1f301e36faed429))
+
 ## [1.27.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.7...v1.27.8) (2022-04-12)
 
 
