@@ -63,13 +63,13 @@ describe("parseDossierMetadata", () => {
     ${"valid@email.com"} | ${"valid@email.com"}
     ${"vaLiD@EMAIL.com"} | ${"valid@email.com"}
   `("should parse email champs for $input", async ({ input, resultValue }) => {
-    const dossierWithWebsite = createDossier();
-    dossierWithWebsite.champs.push({
+    const dossierWithEmail = createDossier();
+    dossierWithEmail.champs.push({
       id: "Q2hhbXAtMTYwMTE4Ng==",
       label: "Votre email",
       stringValue: input,
     });
-    const result = await parseDossierMetadata(dossierWithWebsite);
+    const result = await parseDossierMetadata(dossierWithEmail);
 
     expect(result.email).toEqual(resultValue);
   });
@@ -79,6 +79,10 @@ describe("parseDossierMetadata", () => {
     ${null}                | ${undefined}
     ${"non"}               | ${undefined}
     ${"doctolib"}          | ${undefined}
+    ${"doctolib."}         | ${undefined}
+    ${"doctolib. com"}     | ${undefined}
+    ${"doctolib/com"}      | ${undefined}
+    ${"shouldBeValid.com"} | ${undefined}
     ${"https://valid.com"} | ${"https://valid.com"}
     ${"http://valid.com"}  | ${"http://valid.com"}
     ${"http://VALID.com"}  | ${"http://valid.com"}
@@ -139,6 +143,7 @@ describe("parseDossierMetadata", () => {
 
   it.each`
     input                               | resultValue
+    ${"  Laurence  "}                   | ${"Laurence"}
     ${"Laurence"}                       | ${"Laurence"}
     ${"lauREnce"}                       | ${"Laurence"}
     ${"Marie-Christine"}                | ${"Marie-Christine"}
@@ -149,9 +154,9 @@ describe("parseDossierMetadata", () => {
   `(
     "should format firsName champs for $input",
     async ({ input, resultValue }) => {
-      const dossierWithLangue = createDossier();
-      dossierWithLangue.demandeur.prenom = input;
-      const result = await parseDossierMetadata(dossierWithLangue);
+      const dossier = createDossier();
+      dossier.demandeur.prenom = input;
+      const result = await parseDossierMetadata(dossier);
 
       expect(result.firstName).toEqual(resultValue);
     }
@@ -159,15 +164,16 @@ describe("parseDossierMetadata", () => {
 
   it.each`
     input                       | resultValue
+    ${"  Dupont  "}             | ${"DUPONT"}
     ${"Dupont"}                 | ${"DUPONT"}
     ${"DuPOnt"}                 | ${"DUPONT"}
     ${"DuPOnt de la particule"} | ${"DUPONT DE LA PARTICULE"}
   `(
-    "should format firsName champs for $input",
+    "should format lastName champs for $input",
     async ({ input, resultValue }) => {
-      const dossierWithLangue = createDossier();
-      dossierWithLangue.demandeur.nom = input;
-      const result = await parseDossierMetadata(dossierWithLangue);
+      const dossier = createDossier();
+      dossier.demandeur.nom = input;
+      const result = await parseDossierMetadata(dossier);
 
       expect(result.lastName).toEqual(resultValue);
     }
