@@ -1,8 +1,9 @@
 import bcrypt from "bcryptjs";
 
-import { models } from "../../db/models";
-import { groupIds } from "./psychologist";
+import { models } from "../models";
+import { groups } from "./psychologist";
 
+const groupIds = groups.map((g) => g.id);
 export const createUsers = async () => {
   const salt = await bcrypt.genSalt(10);
 

@@ -1,9 +1,9 @@
 /* eslint-disable jest/no-conditional-expect */
-import { models } from "../../db/models";
-import { getOnePsychologist, groupIds } from "../../db/seeds/psychologist";
-import { createUsers } from "../../db/seeds/users";
+import {models} from "../../db/models";
+import {getOnePsychologist, groups} from "../../db/seeds/psychologist";
+import {createUsers} from "../../db/seeds/users";
 import config from "../../services/config";
-import { makeAuthenticatedClient } from "./login";
+import {makeAuthenticatedClient} from "./login";
 
 const defaultValues = {
   address: "new address",
@@ -33,13 +33,13 @@ describe("/api/psychologist/[id]", () => {
     // @ts-ignore
     await models.Psychologist.create(psy);
 
-    const groupdId = groupIds.findIndex((id) => psy.instructorId === id);
+    const groupdId = groups.findIndex((g) => psy.instructorId === g.id);
     client = await makeAuthenticatedClient(
       `${groupdId}@test.fr`,
       `admin${groupdId}`
     );
 
-    const otherGroupdId = groupIds.findIndex((id) => psy.instructorId !== id);
+    const otherGroupdId = groups.findIndex((g) => psy.instructorId !== g.id);
     nonAuthorizedClient = await makeAuthenticatedClient(
       `${otherGroupdId}@test.fr`,
       `admin${otherGroupdId}`

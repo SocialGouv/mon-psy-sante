@@ -7,6 +7,7 @@ import { FILTER } from "../types/enums/filters";
 import { PUBLIC } from "../types/enums/public";
 import { Psychologist } from "../types/psychologist";
 import getAddressCoordinates from "./getAddressCoordinates";
+import { formatCoordinates } from "./demarchesSimplifiees/parse-psychologists";
 
 const limit = pLimit(5);
 
@@ -107,26 +108,22 @@ export const update = async (
     displayName,
     psychologist.address
   );
-  const secondAddressCoordinates = await getAddressCoordinates(
-    displayName,
-    psychologist.secondAddress
-  );
+  let secondAddressCoordinates;
+  if (psychologist.secondAddress) {
+    secondAddressCoordinates = await getAddressCoordinates(
+      displayName,
+      psychologist.secondAddress
+    );
+  }
+
   return models.Psychologist.update(
     {
       address: psychologist.address,
       secondAddress: psychologist.secondAddress,
       cdsmsp: psychologist.cdsmsp,
-      coordinates: coordinates
-        ? {
-            coordinates: [coordinates.longitude, coordinates.latitude],
-            type: "POINT",
-          }
-        : null,
+      coordinates: coordinates ? formatCoordinates(coordinates) : null,
       secondAddressCoordinates: secondAddressCoordinates
-        ? {
-            coordinates: [coordinates.longitude, coordinates.latitude],
-            type: "POINT",
-          }
+        ? formatCoordinates(secondAddressCoordinates)
         : null,
       displayEmail: psychologist.displayEmail,
       email: psychologist.email,
