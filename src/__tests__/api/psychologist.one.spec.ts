@@ -1,9 +1,9 @@
 /* eslint-disable jest/no-conditional-expect */
-import {models} from "../../db/models";
-import {getOnePsychologist, groups} from "../../db/seeds/psychologist";
-import {createUsers} from "../../db/seeds/users";
+import { models } from "../../db/models";
+import { getOnePsychologist, groups } from "../../db/seeds/psychologist";
+import { createUsers } from "../../db/seeds/users";
 import config from "../../services/config";
-import {makeAuthenticatedClient} from "./login";
+import { makeAuthenticatedClient } from "./login";
 
 const defaultValues = {
   address: "new address",
