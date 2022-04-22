@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { Psychologist } from "../../types/psychologist";
 
-const Psychologists = ({
+const PsychologistsForInstructors = ({
   psychologists,
 }: {
   psychologists: Partial<Psychologist>[];
@@ -72,16 +72,7 @@ const Psychologists = ({
     },
   ];
   return (
-    <div
-      className="fr-my-2w"
-      style={{
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "column",
-        margin: "auto",
-        maxWidth: 400,
-      }}
-    >
+    <>
       <h1>Psychologues</h1>
       <TextInput
         inline
@@ -90,8 +81,8 @@ const Psychologists = ({
         onChange={(e) => setSearch(e.target.value)}
       />
       <Table rowKey="id" columns={columns} data={filteredPsychologists} />
-    </div>
+    </>
   );
 };
 
-export default Psychologists;
+export default PsychologistsForInstructors;

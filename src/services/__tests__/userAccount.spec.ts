@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 
-import { models } from "../db/models";
-import { login } from "./userAccount";
+import { models } from "../../db/models";
+import { login } from "../userAccount";
 
 describe("Service userAccount", () => {
   beforeAll(async () => {
