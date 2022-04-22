@@ -20,6 +20,7 @@ const editableFields = [
   { field: "lastName", label: "Nom", required: true },
   { field: "firstName", label: "Prénom", required: true },
   { field: "address", label: "Adresse", required: true },
+  { field: "secondAddress", label: "Adresse secondaire" },
   { field: "phone", label: "Téléphone", required: true },
   { field: "email", label: "Email" },
   {
@@ -69,6 +70,7 @@ const PsychologistForm = ({ psychologist }: { psychologist: Psychologist }) => {
     axios
       .put(`/api/psychologists/${modifiedPsychologist.id}`, {
         address: modifiedPsychologist.address,
+        secondAddress: modifiedPsychologist.secondAddress,
         cdsmsp: modifiedPsychologist.cdsmsp,
         displayEmail: modifiedPsychologist.displayEmail,
         email: modifiedPsychologist.email,

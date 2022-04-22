@@ -7,11 +7,12 @@ import { getOne, update } from "../../../services/psychologists";
 
 const updateSchema = Joi.object({
   address: Joi.string().required(),
+  secondAddress: Joi.string().allow(""),
   cdsmsp: Joi.string().allow(""),
   displayEmail: Joi.boolean().required(),
-  email: Joi.string().allow("").email(),
+  email: Joi.string().email(),
   firstName: Joi.string().required(),
-  languages: Joi.string().allow(""),
+  languages: Joi.string().allow(null),
   lastName: Joi.string().required(),
   phone: Joi.string().required(),
   public: Joi.string()
@@ -19,7 +20,7 @@ const updateSchema = Joi.object({
     .required(),
   teleconsultation: Joi.boolean().required(),
   visible: Joi.boolean().required(),
-  website: Joi.string().allow(""),
+  website: Joi.string().allow(null),
 });
 
 const psychologist = async (req: NextApiRequest, res: NextApiResponse) => {

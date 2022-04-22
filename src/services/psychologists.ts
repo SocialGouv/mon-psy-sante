@@ -6,8 +6,8 @@ import { SRID } from "../types/const/geometry";
 import { FILTER } from "../types/enums/filters";
 import { PUBLIC } from "../types/enums/public";
 import { Psychologist } from "../types/psychologist";
-import getAddressCoordinates from "./getAddressCoordinates";
 import { formatCoordinates } from "./demarchesSimplifiees/parse-psychologists";
+import getAddressCoordinates from "./getAddressCoordinates";
 
 const limit = pLimit(5);
 
@@ -15,7 +15,7 @@ export const getOne = async (id: string): Promise<Psychologist> => {
   // @ts-ignore
   return models.Psychologist.findOne({
     raw: true,
-    where: { archived: false, id },
+    where: { id },
   });
 };
 
