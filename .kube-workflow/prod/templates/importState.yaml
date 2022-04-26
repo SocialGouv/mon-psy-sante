@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  namespace: mon-psy-sante-preprod
+  namespace: mon-psy-sante
   name: import-state
   labels:
     app: mon-psy
@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
             - name: mon-psy
-              image: ghcr.io/socialgouv/mon-psy-sante/app:latest
+              image: ghcr.io/socialgouv/mon-psy-sante/app:{{ .Values.global.imageTag }}
               envFrom:
                 - secretRef:
                     name: app-sealed-secret
@@ -25,3 +25,4 @@ spec:
                 - cron:launch
                 - importState
           restartPolicy: Never
+          concurrencyPolicy: Forbid

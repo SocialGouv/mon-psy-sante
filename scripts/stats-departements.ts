@@ -10,21 +10,26 @@ const file = fs.createWriteStream("departments-stats.csv");
 const extractDepNumber = (dep) => dep.split(" - ")[0];
 
 const deps = DEPARTMENTS.map((dep) => {
-  return { count: 0, name: dep, department: extractDepNumber(dep) };
+  return {
+    count: 0,
+    countAcceptes: 0,
+    name: dep,
+    department: extractDepNumber(dep),
+  };
 });
 
-function log(text, count) {
-  file.write(`"${text}";${count}\n`);
-  console.log(text, ":", count);
+function log(text, count, countAcceptes = "") {
+  file.write(`"${text}";${count};${countAcceptes}\n`);
+  console.log(text, ":", count, countAcceptes);
 }
 
 function displayList(list) {
   list.forEach((item) => {
-    log(item.name, item.count);
+    log(item.name, item.count, item.countAcceptes);
   });
 }
 
-log("Dep", "total");
+log("Dep", "Total", "Acceptés");
 (async () => {
   const requestPsychologistsStateWithDep = _.bind(
     requestPsychologistsState,
@@ -59,12 +64,14 @@ log("Dep", "total");
     });
     if (!dep) console.log(">>>>>>>>>", psy.groupeInstructeur.label);
     dep.count++;
+    if (psy.state === "accepte") dep.countAcceptes++;
   });
 
   const enInstruction = _.filter(valids, { state: "en_instruction" });
   const enConstruction = _.filter(valids, { state: "en_construction" });
   const accepte = _.filter(valids, { state: "accepte" });
   const noDossier = _.filter(deps, { count: 0 });
+  const noDossierAcceptes = _.filter(deps, { countAcceptes: 0 });
 
   displayList(deps);
 
@@ -76,6 +83,10 @@ log("Dep", "total");
   log("Nombre total de dossier en construction", enConstruction.length);
   log("Nombre total de dossier acceptés", accepte.length);
   log("Nombre de départements sans dossiers", noDossier.length);
+  log(
+    "Nombre de départements sans dossiers acceptés",
+    noDossierAcceptes.length
+  );
 
   setTimeout(() => {
     process.exit();

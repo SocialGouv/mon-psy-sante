@@ -1,6 +1,6 @@
 {
   "name": "monpsy",
-  "version": "1.27.8",
+  "version": "1.28.1",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -13,6 +13,7 @@
   "dependencies": {
     "@dataesr/react-dsfr": "0.9.9",
     "@faker-js/faker": "^6.0.0-alpha.6",
+    "@gouvfr/dsfr": "^1.4.1",
     "@sentry/nextjs": "^6.17.9",
     "@socialgouv/matomo-next": "^1.3.0",
     "axios": "^0.26.0",
@@ -33,7 +34,7 @@
     "react": "^18.0.0",
     "react-autocomplete": "^1.8.1",
     "react-dom": "^18.0.0",
-    "react-leaflet": "^3.2.5",
+    "react-leaflet": "^4.0.0",
     "sanitize-html": "^2.7.0",
     "sequelize": "^6.16.1",
     "sequelize-cli": "^6.4.1",
@@ -80,9 +81,9 @@
     "export": "next export",
     "db:init": "yarn run db:migrate && yarn run db:seed",
     "db:seed": "ts-node --transpile-only src/db/seeds/index.ts",
-    "db:migrate": "npx sequelize-cli db:migrate",
-    "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
-    "db:migrate:create": "npx sequelize migration:create --name",
+    "db:migrate": "yarn sequelize-cli db:migrate",
+    "db:migrate:undo": "yarn sequelize-cli db:migrate:undo",
+    "db:migrate:create": "yarn sequelize migration:create --name",
     "cy": "cypress open",
     "cy:run": "cypress run",
     "cron:launch": "ts-node --transpile-only src/cron/launch.ts",

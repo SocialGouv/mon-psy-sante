@@ -1,3 +1,24 @@
+## [1.28.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.0...v1.28.1) (2022-04-22)
+
+
+### Bug Fixes
+
+* **ci:** use kube-workflow ([#135](https://github.com/SocialGouv/mon-psy-sante/issues/135)) ([0955817](https://github.com/SocialGouv/mon-psy-sante/commit/0955817a0b08355412a76c3d8deb251d9ad7742b))
+
+# [1.28.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.9...v1.28.0) (2022-04-19)
+
+
+### Features
+
+* **hide availability:** add new question with PsyEnfantAdo stats + hide contact if psy is un-available + upgrade react dsfr + leaflet ([#154](https://github.com/SocialGouv/mon-psy-sante/issues/154)) ([65e5326](https://github.com/SocialGouv/mon-psy-sante/commit/65e5326c9fc727a3985aa3e8b59e5e572385dc95))
+
+## [1.27.9](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.8...v1.27.9) (2022-04-19)
+
+
+### Bug Fixes
+
+* **data formatting:** trim firstNames & lastNames ([#151](https://github.com/SocialGouv/mon-psy-sante/issues/151)) ([7cec060](https://github.com/SocialGouv/mon-psy-sante/commit/7cec060b1fe81e51bd945bdde1f301e36faed429))
+
 ## [1.27.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.27.7...v1.27.8) (2022-04-12)
 
 

@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
             - name: mon-psy
-              image: ghcr.io/socialgouv/mon-psy-sante/app:latest
+              image: ghcr.io/socialgouv/mon-psy-sante/app:{{ .Values.global.imageTag }}
               envFrom:
                 - secretRef:
                     name: app-sealed-secret
