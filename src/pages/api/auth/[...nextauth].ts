@@ -11,7 +11,7 @@ const options = {
         ...user,
       };
     },
-    redirect: ({ url }) => url || "/admin",
+    redirect: ({ url }) => url || "/administration-annuaire",
     async session({ session, token }) {
       if (token) {
         return {
@@ -26,8 +26,8 @@ const options = {
     },
   },
   pages: {
-    error: "/connexion",
-    signIn: "/connexion",
+    error: "/administration-annuaire/connexion",
+    signIn: "/administration-annuaire/connexion",
   },
   providers: [
     CredentialsProvider({

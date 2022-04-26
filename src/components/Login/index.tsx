@@ -48,7 +48,7 @@ export const Login = ({ error, callbackUrl }: LoginProps) => {
         <Button disabled={!email || !password} submit>
           Se connecter
         </Button>
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="fr-error-text">{error}</p>}
       </form>
     </div>
   );

@@ -42,7 +42,7 @@ const PsychologistsForInstructors = ({
 
   const columns = [
     {
-      label: "Id",
+      label: "Dossier",
       name: "id",
       sortable: true,
     },
@@ -63,7 +63,9 @@ const PsychologistsForInstructors = ({
       render: (psychologist) => (
         <Button
           onClick={() => {
-            router.push(`/admin/psychologists/${psychologist.id}`);
+            router.push(
+              `/administration-annuaire/psychologists/${psychologist.id}`
+            );
           }}
         >
           Modifier

@@ -8,7 +8,7 @@ const AdminSearchField = () => {
 
   const gotToPsy = (e) => {
     e.preventDefault();
-    router.push(`/admin/psychologists/${search}`);
+    router.push(`/administration-annuaire/psychologists/${search}`);
   };
 
   return (

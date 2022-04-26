@@ -4,12 +4,17 @@ import React from "react";
 
 import PsychologistForm from "../../../components/Admin/PsychologistForm";
 import { getOne } from "../../../services/psychologists";
+import Header from "../../../components/Admin/Header";
 
 const EditablePsychologist = ({ psychologist }: { psychologist: string }) => {
   return (
-    <div className="fr-container">
-      <PsychologistForm psychologist={JSON.parse(psychologist)} />
-    </div>
+    <>
+      <Header />
+
+      <div className="fr-container">
+        <PsychologistForm psychologist={JSON.parse(psychologist)} />
+      </div>
+    </>
   );
 };
 
@@ -20,7 +25,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!userSession) {
     return {
       redirect: {
-        destination: `/connexion?callbackurl=/admin/psychologists/$${context.query.id}`,
+        destination: `/administration-annuaire/connexion?callbackurl=/administration-annuaire/psychologists/$${context.query.id}`,
         permanent: false,
       },
     };
@@ -29,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!psychologist) {
     return {
       redirect: {
-        destination: `/admin`,
+        destination: `/administration-annuaire`,
         permanent: false,
       },
     };

@@ -14,7 +14,7 @@ import { Psychologist } from "../../types/psychologist";
 const editableFields = [
   {
     field: "visible",
-    label: "Visible dans l'annuaire",
+    label: "Actuellement disponible",
     type: "boolean",
   },
   { field: "lastName", label: "Nom", required: true },
