@@ -30,12 +30,12 @@ const Admin = ({
             <p className="fr-text--lead">{count}</p>
           </div>
           <div className="fr-col-12 fr-col-md-5 fr-col-offset-2">
-            {psychologists ? (
+            {psychologists.length ? (
               <PsychologistsForInstructors psychologists={psychologists} />
             ) : (
               <AdminSearchField />
             )}
-            {router.query.error && (
+            {router.query.error === "NotFound" && (
               <Alert
                 title="Dossier non trouvé"
                 className="fr-my-2w"
@@ -62,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     };
   }
-  let psychologists;
+  let psychologists = [];
   let count;
   if (userSession.user.group === "admin") {
     count = await countAll();

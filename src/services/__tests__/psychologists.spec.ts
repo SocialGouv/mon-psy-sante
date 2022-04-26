@@ -70,7 +70,7 @@ describe("Service psychologists", () => {
   describe("countAll", () => {
     it("Should count non archived psychologists", async () => {
       const results = await countAll();
-      expect(results).toEqual(18);
+      expect(results).toEqual(36);
     });
   });
 
@@ -90,14 +90,13 @@ describe("Service psychologists", () => {
         [FILTER.PAGE_INDEX]: "1",
         [FILTER.PAGE_SIZE]: "10",
       });
-      expect(results.length).toEqual(8);
+      expect(results.length).toEqual(10);
       results.forEach((result) => expect(result.archived).toBe(false));
-      results.forEach((result) => expect(result.visible).toBe(true));
     });
 
     it("Should return empty psychologists if extra page", async () => {
       const results = await getAll({
-        [FILTER.PAGE_INDEX]: "2",
+        [FILTER.PAGE_INDEX]: "4",
         [FILTER.PAGE_SIZE]: "10",
       });
       expect(results.length).toEqual(0);
@@ -109,9 +108,8 @@ describe("Service psychologists", () => {
         [FILTER.TELECONSULTATION]: "true",
       });
 
-      expect(results.length).toEqual(9);
+      expect(results.length).toEqual(18);
       results.forEach((result) => expect(result.archived).toBe(false));
-      results.forEach((result) => expect(result.visible).toBe(true));
       results.forEach((result) => expect(result.teleconsultation).toBe(true));
     });
 
@@ -121,9 +119,8 @@ describe("Service psychologists", () => {
         [FILTER.PUBLIC]: PUBLIC.ADULTES,
       });
 
-      expect(results.length).toEqual(12);
+      expect(results.length).toEqual(24);
       results.forEach((result) => expect(result.archived).toBe(false));
-      results.forEach((result) => expect(result.visible).toBe(true));
       results.forEach((result) =>
         expect(result.public).not.toBe(PUBLIC.ENFANTS)
       );
@@ -136,9 +133,8 @@ describe("Service psychologists", () => {
         [FILTER.TELECONSULTATION]: "true",
       });
 
-      expect(results.length).toEqual(6);
+      expect(results.length).toEqual(12);
       results.forEach((result) => expect(result.archived).toBe(false));
-      results.forEach((result) => expect(result.visible).toBe(true));
       results.forEach((result) => expect(result.teleconsultation).toBe(true));
       results.forEach((result) =>
         expect(result.public).not.toBe(PUBLIC.ADULTES)

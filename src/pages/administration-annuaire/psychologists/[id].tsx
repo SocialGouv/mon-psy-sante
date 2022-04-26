@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!psychologist) {
     return {
       redirect: {
-        destination: `/administration-annuaire`,
+        destination: `/administration-annuaire?error=NotFound`,
         permanent: false,
       },
     };

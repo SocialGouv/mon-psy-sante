@@ -105,7 +105,7 @@ const Psychologist = ({
             {psychologist.address}
           </p>
 
-          <>
+          {psychologist.visible ? (
             <Button
               secondary
               size="sm"
@@ -115,7 +115,12 @@ const Psychologist = ({
             >
               Voir le contact pour prendre rendez-vous
             </Button>
-          </>
+          ) : (
+            <p className="fr-badge fr-badge--no-icon fr-badge--sm fr-mt-2w">
+              Aucune disponibilité actuellement
+            </p>
+          )}
+
           <div className="fr-p-1w" />
           <p className="fr-my-0 text-grey">
             <Icon
@@ -152,7 +157,7 @@ const Psychologist = ({
                 width="18"
                 src="/images/icones/chat-fill.svg"
               />
-              Langue(s): {psychologist.languages}
+              Autre(s) langue(s): {psychologist.languages}
             </p>
           )}
         </div>
