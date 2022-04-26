@@ -1,3 +1,10 @@
+## [1.28.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.1...v1.28.2) (2022-04-26)
+
+
+### Bug Fixes
+
+* **script:** update stats script to also includes dossiers accéptés ([095118e](https://github.com/SocialGouv/mon-psy-sante/commit/095118e8a57b02003f6a68cb66630ca86f6f8d73))
+
 ## [1.28.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.0...v1.28.1) (2022-04-22)
 
 
