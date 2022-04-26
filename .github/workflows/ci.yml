@@ -55,9 +55,13 @@ jobs:
       - name: E2E test
         run: npm run cy:run
 
+      - name: Archive Test Results
+        if: always()
       - uses: actions/download-artifact@v3
         with:
-          name: e2e-output
+          name: test-results
+          path: cypress
 
       - name: Display structure of downloaded files
+        if: always()
         run: ls -R
