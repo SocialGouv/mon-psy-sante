@@ -2,9 +2,9 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import React from "react";
 
+import Header from "../../../components/Admin/Header";
 import PsychologistForm from "../../../components/Admin/PsychologistForm";
 import { getOne } from "../../../services/psychologists";
-import Header from "../../../components/Admin/Header";
 
 const EditablePsychologist = ({ psychologist }: { psychologist: string }) => {
   return (
@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!psychologist) {
     return {
       redirect: {
-        destination: `/administration-annuaire`,
+        destination: `/administration-annuaire?error=NotFound`,
         permanent: false,
       },
     };

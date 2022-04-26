@@ -17,6 +17,7 @@ const AdminSearchField = () => {
       <form onSubmit={gotToPsy}>
         <TextInput
           required
+          type="number"
           label="Entrez l'id d'un dossier"
           value={search}
           onChange={(e) => setSearch(e.target.value)}

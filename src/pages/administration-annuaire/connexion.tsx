@@ -2,8 +2,8 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import React from "react";
 
-import { Login, LoginProps } from "../../components/Login";
 import Header from "../../components/Admin/Header";
+import { Login, LoginProps } from "../../components/Login";
 
 const Connexion = ({ error, callbackUrl }: LoginProps) => {
   return (
