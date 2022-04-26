@@ -54,3 +54,8 @@ jobs:
 
       - name: E2E test
         run: npm run cy:run
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: e2e-output
+          path: /home/runner/work/mon-psy-sante/mon-psy-sante/cypress/
