@@ -1,6 +1,8 @@
 import * as Sentry from "@sentry/nextjs";
 
 import { models } from "../db/models";
+import { requestAdeli } from "../services/adeli/request";
+import { addVerificationMessage } from "../services/demarchesSimplifiees/buildRequest";
 import filterDossiersToVerif from "../services/demarchesSimplifiees/dossiers";
 import {
   getDossiersInConstruction,
@@ -9,12 +11,15 @@ import {
   getPsychologistState,
 } from "../services/demarchesSimplifiees/import";
 import parsePsychologists from "../services/demarchesSimplifiees/parse-psychologists";
+import { validatePsychologist } from "../services/demarchesSimplifiees/validate-psychologist";
 import {
   countAll,
   filterIdsNotInDb,
   saveMany,
   updateState,
 } from "../services/psychologists";
+import { AdeliData } from "../types/adeli";
+import { Psychologist } from "../types/psychologist";
 
 async function logPsyNumber(): Promise<void> {
   const count = await countAll();
@@ -76,6 +81,39 @@ export const importState = async (): Promise<void> => {
   }
 };
 
+const validateDossier = async (
+  dossier: Psychologist,
+  adeliData: AdeliData[]
+): Promise<string[]> => {
+  let errors = [];
+
+  if (adeliData.length === 0) {
+    return [`Numéro ADELI invalide : ${dossier.adeliId}`];
+  }
+
+  const psychologistValidation = validatePsychologist(dossier, adeliData);
+
+  if (psychologistValidation.success === false) {
+    errors = errors.concat(
+      psychologistValidation.error.issues.map(({ message }) => message)
+    );
+  }
+
+  if (!dossier.coordinates) {
+    errors = errors.concat([
+      `Adresse principale non reconnue : ${dossier.address}`,
+    ]);
+  }
+
+  if (dossier.secondAddress && !dossier.secondAddressCoordinates) {
+    errors = errors.concat([
+      `Adresse secondaire non reconnue : ${dossier.secondAddress}`,
+    ]);
+  }
+
+  return errors;
+};
+
 export const verifFolders = async (): Promise<void> => {
   try {
     console.log("Starting verifFolders...");
@@ -85,14 +123,26 @@ export const verifFolders = async (): Promise<void> => {
       filterDossiersToVerif(dossiersInConstruction)
     );
 
-    dossiersToVerify.forEach((dossier) => {
-      if (!dossier.coordinates) {
-        console.log(dossier.id, "(adresse principale):", dossier.address);
-      }
-      if (dossier.secondAddress && !dossier.secondAddressCoordinates) {
-        console.log(dossier.id, "(adresse secondaire):", dossier.secondAddress);
-      }
-    });
+    await Promise.all(
+      dossiersToVerify.map(async (dossier) => {
+        const adeliData = await requestAdeli(dossier.adeliId);
+
+        const errors = await validateDossier(dossier, adeliData);
+
+        const validationDate = Intl.DateTimeFormat("fr-FR").format(new Date());
+        const validationText =
+          errors.length === 0
+            ? `Validation auto OK : ${validationDate}`
+            : `Validation auto erreur : ${validationDate}\n`.concat(
+                ...errors.map((error) => `- ${error} \n`)
+              );
+
+        await addVerificationMessage(
+          dossier.demarcheSimplifieesId,
+          validationText
+        );
+      })
+    );
 
     console.log("importState done");
   } catch (err) {

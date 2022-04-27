@@ -22,9 +22,12 @@ export interface Psychologist {
   department: string;
   state: string;
   distance?: number;
+  adeliId?: string;
+  demarcheSimplifieesId?: string;
 }
 
 export interface DSPsychologist {
+  id: string;
   archived: boolean;
   number: number;
   state: string;

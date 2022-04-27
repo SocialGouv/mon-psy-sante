@@ -1,4 +1,5 @@
 /* eslint-disable jest/no-conditional-expect */
+import { expect } from "@jest/globals";
 import { stub } from "sinon";
 
 import { models } from "../../db/models";
@@ -209,6 +210,8 @@ describe("Service psychologists", () => {
         where: { id: initialPsy.id },
       });
 
+      expect(updatedPsy).toBeDefined();
+
       Object.keys(updatedPsy).forEach((key) => {
         if (key === "coordinates" || key === "secondAddressCoordinates") {
           expect(updatedPsy[key].coordinates).toEqual([123, 456]);
@@ -287,16 +290,20 @@ describe("Service psychologists", () => {
       });
 
       expect(psychologists.find((psy) => psy.id === 0)).toEqual(undefined);
-      expect(psychologists.find((psy) => psy.id === 1).archived).toEqual(false);
-      expect(psychologists.find((psy) => psy.id === 1).state).toEqual("final");
-      expect(psychologists.find((psy) => psy.id === 2).archived).toEqual(true);
-      expect(psychologists.find((psy) => psy.id === 2).state).toEqual("final");
-      expect(psychologists.find((psy) => psy.id === 3).archived).toEqual(true);
-      expect(psychologists.find((psy) => psy.id === 3).state).toEqual(
+      expect(psychologists.find((psy) => psy.id === 1)?.archived).toEqual(
+        false
+      );
+      expect(psychologists.find((psy) => psy.id === 1)?.state).toEqual("final");
+      expect(psychologists.find((psy) => psy.id === 2)?.archived).toEqual(true);
+      expect(psychologists.find((psy) => psy.id === 2)?.state).toEqual("final");
+      expect(psychologists.find((psy) => psy.id === 3)?.archived).toEqual(true);
+      expect(psychologists.find((psy) => psy.id === 3)?.state).toEqual(
         "initial"
       );
-      expect(psychologists.find((psy) => psy.id === 4).archived).toEqual(false);
-      expect(psychologists.find((psy) => psy.id === 4).state).toEqual(
+      expect(psychologists.find((psy) => psy.id === 4)?.archived).toEqual(
+        false
+      );
+      expect(psychologists.find((psy) => psy.id === 4)?.state).toEqual(
         "initial"
       );
     });

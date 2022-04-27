@@ -1,6 +1,7 @@
 import { gql } from "graphql-request";
 
 import { DSResponse } from "../../types/demarcheSimplifiee";
+import { Psychologist } from "../../types/psychologist";
 import config from "../config";
 import { request } from "./request";
 
@@ -135,6 +136,7 @@ export const requestDossiersWithAnnotations = async (
           endCursor
         }
         nodes {
+          id,
           number
           champs {
             id
@@ -162,4 +164,42 @@ export const requestDossiersWithAnnotations = async (
   }`;
 
   return request(query);
+};
+
+export const addVerificationMessage = (
+  dossierId: Psychologist["demarcheSimplifieesId"],
+  message: string
+) => {
+  const writeId = config.demarchesSimplifiees.writeAccess
+    ? dossierId
+    : config.demarchesSimplifiees.writeableId;
+
+  if (!config.demarchesSimplifiees.writeAccess) {
+    console.log(
+      `Writing in ${writeId} instead of ${dossierId} because write access is disabled`
+    );
+  }
+
+  const query = gql`
+    mutation dossierModifierAnnotationText(
+      $input: DossierModifierAnnotationTextInput!
+    ) {
+      dossierModifierAnnotationText(input: $input) {
+        errors {
+          message
+        }
+      }
+    }
+  `;
+
+  const variables = {
+    input: {
+      dossierId: writeId,
+      instructeurId: config.demarchesSimplifiees.instructeurId,
+      annotationId: config.demarchesSimplifiees.champVerifAuto,
+      value: message,
+    },
+  };
+
+  return request(query, variables);
 };
