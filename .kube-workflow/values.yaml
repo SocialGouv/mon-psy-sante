@@ -19,8 +19,6 @@ keycloak:
 
   extraEnvFrom: |
     - secretRef:
-        name: app-sealed-secret
-    - secretRef:
         name: keycloak-db
     - secretRef:
         name: keycloak-secrets
@@ -42,16 +40,6 @@ keycloak:
       value: "$(PGUSER)"
     - name: DB_PASSWORD
       value: "$(PGPASSWORD)"
-    - name: SMTP_STARTTLS
-      value: "true"
-    - name: SMTP_HOST
-      value: "smtp.tipimail.com"
-    - name: SMTP_PORT
-      value: "587"
-    - name: SMTP_USER
-      value: "$(MAIL_AUTH_USER)"
-    - name: SMTP_PASSWORD
-      value: "$(MAIL_AUTH_PASS)"
 
   extraVolumes: |
     - name: keycloak-realm-tpl
@@ -76,6 +64,20 @@ keycloak:
         readOnly: true
       - name: keycloak-realm
         mountPath: "/realm/"
+      envFrom:
+      - secretRef:
+          name: app-sealed-secret
+      env:
+      - name: SMTP_STARTTLS
+        value: "true"
+      - name: SMTP_HOST
+        value: "smtp.tipimail.com"
+      - name: SMTP_PORT
+        value: "587"
+      - name: SMTP_USER
+        value: "$(MAIL_AUTH_USER)"
+      - name: SMTP_PASSWORD
+        value: "$(MAIL_AUTH_PASS)"
       command:
         - sh
       args:
