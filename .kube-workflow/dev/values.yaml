@@ -3,11 +3,11 @@ app:
 
 jobs:
   runs:
-    - name: db
+    db:
       use: SocialGouv/kube-workflow/jobs/create-db@v1
       with:
         pgAdminSecretRefName: azure-pg-admin-user
-    - name: seed
+    seed:
       checkout: false # no need to checkout the repo as we use the docker image
       needs: [db]
       shell: sh
@@ -16,3 +16,9 @@ jobs:
       envFrom:
         - secretRef:
             name: "pg-user-{{ .Values.global.branchSlug }}"
+
+    db-keycloak:
+      use: SocialGouv/kube-workflow/jobs/create-db@v1
+      with:
+        pgAdminSecretRefName: azure-pg-admin-user
+        database: "keycloak-{{ .Values.global.branchSlug32 }}"
