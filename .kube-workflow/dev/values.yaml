@@ -31,8 +31,6 @@ keycloak:
     kapp.k14s.io/change-rule: "upsert after upserting kube-workflow/db-keycloak.{{ .Values.global.namespace }}"
   extraEnvFrom: |
     - secretRef:
-        name: app-sealed-secret
-    - secretRef:
         name: "keycloak-db-{{ .Values.global.branchSlug32 }}"
     - secretRef:
         name: keycloak-secrets
