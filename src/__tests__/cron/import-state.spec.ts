@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import {
   importArchived,
   importData,
@@ -7,7 +9,6 @@ import { models } from "../../db/models";
 import { getOnePsychologist } from "../../db/seeds/psychologist";
 import { request } from "../../services/demarchesSimplifiees/request";
 import { Psychologist } from "../../types/psychologist";
-import axios from "axios";
 
 jest.mock("../../services/demarchesSimplifiees/request");
 
