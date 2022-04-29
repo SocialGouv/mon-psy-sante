@@ -4,7 +4,7 @@ app:
 jobs:
   runs:
     db:
-      use: SocialGouv/kube-workflow/jobs/create-db@v1
+      use: SocialGouv/kube-workflow/jobs/create-db
       with:
         pgAdminSecretRefName: azure-pg-admin-user
     seed:
@@ -18,7 +18,18 @@ jobs:
             name: "pg-user-{{ .Values.global.branchSlug }}"
 
     db-keycloak:
-      use: SocialGouv/kube-workflow/jobs/create-db@v1
+      use: SocialGouv/kube-workflow/jobs/create-db
       with:
         pgAdminSecretRefName: azure-pg-admin-user
-        database: "keycloak-{{ .Values.global.branchSlug32 }}"
+        pgSecretName: "keycloak-db-{{ .Values.global.branchSlug32 }}"
+        database: "keycloak_{{ .Values.global.branchSlug32 }}"
+        pgUser: "keycloak_{{ .Values.global.branchSlug32 }}"
+
+keycloak:
+  extraEnvFrom: |
+    - secretRef:
+        name: app-sealed-secret
+    - secretRef:
+        name: "keycloak-db-{{ .Values.global.branchSlug32 }}"
+    - secretRef:
+        name: keycloak-secrets
