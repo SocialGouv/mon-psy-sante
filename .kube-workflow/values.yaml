@@ -27,7 +27,7 @@ keycloak:
 
   extraEnv: |
     - name: KEYCLOAK_IMPORT
-      value: /opt/realm.json
+      value: /realm/realm.json
     - name: PROXY_ADDRESS_FORWARDING
       value: "true"
     - name: DB_VENDOR
