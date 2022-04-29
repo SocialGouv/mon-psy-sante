@@ -27,7 +27,7 @@ keycloak:
 
   extraEnv: |
     - name: KEYCLOAK_IMPORT
-      value: /realm/realm.json
+      value: /opt/realm.json
     - name: PROXY_ADDRESS_FORWARDING
       value: "true"
     - name: DB_VENDOR
@@ -54,9 +54,11 @@ keycloak:
       value: "$(MAIL_AUTH_PASS)"
 
   extraVolumes: |
-    - name: keycloak-realm
+    - name: keycloak-realm-tpl
       configMap:
         name: keycloak-realm
+    - name: keycloak-realm
+      emptyDir: {}
 
   extraVolumeMounts: |
     - name: keycloak-realm
@@ -66,14 +68,20 @@ keycloak:
 
   extraInitContainers: |
     - name: compile-realm
-      image: bash:4
+      image: bhgedigital/envsubst:v1.0-alpine3.6
       imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - name: keycloak-realm-tpl
+        mountPath: "/realm-tpl/"
+        readOnly: true
+      - name: keycloak-realm
+        mountPath: "/realm/"
       command:
         - sh
       args:
         - -c
         - |
-          cat /realm/realm.envtpl | envsubst "$(env | sed -e 's/=.*//' -e 's/^/\$/g')" > /realm/realm.json
+          cat /realm-tpl/realm.envtpl | envsubst "$(env | sed -e 's/=.*//' -e 's/^/\$/g')" > /realm/realm.json
 
   ingress:
     enabled: true
