@@ -39,14 +39,14 @@ data:
         "clientRole": false
       },
       "smtpServer": {
-        "password": "{{ getenv "SMPT_PASSWORD" }}",
-        "starttls": "{{ or (getenv "SMPT_STARTTLS") "true" }}",
-        "auth": "{{ or (getenv "SMPT_AUTH") "true" }}",
-        "host": "{{ getenv "SMPT_HOST" }}",
-        "from": "{{ or (getenv "SMPT_FROM") "" }}",
-        "port": "{{ or (getenv "SMPT_PORT") "587" }}",
-        "ssl": "{{ or (getenv "SMPT_SSL") "true" }}",
-        "user": "{{ getenv "SMPT_USER" }}"
+        "password": "{{`{{ getenv "SMPT_PASSWORD" }}`}}",
+        "starttls": "{{`{{ or (getenv "SMPT_STARTTLS") "true" `}}",
+        "auth": "{{`{{ or (getenv "SMPT_AUTH") "true" `}}",
+        "host": "{{`{{ getenv "SMPT_HOST" `}}",
+        "from": "{{`{{ or (getenv "SMPT_FROM") "" `}}",
+        "port": "{{`{{ or (getenv "SMPT_PORT") "587" `}}",
+        "ssl": "{{`{{ or (getenv "SMPT_SSL") "true" `}}",
+        "user": "{{`{{ getenv "SMPT_USER" `}}"
       },
       "roles": {
         "realm": [
