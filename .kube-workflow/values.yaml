@@ -81,7 +81,7 @@ keycloak:
       args:
         - -c
         - |
-          cat /realm-tpl/realm.envtpl | envsubst > /realm/realm.json
+          cat /realm-tpl/realm.json.envtpl | envsubst "$(env | sed -e 's/=.*//' -e 's/^/\$/g')" > /realm/realm.json
 
   ingress:
     enabled: true
