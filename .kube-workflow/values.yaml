@@ -56,7 +56,7 @@ keycloak:
 
   extraInitContainers: |
     - name: compile-realm
-      image: bhgedigital/envsubst:v1.0-alpine3.6
+      image: hairyhenderson/gomplate:v3.10.0-alpine
       imagePullPolicy: IfNotPresent
       volumeMounts:
       - name: keycloak-realm-tpl
@@ -68,8 +68,6 @@ keycloak:
       - secretRef:
           name: app-sealed-secret
       env:
-      - name: SMTP_STARTTLS
-        value: "true"
       - name: SMTP_HOST
         value: "smtp.tipimail.com"
       - name: SMTP_PORT
@@ -82,8 +80,7 @@ keycloak:
         - sh
       args:
         - -c
-        - |
-          cat /realm-tpl/realm.json.envtpl | envsubst "$(env | sed -e 's/=.*//' -e 's/^/\$/g')" > /realm/realm.json
+        - "cat /realm-tpl/realm.json.envtpl | gomplate > /realm/realm.json"
 
   ingress:
     enabled: true
