@@ -47,7 +47,7 @@ describe("parseDossierMetadata", () => {
     });
 
     expect(axios.get).toHaveBeenCalledWith(
-      "https://api-adresse.data.gouv.fr/search/?q=12%20Rue%20Neuve%2031000%20Toulouse&limit=1"
+      "https://httpbin.org/apiAdresse/?q=12%20Rue%20Neuve%2031000%20Toulouse&limit=1"
     );
   });
 
