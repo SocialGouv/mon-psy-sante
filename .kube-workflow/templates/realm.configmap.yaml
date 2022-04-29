@@ -34,7 +34,7 @@ data:
       ],
       "defaultRole": {
         "name": "default-roles",
-        "description": "\${role_default-roles}",
+        "description": "${role_default-roles}",
         "composite": true,
         "clientRole": false
       },
@@ -52,7 +52,7 @@ data:
         "realm": [
           {
             "name": "default-roles",
-            "description": "\${role_default-roles}",
+            "description": "${role_default-roles}",
             "composite": true,
             "composites": {
               "realm": [],
