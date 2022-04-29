@@ -67,7 +67,7 @@ export const getOnePsychologist = (
     state: "accepte",
     teleconsultation: faker.datatype.boolean(),
     visible: true,
-    website: faker.helpers.randomize([
+    website: faker.random.arrayElement([
       faker.internet.domainName(),
       faker.internet.url(),
     ]),

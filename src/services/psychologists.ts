@@ -18,6 +18,21 @@ export const getOne = async (id: string): Promise<Psychologist> => {
   });
 };
 
+const getDateLatestFor = async (where): Promise<Date> => {
+  const psy = await models.Psychologist.findOne({
+    attributes: ["created_at", "archived", "state"],
+    order: [["created_at", "DESC"]],
+    where: where,
+  });
+  // @ts-ignore
+  return psy?.dataValues?.created_at;
+};
+export const getDateLatestAccepte = async (): Promise<Date> =>
+  getDateLatestFor({ state: "accepte", archived: false });
+
+export const getDateLatestArchived = async (): Promise<Date> =>
+  getDateLatestFor({ archived: true });
+
 export const getByInstructor = async (
   group: string
 ): Promise<Psychologist[]> => {

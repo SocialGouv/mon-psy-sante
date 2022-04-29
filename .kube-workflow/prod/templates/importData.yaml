@@ -23,6 +23,6 @@ spec:
                 - yarn
                 - run
                 - cron:launch
-                - importData
+                - importFromDS
           restartPolicy: Never
           concurrencyPolicy: Forbid

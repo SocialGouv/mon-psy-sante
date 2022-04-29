@@ -1,4 +1,8 @@
-import { importState } from "../../cron/demarchesSimplifiees";
+import {
+  importArchived,
+  importData,
+  importFromDS,
+} from "../../cron/demarchesSimplifiees";
 import { models } from "../../db/models";
 import { getOnePsychologist } from "../../db/seeds/psychologist";
 import { request } from "../../services/demarchesSimplifiees/request";
@@ -44,9 +48,9 @@ function formatForDS(psy: Psychologist) {
 }
 
 const states = ["accepte", "en_instruction", "refuse"];
-const archiveds = [true, false];
+const archived = [true, false];
 
-const psychologistsInDB = archiveds.flatMap((archived) =>
+const psychologistsInDB = archived.flatMap((archived) =>
   states.flatMap((state) =>
     getOnePsychologist({
       archived,
@@ -66,62 +70,123 @@ const psychologistsInDS = psychologistsInDB.map((psy) => {
   return formatForDS(psy);
 });
 
-const newPsy = formatForDS(
-  getOnePsychologist({
-    state: "accepte",
-    address: "newPsy",
-    instructorId: "psyInDB",
-  })
-);
-psychologistsInDS.push(newPsy);
-const updatedPsy = formatForDS(psyHasChanged);
-updatedPsy.state = "refuse";
-psychologistsInDS.push(updatedPsy);
-
-describe("Cron import State", () => {
-  beforeEach(async () => {
-    await models.Psychologist.destroy({ where: {} });
-
-    //@ts-ignore
-    await models.Psychologist.bulkCreate(psychologistsInDB);
-
+describe("Cron import from DS", () => {
+  function mockDSCall(psychologistsInDS) {
     // @ts-ignore
     request.mockImplementationOnce(() =>
       Promise.resolve({
         demarche: { dossiers: { nodes: psychologistsInDS, pageInfo: {} } },
       })
     );
+  }
 
-    //@ts-ignore
-    request.mockImplementationOnce(() =>
-      Promise.resolve({ dossier: updatedPsy })
-    );
-    //@ts-ignore
-    request.mockImplementationOnce(() => Promise.resolve({ dossier: newPsy }));
+  describe("With no data in DB", () => {
+    beforeEach(async () => {
+      await models.Psychologist.destroy({ where: {} });
+      mockDSCall(psychologistsInDS);
+      mockDSCall([]);
+    });
+
+    it("Should import all psy", async () => {
+      // @ts-ignore
+      let psychologists: Psychologist[] = await models.Psychologist.findAll({
+        raw: true,
+      });
+      expect(psychologists.length).toBe(0);
+
+      await importFromDS();
+
+      // @ts-ignore
+      psychologists = await models.Psychologist.findAll({ raw: true });
+
+      expect(psychologists.length).toEqual(7);
+      const psychologist = psychologists.find(
+        (psy) => psy.address === "psyHasChanged"
+      );
+      expect(psychologist.state).toEqual("accepte");
+      expect(psychologist.archived).toEqual(false);
+    });
   });
 
-  it("Should add missing psy", async () => {
-    // @ts-ignore
-    const psyBefore: Psychologist = await models.Psychologist.findOne({
-      where: { id: psyHasChanged.id },
-      raw: true,
-    });
-    expect(psyBefore.state).toEqual("accepte");
+  describe("With data in DB", () => {
+    const updatedPsy = formatForDS(psyHasChanged);
+    updatedPsy.state = "sans_suite";
+    updatedPsy.archived = true;
 
-    await importState();
-
-    // @ts-ignore
-    const psychologists: Psychologist[] = await models.Psychologist.findAll({
-      where: { instructorId: "psyInDB" },
-      raw: true,
-    });
-
-    expect(psychologists.length).toEqual(8);
-    expect(psychologists.find((psy) => psy.address === "newPsy").state).toEqual(
-      "accepte"
+    const newPsy = formatForDS(
+      getOnePsychologist({
+        state: "accepte",
+        address: "newPsy",
+        instructorId: "psyInDB",
+      })
     );
-    expect(
-      psychologists.find((psy) => psy.address === "psyHasChanged").state
-    ).toEqual("refuse");
+
+    beforeEach(async () => {
+      await models.Psychologist.destroy({ where: {} });
+
+      //@ts-ignore
+      await models.Psychologist.bulkCreate(psychologistsInDB);
+
+      // @ts-ignore
+      request.mockImplementationOnce(() =>
+        Promise.resolve({
+          demarche: { dossiers: { nodes: [newPsy], pageInfo: {} } },
+        })
+      );
+
+      // @ts-ignore
+      request.mockImplementationOnce(() =>
+        Promise.resolve({
+          demarche: { dossiers: { nodes: [updatedPsy], pageInfo: {} } },
+        })
+      );
+    });
+
+    it("Should add new psy", async () => {
+      // @ts-ignore
+      const psyBefore: Psychologist = await models.Psychologist.findOne({
+        where: { address: newPsy.address },
+        raw: true,
+      });
+      expect(psyBefore).toEqual(null);
+
+      await importData();
+      // @ts-ignore
+      const psychologists: Psychologist[] = await models.Psychologist.findAll({
+        where: { instructorId: "psyInDB" },
+        raw: true,
+      });
+
+      expect(psychologists.length).toEqual(8);
+      const psychologist = psychologists.find(
+        (psy) => psy.address === newPsy.address
+      );
+      expect(psychologist.state).toEqual("accepte");
+      expect(psychologist.archived).toEqual(false);
+    });
+
+    it("Should update psy state", async () => {
+      // @ts-ignore
+      const psyBefore: Psychologist = await models.Psychologist.findOne({
+        where: { id: updatedPsy.id },
+        raw: true,
+      });
+      expect(psyBefore.state).toEqual("accepte");
+
+      await importArchived();
+
+      // @ts-ignore
+      const psychologists: Psychologist[] = await models.Psychologist.findAll({
+        where: { instructorId: "psyInDB" },
+        raw: true,
+      });
+
+      expect(psychologists.length).toEqual(7);
+      const psychologist = psychologists.find(
+        (psy) => psy.id === updatedPsy.id
+      );
+      expect(psychologist.state).toEqual("sans_suite");
+      expect(psychologist.archived).toEqual(true);
+    });
   });
 });

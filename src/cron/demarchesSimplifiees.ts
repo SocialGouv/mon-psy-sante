@@ -1,14 +1,10 @@
 import * as Sentry from "@sentry/nextjs";
 
-import { models } from "../db/models";
-import {
-  getPsychologistFromListIds,
-  getPsychologistList,
-  getPsychologistState,
-} from "../services/demarchesSimplifiees/import";
+import { getPsychologistList } from "../services/demarchesSimplifiees/import";
 import {
   countAll,
-  filterIdsNotInDb,
+  getDateLatestAccepte,
+  getDateLatestArchived,
   saveMany,
   updateState,
 } from "../services/psychologists";
@@ -22,23 +18,13 @@ export const importData = async (): Promise<void> => {
   try {
     console.log("Starting importData...");
     await logPsyNumber();
-    const latestCursor = await models.DSCursor.findOne({
-      raw: true,
-      where: { id: 1 },
-    });
 
+    const date = await getDateLatestAccepte();
     //@ts-ignore
-    const dsAPIData = await getPsychologistList(latestCursor.cursor);
+    const dsAPIData = await getPsychologistList(date, "state: accepte");
     if (dsAPIData.psychologists.length > 0) {
       await saveMany(dsAPIData.psychologists);
       console.log(`${dsAPIData.psychologists.length} saved`);
-      await models.DSCursor.update(
-        {
-          cursor: dsAPIData.lastCursor,
-        },
-        { where: { id: 1 } }
-      );
-      console.log(`New cursor ${dsAPIData.lastCursor} saved`);
     }
 
     console.log(`Import done`);
@@ -49,26 +35,28 @@ export const importData = async (): Promise<void> => {
   }
 };
 
-export const importState = async (): Promise<void> => {
+export const importArchived = async (): Promise<void> => {
   try {
-    console.log("Starting importState.");
+    console.log("Starting importArchived.");
     await logPsyNumber();
 
-    const dsAPIData = await getPsychologistState();
-
-    await updateState(dsAPIData);
-    const missingPsy: number[] = await filterIdsNotInDb(
-      dsAPIData.filter((psy) => psy.state === "accepte")
-    );
-    if (missingPsy.length) {
-      const missingPsyData = await getPsychologistFromListIds(missingPsy);
-      await saveMany(missingPsyData);
-      console.log(`Added ${missingPsy.length} missing psys`);
+    const date = await getDateLatestArchived();
+    //@ts-ignore
+    const dsAPIData = await getPsychologistList(date, "archived: true");
+    if (dsAPIData.psychologists.length > 0) {
+      await updateState(dsAPIData.psychologists);
+      console.log(`${dsAPIData.psychologists.length} saved`);
     }
-    console.log(`importState done.`);
+
+    console.log(`importArchived done.`);
     await logPsyNumber();
   } catch (err) {
     Sentry.captureException(err);
-    console.error("ERROR importState: ", err);
+    console.error("ERROR importArchived: ", err);
   }
+};
+
+export const importFromDS = async (): Promise<void> => {
+  await importData();
+  await importArchived();
 };
