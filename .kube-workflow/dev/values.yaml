@@ -26,6 +26,9 @@ jobs:
         pgUser: "keycloak_{{ .Values.global.branchSlug32 }}"
 
 keycloak:
+  statefulsetAnnotations:
+    # need db-keycloak
+    kapp.k14s.io/change-rule: "upsert after upserting kube-workflow/db-keycloak.{{ .Values.global.namespace }}"
   extraEnvFrom: |
     - secretRef:
         name: app-sealed-secret
