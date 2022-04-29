@@ -7,8 +7,11 @@ import { models } from "../../db/models";
 import { getOnePsychologist } from "../../db/seeds/psychologist";
 import { request } from "../../services/demarchesSimplifiees/request";
 import { Psychologist } from "../../types/psychologist";
+import axios from "axios";
 
 jest.mock("../../services/demarchesSimplifiees/request");
+
+jest.mock("axios");
 
 function formatForDS(psy: Psychologist) {
   return Object.assign(
@@ -80,6 +83,10 @@ describe("Cron import from DS", () => {
     );
   }
 
+  beforeEach(() => {
+    // @ts-ignore
+    axios.get.mockImplementation(() => Promise.resolve({ data: {} }));
+  });
   describe("With no data in DB", () => {
     beforeEach(async () => {
       await models.Psychologist.destroy({ where: {} });

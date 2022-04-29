@@ -69,7 +69,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --silent",
     "test:api": "jest --config jest.config-api.js --testTimeout=50000 ./src/__tests__/api/ --runInBand",
     "build": "next build",
     "dev": "next dev",
