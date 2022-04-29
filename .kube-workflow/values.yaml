@@ -30,7 +30,7 @@ keycloak:
       value: /realm/realm.json
     - name: PROXY_ADDRESS_FORWARDING
       value: "true"
-    - name DB_VENDOR
+    - name: DB_VENDOR
       value: postgres
     - name: DB_ADDR
       value: "$(PGHOST)"
