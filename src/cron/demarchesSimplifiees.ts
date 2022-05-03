@@ -129,8 +129,10 @@ const verifyDossier = async (dossier: Psychologist): Promise<void> => {
       : `Validation auto erreur : ${validationDate}\n`.concat(
           ...errors.map((error) => `- ${error} \n`)
         );
-
-  await addVerificationMessage(dossier.demarcheSimplifieesId, validationText);
+  return await addVerificationMessage(
+    dossier.demarcheSimplifieesId,
+    validationText
+  );
 };
 
 export const verifFolders = async (): Promise<void> => {
@@ -142,10 +144,11 @@ export const verifFolders = async (): Promise<void> => {
       filterDossiersToVerif(dossiersInConstruction)
     );
 
+    console.log(`Verifying ${dossiersToVerify.length} dossiers`);
     await Promise.all(
-      dossiersToVerify.map(async (dossier) => {
-        limit(() => verifyDossier(dossier));
-      })
+      dossiersToVerify.map(async (dossier) =>
+        limit(() => verifyDossier(dossier))
+      )
     );
 
     console.log("verifFolders done");
