@@ -1,3 +1,31 @@
+## [1.28.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.4...v1.28.5) (2022-05-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency next-auth to v4.3.2 [security] ([#155](https://github.com/SocialGouv/mon-psy-sante/issues/155)) ([d5c8205](https://github.com/SocialGouv/mon-psy-sante/commit/d5c8205ca4a6759a1c6fdf8d6b16bf72fc8eb7be))
+
+## [1.28.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.3...v1.28.4) (2022-05-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency axios to ^0.27.0 ([#161](https://github.com/SocialGouv/mon-psy-sante/issues/161)) ([bcc67fa](https://github.com/SocialGouv/mon-psy-sante/commit/bcc67fa56f2c78c4c672cd00e46a27a983dffbf7))
+
+## [1.28.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.2...v1.28.3) (2022-05-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency got to v12.0.4 ([#165](https://github.com/SocialGouv/mon-psy-sante/issues/165)) ([58d8af1](https://github.com/SocialGouv/mon-psy-sante/commit/58d8af13820f12598694d531ddd3ef60eed724c0))
+
+## [1.28.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.1...v1.28.2) (2022-04-26)
+
+
+### Bug Fixes
+
+* **script:** update stats script to also includes dossiers accéptés ([095118e](https://github.com/SocialGouv/mon-psy-sante/commit/095118e8a57b02003f6a68cb66630ca86f6f8d73))
+
 ## [1.28.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.0...v1.28.1) (2022-04-22)
 
 
