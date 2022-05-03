@@ -103,6 +103,9 @@ const Psychologist = ({
               src="/images/icones/map-pin-fill.svg"
             />
             {psychologist.address}
+            <small className="d-block">
+              {psychologist.addressAdditional ?? psychologist.addressAdditional}
+            </small>
           </p>
 
           {psychologist.visible ? (
