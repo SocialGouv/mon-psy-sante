@@ -13,12 +13,10 @@ const graphQLClient = new GraphQLClient(endpoint, {
 const logErrorsFromDS = (apiResponse: {
   response: { errors: string[] };
 }): void => {
-  if (apiResponse.response) {
-    if (apiResponse.response.errors.length > 0) {
-      apiResponse.response.errors.forEach((err) => {
-        console.error("Error details", err);
-      });
-    }
+  if (apiResponse.response?.errors?.length > 0) {
+    apiResponse.response.errors.forEach((err) => {
+      console.error("Error details", err);
+    });
   }
 };
 
