@@ -1,6 +1,7 @@
 import { gql } from "graphql-request";
 
 import { DSResponse } from "../../types/demarcheSimplifiee";
+import { Psychologist } from "../../types/psychologist";
 import config from "../config";
 import { request } from "./request";
 
@@ -24,8 +25,7 @@ export const requestPsychologistsState = async (
   extraInfos?: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
-  const query = gql`
-{
+  const query = gql`{
   demarche (number: ${config.demarchesSimplifiees.id}) {
     id
     dossiers ${paginationCondition ? "(" + paginationCondition + ")" : ""} {
@@ -40,9 +40,7 @@ export const requestPsychologistsState = async (
           ${extraInfos ?? ""}
       }
     }
-  }
-}
-`;
+  }}`;
 
   return request(query);
 };
@@ -121,8 +119,87 @@ export const requestPsychologistsById = async (
           }
         }
       }
+    }`;
+  return request(query);
+};
+
+export const requestDossiersWithAnnotations = async (
+  afterCursor: string | undefined
+): Promise<DSResponse> => {
+  const paginationCondition = getWhereConditionAfterCursor(afterCursor);
+  const query = gql`
+  {
+    demarche (number: ${config.demarchesSimplifiees.id}) {
+      dossiers (state: ${DossierState.enConstruction}${paginationCondition}) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          id,
+          number
+          champs {
+            id
+            label
+            stringValue
+          }
+          groupeInstructeur {
+            id
+            label
+          }
+          annotations {
+            id
+            label
+            stringValue
+          }
+          demandeur {
+            ... on PersonnePhysique {
+              nom
+              prenom
+            }
+          }
+        }
+      }
+    }
+  }`;
+
+  return request(query);
+};
+
+export const addVerificationMessage = (
+  dossierId: Psychologist["demarcheSimplifieesId"],
+  message: string
+) => {
+  const writeId = config.demarchesSimplifiees.writeAccess
+    ? dossierId
+    : config.demarchesSimplifiees.writeableId;
+
+  if (!config.demarchesSimplifiees.writeAccess) {
+    console.log(
+      `Writing in ${writeId} instead of ${dossierId} because write access is disabled`
+    );
+  }
+
+  const query = gql`
+    mutation dossierModifierAnnotationText(
+      $input: DossierModifierAnnotationTextInput!
+    ) {
+      dossierModifierAnnotationText(input: $input) {
+        errors {
+          message
+        }
+      }
     }
   `;
 
-  return request(query);
+  const variables = {
+    input: {
+      dossierId: writeId,
+      instructeurId: config.demarchesSimplifiees.instructeurId,
+      annotationId: config.demarchesSimplifiees.champVerifAuto,
+      value: message,
+    },
+  };
+
+  return request(query, variables);
 };

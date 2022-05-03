@@ -3,6 +3,7 @@ import pLimit from "p-limit";
 import { DSResponse } from "../../types/demarcheSimplifiee";
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import {
+  requestDossiersWithAnnotations,
   requestPsychologistsAcceptes,
   requestPsychologistsById,
   requestPsychologistsState,
@@ -90,4 +91,17 @@ export const getPsychologistState = async (): Promise<
     id: dossier.number,
     state: dossier.state,
   }));
+};
+export const getDossiersInConstruction = async (): Promise<
+  DSPsychologist[]
+> => {
+  const time = `Fetching all psychologists folders in construction from DS`;
+
+  console.time(time);
+  const list = await getAllPsychologistList((cursor) =>
+    requestDossiersWithAnnotations(cursor)
+  );
+  console.timeEnd(time);
+
+  return list.psychologists;
 };

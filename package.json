@@ -41,7 +41,8 @@
     "sequelize-cli": "^6.4.1",
     "styled-components": "^5.3.3",
     "tough-cookie": "^4.0.0",
-    "ts-node": "^10.5.0"
+    "ts-node": "^10.5.0",
+    "zod": "^3.14.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
