@@ -1,9 +1,8 @@
 /* eslint-disable jest/no-conditional-expect */
-import { models } from "../../db/models";
-import { getOnePsychologist, groups } from "../../db/seeds/psychologist";
-import { createUsers } from "../../db/seeds/users";
+import {models} from "../../db/models";
+import {getOnePsychologist, groups} from "../../db/seeds/psychologist";
 import config from "../../services/config";
-import { makeAuthenticatedClient } from "./login";
+import {makeAuthenticatedClient} from "./login";
 
 const defaultValues = {
   address: "new address",
@@ -24,9 +23,6 @@ describe("/api/psychologist/[id]", () => {
   let client;
   let nonAuthorizedClient;
   beforeAll(async () => {
-    await models.UserAccount.destroy({ where: {} });
-    await createUsers();
-
     await models.Psychologist.destroy({ where: {} });
 
     const psy = getOnePsychologist({ id: 1 });

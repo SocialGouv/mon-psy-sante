@@ -3,7 +3,6 @@ import { Sequelize } from "sequelize";
 import config from "../../services/config";
 import dsCursor from "./dsCursor";
 import psychologist from "./psychologist";
-import userAccount from "./userAccount";
 
 const sequelize = new Sequelize(config.postgre.url, {
   define: {
@@ -16,5 +15,4 @@ const sequelize = new Sequelize(config.postgre.url, {
 export const models = {
   DSCursor: dsCursor(sequelize),
   Psychologist: psychologist(sequelize),
-  UserAccount: userAccount(sequelize),
 };

@@ -1,13 +1,11 @@
 import { Psychologist } from "../../types/psychologist";
 import { models } from "../models";
 import { getOnePsychologist } from "./psychologist";
-import { createUsers } from "./users";
 
 const NUMBER_OF_PSYCHOLOGISTS = 1000;
 
 const deleteAll = async () => {
   await models.Psychologist.destroy({ where: {} });
-  await models.UserAccount.destroy({ where: {} });
 };
 
 const createPsychologists = async () => {
@@ -23,7 +21,7 @@ const createPsychologists = async () => {
 
 const createAllData = async () => {
   await deleteAll();
-  await Promise.all([createPsychologists(), createUsers()]);
+  await Promise.all([createPsychologists()]);
 };
 
 createAllData();
