@@ -5,7 +5,7 @@ import { zip } from "../../utils/array";
 import config from "../config";
 
 const formatRequestedAdeli = (adeliId: string) =>
-  adeliId.replace(".", "").replace(" ", "").replace("/", "").padStart(10, "0");
+  adeliId.replace(/\./g, "").replace(/ /g, "").replace(/\//g, "").padStart(10, "0");
 
 const rowColumnsToObject = <Column>(row: string[], columns: Column[]) =>
   Object.fromEntries(zip(columns, row));

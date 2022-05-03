@@ -5,6 +5,7 @@ import { requestAdeli } from "../adeli/request";
 jest.mock("axios");
 describe("requestAdeli", () => {
   beforeEach(() => {
+    (axios.get as jest.Mock).mockReset();
     // @ts-ignore
     axios.get.mockImplementation(() => Promise.resolve({ data: { rows: [] } }));
   });
@@ -23,6 +24,7 @@ describe("requestAdeli", () => {
     ${"123"}
     ${"1 2    3"}
     ${"1.2...3"}
+    ${"00/00/01/23"}
   `("should call api endpoint if adeli is $input", async ({ input }) => {
     const result = await requestAdeli(input);
     expect(axios.get).toHaveBeenCalledWith(
