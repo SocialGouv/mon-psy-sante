@@ -2,7 +2,7 @@ import Head from "next/head";
 import { signOut } from "next-auth/react";
 import React from "react";
 
-export default () => (
+const Header = () => (
   <>
     <Head>
       <meta name="robots" content="noindex" />
@@ -27,3 +27,4 @@ export default () => (
     </div>
   </>
 );
+export default Header;
