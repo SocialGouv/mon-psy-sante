@@ -1,3 +1,10 @@
+## [1.28.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.5...v1.28.6) (2022-05-03)
+
+
+### Bug Fixes
+
+* **cron:** add cron job to verif dossiers in DS ([#167](https://github.com/SocialGouv/mon-psy-sante/issues/167)) ([79e5f2d](https://github.com/SocialGouv/mon-psy-sante/commit/79e5f2d377fd77eccc4687055b63c3e14f7851b8))
+
 ## [1.28.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.4...v1.28.5) (2022-05-03)
 
 
