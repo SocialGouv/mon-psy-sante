@@ -141,7 +141,7 @@ export const verifFolders = async (): Promise<void> => {
 
     const dossiersInConstruction = await getDossiersInConstruction();
     const dossiersToVerify = await parsePsychologists(
-      filterDossiersToVerif(dossiersInConstruction.slice(0, 3))
+      filterDossiersToVerif(dossiersInConstruction)
     );
 
     console.log(`Verifying ${dossiersToVerify.length} dossiers`);
