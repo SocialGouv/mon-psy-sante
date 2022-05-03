@@ -1,3 +1,10 @@
+## [1.28.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.4...v1.28.5) (2022-05-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency next-auth to v4.3.2 [security] ([#155](https://github.com/SocialGouv/mon-psy-sante/issues/155)) ([d5c8205](https://github.com/SocialGouv/mon-psy-sante/commit/d5c8205ca4a6759a1c6fdf8d6b16bf72fc8eb7be))
+
 ## [1.28.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.3...v1.28.4) (2022-05-03)
 
 
