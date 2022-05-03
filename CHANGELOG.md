@@ -1,3 +1,10 @@
+## [1.28.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.7...v1.28.8) (2022-05-03)
+
+
+### Bug Fixes
+
+* **adeli:** fix adeli number sanitizing ([#169](https://github.com/SocialGouv/mon-psy-sante/issues/169)) ([ef7db0c](https://github.com/SocialGouv/mon-psy-sante/commit/ef7db0c6b97988ccb1975c25da0945b967945322))
+
 ## [1.28.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.6...v1.28.7) (2022-05-03)
 
 
