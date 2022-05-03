@@ -144,9 +144,9 @@ export const verifFolders = async (): Promise<void> => {
       })
     );
 
-    console.log("importState done");
+    console.log("verifFolders done");
   } catch (err) {
     Sentry.captureException(err);
-    console.error("ERROR: Could not import DS API state to PG", err);
+    console.error("ERROR: Could verify dossiers from DS", err);
   }
 };
