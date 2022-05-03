@@ -21,6 +21,15 @@ export default {
     champVerifAuto:
       process.env.DEMARCHES_SIMPLIFIEES_CHAMP_VERIFICATIONS_AUTOMATIQUES,
   },
+  nextAuth: {
+    secret: process.env.NEXTAUTH_SECRET,
+    url: process.env.NEXTAUTH_URL,
+  },
+  keycloak: {
+    clientId: process.env.KEYCLOAK_ID,
+    clientSecret: process.env.KEYCLOAK_SECRET,
+    issuer: process.env.KEYCLOAK_ISSUER,
+  },
   mail: {
     auth: {
       pass: process.env.MAIL_AUTH_PASS,

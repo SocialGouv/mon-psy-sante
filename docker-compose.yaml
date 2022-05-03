@@ -13,5 +13,21 @@ services:
       POSTGRES_PASSWORD: monpsysante
     restart: always
 
+  keycloak:
+    depends_on:
+      - db
+    image: quay.io/keycloak/keycloak:latest
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: db
+      DB_USER: monpsysante
+      DB_PASSWORD: monpsysante
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    command:
+      - start-dev
+
 volumes:
   db_data:
