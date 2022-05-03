@@ -59,6 +59,7 @@ export const getOnePsychologist = (
     email: faker.internet.exampleEmail(),
     firstName: faker.name.firstName(),
     id: faker.datatype.number({ max: 2147483647 }),
+    adeliId: faker.phone.phoneNumber("## ## ## ## ##"),
     instructorId: instructor.id,
     languages: faker.random.arrayElement(languages),
     lastName: faker.name.lastName(),

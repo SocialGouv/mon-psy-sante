@@ -5,11 +5,7 @@ import { zip } from "../../utils/array";
 import config from "../config";
 
 const formatRequestedAdeli = (adeliId: string) =>
-  adeliId
-    .replaceAll(".", "")
-    .replaceAll(" ", "")
-    .replaceAll("/", "")
-    .padStart(10, "0");
+  adeliId.replace(".", "").replace(" ", "").replace("/", "").padStart(10, "0");
 
 const rowColumnsToObject = <Column>(row: string[], columns: Column[]) =>
   Object.fromEntries(zip(columns, row));
@@ -22,6 +18,7 @@ const formatAdeliResponse = (response: AdeliRawResponse): AdeliData[] =>
 export const requestAdeli = async (
   numeroAdeli: string
 ): Promise<AdeliData[]> => {
+  if (!numeroAdeli) return Promise.reject("numeroAdeli empty");
   const response = await axios.get<any, AxiosResponse<AdeliRawResponse>>(
     config.adeli.apiUrl,
     {

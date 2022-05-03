@@ -1,4 +1,5 @@
 import * as Sentry from "@sentry/nextjs";
+import pLimit from "p-limit";
 
 import { models } from "../db/models";
 import { requestAdeli } from "../services/adeli/request";
@@ -20,6 +21,8 @@ import {
 } from "../services/psychologists";
 import { AdeliData } from "../types/adeli";
 import { Psychologist } from "../types/psychologist";
+
+const limit = pLimit(5);
 
 async function logPsyNumber(): Promise<void> {
   const count = await countAll();
@@ -114,6 +117,22 @@ const validateDossier = async (
   return errors;
 };
 
+const verifyDossier = async (dossier: Psychologist): Promise<void> => {
+  const adeliData = await requestAdeli(dossier.adeliId);
+
+  const errors = await validateDossier(dossier, adeliData);
+
+  const validationDate = Intl.DateTimeFormat("fr-FR").format(new Date());
+  const validationText =
+    errors.length === 0
+      ? `Validation auto OK : ${validationDate}`
+      : `Validation auto erreur : ${validationDate}\n`.concat(
+          ...errors.map((error) => `- ${error} \n`)
+        );
+
+  await addVerificationMessage(dossier.demarcheSimplifieesId, validationText);
+};
+
 export const verifFolders = async (): Promise<void> => {
   try {
     console.log("Starting verifFolders...");
@@ -125,28 +144,13 @@ export const verifFolders = async (): Promise<void> => {
 
     await Promise.all(
       dossiersToVerify.map(async (dossier) => {
-        const adeliData = await requestAdeli(dossier.adeliId);
-
-        const errors = await validateDossier(dossier, adeliData);
-
-        const validationDate = Intl.DateTimeFormat("fr-FR").format(new Date());
-        const validationText =
-          errors.length === 0
-            ? `Validation auto OK : ${validationDate}`
-            : `Validation auto erreur : ${validationDate}\n`.concat(
-                ...errors.map((error) => `- ${error} \n`)
-              );
-
-        await addVerificationMessage(
-          dossier.demarcheSimplifieesId,
-          validationText
-        );
+        limit(() => verifyDossier(dossier));
       })
     );
 
-    console.log("importState done");
+    console.log("verifFolders done");
   } catch (err) {
     Sentry.captureException(err);
-    console.error("ERROR: Could not import DS API state to PG", err);
+    console.error("ERROR: Could verify dossiers from DS", err);
   }
 };
