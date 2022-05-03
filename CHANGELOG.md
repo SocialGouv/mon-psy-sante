@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.8...v1.29.0) (2022-05-03)
+
+
+### Features
+
+* keycloak kw ([#160](https://github.com/SocialGouv/mon-psy-sante/issues/160)) ([eebe4fb](https://github.com/SocialGouv/mon-psy-sante/commit/eebe4fb18d674c1b31cd5a6252009ef4aa7aae3d))
+
 ## [1.28.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.7...v1.28.8) (2022-05-03)
 
 
