@@ -1,3 +1,10 @@
+## [1.28.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.6...v1.28.7) (2022-05-03)
+
+
+### Bug Fixes
+
+* **cron verifFolders:** use replace instead of replaceAll as we're not in ECMAScript 2021 ([#168](https://github.com/SocialGouv/mon-psy-sante/issues/168)) ([e29641a](https://github.com/SocialGouv/mon-psy-sante/commit/e29641a460530562c12534d37f0ee51d88c50905))
+
 ## [1.28.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.5...v1.28.6) (2022-05-03)
 
 
