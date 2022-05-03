@@ -1,5 +1,7 @@
 # GraphQL Queries
 
+https://www.demarches-simplifiees.fr/graphql
+
 ## Auth
 
 In Header :
@@ -33,6 +35,81 @@ query getGroupeInstructeurs($demarcheNumber: Int!) {
       instructeurs {
         id
         email
+      }
+    }
+  }
+}
+```
+
+## Get all folders
+
+```
+query getGroupeDossier($demarcheNumber: Int!) {
+      demarche (number: $demarcheNumber) {
+        id
+        dossiers {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          nodes {
+              archived
+              number
+              groupeInstructeur {
+                id
+                label
+              }
+              state
+              champs {
+                id
+                label
+                stringValue
+              }
+              usager {
+                email
+              }
+              demandeur {
+                ... on PersonnePhysique {
+                  civilite
+                  nom
+                  prenom
+                }
+              }
+          }
+        }
+      }
+    }
+```
+
+```
+query getGroupeDossiersWithAnnotations($demarcheNumber: Int!) {
+  demarche (number: $demarcheNumber) {
+     id
+        dossiers {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          nodes {
+            id
+            champs {
+              id
+              label
+              stringValue
+            }
+            annotations {
+              id
+              label
+              stringValue
+            }
+            demandeur {
+              ... on PersonnePhysique {
+                nom
+                prenom
+              }
+            }
+          }
+        }
       }
     }
   }

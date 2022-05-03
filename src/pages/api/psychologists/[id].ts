@@ -20,7 +20,7 @@ const updateSchema = Joi.object({
     .required(),
   teleconsultation: Joi.boolean().required(),
   visible: Joi.boolean().required(),
-  website: Joi.string().allow(null),
+  website: Joi.string().allow("").allow(null),
 });
 
 const psychologist = async (req: NextApiRequest, res: NextApiResponse) => {
