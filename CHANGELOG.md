@@ -1,3 +1,10 @@
+## [1.28.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.3...v1.28.4) (2022-05-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency axios to ^0.27.0 ([#161](https://github.com/SocialGouv/mon-psy-sante/issues/161)) ([bcc67fa](https://github.com/SocialGouv/mon-psy-sante/commit/bcc67fa56f2c78c4c672cd00e46a27a983dffbf7))
+
 ## [1.28.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.2...v1.28.3) (2022-05-02)
 
 
