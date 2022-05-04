@@ -58,7 +58,9 @@ const parsers = {
 const parseChampValue = (field, value) =>
   parsers[field] ? parsers[field](value) : value;
 
-const formatCoordinates = (coordinates: Coordinates): CoordinatesPostgis => {
+export const formatCoordinates = (
+  coordinates: Coordinates
+): CoordinatesPostgis => {
   return {
     coordinates: [coordinates.longitude, coordinates.latitude],
     crs: { properties: { name: "EPSG:" + SRID }, type: "name" },

@@ -6,6 +6,7 @@ import { SRID } from "../types/const/geometry";
 import { FILTER } from "../types/enums/filters";
 import { PUBLIC } from "../types/enums/public";
 import { Psychologist } from "../types/psychologist";
+import { formatCoordinates } from "./demarchesSimplifiees/parse-psychologists";
 import getAddressCoordinates from "./getAddressCoordinates";
 
 const limit = pLimit(5);
@@ -14,7 +15,7 @@ export const getOne = async (id: string): Promise<Psychologist> => {
   // @ts-ignore
   return models.Psychologist.findOne({
     raw: true,
-    where: { archived: false, id },
+    where: { id },
   });
 };
 
@@ -107,26 +108,22 @@ export const update = async (
     displayName,
     psychologist.address
   );
-  const secondAddressCoordinates = await getAddressCoordinates(
-    displayName,
-    psychologist.secondAddress
-  );
+  let secondAddressCoordinates;
+  if (psychologist.secondAddress) {
+    secondAddressCoordinates = await getAddressCoordinates(
+      displayName,
+      psychologist.secondAddress
+    );
+  }
+
   return models.Psychologist.update(
     {
       address: psychologist.address,
       secondAddress: psychologist.secondAddress,
       cdsmsp: psychologist.cdsmsp,
-      coordinates: coordinates
-        ? {
-            coordinates: [coordinates.longitude, coordinates.latitude],
-            type: "POINT",
-          }
-        : null,
+      coordinates: coordinates ? formatCoordinates(coordinates) : null,
       secondAddressCoordinates: secondAddressCoordinates
-        ? {
-            coordinates: [coordinates.longitude, coordinates.latitude],
-            type: "POINT",
-          }
+        ? formatCoordinates(secondAddressCoordinates)
         : null,
       displayEmail: psychologist.displayEmail,
       email: psychologist.email,

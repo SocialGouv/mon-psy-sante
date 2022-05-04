@@ -4,7 +4,7 @@ import faker from "@faker-js/faker";
 import { allPublics } from "../../types/enums/public";
 import { Psychologist } from "../../types/psychologist";
 
-export const groupIds = [
+export const groups = [
   { id: "1", label: "01 - Ain" },
   { id: "2", label: "02 - Aisne" },
   { id: "3", label: "03 - Allier" },
@@ -27,7 +27,7 @@ const languages = [
 export const getOnePsychologist = (
   override?: Partial<Psychologist>
 ): Psychologist => {
-  const instructor = faker.random.arrayElement(groupIds);
+  const instructor = faker.random.arrayElement(groups);
 
   return {
     address: `${faker.address.streetAddress()} ${faker.address.zipCode(
@@ -68,7 +68,7 @@ export const getOnePsychologist = (
     state: "accepte",
     teleconsultation: faker.datatype.boolean(),
     visible: true,
-    website: faker.helpers.randomize([
+    website: faker.random.arrayElement([
       faker.internet.domainName(),
       faker.internet.url(),
     ]),
