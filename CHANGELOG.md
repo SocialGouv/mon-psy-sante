@@ -1,3 +1,10 @@
+## [1.29.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.0...v1.29.1) (2022-05-03)
+
+
+### Bug Fixes
+
+* **keycloak:** add sealed secret for keacloak for preprod & prod ([#170](https://github.com/SocialGouv/mon-psy-sante/issues/170)) ([ce7c6ca](https://github.com/SocialGouv/mon-psy-sante/commit/ce7c6ca472d3d88e39ccf0a64d42e057e22273ff))
+
 # [1.29.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.8...v1.29.0) (2022-05-03)
 
 
