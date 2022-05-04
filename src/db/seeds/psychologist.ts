@@ -5,12 +5,12 @@ import { allPublics } from "../../types/enums/public";
 import { Psychologist } from "../../types/psychologist";
 
 export const groups = [
-  { id: "1", label: "01 - Ain" },
-  { id: "2", label: "02 - Aisne" },
-  { id: "3", label: "03 - Allier" },
-  { id: "4", label: "04 - Alpes de Haute Provence" },
-  { id: "5", label: "05 - Hautes-Alpes" },
-  { id: "6", label: "06 - Alpes Maritimes" },
+  { id: "01", label: "01 - Ain" },
+  { id: "02", label: "02 - Aisne" },
+  { id: "03", label: "03 - Allier" },
+  { id: "04", label: "04 - Alpes de Haute Provence" },
+  { id: "05", label: "05 - Hautes-Alpes" },
+  { id: "06", label: "06 - Alpes Maritimes" },
 ];
 const languages = [
   "Francais",
@@ -60,7 +60,6 @@ export const getOnePsychologist = (
     firstName: faker.name.firstName(),
     id: faker.datatype.number({ max: 2147483647 }),
     adeliId: faker.phone.phoneNumber("## ## ## ## ##"),
-    instructorId: instructor.id,
     languages: faker.random.arrayElement(languages),
     lastName: faker.name.lastName(),
     phone: faker.phone.phoneNumber("0# ## ## ## ##"),

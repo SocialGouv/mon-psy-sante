@@ -11,7 +11,7 @@ import * as address from "../getAddressCoordinates";
 import {
   countAll,
   getAll,
-  getByInstructor,
+  getByDepartment,
   saveMany,
   update,
   updateState,
@@ -24,18 +24,18 @@ describe("Service psychologists", () => {
     const archiveds = [true, false];
     const visibles = [true, false];
     const teleconsultations = [true, false];
-    const instructorIds = ["1", "2", "3"];
+    const departments = ["01", "02", "03"];
 
     // 2 x 2 x 2 x 3 x 3 = 72 psys
     const psychologists = archiveds.flatMap((archived) =>
       states.flatMap((state) =>
         visibles.flatMap((visible) =>
           teleconsultations.flatMap((teleconsultation) =>
-            instructorIds.flatMap((instructorId) =>
+            departments.flatMap((department) =>
               allPublics.map((p) =>
                 getOnePsychologist({
                   archived,
-                  instructorId,
+                  department,
                   public: p,
                   state,
                   teleconsultation,
@@ -54,16 +54,16 @@ describe("Service psychologists", () => {
 
   describe("getByInstructor", () => {
     it("Should return non archived psychologist of an instructor", async () => {
-      const results = await getByInstructor("2");
+      const results = await getByDepartment("02");
       expect(results.length).toEqual(12);
       results.forEach((psychologist) => {
-        expect(psychologist.instructorId).toEqual("2");
+        expect(psychologist.department).toEqual("02");
         expect(psychologist.archived).toEqual(false);
       });
     });
 
     it("Should return empty list if instructor does not exists", async () => {
-      const results = await getByInstructor("georges");
+      const results = await getByDepartment("georges");
       expect(results.length).toEqual(0);
     });
   });
@@ -148,24 +148,24 @@ describe("Service psychologists", () => {
   });
 
   describe("saveMany", () => {
-    const instructorId = "saved";
+    const department = "saved";
 
     it("Should save all values", async () => {
       await models.Psychologist.destroy({ where: {} });
 
       await saveMany([
-        getOnePsychologist({ id: 1, instructorId }),
-        getOnePsychologist({ id: 2, instructorId }),
+        getOnePsychologist({ id: 1, department }),
+        getOnePsychologist({ id: 2, department }),
       ]);
 
       // @ts-ignore
       const savedPsychologists: Psychologist[] =
         await models.Psychologist.findAll({
-          where: { instructorId },
+          where: { department },
         });
       expect(savedPsychologists.length).toEqual(2);
-      expect(savedPsychologists[0].instructorId).toEqual(instructorId);
-      expect(savedPsychologists[1].instructorId).toEqual(instructorId);
+      expect(savedPsychologists[0].department).toEqual(department);
+      expect(savedPsychologists[1].department).toEqual(department);
     });
   });
 
@@ -243,32 +243,32 @@ describe("Service psychologists", () => {
   });
 
   describe("updateState", () => {
-    const instructorId = "updateState";
+    const department = "updateState";
 
     beforeEach(async () => {
       const psychologists = [
         getOnePsychologist({
           archived: true,
           id: 1,
-          instructorId,
+          department,
           state: "initial",
         }),
         getOnePsychologist({
           archived: false,
           id: 2,
-          instructorId,
+          department,
           state: "initial",
         }),
         getOnePsychologist({
           archived: true,
           id: 3,
-          instructorId,
+          department,
           state: "initial",
         }),
         getOnePsychologist({
           archived: false,
           id: 4,
-          instructorId,
+          department,
           state: "initial",
         }),
       ];
@@ -286,7 +286,7 @@ describe("Service psychologists", () => {
 
       // @ts-ignore
       const psychologists: Psychologist[] = await models.Psychologist.findAll({
-        where: { instructorId },
+        where: { department },
       });
 
       expect(psychologists.find((psy) => psy.id === 0)).toEqual(undefined);

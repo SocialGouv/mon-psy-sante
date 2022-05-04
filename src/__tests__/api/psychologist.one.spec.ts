@@ -29,13 +29,13 @@ describe("/api/psychologist/[id]", () => {
     // @ts-ignore
     await models.Psychologist.create(psy);
 
-    const groupdId = groups.findIndex((g) => psy.instructorId === g.id);
+    const groupdId = groups.findIndex((g) => psy.department === g.id);
     client = await makeAuthenticatedClient(
       `${groupdId}@test.fr`,
       `admin${groupdId}`
     );
 
-    const otherGroupdId = groups.findIndex((g) => psy.instructorId !== g.id);
+    const otherGroupdId = groups.findIndex((g) => psy.department !== g.id);
     nonAuthorizedClient = await makeAuthenticatedClient(
       `${otherGroupdId}@test.fr`,
       `admin${otherGroupdId}`

@@ -11,7 +11,7 @@ function formatForDS(psy: Psychologist) {
     {
       number: psy.id,
       groupeInstructeur: {
-        id: psy.instructorId,
+        id: psy.department,
         label: psy.department + " - dep",
       },
       demandeur: { prenom: psy.firstName, nom: psy.lastName },
@@ -51,14 +51,14 @@ const psychologistsInDB = archiveds.flatMap((archived) =>
     getOnePsychologist({
       archived,
       state,
-      instructorId: "psyInDB",
+      department: "psyInDB",
     })
   )
 );
 const psyHasChanged = getOnePsychologist({
   state: "accepte",
   address: "psyHasChanged",
-  instructorId: "psyInDB",
+  department: "psyInDB",
 });
 
 psychologistsInDB.push(psyHasChanged);
@@ -70,7 +70,7 @@ const newPsy = formatForDS(
   getOnePsychologist({
     state: "accepte",
     address: "newPsy",
-    instructorId: "psyInDB",
+    department: "psyInDB",
   })
 );
 psychologistsInDS.push(newPsy);
@@ -112,7 +112,7 @@ describe("Cron import State", () => {
 
     // @ts-ignore
     const psychologists: Psychologist[] = await models.Psychologist.findAll({
-      where: { instructorId: "psyInDB" },
+      where: { department: "psyInDB" },
       raw: true,
     });
 

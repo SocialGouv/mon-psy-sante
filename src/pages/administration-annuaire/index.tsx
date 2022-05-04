@@ -7,7 +7,7 @@ import React from "react";
 import AdminSearchField from "../../components/Admin/AdminSearchField";
 import Header from "../../components/Admin/Header";
 import PsychologistsForInstructors from "../../components/Admin/PsychologistsForInstructors";
-import { countAll, getByInstructor } from "../../services/psychologists";
+import { countAll, getByDepartment } from "../../services/psychologists";
 import { Psychologist } from "../../types/psychologist";
 
 const Admin = ({
@@ -52,22 +52,15 @@ const Admin = ({
 export default Admin;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const userSession = await getSession(context);
-  if (!userSession) {
-    return {
-      redirect: {
-        destination:
-          "/administration-annuaire/connexion?callbackurl=/administration-annuaire",
-        permanent: false,
-      },
-    };
-  }
+  const session = await getSession(context);
+  console.log(session);
+
   let psychologists = [];
   let count;
-  if (userSession.user.group === "admin") {
+  if (session.user.group === "admin") {
     count = await countAll();
   } else {
-    psychologists = await getByInstructor(userSession.user.group);
+    psychologists = await getByDepartment(session.user.group);
     psychologists = psychologists.map((psychologist) => {
       const { id, firstName, lastName } = psychologist;
       return { firstName, id, lastName };

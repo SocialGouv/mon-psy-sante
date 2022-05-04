@@ -35,7 +35,7 @@ const psychologist = async (req: NextApiRequest, res: NextApiResponse) => {
     if (
       !existingPsychologist ||
       session.user.group !== "admin" ||
-      existingPsychologist.instructorId !== session.user.group
+      existingPsychologist.department !== session.user.department
     ) {
       return res.status(404).send("Psychologue non trouvé");
     }

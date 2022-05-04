@@ -19,13 +19,11 @@ export const getOne = async (id: string): Promise<Psychologist> => {
   });
 };
 
-export const getByInstructor = async (
-  group: string
-): Promise<Psychologist[]> => {
+export const getByDepartment = async (dep: string): Promise<Psychologist[]> => {
   // @ts-ignore
   return models.Psychologist.findAll({
     raw: true,
-    where: { archived: false, instructorId: group, state: "accepte" },
+    where: { archived: false, department: dep, state: "accepte" },
   });
 };
 

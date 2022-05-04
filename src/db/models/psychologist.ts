@@ -21,7 +21,6 @@ export default (sequelize) => {
         primaryKey: true,
         type: DataTypes.NUMBER,
       },
-      instructorId: DataTypes.STRING,
       languages: DataTypes.STRING,
       lastName: DataTypes.STRING,
       phone: DataTypes.STRING,
