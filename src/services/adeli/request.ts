@@ -4,11 +4,11 @@ import { AdeliData, AdeliRawResponse } from "../../types/adeli";
 import { zip } from "../../utils/array";
 import config from "../config";
 
-const formatRequestedAdeli = (adeliId: string) =>
+const formatRequestedAdeli = (adeliId: string): string =>
   adeliId
-    .replaceAll(".", "")
-    .replaceAll(" ", "")
-    .replaceAll("/", "")
+    .replace(/\./g, "")
+    .replace(/ /g, "")
+    .replace(/\//g, "")
     .padStart(10, "0");
 
 const rowColumnsToObject = <Column>(row: string[], columns: Column[]) =>
@@ -22,6 +22,7 @@ const formatAdeliResponse = (response: AdeliRawResponse): AdeliData[] =>
 export const requestAdeli = async (
   numeroAdeli: string
 ): Promise<AdeliData[]> => {
+  if (!numeroAdeli) return Promise.reject("numeroAdeli empty");
   const response = await axios.get<any, AxiosResponse<AdeliRawResponse>>(
     config.adeli.apiUrl,
     {

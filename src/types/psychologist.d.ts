@@ -22,7 +22,7 @@ export interface Psychologist {
   department: string;
   state: string;
   distance?: number;
-  adeliId?: string;
+  adeliId: string;
   demarcheSimplifieesId?: string;
 }
 

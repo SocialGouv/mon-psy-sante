@@ -1,3 +1,38 @@
+## [1.29.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.0...v1.29.1) (2022-05-03)
+
+
+### Bug Fixes
+
+* **keycloak:** add sealed secret for keacloak for preprod & prod ([#170](https://github.com/SocialGouv/mon-psy-sante/issues/170)) ([ce7c6ca](https://github.com/SocialGouv/mon-psy-sante/commit/ce7c6ca472d3d88e39ccf0a64d42e057e22273ff))
+
+# [1.29.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.8...v1.29.0) (2022-05-03)
+
+
+### Features
+
+* keycloak kw ([#160](https://github.com/SocialGouv/mon-psy-sante/issues/160)) ([eebe4fb](https://github.com/SocialGouv/mon-psy-sante/commit/eebe4fb18d674c1b31cd5a6252009ef4aa7aae3d))
+
+## [1.28.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.7...v1.28.8) (2022-05-03)
+
+
+### Bug Fixes
+
+* **adeli:** fix adeli number sanitizing ([#169](https://github.com/SocialGouv/mon-psy-sante/issues/169)) ([ef7db0c](https://github.com/SocialGouv/mon-psy-sante/commit/ef7db0c6b97988ccb1975c25da0945b967945322))
+
+## [1.28.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.6...v1.28.7) (2022-05-03)
+
+
+### Bug Fixes
+
+* **cron verifFolders:** use replace instead of replaceAll as we're not in ECMAScript 2021 ([#168](https://github.com/SocialGouv/mon-psy-sante/issues/168)) ([e29641a](https://github.com/SocialGouv/mon-psy-sante/commit/e29641a460530562c12534d37f0ee51d88c50905))
+
+## [1.28.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.5...v1.28.6) (2022-05-03)
+
+
+### Bug Fixes
+
+* **cron:** add cron job to verif dossiers in DS ([#167](https://github.com/SocialGouv/mon-psy-sante/issues/167)) ([79e5f2d](https://github.com/SocialGouv/mon-psy-sante/commit/79e5f2d377fd77eccc4687055b63c3e14f7851b8))
+
 ## [1.28.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.4...v1.28.5) (2022-05-03)
 
 
