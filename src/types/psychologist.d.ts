@@ -7,9 +7,9 @@ export interface Psychologist {
   archived: boolean;
   phone: string;
   address: string;
-  addressAdditional: string;
+  addressAdditional?: string;
   secondAddress: string;
-  secondAddressAdditional: string;
+  secondAddressAdditional?: string;
   teleconsultation: boolean;
   displayEmail: boolean;
   visible: boolean;
