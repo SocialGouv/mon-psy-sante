@@ -1,3 +1,10 @@
+## [1.29.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.1...v1.29.2) (2022-05-05)
+
+
+### Bug Fixes
+
+* **keycloak sealed secret:** add namespace on prod sealed secret ([#172](https://github.com/SocialGouv/mon-psy-sante/issues/172)) ([7c5187f](https://github.com/SocialGouv/mon-psy-sante/commit/7c5187f4b541046a93a79c2e0757520ec7099ce2))
+
 ## [1.29.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.0...v1.29.1) (2022-05-03)
 
 
