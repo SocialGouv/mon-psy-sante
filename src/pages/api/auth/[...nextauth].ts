@@ -12,9 +12,9 @@ export default NextAuth({
       return {
         ...token,
         roles: profile?.role || token?.roles,
-        departement:
-          (profile?.user as { departement?: string })?.departement ||
-          token?.departement,
+        department:
+          (profile?.user as { department?: string })?.department ||
+          token?.department,
       };
     },
     session({ session, token }) {
@@ -22,7 +22,7 @@ export default NextAuth({
         ...session,
         user: {
           ...session.user,
-          departement: token?.departement,
+          department: token?.department,
           roles: token?.roles,
         },
       };
@@ -40,7 +40,7 @@ export default NextAuth({
           name: profile.name ?? profile.preferred_username,
           email: profile.email || "test@test.com",
           image: profile.picture,
-          departement: profile?.user?.departement,
+          department: profile?.user?.department,
           roles: profile?.user?.roles,
         };
       },
