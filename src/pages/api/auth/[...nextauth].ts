@@ -40,8 +40,9 @@ export default NextAuth({
           name: profile.name ?? profile.preferred_username,
           email: profile.email || "test@test.com",
           image: profile.picture,
-          departement: profile?.user?.departement,
-          roles: profile?.user?.roles,
+          departement: profile.user.departement,
+          roles: profile.user.roles,
+          group: profile.user.group,
         };
       },
     }),
