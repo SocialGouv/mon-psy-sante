@@ -35,7 +35,7 @@
     "react-dom": "^18.0.0",
     "react-leaflet": "^4.0.0",
     "sanitize-html": "^2.7.0",
-    "sequelize": "^6.16.1",
+    "sequelize": "^6.19.0",
     "sequelize-cli": "^6.4.1",
     "styled-components": "^5.3.3",
     "tough-cookie": "^4.0.0",
