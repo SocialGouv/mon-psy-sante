@@ -56,3 +56,13 @@ To re-run the migration from 0
 ## To update sealed secret
 
 https://socialgouv.github.io/sre-tools/
+
+## Configure keycloak on local
+
+run
+docker-compose up
+
+go to http://localhost:8080/admin/master/console/#/create/realm
+click import > config/keycloak/mon-psy-sante-realm.json
+
+then create users : users > Add user

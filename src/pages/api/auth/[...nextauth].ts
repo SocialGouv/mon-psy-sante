@@ -8,20 +8,23 @@ export default NextAuth({
     strategy: "jwt",
   },
   callbacks: {
-    jwt({ token, ...rest }) {
+    jwt({ token, profile }) {
+      const user = profile?.user as any;
       return {
         ...token,
-        departement:
-          (rest.profile?.user as { departement?: string })?.departement ||
-          token?.departement,
+        roles: profile?.role || token?.roles,
+        department: token?.department || user?.department,
       };
     },
     session({ session, token }) {
+      const roles: string[] = token?.roles as string[];
       return {
         ...session,
         user: {
           ...session.user,
-          departement: token?.departement,
+          department: token?.department || session.user.department,
+          isAdmin: roles.includes("admin"),
+          isSuperAdmin: roles.includes("superAdmin"),
         },
       };
     },
@@ -32,13 +35,13 @@ export default NextAuth({
       clientSecret: config.keycloak.clientSecret,
       issuer: config.keycloak.issuer,
       profile: async (profile) => {
-        console.log(profile);
         return {
           id: profile.sub,
           name: profile.name ?? profile.preferred_username,
           email: profile.email || "test@test.com",
           image: profile.picture,
-          departement: profile?.user?.departement,
+          department: profile.user?.department,
+          group: profile.user?.group,
         };
       },
     }),

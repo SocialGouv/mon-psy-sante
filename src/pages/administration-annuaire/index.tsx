@@ -7,8 +7,8 @@ import React from "react";
 import AdminSearchField from "../../components/Admin/AdminSearchField";
 import Header from "../../components/Admin/Header";
 import PsychologistsForInstructors from "../../components/Admin/PsychologistsForInstructors";
-import { countAll, getByDepartment } from "../../services/psychologists";
 import { Psychologist } from "../../types/psychologist";
+import { countAll, getByDepartment } from "../../services/psychologists";
 
 const Admin = ({
   psychologists,
@@ -53,19 +53,25 @@ export default Admin;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
-  console.log(session);
 
   let psychologists = [];
   let count;
-  if (session.user.group === "admin") {
+  if (session.user.isSuperAdmin) {
     count = await countAll();
-  } else {
-    psychologists = await getByDepartment(session.user.group);
+  } else if (session.user.isAdmin) {
+    psychologists = await getByDepartment(session.user.department as string);
     psychologists = psychologists.map((psychologist) => {
       const { id, firstName, lastName } = psychologist;
       return { firstName, id, lastName };
     });
     count = psychologists.length;
+  } else {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
   }
 
   return {

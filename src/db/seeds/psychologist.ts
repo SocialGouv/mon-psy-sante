@@ -11,6 +11,7 @@ export const groups = [
   { id: "04", label: "04 - Alpes de Haute Provence" },
   { id: "05", label: "05 - Hautes-Alpes" },
   { id: "06", label: "06 - Alpes Maritimes" },
+  { id: "31", label: "31 - Haute-Garonne" },
 ];
 const languages = [
   "Francais",
@@ -56,7 +57,7 @@ export const getOnePsychologist = (
       crs: { properties: { name: "EPSG:4326" }, type: "name" },
       type: "POINT",
     },
-    department: instructor.label,
+    department: instructor.id,
     displayEmail: faker.datatype.boolean(),
     email: faker.internet.exampleEmail(),
     firstName: faker.name.firstName(),
