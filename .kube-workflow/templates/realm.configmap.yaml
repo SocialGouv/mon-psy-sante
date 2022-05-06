@@ -674,9 +674,7 @@ data:
           "enabled": true,
           "alwaysDisplayInConsole": false,
           "clientAuthenticatorType": "client-secret",
-          "secret": "{{`{{ getenv "
-                      KEYCLOAK_SECRET
-                      " }}`}}",
+          "secret": "{{`{{ getenv "KEYCLOAK_SECRET" }}`}}",
           "redirectUris": [
             "http://localhost:3000/*"
           ],
@@ -1408,39 +1406,13 @@ data:
         "strictTransportSecurity": "max-age=31536000; includeSubDomains"
       },
       "smtpServer": {
-        "password": "{{`{{ getenv "
-                      SMTP_PASSWORD
-                      " }}`}}",
-        "starttls": "{{`{{ or (getenv "
-                      SMTP_STARTTLS
-                      ") "
-                      true
-                      " }}`}}",
-        "auth": "{{`{{ or (getenv "
-                  SMTP_AUTH
-                  ") "
-                  true
-                  " }}`}}",
-        "host": "{{`{{ getenv "
-                  SMTP_HOST
-                  " }}`}}",
-        "from": "{{`{{ or (getenv "
-                  SMTP_FROM
-                  ") "
-                  " }}`}}",
-        "port": "{{`{{ or (getenv "
-                  SMTP_PORT
-                  ") "
-                  587
-                  " }}`}}",
-        "ssl": "{{`{{ or (getenv "
-                 SMTP_SSL
-                 ") "
-                 true
-                 " }}`}}",
-        "user": "{{`{{ getenv "
-                  SMTP_USER
-                  " }}`}}"
+        "starttls": "{{`{{ or (getenv "SMTP_STARTTLS") "true" }}`}}",
+        "auth": "{{`{{ or (getenv "SMTP_AUTH") "true" }}`}}",
+        "host": "{{`{{ getenv "SMTP_HOST" }}`}}",
+        "from": "{{`{{ or (getenv "SMTP_FROM") "" }}`}}",
+        "port": "{{`{{ or (getenv "SMTP_PORT") "587" }}`}}",
+        "ssl": "{{`{{ or (getenv "SMTP_SSL") "true" }}`}}",
+        "user": "{{`{{ getenv "SMTP_USER" }}`}}"
       },
       "eventsEnabled": false,
       "eventsListeners": [
