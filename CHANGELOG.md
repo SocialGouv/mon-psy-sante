@@ -1,3 +1,10 @@
+## [1.30.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.30.0...v1.30.1) (2022-05-06)
+
+
+### Bug Fixes
+
+* **unit tests:** fix unit tests in all env ([#176](https://github.com/SocialGouv/mon-psy-sante/issues/176)) ([b390092](https://github.com/SocialGouv/mon-psy-sante/commit/b390092639c7303a3538357b3618de4a3570f6fd))
+
 # [1.30.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.3...v1.30.0) (2022-05-06)
 
 
