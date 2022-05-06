@@ -12,12 +12,14 @@ import {
   countAll,
   getAll,
   getByDepartment,
+  getOne,
   saveMany,
   update,
   updateState,
 } from "../psychologists";
 
 describe("Service psychologists", () => {
+  let psychologistsList;
   beforeEach(async () => {
     await models.Psychologist.destroy({ where: {} });
     const states = ["accepte", "en_instruction", "refuse"];
@@ -27,7 +29,7 @@ describe("Service psychologists", () => {
     const departments = ["01", "02", "03"];
 
     // 2 x 2 x 2 x 3 x 3 = 72 psys
-    const psychologists = archiveds.flatMap((archived) =>
+    psychologistsList = archiveds.flatMap((archived) =>
       states.flatMap((state) =>
         visibles.flatMap((visible) =>
           teleconsultations.flatMap((teleconsultation) =>
@@ -49,7 +51,31 @@ describe("Service psychologists", () => {
     );
 
     //@ts-ignore
-    await models.Psychologist.bulkCreate(psychologists);
+    await models.Psychologist.bulkCreate(psychologistsList);
+  });
+
+  describe("getOne", () => {
+    it("Should return the psy with the id", async () => {
+      const result = await getOne(psychologistsList[0].id);
+
+      expect(result.department).toEqual(psychologistsList[0].department);
+      expect(result.id).toEqual(psychologistsList[0].id);
+    });
+
+    it("Should return the psy with the id and the department", async () => {
+      const result = await getOne(
+        psychologistsList[0].id,
+        psychologistsList[0].department
+      );
+
+      expect(result.department).toEqual(psychologistsList[0].department);
+      expect(result.id).toEqual(psychologistsList[0].id);
+    });
+
+    it("Should not return the psy if department is wrong", async () => {
+      const result = await getOne(psychologistsList[0].id, "wrong");
+      expect(result).toEqual(null);
+    });
   });
 
   describe("getByDepartment", () => {

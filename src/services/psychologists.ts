@@ -13,12 +13,13 @@ const limit = pLimit(5);
 
 export const getOne = async (
   id: string,
-  dep: string
+  dep?: string
 ): Promise<Psychologist> => {
   // @ts-ignore
+
   return models.Psychologist.findOne({
     raw: true,
-    where: { id, department: dep },
+    where: { id, ...(dep ? { department: dep } : {}) },
   });
 };
 
