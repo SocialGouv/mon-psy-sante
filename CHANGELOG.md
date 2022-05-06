@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.30.1...v1.31.0) (2022-05-06)
+
+
+### Features
+
+* **politique de confidentialité:** add new page ([#174](https://github.com/SocialGouv/mon-psy-sante/issues/174)) ([86386b0](https://github.com/SocialGouv/mon-psy-sante/commit/86386b0cf50b2e2c3e70006e2cd6be6072b01781))
+
 ## [1.30.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.30.0...v1.30.1) (2022-05-06)
 
 
