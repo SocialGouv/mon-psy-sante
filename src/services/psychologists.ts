@@ -11,11 +11,14 @@ import getAddressCoordinates from "./getAddressCoordinates";
 
 const limit = pLimit(5);
 
-export const getOne = async (id: string): Promise<Psychologist> => {
+export const getOne = async (
+  id: string,
+  dep: string
+): Promise<Psychologist> => {
   // @ts-ignore
   return models.Psychologist.findOne({
     raw: true,
-    where: { id },
+    where: { id, department: dep },
   });
 };
 

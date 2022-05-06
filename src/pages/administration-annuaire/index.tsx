@@ -30,17 +30,17 @@ const Admin = ({
             <p className="fr-text--lead">{count}</p>
           </div>
           <div className="fr-col-12 fr-col-md-5 fr-col-offset-2">
-            {psychologists.length ? (
-              <PsychologistsForInstructors psychologists={psychologists} />
-            ) : (
-              <AdminSearchField />
-            )}
             {router.query.error === "NotFound" && (
               <Alert
                 title="Dossier non trouvé"
                 className="fr-my-2w"
                 type="error"
               />
+            )}
+            {psychologists.length ? (
+              <PsychologistsForInstructors psychologists={psychologists} />
+            ) : (
+              <AdminSearchField />
             )}
           </div>
         </div>

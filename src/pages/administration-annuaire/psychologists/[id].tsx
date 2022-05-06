@@ -21,16 +21,12 @@ const EditablePsychologist = ({ psychologist }: { psychologist: string }) => {
 export default EditablePsychologist;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const userSession = await getSession(context);
-  if (!userSession) {
-    return {
-      redirect: {
-        destination: `/administration-annuaire/connexion?callbackurl=/administration-annuaire/psychologists/$${context.query.id}`,
-        permanent: false,
-      },
-    };
-  }
-  const psychologist = await getOne(context.query.id as string);
+  const session = await getSession(context);
+
+  const psychologist = await getOne(
+    context.query.id as string,
+    session.user.department as string
+  );
   if (!psychologist) {
     return {
       redirect: {
