@@ -83,7 +83,6 @@ describe("Service psychologists", () => {
       });
       expect(results.length).toEqual(10);
       results.forEach((result) => expect(result.archived).toBe(false));
-      results.forEach((result) => expect(result.visible).toBe(true));
     });
 
     it("Should return paginated psychologists", async () => {
