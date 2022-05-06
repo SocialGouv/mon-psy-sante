@@ -6,12 +6,12 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Politique de confidentialité</title>
+        <title>Politique de confidentialité de MonPsy</title>
       </Head>
       <div className="fr-container fr-my-6w">
-        <h1 id="mentions-legales">Politique de confidentialité de MonPsy</h1>
+        <h1>Politique de confidentialité de MonPsy</h1>
 
-        <div className="fr-mt-3w">
+        <div className="fr-mt-6w">
           <h2>Traitement des données à caractère personnel</h2>
           <p className="fr-mb-0">
             « MonPsy » est développé au sein de la Fabrique numérique des
@@ -133,9 +133,15 @@ const Page = () => {
             à vous demander la communication d’une preuve d’identité.
           </p>
           <p className="fr-mb-2w">
-            Pour vous aider dans votre démarche, vous trouverez ici
-            https://www.cnil.fr/fr/modele/courrier/exercer-son-droit-dacces, un
-            modèle de courrier élaboré par la CNIL.
+            Pour vous aider dans votre démarche, vous trouverez{" "}
+            <a
+              href="https://www.cnil.fr/fr/modele/courrier/exercer-son-droit-dacces"
+              target="_blank"
+              rel="nofollow, noopener, noreferrer"
+            >
+              ici
+            </a>
+            , un modèle de courrier élaboré par la CNIL.
           </p>
           <p className="fr-mb-2w">
             Le responsable de traitement s’engage à répondre dans un délai
