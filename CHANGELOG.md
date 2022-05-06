@@ -1,3 +1,10 @@
+## [1.31.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.31.0...v1.31.1) (2022-05-06)
+
+
+### Bug Fixes
+
+* **deps:** upgrade nextjs version  ([5440229](https://github.com/SocialGouv/mon-psy-sante/commit/5440229dbf859f18708046b3c34828be706188a9))
+
 # [1.31.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.30.1...v1.31.0) (2022-05-06)
 
 
