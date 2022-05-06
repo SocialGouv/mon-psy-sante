@@ -44,7 +44,7 @@ export default {
   nextAuthUrl: process.env.NEXTAUTH_URL,
   postgre: {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
-    url: process.env.DATABASE_URL || "",
+    url: process.env.DATABASE_URL || "postgres://localhost:5432/monpsysante",
   },
   supportMail: process.env.SUPPORT_MAIL,
 };
