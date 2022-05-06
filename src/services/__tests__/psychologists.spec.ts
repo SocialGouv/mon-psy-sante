@@ -52,8 +52,8 @@ describe("Service psychologists", () => {
     await models.Psychologist.bulkCreate(psychologists);
   });
 
-  describe("getByInstructor", () => {
-    it("Should return non archived psychologist of an instructor", async () => {
+  describe("getByDepartment", () => {
+    it("Should return non archived psychologist of a department", async () => {
       const results = await getByDepartment("02");
       expect(results.length).toEqual(12);
       results.forEach((psychologist) => {
@@ -62,7 +62,7 @@ describe("Service psychologists", () => {
       });
     });
 
-    it("Should return empty list if instructor does not exists", async () => {
+    it("Should return empty list if department does not exists", async () => {
       const results = await getByDepartment("georges");
       expect(results.length).toEqual(0);
     });
