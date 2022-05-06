@@ -8,13 +8,12 @@ export default NextAuth({
     strategy: "jwt",
   },
   callbacks: {
-    jwt({ token, profile }) {
+    jwt({ token, ...rest }) {
       return {
         ...token,
-        roles: profile?.role || token?.roles,
-        department:
-          (profile?.user as { department?: string })?.department ||
-          token?.department,
+        departement:
+          (rest.profile?.user as { departement?: string })?.departement ||
+          token?.departement,
       };
     },
     session({ session, token }) {
@@ -22,8 +21,7 @@ export default NextAuth({
         ...session,
         user: {
           ...session.user,
-          department: token?.department,
-          roles: token?.roles,
+          departement: token?.departement,
         },
       };
     },
@@ -40,9 +38,7 @@ export default NextAuth({
           name: profile.name ?? profile.preferred_username,
           email: profile.email || "test@test.com",
           image: profile.picture,
-          department: profile.user?.department,
-          roles: profile.user?.roles,
-          group: profile.user?.group,
+          departement: profile?.user?.departement,
         };
       },
     }),

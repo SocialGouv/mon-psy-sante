@@ -33,9 +33,11 @@ export const getOnePsychologist = (
     address: `${faker.address.streetAddress()} ${faker.address.zipCode(
       "#####"
     )} ${faker.address.city()}`,
+    addressAdditional: faker.datatype.string(10),
     secondAddress: `${faker.address.streetAddress()} ${faker.address.zipCode(
       "#####"
     )} ${faker.address.city()}`,
+    secondAddressAdditional: faker.datatype.string(10),
     archived: false,
     cdsmsp: faker.lorem.word(5),
     coordinates: {

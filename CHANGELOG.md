@@ -1,3 +1,31 @@
+## [1.31.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.31.0...v1.31.1) (2022-05-06)
+
+
+### Bug Fixes
+
+* **deps:** upgrade nextjs version  ([5440229](https://github.com/SocialGouv/mon-psy-sante/commit/5440229dbf859f18708046b3c34828be706188a9))
+
+# [1.31.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.30.1...v1.31.0) (2022-05-06)
+
+
+### Features
+
+* **politique de confidentialité:** add new page ([#174](https://github.com/SocialGouv/mon-psy-sante/issues/174)) ([86386b0](https://github.com/SocialGouv/mon-psy-sante/commit/86386b0cf50b2e2c3e70006e2cd6be6072b01781))
+
+## [1.30.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.30.0...v1.30.1) (2022-05-06)
+
+
+### Bug Fixes
+
+* **unit tests:** fix unit tests in all env ([#176](https://github.com/SocialGouv/mon-psy-sante/issues/176)) ([b390092](https://github.com/SocialGouv/mon-psy-sante/commit/b390092639c7303a3538357b3618de4a3570f6fd))
+
+# [1.30.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.3...v1.30.0) (2022-05-06)
+
+
+### Features
+
+* **address:** show address additional infos ([#171](https://github.com/SocialGouv/mon-psy-sante/issues/171)) ([4a040ce](https://github.com/SocialGouv/mon-psy-sante/commit/4a040ce90e0d93271a4cd42e17c572504964b547))
+
 ## [1.29.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.2...v1.29.3) (2022-05-06)
 
 
