@@ -10,9 +10,15 @@ const Admin = ({ user }) => {
   return (
     <div>
       <div>Authenticated as admin</div>
-      <button onClick={() => signOut({
-        callbackUrl: window.location.origin
-      })}>Logout</button>
+      <button
+        onClick={() =>
+          signOut({
+            callbackUrl: window.location.origin,
+          })
+        }
+      >
+        Logout
+      </button>
     </div>
   );
 };
