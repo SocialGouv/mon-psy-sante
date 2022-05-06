@@ -7,8 +7,8 @@ import React from "react";
 import AdminSearchField from "../../components/Admin/AdminSearchField";
 import Header from "../../components/Admin/Header";
 import PsychologistsForInstructors from "../../components/Admin/PsychologistsForInstructors";
-import { Psychologist } from "../../types/psychologist";
 import { countAll, getByDepartment } from "../../services/psychologists";
+import { Psychologist } from "../../types/psychologist";
 
 const Admin = ({
   psychologists,
