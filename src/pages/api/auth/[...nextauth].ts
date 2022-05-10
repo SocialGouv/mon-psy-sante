@@ -3,11 +3,33 @@ import KeycloakProvider from "next-auth/providers/keycloak";
 
 import config from "../../../services/config";
 
+console.log(
+  process.env.NEXTAUTH_URL,
+  process.env.NEXTAUTH_SECRET,
+  config.keycloak.clientId,
+  config.keycloak.clientSecret,
+  config.keycloak.issuer
+);
+
 export default NextAuth({
   session: {
     strategy: "jwt",
   },
   callbacks: {
+    redirect({ url, baseUrl }) {
+      console.log(
+        process.env.NEXTAUTH_URL,
+        process.env.NEXTAUTH_SECRET,
+        config.keycloak.clientId,
+        config.keycloak.clientSecret,
+        config.keycloak.issuer
+      );
+      // Allows relative callback URLs
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      // Allows callback URLs on the same origin
+      else if (new URL(url).origin === baseUrl) return url;
+      return baseUrl;
+    },
     jwt({ token, profile }) {
       const user = profile?.user as any;
       return {
