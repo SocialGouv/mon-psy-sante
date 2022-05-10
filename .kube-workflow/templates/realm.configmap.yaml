@@ -674,7 +674,7 @@ data:
           "clientAuthenticatorType": "client-secret",
           "secret": "{{`{{ getenv "KEYCLOAK_SECRET" }}`}}",
           "redirectUris": [
-            "{{`{{ getenv "NEXTAUTH_URL" }}`}}"
+            "https://{{ .Values.global.host }}"
           ],
           "notBefore": 0,
           "bearerOnly": false,

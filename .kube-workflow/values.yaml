@@ -5,6 +5,8 @@ app:
         name: "{{ .Values.global.pgSecretName }}"
     - secretRef:
         name: app-sealed-secret
+    - secretRef:
+        name: keycloak-secrets
   env:
     - name: NEXTAUTH_URL
       value: "https://{{ .Values.global.host }}"
