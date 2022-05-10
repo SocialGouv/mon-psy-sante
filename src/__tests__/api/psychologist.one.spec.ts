@@ -1,8 +1,8 @@
 /* eslint-disable jest/no-conditional-expect */
 import axios from "axios";
 
-import {models} from "../../db/models";
-import {getOnePsychologist} from "../../db/seeds/psychologist";
+import { models } from "../../db/models";
+import { getOnePsychologist } from "../../db/seeds/psychologist";
 import config from "../../services/config";
 
 const defaultValues = {
