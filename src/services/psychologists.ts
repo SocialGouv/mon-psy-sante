@@ -117,7 +117,7 @@ export const update = async (
       psychologist.secondAddress
     );
   }
-  console.log(psychologist.addressAdditional);
+
   return models.Psychologist.update(
     {
       address: psychologist.address,
