@@ -41,7 +41,6 @@ export default {
     tls: parseBoolean(process.env.MAIL_TLS),
   },
   minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.30"),
-  nextAuthUrl: process.env.NEXTAUTH_URL,
   postgre: {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
     url: process.env.DATABASE_URL || "postgres://localhost:5432/monpsysante",

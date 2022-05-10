@@ -43,7 +43,7 @@ describe("/api/psychologist/[id]", () => {
   });
 
   it("should return a 200 when everything is filled for a Psychologist", async () => {
-    const result = await client(`${config.nextAuthUrl}/api/psychologists/1`, {
+    const result = await client(`${config.nextAuth.url}/api/psychologists/1`, {
       json: defaultValues,
       method: "PUT",
     });
@@ -54,7 +54,7 @@ describe("/api/psychologist/[id]", () => {
   it("should return a 404 when user is not authorized", async () => {
     expect.assertions(1);
     try {
-      await nonAuthorizedClient(`${config.nextAuthUrl}/api/psychologists/1`, {
+      await nonAuthorizedClient(`${config.nextAuth.url}/api/psychologists/1`, {
         json: defaultValues,
         method: "PUT",
       });
@@ -66,7 +66,7 @@ describe("/api/psychologist/[id]", () => {
   it("should return a 404 when psy is not found", async () => {
     expect.assertions(1);
     try {
-      await client(`${config.nextAuthUrl}/api/psychologists/123456`, {
+      await client(`${config.nextAuth.url}/api/psychologists/123456`, {
         json: defaultValues,
         method: "PUT",
       });
@@ -83,10 +83,13 @@ describe("/api/psychologist/[id]", () => {
   ];
   successes.forEach((success) =>
     it(`should return a 200 for a psychologist update ${success.label}`, async () => {
-      const result = await client(`${config.nextAuthUrl}/api/psychologists/1`, {
-        json: { ...defaultValues, ...success.values },
-        method: "PUT",
-      });
+      const result = await client(
+        `${config.nextAuth.url}/api/psychologists/1`,
+        {
+          json: { ...defaultValues, ...success.values },
+          method: "PUT",
+        }
+      );
 
       expect(result.statusCode).toEqual(200);
     })
@@ -122,7 +125,7 @@ describe("/api/psychologist/[id]", () => {
     it(`Should return a 400 for a psychologist update ${error.label}`, async () => {
       expect.assertions(1);
       try {
-        await client(`${config.nextAuthUrl}/api/psychologists/1`, {
+        await client(`${config.nextAuth.url}/api/psychologists/1`, {
           json: { ...defaultValues, ...error.values },
           method: "PUT",
         });
