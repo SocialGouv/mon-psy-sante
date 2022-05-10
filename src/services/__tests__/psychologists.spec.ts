@@ -13,6 +13,8 @@ import {
   getAll,
   getByDepartment,
   getOne,
+  getDateLatestAccepte,
+  getDateLatestArchived,
   saveMany,
   update,
   updateState,
@@ -91,6 +93,51 @@ describe("Service psychologists", () => {
     it("Should return empty list if department does not exists", async () => {
       const results = await getByDepartment("georges");
       expect(results.length).toEqual(0);
+    });
+  });
+
+  describe("getDateLatestAccepte", () => {
+    async function insertInDbAsync(params) {
+      const latestAccepte = getOnePsychologist(params);
+      // @ts-ignore
+      return await models.Psychologist.create(latestAccepte);
+    }
+
+    let latestAccepte, latestRefuse, latestAccepteArchived;
+    beforeEach(async () => {
+      latestAccepte = await insertInDbAsync({
+        state: "accepte",
+        archived: false,
+      });
+      latestRefuse = await insertInDbAsync({
+        state: "refuse",
+        archived: true,
+      });
+      latestAccepteArchived = await insertInDbAsync({
+        state: "accepte",
+        archived: true,
+      });
+    });
+    it("validate test data", async () => {
+      expect(latestAccepte.getDataValue("createdAt")).not.toEqual(
+        latestRefuse.getDataValue("createdAt")
+      );
+      expect(latestAccepteArchived.getDataValue("createdAt")).not.toEqual(
+        latestRefuse.getDataValue("createdAt")
+      );
+      expect(latestAccepte.getDataValue("createdAt")).not.toEqual(
+        latestAccepteArchived.getDataValue("createdAt")
+      );
+    });
+
+    it("should return the latest inserted psy", async () => {
+      const result = await getDateLatestAccepte();
+      expect(result).toEqual(latestAccepte.getDataValue("createdAt"));
+    });
+
+    it("should return the latest archived psy", async () => {
+      const result = await getDateLatestArchived();
+      expect(result).toEqual(latestAccepteArchived.getDataValue("createdAt"));
     });
   });
 

@@ -25,7 +25,8 @@ export const requestPsychologistsState = async (
   extraInfos?: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
-  const query = gql`{
+  const query = gql`
+{
   demarche (number: ${config.demarchesSimplifiees.id}) {
     id
     dossiers ${paginationCondition ? "(" + paginationCondition + ")" : ""} {
@@ -40,20 +41,23 @@ export const requestPsychologistsState = async (
           ${extraInfos ?? ""}
       }
     }
-  }}`;
+  }
+}
+`;
 
   return request(query);
 };
 
-export const requestPsychologistsAcceptes = async (
-  afterCursor: string | undefined
-): Promise<DSResponse> => {
-  const paginationCondition = getWhereConditionAfterCursor(afterCursor);
-  const query = gql`
+export const requestPsychologistsFor =
+  (date: Date, filter: string) =>
+  async (afterCursor: string | undefined): Promise<DSResponse> => {
+    const paginationCondition = getWhereConditionAfterCursor(afterCursor);
+    const dateFilter = date ? `updatedSince: "${date.toISOString()}"` : "";
+    const query = gql`
     {
       demarche (number: ${config.demarchesSimplifiees.id}) {
         id
-        dossiers (state: ${DossierState.accepte}${paginationCondition}) {
+        dossiers (${filter}, ${dateFilter}${paginationCondition}) {
           pageInfo {
             hasNextPage
             endCursor
@@ -87,8 +91,8 @@ export const requestPsychologistsAcceptes = async (
     }
   `;
 
-  return request(query);
-};
+    return request(query);
+  };
 
 export const requestPsychologistsById = async (
   id: number
@@ -119,7 +123,9 @@ export const requestPsychologistsById = async (
           }
         }
       }
-    }`;
+    }
+  `;
+
   return request(query);
 };
 

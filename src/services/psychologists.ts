@@ -22,7 +22,6 @@ export const getOne = async (
     where: { id, ...(dep ? { department: dep } : {}) },
   });
 };
-
 export const getByDepartment = async (dep: string): Promise<Psychologist[]> => {
   // @ts-ignore
   return models.Psychologist.findAll({
@@ -30,6 +29,21 @@ export const getByDepartment = async (dep: string): Promise<Psychologist[]> => {
     where: { archived: false, department: dep, state: "accepte" },
   });
 };
+
+const getDateLatestFor = async (where): Promise<Date> => {
+  const psy = await models.Psychologist.findOne({
+    attributes: ["created_at", "archived", "state"],
+    order: [["created_at", "DESC"]],
+    where: where,
+  });
+  // @ts-ignore
+  return psy?.dataValues?.created_at;
+};
+export const getDateLatestAccepte = async (): Promise<Date> =>
+  getDateLatestFor({ state: "accepte", archived: false });
+
+export const getDateLatestArchived = async (): Promise<Date> =>
+  getDateLatestFor({ archived: true });
 
 export const countAll = async () =>
   models.Psychologist.count({
@@ -97,7 +111,7 @@ export const getAll = async (filters: {
 export const saveMany = async (psychologists: Psychologist[]) => {
   //@ts-ignore
   return models.Psychologist.bulkCreate(psychologists, {
-    updateOnDuplicate: ["id"],
+    ignoreDuplicates: true,
   });
 };
 
@@ -156,17 +170,4 @@ export const updateState = async (newStates: Partial<Psychologist>[]) => {
       )
     )
   );
-};
-
-export const filterIdsNotInDb = async (psy): Promise<number[]> => {
-  // @ts-ignore
-  const psyInDb: { id: number }[] = await models.Psychologist.findAll({
-    attributes: ["id"],
-    raw: true,
-    where: { state: "accepte" },
-  });
-
-  return psy
-    .filter((psy) => !psyInDb.find((fromDb) => psy.id === fromDb.id))
-    .map((psy) => psy.id);
 };

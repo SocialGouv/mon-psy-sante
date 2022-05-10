@@ -1,3 +1,24 @@
+## [1.32.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.32.1...v1.32.2) (2022-05-10)
+
+
+### Bug Fixes
+
+* **cron job:** cron job deploy name in lower case ([8c864cf](https://github.com/SocialGouv/mon-psy-sante/commit/8c864cf0bb6ec146c5e7cb8915d833fd07a5df41))
+
+## [1.32.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.32.0...v1.32.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* **additional info for address:** fix layout ([#181](https://github.com/SocialGouv/mon-psy-sante/issues/181)) ([a5429a1](https://github.com/SocialGouv/mon-psy-sante/commit/a5429a1f83a899d22d493fc84ff1d5a8b8debc55))
+
+# [1.32.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.31.1...v1.32.0) (2022-05-10)
+
+
+### Features
+
+* **cron:** fetch data from DS in one cron, and using the latest updated dossier date ([#159](https://github.com/SocialGouv/mon-psy-sante/issues/159)) ([1ab0a23](https://github.com/SocialGouv/mon-psy-sante/commit/1ab0a239c79b447f03b375bdcefe69906b9d0839))
+
 ## [1.31.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.31.0...v1.31.1) (2022-05-06)
 
 
