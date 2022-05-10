@@ -17,20 +17,16 @@ export default NextAuth({
   },
   callbacks: {
     redirect({ url, baseUrl }) {
-      console.log(
-        process.env.NEXTAUTH_URL,
-        process.env.NEXTAUTH_SECRET,
-        config.keycloak.clientId,
-        config.keycloak.clientSecret,
-        config.keycloak.issuer
-      );
-      console.log(url, baseUrl);
-
       // Allows relative callback URLs
       if (url.startsWith("/")) return `${baseUrl}${url}`;
       // Allows callback URLs on the same origin
       else if (new URL(url).origin === baseUrl) return url;
-      return baseUrl;
+      else if (new URL(url).origin === "http://localhost:3000") {
+        const newUrl = new URL(url);
+        newUrl.hostname = new URL(baseUrl).hostname;
+        newUrl.protocol = new URL(baseUrl).protocol;
+        return newUrl.toString();
+      }
     },
     jwt({ token, profile }) {
       const user = profile?.user as any;
