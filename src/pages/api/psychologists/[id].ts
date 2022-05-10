@@ -26,17 +26,15 @@ const updateSchema = Joi.object({
 const psychologist = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "PUT") {
     const session = await getSession({ req });
-    if (!session) {
+    if (!session || !session.user.isAdmin || !session.user.isSuperAdmin) {
       return res.status(401).send("Opération impossible");
     }
     const id = req.query.id as string;
-    const existingPsychologist = await getOne(id);
-
-    if (
-      !existingPsychologist ||
-      session.user.group !== "admin" ||
-      existingPsychologist.department !== session.user.department
-    ) {
+    const existingPsychologist = await getOne(
+      id,
+      session.user.isSuperAdmin ? "" : (session.user.department as string)
+    );
+    if (!existingPsychologist) {
       return res.status(404).send("Psychologue non trouvé");
     }
 

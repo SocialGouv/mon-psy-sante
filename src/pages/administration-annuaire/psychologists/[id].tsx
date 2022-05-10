@@ -25,7 +25,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const psychologist = await getOne(
     context.query.id as string,
-    session.user.department as string
+    session.user.isSuperAdmin ? "" : (session.user.department as string)
   );
   if (!psychologist) {
     return {
