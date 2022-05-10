@@ -1,3 +1,10 @@
+## [1.32.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.32.1...v1.32.2) (2022-05-10)
+
+
+### Bug Fixes
+
+* **cron job:** cron job deploy name in lower case ([8c864cf](https://github.com/SocialGouv/mon-psy-sante/commit/8c864cf0bb6ec146c5e7cb8915d833fd07a5df41))
+
 ## [1.32.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.32.0...v1.32.1) (2022-05-10)
 
 
