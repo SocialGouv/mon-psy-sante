@@ -25,7 +25,7 @@ export default NextAuth({
         const newUrl = new URL(url);
         newUrl.hostname = new URL(baseUrl).hostname;
         newUrl.protocol = new URL(baseUrl).protocol;
-        console.log(newUrl.toString());
+        newUrl.port = new URL(baseUrl).port;
         return newUrl.toString();
       }
     },
