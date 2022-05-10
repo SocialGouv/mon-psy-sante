@@ -46,5 +46,4 @@ export default NextAuth({
       },
     }),
   ],
-  secret: config.nextAuth.secret,
 });
