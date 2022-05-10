@@ -54,7 +54,3 @@ jobs:
 
       - name: E2E test
         run: npm run cy:run
-
-      - name: Display structure of downloaded files
-        if: always()
-        run: ls -R

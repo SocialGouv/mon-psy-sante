@@ -5,7 +5,6 @@ import { SkiplinkItem, Skiplinks } from "@dataesr/react-dsfr";
 import * as Sentry from "@sentry/node";
 import { init } from "@socialgouv/matomo-next";
 import App from "next/app";
-import { SessionProvider } from "next-auth/react";
 import React from "react";
 
 import Footer from "../components/Footer";
@@ -24,10 +23,7 @@ class MyApp extends App {
   }
 
   render() {
-    const {
-      Component,
-      pageProps: { session, ...pageProps },
-    } = this.props;
+    const { Component, pageProps } = this.props;
 
     return (
       <>
@@ -38,9 +34,7 @@ class MyApp extends App {
         </Skiplinks>
         <Nav />
         <div id="contenu">
-          <SessionProvider session={session}>
-            <Component {...pageProps} />
-          </SessionProvider>
+          <Component {...pageProps} />
         </div>
         <Footer />
       </>
