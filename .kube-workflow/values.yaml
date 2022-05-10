@@ -11,7 +11,7 @@ app:
     - name: NEXTAUTH_URL
       value: "https://{{ .Values.global.host }}"
     - name: KEYCLOAK_ISSUER
-      value: "https://keycloak-{{ .Values.global.host }}/realms/mon-psy-sante"
+      value: "https://keycloak-{{ .Values.global.host }}/auth/realms/mon-psy-sante"
     - name: KEYCLOAK_ID
       value: mon-psy-app
 
