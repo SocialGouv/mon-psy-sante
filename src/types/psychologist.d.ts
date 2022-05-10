@@ -6,6 +6,7 @@ export interface Psychologist {
   lastName: string;
   archived: boolean;
   phone: string;
+  displayPhone: boolean;
   address: string;
   addressAdditional?: string;
   secondAddress: string;

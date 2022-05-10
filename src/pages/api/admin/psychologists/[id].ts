@@ -2,12 +2,14 @@ import Joi from "joi";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 
-import { handleApiError } from "../../../services/api";
-import { getOne, update } from "../../../services/psychologists";
+import { handleApiError } from "../../../../services/api";
+import { getOne, update } from "../../../../services/psychologists";
 
 const updateSchema = Joi.object({
   address: Joi.string().required(),
+  addressAdditional: Joi.string().allow("").allow(null),
   secondAddress: Joi.string().allow(""),
+  secondAddressAdditional: Joi.string().allow("").allow(null),
   cdsmsp: Joi.string().allow(""),
   displayEmail: Joi.boolean().required(),
   email: Joi.string().email(),
@@ -15,6 +17,7 @@ const updateSchema = Joi.object({
   languages: Joi.string().allow(null),
   lastName: Joi.string().required(),
   phone: Joi.string().required(),
+  displayPhone: Joi.boolean().required(),
   public: Joi.string()
     .valid("Adultes", "Adultes et enfants/adolescents", "Enfants/adolescents")
     .required(),

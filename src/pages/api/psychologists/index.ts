@@ -22,6 +22,7 @@ const psychologists = async (req: NextApiRequest, res: NextApiResponse) => {
       psychologists.map((psy) => ({
         ...psy,
         email: psy.displayEmail ? psy.email : undefined,
+        phone: psy.displayPhone ? psy.phone : undefined,
       }))
     );
   }
