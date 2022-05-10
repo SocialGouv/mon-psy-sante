@@ -38,4 +38,5 @@ export default {
     url: process.env.DATABASE_URL || "",
   },
   supportMail: process.env.SUPPORT_MAIL,
+  apiAdresseUrl: process.env.API_ADRESSE_URL,
 };

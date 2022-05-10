@@ -1,3 +1,10 @@
+# [1.32.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.31.1...v1.32.0) (2022-05-10)
+
+
+### Features
+
+* **cron:** fetch data from DS in one cron, and using the latest updated dossier date ([#159](https://github.com/SocialGouv/mon-psy-sante/issues/159)) ([1ab0a23](https://github.com/SocialGouv/mon-psy-sante/commit/1ab0a239c79b447f03b375bdcefe69906b9d0839))
+
 ## [1.31.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.31.0...v1.31.1) (2022-05-06)
 
 

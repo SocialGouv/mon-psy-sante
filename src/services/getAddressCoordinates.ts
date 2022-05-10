@@ -29,9 +29,8 @@ const getAddressCoordinates = async (
   address: string
 ): Promise<Coordinates> => {
   const firstAddress = address.split(ADDRESS_DELIMITER)[0];
-  const url = encodeURI(
-    `https://api-adresse.data.gouv.fr/search/?q=${firstAddress}&limit=1`
-  );
+
+  const url = encodeURI(`${config.apiAdresseUrl}/?q=${firstAddress}&limit=1`);
   const response = await axios.get<CoordinatesAPI>(url).catch(extractError);
 
   if (response && response?.data.features?.length > 0) {
