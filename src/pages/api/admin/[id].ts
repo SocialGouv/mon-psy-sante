@@ -23,7 +23,7 @@ const updateSchema = Joi.object({
   website: Joi.string().allow("").allow(null),
 });
 
-const psychologist = async (req: NextApiRequest, res: NextApiResponse) => {
+export const updatePsy = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "PUT") {
     const session = await getSession({ req });
     if (!session || !session.user.isAdmin || !session.user.isSuperAdmin) {
@@ -45,4 +45,4 @@ const psychologist = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export default handleApiError(psychologist);
+export default handleApiError(updatePsy);

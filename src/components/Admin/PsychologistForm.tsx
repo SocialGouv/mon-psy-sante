@@ -68,7 +68,7 @@ const PsychologistForm = ({ psychologist }: { psychologist: Psychologist }) => {
     e.preventDefault();
     setResult(null);
     axios
-      .put(`/api/psychologists/${modifiedPsychologist.id}`, {
+      .put(`/api/admin/psychologists/${modifiedPsychologist.id}`, {
         address: modifiedPsychologist.address,
         secondAddress: modifiedPsychologist.secondAddress,
         cdsmsp: modifiedPsychologist.cdsmsp,
