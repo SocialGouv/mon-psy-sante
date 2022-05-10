@@ -2,7 +2,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   namespace: mon-psy-sante-preprod
-  name: import-from-DS
+  name: import-from-ds
   labels:
     app: mon-psy
 spec:
