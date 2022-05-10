@@ -1,14 +1,16 @@
+import pLimit from "p-limit";
+
 import { DSResponse } from "../../types/demarcheSimplifiee";
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import {
   requestDossiersWithAnnotations,
-  requestPsychologistsAcceptes,
   requestPsychologistsById,
+  requestPsychologistsFor,
   requestPsychologistsState,
 } from "./buildRequest";
-import { requestPsychologistsFor } from "./buildRequest";
 import parsePsychologists from "./parse-psychologists";
 
+const limit = pLimit(5);
 export const getAllPsychologistList = async (
   graphqlFunction: (string) => Promise<DSResponse>,
   cursor: string | undefined = undefined,
