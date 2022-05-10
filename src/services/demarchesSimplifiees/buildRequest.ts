@@ -5,6 +5,14 @@ import { Psychologist } from "../../types/psychologist";
 import config from "../config";
 import { request } from "./request";
 
+enum DossierState {
+  enConstruction = "en_construction",
+  enInstruction = "en_instruction",
+  accepte = "accepte",
+  refuse = "refuse",
+  sansSuite = "sans_suite",
+}
+
 const getWhereConditionAfterCursor = (cursor: string): string => {
   if (cursor) {
     return ` after: "${cursor}"`;
@@ -17,7 +25,8 @@ export const requestPsychologistsState = async (
   extraInfos?: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
-  const query = gql`{
+  const query = gql`
+{
   demarche (number: ${config.demarchesSimplifiees.id}) {
     id
     dossiers ${paginationCondition ? "(" + paginationCondition + ")" : ""} {
@@ -32,7 +41,9 @@ export const requestPsychologistsState = async (
           ${extraInfos ?? ""}
       }
     }
-  }}`;
+  }
+}
+`;
 
   return request(query);
 };
@@ -112,7 +123,9 @@ export const requestPsychologistsById = async (
           }
         }
       }
-    }`;
+    }
+  `;
+
   return request(query);
 };
 
