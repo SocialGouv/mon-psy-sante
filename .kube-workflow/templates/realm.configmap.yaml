@@ -668,18 +668,13 @@ data:
         {
           "id": "aa3ada5d-7bc4-4951-8422-e6809959e453",
           "clientId": "mon-psy-app",
-          "rootUrl": "http://localhost:3000",
-          "adminUrl": "http://localhost:3000",
           "surrogateAuthRequired": false,
           "enabled": true,
           "alwaysDisplayInConsole": false,
           "clientAuthenticatorType": "client-secret",
           "secret": "{{`{{ getenv "KEYCLOAK_SECRET" }}`}}",
           "redirectUris": [
-            "http://localhost:3000/*"
-          ],
-          "webOrigins": [
-            "http://localhost:3000"
+            "{{ .Values.global.host }}"
           ],
           "notBefore": 0,
           "bearerOnly": false,
