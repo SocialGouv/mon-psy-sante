@@ -1,22 +1,14 @@
 /* eslint-disable jest/no-conditional-expect */
-import { expect } from "@jest/globals";
-import { stub } from "sinon";
+import {expect} from "@jest/globals";
+import {stub} from "sinon";
 
-import { models } from "../../db/models";
-import { getOnePsychologist } from "../../db/seeds/psychologist";
-import { FILTER } from "../../types/enums/filters";
-import { allPublics, PUBLIC } from "../../types/enums/public";
-import { Psychologist } from "../../types/psychologist";
+import {models} from "../../db/models";
+import {getOnePsychologist} from "../../db/seeds/psychologist";
+import {FILTER} from "../../types/enums/filters";
+import {allPublics, PUBLIC} from "../../types/enums/public";
+import {Psychologist} from "../../types/psychologist";
 import * as address from "../getAddressCoordinates";
-import {
-  countAll,
-  getAll,
-  getByDepartment,
-  getOne,
-  saveMany,
-  update,
-  updateState,
-} from "../psychologists";
+import {countAll, getAll, getByDepartment, getOne, saveMany, update, updateState,} from "../psychologists";
 
 describe("Service psychologists", () => {
   let psychologistsList;
@@ -215,10 +207,13 @@ describe("Service psychologists", () => {
 
       const updateableFields = [
         "address",
+        "addressAdditional",
         "secondAddress",
+        "secondAddressAdditional",
         "coordinates",
         "cdsmsp",
         "displayEmail",
+        "displayPhone",
         "email",
         "firstName",
         "languages",
