@@ -1,4 +1,4 @@
-describe("Admin pages", () => {
+describe.skip("Admin pages", () => {
   it("Login", () => {
     cy.visit("/administration-annuaire");
     cy.url().should(

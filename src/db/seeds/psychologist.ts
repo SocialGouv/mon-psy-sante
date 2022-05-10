@@ -58,6 +58,7 @@ export const getOnePsychologist = (
       type: "POINT",
     },
     department: instructor.id,
+    displayPhone: faker.datatype.boolean(),
     displayEmail: faker.datatype.boolean(),
     email: faker.internet.exampleEmail(),
     firstName: faker.name.firstName(),

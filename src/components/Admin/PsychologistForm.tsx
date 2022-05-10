@@ -20,12 +20,22 @@ const editableFields = [
   { field: "lastName", label: "Nom", required: true },
   { field: "firstName", label: "Prénom", required: true },
   { field: "address", label: "Adresse", required: true },
+  { field: "addressAdditional", label: "Complément d'adresse" },
   { field: "secondAddress", label: "Adresse secondaire" },
+  {
+    field: "secondAddressAdditional",
+    label: "Complément d'adresse secondaire",
+  },
   { field: "phone", label: "Téléphone", required: true },
+  {
+    field: "displayPhone",
+    label: "Afficher le téléphone",
+    type: "boolean",
+  },
   { field: "email", label: "Email" },
   {
     field: "displayEmail",
-    label: "Rendre visible l'email",
+    label: "Afficher l'email",
     type: "boolean",
   },
   {
@@ -78,6 +88,7 @@ const PsychologistForm = ({ psychologist }: { psychologist: Psychologist }) => {
         languages: modifiedPsychologist.languages,
         lastName: modifiedPsychologist.lastName,
         phone: modifiedPsychologist.phone,
+        displayPhone: modifiedPsychologist.displayPhone,
         public: modifiedPsychologist.public,
         teleconsultation: modifiedPsychologist.teleconsultation,
         visible: modifiedPsychologist.visible,

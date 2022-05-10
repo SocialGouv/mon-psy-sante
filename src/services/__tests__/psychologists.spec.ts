@@ -262,10 +262,13 @@ describe("Service psychologists", () => {
 
       const updateableFields = [
         "address",
+        "addressAdditional",
         "secondAddress",
+        "secondAddressAdditional",
         "coordinates",
         "cdsmsp",
         "displayEmail",
+        "displayPhone",
         "email",
         "firstName",
         "languages",

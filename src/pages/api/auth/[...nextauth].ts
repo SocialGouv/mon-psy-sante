@@ -45,7 +45,7 @@ export default NextAuth({
           ...session.user,
           department: token?.department || session.user.department,
           isAdmin: roles.includes("admin"),
-          isSuperAdmin: roles.includes("superAdmin"),
+          isSuperAdmin: roles.includes("super-admin"),
         },
       };
     },

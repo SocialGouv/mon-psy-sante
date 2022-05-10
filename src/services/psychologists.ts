@@ -135,7 +135,9 @@ export const update = async (
   return models.Psychologist.update(
     {
       address: psychologist.address,
+      addressAdditional: psychologist.addressAdditional,
       secondAddress: psychologist.secondAddress,
+      secondAddressAdditional: psychologist.secondAddressAdditional,
       cdsmsp: psychologist.cdsmsp,
       coordinates: coordinates ? formatCoordinates(coordinates) : null,
       secondAddressCoordinates: secondAddressCoordinates
@@ -147,6 +149,7 @@ export const update = async (
       languages: psychologist.languages,
       lastName: psychologist.lastName,
       phone: psychologist.phone,
+      displayPhone: psychologist.displayPhone,
       public: psychologist.public,
       teleconsultation: psychologist.teleconsultation,
       visible: psychologist.visible,

@@ -26,6 +26,7 @@ export default (sequelize) => {
       languages: DataTypes.STRING,
       lastName: DataTypes.STRING,
       phone: DataTypes.STRING,
+      displayPhone: DataTypes.BOOLEAN,
       public: DataTypes.STRING,
       state: DataTypes.STRING,
       teleconsultation: DataTypes.BOOLEAN,
