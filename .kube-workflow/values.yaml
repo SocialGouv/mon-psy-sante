@@ -76,6 +76,8 @@ keycloak:
       envFrom:
       - secretRef:
           name: app-sealed-secret
+      - secretRef:
+          name: keycloak-secrets
       env:
       - name: SMTP_HOST
         value: "smtp.tipimail.com"
