@@ -5,12 +5,21 @@ dotenv.config();
 const parseBoolean = (value: string | undefined) => value === "true";
 
 export default {
+  adeli: {
+    apiUrl:
+      "https://datasette-ps-libre-acces.dev.fabrique.social.gouv.fr/PS_LibreAcces/PS_LibreAcces_Personne_activite.json",
+  },
   contactMail: "",
   demarchesSimplifiees: {
     apiToken: process.env.DEMARCHES_SIMPLIFIEES_TOKEN,
     apiUrl: "https://www.demarches-simplifiees.fr/api/v2/graphql",
     champs: process.env.DEMARCHES_SIMPLIFIEES_CHAMPS,
     id: process.env.DEMARCHES_SIMPLIFIEES_ID,
+    instructeurId: process.env.DEMARCHES_SIMPLIFIEES_INSTRUCTEUR_ID,
+    writeAccess: parseBoolean(process.env.DEMARCHES_SIMPLIFIEES_WRITE_ACCESS),
+    writeableId: process.env.DEMARCHES_SIMPLIFIEES_WRITABLE_ID,
+    champVerifAuto:
+      process.env.DEMARCHES_SIMPLIFIEES_CHAMP_VERIFICATIONS_AUTOMATIQUES,
   },
   mail: {
     auth: {

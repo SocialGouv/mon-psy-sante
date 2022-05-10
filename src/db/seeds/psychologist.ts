@@ -33,9 +33,11 @@ export const getOnePsychologist = (
     address: `${faker.address.streetAddress()} ${faker.address.zipCode(
       "#####"
     )} ${faker.address.city()}`,
+    addressAdditional: faker.datatype.string(10),
     secondAddress: `${faker.address.streetAddress()} ${faker.address.zipCode(
       "#####"
     )} ${faker.address.city()}`,
+    secondAddressAdditional: faker.datatype.string(10),
     archived: false,
     cdsmsp: faker.lorem.word(5),
     coordinates: {
@@ -59,6 +61,7 @@ export const getOnePsychologist = (
     email: faker.internet.exampleEmail(),
     firstName: faker.name.firstName(),
     id: faker.datatype.number({ max: 2147483647 }),
+    adeliId: faker.phone.phoneNumber("## ## ## ## ##"),
     instructorId: instructor.id,
     languages: faker.random.arrayElement(languages),
     lastName: faker.name.lastName(),

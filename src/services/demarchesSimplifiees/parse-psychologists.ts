@@ -86,6 +86,7 @@ export const parseDossierMetadata = async (
   dossier: DSPsychologist
 ): Promise<Psychologist> => {
   const psychologist: Partial<Psychologist> = {
+    demarcheSimplifieesId: dossier.id,
     archived: dossier.archived,
     department: extractDepartmentNumber(dossier.groupeInstructeur.label),
     firstName: formatFirstName(dossier.demandeur.prenom),

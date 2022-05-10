@@ -7,7 +7,9 @@ export interface Psychologist {
   archived: boolean;
   phone: string;
   address: string;
+  addressAdditional?: string;
   secondAddress: string;
+  secondAddressAdditional?: string;
   teleconsultation: boolean;
   displayEmail: boolean;
   visible: boolean;
@@ -22,9 +24,12 @@ export interface Psychologist {
   department: string;
   state: string;
   distance?: number;
+  adeliId: string;
+  demarcheSimplifieesId?: string;
 }
 
 export interface DSPsychologist {
+  id: string;
   archived: boolean;
   number: number;
   state: string;
@@ -40,6 +45,11 @@ export interface DSPsychologist {
     prenom: string;
   };
   champs: {
+    id: string;
+    label: string;
+    stringValue: string;
+  }[];
+  annotations?: {
     id: string;
     label: string;
     stringValue: string;

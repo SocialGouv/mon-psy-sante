@@ -21,7 +21,7 @@ const createPsychologists = async () => {
 
 const createAllData = async () => {
   await deleteAll();
-  await Promise.all([createPsychologists()]);
+  await Promise.all([createPsychologists()]).catch((err) => console.error(err));
 };
 
 createAllData();

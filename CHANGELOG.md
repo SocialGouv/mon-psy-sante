@@ -1,3 +1,108 @@
+## [1.31.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.31.0...v1.31.1) (2022-05-06)
+
+
+### Bug Fixes
+
+* **deps:** upgrade nextjs version  ([5440229](https://github.com/SocialGouv/mon-psy-sante/commit/5440229dbf859f18708046b3c34828be706188a9))
+
+# [1.31.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.30.1...v1.31.0) (2022-05-06)
+
+
+### Features
+
+* **politique de confidentialité:** add new page ([#174](https://github.com/SocialGouv/mon-psy-sante/issues/174)) ([86386b0](https://github.com/SocialGouv/mon-psy-sante/commit/86386b0cf50b2e2c3e70006e2cd6be6072b01781))
+
+## [1.30.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.30.0...v1.30.1) (2022-05-06)
+
+
+### Bug Fixes
+
+* **unit tests:** fix unit tests in all env ([#176](https://github.com/SocialGouv/mon-psy-sante/issues/176)) ([b390092](https://github.com/SocialGouv/mon-psy-sante/commit/b390092639c7303a3538357b3618de4a3570f6fd))
+
+# [1.30.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.3...v1.30.0) (2022-05-06)
+
+
+### Features
+
+* **address:** show address additional infos ([#171](https://github.com/SocialGouv/mon-psy-sante/issues/171)) ([4a040ce](https://github.com/SocialGouv/mon-psy-sante/commit/4a040ce90e0d93271a4cd42e17c572504964b547))
+
+## [1.29.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.2...v1.29.3) (2022-05-06)
+
+
+### Bug Fixes
+
+* **keycloak sealed secret:** for production ([#173](https://github.com/SocialGouv/mon-psy-sante/issues/173)) ([d5e37fc](https://github.com/SocialGouv/mon-psy-sante/commit/d5e37fc839b68a9365a3fab493e8c2dbadd0b426))
+
+## [1.29.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.1...v1.29.2) (2022-05-05)
+
+
+### Bug Fixes
+
+* **keycloak sealed secret:** add namespace on prod sealed secret ([#172](https://github.com/SocialGouv/mon-psy-sante/issues/172)) ([7c5187f](https://github.com/SocialGouv/mon-psy-sante/commit/7c5187f4b541046a93a79c2e0757520ec7099ce2))
+
+## [1.29.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.29.0...v1.29.1) (2022-05-03)
+
+
+### Bug Fixes
+
+* **keycloak:** add sealed secret for keacloak for preprod & prod ([#170](https://github.com/SocialGouv/mon-psy-sante/issues/170)) ([ce7c6ca](https://github.com/SocialGouv/mon-psy-sante/commit/ce7c6ca472d3d88e39ccf0a64d42e057e22273ff))
+
+# [1.29.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.8...v1.29.0) (2022-05-03)
+
+
+### Features
+
+* keycloak kw ([#160](https://github.com/SocialGouv/mon-psy-sante/issues/160)) ([eebe4fb](https://github.com/SocialGouv/mon-psy-sante/commit/eebe4fb18d674c1b31cd5a6252009ef4aa7aae3d))
+
+## [1.28.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.7...v1.28.8) (2022-05-03)
+
+
+### Bug Fixes
+
+* **adeli:** fix adeli number sanitizing ([#169](https://github.com/SocialGouv/mon-psy-sante/issues/169)) ([ef7db0c](https://github.com/SocialGouv/mon-psy-sante/commit/ef7db0c6b97988ccb1975c25da0945b967945322))
+
+## [1.28.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.6...v1.28.7) (2022-05-03)
+
+
+### Bug Fixes
+
+* **cron verifFolders:** use replace instead of replaceAll as we're not in ECMAScript 2021 ([#168](https://github.com/SocialGouv/mon-psy-sante/issues/168)) ([e29641a](https://github.com/SocialGouv/mon-psy-sante/commit/e29641a460530562c12534d37f0ee51d88c50905))
+
+## [1.28.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.5...v1.28.6) (2022-05-03)
+
+
+### Bug Fixes
+
+* **cron:** add cron job to verif dossiers in DS ([#167](https://github.com/SocialGouv/mon-psy-sante/issues/167)) ([79e5f2d](https://github.com/SocialGouv/mon-psy-sante/commit/79e5f2d377fd77eccc4687055b63c3e14f7851b8))
+
+## [1.28.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.4...v1.28.5) (2022-05-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency next-auth to v4.3.2 [security] ([#155](https://github.com/SocialGouv/mon-psy-sante/issues/155)) ([d5c8205](https://github.com/SocialGouv/mon-psy-sante/commit/d5c8205ca4a6759a1c6fdf8d6b16bf72fc8eb7be))
+
+## [1.28.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.3...v1.28.4) (2022-05-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency axios to ^0.27.0 ([#161](https://github.com/SocialGouv/mon-psy-sante/issues/161)) ([bcc67fa](https://github.com/SocialGouv/mon-psy-sante/commit/bcc67fa56f2c78c4c672cd00e46a27a983dffbf7))
+
+## [1.28.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.2...v1.28.3) (2022-05-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency got to v12.0.4 ([#165](https://github.com/SocialGouv/mon-psy-sante/issues/165)) ([58d8af1](https://github.com/SocialGouv/mon-psy-sante/commit/58d8af13820f12598694d531ddd3ef60eed724c0))
+
+## [1.28.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.1...v1.28.2) (2022-04-26)
+
+
+### Bug Fixes
+
+* **script:** update stats script to also includes dossiers accéptés ([095118e](https://github.com/SocialGouv/mon-psy-sante/commit/095118e8a57b02003f6a68cb66630ca86f6f8d73))
+
 ## [1.28.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.28.0...v1.28.1) (2022-04-22)
 
 

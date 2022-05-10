@@ -68,6 +68,10 @@ const footerBottomLinks = [
     title: "Mentions légales",
   },
   {
+    link: "/politique-de-confidentialite",
+    title: "Politique de confidentialité",
+  },
+  {
     link: "/contact",
     title: "Nous contacter",
   },

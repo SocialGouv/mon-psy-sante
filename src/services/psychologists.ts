@@ -173,16 +173,3 @@ export const updateState = async (newStates: Partial<Psychologist>[]) => {
     )
   );
 };
-
-export const filterIdsNotInDb = async (psy): Promise<number[]> => {
-  // @ts-ignore
-  const psyInDb: { id: number }[] = await models.Psychologist.findAll({
-    attributes: ["id"],
-    raw: true,
-    where: { state: "accepte" },
-  });
-
-  return psy
-    .filter((psy) => !psyInDb.find((fromDb) => psy.id === fromDb.id))
-    .map((psy) => psy.id);
-};

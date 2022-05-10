@@ -24,6 +24,7 @@ if (process.argv.length < 3) {
 
 const cronJobs = {
   importFromDS: demarchesSimplifiees.importFromDS,
+  verifFolders: demarchesSimplifiees.verifFolders,
 };
 
 const jobName = process.argv[2];
