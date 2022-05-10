@@ -1,12 +1,12 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  namespace: mon-psy-sante-preprod
-  name: import-data
+  namespace: mon-psy-sante
+  name: import-from-DS
   labels:
     app: mon-psy
 spec:
-  schedule: "0 */1 * * *"
+  schedule: "*/5 * * * *"
   jobTemplate:
     spec:
       template:
