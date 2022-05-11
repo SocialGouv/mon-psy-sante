@@ -29,9 +29,6 @@ const updateSchema = Joi.object({
 export const updatePsy = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "PUT") {
     const session = await getSession({ req });
-    if (!session || !session.user.isAdmin || !session.user.isSuperAdmin) {
-      return res.status(401).send("Opération impossible");
-    }
     const id = req.query.id as string;
     const existingPsychologist = await getOne(
       id,
