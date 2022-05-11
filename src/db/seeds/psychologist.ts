@@ -28,7 +28,7 @@ const languages = [
 export const getOnePsychologist = (
   override?: Partial<Psychologist>
 ): Psychologist => {
-  const instructor = faker.random.arrayElement(groups);
+  const instructor = faker.helpers.arrayElement(groups);
 
   return {
     address: `${faker.address.streetAddress()} ${faker.address.zipCode(
@@ -64,14 +64,14 @@ export const getOnePsychologist = (
     firstName: faker.name.firstName(),
     id: faker.datatype.number({ max: 2147483647 }),
     adeliId: faker.phone.phoneNumber("## ## ## ## ##"),
-    languages: faker.random.arrayElement(languages),
+    languages: faker.helpers.arrayElement(languages),
     lastName: faker.name.lastName(),
     phone: faker.phone.phoneNumber("0# ## ## ## ##"),
-    public: faker.random.arrayElement(allPublics),
+    public: faker.helpers.arrayElement(allPublics),
     state: "accepte",
     teleconsultation: faker.datatype.boolean(),
     visible: true,
-    website: faker.random.arrayElement([
+    website: faker.helpers.arrayElement([
       faker.internet.domainName(),
       faker.internet.url(),
     ]),
