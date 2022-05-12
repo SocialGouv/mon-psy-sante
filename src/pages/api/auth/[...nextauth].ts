@@ -4,11 +4,10 @@ import KeycloakProvider from "next-auth/providers/keycloak";
 import config from "../../../services/config";
 
 console.log(
+  "Nextauth setup on url:",
   process.env.NEXTAUTH_URL,
-  process.env.NEXTAUTH_SECRET,
-  config.keycloak.clientId,
-  config.keycloak.clientSecret,
-  config.keycloak.issuer
+  "with client id: ",
+  config.keycloak.clientId
 );
 
 export default NextAuth({
