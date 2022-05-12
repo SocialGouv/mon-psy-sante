@@ -58,7 +58,9 @@ const parsers = {
 const parseChampValue = (field, value) =>
   parsers[field] ? parsers[field](value) : value;
 
-const formatCoordinates = (coordinates: Coordinates): CoordinatesPostgis => {
+export const formatCoordinates = (
+  coordinates: Coordinates
+): CoordinatesPostgis => {
   return {
     coordinates: [coordinates.longitude, coordinates.latitude],
     crs: { properties: { name: "EPSG:" + SRID }, type: "name" },
@@ -91,7 +93,6 @@ export const parseDossierMetadata = async (
     department: extractDepartmentNumber(dossier.groupeInstructeur.label),
     firstName: formatFirstName(dossier.demandeur.prenom),
     id: dossier.number,
-    instructorId: dossier.groupeInstructeur.id,
     lastName: dossier.demandeur.nom.toUpperCase().trim(),
     state: dossier.state,
   };

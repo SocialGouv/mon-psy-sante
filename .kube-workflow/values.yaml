@@ -5,6 +5,15 @@ app:
         name: "{{ .Values.global.pgSecretName }}"
     - secretRef:
         name: app-sealed-secret
+    - secretRef:
+        name: keycloak-secrets
+  env:
+    - name: NEXTAUTH_URL
+      value: "https://{{ .Values.global.host }}"
+    - name: KEYCLOAK_ISSUER
+      value: "https://keycloak-{{ .Values.global.host }}/auth/realms/mon-psy-sante"
+    - name: KEYCLOAK_ID
+      value: mon-psy-app
 
 keycloak:
   postgresql:
@@ -67,6 +76,8 @@ keycloak:
       envFrom:
       - secretRef:
           name: app-sealed-secret
+      - secretRef:
+          name: keycloak-secrets
       env:
       - name: SMTP_HOST
         value: "smtp.tipimail.com"

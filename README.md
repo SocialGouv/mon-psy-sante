@@ -81,3 +81,14 @@ ssh -l localhost:54320:<server>.postgres.database.azure.com:5432 <USER>@fabrique
 ```
 DATABASE_URL=postgres://<USER_NAME>:<PASSWORD>@localhost:54320/prod
 ```
+
+
+## Configure keycloak on local
+
+run
+docker-compose up
+
+go to http://localhost:8080/admin/master/console/#/create/realm
+click import > config/keycloak/mon-psy-sante-realm.json
+
+then create users : users > Add user

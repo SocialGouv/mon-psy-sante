@@ -6,15 +6,27 @@ import { SRID } from "../types/const/geometry";
 import { FILTER } from "../types/enums/filters";
 import { PUBLIC } from "../types/enums/public";
 import { Psychologist } from "../types/psychologist";
+import { formatCoordinates } from "./demarchesSimplifiees/parse-psychologists";
 import getAddressCoordinates from "./getAddressCoordinates";
 
 const limit = pLimit(5);
 
-export const getOne = async (id: string): Promise<Psychologist> => {
+export const getOne = async (
+  id: string,
+  dep?: string
+): Promise<Psychologist> => {
   // @ts-ignore
+
   return models.Psychologist.findOne({
     raw: true,
-    where: { archived: false, id },
+    where: { id, ...(dep ? { department: dep } : {}) },
+  });
+};
+export const getByDepartment = async (dep: string): Promise<Psychologist[]> => {
+  // @ts-ignore
+  return models.Psychologist.findAll({
+    raw: true,
+    where: { archived: false, department: dep, state: "accepte" },
   });
 };
 
@@ -32,16 +44,6 @@ export const getDateLatestAccepte = async (): Promise<Date> =>
 
 export const getDateLatestArchived = async (): Promise<Date> =>
   getDateLatestFor({ archived: true });
-
-export const getByInstructor = async (
-  group: string
-): Promise<Psychologist[]> => {
-  // @ts-ignore
-  return models.Psychologist.findAll({
-    raw: true,
-    where: { archived: false, instructorId: group, state: "accepte" },
-  });
-};
 
 export const countAll = async () =>
   models.Psychologist.count({
@@ -122,26 +124,24 @@ export const update = async (
     displayName,
     psychologist.address
   );
-  const secondAddressCoordinates = await getAddressCoordinates(
-    displayName,
-    psychologist.secondAddress
-  );
+  let secondAddressCoordinates;
+  if (psychologist.secondAddress) {
+    secondAddressCoordinates = await getAddressCoordinates(
+      displayName,
+      psychologist.secondAddress
+    );
+  }
+
   return models.Psychologist.update(
     {
       address: psychologist.address,
+      addressAdditional: psychologist.addressAdditional,
       secondAddress: psychologist.secondAddress,
+      secondAddressAdditional: psychologist.secondAddressAdditional,
       cdsmsp: psychologist.cdsmsp,
-      coordinates: coordinates
-        ? {
-            coordinates: [coordinates.longitude, coordinates.latitude],
-            type: "POINT",
-          }
-        : null,
+      coordinates: coordinates ? formatCoordinates(coordinates) : null,
       secondAddressCoordinates: secondAddressCoordinates
-        ? {
-            coordinates: [coordinates.longitude, coordinates.latitude],
-            type: "POINT",
-          }
+        ? formatCoordinates(secondAddressCoordinates)
         : null,
       displayEmail: psychologist.displayEmail,
       email: psychologist.email,
@@ -149,6 +149,7 @@ export const update = async (
       languages: psychologist.languages,
       lastName: psychologist.lastName,
       phone: psychologist.phone,
+      displayPhone: psychologist.displayPhone,
       public: psychologist.public,
       teleconsultation: psychologist.teleconsultation,
       visible: psychologist.visible,

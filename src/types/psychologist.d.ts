@@ -6,6 +6,7 @@ export interface Psychologist {
   lastName: string;
   archived: boolean;
   phone: string;
+  displayPhone: boolean;
   address: string;
   addressAdditional?: string;
   secondAddress: string;
@@ -20,7 +21,6 @@ export interface Psychologist {
   website: string;
   coordinates: CoordinatesPostgis;
   secondAddressCoordinates: CoordinatesPostgis;
-  instructorId: string;
   department: string;
   state: string;
   distance?: number;
