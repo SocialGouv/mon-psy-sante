@@ -1,3 +1,10 @@
+## [1.33.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.0...v1.33.1) (2022-05-12)
+
+
+### Bug Fixes
+
+* **keycloak var:** fix prod keycloak vars ([#184](https://github.com/SocialGouv/mon-psy-sante/issues/184)) ([56120ac](https://github.com/SocialGouv/mon-psy-sante/commit/56120ac4d3c883acc24b9771a37b00ce54f944d2))
+
 # [1.33.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.32.2...v1.33.0) (2022-05-12)
 
 
