@@ -11,7 +11,7 @@ describe("middleware", () => {
     ${{ roles: [] }}
     ${{ roles: ["not-authorized"] }}
   `("authorize should return false if token is $token", async ({ token }) => {
-    await expect(authorize(token)).toEqual(false);
+    await expect(authorize({ token: token })).toEqual(false);
   });
 
   it.each`
@@ -24,7 +24,7 @@ describe("middleware", () => {
   `(
     "authorize should return true if token has roles $roles",
     async ({ roles }) => {
-      await expect(authorize({ roles: roles })).toEqual(true);
+      await expect(authorize({ token: { roles: roles } })).toEqual(true);
     }
   );
 });
