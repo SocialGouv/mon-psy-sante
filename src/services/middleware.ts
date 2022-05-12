@@ -1,6 +1,6 @@
 export const authorize = (token): boolean => {
   if (!token) return false;
-  console.log("verif middleware");
+  console.log("verif middleware", token);
   const roles = token.roles || [];
   console.log(
     "roles",
