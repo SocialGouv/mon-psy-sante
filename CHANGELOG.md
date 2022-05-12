@@ -1,3 +1,10 @@
+# [1.33.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.32.2...v1.33.0) (2022-05-12)
+
+
+### Features
+
+* **admin:** add annuaire admin with auth using keycloak ([#166](https://github.com/SocialGouv/mon-psy-sante/issues/166)) ([a5bc985](https://github.com/SocialGouv/mon-psy-sante/commit/a5bc9858c22959b636e4f28e244e3f612be9c542))
+
 ## [1.32.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.32.1...v1.32.2) (2022-05-10)
 
 
