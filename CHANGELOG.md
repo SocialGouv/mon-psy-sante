@@ -1,3 +1,10 @@
+## [1.33.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.1...v1.33.2) (2022-05-12)
+
+
+### Bug Fixes
+
+* **keycloak:** fix redirect URI missing wildcard path ([#183](https://github.com/SocialGouv/mon-psy-sante/issues/183)) ([239bbb9](https://github.com/SocialGouv/mon-psy-sante/commit/239bbb9de8aeaecf9c01d632a24d2acfb21e199a))
+
 ## [1.33.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.0...v1.33.1) (2022-05-12)
 
 
