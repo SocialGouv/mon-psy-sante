@@ -133,6 +133,7 @@ const SearchBar = ({
         <SubSearch>
           <Select
             selected={otherFilters[FILTER.PUBLIC]}
+            //@ts-ignore
             onChange={(e) =>
               setOtherFilters({
                 ...otherFilters,

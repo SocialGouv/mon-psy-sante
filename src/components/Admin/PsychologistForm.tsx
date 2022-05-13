@@ -140,6 +140,7 @@ const PsychologistForm = ({ psychologist }: { psychologist: Psychologist }) => {
                 return (
                   <Select
                     key={editableField.label}
+                    //@ts-ignore
                     required={editableField.required}
                     label={editableField.label}
                     options={editableField.options.map((option) => ({
@@ -158,6 +159,7 @@ const PsychologistForm = ({ psychologist }: { psychologist: Psychologist }) => {
                     key={editableField.label}
                     required={editableField.required}
                     label={editableField.label}
+                    //@ts-ignore
                     value={modifiedPsychologist[editableField.field]}
                     onChange={(e) =>
                       update(editableField.field, e.target.value)
@@ -171,6 +173,7 @@ const PsychologistForm = ({ psychologist }: { psychologist: Psychologist }) => {
             <Alert
               data-test-id="alert"
               className="fr-mt-4w"
+              //@ts-ignore
               type={result.type}
               title={result.text}
             />

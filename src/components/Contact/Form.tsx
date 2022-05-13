@@ -68,6 +68,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
         data-test-id="last-name-input"
         required
         label="Nom"
+        //@ts-ignore
         value={lastName}
         onChange={(e) => setLastName(e.target.value)}
       />
@@ -75,12 +76,14 @@ const ContactForm = ({ userType }: { userType: string }) => {
         data-test-id="first-name-input"
         required
         label="Prenom"
+        //@ts-ignore
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
       />
       <TextInput
         data-test-id="email-input"
         required
+        //@ts-ignore
         type="email"
         label="Email"
         value={email}
@@ -108,6 +111,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
       {needReason(userType) && (
         <Select
           data-test-id="reason-select"
+          //@ts-ignore
           required
           label="Motif"
           options={[
@@ -132,6 +136,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
         textarea
         hint="Merci de ne fournir que les données personnelles strictement nécessaires au traitement de la demande. "
         label="Message"
+        //@ts-ignore
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
@@ -149,6 +154,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
         <Alert
           data-test-id="alert"
           className="fr-mt-4w"
+          //@ts-ignore
           type={result.type}
           title={result.text}
         />
