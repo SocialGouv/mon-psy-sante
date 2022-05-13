@@ -1,4 +1,4 @@
-import { Alert, Button, Col, Row, Select } from "@dataesr/react-dsfr";
+import { Alert, Button, Col, Row } from "@dataesr/react-dsfr";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ReactAutocomplete from "react-autocomplete";
 
@@ -131,20 +131,27 @@ const SearchBar = ({
           </div>
         </div>
         <SubSearch>
-          <Select
-            selected={otherFilters[FILTER.PUBLIC]}
-            onChange={(e) =>
-              setOtherFilters({
-                ...otherFilters,
-                [FILTER.PUBLIC]: e.target.value,
-              })
-            }
-            label="Souhait du psychologue d'accompagner des"
-            options={allPublicsFilters.map((option) => ({
-              label: option.label || option.value,
-              value: option.value,
-            }))}
-          />
+          <div className="fr-select-group">
+            <label className="fr-label" aria-describedby="">
+              Souhait du psychologue d’accompagner des
+              <select
+                className="fr-select"
+                onChange={(e) =>
+                  setOtherFilters({
+                    ...otherFilters,
+                    [FILTER.PUBLIC]: e.target.value,
+                  })
+                }
+              >
+                {console.log(allPublicsFilters)}
+                {allPublicsFilters.map((option) => (
+                  <option key={option.label} value={option.value}>
+                    {option.label || option.value}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
 
           <div className="fr-toggle">
             <input
@@ -192,7 +199,7 @@ const SearchBar = ({
             title="Géolocalisation indisponible"
             className="fr-mt-1w"
             type="error"
-            description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
+            description="Votre navigateur ne permet pas d’utiliser cette fonctionnalité."
           />
         )}
     </Row>

@@ -1,11 +1,4 @@
-import {
-  Alert,
-  Button,
-  Col,
-  Row,
-  Select,
-  TextInput,
-} from "@dataesr/react-dsfr";
+import { Alert, Button, Col, Row, Select } from "@dataesr/react-dsfr";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -154,15 +147,22 @@ const PsychologistForm = ({ psychologist }: { psychologist: Psychologist }) => {
                 );
               default:
                 return (
-                  <TextInput
-                    key={editableField.label}
-                    required={editableField.required}
-                    label={editableField.label}
-                    value={modifiedPsychologist[editableField.field]}
-                    onChange={(e) =>
-                      update(editableField.field, e.target.value)
-                    }
-                  />
+                  <div className="fr-input-group" key={editableField.label}>
+                    <label className="fr-label" aria-describedby="">
+                      {editableField.label}
+                      {editableField.required && (
+                        <span className="error"> *</span>
+                      )}
+                      <input
+                        className="fr-input"
+                        onChange={(e) =>
+                          update(editableField.field, e.target.value)
+                        }
+                        required={editableField.required}
+                        value={modifiedPsychologist[editableField.field]}
+                      />
+                    </label>
+                  </div>
                 );
             }
           })}

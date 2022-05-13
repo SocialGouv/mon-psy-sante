@@ -1,4 +1,4 @@
-import { Button, Table, TextInput } from "@dataesr/react-dsfr";
+import { Button, Table } from "@dataesr/react-dsfr";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
@@ -76,12 +76,17 @@ const PsychologistsForInstructors = ({
   return (
     <>
       <h1>Psychologues</h1>
-      <TextInput
-        inline
-        label="Rechercher par nom ou id"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <div className="fr-input-group">
+        <label className="fr-label" aria-describedby="">
+          Rechercher par nom ou id<span className="error"> *</span>
+          <input
+            className="fr-input"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            required
+          />
+        </label>
+      </div>
       <Table rowKey="id" columns={columns} data={filteredPsychologists} />
     </>
   );
