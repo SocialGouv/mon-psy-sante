@@ -22,6 +22,7 @@ const Contact = () => {
         </p>
         <Select
           data-test-id="user-type-select"
+          //@ts-ignore
           required
           label="Je suis"
           options={[

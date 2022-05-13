@@ -36,6 +36,7 @@ const Page = () => {
             {tabIndex >= 0 && (
               <Tabs defaultActiveTab={tabIndex}>
                 {items.map((item) => (
+                  //@ts-ignore
                   <Tab label={item.title} key={item.key}>
                     {item.title && <h2>{item.title}</h2>}
                     {item.documents && (
