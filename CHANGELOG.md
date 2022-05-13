@@ -1,3 +1,10 @@
+## [1.33.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.2...v1.33.3) (2022-05-13)
+
+
+### Bug Fixes
+
+* downgrade dsfr ([#185](https://github.com/SocialGouv/mon-psy-sante/issues/185)) ([c861db8](https://github.com/SocialGouv/mon-psy-sante/commit/c861db821a54591c773eff1eda226745e92ba259))
+
 ## [1.33.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.1...v1.33.2) (2022-05-12)
 
 
