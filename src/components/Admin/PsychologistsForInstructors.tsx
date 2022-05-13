@@ -77,6 +77,7 @@ const PsychologistsForInstructors = ({
     <>
       <h1>Psychologues</h1>
       <TextInput
+        // @ts-ignore
         inline
         label="Rechercher par nom ou id"
         value={search}

@@ -19,6 +19,7 @@ const AdminSearchField = () => {
           required
           type="number"
           label="Entrez l'id d'un dossier"
+          // @ts-ignore
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

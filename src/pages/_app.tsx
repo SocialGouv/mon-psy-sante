@@ -1,7 +1,6 @@
 import "@gouvfr/dsfr/dist/dsfr/dsfr.min.css";
 import "../../public/css/style.css";
 
-import { SkiplinkItem, Skiplinks } from "@dataesr/react-dsfr";
 import * as Sentry from "@sentry/node";
 import { init } from "@socialgouv/matomo-next";
 import App from "next/app";
@@ -27,11 +26,6 @@ class MyApp extends App {
 
     return (
       <>
-        <Skiplinks>
-          <SkiplinkItem href="#contenu">Contenu</SkiplinkItem>
-          <SkiplinkItem href="#header-navigation">Menu</SkiplinkItem>
-          <SkiplinkItem href="#footer">Pied de page</SkiplinkItem>
-        </Skiplinks>
         <Nav />
         <div id="contenu">
           <Component {...pageProps} />
