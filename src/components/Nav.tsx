@@ -7,7 +7,14 @@ import {
   NavItem,
   Service,
 } from "@dataesr/react-dsfr";
+import Link from "next/link";
 import React from "react";
+
+const NavLink = (props) => (
+  <Link href={props.href}>
+    <a className="fr-nav__link">{props.children}</a>
+  </Link>
+);
 
 const Nav = () => {
   return (
@@ -23,11 +30,20 @@ const Nav = () => {
         />
       </HeaderBody>
       <HeaderNav>
-        <NavItem title="Accueil" link="/" />
-        <NavItem title="Je ne me sens pas bien" link="/patients" />
-        <NavItem title="Je suis psychologue" link="/psychologues" />
-        <NavItem title="Je suis médecin" link="/medecins" />
-        <NavItem title="Foire aux questions" link="/faq" />
+        <NavItem title="Accueil" asLink={<NavLink href="/" />} />
+        <NavItem
+          title="Je ne me sens pas bien"
+          asLink={<NavLink href="/patients" />}
+        />
+        <NavItem
+          title="Je suis psychologue"
+          asLink={<NavLink href="/psychologues" />}
+        />
+        <NavItem
+          title="Je suis médecin"
+          asLink={<NavLink href="/medecins" />}
+        />
+        <NavItem title="Foire aux questions" asLink={<NavLink href="/faq" />} />
       </HeaderNav>
     </Header>
   );

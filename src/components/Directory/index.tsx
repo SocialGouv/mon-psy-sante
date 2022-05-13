@@ -64,8 +64,16 @@ const Directory = () => {
       setIsLoading(false);
 
       const refs = {};
-      setupMapAccordingToPsy(response.data[0].distance);
-      response.data.forEach((x) => (refs[x.id] = createRef()));
+      if (response.data && response.data.length) {
+        setupMapAccordingToPsy(response.data[0].distance);
+        response.data.forEach((x) => (refs[x.id] = createRef()));
+      } else {
+        // todo: should display an error message
+        setSelectedPsychologist(null);
+        setPsychologists([]);
+        setNoPsychologist(true);
+        return;
+      }
       psychologistsRefs.current = refs;
       if (resultsRef.current) {
         resultsRef.current.scrollTo({ top: 0 });
