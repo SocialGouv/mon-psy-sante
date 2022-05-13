@@ -17,7 +17,7 @@ const AdminSearchField = () => {
       <form onSubmit={gotToPsy}>
         <div className="fr-input-group">
           <label className="fr-label" aria-describedby="">
-            Entrez l'id d'un dossier<span className="error"> *</span>
+            Entrez l’id d’un dossier<span className="error"> *</span>
             <input
               className="fr-input"
               onChange={(e) => setSearch(e.target.value)}

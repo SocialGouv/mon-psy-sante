@@ -1,4 +1,3 @@
-import { Container, Row } from "@dataesr/react-dsfr";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -15,8 +14,8 @@ const Page = () => {
         image="Psychologist-hero.svg"
       />
       <section>
-        <Container>
-          <Row justifyContent="center" alignItems="middle" className="fr-pb-8w">
+        <div className="fr-container">
+          <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
             <div className="fr-col-12 fr-col-md-6 fr-pt-4w">
               <h1>
                 MonPsy&nbsp;
@@ -40,13 +39,9 @@ const Page = () => {
                 <VideoButton onClick={() => setVideo("show")} />
               )}
             </div>
-          </Row>
+          </div>
           {video === "show" && (
-            <Row
-              justifyContent="center"
-              alignItems="middle"
-              className="fr-pb-8w"
-            >
+            <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w ">
               <div className="fr-col-8">
                 <video width="100%" controls autoPlay>
                   <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
@@ -57,29 +52,30 @@ const Page = () => {
                   />
                 </video>
               </div>
-            </Row>
+            </div>
           )}
-        </Container>
+        </div>
       </section>
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-10w">
-          <Container>
-            <Row justifyContent="center" gutters>
-              <div className="fr-col-12 fr-col-md-3">
-                <div className="fr-card fr-enlarge-link fr-pt-3w">
-                  <div className="fr-card__body">
-                    <h2 className="fr-card__title">
+          <div className="fr-container">
+            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+              <div className=" fr-col-12 fr-col-md-3">
+                <div className=" fr-card fr-enlarge-link fr-pt-3w">
+                  <div className=" fr-card__body">
+                    <h2 className=" fr-card__title">
                       <Link href="/patients" passHref>
-                        <a href="/patients" className="fr-card__link">
+                        <a href="/patients" className=" fr-card__link">
                           Je ne me sens pas bien
                         </a>
                       </Link>
                     </h2>
-                    <p className="fr-card__desc">
+                    <p className=" fr-card__desc">
                       Bénéficiez de l’accompagnement d’un psychologue
                     </p>
                   </div>
-                  <div className="fr-card__img">
+
+                  <div className=" fr-card__img">
                     <img
                       src="/images/patient-home.svg"
                       height="158"
@@ -129,8 +125,8 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-            </Row>
-          </Container>
+            </div>
+          </div>
         </div>
         <div className="fr-container fr-callout fr-callout--pink-tuile fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">

@@ -1,4 +1,4 @@
-import { Alert, Button, SearchableSelect } from "@dataesr/react-dsfr";
+import { Alert, Button } from "@dataesr/react-dsfr";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -10,8 +10,10 @@ import { DEPARTMENTS } from "../../types/enums/department";
 
 const ContactForm = ({ userType }: { userType: string }) => {
   const [sending, setSending] = useState(false);
-  const [result, setResult] =
-    useState<{ text: string; type: "error" | "success" | "info" }>();
+  const [result, setResult] = useState<{
+    text: string;
+    type: "error" | "success" | "info";
+  }>();
   const [lastName, setLastName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -93,44 +95,48 @@ const ContactForm = ({ userType }: { userType: string }) => {
           />
         </label>
       </div>
-      <SearchableSelect
-        data-test-id="department-select"
-        required
-        label="Département"
-        options={[
-          {
-            disabled: true,
-            hidden: true,
-            label: "- Selectionner votre département -",
-            value: "",
-          },
-          ...DEPARTMENTS.map((department) => ({
-            label: department,
-            value: department,
-          })),
-        ]}
-        selected={department}
-        onChange={setDepartment}
-      />
+      <div className="fr-select-group">
+        <label className="fr-label" aria-describedby="">
+          Département<span className="error"> *</span>
+          <select
+            required
+            className="fr-select"
+            value={department}
+            onChange={(e) => {
+              setDepartment(e.target.value);
+            }}
+          >
+            <option disabled value="" hidden>
+              - Selectionner votre département -
+            </option>
+
+            {DEPARTMENTS.map((department) => (
+              <option key={department} value={department}>
+                {department}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
       {needReason(userType) && (
         <div className="fr-select-group" data-test-id="reason-select">
           <label className="fr-label">
             Motif<span className="error"> *</span>
-          </label>
-          <select
-            required
-            className="fr-select"
-            onChange={(e) => setReason(e.target.value)}
-          >
-            <option disabled value="" hidden>
-              - Selectionner la raison de votre message -
-            </option>
-            {allContactReasons.map((reason) => (
-              <option key={reason} value={reason}>
-                {reason}
+            <select
+              required
+              className="fr-select"
+              onChange={(e) => setReason(e.target.value)}
+            >
+              <option disabled value="" hidden>
+                - Selectionner la raison de votre message -
               </option>
-            ))}
-          </select>
+              {allContactReasons.map((reason) => (
+                <option key={reason} value={reason}>
+                  {reason}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
       )}
       <div className="fr-input-group" data-test-id="message-input">

@@ -1,4 +1,3 @@
-import { Col } from "@dataesr/react-dsfr";
 import React, { Dispatch, MutableRefObject, SetStateAction } from "react";
 
 import { Coordinates } from "../../types/coordinates";
@@ -60,7 +59,7 @@ const Results = ({
           </div>
         ))}
       </Psychologists>
-      <Col n="12 md-7">
+      <div className="fr-col-12 fr-col-md-7">
         {mapCenter && (
           <PsychologistsMap
             selectedPsychologist={selectedPsychologist}
@@ -77,7 +76,7 @@ const Results = ({
             mapZoom={mapZoom}
           />
         )}
-      </Col>
+      </div>
     </Desktop>
   );
 };

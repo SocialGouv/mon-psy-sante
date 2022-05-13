@@ -119,14 +119,14 @@ const Page = () => {
       </section>
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-4w">
-          <Container>
+          <div className="fr-container">
             <h2>Comment j’accompagne mon patient dans son parcours&nbsp;?</h2>
-          </Container>
+          </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12 fr-col-md-3">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">1</strong>
+                  <strong className="fr-display--xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Je reçois le patient et j’évalue son état de santé
                   </h3>
@@ -157,7 +157,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-md-3">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">2</strong>
+                  <strong className="fr-display--xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     J’oriente mon patient vers le dispositif MonPsy{" "}
                   </h3>
@@ -195,7 +195,7 @@ const Page = () => {
             <div className="fr-col-12 fr-col-md-3">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">3</strong>
+                  <strong className="fr-display--xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     J’échange avec le psychologue{" "}
                   </h3>

@@ -171,7 +171,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">1</strong>
+                  <strong className="fr-display--xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Je prends rendez-vous avec mon médecin
                   </h3>
@@ -191,7 +191,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">2</strong>
+                  <strong className="fr-display--xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Je prends rendez-vous chez un psychologue partenaire
                   </h3>
@@ -214,7 +214,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">3</strong>
+                  <strong className="fr-display--xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Je bénéficie d’un accompagnement psychologique
                   </h3>
@@ -238,7 +238,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">4</strong>
+                  <strong className="fr-display--xs">4</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Je règle le psychologue
                   </h3>
@@ -263,7 +263,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">5</strong>
+                  <strong className="fr-display--xs">5</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Je suis remboursé(e)
                   </h3>

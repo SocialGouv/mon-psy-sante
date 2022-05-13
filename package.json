@@ -11,9 +11,9 @@
     "url": "git+https://github.com/SocialGouv/mon-psy-sante"
   },
   "dependencies": {
-    "@dataesr/react-dsfr": "0.9.9",
+    "@dataesr/react-dsfr": "2.1.2",
     "@faker-js/faker": "^6.0.0-alpha.6",
-    "@gouvfr/dsfr": "^1.4.1",
+    "@gouvfr/dsfr": "^1.5.1",
     "@sentry/nextjs": "^6.17.9",
     "@socialgouv/matomo-next": "^1.3.0",
     "axios": "^0.27.0",

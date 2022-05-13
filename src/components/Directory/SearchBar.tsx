@@ -1,4 +1,4 @@
-import { Alert, Button, Col, Row } from "@dataesr/react-dsfr";
+import { Alert, Button, Col } from "@dataesr/react-dsfr";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ReactAutocomplete from "react-autocomplete";
 
@@ -85,7 +85,7 @@ const SearchBar = ({
   }, [positionFilter]);
 
   return (
-    <Row className="fr-pb-2w" alignItems="middle">
+    <div className="fr-pb-2w fr-grid-row  fr-grid-row--middle ">
       <Col n="md-9 12">
         <div className="fr-select-group">
           <label className="fr-label fr-mb-2v" htmlFor="city-search">
@@ -202,7 +202,7 @@ const SearchBar = ({
             description="Votre navigateur ne permet pas d’utiliser cette fonctionnalité."
           />
         )}
-    </Row>
+    </div>
   );
 };
 

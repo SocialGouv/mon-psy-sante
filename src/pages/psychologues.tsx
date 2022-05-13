@@ -124,7 +124,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">1</strong>
+                  <strong className="fr-display--xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">Candidature</h3>
                   <div className="fr-card__desc">
                     <p>
@@ -145,7 +145,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">2</strong>
+                  <strong className="fr-display--xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">Éligibilité</h3>
                   <div className="fr-card__desc">
                     <p>
@@ -163,7 +163,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">3</strong>
+                  <strong className="fr-display--xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">Conventionnement </h3>
                   <div className="fr-card__desc">
                     <p>
@@ -178,7 +178,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">4</strong>
+                  <strong className="fr-display--xs">4</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Publication sur l’annuaire{" "}
                   </h3>
@@ -196,7 +196,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-lg">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">5</strong>
+                  <strong className="fr-display--xs">5</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Accueil des patients
                   </h3>
@@ -335,7 +335,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-md fr-ml-md-4w">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">1</strong>
+                  <strong className="fr-display--xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Je reçois un patient en présentiel pour un entretien
                     d’évaluation{" "}
@@ -361,7 +361,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-md">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">2</strong>
+                  <strong className="fr-display--xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     J’accompagne mon patient{" "}
                   </h3>
@@ -377,7 +377,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-md">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">3</strong>
+                  <strong className="fr-display--xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     Je facture la séance directement au patient{" "}
                   </h3>
@@ -409,7 +409,7 @@ const Page = () => {
             <div className="fr-col-10 fr-col-md fr-mr-md-4w">
               <div className="fr-card align-center fr-card--no-arrow">
                 <div className="fr-card__body">
-                  <strong className="fr-display-xs">4</strong>
+                  <strong className="fr-display--xs">4</strong>
                   <h3 className="fr-card__title fr-mb-4w">
                     J’échange avec le médecin
                   </h3>
