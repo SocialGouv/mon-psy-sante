@@ -1,3 +1,10 @@
+## [1.33.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.4...v1.33.5) (2022-05-16)
+
+
+### Bug Fixes
+
+* new keycloak admin password ([#188](https://github.com/SocialGouv/mon-psy-sante/issues/188)) ([77a5d8c](https://github.com/SocialGouv/mon-psy-sante/commit/77a5d8cd719a31a495a65bb8b460e8d8fc17e38d))
+
 ## [1.33.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.3...v1.33.4) (2022-05-16)
 
 
