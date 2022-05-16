@@ -1,5 +1,8 @@
+global:
+  appHost: monpsy.sante.gouv.fr
+
 app:
-  host: monpsy.sante.gouv.fr
+  host: "{{ .Values.global.appHost }}"
   redirectFrom:
     - www.monpsy.sante.gouv.fr
   replicas: 2
@@ -12,7 +15,7 @@ app:
       memory: 256Mi
   env:
     - name: NEXTAUTH_URL
-      value: "https://monpsy.sante.gouv.fr"
+      value: "https://{{ .Values.global.appHost }}"
     - name: KEYCLOAK_ISSUER
       value: "https://keycloak-{{ .Values.global.host }}/auth/realms/mon-psy-sante"
     - name: KEYCLOAK_ID
