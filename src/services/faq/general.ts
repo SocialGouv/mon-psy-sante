@@ -52,6 +52,12 @@ export default [
   },
   {
     answer:
+      "<p>Les maisons des adolescents (MDA) sont des lieux ressources sur la santé et le bien être des jeunes, généralement de 11 ans jusqu’à 21 voire 25 ans. Les MDA assurent un accueil pluridisciplinaire généraliste, rapide, souple et adapté aux modes de vie des adolescents et qui peuvent proposer un accompagnement en santé (prise en charge de courte durée ou orientation vers des soins spécialisés). Au moins une MDA sera présente par département d’ici à la fin de l’année 2022. De fait de leur connaissance des acteurs ressources en santé sur leur territoire, les MDA peuvent faciliter des mises en relation, dans le cadre de mise en place de parcours de soins pour les jeunes.</p><p>L’expérimentation Ecou’émoi visait à repérer la souffrance psychique de jeunes de 11 à 21 ans sans trouble psychiatrique avéré, et à les orienter si besoin vers un psychologue libéral pour un forfait de séances prises en charge par l’assurance maladie. Les maisons des adolescents (MDA) ont été coordinatrices de ce dispositif sur les territoires. L’expérimentation, initiée en 2019 dans 3 régions (Ile-de-France, Grand-Est et Pays-de-la-Loire), a été étendue en 2021 à des territoires dans 3 autres régions (Bourgogne-Franche-Comté, Nouvelle-Aquitaine, Occitanie) avec la possibilité d’inclure des enfants de 6 à 10 ans. L’expérimentation a pris fin le 31 décembre 2021, en lien avec la généralisation de l’accès aux psychologues permise par MonPsy, mais les prises en charge débutées avant cette date se poursuivent en 2022.</p>",
+    question:
+      "Quel rôle peut jouer les maisons des adolescents dans l’orientation des patients souffrant de  troubles psychiques ? Qu’en est-il de l’expérimentation Ecout’Emoi ?",
+  },
+  {
+    answer:
       "<p>De nombreuses informations utiles figurent sur les sites <a href='https://psycom.org' target='_blank'>Psycom.org</a> et de <a href='https://www.santepubliquefrance.fr/maladies-et-traumatismes/sante-mentale' target='_blank'>Santé Publique France</a>.</p>",
     question: "Où s’informer sur la santé mentale ?",
   },
