@@ -419,7 +419,7 @@ data:
       "groups": [
         {
           "id": "5b4a2802-26c7-457d-9977-c1ab23e02ab4",
-          "name": "admin",
+          "name": "CPAM",
           "path": "/admin",
           "attributes": {},
           "realmRoles": [

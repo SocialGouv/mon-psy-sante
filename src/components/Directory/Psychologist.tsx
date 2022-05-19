@@ -38,17 +38,19 @@ const Psychologist = ({
           Pour prendre rendez-vous
         </ModalTitle>
         <ModalContent>
-          <p className="fr-my-0">
-            <Icon
-              aria-hidden="true"
-              alt=""
-              className="fr-mr-1w"
-              height="18"
-              width="18"
-              src="/images/icones/phone-fill.svg"
-            />
-            {psychologist.phone}{" "}
-          </p>
+          {psychologist.phone && (
+            <p className="fr-my-0">
+              <Icon
+                aria-hidden="true"
+                alt=""
+                className="fr-mr-1w"
+                height="18"
+                width="18"
+                src="/images/icones/phone-fill.svg"
+              />
+              {psychologist.phone}
+            </p>
+          )}
           {psychologist.email && (
             <p className="fr-my-0">
               <Icon
