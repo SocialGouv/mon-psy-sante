@@ -1,3 +1,10 @@
+## [1.33.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.5...v1.33.6) (2022-05-19)
+
+
+### Bug Fixes
+
+* hide phone icon when no phone number + update docs + add question FAQ ([#189](https://github.com/SocialGouv/mon-psy-sante/issues/189)) ([3b6591c](https://github.com/SocialGouv/mon-psy-sante/commit/3b6591c0fa73d85700a075d08df609be6514a052))
+
 ## [1.33.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.4...v1.33.5) (2022-05-16)
 
 
