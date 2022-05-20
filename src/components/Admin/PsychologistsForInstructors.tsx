@@ -78,10 +78,8 @@ const PsychologistsForInstructors = ({
   return (
     <>
       <h1>Psychologues - CPAM {department}</h1>
-
-      {filteredPsychologists.length > 0 ?? (
+      {filteredPsychologists.length > 0 && (
         <>
-          {" "}
           <TextInput
             //@ts-ignore
             inline
