@@ -45,6 +45,7 @@ describe("parseDossierMetadata", () => {
       lastName: "SMITH",
       state: "Accepted",
       teleconsultation: true,
+      coordinates: null,
     });
 
     expect(axios.get).toHaveBeenCalledWith(
