@@ -2,14 +2,24 @@ import { models } from "../db/models";
 import { getOnePsychologist } from "../db/seeds/psychologist";
 import { updateIfExists } from "../pages/api/admin/psychologists/[id]";
 import { Psychologist } from "../types/psychologist";
+import * as address from "../services/getAddressCoordinates";
+import { stub } from "sinon";
 
 describe("updateIfExists", () => {
+  let getAddressCoordinatesStub;
   beforeAll(async () => {
     await models.Psychologist.destroy({ where: {} });
 
     const psy = await getOnePsychologist({ id: 1, department: "01" });
     // @ts-ignore
     await models.Psychologist.create(psy);
+  });
+  beforeEach(() => {
+    getAddressCoordinatesStub = stub(address, "default");
+  });
+
+  afterEach(() => {
+    getAddressCoordinatesStub.restore();
   });
   const valideInput = {
     address: "My new adress",
@@ -42,6 +52,8 @@ describe("updateIfExists", () => {
   });
   it("update should update psy in db", async () => {
     let exception;
+    getAddressCoordinatesStub.returns({ latitude: 456, longitude: 123 });
+
     const result = await updateIfExists("1", "01", valideInput).catch(
       (e) => (exception = e)
     );
@@ -59,5 +71,27 @@ describe("updateIfExists", () => {
     expect(updatedPsy.displayPhone).toEqual(false);
     expect(updatedPsy.public).toEqual("Adultes et enfants/adolescents");
     expect(updatedPsy.addressAdditional).toEqual("Mon complément d'adresse");
+    expect(updatedPsy.coordinates.coordinates).toEqual([123, 456]);
+    expect(updatedPsy.coordinates.type).toEqual("Point");
+
+    // @ts-ignore
+    expect(updatedPsy.shouldBeIgnored).toEqual(undefined);
+  });
+  it("update should coordinate with null if API returns null", async () => {
+    let exception;
+    getAddressCoordinatesStub.returns(null);
+
+    const result = await updateIfExists("1", "01", valideInput).catch(
+      (e) => (exception = e)
+    );
+    expect(exception).toEqual(undefined);
+    expect(result).toEqual([1]);
+
+    // @ts-ignore
+    const updatedPsy: Psychologist = await models.Psychologist.findOne({
+      raw: true,
+      where: { email: valideInput.email },
+    });
+    expect(updatedPsy.coordinates).toEqual(null);
   });
 });

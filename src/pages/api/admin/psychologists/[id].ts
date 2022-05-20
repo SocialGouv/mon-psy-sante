@@ -4,15 +4,18 @@ import { getSession } from "next-auth/react";
 
 import { handleApiError } from "../../../../services/api";
 import { formatPsychologist } from "../../../../services/format-psychologists";
-import { getOne, update } from "../../../../services/psychologists";
-import { Psychologist } from "../../../../types/psychologist";
+import {
+  filterAllowedKeys,
+  getOne,
+  update,
+} from "../../../../services/psychologists";
 
 const updateSchema = Joi.object({
   address: Joi.string().required(),
-  coordinates: Joi.object(),
+  coordinates: Joi.object().allow(null),
   addressAdditional: Joi.string().allow("").allow(null),
   secondAddress: Joi.string().allow(""),
-  secondAddressCoordinates: Joi.object(),
+  secondAddressCoordinates: Joi.object().allow(null),
   secondAddressAdditional: Joi.string().allow("").allow(null),
   cdsmsp: Joi.string().allow(""),
   displayEmail: Joi.boolean().required(),
@@ -29,37 +32,7 @@ const updateSchema = Joi.object({
   visible: Joi.boolean().required(),
   website: Joi.string().allow("").allow(null),
 });
-const UPDATABLE_KEYS = [
-  "address",
-  "addressAdditional",
-  "secondAddress",
-  "secondAddressAdditional",
-  "cdsmsp",
-  "coordinates",
-  "secondAddressCoordinates",
-  "displayEmail",
-  "email",
-  "firstName",
-  "languages",
-  "lastName",
-  "phone",
-  "displayPhone",
-  "public",
-  "teleconsultation",
-  "visible",
-  "website",
-];
 
-export const filterAllowedKeys = (
-  psy: Partial<Psychologist>
-): Partial<Psychologist> => {
-  return Object.keys(psy)
-    .filter((key) => UPDATABLE_KEYS.includes(key))
-    .reduce((obj, key) => {
-      obj[key] = psy[key];
-      return obj;
-    }, {});
-};
 export const updateIfExists = async (id: string, department: string, body) => {
   const existingPsychologist = await getOne(id, department);
   if (!existingPsychologist) return;

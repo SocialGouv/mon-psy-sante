@@ -113,12 +113,44 @@ export const saveMany = async (psychologists: Psychologist[]) => {
     ignoreDuplicates: true,
   });
 };
+const UPDATABLE_KEYS = [
+  "address",
+  "addressAdditional",
+  "secondAddress",
+  "secondAddressAdditional",
+  "cdsmsp",
+  "coordinates",
+  "secondAddressCoordinates",
+  "displayEmail",
+  "email",
+  "firstName",
+  "languages",
+  "lastName",
+  "phone",
+  "displayPhone",
+  "public",
+  "teleconsultation",
+  "visible",
+  "website",
+];
 
+export const filterAllowedKeys = (
+  psy: Partial<Psychologist>
+): Partial<Psychologist> => {
+  return Object.keys(psy)
+    .filter((key) => UPDATABLE_KEYS.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = psy[key];
+      return obj;
+    }, {});
+};
 export const update = async (
   id: string,
   psychologist: Partial<Psychologist>
 ) => {
-  return models.Psychologist.update(psychologist, { where: { id } });
+  return models.Psychologist.update(filterAllowedKeys(psychologist), {
+    where: { id },
+  });
 };
 
 export const updateState = async (newStates: Partial<Psychologist>[]) => {

@@ -65,10 +65,7 @@ export const formatPsychologist = async (
   const psychologist: Partial<Psychologist> = {};
 
   Object.keys(psy).forEach((field) => {
-    const parsedValue = parseChampValue(field, psy[field]);
-    if (parsedValue !== undefined) {
-      psychologist[field] = parsedValue;
-    }
+    psychologist[field] = parseChampValue(field, psy[field]);
   });
 
   const identifier = psychologist.id?.toString() ?? psychologist.email;
@@ -76,18 +73,18 @@ export const formatPsychologist = async (
     identifier,
     psychologist.address
   );
-  if (coordinates) {
-    psychologist.coordinates = formatCoordinates(coordinates);
-  }
+  psychologist.coordinates = coordinates
+    ? formatCoordinates(coordinates)
+    : null;
 
   if (psychologist.secondAddress) {
     const coordinates = await getAddressCoordinates(
       identifier,
       psychologist.secondAddress
     );
-    if (coordinates) {
-      psychologist.secondAddressCoordinates = formatCoordinates(coordinates);
-    }
+    psychologist.secondAddressCoordinates = coordinates
+      ? formatCoordinates(coordinates)
+      : null;
   }
   return psychologist as Psychologist;
 };
