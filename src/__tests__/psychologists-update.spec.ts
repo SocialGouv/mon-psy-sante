@@ -1,9 +1,10 @@
+import { stub } from "sinon";
+
 import { models } from "../db/models";
 import { getOnePsychologist } from "../db/seeds/psychologist";
 import { updateIfExists } from "../pages/api/admin/psychologists/[id]";
-import { Psychologist } from "../types/psychologist";
 import * as address from "../services/getAddressCoordinates";
-import { stub } from "sinon";
+import { Psychologist } from "../types/psychologist";
 
 describe("updateIfExists", () => {
   let getAddressCoordinatesStub;
