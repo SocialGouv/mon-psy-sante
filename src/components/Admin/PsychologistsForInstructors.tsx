@@ -6,8 +6,10 @@ import { Psychologist } from "../../types/psychologist";
 
 const PsychologistsForInstructors = ({
   psychologists,
+  department,
 }: {
   psychologists: Partial<Psychologist>[];
+  department: string;
 }) => {
   const router = useRouter();
   const [search, setSearch] = useState("");
@@ -75,15 +77,21 @@ const PsychologistsForInstructors = ({
   ];
   return (
     <>
-      <h1>Psychologues</h1>
-      <TextInput
-        //@ts-ignore
-        inline
-        label="Rechercher par nom ou id"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <Table rowKey="id" columns={columns} data={filteredPsychologists} />
+      <h1>Psychologues - CPAM {department}</h1>
+
+      {filteredPsychologists.length > 0 ?? (
+        <>
+          {" "}
+          <TextInput
+            //@ts-ignore
+            inline
+            label="Rechercher par nom ou id"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <Table rowKey="id" columns={columns} data={filteredPsychologists} />
+        </>
+      )}
     </>
   );
 };

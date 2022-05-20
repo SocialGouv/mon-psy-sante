@@ -13,9 +13,11 @@ import { Psychologist } from "../../types/psychologist";
 const Admin = ({
   psychologists,
   count,
+  department,
 }: {
   psychologists: Partial<Psychologist>[];
   count: number;
+  department: string | undefined;
 }) => {
   const router = useRouter();
 
@@ -29,7 +31,7 @@ const Admin = ({
             <h2>Nombre de psychologues</h2>
             <p className="fr-text--lead">{count}</p>
           </div>
-          <div className="fr-col-12 fr-col-md-5 fr-col-offset-2">
+          <div className="fr-col-12 fr-col-md-6 fr-col-offset-1">
             {router.query.error === "NotFound" && (
               <Alert
                 title="Dossier non trouvé"
@@ -37,8 +39,11 @@ const Admin = ({
                 type="error"
               />
             )}
-            {psychologists.length ? (
-              <PsychologistsForInstructors psychologists={psychologists} />
+            {department ? (
+              <PsychologistsForInstructors
+                psychologists={psychologists}
+                department={department}
+              />
             ) : (
               <AdminSearchField />
             )}
@@ -56,10 +61,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   let psychologists = [];
   let count;
+  let department;
   if (session.user.isSuperAdmin) {
     count = await countAll();
   } else if (session.user.isAdmin) {
-    psychologists = await getByDepartment(session.user.department as string);
+    department = session.user.department;
+    psychologists = await getByDepartment(department as string);
     psychologists = psychologists.map((psychologist) => {
       const { id, firstName, lastName } = psychologist;
       return { firstName, id, lastName };
@@ -74,7 +81,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
-  return {
-    props: { psychologists, count },
-  };
+  const props: any = { psychologists, count };
+  if (department) {
+    props.department = department;
+  }
+  return { props: props };
 };

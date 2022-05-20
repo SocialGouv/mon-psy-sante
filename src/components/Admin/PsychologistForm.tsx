@@ -38,6 +38,7 @@ const editableFields = [
     label: "Afficher l'email",
     type: "boolean",
   },
+  { field: "website", label: "Site internet" },
   {
     field: "public",
     label: "Public",
@@ -51,7 +52,6 @@ const editableFields = [
   },
   { field: "languages", label: "Langue(s) parlée(s)" },
   { field: "cdsmsp", label: "Nom du CDS ou de la MSP" },
-  { field: "website", label: "Site" },
   {
     field: "teleconsultation",
     label: "Possibilité de séances à distance",
@@ -78,22 +78,10 @@ const PsychologistForm = ({ psychologist }: { psychologist: Psychologist }) => {
     e.preventDefault();
     setResult(null);
     axios
-      .put(`/api/admin/psychologists/${modifiedPsychologist.id}`, {
-        address: modifiedPsychologist.address,
-        secondAddress: modifiedPsychologist.secondAddress,
-        cdsmsp: modifiedPsychologist.cdsmsp,
-        displayEmail: modifiedPsychologist.displayEmail,
-        email: modifiedPsychologist.email,
-        firstName: modifiedPsychologist.firstName,
-        languages: modifiedPsychologist.languages,
-        lastName: modifiedPsychologist.lastName,
-        phone: modifiedPsychologist.phone,
-        displayPhone: modifiedPsychologist.displayPhone,
-        public: modifiedPsychologist.public,
-        teleconsultation: modifiedPsychologist.teleconsultation,
-        visible: modifiedPsychologist.visible,
-        website: modifiedPsychologist.website,
-      })
+      .put(
+        `/api/admin/psychologists/${modifiedPsychologist.id}`,
+        modifiedPsychologist
+      )
       .then(() => {
         setResult({
           text: "Psychologue correctement mis à a jour",
