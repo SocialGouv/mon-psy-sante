@@ -6,13 +6,22 @@ import Header from "../../../components/Admin/Header";
 import PsychologistForm from "../../../components/Admin/PsychologistForm";
 import { getOne } from "../../../services/psychologists";
 
-const EditablePsychologist = ({ psychologist }: { psychologist: string }) => {
+const EditablePsychologist = ({
+  psychologist,
+  isSuperAdmin,
+}: {
+  psychologist: string;
+  isSuperAdmin: boolean;
+}) => {
   return (
     <>
       <Header />
 
       <div className="fr-container">
-        <PsychologistForm psychologist={JSON.parse(psychologist)} />
+        <PsychologistForm
+          psychologist={JSON.parse(psychologist)}
+          isSuperAdmin={isSuperAdmin}
+        />
       </div>
     </>
   );
@@ -39,6 +48,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       psychologist: JSON.stringify(psychologist),
+      isSuperAdmin: !!session.user.isSuperAdmin,
     },
   };
 };
