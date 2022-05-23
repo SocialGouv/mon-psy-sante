@@ -1,13 +1,11 @@
 /* eslint-disable jest/no-conditional-expect */
 import { expect } from "@jest/globals";
-import { stub } from "sinon";
 
 import { models } from "../../db/models";
 import { getOnePsychologist } from "../../db/seeds/psychologist";
 import { FILTER } from "../../types/enums/filters";
 import { allPublics, PUBLIC } from "../../types/enums/public";
 import { Psychologist } from "../../types/psychologist";
-import * as address from "../getAddressCoordinates";
 import {
   countAll,
   getAll,
@@ -16,7 +14,6 @@ import {
   getDateLatestArchived,
   getOne,
   saveMany,
-  update,
   updateState,
 } from "../psychologists";
 
@@ -213,10 +210,6 @@ describe("Service psychologists", () => {
         expect(result.public).not.toBe(PUBLIC.ADULTES)
       );
     });
-
-    it.skip("Should sort by distance", () => {
-      // no idea how to do that
-    });
   });
 
   describe("saveMany", () => {
@@ -238,82 +231,6 @@ describe("Service psychologists", () => {
       expect(savedPsychologists.length).toEqual(2);
       expect(savedPsychologists[0].department).toEqual(department);
       expect(savedPsychologists[1].department).toEqual(department);
-    });
-  });
-
-  describe("update", () => {
-    let getAddressCoordinatesStub;
-    beforeEach(() => {
-      getAddressCoordinatesStub = stub(address, "default");
-    });
-
-    afterEach(() => {
-      getAddressCoordinatesStub.restore();
-    });
-
-    it("Should update only updatable fields", async () => {
-      getAddressCoordinatesStub.returns({ latitude: 456, longitude: 123 });
-      const initialPsy = getOnePsychologist();
-      // @ts-ignore
-      await models.Psychologist.create(initialPsy);
-
-      const modifiedPsy = getOnePsychologist();
-      await update(initialPsy.id.toString(), modifiedPsy);
-
-      const updateableFields = [
-        "address",
-        "addressAdditional",
-        "secondAddress",
-        "secondAddressAdditional",
-        "coordinates",
-        "cdsmsp",
-        "displayEmail",
-        "displayPhone",
-        "email",
-        "firstName",
-        "languages",
-        "lastName",
-        "phone",
-        "public",
-        "teleconsultation",
-        "visible",
-        "website",
-      ];
-
-      const updatedPsy = await models.Psychologist.findOne({
-        raw: true,
-        where: { id: initialPsy.id },
-      });
-
-      expect(updatedPsy).toBeDefined();
-
-      Object.keys(updatedPsy).forEach((key) => {
-        if (key === "coordinates" || key === "secondAddressCoordinates") {
-          expect(updatedPsy[key].coordinates).toEqual([123, 456]);
-          expect(updatedPsy[key].type).toEqual("Point");
-        } else if (updateableFields.includes(key)) {
-          expect(updatedPsy[key]).toEqual(modifiedPsy[key]);
-        } else if (key !== "createdAt" && key !== "updatedAt") {
-          expect(updatedPsy[key]).toEqual(initialPsy[key]);
-        }
-      });
-    });
-
-    it("Should update psy event without coordinates", async () => {
-      getAddressCoordinatesStub.returns(null);
-      const initialPsy = getOnePsychologist();
-      // @ts-ignore
-      await models.Psychologist.create(initialPsy);
-
-      await update(initialPsy.id.toString(), initialPsy);
-
-      const updatedPsy = await models.Psychologist.findOne({
-        raw: true,
-        where: { id: initialPsy.id },
-      });
-
-      // @ts-ignore
-      expect(updatedPsy.coordinates).toEqual(null);
     });
   });
 

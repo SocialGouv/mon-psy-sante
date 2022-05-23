@@ -6,8 +6,6 @@ import { SRID } from "../types/const/geometry";
 import { FILTER } from "../types/enums/filters";
 import { PUBLIC } from "../types/enums/public";
 import { Psychologist } from "../types/psychologist";
-import { formatCoordinates } from "./demarchesSimplifiees/parse-psychologists";
-import getAddressCoordinates from "./getAddressCoordinates";
 
 const limit = pLimit(5);
 
@@ -27,6 +25,7 @@ export const getByDepartment = async (dep: string): Promise<Psychologist[]> => {
   return models.Psychologist.findAll({
     raw: true,
     where: { archived: false, department: dep, state: "accepte" },
+    order: [["lastName", "ASC"]],
   });
 };
 
@@ -114,49 +113,44 @@ export const saveMany = async (psychologists: Psychologist[]) => {
     ignoreDuplicates: true,
   });
 };
+const UPDATABLE_KEYS = [
+  "address",
+  "addressAdditional",
+  "secondAddress",
+  "secondAddressAdditional",
+  "cdsmsp",
+  "coordinates",
+  "secondAddressCoordinates",
+  "displayEmail",
+  "email",
+  "firstName",
+  "languages",
+  "lastName",
+  "phone",
+  "displayPhone",
+  "public",
+  "teleconsultation",
+  "visible",
+  "website",
+];
 
+export const filterAllowedKeys = (
+  psy: Partial<Psychologist>
+): Partial<Psychologist> => {
+  return Object.keys(psy)
+    .filter((key) => UPDATABLE_KEYS.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = psy[key];
+      return obj;
+    }, {});
+};
 export const update = async (
   id: string,
   psychologist: Partial<Psychologist>
 ) => {
-  const displayName = psychologist.firstName + " " + psychologist.lastName;
-  const coordinates = await getAddressCoordinates(
-    displayName,
-    psychologist.address
-  );
-  let secondAddressCoordinates;
-  if (psychologist.secondAddress) {
-    secondAddressCoordinates = await getAddressCoordinates(
-      displayName,
-      psychologist.secondAddress
-    );
-  }
-
-  return models.Psychologist.update(
-    {
-      address: psychologist.address,
-      addressAdditional: psychologist.addressAdditional,
-      secondAddress: psychologist.secondAddress,
-      secondAddressAdditional: psychologist.secondAddressAdditional,
-      cdsmsp: psychologist.cdsmsp,
-      coordinates: coordinates ? formatCoordinates(coordinates) : null,
-      secondAddressCoordinates: secondAddressCoordinates
-        ? formatCoordinates(secondAddressCoordinates)
-        : null,
-      displayEmail: psychologist.displayEmail,
-      email: psychologist.email,
-      firstName: psychologist.firstName,
-      languages: psychologist.languages,
-      lastName: psychologist.lastName,
-      phone: psychologist.phone,
-      displayPhone: psychologist.displayPhone,
-      public: psychologist.public,
-      teleconsultation: psychologist.teleconsultation,
-      visible: psychologist.visible,
-      website: psychologist.website,
-    },
-    { where: { id } }
-  );
+  return models.Psychologist.update(filterAllowedKeys(psychologist), {
+    where: { id },
+  });
 };
 
 export const updateState = async (newStates: Partial<Psychologist>[]) => {

@@ -10,6 +10,7 @@ describe("parseDossierMetadata", () => {
   });
 
   const dossier = {
+    id: "1",
     archived: false,
     champs: [
       {
@@ -35,6 +36,7 @@ describe("parseDossierMetadata", () => {
 
     expect(result).toEqual({
       address: "12 Rue Neuve 31000 Toulouse",
+      demarcheSimplifieesId: "1",
       archived: false,
       department: "31",
       displayEmail: false,
@@ -43,6 +45,7 @@ describe("parseDossierMetadata", () => {
       lastName: "SMITH",
       state: "Accepted",
       teleconsultation: true,
+      coordinates: null,
     });
 
     expect(axios.get).toHaveBeenCalledWith(
