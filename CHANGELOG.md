@@ -1,3 +1,10 @@
+# [1.34.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.6...v1.34.0) (2022-05-23)
+
+
+### Features
+
+* psy admin form : format input values + update fields ([#190](https://github.com/SocialGouv/mon-psy-sante/issues/190)) ([1944469](https://github.com/SocialGouv/mon-psy-sante/commit/19444692e905b9a47f3e60e6029c21f26e7e401c))
+
 ## [1.33.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.5...v1.33.6) (2022-05-19)
 
 
