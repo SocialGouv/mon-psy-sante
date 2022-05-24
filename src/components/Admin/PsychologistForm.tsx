@@ -135,13 +135,13 @@ const PsychologistForm = ({
       )
       .then(() => {
         setResult({
-          text: "Psychologue correctement mis à a jour",
+          text: "Psychologue correctement mis à jour",
           type: "success",
         });
       })
       .catch(() => {
         setResult({
-          text: "Une erreur est survenue, veuillez reesayer",
+          text: "Une erreur est survenue, veuillez réessayer",
           type: "error",
         });
       })
