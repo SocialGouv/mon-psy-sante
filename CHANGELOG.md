@@ -1,3 +1,10 @@
+## [1.34.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.34.0...v1.34.1) (2022-05-24)
+
+
+### Bug Fixes
+
+* typo on psy form ([#191](https://github.com/SocialGouv/mon-psy-sante/issues/191)) ([bc9ab22](https://github.com/SocialGouv/mon-psy-sante/commit/bc9ab22234c5c8a731c7f112988374f362c69c9f))
+
 # [1.34.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.33.6...v1.34.0) (2022-05-23)
 
 
