@@ -15,7 +15,7 @@ const editableFields = [
   {
     field: "visible",
     label: "Disponibilité du psychologue :",
-    legend: "En indisponible les modalités de contact ne seront plus visible",
+    legend: "En indisponible les modalités de contact ne seront plus visibles",
     type: "boolean",
     options: [
       { label: "Disponible", value: true },
@@ -35,7 +35,8 @@ const editableFields = [
   {
     field: "addressAdditional",
     label: "Informations complémentaires (cabinet principal)",
-    legend: "Informations complémentaires (cabinet principal)",
+    legend:
+      "Exemple : nom d'un bâtiment, d'une résidence, digicode, etc. Si le psychologue propose uniquement des séances au domicile du patient, noter ici \"Séances à domicile\".",
   },
   {
     field: "secondAddress",
@@ -78,6 +79,7 @@ const editableFields = [
   {
     field: "languages",
     label: "Langues de réalisation des séances (autre que le français)",
+    legend: "Lister les langues en les séparant par une virgule",
   },
   {
     field: "cdsmsp",
@@ -135,13 +137,13 @@ const PsychologistForm = ({
       )
       .then(() => {
         setResult({
-          text: "Psychologue correctement mis à a jour",
+          text: "Psychologue correctement mis à jour",
           type: "success",
         });
       })
       .catch(() => {
         setResult({
-          text: "Une erreur est survenue, veuillez reesayer",
+          text: "Une erreur est survenue, veuillez réessayer",
           type: "error",
         });
       })
