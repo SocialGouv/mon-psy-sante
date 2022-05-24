@@ -57,7 +57,6 @@ To re-run the migration from 0
 
 https://socialgouv.github.io/sre-tools/
 
-
 ## How to connect app to db on bastion
 
 - open ssh tunnel :
@@ -82,13 +81,55 @@ ssh -l localhost:54320:<server>.postgres.database.azure.com:5432 <USER>@fabrique
 DATABASE_URL=postgres://<USER_NAME>:<PASSWORD>@localhost:54320/prod
 ```
 
-
 ## Configure keycloak on local
 
 run
 docker-compose up
 
-go to http://localhost:8080/admin/master/console/#/create/realm
-click import > config/keycloak/mon-psy-sante-realm.json
+- go to http://localhost:8080/admin/master/console/#/create/realm
+- click import > config/keycloak/mon-psy-sante-realm.json
+- then create users : users > Add user
 
-then create users : users > Add user
+### Use keycloak API
+
+- get the Admin-cli client secret on the keycloak admin console
+- get the keycloak url on rancher
+
+#### Get an API token by running
+
+```
+curl --location --request POST '<KEYCLOAK_URL>/auth/realms/mon-psy-sante/protocol/openid-connect/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'client_id=admin-cli' \
+--data-urlencode 'grant_type=client_credentials' \
+--data-urlencode 'client_secret=<THE SECRET>' \
+--data-urlencode 'scope=openid'
+```
+
+- récuperer l'`access_token` retourné et l'ajouter à toutes les requêtes sous forme de Bearer token
+
+#### Get all users
+
+```
+    curl --location --request GET '<KEYCLOAK_URL>/auth/admin/realms/mon-psy-sante/users' \
+    --header 'Authorization: Bearer <ACCESS_TOKEN>'
+```
+
+#### Create new users
+
+```
+curl --location --request POST '<KEYCLOAK_URL>/auth/admin/realms/mon-psy-sante/users' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>'
+--header 'Content-Type: application/json' \
+--data-raw '{
+        "username": "Test",
+        "email": "hello@test.com",
+        "enabled": true,
+         "emailVerified": false,
+        "disableableCredentialTypes": [],
+        "requiredActions": ["UPDATE_PASSWORD"],
+        "attributes": {"department":"31"},
+        "groups": ["CPAM"],
+        "credentials":[{"type":"password","value":"Mon password","temporary":true}]
+    }'
+```
