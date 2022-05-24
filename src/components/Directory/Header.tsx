@@ -6,11 +6,7 @@ const Header = () => {
     <div className="fr-mt-6w">
       <h1>Annuaire</h1>
       <h2>Trouver un psychologue partenaire près de chez soi.</h2>
-      <p>
-        Plus de 1000 psychologues sont volontaires pour participer au
-        dispositif. Plusieurs candidatures sont en cours d’examen. La liste des
-        psychologues partenaires est actualisée régulièrement.
-      </p>
+      <p className="fr-text--sm">La liste des psychologues partenaires est actualisée régulièrement.</p>
       <Callout className="fr-mb-4w fr-callout--pink-tuile">
         <CalloutTitle>A noter</CalloutTitle>
         <div className="fr-callout__text fr-text--md">
