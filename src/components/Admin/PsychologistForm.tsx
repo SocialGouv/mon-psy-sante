@@ -49,6 +49,7 @@ const editableFields = [
     label: "Informations complémentaires (second lieu)",
   },
   { field: "phone", label: "Téléphone", required: true },
+  // Todo: add type email to input when it's supported by @dataesr/react-dsfr.
   { field: "email", label: "Email" },
   {
     field: "displayEmail",
@@ -105,7 +106,11 @@ const PsychologistForm = ({
   psychologist: Psychologist;
   isSuperAdmin: boolean;
 }) => {
-  const [result, setResult] = useState<{ type: string; text: string }>();
+  const [result, setResult] = useState<{
+    type: "success" | "error";
+    text: string;
+    title: string;
+  }>();
   const [sending, setSending] = useState(false);
 
   const [modifiedPsychologist, setModifiedPsychologist] =
@@ -137,14 +142,16 @@ const PsychologistForm = ({
       )
       .then(() => {
         setResult({
-          text: "Psychologue correctement mis à jour",
+          title: "Psychologue correctement mis à jour",
           type: "success",
+          text: "",
         });
       })
-      .catch(() => {
+      .catch((e) => {
         setResult({
-          text: "Une erreur est survenue, veuillez réessayer",
+          title: "Une erreur est survenue, veuillez réessayer",
           type: "error",
+          text: e.response?.data || "",
         });
       })
       .finally(() => {
@@ -273,9 +280,9 @@ const PsychologistForm = ({
             <Alert
               data-test-id="alert"
               className="fr-mt-4w"
-              //@ts-ignore
               type={result.type}
-              title={result.text}
+              title={result.title}
+              description={result.text}
             />
           )}
         </form>
