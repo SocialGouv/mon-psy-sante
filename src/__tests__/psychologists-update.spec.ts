@@ -35,7 +35,7 @@ describe("updateIfExists", () => {
     public: "Adultes et enfants/adolescents",
     teleconsultation: true,
     visible: true,
-    website: "grotesque-proximity.info",
+    website: "https://grotesque-proximity.info",
     shouldBeIgnored: "should not failed",
   };
 
