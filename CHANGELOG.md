@@ -1,3 +1,10 @@
+## [1.34.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.34.1...v1.34.2) (2022-05-27)
+
+
+### Bug Fixes
+
+* update prod keycloak sealed secret + update readme ([#192](https://github.com/SocialGouv/mon-psy-sante/issues/192)) ([cd16152](https://github.com/SocialGouv/mon-psy-sante/commit/cd16152eb9de640bf7319d1b59d8431a07e1009a))
+
 ## [1.34.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.34.0...v1.34.1) (2022-05-24)
 
 
