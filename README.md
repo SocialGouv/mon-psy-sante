@@ -40,7 +40,7 @@ Run the cron to import data
 
 ```
 DEMARCHES_SIMPLIFIEES_TOKEN=XXX DEMARCHES_SIMPLIFIEES_ID=52209
-yarn cron:launch importData
+yarn cron:launch importFromDS
 ```
 
 To re-run the migration from 0
