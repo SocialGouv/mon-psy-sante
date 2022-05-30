@@ -13,10 +13,10 @@ import {
 const updateSchema = Joi.object({
   address: Joi.string().required(),
   coordinates: Joi.object().allow(null),
-  addressAdditional: Joi.string().allow("").allow(null),
+  addressAdditional: Joi.string().allow("", null),
   secondAddress: Joi.string().allow(""),
   secondAddressCoordinates: Joi.object().allow(null),
-  secondAddressAdditional: Joi.string().allow("").allow(null),
+  secondAddressAdditional: Joi.string().allow("", null),
   cdsmsp: Joi.string().allow(""),
   displayEmail: Joi.boolean().required(),
   email: Joi.string().email(),
@@ -30,19 +30,46 @@ const updateSchema = Joi.object({
     .required(),
   teleconsultation: Joi.boolean().required(),
   visible: Joi.boolean().required(),
-  website: Joi.string().allow("").allow(null),
+  website: Joi.string()
+    .uri({ scheme: ["http", "https"] })
+    .allow("", null)
+    .messages({
+      "string.uriCustomScheme":
+        "L'adresse du site web doit commencer par http:// ou https://",
+    }),
+}).messages({
+  "string.empty": "{{#label}} ne peut pas être vide",
+  "string.email": "L'email doit être valide. Exemple : test@example.org",
 });
+
+const coordinatesSchema = Joi.array().length(2).items(Joi.number()).required();
+
+const coordinatesErrorMessage =
+  "L'adresse postale du cabinet principal semble invalide. Veuillez la vérifier ou contacter l'équipe du support.";
+const secondAddressCoordinatesErrorMessage =
+  "L'adresse postale du second lieu d'exercice semble invalide. Veuillez la vérifier ou contacter l'équipe du support.";
 
 export const updateIfExists = async (id: string, department: string, body) => {
   const existingPsychologist = await getOne(id, department);
   if (!existingPsychologist) return;
 
-  const psy = await formatPsychologist(filterAllowedKeys(body));
+  const psy = filterAllowedKeys(body);
   await updateSchema.validateAsync(psy, {
     abortEarly: false,
   });
+  const formattedPsy = await formatPsychologist(psy);
+  // Fails when address was not empty and the given address did not return
+  // coordinates on format (this validation is done after API address call).
+  await coordinatesSchema
+    .messages({ "any.required": coordinatesErrorMessage })
+    .validateAsync(formattedPsy.coordinates?.coordinates);
+  if (psy.secondAddress) {
+    await coordinatesSchema
+      .messages({ "any.required": secondAddressCoordinatesErrorMessage })
+      .validateAsync(formattedPsy.secondAddressCoordinates?.coordinates);
+  }
 
-  return await update(id, psy);
+  return await update(id, formattedPsy);
 };
 
 const updatePsy = async (req: NextApiRequest, res: NextApiResponse) => {

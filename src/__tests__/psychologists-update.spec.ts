@@ -51,6 +51,39 @@ describe("updateIfExists", () => {
     expect(exception.details.length).toEqual(9);
     expect(exception.details[0].message).toEqual('"address" is required');
   });
+  it("should fail when address is invalid", async () => {
+    let exception;
+    getAddressCoordinatesStub.returns(null);
+    await updateIfExists("1", "01", {
+      ...valideInput,
+      address: "invalid address",
+    }).catch((e) => (exception = e));
+    expect(exception.details[0].message).toMatch(/adresse/);
+  });
+  it("should fail when secondAddress is invalid", async () => {
+    let exception;
+    getAddressCoordinatesStub
+      .onFirstCall()
+      .returns({
+        latitude: 456,
+        longitude: 123,
+      })
+      .onSecondCall()
+      .returns(null);
+    await updateIfExists("1", "01", {
+      ...valideInput,
+      secondAddress: "invalid address",
+    }).catch((e) => (exception = e));
+    expect(exception.details[0].message).toMatch(/adresse/);
+  });
+  it("should fail when url is not http or https", async () => {
+    let exception;
+    await updateIfExists("1", "01", {
+      ...valideInput,
+      website: "website invalid",
+    }).catch((e) => (exception = e));
+    expect(exception.details[0].message).toMatch(/https/);
+  });
   it("update should update psy in db", async () => {
     let exception;
     getAddressCoordinatesStub.returns({ latitude: 456, longitude: 123 });
@@ -77,22 +110,5 @@ describe("updateIfExists", () => {
 
     // @ts-ignore
     expect(updatedPsy.shouldBeIgnored).toEqual(undefined);
-  });
-  it("update should coordinate with null if API returns null", async () => {
-    let exception;
-    getAddressCoordinatesStub.returns(null);
-
-    const result = await updateIfExists("1", "01", valideInput).catch(
-      (e) => (exception = e)
-    );
-    expect(exception).toEqual(undefined);
-    expect(result).toEqual([1]);
-
-    // @ts-ignore
-    const updatedPsy: Psychologist = await models.Psychologist.findOne({
-      raw: true,
-      where: { email: valideInput.email },
-    });
-    expect(updatedPsy.coordinates).toEqual(null);
   });
 });
