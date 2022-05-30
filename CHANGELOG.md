@@ -1,3 +1,10 @@
+## [1.35.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.35.0...v1.35.1) (2022-05-30)
+
+
+### Bug Fixes
+
+* **k8s:** add redirectFrom for legacy domains ([#196](https://github.com/SocialGouv/mon-psy-sante/issues/196)) ([99dcfe0](https://github.com/SocialGouv/mon-psy-sante/commit/99dcfe0e82d97643ecba96ab92b97130dfa96d52))
+
 # [1.35.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.34.2...v1.35.0) (2022-05-30)
 
 
