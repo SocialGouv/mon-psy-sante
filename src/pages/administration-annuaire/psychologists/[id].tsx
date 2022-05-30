@@ -15,7 +15,12 @@ const EditablePsychologist = ({
 }) => {
   return (
     <>
-      <Header />
+      <Header
+        breadcrumbs={[
+          { link: "/administration-annuaire", text: "Admin" },
+          { link: "/administration-annuaire", text: "Psychologues" },
+        ]}
+      />
 
       <div className="fr-container">
         <PsychologistForm

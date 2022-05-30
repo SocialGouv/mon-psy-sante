@@ -1,8 +1,35 @@
 import Head from "next/head";
 import { signOut } from "next-auth/react";
 import React from "react";
+import Link from "next/link";
 
-const Header = () => (
+function Breadcrumbs({ breadcrumbs }) {
+  return (
+    <nav
+      role="navigation"
+      className="fr-breadcrumb"
+      aria-label="vous êtes ici :"
+    >
+      <ol className="fr-breadcrumb__list">
+        {breadcrumbs.map((breadcrumb, index) => (
+          <li key={index}>
+            {index === breadcrumbs.length - 1 ? (
+              breadcrumb.text
+            ) : (
+              <Link href={breadcrumb.link}>
+                <a className="fr-breadcrumb__link">{breadcrumb.text}</a>
+              </Link>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
+const Header = ({
+  breadcrumbs = [{ link: "/administration-annuaire", text: "Admin" }],
+}) => (
   <>
     <Head>
       <meta name="robots" content="noindex" />
@@ -11,22 +38,7 @@ const Header = () => (
     <div className="fr-container fr-my-1w">
       <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
         <div className="fr-col-2">
-          <nav
-            role="navigation"
-            className="fr-breadcrumb"
-            aria-label="vous êtes ici :"
-          >
-            <ol className="fr-breadcrumb__list">
-              <li>
-                <a
-                  className="fr-breadcrumb__link"
-                  href="/administration-annuaire"
-                >
-                  Admin
-                </a>
-              </li>
-            </ol>
-          </nav>
+          <Breadcrumbs breadcrumbs={breadcrumbs} />
         </div>
         <div className="fr-col-2 fr-col-offset-8">
           <button
