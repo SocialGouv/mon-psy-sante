@@ -1,3 +1,10 @@
+## [1.36.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.36.0...v1.36.1) (2022-05-30)
+
+
+### Bug Fixes
+
+* **k8s:** add www prefixes for additional domains ([#197](https://github.com/SocialGouv/mon-psy-sante/issues/197)) ([5c15957](https://github.com/SocialGouv/mon-psy-sante/commit/5c15957e9d0848bfc08b2b9a5f345c30f51865fa))
+
 # [1.36.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.35.2...v1.36.0) (2022-05-30)
 
 
