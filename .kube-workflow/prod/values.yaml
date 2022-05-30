@@ -5,6 +5,8 @@ app:
   host: "{{ .Values.global.appHost }}"
   redirectFrom:
     - www.monpsy.sante.gouv.fr
+    - psyenfantado.sante.gouv.fr
+    - psy-enfant-ado.sante.gouv.fr
   replicas: 2
   resources:
     limits:
@@ -26,7 +28,7 @@ keycloak:
     annotations:
       cert-manager.io: cluster-issuer
       cert-manager.io/cluster-issuer: letsencrypt-prod
-      kubernetes.io/tls-acme: 'true'
+      kubernetes.io/tls-acme: "true"
     tls:
       - hosts:
           - "keycloak-{{ .Values.global.host }}"
