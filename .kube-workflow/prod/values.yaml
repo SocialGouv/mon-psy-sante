@@ -7,6 +7,8 @@ app:
     - www.monpsy.sante.gouv.fr
     - psyenfantado.sante.gouv.fr
     - psy-enfant-ado.sante.gouv.fr
+    - www.psyenfantado.sante.gouv.fr
+    - www.psy-enfant-ado.sante.gouv.fr
   replicas: 2
   resources:
     limits:
