@@ -1,3 +1,11 @@
+# [1.35.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.34.2...v1.35.0) (2022-05-30)
+
+
+### Features
+
+* **style:** improve breadcrumb ([#195](https://github.com/SocialGouv/mon-psy-sante/issues/195)) ([df30e41](https://github.com/SocialGouv/mon-psy-sante/commit/df30e414b8773ffb404ad2c0e0594c92e4c8b056))
+* add validation errors on update psychologists ([#193](https://github.com/SocialGouv/mon-psy-sante/issues/193)) ([37cdf92](https://github.com/SocialGouv/mon-psy-sante/commit/37cdf9225c41567342ae887fa4c0357ebbc5c7a1))
+
 ## [1.34.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.34.1...v1.34.2) (2022-05-27)
 
 
