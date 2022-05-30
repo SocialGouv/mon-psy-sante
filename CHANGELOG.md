@@ -1,3 +1,10 @@
+## [1.35.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.35.1...v1.35.2) (2022-05-30)
+
+
+### Bug Fixes
+
+* **lint:** import order eslint ([fe97765](https://github.com/SocialGouv/mon-psy-sante/commit/fe97765c55d0ea0ecf01e82ba46a9b6acd7c9ffc))
+
 ## [1.35.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.35.0...v1.35.1) (2022-05-30)
 
 
