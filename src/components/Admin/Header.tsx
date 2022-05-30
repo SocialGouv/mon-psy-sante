@@ -1,7 +1,7 @@
 import Head from "next/head";
+import Link from "next/link";
 import { signOut } from "next-auth/react";
 import React from "react";
-import Link from "next/link";
 
 function Breadcrumbs({ breadcrumbs }) {
   return (
