@@ -1,3 +1,10 @@
+# [1.36.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.35.2...v1.36.0) (2022-05-30)
+
+
+### Features
+
+* improve login page for admin ([#194](https://github.com/SocialGouv/mon-psy-sante/issues/194)) ([fa9c1d2](https://github.com/SocialGouv/mon-psy-sante/commit/fa9c1d29aa989687e7ea99dde8b7365a41cc7dba))
+
 ## [1.35.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.35.1...v1.35.2) (2022-05-30)
 
 
