@@ -3,7 +3,7 @@ import { SafeParseError } from "zod/lib/types";
 
 import { AdeliData } from "../../types/adeli";
 import { Psychologist } from "../../types/psychologist";
-import { areSimilar } from "../../utils/string";
+import { areSimilar, firstWordAreSimilar } from "../../utils/string";
 
 export type CandidatePsychologist = Pick<
   Psychologist,
@@ -78,7 +78,7 @@ export const validatePsychologist = (
           adeliData,
           message: psychologistFirstNameDoesNotMatchMessage,
           adeliField: "Prénom d'exercice",
-          compare: areSimilar,
+          compare: firstWordAreSimilar,
         }),
         email: z.string().email(emailIsInvalidMessage(psychologist.email)),
       }),

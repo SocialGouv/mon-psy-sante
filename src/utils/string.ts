@@ -9,3 +9,17 @@ const simplify = (value: string): string =>
 
 export const areSimilar = (value1: string, value2: string): boolean =>
   simplify(value1) === simplify(value2);
+
+export const firstWordAreSimilar = (
+  value1: string,
+  value2: string
+): boolean => {
+  const [firstWord1] = value1.split(/[ -]/);
+  const [firstWord2] = value2.split(/[ -]/);
+
+  return areSimilar(firstWord1, firstWord2);
+};
+
+export function removeNonNumericCharacters(value: string): string {
+  return value.replace(/[^0-9]/g, "");
+}

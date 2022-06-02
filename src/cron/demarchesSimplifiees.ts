@@ -19,6 +19,7 @@ import {
 } from "../services/psychologists";
 import { AdeliData } from "../types/adeli";
 import { Psychologist } from "../types/psychologist";
+import { removeNonNumericCharacters } from "../utils/string";
 
 const limit = pLimit(5);
 
@@ -84,6 +85,15 @@ const validateDossier = async (
     return [`Numéro ADELI invalide : ${dossier.adeliId}`];
   }
 
+  if (
+    dossier.department !==
+    removeNonNumericCharacters(dossier.adeliId || "").substring(0, 2)
+  ) {
+    errors.push(
+      `Le numéro ADELI ${dossier.adeliId} ne correspond pas au département ${dossier.department}`
+    );
+  }
+
   const psychologistValidation = validatePsychologist(dossier, adeliData);
 
   if (psychologistValidation.success === false) {
@@ -125,6 +135,10 @@ const verifyDossier = async (dossier: Psychologist): Promise<void> => {
   );
 };
 
+// In order to perform a local test, you have to prepare the dossier
+// config.demarchesSimplifiees.writeableId on demarche simplifées website by
+// emptying "Conclusions Vérifications automatiques" and changing its status
+// to "En construction".
 export const verifFolders = async (): Promise<void> => {
   try {
     console.log("Starting verifFolders...");
