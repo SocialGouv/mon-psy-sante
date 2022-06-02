@@ -45,15 +45,15 @@ const footerBodyLinks = [
     title: "gouvernement.fr",
   },
   {
-    link: "http://www.service-public.fr",
+    link: "https://www.service-public.fr",
     title: "service-public.fr",
   },
   {
-    link: "http://legifrance.gouv.fr",
+    link: "https://www.legifrance.gouv.fr",
     title: "legifrance.gouv.fr",
   },
   {
-    link: "http://data.gouv.fr",
+    link: "https://www.data.gouv.fr",
     title: "data.gouv.fr",
   },
 ];
