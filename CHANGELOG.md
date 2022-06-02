@@ -1,3 +1,10 @@
+## [1.36.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.36.1...v1.36.2) (2022-06-02)
+
+
+### Bug Fixes
+
+* sonar cloud alert http vs https ([cdc95c3](https://github.com/SocialGouv/mon-psy-sante/commit/cdc95c3092c3e3c5381b8f79496ae5002a4044fc))
+
 ## [1.36.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.36.0...v1.36.1) (2022-05-30)
 
 
