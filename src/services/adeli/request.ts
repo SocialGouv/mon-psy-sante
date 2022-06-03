@@ -2,14 +2,11 @@ import axios, { AxiosResponse } from "axios";
 
 import { AdeliData, AdeliRawResponse } from "../../types/adeli";
 import { zip } from "../../utils/array";
+import { removeNonNumericCharacters } from "../../utils/string";
 import config from "../config";
 
 const formatRequestedAdeli = (adeliId: string): string =>
-  adeliId
-    .replace(/\./g, "")
-    .replace(/ /g, "")
-    .replace(/\//g, "")
-    .padStart(10, "0");
+  removeNonNumericCharacters(adeliId || "").padStart(10, "0");
 
 const rowColumnsToObject = <Column>(row: string[], columns: Column[]) =>
   Object.fromEntries(zip(columns, row));
