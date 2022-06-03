@@ -1,3 +1,10 @@
+# [1.39.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.38.1...v1.39.0) (2022-06-03)
+
+
+### Features
+
+* add send reporting job ([#204](https://github.com/SocialGouv/mon-psy-sante/issues/204)) ([04b1334](https://github.com/SocialGouv/mon-psy-sante/commit/04b1334c82471b9a2137918c202cb9772c0874c5))
+
 ## [1.38.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.38.0...v1.38.1) (2022-06-03)
 
 
