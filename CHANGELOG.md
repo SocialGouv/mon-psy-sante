@@ -1,3 +1,10 @@
+## [1.38.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.38.0...v1.38.1) (2022-06-03)
+
+
+### Bug Fixes
+
+* **temporary:** remove mail every minute to raph ([5072d64](https://github.com/SocialGouv/mon-psy-sante/commit/5072d64ee42d482503ae4ef56756d3baec1910f6))
+
 # [1.38.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.37.0...v1.38.0) (2022-06-03)
 
 
