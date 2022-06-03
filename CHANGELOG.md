@@ -1,3 +1,10 @@
+# [1.38.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.37.0...v1.38.0) (2022-06-03)
+
+
+### Features
+
+* **temporary:** test send mail to raph via cron ([c1ca341](https://github.com/SocialGouv/mon-psy-sante/commit/c1ca341380d5f3fff64c837f95413cb35ab43595))
+
 # [1.37.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.36.2...v1.37.0) (2022-06-03)
 
 
