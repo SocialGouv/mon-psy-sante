@@ -46,5 +46,6 @@ export default {
     url: process.env.DATABASE_URL || "postgres://localhost:5432/monpsysante",
   },
   supportMail: process.env.SUPPORT_MAIL,
+  reportingMailRecipients: process.env.REPORTING_MAIL_RECIPIENTS,
   apiAdresseUrl: process.env.API_ADRESSE_URL,
 };
