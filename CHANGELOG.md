@@ -1,3 +1,10 @@
+## [1.40.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.40.3...v1.40.4) (2022-06-06)
+
+
+### Bug Fixes
+
+* **cron:** fix name for prod ([5d50da3](https://github.com/SocialGouv/mon-psy-sante/commit/5d50da38f5b3597b34babbf6bb0d80968d525878))
+
 ## [1.40.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.40.2...v1.40.3) (2022-06-06)
 
 
