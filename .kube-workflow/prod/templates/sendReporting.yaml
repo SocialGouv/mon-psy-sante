@@ -1,8 +1,8 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  namespace: mon-psy-sante-preprod
-  name: send-reporting
+  namespace: mon-psy-sante
+  name: verif-dossiers-ds
   labels:
     app: mon-psy
 spec:
