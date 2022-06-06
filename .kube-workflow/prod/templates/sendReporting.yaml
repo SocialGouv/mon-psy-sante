@@ -2,11 +2,11 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   namespace: mon-psy-sante
-  name: verif-dossiers-ds
+  name: send-reporting
   labels:
     app: mon-psy
 spec:
-  schedule: "0 9 * * 1"
+  schedule: "30 9 * * 1"
   jobTemplate:
     spec:
       template:
