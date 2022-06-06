@@ -1,3 +1,10 @@
+## [1.40.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.40.4...v1.40.5) (2022-06-06)
+
+
+### Bug Fixes
+
+* **cron:** fix time for prod, drop and recreate cron ([3133d6d](https://github.com/SocialGouv/mon-psy-sante/commit/3133d6d31df9e2dae6cee3125025d7ba6485f024))
+
 ## [1.40.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.40.3...v1.40.4) (2022-06-06)
 
 
