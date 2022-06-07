@@ -153,5 +153,9 @@ describe("validatePsychologist", () => {
     const validation = validatePsychologist(validPsychologist, adeliDatas);
 
     assertIsValidationError(validation);
+
+    expect(validation.error.issues[0]?.message).toEqual(
+      candidateIsNotAPsychologistMessage("73")
+    );
   });
 });
