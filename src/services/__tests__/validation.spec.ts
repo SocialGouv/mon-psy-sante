@@ -10,6 +10,7 @@ import {
   psychologistLastNameDoesNotMatchMessage,
   validatePsychologist,
   ValidationAdeliData,
+  webSiteIsInvalidMessage,
 } from "../demarchesSimplifiees/validate-psychologist";
 
 describe("validatePsychologist", () => {
@@ -157,5 +158,38 @@ describe("validatePsychologist", () => {
     expect(validation.error.issues[0]?.message).toEqual(
       candidateIsNotAPsychologistMessage("73")
     );
+  });
+
+  it("should fail when website is wrong", () => {
+    const invalidPsychologists: CandidatePsychologist[] = [
+      {
+        ...validPsychologist,
+        website: "abcdefg",
+      },
+      {
+        ...validPsychologist,
+        website: "www.example.org",
+      },
+    ];
+
+    for (const invalidPsychologist of invalidPsychologists) {
+      const validation = validatePsychologist(invalidPsychologist, [adeliData]);
+      assertIsValidationError(validation);
+
+      expect(validation.error.issues[0]?.message).toEqual(
+        webSiteIsInvalidMessage(invalidPsychologist.website)
+      );
+    }
+  });
+
+  it("should work when website is ok", () => {
+    const { success } = validatePsychologist(
+      {
+        ...validPsychologist,
+        website: "https://example.org",
+      },
+      [adeliData]
+    );
+    expect(success).toBe(true);
   });
 });
