@@ -1,3 +1,10 @@
+## [1.40.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.40.5...v1.40.6) (2022-06-07)
+
+
+### Bug Fixes
+
+* **cron:** new schedule ([938937f](https://github.com/SocialGouv/mon-psy-sante/commit/938937fa1f14fa2007951e4f737a785be2c653f5))
+
 ## [1.40.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.40.4...v1.40.5) (2022-06-06)
 
 
