@@ -1,3 +1,10 @@
+# [1.41.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.40.6...v1.41.0) (2022-06-07)
+
+
+### Features
+
+* add website validation for demarches simplifiees ([#205](https://github.com/SocialGouv/mon-psy-sante/issues/205)) ([e4c20b3](https://github.com/SocialGouv/mon-psy-sante/commit/e4c20b340dee6b1107629dc684cd65c3937ff586))
+
 ## [1.40.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.40.5...v1.40.6) (2022-06-07)
 
 
