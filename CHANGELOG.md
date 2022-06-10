@@ -1,3 +1,10 @@
+## [1.43.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.43.0...v1.43.1) (2022-06-10)
+
+
+### Bug Fixes
+
+* full width column to avoid table dancing effect ([366ee25](https://github.com/SocialGouv/mon-psy-sante/commit/366ee253974d49179ba580ac6f2e1b5f5292cf9f))
+
 # [1.43.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.42.1...v1.43.0) (2022-06-10)
 
 
