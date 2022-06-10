@@ -78,17 +78,32 @@ const PsychologistsForInstructors = ({
   return (
     <>
       <h1>Psychologues - CPAM {department}</h1>
+      {psychologists.length > 0 && (
+        <TextInput
+          //@ts-ignore
+          inline
+          label="Rechercher par nom ou id"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      )}
       {filteredPsychologists.length > 0 && (
+        <Table rowKey="id" columns={columns} data={filteredPsychologists} />
+      )}
+      {filteredPsychologists.length === 0 && psychologists.length > 0 && (
         <>
-          <TextInput
-            //@ts-ignore
-            inline
-            label="Rechercher par nom ou id"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <Table rowKey="id" columns={columns} data={filteredPsychologists} />
+          <p>Aucun résultat</p>
+          <Button
+            onClick={() => {
+              setSearch("");
+            }}
+          >
+            Réinitialiser la recherche
+          </Button>
         </>
+      )}
+      {psychologists.length === 0 && (
+        <p>Aucun psychologue dans le CPAM {department}</p>
       )}
     </>
   );
