@@ -94,6 +94,7 @@ const PsychologistsForInstructors = ({
       )}
       {filteredPsychologists.length > 0 && (
         <Table
+          className="table-instructor-list"
           rowKey="id"
           columns={columns}
           data={filteredPsychologists}

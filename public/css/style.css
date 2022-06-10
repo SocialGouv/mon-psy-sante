@@ -73,3 +73,8 @@ h1 .fr-text--lead {
   width: auto;
   margin: auto;
 }
+
+/* I did not found a better way to have a full width column in instructor list using react-dsfr */
+.table-instructor-list > table > tbody > tr > td:nth-child(2) {
+  width: 100%;
+}
