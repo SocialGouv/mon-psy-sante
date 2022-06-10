@@ -1,3 +1,10 @@
+## [1.42.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.42.0...v1.42.1) (2022-06-10)
+
+
+### Bug Fixes
+
+* searchbar does not disapear when search fails ([5adfdba](https://github.com/SocialGouv/mon-psy-sante/commit/5adfdba049ec94c2c4f1fede9345477119105ed6))
+
 # [1.42.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.41.0...v1.42.0) (2022-06-07)
 
 
