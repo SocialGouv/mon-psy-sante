@@ -14,6 +14,11 @@ const PsychologistsForInstructors = ({
   const router = useRouter();
   const [search, setSearch] = useState("");
   const [filteredPsychologists, setFilteredPsychologists] = useState([]);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    setPage(1);
+  }, [search]);
 
   useEffect(() => {
     if (!search) {
@@ -88,7 +93,16 @@ const PsychologistsForInstructors = ({
         />
       )}
       {filteredPsychologists.length > 0 && (
-        <Table rowKey="id" columns={columns} data={filteredPsychologists} />
+        <Table
+          rowKey="id"
+          columns={columns}
+          data={filteredPsychologists}
+          pagination
+          paginationPosition="center"
+          perPage={15}
+          page={page}
+          setPage={setPage}
+        />
       )}
       {filteredPsychologists.length === 0 && psychologists.length > 0 && (
         <>
