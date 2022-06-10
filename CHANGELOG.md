@@ -1,3 +1,10 @@
+# [1.43.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.42.1...v1.43.0) (2022-06-10)
+
+
+### Features
+
+* pagination for instructors ([05e7b1f](https://github.com/SocialGouv/mon-psy-sante/commit/05e7b1f481cc9dabf5876ae130014eb7765b5a1c))
+
 ## [1.42.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.42.0...v1.42.1) (2022-06-10)
 
 
