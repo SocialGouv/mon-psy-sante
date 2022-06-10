@@ -1,4 +1,3 @@
-import { Alert } from "@dataesr/react-dsfr";
 import axios from "axios";
 import React, { createRef, useEffect, useRef, useState } from "react";
 
@@ -127,13 +126,17 @@ const Directory = () => {
       />
       <ResultWrapper className="fr-mb-8w">
         {noPsychologist && (
-          <Alert
-            title="Pas encore de psychologues partenaires dans cette zone"
-            className="fr-mb-4w"
-            description="Nous mettons à jour cette liste régulièrement.
-N'hésitez pas à dézoomer sur la carte (cliquer sur -) pour voir les psychologues proches de chez vous.
-A noter, certains psychologues acceptent les séances à distance après la 1ère rencontre physique"
-          />
+          <div className="fr-alert fr-alert--info fr-mb-4w">
+            <p className="fr-alert__title">
+              Pas encore de psychologues partenaires dans cette zone
+            </p>
+            <p>
+              Nous mettons à jour cette liste régulièrement. N&apos;hésitez pas
+              à dézoomer sur la carte (cliquer sur -) pour voir les psychologues
+              proches de chez vous. A noter, certains psychologues acceptent les
+              séances à distance après la 1ère rencontre physique
+            </p>
+          </div>
         )}
         {psychologists?.length > 0 && (
           <Results

@@ -1,4 +1,4 @@
-import { Button, Table, TextInput } from "@dataesr/react-dsfr";
+import { Table } from "@dataesr/react-dsfr";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
@@ -68,7 +68,8 @@ const PsychologistsForInstructors = ({
       label: "",
       name: "action",
       render: (psychologist) => (
-        <Button
+        <button
+          className="fr-btn"
           onClick={() => {
             router.push(
               `/administration-annuaire/psychologists/${psychologist.id}`
@@ -76,7 +77,7 @@ const PsychologistsForInstructors = ({
           }}
         >
           Modifier
-        </Button>
+        </button>
       ),
     },
   ];
@@ -84,13 +85,21 @@ const PsychologistsForInstructors = ({
     <>
       <h1>Psychologues - CPAM {department}</h1>
       {psychologists.length > 0 && (
-        <TextInput
-          //@ts-ignore
-          inline
-          label="Rechercher par nom ou id"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <>
+          <div className="fr-input-group">
+            <label className="fr-label" htmlFor="text-input-text">
+              Rechercher par nom ou id
+            </label>
+            <input
+              className="fr-input"
+              required
+              id="text-input-text"
+              name="text-input-text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+        </>
       )}
       {filteredPsychologists.length > 0 && (
         <Table
@@ -108,13 +117,14 @@ const PsychologistsForInstructors = ({
       {filteredPsychologists.length === 0 && psychologists.length > 0 && (
         <>
           <p>Aucun résultat</p>
-          <Button
+          <button
+            className="fr-btn"
             onClick={() => {
               setSearch("");
             }}
           >
             Réinitialiser la recherche
-          </Button>
+          </button>
         </>
       )}
       {psychologists.length === 0 && (
