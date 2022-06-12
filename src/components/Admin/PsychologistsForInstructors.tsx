@@ -47,7 +47,7 @@ const PsychologistsForInstructors = ({
     }
   }, [psychologists, search]);
 
-  const itemsPerPage = 2;
+  const itemsPerPage = 15;
 
   return (
     <>

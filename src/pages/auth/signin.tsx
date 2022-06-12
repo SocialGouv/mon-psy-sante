@@ -1,4 +1,3 @@
-import { Button } from "@dataesr/react-dsfr";
 import { useRouter } from "next/router";
 import { getProviders, signIn } from "next-auth/react";
 import React from "react";
@@ -14,7 +13,8 @@ export default function SignIn({
       <h1>Administration</h1>
       {Object.values(providers).map((provider) => (
         <div key={provider.name}>
-          <Button
+          <button
+            className="fr-btn"
             onClick={() =>
               signIn(provider.id, {
                 callbackUrl: router.query.callbackUrl as string,
@@ -22,7 +22,7 @@ export default function SignIn({
             }
           >
             Se connecter à l&apos;espace d&apos;administration
-          </Button>
+          </button>
         </div>
       ))}
     </div>

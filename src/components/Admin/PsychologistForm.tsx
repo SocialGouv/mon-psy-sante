@@ -294,13 +294,13 @@ const PsychologistForm = ({
             )}
           </button>
           {result && result.type === "success" && (
-            <div className="fr-alert fr-alert--success">
+            <div className="fr-alert fr-alert--success fr-mt-4w">
               <p className="fr-alert__title">{result.title}</p>
               <p>{result.text}</p>
             </div>
           )}
           {result && result.type === "error" && (
-            <div className="fr-alert fr-alert--error">
+            <div className="fr-alert fr-alert--error fr-mt-4w">
               <p className="fr-alert__title">{result.title}</p>
               <p>{result.text}</p>
             </div>

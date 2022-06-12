@@ -1,4 +1,3 @@
-import { Button } from "@dataesr/react-dsfr";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
@@ -152,12 +151,13 @@ const Page = () => {
                   Je trouve un psychologue partenaire près de chez moi
                 </strong>
               </p>
-              <Button
-                icon="fr-fi-search-line"
+              <button
+                className="fr-btn"
                 onClick={() => router.push("/annuaire")}
               >
+                <span className="fr-fi-search-line" aria-hidden="true" />{" "}
                 Trouver un psychologue
-              </Button>
+              </button>
             </div>
           </div>
         </div>
