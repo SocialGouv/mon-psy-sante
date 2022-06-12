@@ -1,4 +1,3 @@
-import { SearchableSelect } from "@dataesr/react-dsfr";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -101,25 +100,30 @@ const ContactForm = ({ userType }: { userType: string }) => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <SearchableSelect
-        data-test-id="department-select"
-        required
-        label="Département"
-        options={[
-          {
-            disabled: true,
-            hidden: true,
-            label: "- Selectionner votre département -",
-            value: "",
-          },
-          ...DEPARTMENTS.map((department) => ({
-            label: department,
-            value: department,
-          })),
-        ]}
-        selected={department}
-        onChange={setDepartment}
-      />
+      <div className="fr-select-group">
+        <label className="fr-label" htmlFor="select-departement">
+          Département
+          <span className="error"> *</span>
+        </label>
+        <select
+          data-test-id="department-select"
+          className="fr-select"
+          required
+          id="select-departement"
+          name="select-departement"
+          value={department}
+          onChange={(e) => setDepartment(e.target.value)}
+        >
+          <option value="" disabled hidden>
+            - Selectionner votre département -
+          </option>
+          {DEPARTMENTS.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
       {needReason(userType) && (
         <div className="fr-select-group">
           <label className="fr-label" htmlFor="select">

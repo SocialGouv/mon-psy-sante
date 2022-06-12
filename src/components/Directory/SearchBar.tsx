@@ -1,4 +1,3 @@
-import { Alert, Button, Col, Row, Select } from "@dataesr/react-dsfr";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ReactAutocomplete from "react-autocomplete";
 
@@ -82,11 +81,12 @@ const SearchBar = ({
     if (positionFilter === AROUND_ME) {
       checkGeolocationPermission();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [positionFilter]);
 
   return (
-    <Row className="fr-pb-2w" alignItems="middle">
-      <Col n="md-9 12">
+    <div className="fr-grid-row fr-grid-row--middle fr-pb-2w">
+      <div className="fr-col-md-9 fr-col-12">
         <div className="fr-select-group">
           <label className="fr-label fr-mb-2v" htmlFor="city-search">
             Rechercher par ville ou code postal
@@ -131,22 +131,30 @@ const SearchBar = ({
           </div>
         </div>
         <SubSearch>
-          <Select
-            selected={otherFilters[FILTER.PUBLIC]}
-            //@ts-ignore
-            onChange={(e) =>
-              setOtherFilters({
-                ...otherFilters,
-                [FILTER.PUBLIC]: e.target.value,
-              })
-            }
-            label="Souhait du psychologue d'accompagner des"
-            options={allPublicsFilters.map((option) => ({
-              label: option.label || option.value,
-              value: option.value,
-            }))}
-          />
-
+          <div className="fr-select-group">
+            <label className="fr-label" htmlFor="select">
+              Souhait du psychologue d&apos;accompagner des
+            </label>
+            <select
+              className="fr-select"
+              required
+              id="select"
+              name="select"
+              value={otherFilters[FILTER.PUBLIC]}
+              onChange={(e) =>
+                setOtherFilters({
+                  ...otherFilters,
+                  [FILTER.PUBLIC]: e.target.value,
+                })
+              }
+            >
+              {allPublicsFilters.map((option) => (
+                <option key={option.label || option.value} value={option.value}>
+                  {option.label || option.value}
+                </option>
+              ))}
+            </select>
+          </div>
           <div className="fr-toggle">
             <input
               id="checkbox-teleconsultation"
@@ -168,35 +176,34 @@ const SearchBar = ({
             </label>
           </div>
         </SubSearch>
-      </Col>
-      <Col n="md-3 12" className="align-center">
-        <Button
-          className="fr-ml-1w fr-mt-1w"
+      </div>
+      <div className="fr-col-md-3 fr-col-12 align-center">
+        <button
+          className="fr-btn--md fr-ml-1w fr-mt-1w fr-btn"
           disabled={!coords || geoLoading}
           onClick={loadPsychologists}
         >
           {geoLoading ? "Chargement..." : "Rechercher"}
-        </Button>
-      </Col>
+        </button>
+      </div>
       {positionFilter === AROUND_ME && geoStatus === geoStatusEnum.DENIED && (
-        <Alert
-          title="Géolocalisation indisponible"
-          className="fr-mt-1w"
-          type="error"
-          description="Veuillez autoriser la géolocalisation sur votre navigateur pour utiliser cette
-                fonctionnalité."
-        />
+        <div className="fr-alert fr-alert--error fr-mt-1w">
+          <p className="fr-alert__title">Géolocalisation indisponible</p>
+          <p>
+            Veuillez autoriser la géolocalisation sur votre navigateur pour
+            utiliser cette fonctionnalité.
+          </p>
+        </div>
       )}
-      {positionFilter === AROUND_ME &&
-        geoStatus === geoStatusEnum.UNSUPPORTED && (
-          <Alert
-            title="Géolocalisation indisponible"
-            className="fr-mt-1w"
-            type="error"
-            description="Votre navigateur ne permet pas d'utiliser cette fonctionnalité."
-          />
-        )}
-    </Row>
+      {positionFilter === AROUND_ME && geoStatus === geoStatusEnum.UNSUPPORTED && (
+        <div className="fr-alert fr-alert--error fr-mt-1w">
+          <p className="fr-alert__title">Géolocalisation indisponible</p>
+          <p>
+            Votre navigateur ne permet pas d&apos;utiliser cette fonctionnalité.
+          </p>
+        </div>
+      )}
+    </div>
   );
 };
 

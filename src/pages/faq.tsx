@@ -1,11 +1,4 @@
-import {
-  Accordion,
-  AccordionItem,
-  Col,
-  Row,
-  Tab,
-  Tabs,
-} from "@dataesr/react-dsfr";
+import { Col, Row, Tab, Tabs } from "@dataesr/react-dsfr";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -57,18 +50,7 @@ const Page = () => {
                     {item.sections.map((section, i) => (
                       <div key={i + item.title}>
                         {section.title && <h3>{section.title}</h3>}
-                        <Accordion className="fr-mb-4w">
-                          {section.faq.map(({ question, answer }) => (
-                            <AccordionItem title={question} key={question}>
-                              <div
-                                // eslint-disable-next-line react/no-danger
-                                dangerouslySetInnerHTML={{
-                                  __html: answer,
-                                }}
-                              />
-                            </AccordionItem>
-                          ))}
-                        </Accordion>
+                        <Accordion section={section} />
                       </div>
                     ))}
                   </Tab>
@@ -79,6 +61,42 @@ const Page = () => {
         </Row>
       </div>
     </>
+  );
+};
+
+const Accordion = ({ section }) => {
+  const [open, setOpen] = useState(null);
+  return (
+    <div className="fr-accordions-group fr-mb-4w">
+      {section.faq.map(({ question, answer }, index) => (
+        <section className="fr-accordion" key={question}>
+          <h3 className="fr-accordion__title">
+            <button
+              className="fr-accordion__btn"
+              aria-expanded={open === index}
+              aria-controls={`accordion-${index}`}
+              onClick={() => setOpen(open === index ? null : index)}
+            >
+              {question}
+            </button>
+          </h3>
+          <div
+            className={
+              open === index
+                ? "fr-collapse fr-collapse--expanded"
+                : "fr-collapse"
+            }
+            id={`accordion-${index}`}
+            style={{
+              // @ts-ignore
+              "--collapse": "0px",
+              maxHeight: open === index ? "none" : null,
+            }}
+            dangerouslySetInnerHTML={{ __html: answer }}
+          />
+        </section>
+      ))}
+    </div>
   );
 };
 

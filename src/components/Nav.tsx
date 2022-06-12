@@ -15,13 +15,17 @@ const Nav = () => {
       <div className="fr-header__body">
         <div className="fr-container">
           <div className="fr-header__body-row">
-            <div className="fr-header__brand fr-enlarge-link">
+            <div className="fr-header__brand">
               <div className="fr-header__brand-top">
                 <div className="fr-header__logo">
                   <p className="fr-logo">
-                    République
-                    <br />
-                    Française
+                    <Link href="/">
+                      <a title="MonPsy" target="_self">
+                        République
+                        <br />
+                        Française
+                      </a>
+                    </Link>
                   </p>
                 </div>
                 <div className="fr-header__operator">
@@ -47,12 +51,11 @@ const Nav = () => {
                 </div>
               </div>
               <div className="fr-header__service">
-                <a
-                  href="/"
-                  title="Accueil - [À MODIFIER | Nom du site / service]"
-                >
-                  <p className="fr-header__service-title">MonPsy</p>
-                </a>
+                <Link href="/">
+                  <a title="MonPsy" target="_self">
+                    <p className="fr-header__service-title">MonPsy</p>
+                  </a>
+                </Link>
                 <p className="fr-header__service-tagline">
                   En parler, c’est déjà se soigner.
                 </p>
