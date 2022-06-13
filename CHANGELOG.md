@@ -1,3 +1,10 @@
+# [1.44.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.43.1...v1.44.0) (2022-06-13)
+
+
+### Features
+
+* **site:** add video temoignage ([435cba0](https://github.com/SocialGouv/mon-psy-sante/commit/435cba079648f70d170e7a3303fe74e96311b0e7))
+
 ## [1.43.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.43.0...v1.43.1) (2022-06-10)
 
 
