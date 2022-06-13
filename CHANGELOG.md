@@ -1,3 +1,10 @@
+## [1.44.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.44.0...v1.44.1) (2022-06-13)
+
+
+### Bug Fixes
+
+* add poster for video temoignage ([e46984b](https://github.com/SocialGouv/mon-psy-sante/commit/e46984bedbe1283c1ac3577e17de6cfc727bb3d9))
+
 # [1.44.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.43.1...v1.44.0) (2022-06-13)
 
 
