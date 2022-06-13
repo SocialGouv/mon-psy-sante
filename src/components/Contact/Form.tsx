@@ -1,10 +1,3 @@
-import {
-  Alert,
-  Button,
-  SearchableSelect,
-  Select,
-  TextInput,
-} from "@dataesr/react-dsfr";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -64,83 +57,123 @@ const ContactForm = ({ userType }: { userType: string }) => {
 
   return (
     <form onSubmit={submit}>
-      <TextInput
-        data-test-id="last-name-input"
-        required
-        label="Nom"
-        //@ts-ignore
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-      />
-      <TextInput
-        data-test-id="first-name-input"
-        required
-        label="Prenom"
-        //@ts-ignore
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-      />
-      <TextInput
-        data-test-id="email-input"
-        required
-        //@ts-ignore
-        type="email"
-        label="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <SearchableSelect
-        data-test-id="department-select"
-        required
-        label="Département"
-        options={[
-          {
-            disabled: true,
-            hidden: true,
-            label: "- Selectionner votre département -",
-            value: "",
-          },
-          ...DEPARTMENTS.map((department) => ({
-            label: department,
-            value: department,
-          })),
-        ]}
-        selected={department}
-        onChange={setDepartment}
-      />
-      {needReason(userType) && (
-        <Select
-          data-test-id="reason-select"
-          //@ts-ignore
+      <div className="fr-input-group">
+        <label className="fr-label" htmlFor="last-name-input">
+          Nom<span className="error"> *</span>
+        </label>
+        <input
+          data-test-id="last-name-input"
+          className="fr-input"
           required
-          label="Motif"
-          options={[
-            {
-              disabled: true,
-              hidden: true,
-              label: "- Selectionner la raison de votre message -",
-              value: "",
-            },
-            ...allContactReasons.map((reason) => ({
-              label: reason,
-              value: reason,
-            })),
-          ]}
-          selected={reason}
-          onChange={(e) => setReason(e.target.value)}
+          id="last-name-input"
+          name="last-name-input"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
         />
+      </div>
+      <div className="fr-input-group">
+        <label className="fr-label" htmlFor="first-name-input">
+          Prénom<span className="error"> *</span>
+        </label>
+        <input
+          data-test-id="first-name-input"
+          className="fr-input"
+          required
+          id="first-name-input"
+          name="first-name-input"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+      </div>
+      <div className="fr-input-group">
+        <label className="fr-label" htmlFor="email-input">
+          Email<span className="error"> *</span>
+        </label>
+        <input
+          data-test-id="email-input"
+          className="fr-input"
+          required
+          type="email"
+          id="email-input"
+          name="email-input"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="fr-select-group">
+        <label className="fr-label" htmlFor="select-departement">
+          Département
+          <span className="error"> *</span>
+        </label>
+        <select
+          data-test-id="department-select"
+          className="fr-select"
+          required
+          id="select-departement"
+          name="select-departement"
+          value={department}
+          onChange={(e) => setDepartment(e.target.value)}
+        >
+          <option value="" disabled hidden>
+            - Selectionner votre département -
+          </option>
+          {DEPARTMENTS.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+      {needReason(userType) && (
+        <div className="fr-select-group">
+          <label className="fr-label" htmlFor="select">
+            Motif
+            <span className="error"> *</span>
+          </label>
+          <select
+            data-test-id="reason-select"
+            className="fr-select"
+            required
+            id="select"
+            name="select"
+            value={reason}
+            onChange={(e) => setReason(e.target.value)}
+          >
+            <option value="" disabled hidden>
+              - Selectionner la raison de votre message -
+            </option>
+            {allContactReasons.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
       )}
-      <TextInput
-        data-test-id="message-input"
-        required
-        textarea
-        hint="Merci de ne fournir que les données personnelles strictement nécessaires au traitement de la demande. "
-        label="Message"
-        //@ts-ignore
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
-      <Button submit data-test-id="submit-button" disabled={sending}>
+      <div className="fr-input-group">
+        <label className="fr-label" htmlFor="text-input-text">
+          Message<span className="error"> *</span>
+          <span className="fr-hint-text">
+            Merci de ne fournir que les données personnelles strictement
+            nécessaires au traitement de la demande.{" "}
+          </span>
+        </label>
+        <textarea
+          data-test-id="message-input"
+          className="fr-input"
+          required
+          id="text-input-text"
+          name="text-input-text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </div>
+      <button
+        className="fr-btn"
+        type="submit"
+        data-test-id="submit-button"
+        disabled={sending}
+      >
         {sending ? (
           <>
             <span className="fr-fi-refresh-line" aria-hidden="true" /> Envoi en
@@ -149,15 +182,19 @@ const ContactForm = ({ userType }: { userType: string }) => {
         ) : (
           "Envoyer un message"
         )}
-      </Button>
+      </button>
       {result && (
-        <Alert
-          data-test-id="alert"
-          className="fr-mt-4w"
-          //@ts-ignore
-          type={result.type}
-          title={result.text}
-        />
+        <div
+          className={
+            result.type === "success"
+              ? "fr-alert fr-alert--success fr-mt-4w"
+              : "fr-alert fr-alert--error fr-mt-4w"
+          }
+        >
+          <p className="fr-alert__title" data-test-id="alert">
+            {result.text}
+          </p>
+        </div>
       )}
     </form>
   );

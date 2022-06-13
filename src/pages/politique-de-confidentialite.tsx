@@ -1,4 +1,3 @@
-import { Table } from "@dataesr/react-dsfr";
 import Head from "next/head";
 import React from "react";
 
@@ -82,20 +81,25 @@ const Page = () => {
         </div>
         <div className="fr-mt-3w">
           <h2>Durée de conservation</h2>
-          <Table
-            rowKey={(row) => row.type}
-            data={[
-              {
-                type: "Données professionnelles publiques",
-                duration:
-                  "Jusqu’à 1 an après la fin de la convention entre le professionnel et la CPAM, ou à compter de la candidature du professionnel.",
-              },
-            ]}
-            columns={[
-              { name: "type", label: "Types de données" },
-              { name: "duration", label: "Durée de conservation" },
-            ]}
-          />
+          <table className="fr-table fr-table--no-caption">
+            <caption>Durée de conservation</caption>
+            <thead>
+              <tr>
+                <th scope="col">Types de données</th>
+                <th scope="col">Durée de conservation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Données professionnelles publiques</td>
+                <td>
+                  Jusqu’à 1 an après la fin de la convention entre le
+                  professionnel et la CPAM, ou à compter de la candidature
+                  duprofessionnel.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div className="fr-mt-3w">
           <h2>Droit des personnes concernées</h2>
@@ -178,27 +182,22 @@ const Page = () => {
         </div>
         <div className="fr-mt-3w">
           <h2>Sous-traitants</h2>
-          <Table
-            rowKey={(row) => row.name}
-            data={[
-              {
-                name: "Microsoft Azure",
-                country: "France",
-                treatment: "Hébergement",
-                urlName: "Déclaration de confidentialité Microsoft",
-              },
-            ]}
-            columns={[
-              { name: "name", label: "Partenaire" },
-              { name: "country", label: "Pays destinataire" },
-              {
-                name: "treatment",
-                label: "Traitement réalisé",
-              },
-              {
-                name: "urlName",
-                label: "Garantie",
-                render: () => (
+          <table className="fr-table fr-table--no-caption">
+            <caption>Sous-traitants</caption>
+            <thead>
+              <tr>
+                <th scope="col">Partenaire</th>
+                <th scope="col">Pays destinataire</th>
+                <th scope="col">Traitement réalisé</th>
+                <th scope="col">Garantie</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Microsoft Azure</td>
+                <td>France</td>
+                <td>Hébergement</td>
+                <td>
                   <a
                     title="privacy.microsoft.com/fr-fr/privacystatement"
                     target="_blank"
@@ -207,10 +206,10 @@ const Page = () => {
                   >
                     privacy.microsoft.com/fr-fr/privacystatement
                   </a>
-                ),
-              },
-            ]}
-          />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div className="fr-mt-3w">
           <h2>Cookies</h2>

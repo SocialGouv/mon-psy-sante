@@ -1,4 +1,3 @@
-import { Button, Container } from "@dataesr/react-dsfr";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -14,7 +13,7 @@ const Page = () => {
         image="doctor.svg"
       />
       <section>
-        <Container spacing="my-6w">
+        <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-12 fr-col-lg-7">
               <h1>Je suis médecin</h1>
@@ -28,10 +27,10 @@ const Page = () => {
               />
             </div>
           </div>
-        </Container>
+        </div>
       </section>
       <section>
-        <Container spacing="my-6w">
+        <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters">
             <div className="fr-col-12">
               <h2>Quels sont les patients concernés&nbsp;?</h2>
@@ -115,13 +114,13 @@ const Page = () => {
               </p>
             </div>
           </div>
-        </Container>
+        </div>
       </section>
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-4w">
-          <Container>
+          <div className="fr-container">
             <h2>Comment j’accompagne mon patient dans son parcours&nbsp;?</h2>
-          </Container>
+          </div>
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12 fr-col-md-3">
               <div className="fr-card align-center fr-card--no-arrow">
@@ -216,7 +215,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <Container spacing="my-4w">
+        <div className="fr-container fr-my-4w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
             <div className="fr-col-12">
               <p>
@@ -255,13 +254,11 @@ const Page = () => {
               </p>
             </div>
           </div>
-          <Button
-            icon="fr-fi-search-line"
-            onClick={() => router.push("/annuaire")}
-          >
-            Trouver un psychologue partenaire
-          </Button>
-        </Container>
+          <button className="fr-btn" onClick={() => router.push("/annuaire")}>
+            <span className="fr-fi-search-line" aria-hidden="true" /> Trouver un
+            psychologue partenaire
+          </button>
+        </div>
       </section>
       <section>
         <div className="fr-container fr-my-6w">

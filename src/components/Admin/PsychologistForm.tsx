@@ -1,11 +1,3 @@
-import {
-  Alert,
-  Button,
-  Col,
-  Row,
-  Select,
-  TextInput,
-} from "@dataesr/react-dsfr";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -160,8 +152,8 @@ const PsychologistForm = ({
   };
 
   return (
-    <Row className="fr-my-4w" justifyContent="center">
-      <Col className="fr-col-lg-8">
+    <div className="fr-grid-row fr-grid-row--center fr-my-4w">
+      <div className="fr-col-lg-8">
         <h1>Modifier le psychologue</h1>
         <p className="fr-hint-text">
           Les champs suivis d’un astérisque ( <span className="error"> *</span>{" "}
@@ -206,35 +198,60 @@ const PsychologistForm = ({
                 );
               case "select":
                 return (
-                  <Select
-                    key={editableField.label}
-                    //@ts-ignore
-                    required={editableField.required}
-                    label={editableField.label}
-                    hint={editableField.legend}
-                    options={editableField.options.map((option) => ({
-                      label: option,
-                      value: option,
-                    }))}
-                    selected={modifiedPsychologist[editableField.field]}
-                    onChange={(e) =>
-                      update(editableField.field, e.target.value)
-                    }
-                  />
+                  <div className="fr-select-group" key={editableField.label}>
+                    <label className="fr-label" htmlFor="select">
+                      {editableField.label}
+                      {editableField.required && (
+                        <span className="error"> *</span>
+                      )}
+                    </label>
+                    <select
+                      className="fr-select"
+                      required={editableField.required}
+                      id="select"
+                      name="select"
+                      value={modifiedPsychologist[editableField.field]}
+                      onChange={(e) => {
+                        update(editableField.field, e.target.value);
+                      }}
+                    >
+                      <option value="" disabled hidden>
+                        Selectionnez une option
+                      </option>
+                      {editableField.options.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 );
               default:
                 return (
-                  <TextInput
-                    key={editableField.label}
-                    required={editableField.required}
-                    label={editableField.label}
-                    hint={editableField.legend}
-                    //@ts-ignore
-                    value={modifiedPsychologist[editableField.field]}
-                    onChange={(e) =>
-                      update(editableField.field, e.target.value)
-                    }
-                  />
+                  <div className="fr-input-group" key={editableField.label}>
+                    <label className="fr-label" htmlFor="text-input-text">
+                      {editableField.label}
+                      {editableField.required && (
+                        <span className="error"> *</span>
+                      )}
+                      {editableField.legend && (
+                        <span className="fr-hint-text">
+                          {editableField.legend}
+                        </span>
+                      )}
+                    </label>
+                    <input
+                      className="fr-input"
+                      required={editableField.required}
+                      type={editableField.type || "text"}
+                      id="text-input-text"
+                      name="text-input-text"
+                      value={modifiedPsychologist[editableField.field]}
+                      onChange={(e) =>
+                        update(editableField.field, e.target.value)
+                      }
+                    />
+                  </div>
                 );
             }
           })}
@@ -266,7 +283,7 @@ const PsychologistForm = ({
               </div>
             </div>
           )}
-          <Button submit disabled={sending}>
+          <button className="fr-btn" disabled={sending} type="submit">
             {sending ? (
               <>
                 <span className="fr-fi-refresh-line" aria-hidden="true" />{" "}
@@ -275,19 +292,22 @@ const PsychologistForm = ({
             ) : (
               "Enregistrer"
             )}
-          </Button>
-          {result && (
-            <Alert
-              data-test-id="alert"
-              className="fr-mt-4w"
-              type={result.type}
-              title={result.title}
-              description={result.text}
-            />
+          </button>
+          {result && result.type === "success" && (
+            <div className="fr-alert fr-alert--success fr-mt-4w">
+              <p className="fr-alert__title">{result.title}</p>
+              <p>{result.text}</p>
+            </div>
+          )}
+          {result && result.type === "error" && (
+            <div className="fr-alert fr-alert--error fr-mt-4w">
+              <p className="fr-alert__title">{result.title}</p>
+              <p>{result.text}</p>
+            </div>
           )}
         </form>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };
 export default PsychologistForm;

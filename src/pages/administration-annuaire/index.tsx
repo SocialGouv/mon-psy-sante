@@ -1,4 +1,3 @@
-import { Alert } from "@dataesr/react-dsfr";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import { getSession } from "next-auth/react";
@@ -33,11 +32,9 @@ const Admin = ({
           </div>
           <div className="fr-col-12 fr-col-md-6 fr-col-offset-1">
             {router.query.error === "NotFound" && (
-              <Alert
-                title="Dossier non trouvé"
-                className="fr-my-2w"
-                type="error"
-              />
+              <div className="fr-alert fr-alert--error fr-my-2w">
+                <p className="fr-alert__title">Dossier non trouvé</p>
+              </div>
             )}
             {department ? (
               <PsychologistsForInstructors

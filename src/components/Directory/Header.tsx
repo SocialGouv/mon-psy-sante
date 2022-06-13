@@ -1,4 +1,3 @@
-import { Callout, CalloutTitle } from "@dataesr/react-dsfr";
 import React from "react";
 
 const Header = () => {
@@ -9,8 +8,8 @@ const Header = () => {
       <p className="fr-text--sm">
         La liste des psychologues partenaires est actualisée régulièrement.
       </p>
-      <Callout className="fr-mb-4w fr-callout--pink-tuile">
-        <CalloutTitle>A noter</CalloutTitle>
+      <div className="fr-callout fr-fi-information-line fr-mb-4w fr-callout--pink-tuile">
+        <p className="fr-callout__title">À noter</p>
         <div className="fr-callout__text fr-text--md">
           <ul>
             <li>
@@ -38,7 +37,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-      </Callout>
+      </div>
     </div>
   );
 };
