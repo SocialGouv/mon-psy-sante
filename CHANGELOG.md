@@ -1,3 +1,10 @@
+# [1.45.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.44.1...v1.45.0) (2022-06-13)
+
+
+### Features
+
+* remove react-dsfr ([#206](https://github.com/SocialGouv/mon-psy-sante/issues/206)) ([ed5029a](https://github.com/SocialGouv/mon-psy-sante/commit/ed5029a11dcd40961d04afc3abb60571c1a6f81d))
+
 ## [1.44.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.44.0...v1.44.1) (2022-06-13)
 
 
