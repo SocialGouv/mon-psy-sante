@@ -10,7 +10,12 @@ const PageVideoTemoignage = () => {
       <div className="fr-container fr-my-6w">
         <div>
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-          <video width="100%" controls style={{ cursor: "pointer" }}>
+          <video
+            width="100%"
+            controls
+            style={{ cursor: "pointer" }}
+            poster="/images/Video-Temoignage-Poster.png"
+          >
             <source type="video/mp4" src="/images/Video-Temoignage.mp4" />
           </video>
         </div>
