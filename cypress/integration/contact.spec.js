@@ -56,7 +56,7 @@ describe("Contact page", () => {
     cy.get('[data-test-id="email-input"]')
       .type('john.doe@msp.fr');
     cy.get('[data-test-id="department-select"]')
-      .type('95');
+      .select('12 - Aveyron');
     cy.get('[data-test-id="reason-select"]').should('not.exist')
     cy.get('[data-test-id="message-input"]')
       .type('Is this working ?');
