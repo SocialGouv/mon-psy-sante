@@ -159,6 +159,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
           </span>
         </label>
         <textarea
+          data-test-id="message-input"
           className="fr-input"
           required
           id="text-input-text"
@@ -190,7 +191,9 @@ const ContactForm = ({ userType }: { userType: string }) => {
               : "fr-alert fr-alert--error fr-mt-4w"
           }
         >
-          <p className="fr-alert__title">{result.text}</p>
+          <p className="fr-alert__title" data-test-id="alert">
+            {result.text}
+          </p>
         </div>
       )}
     </form>

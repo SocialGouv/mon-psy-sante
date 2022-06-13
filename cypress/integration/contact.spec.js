@@ -20,12 +20,12 @@ describe("Contact page", () => {
     cy.get('[data-test-id="email-input"]')
       .type('john.doe@msp.fr');
     cy.get('[data-test-id="department-select"]')
-      .type('95');
-    cy.get('[data-test-id="reason-select"] > select > option')
+      .select('12 - Aveyron');
+    cy.get('[data-test-id="reason-select"]> option')
       .eq(2)
       .then((element) =>
         cy
-          .get('[data-test-id="reason-select"] > select')
+          .get('[data-test-id="reason-select"]')
           .select(element.val())
       );
     cy.get('[data-test-id="message-input"]')
