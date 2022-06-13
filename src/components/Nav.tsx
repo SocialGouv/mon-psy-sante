@@ -41,7 +41,7 @@ const Nav = () => {
                     className="fr-btn--menu fr-btn"
                     onClick={() => setModalMenuOpen(true)}
                     data-fr-opened="false"
-                    aria-controls="modal-870"
+                    aria-controls="modal-main-nav"
                     aria-haspopup="menu"
                     title="Menu"
                     id="fr-btn-menu-mobile-4"
@@ -71,13 +71,13 @@ const Nav = () => {
             ? "fr-header__menu fr-modal fr-modal--opened"
             : "fr-header__menu fr-modal"
         }
-        id="modal-870"
+        id="modal-main-nav"
         aria-labelledby="fr-btn-menu-mobile-4"
       >
         <div className="fr-container">
           <button
             className="fr-link--close fr-link"
-            aria-controls="modal-870"
+            aria-controls="modal-main-nav"
             onClick={() => setModalMenuOpen(false)}
           >
             Fermer
@@ -85,7 +85,7 @@ const Nav = () => {
           <div className="fr-header__menu-links" />
           <nav
             className="fr-nav"
-            id="navigation-870"
+            id="navigation-main-nav"
             role="navigation"
             aria-label="Menu principal"
           >

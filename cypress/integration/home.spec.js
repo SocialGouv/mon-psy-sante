@@ -7,7 +7,7 @@ describe("Home & landing pages", () => {
       "MonPsy L’accès à un accompagnement psychologique pour tous (dès 3 ans)"
     );
 
-    cy.get("nav")
+    cy.get("nav#navigation-main-nav")
       .first()
       .should(
         "have.text",
