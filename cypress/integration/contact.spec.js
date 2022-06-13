@@ -6,11 +6,11 @@ describe("Contact page", () => {
   });
 
   it("should send a mail with reason for psychologist", () => {
-    cy.get('[data-test-id="user-type-select"] > select > option')
+    cy.get('[data-test-id="user-type-select"] > option')
       .eq(1)
       .then((element) =>
         cy
-          .get('[data-test-id="user-type-select"] > select')
+          .get('[data-test-id="user-type-select"]')
           .select(element.val())
       );
     cy.get('[data-test-id="last-name-input"]')
@@ -42,11 +42,11 @@ describe("Contact page", () => {
   });
 
   it("should send a mail without reason for others", () => {
-    cy.get('[data-test-id="user-type-select"] > select > option')
+    cy.get('[data-test-id="user-type-select"] > option')
       .eq(5)
       .then((element) =>
         cy
-          .get('[data-test-id="user-type-select"] > select')
+          .get('[data-test-id="user-type-select"]')
           .select(element.val())
       );
     cy.get('[data-test-id="last-name-input"]')
@@ -73,13 +73,13 @@ describe("Contact page", () => {
 
   it("should display public info", () => {
     cy.get('[data-test-id="public-info"]')
-    .should('not.exist')
+      .should('not.exist')
 
-    cy.get('[data-test-id="user-type-select"] > select > option')
+    cy.get('[data-test-id="user-type-select"] > option')
       .eq(3)
       .then((element) =>
         cy
-          .get('[data-test-id="user-type-select"] > select')
+          .get('[data-test-id="user-type-select"]')
           .select(element.val())
       );
     cy.get('[data-test-id="public-info"]')
@@ -88,13 +88,13 @@ describe("Contact page", () => {
 
   it("should display psychologist info", () => {
     cy.get('[data-test-id="psychologist-info"]')
-    .should('not.exist')
+      .should('not.exist')
 
-    cy.get('[data-test-id="user-type-select"] > select > option')
+    cy.get('[data-test-id="user-type-select"] > option')
       .eq(2)
       .then((element) =>
         cy
-          .get('[data-test-id="user-type-select"] > select')
+          .get('[data-test-id="user-type-select"]')
           .select(element.val())
       );
     cy.get('[data-test-id="psychologist-info"]')
@@ -103,13 +103,13 @@ describe("Contact page", () => {
 
   it("should display doctor info", () => {
     cy.get('[data-test-id="psychologist-info"]')
-    .should('not.exist')
+      .should('not.exist')
 
-    cy.get('[data-test-id="user-type-select"] > select > option')
+    cy.get('[data-test-id="user-type-select"] > option')
       .eq(4)
       .then((element) =>
         cy
-          .get('[data-test-id="user-type-select"] > select')
+          .get('[data-test-id="user-type-select"]')
           .select(element.val())
       );
     cy.get('[data-test-id="psychologist-info"]')
