@@ -1,7 +1,7 @@
 import pLimit from "p-limit";
 import Sequelize, { Op } from "sequelize";
 
-import { models } from "../db/models";
+import { models, sequelize } from "../db/models";
 import { SRID } from "../types/const/geometry";
 import { FILTER } from "../types/enums/filters";
 import { PUBLIC } from "../types/enums/public";
@@ -82,24 +82,53 @@ export const getAll = async (filters: {
     };
   }
 
+  // Search on both psychologists' addresses (via coordinates and second_address_coordinates).
   if (filters[FILTER.LONGITUDE] && filters[FILTER.LATITUDE]) {
+    // Get longitude and latitude from filters as `geometry(Point,4326)`.
+    const { coordinates } = await sequelize.query(
+      `select ST_SetSRID(ST_MakePoint(:lon,:lat), :srid)::text as coordinates;`,
+      {
+        replacements: {
+          lon: parseFloat(filters[FILTER.LONGITUDE] as string),
+          lat: parseFloat(filters[FILTER.LATITUDE] as string),
+          srid: SRID,
+        },
+        type: Sequelize.QueryTypes.SELECT,
+        plain: true,
+      }
+    );
+    // Adds custom attributes about distance to the query (distance and distance_based_on)
     query.attributes = {
       include: [
+        // Get the nearest address of the psychologist
+        // (i.e: choose least distance based on coordinates or second_address_coordinates).
         [
           Sequelize.fn(
-            "ST_Distance",
-            Sequelize.col("coordinates"),
+            "least",
             Sequelize.fn(
-              "ST_SetSRID",
-              Sequelize.fn(
-                "ST_MakePoint",
-                filters[FILTER.LONGITUDE],
-                filters[FILTER.LATITUDE]
-              ),
-              SRID
+              "ST_Distance",
+              Sequelize.col("coordinates"),
+              coordinates
+            ),
+            Sequelize.fn(
+              "ST_Distance",
+              Sequelize.col("second_address_coordinates"),
+              coordinates
             )
           ),
           "distance",
+        ],
+        // Adds distance_based_on in order to know which distance has been prefered
+        // (coordinates or second_address_coordinates).
+        [
+          Sequelize.literal(
+            `case when ST_Distance(coordinates, ${sequelize.escape(
+              coordinates
+            )}) < ST_Distance(second_address_coordinates, ${sequelize.escape(
+              coordinates
+            )}) then 'coordinates' else 'second_address_coordinates' end`
+          ),
+          "distance_based_on",
         ],
       ],
     };
