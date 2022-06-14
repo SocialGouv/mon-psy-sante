@@ -1,3 +1,10 @@
+## [1.45.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.45.0...v1.45.1) (2022-06-14)
+
+
+### Bug Fixes
+
+* trigger release in production ([f166e8c](https://github.com/SocialGouv/mon-psy-sante/commit/f166e8c80fb95775d800ebd733fb780190d4e366))
+
 # [1.45.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.44.1...v1.45.0) (2022-06-13)
 
 
