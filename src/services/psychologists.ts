@@ -61,8 +61,11 @@ export const getAll = async (filters: {
     ? parseInt(filters[FILTER.PAGE_INDEX] as string, 10)
     : 0;
 
-  const where: any = { archived: false, state: "accepte" };
-  const query: Sequelize.FindOptions<any> = {
+  const where: Sequelize.WhereOptions<Psychologist> = {
+    archived: false,
+    state: "accepte",
+  };
+  const query: Sequelize.FindOptions<Psychologist> = {
     limit: pageSize,
     offset: pageIndex * pageSize,
     raw: true,
