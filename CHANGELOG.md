@@ -1,3 +1,11 @@
+## [1.46.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.46.0...v1.46.1) (2022-06-16)
+
+
+### Bug Fixes
+
+* 404 on images ([e698bad](https://github.com/SocialGouv/mon-psy-sante/commit/e698badba9cec97ee90836a3db77e4fcfb596857))
+* useless info ([060accc](https://github.com/SocialGouv/mon-psy-sante/commit/060acccd59ba9784d1013f83b4193f354deccaad))
+
 # [1.46.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.45.1...v1.46.0) (2022-06-16)
 
 
