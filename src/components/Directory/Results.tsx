@@ -1,6 +1,7 @@
 import React, { Dispatch, MutableRefObject, SetStateAction } from "react";
 
 import { Coordinates } from "../../types/coordinates";
+import { DistanceBasedOn } from "../../types/enums/psychologist";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 import { Desktop, Psychologists } from "./Directory.styles";
 import Psychologist from "./Psychologist";
@@ -28,11 +29,15 @@ const Results = ({
   setMapZoom: Dispatch<SetStateAction<number>>;
 }) => {
   const selectPsy = (psychologist: PsychologistType) => {
+    const coordinates =
+      psychologist.distanceBasedOn === DistanceBasedOn.SecondAddressCoordinates
+        ? psychologist.secondAddressCoordinates
+        : psychologist.coordinates;
     setSelectedPsychologist(psychologist.id);
     if (psychologist.coordinates) {
       setMapCenter({
-        latitude: psychologist.coordinates.coordinates[1],
-        longitude: psychologist.coordinates.coordinates[0],
+        latitude: coordinates.coordinates[1],
+        longitude: coordinates.coordinates[0],
       });
       setMapZoom(14);
     }

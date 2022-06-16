@@ -54,12 +54,6 @@ function MarkerWithIcon({
       ? psychologist.secondAddressCoordinates
       : psychologist.coordinates;
 
-  console.log(
-    psychologist.distanceBasedOn === DistanceBasedOn.SecondAddressCoordinates,
-    psychologist.secondAddressCoordinates,
-    psychologist.coordinates
-  );
-
   return (
     <Marker
       eventHandlers={{
@@ -90,6 +84,12 @@ const PsychologistsMap = ({
   mapZoom: number;
 }) => {
   function havingCoordinates(psychologist: PsychologistType) {
+    console.log(
+      psychologist.coordinates,
+      psychologist.distanceBasedOn ===
+        DistanceBasedOn.SecondAddressCoordinates &&
+        psychologist.secondAddressCoordinates
+    );
     return (
       psychologist.coordinates ||
       (psychologist.distanceBasedOn ===
