@@ -29,7 +29,7 @@ const SearchBar = ({
   setGeoLoading,
   loadPsychologists,
 }: {
-  positionFilter: string;
+  positionFilter: string | [number, number];
   setPositionFilter: Dispatch<SetStateAction<string>>;
   otherFilters: any;
   setOtherFilters: Dispatch<SetStateAction<any>>;

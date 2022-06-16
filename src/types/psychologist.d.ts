@@ -1,4 +1,5 @@
 import { CoordinatesPostgis } from "./coordinates";
+import { DistanceBasedOn } from "./enums/psychologist";
 
 export interface Psychologist {
   id: number;
@@ -23,9 +24,12 @@ export interface Psychologist {
   secondAddressCoordinates: CoordinatesPostgis;
   department: string;
   state: string;
-  distance?: number;
   adeliId: string;
   demarcheSimplifieesId?: string;
+  // These two parameters are dynamically generated
+  // by API when querying via latitude and longitude.
+  distance?: number;
+  distanceBasedOn?: DistanceBasedOn;
 }
 
 export interface DSPsychologist {
