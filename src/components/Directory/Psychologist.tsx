@@ -141,9 +141,6 @@ const Psychologist = ({
                   {psychologist.secondAddressAdditional}
                 </small>
               )}
-              <small className="d-block fr-text--sm  fr-ml-3w">
-                (adresse secondaire)
-              </small>
             </p>
           )}
           {psychologist.visible ? (
