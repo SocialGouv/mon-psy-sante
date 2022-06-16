@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import { DistanceBasedOn } from "../../types/enums/psychologist";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 
 const Psychologist = ({
