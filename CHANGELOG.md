@@ -1,3 +1,10 @@
+# [1.46.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.45.1...v1.46.0) (2022-06-16)
+
+
+### Features
+
+* use secondary address for psychologists ([#208](https://github.com/SocialGouv/mon-psy-sante/issues/208)) ([df69df6](https://github.com/SocialGouv/mon-psy-sante/commit/df69df66f6021a06617747d2b6832ed4800fbe78))
+
 ## [1.45.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.45.0...v1.45.1) (2022-06-14)
 
 
