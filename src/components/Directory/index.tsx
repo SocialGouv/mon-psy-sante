@@ -24,7 +24,9 @@ const Directory = () => {
   const [mapCenter, setMapCenter] = useState<Coordinates>();
   const [mapZoom, setMapZoom] = useState<number>(12);
 
-  const [positionFilter, setPositionFilter] = useState<any>("");
+  const [positionFilter, setPositionFilter] = useState<
+    string | [number, number]
+  >("");
   const [otherFilters, setOtherFilters] = useState({
     [FILTER.TELECONSULTATION]: false,
     [FILTER.PUBLIC]: PUBLIC.BOTH,
@@ -101,7 +103,7 @@ const Directory = () => {
           });
           setGeoLoading(false);
         });
-    } else if (positionFilter) {
+    } else if (Array.isArray(positionFilter)) {
       setCoords({
         latitude: positionFilter[1],
         longitude: positionFilter[0],

@@ -97,7 +97,7 @@ export const getAll = async (filters: {
         plain: true,
       }
     );
-    // Adds custom attributes about distance to the query (distance and distance_based_on)
+    // Adds custom attributes about distance to the query (distance and distanceBasedOn)
     query.attributes = {
       include: [
         // Get the nearest address of the psychologist
@@ -118,17 +118,20 @@ export const getAll = async (filters: {
           ),
           "distance",
         ],
-        // Adds distance_based_on in order to know which distance has been prefered
+        // Adds distanceBasedOn in order to know which distance has been prefered
         // (coordinates or second_address_coordinates).
         [
           Sequelize.literal(
-            `case when ST_Distance(coordinates, ${sequelize.escape(
+            `case 
+              when second_address_coordinates is null or 
+                ST_Distance(coordinates, ${sequelize.escape(
+                  coordinates
+                )}) < ST_Distance(second_address_coordinates, ${sequelize.escape(
               coordinates
-            )}) < ST_Distance(second_address_coordinates, ${sequelize.escape(
-              coordinates
-            )}) then 'coordinates' else 'second_address_coordinates' end`
+            )}) then 'coordinates' 
+            else 'second_address_coordinates' end`
           ),
-          "distance_based_on",
+          "distanceBasedOn",
         ],
       ],
     };

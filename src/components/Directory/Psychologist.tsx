@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
+import { DistanceBasedOn } from "../../types/enums/psychologist";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 
 const Psychologist = ({
@@ -118,12 +119,22 @@ const Psychologist = ({
               width="18"
               src="/images/icones/map-pin-fill.svg"
             />
-            {psychologist.address}
-            {psychologist.addressAdditional && (
-              <small className="d-block fr-text--sm fr-ml-3w">
-                {psychologist.addressAdditional}
-              </small>
-            )}
+            {psychologist.distanceBasedOn === DistanceBasedOn.Coordinates
+              ? psychologist.address
+              : psychologist.secondAddress}
+            {psychologist.distanceBasedOn === DistanceBasedOn.Coordinates &&
+              psychologist.addressAdditional && (
+                <small className="d-block fr-text--sm fr-ml-3w">
+                  {psychologist.addressAdditional}
+                </small>
+              )}
+            {psychologist.distanceBasedOn ===
+              DistanceBasedOn.SecondAddressCoordinates &&
+              psychologist.secondAddressAdditional && (
+                <small className="d-block fr-text--sm fr-ml-3w">
+                  {psychologist.secondAddressAdditional}
+                </small>
+              )}
           </p>
 
           {psychologist.visible ? (
