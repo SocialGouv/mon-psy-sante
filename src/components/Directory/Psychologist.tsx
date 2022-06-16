@@ -119,24 +119,34 @@ const Psychologist = ({
               width="18"
               src="/images/icones/map-pin-fill.svg"
             />
-            {psychologist.distanceBasedOn === DistanceBasedOn.Coordinates
-              ? psychologist.address
-              : psychologist.secondAddress}
-            {psychologist.distanceBasedOn === DistanceBasedOn.Coordinates &&
-              psychologist.addressAdditional && (
-                <small className="d-block fr-text--sm fr-ml-3w">
-                  {psychologist.addressAdditional}
-                </small>
-              )}
-            {psychologist.distanceBasedOn ===
-              DistanceBasedOn.SecondAddressCoordinates &&
-              psychologist.secondAddressAdditional && (
+            {psychologist.address}
+            {psychologist.addressAdditional && (
+              <small className="d-block fr-text--sm fr-ml-3w">
+                {psychologist.addressAdditional}
+              </small>
+            )}
+          </p>
+          {psychologist.secondAddress && (
+            <p className="fr-my-0">
+              <Icon
+                aria-hidden="true"
+                alt=""
+                className="fr-mr-1w fr-mb-1v"
+                height="18"
+                width="18"
+                src="/images/icones/map-pin-fill.svg"
+              />
+              {psychologist.secondAddress}
+              {psychologist.secondAddressAdditional && (
                 <small className="d-block fr-text--sm fr-ml-3w">
                   {psychologist.secondAddressAdditional}
                 </small>
               )}
-          </p>
-
+              <small className="d-block fr-text--sm  fr-ml-3w">
+                (adresse secondaire)
+              </small>
+            </p>
+          )}
           {psychologist.visible ? (
             <button
               className="fr-btn fr-btn--sm fr-btn--secondary fr-mt-1w"
