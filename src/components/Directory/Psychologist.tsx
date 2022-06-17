@@ -108,6 +108,21 @@ const Psychologist = ({
             {psychologist.firstName} {psychologist.lastName}
           </p>
         </div>
+        {psychologist.cdsmsp && (
+          <div className="fr-tile__desc">
+            <p className="fr-my-0">
+              <Icon
+                aria-hidden="true"
+                alt=""
+                className="fr-mr-1w fr-mb-1v"
+                height="18"
+                width="18"
+                src="/images/icones/home-fill.svg"
+              />
+              {psychologist.cdsmsp}
+            </p>
+          </div>
+        )}
         <div className="fr-tile__desc">
           <p className="fr-my-0">
             <Icon
