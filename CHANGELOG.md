@@ -1,3 +1,10 @@
+# [1.47.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.46.2...v1.47.0) (2022-06-17)
+
+
+### Features
+
+* display cdsmsp in directory ([30bdf53](https://github.com/SocialGouv/mon-psy-sante/commit/30bdf53225a654932d32bc38986d68889d8e4bcc))
+
 ## [1.46.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.46.1...v1.46.2) (2022-06-17)
 
 
