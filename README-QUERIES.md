@@ -16,7 +16,7 @@ In Header :
 
 ```
  {
-  "demarcheNumber": 52209 
+  "demarcheNumber": 52209
  }
 ```
 
@@ -114,4 +114,17 @@ query getGroupeDossiersWithAnnotations($demarcheNumber: Int!) {
     }
   }
 }
+```
+
+# SQL Queries
+
+Nettoyage des psy qui ont mis leur nom et prénom dans le champ cdsmsp.
+
+```sql
+update psychologist
+set cdsmsp = null
+where cdsmsp = ''
+  or cdsmsp ilike last_name || ' ' || '%'
+  or cdsmsp ilike '%' || ' ' || last_name
+  or cdsmsp
 ```
