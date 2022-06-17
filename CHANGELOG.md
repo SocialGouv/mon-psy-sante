@@ -1,3 +1,10 @@
+## [1.46.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.46.1...v1.46.2) (2022-06-17)
+
+
+### Bug Fixes
+
+* remove useless CSS ([076df5e](https://github.com/SocialGouv/mon-psy-sante/commit/076df5eefff6c785e189cca3bd7e5dc361359f35))
+
 ## [1.46.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.46.0...v1.46.1) (2022-06-16)
 
 
