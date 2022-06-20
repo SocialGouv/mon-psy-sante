@@ -1,3 +1,10 @@
+## [1.47.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.47.0...v1.47.1) (2022-06-20)
+
+
+### Bug Fixes
+
+* **admin:** allow empty cdsmsp ([#209](https://github.com/SocialGouv/mon-psy-sante/issues/209)) ([3580554](https://github.com/SocialGouv/mon-psy-sante/commit/3580554c216f39e6bbe13550a4274f659b1c443d))
+
 # [1.47.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.46.2...v1.47.0) (2022-06-17)
 
 
