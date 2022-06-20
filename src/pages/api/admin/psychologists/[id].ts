@@ -17,7 +17,7 @@ const updateSchema = Joi.object({
   secondAddress: Joi.string().allow(""),
   secondAddressCoordinates: Joi.object().allow(null),
   secondAddressAdditional: Joi.string().allow("", null),
-  cdsmsp: Joi.string().allow(""),
+  cdsmsp: Joi.string().allow("", null),
   displayEmail: Joi.boolean().required(),
   email: Joi.string().email(),
   firstName: Joi.string().required(),
