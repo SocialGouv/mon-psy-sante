@@ -21,7 +21,7 @@ const updateSchema = Joi.object({
   displayEmail: Joi.boolean().required(),
   email: Joi.string().email(),
   firstName: Joi.string().required(),
-  languages: Joi.string().allow(null),
+  languages: Joi.string().allow("", null),
   lastName: Joi.string().required(),
   phone: Joi.string().required(),
   displayPhone: Joi.boolean().required(),

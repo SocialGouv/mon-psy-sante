@@ -111,4 +111,23 @@ describe("updateIfExists", () => {
     // @ts-ignore
     expect(updatedPsy.shouldBeIgnored).toEqual(undefined);
   });
+
+  it("should empty languages when languages is empty", async () => {
+    async function expectUpdatedPsy(expected) {
+      const updatedPsy = (await models.Psychologist.findOne({
+        where: { email: valideInput.email },
+      })) as unknown as Psychologist;
+      expect(updatedPsy.languages).toEqual(expected);
+    }
+    getAddressCoordinatesStub.returns({ latitude: 456, longitude: 123 });
+    // Should add language.
+    await updateIfExists("1", "01", { ...valideInput, languages: "anglais" });
+    await expectUpdatedPsy("anglais");
+    // Should not alter language when nothing is provided.
+    await updateIfExists("1", "01", valideInput);
+    await expectUpdatedPsy("anglais");
+    // Should empty language when empty string is provided.
+    await updateIfExists("1", "01", { ...valideInput, languages: "" });
+    await expectUpdatedPsy(null);
+  });
 });
