@@ -106,11 +106,11 @@ describe("parseDossierMetadata", () => {
   it.each`
     languages                       | languagesOther | resultValue
     ${undefined}                    | ${undefined}   | ${undefined}
-    ${null}                         | ${undefined}   | ${undefined}
-    ${""}                           | ${undefined}   | ${undefined}
+    ${null}                         | ${undefined}   | ${null}
+    ${""}                           | ${undefined}   | ${null}
     ${undefined}                    | ${"Francais"}  | ${undefined}
-    ${null}                         | ${"Francais"}  | ${undefined}
-    ${""}                           | ${"Francais"}  | ${undefined}
+    ${null}                         | ${"Francais"}  | ${null}
+    ${""}                           | ${"Francais"}  | ${null}
     ${"FRANCAIS"}                   | ${undefined}   | ${undefined}
     ${"Francais"}                   | ${undefined}   | ${undefined}
     ${"francais"}                   | ${undefined}   | ${undefined}

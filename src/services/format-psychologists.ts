@@ -28,6 +28,7 @@ function formatFirstName(string) {
 }
 
 export const formatLanguage = (value) => {
+  if (value === undefined) return;
   if (!value) return null;
   const cleanFrench = value.trim().replace(frenchWord, "");
   return cleanFrench || undefined;
