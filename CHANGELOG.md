@@ -1,3 +1,10 @@
+## [1.47.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.47.3...v1.47.4) (2022-06-27)
+
+
+### Bug Fixes
+
+* **admin:** allow empty languages ([#210](https://github.com/SocialGouv/mon-psy-sante/issues/210)) ([b3ed405](https://github.com/SocialGouv/mon-psy-sante/commit/b3ed4057ea705e14030723f89b929921e7c588c0))
+
 ## [1.47.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.47.2...v1.47.3) (2022-06-27)
 
 
