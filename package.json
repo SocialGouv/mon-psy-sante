@@ -61,7 +61,7 @@
     "eslint-plugin-import": "^2.25.4",
     "jest": "^28.0.0",
     "jest-dev-server": "^6.0.3",
-    "lint-staged": "^12.3.3",
+    "lint-staged": "^13.0.0",
     "prettier": "^2.5.1",
     "sinon": "^14.0.0",
     "typescript": "^4.5.5",
