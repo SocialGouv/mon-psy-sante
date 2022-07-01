@@ -1,3 +1,10 @@
+## [1.47.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.47.4...v1.47.5) (2022-07-01)
+
+
+### Bug Fixes
+
+* remove console log ([99660e0](https://github.com/SocialGouv/mon-psy-sante/commit/99660e098a675d986736f2eab450d546c626bdea))
+
 ## [1.47.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.47.3...v1.47.4) (2022-06-27)
 
 
