@@ -1,3 +1,10 @@
+## [1.47.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.47.5...v1.47.6) (2022-07-01)
+
+
+### Bug Fixes
+
+* change default max items per page ([a7686fb](https://github.com/SocialGouv/mon-psy-sante/commit/a7686fb33b21e566b5546a5b440a774af6b74631))
+
 ## [1.47.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.47.4...v1.47.5) (2022-07-01)
 
 
