@@ -49,7 +49,7 @@ export const countAll = async () =>
     where: { archived: false, state: "accepte" },
   });
 
-const DEFAULT_PAGE_SIZE = 50;
+const DEFAULT_PAGE_SIZE = 75;
 export const getAll = async (filters: {
   [key in FILTER]?: string | string[];
 }): Promise<Psychologist[]> => {
