@@ -172,6 +172,43 @@ export const requestDossiersWithAnnotations = async (
   return request(query);
 };
 
+export const requestDossiersEnInstruction = async (
+  afterCursor: string | undefined
+): Promise<DSResponse> => {
+  const paginationCondition = getWhereConditionAfterCursor(afterCursor);
+  const query = gql`
+  {
+    demarche (number: ${config.demarchesSimplifiees.id}) {
+      dossiers (state: ${DossierState.enInstruction}${paginationCondition}) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          id,
+          number
+          champs {
+            id
+            label
+            stringValue
+          }
+          instructeurs {
+            id
+            email
+          }
+          annotations {
+            id
+            label
+            stringValue
+          }
+        }
+      }
+    }
+  }`;
+
+  return request(query);
+};
+
 export const addVerificationMessage = (
   dossierId: Psychologist["demarcheSimplifieesId"],
   message: string

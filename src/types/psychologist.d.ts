@@ -41,6 +41,10 @@ export interface DSPsychologist {
     id: string;
     label: string;
   };
+  instructeurs?: {
+    id: string;
+    email: string;
+  }[];
   usager: {
     email: string;
   };
