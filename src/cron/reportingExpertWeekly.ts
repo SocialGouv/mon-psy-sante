@@ -66,9 +66,6 @@ export async function reportingExpertWeekly() {
       return { psychologist, experts };
     })
     .filter((e) => e.experts.length > 0);
-  ({ key }) => {
-    return key;
-  };
 
   for (const expert of Object.values(INSTRUCTEURS)) {
     const psychologists = psychologistsWithExperts
