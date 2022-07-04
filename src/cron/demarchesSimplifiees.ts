@@ -34,7 +34,6 @@ export const importData = async (): Promise<void> => {
     await logPsyNumber();
 
     const date = await getDateLatestAccepte();
-    //@ts-ignore
     const dsAPIData = await getPsychologistList(date, "state: accepte");
     if (dsAPIData.psychologists.length > 0) {
       await saveMany(dsAPIData.psychologists);
@@ -55,7 +54,6 @@ export const importArchived = async (): Promise<void> => {
     await logPsyNumber();
 
     const date = await getDateLatestArchived();
-    //@ts-ignore
     const dsAPIData = await getPsychologistList(date, "archived: true");
     if (dsAPIData.psychologists.length > 0) {
       await updateState(dsAPIData.psychologists);
