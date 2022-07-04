@@ -1,13 +1,14 @@
 import fs from "fs";
-import _ from "lodash";
 
 import { requestDossiersEnInstruction } from "../services/demarchesSimplifiees/buildRequest";
 import { getAllPsychologistList } from "../services/demarchesSimplifiees/import";
 
 const ANNOTATION_EXPERT1_ID = "Q2hhbXAtMjUzMTM2Mw==";
+const ANNOTATION_EXPERT2_ID = "Q2hhbXAtMjUzMTM2NQ==";
 const COMMENTAIRE1 = "Q2hhbXAtMTg2MDUwOA==";
 const COMMENTAIRE2 = "Q2hhbXAtMTg0NDM5Ng==";
 const DOSSIER_ELIGIBLE = "Q2hhbXAtMTg0NDM5NQ==";
+const NOTIFICATION_SELECTION = "Q2hhbXAtMjMyMzA2Mg==";
 const INSTRUCTEURS = {
   "SW5zdHJ1Y3RldXItNjMyMjc=": "BS",
   "SW5zdHJ1Y3RldXItNjMyMzU=": "ACB",
@@ -25,59 +26,62 @@ export async function reportingExpertWeekly() {
     console.log(e);
     process.exit(-1);
   });
-  const psychologists = result.psychologists;
 
-  const experts = Object.entries(
-    _.groupBy(
-      psychologists
-        // Keep only the psychologist where DOSSIER_ELIGIBLE is not "OUI" or "NON"
-        // since it means they are already done.
-        .filter((psy) => {
-          const dossierEligibleValue = psy.annotations.find(
-            (a) => a.id === DOSSIER_ELIGIBLE
-          )?.stringValue;
-          return !["OUI", "NON"].includes(
-            (dossierEligibleValue || "").toUpperCase().trim()
-          );
-        })
-        // Find the "expert" in charge of the psychologist.
-        .map((psy) => {
-          let expertFromAnnotation = psy.annotations.find(
-            (a) => a.id === ANNOTATION_EXPERT1_ID
-          )?.stringValue;
-          if (!expertFromAnnotation) {
-            expertFromAnnotation =
-              INSTRUCTEURS[
-                psy.instructeurs.find((i) => Boolean(INSTRUCTEURS[i.id]))?.id
-              ];
-          }
-          return {
-            psychologist: psy,
-            key: expertFromAnnotation,
-          };
-        })
-        .filter((e) => Boolean(e.key)),
-      ({ key }) => {
-        return key;
+  const psychologistsWithExperts = result.psychologists
+    // Keep only the psychologist where DOSSIER_ELIGIBLE is not "OUI" or "NON"
+    // and NOTIFICATION_SELECTION is not "OUI" or "NON"
+    // since it means they are already treated.
+    .filter((psy) => {
+      const dossierEligibleValue = psy.annotations.find(
+        (a) => a.id === DOSSIER_ELIGIBLE
+      )?.stringValue;
+      const notificationSelectionValue = psy.annotations.find(
+        (a) => a.id === NOTIFICATION_SELECTION
+      )?.stringValue;
+      return (
+        !["OUI", "NON"].includes(
+          (dossierEligibleValue || "").toUpperCase().trim()
+        ) &&
+        !["OUI", "NON"].includes(
+          (notificationSelectionValue || "").toUpperCase().trim()
+        )
+      );
+    })
+    // Find the "experts" in charge of the psychologist (there can be multiple experts)
+    .map((psychologist) => {
+      // Find via ANNOTATION_EXPERT1_ID and ANNOTATION_EXPERT2_ID.
+      let experts = psychologist.annotations
+        .filter(
+          (a) =>
+            a.id === ANNOTATION_EXPERT1_ID || a.id === ANNOTATION_EXPERT2_ID
+        )
+        .map((e) => e.stringValue);
+      // If not found we have to parse instructeurs to find their ids.
+      if (experts.length === 0) {
+        experts = psychologist.instructeurs
+          .filter((i) => Boolean(INSTRUCTEURS[i.id]))
+          .map((i) => INSTRUCTEURS[i.id]);
       }
-    )
-  ).map(([key, value]) => {
-    return {
-      key,
-      psycologistsCount: value.length,
-      psycologists: value.map((e) => e.psychologist),
-    };
-  });
+      // Return psychologist with their experts.
+      return { psychologist, experts };
+    })
+    .filter((e) => e.experts.length > 0);
+  ({ key }) => {
+    return key;
+  };
 
-  for (const expert of experts) {
-    const { key, psycologistsCount, psycologists } = expert;
+  for (const expert of Object.values(INSTRUCTEURS)) {
+    const psychologists = psychologistsWithExperts
+      .filter((p) => p.experts.includes(expert))
+      .map((e) => e.psychologist);
+    const psychologistsCount = psychologists.length;
 
     console.log(
-      `Building report for expert ${key} (${psycologistsCount} dossiers)`
+      `Building report for expert ${expert} (${psychologistsCount} dossiers)`
     );
     const data = [
       ["Dossier", "Commentaire 1", "Commentaire 2", "Eligible"].join(";"),
-      ...psycologists.map((psy) => {
+      ...psychologists.map((psy) => {
         return [
           psy.number,
           psy.annotations.find((a) => a.id === COMMENTAIRE1)?.stringValue,
@@ -88,11 +92,10 @@ export async function reportingExpertWeekly() {
           .join(";");
       }),
     ];
-    console.log(data);
     // create /out folder if it doesn't exist
     if (!fs.existsSync("out")) {
       fs.mkdirSync("out");
     }
-    fs.writeFileSync(`out/expert-${key}.csv`, data.join("\n"));
+    fs.writeFileSync(`out/expert-${expert}.csv`, data.join("\n"));
   }
 }
