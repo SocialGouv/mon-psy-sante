@@ -1,6 +1,7 @@
 import * as Sentry from "@sentry/nextjs";
 
 import * as demarchesSimplifiees from "./demarchesSimplifiees";
+import { reportingExpertWeekly } from "./reportingExpertWeekly";
 import { sendReporting } from "./sendReporting";
 
 const runJob = async (job): Promise<void> => {
@@ -27,6 +28,7 @@ const cronJobs = {
   importFromDS: demarchesSimplifiees.importFromDS,
   verifFolders: demarchesSimplifiees.verifFolders,
   sendReporting,
+  reportingExpertWeekly,
 };
 
 const jobName = process.argv[2];
