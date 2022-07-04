@@ -1,6 +1,6 @@
 {
   "name": "monpsy",
-  "version": "1.47.6",
+  "version": "1.48.0",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"

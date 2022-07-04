@@ -1,3 +1,10 @@
+# [1.48.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.47.6...v1.48.0) (2022-07-04)
+
+
+### Features
+
+* **cron:** reporting expert weekly ([#220](https://github.com/SocialGouv/mon-psy-sante/issues/220)) ([340127f](https://github.com/SocialGouv/mon-psy-sante/commit/340127f7cc7de9086ed8d2c26e40dd6635e77e33))
+
 ## [1.47.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.47.5...v1.47.6) (2022-07-01)
 
 
