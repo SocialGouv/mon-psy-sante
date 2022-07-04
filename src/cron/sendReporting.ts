@@ -1,10 +1,10 @@
+// Todo: rename this file to reportingDepartment.ts (we have to rename in cron and delete previous cron).
 import _ from "lodash";
-import nodemailer, { SendMailOptions } from "nodemailer";
 
-import config from "../services/config";
 import { requestPsychologistsState } from "../services/demarchesSimplifiees/buildRequest";
 import { getAllPsychologistList } from "../services/demarchesSimplifiees/import";
 import { DEPARTMENTS } from "../types/enums/department";
+import { sendEmailWithAttachments } from "./cronUtils";
 
 export async function reporting() {
   const data = [];
@@ -87,41 +87,14 @@ export async function reporting() {
 }
 
 export async function sendReporting() {
-  const mailTransport = nodemailer.createTransport({
-    auth: {
-      pass: config.mail.auth.pass,
-      user: config.mail.auth.user,
-    },
-    host: config.mail.host,
-    ignoreTLS: !config.mail.tls,
-    port: config.mail.port,
-    requireTLS: config.mail.tls,
-  });
-
-  const text = ["Bonjour,", "Ci-joint les statistiques par département."];
-
-  const mail: SendMailOptions = {
-    from: `MonPsy <${config.supportMail}>`,
-    html: text.join("<br />"),
+  return sendEmailWithAttachments({
     subject: "Statistiques par département",
-    text: text.join("\n"),
-    to: config.reportingMailRecipients,
+    textSlices: ["Bonjour,", "Ci-joint les statistiques par département."],
     attachments: [
       {
         filename: "statistiques.csv",
         content: await reporting(),
       },
     ],
-  };
-
-  if (config.mail.enabled) {
-    return new Promise((resolve, reject) => {
-      mailTransport.sendMail(mail, (error, info) => {
-        console.log(error, info);
-        return error ? reject(error) : resolve(info);
-      });
-    });
-  }
-  console.log("Send email skipped");
-  return Promise.resolve();
+  });
 }

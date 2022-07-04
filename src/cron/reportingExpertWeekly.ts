@@ -1,7 +1,6 @@
-import fs from "fs";
-
 import { requestDossiersEnInstruction } from "../services/demarchesSimplifiees/buildRequest";
 import { getAllPsychologistList } from "../services/demarchesSimplifiees/import";
+import { sendEmailWithAttachments } from "./cronUtils";
 
 const ANNOTATION_EXPERT1_ID = "Q2hhbXAtMjUzMTM2Mw==";
 const ANNOTATION_EXPERT2_ID = "Q2hhbXAtMjUzMTM2NQ==";
@@ -67,6 +66,8 @@ export async function reportingExpertWeekly() {
     })
     .filter((e) => e.experts.length > 0);
 
+  const attachments = [];
+
   for (const expert of Object.values(INSTRUCTEURS)) {
     const psychologists = psychologistsWithExperts
       .filter((p) => p.experts.includes(expert))
@@ -74,7 +75,7 @@ export async function reportingExpertWeekly() {
     const psychologistsCount = psychologists.length;
 
     console.log(
-      `Building report for expert ${expert} (${psychologistsCount} dossiers)`
+      `Building report for expert ${expert} (${psychologistsCount} dossiers)…`
     );
     const data = [
       ["Dossier", "Commentaire 1", "Commentaire 2", "Eligible"].join(";"),
@@ -89,10 +90,15 @@ export async function reportingExpertWeekly() {
           .join(";");
       }),
     ];
-    // create /out folder if it doesn't exist
-    if (!fs.existsSync("out")) {
-      fs.mkdirSync("out");
-    }
-    fs.writeFileSync(`out/expert-${expert}.csv`, data.join("\n"));
+
+    attachments.push({
+      filename: `expert-${expert}.csv`,
+      content: Buffer.from(data.join("\n")),
+    });
   }
+  return sendEmailWithAttachments({
+    subject: "Fichiers de suivi par expert (en instruction)",
+    textSlices: ["Bonjour,", "Ci-joint les fichiers de suivis par experts."],
+    attachments,
+  });
 }
