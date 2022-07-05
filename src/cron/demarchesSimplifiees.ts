@@ -74,7 +74,7 @@ export const importFromDS = async (): Promise<void> => {
   await importArchived();
 };
 
-const validateDossier = async (
+export const validateDossier = async (
   dossier: Psychologist,
   adeliData: AdeliData[]
 ): Promise<string[]> => {
