@@ -1,10 +1,6 @@
-import pLimit from "p-limit";
-
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import config from "../config";
-import { formatLanguage, formatPsychologist } from "../format-psychologists";
-
-const limit = pLimit(5);
+import { formatLanguage } from "../format-psychologists";
 
 const extractDepartmentNumber = (dep: string): string => {
   return dep.split(" - ")[0];
@@ -36,9 +32,7 @@ const addOtherLanguages = (
   }
 };
 
-export const parseDossierMetadata = async (
-  dossier: DSPsychologist
-): Promise<Psychologist> => {
+export const parseDossierMetadata = (dossier: DSPsychologist): Psychologist => {
   const psychologist: Partial<Psychologist> = {
     demarcheSimplifieesId: dossier.id,
     archived: dossier.archived,
@@ -58,18 +52,14 @@ export const parseDossierMetadata = async (
   });
   addOtherLanguages(dossier, psychologist);
 
-  return formatPsychologist(psychologist as Psychologist);
+  return psychologist as Psychologist;
 };
 
-const parsePsychologists = async (
-  dsPsychologists: DSPsychologist[]
-): Promise<Psychologist[]> => {
+const parseDossiers = (dsPsychologists: DSPsychologist[]): Psychologist[] => {
   console.log(`Parsing ${dsPsychologists.length} psychologists from DS API`);
-  return Promise.all(
-    dsPsychologists.map(async (dsPsychologist) =>
-      limit(() => parseDossierMetadata(dsPsychologist))
-    )
+  return dsPsychologists.map((dsPsychologist) =>
+    parseDossierMetadata(dsPsychologist)
   );
 };
 
-export default parsePsychologists;
+export default parseDossiers;
