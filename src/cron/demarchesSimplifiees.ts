@@ -8,8 +8,9 @@ import {
   getDossiersInConstruction,
   getPsychologistList,
 } from "../services/demarchesSimplifiees/import";
-import parsePsychologists from "../services/demarchesSimplifiees/parse-psychologists";
+import parseDossiers from "../services/demarchesSimplifiees/parse-psychologists";
 import { validatePsychologist } from "../services/demarchesSimplifiees/validate-psychologist";
+import getAddressCoordinates from "../services/getAddressCoordinates";
 import {
   countAll,
   getDateLatestAccepte,
@@ -73,7 +74,7 @@ export const importFromDS = async (): Promise<void> => {
   await importArchived();
 };
 
-const validateDossier = async (
+export const validateDossier = async (
   dossier: Psychologist,
   adeliData: AdeliData[]
 ): Promise<string[]> => {
@@ -83,33 +84,35 @@ const validateDossier = async (
     return [`Numéro ADELI invalide : ${dossier.adeliId}`];
   }
 
-  if (
-    dossier.department !==
-    removeNonNumericCharacters(dossier.adeliId || "").substring(0, 2)
-  ) {
+  const departmentFromAdeli = removeNonNumericCharacters(
+    dossier.adeliId || ""
+  ).substring(0, 2);
+  if (dossier.department !== departmentFromAdeli) {
     errors.push(
       `Le numéro ADELI ${dossier.adeliId} ne correspond pas au département ${dossier.department}`
     );
   }
 
-  const psychologistValidation = validatePsychologist(dossier, adeliData);
+  const identifier = dossier.id?.toString() ?? dossier.email;
+  const coordinates = await getAddressCoordinates(identifier, dossier.address);
+  if (!coordinates) {
+    errors.push(`Adresse principale non reconnue : ${dossier.address}`);
+  }
+  if (dossier.secondAddress) {
+    const secondCoordinates = await getAddressCoordinates(
+      identifier,
+      dossier.secondAddress
+    );
+    if (!secondCoordinates) {
+      errors.push(`Adresse secondaire non reconnue : ${dossier.secondAddress}`);
+    }
+  }
 
+  const psychologistValidation = validatePsychologist(dossier, adeliData);
   if (psychologistValidation.success === false) {
     errors = errors.concat(
       psychologistValidation.error.issues.map(({ message }) => message)
     );
-  }
-
-  if (!dossier.coordinates) {
-    errors = errors.concat([
-      `Adresse principale non reconnue : ${dossier.address}`,
-    ]);
-  }
-
-  if (dossier.secondAddress && !dossier.secondAddressCoordinates) {
-    errors = errors.concat([
-      `Adresse secondaire non reconnue : ${dossier.secondAddress}`,
-    ]);
   }
 
   return errors;
@@ -142,7 +145,7 @@ export const verifFolders = async (): Promise<void> => {
     console.log("Starting verifFolders...");
 
     const dossiersInConstruction = await getDossiersInConstruction();
-    const dossiersToVerify = await parsePsychologists(
+    const dossiersToVerify = parseDossiers(
       filterDossiersToVerif(dossiersInConstruction)
     );
 
