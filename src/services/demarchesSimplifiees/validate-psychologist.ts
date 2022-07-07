@@ -70,9 +70,14 @@ export const validatePsychologist = (
   return z
     .object({
       psychologist: z.object({
-        website: z.optional(
-          z.string().url(webSiteIsInvalidMessage(psychologist.website))
-        ),
+        website: z
+          .optional(
+            z
+              .string()
+              .url(webSiteIsInvalidMessage(psychologist.website))
+              .or(z.literal(""))
+          )
+          .or(z.literal("")),
         lastName: validateWithAdeliData({
           adeliData,
           message: psychologistLastNameDoesNotMatchMessage,

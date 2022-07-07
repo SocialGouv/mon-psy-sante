@@ -94,6 +94,7 @@ describe("validateDossier", () => {
     input                  | isValid
     ${undefined}           | ${true}
     ${null}                | ${true}
+    ${""}                  | ${true}
     ${"non"}               | ${false}
     ${"doctolib"}          | ${false}
     ${"doctolib."}         | ${false}
