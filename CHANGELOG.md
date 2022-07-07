@@ -1,3 +1,10 @@
+## [1.48.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.48.2...v1.48.3) (2022-07-07)
+
+
+### Bug Fixes
+
+* allow empty website in ds validation ([#224](https://github.com/SocialGouv/mon-psy-sante/issues/224)) ([d4e13e7](https://github.com/SocialGouv/mon-psy-sante/commit/d4e13e75a936c3c3e08f3a2f31a177dce8bb6a80))
+
 ## [1.48.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.48.1...v1.48.2) (2022-07-07)
 
 
