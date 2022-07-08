@@ -86,7 +86,7 @@ export async function reporting() {
   return Buffer.from(data.join(""));
 }
 
-export async function sendReporting() {
+export async function reportingStatsByDepartment() {
   return sendEmailWithAttachments({
     subject: "Statistiques par département",
     textSlices: ["Bonjour,", "Ci-joint les statistiques par département."],
