@@ -23,6 +23,6 @@ spec:
                 - yarn
                 - run
                 - cron:launch
-                - sendReporting
+                - reportingStatsByDepartment
           restartPolicy: Never
           concurrencyPolicy: Forbid
