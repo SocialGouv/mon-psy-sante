@@ -2,7 +2,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   namespace: mon-psy-sante
-  name: send-reporting
+  name: reporting-stats-by-department
   labels:
     app: mon-psy
 spec:
