@@ -1,3 +1,10 @@
+## [1.48.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.48.4...v1.48.5) (2022-07-08)
+
+
+### Bug Fixes
+
+* **cron:** rename task ([dcc9016](https://github.com/SocialGouv/mon-psy-sante/commit/dcc90166707b9744be98959bc17955a33d851837))
+
 ## [1.48.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.48.3...v1.48.4) (2022-07-08)
 
 
