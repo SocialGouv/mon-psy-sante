@@ -1,3 +1,10 @@
+## [1.50.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.50.1...v1.50.2) (2022-07-11)
+
+
+### Bug Fixes
+
+* add stats link ([aeaa0cc](https://github.com/SocialGouv/mon-psy-sante/commit/aeaa0cceb6b55075631cec476d8e5f10bbb38689))
+
 ## [1.50.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.50.0...v1.50.1) (2022-07-11)
 
 
