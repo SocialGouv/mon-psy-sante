@@ -2,21 +2,6 @@ import { push } from "@socialgouv/matomo-next";
 
 import { PUBLIC } from "../types/enums/public";
 
-/*
-
-# TODO
-
-[x] Ouverture du site (via tracking auto de navigation)
-[x] Clique sur le bouton annuaire (via tracking auto de navigation)
-[x] Lancement d’une requête
-[x] Ouverture d’une carte de psy
-[x] Ouverture de plus d’une carte psy
-[x] Pourcentage de requête pour les enfants&ado
-[x] recherche par département
-[x] pour entretien à distance
-
-*/
-
 enum Dimension {
   SearchDepartment = 1,
   SearchPublic = 2,
