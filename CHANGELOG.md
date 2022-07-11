@@ -1,3 +1,10 @@
+# [1.50.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.49.0...v1.50.0) (2022-07-11)
+
+
+### Features
+
+* **matomo:** add tracking for directory ([#228](https://github.com/SocialGouv/mon-psy-sante/issues/228)) ([ac2d0e6](https://github.com/SocialGouv/mon-psy-sante/commit/ac2d0e662ba8884d02f9d2c6bb82e4cd8274e98e))
+
 # [1.49.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.48.5...v1.49.0) (2022-07-11)
 
 
