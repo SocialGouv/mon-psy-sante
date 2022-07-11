@@ -2,7 +2,7 @@ import React from "react";
 
 import HeadTag from "../components/HeadTag";
 
-const contact = () => {
+const Stats = () => {
   return (
     <div className="fr-container">
       <HeadTag
@@ -24,4 +24,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Stats;
