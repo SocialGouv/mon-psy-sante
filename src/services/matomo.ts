@@ -48,8 +48,8 @@ export function trackEventDirectorySearch({
     "trackEvent",
     Category.Directory,
     Action.Search,
-    null,
-    null,
+    "",
+    "",
     {
       [d(Dimension.SearchDepartment)]: department,
       [d(Dimension.SearchPublic)]: publicType,
