@@ -1,5 +1,6 @@
 import React, { Dispatch, MutableRefObject, SetStateAction } from "react";
 
+import { trackEventClickOnPsychologistCard } from "../../services/matomo";
 import { Coordinates } from "../../types/coordinates";
 import { DistanceBasedOn } from "../../types/enums/psychologist";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
@@ -33,8 +34,12 @@ const Results = ({
       psychologist.distanceBasedOn === DistanceBasedOn.SecondAddressCoordinates
         ? psychologist.secondAddressCoordinates
         : psychologist.coordinates;
-    setSelectedPsychologist(psychologist.id);
-    if (psychologist.coordinates) {
+
+    if (selectedPsychologist !== psychologist.id) {
+      setSelectedPsychologist(psychologist.id);
+      trackEventClickOnPsychologistCard(psychologist.id);
+    }
+    if (coordinates) {
       setMapCenter({
         latitude: coordinates.coordinates[1],
         longitude: coordinates.coordinates[0],
