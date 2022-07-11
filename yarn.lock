@@ -1390,10 +1390,10 @@
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
-"@types/sequelize@^4.28.11":
-  version "4.28.12"
-  resolved "https://registry.yarnpkg.com/@types/sequelize/-/sequelize-4.28.12.tgz#baf503516c547c5b5f3354bf517fab592ee2b661"
-  integrity sha512-lzuuCmpB5famZ2qMNTPsVuMshVXmuwobewvRY96fnYTVDhDk0ht/Hs5qKCtE/4lcsHh7R27y+e6njKfLfkFzVw==
+"@types/sequelize@^4.28.14":
+  version "4.28.14"
+  resolved "https://registry.yarnpkg.com/@types/sequelize/-/sequelize-4.28.14.tgz#70302689ddef09f5d472b548a14e5a150e690aff"
+  integrity sha512-O8lTJ8YPVVaoY9xjduchDlo0MOS3w262pro2H1QMuFIo/kc/p1elP/UxLOTP2wcVO2cFd6Gvghg9ZSAiJi0GLA==
   dependencies:
     "@types/bluebird" "*"
     "@types/continuation-local-storage" "*"
@@ -6042,10 +6042,10 @@ sequelize-pool@^7.1.0:
   resolved "https://registry.yarnpkg.com/sequelize-pool/-/sequelize-pool-7.1.0.tgz#210b391af4002762f823188fd6ecfc7413020768"
   integrity sha512-G9c0qlIWQSK29pR/5U2JF5dDQeqqHRragoyahj/Nx4KOOQ3CPPfzxnfqFPCSB7x5UgjOgnZ61nSxz+fjDpRlJg==
 
-sequelize@^6.16.1:
-  version "6.19.0"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.19.0.tgz#bea0ac091d89cbbc94cabe0797b8c1359734e2e6"
-  integrity sha512-B3oGIdpYBERDjRDm74h7Ky67f6ZLcmBXOA7HscYObiOSo4pD7VBc9mtm44wNV7unc0uk8I1d30nbZBTQCE377A==
+sequelize@^6.21.2:
+  version "6.21.2"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.21.2.tgz#28d3c9c376471670c651e0345ea42e0017b6f112"
+  integrity sha512-K0c6j/Y6yfucBL9XYHMVWqYGFShPsj6ZzMrQcOAjqzyE+a1XMBOoTXXjRvJS+fz6cKeh2D3ZqhYDRwN8nfvOMQ==
   dependencies:
     "@types/debug" "^4.1.7"
     "@types/validator" "^13.7.1"
