@@ -1,3 +1,10 @@
+## [1.50.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.50.0...v1.50.1) (2022-07-11)
+
+
+### Bug Fixes
+
+* try to fix matomo ([ffb536f](https://github.com/SocialGouv/mon-psy-sante/commit/ffb536f450ea48ac6e3eb86a8e9d0a81366bc186))
+
 # [1.50.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.49.0...v1.50.0) (2022-07-11)
 
 
