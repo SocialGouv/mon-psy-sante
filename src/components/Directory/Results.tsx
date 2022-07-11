@@ -37,7 +37,7 @@ const Results = ({
 
     if (selectedPsychologist !== psychologist.id) {
       setSelectedPsychologist(psychologist.id);
-      trackEventClickOnPsychologistCard(psychologist.id);
+      trackEventClickOnPsychologistCard({ psychologistId: psychologist.id });
     }
     if (coordinates) {
       setMapCenter({

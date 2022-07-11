@@ -21,7 +21,11 @@ function d(d: Dimension) {
   return `dimension${d}`;
 }
 
-export function trackEventClickOnPsychologistCard({ psychologistId }) {
+export function trackEventClickOnPsychologistCard({
+  psychologistId,
+}: {
+  psychologistId: number;
+}) {
   push([
     "trackEvent",
     Category.Directory,
