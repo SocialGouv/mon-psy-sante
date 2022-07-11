@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { createRef, useEffect, useRef, useState } from "react";
 
+import { trackEventDirectorySearch } from "../../services/matomo";
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
 import { PUBLIC } from "../../types/enums/public";
@@ -68,6 +69,11 @@ const Directory = () => {
       if (response.data && response.data.length) {
         setupMapAccordingToPsy(response.data[0].distance);
         response.data.forEach((x) => (refs[x.id] = createRef()));
+        trackEventDirectorySearch({
+          department: response.data[0].department || null,
+          publicType: otherFilters[FILTER.PUBLIC],
+          teleconsultation: otherFilters[FILTER.TELECONSULTATION],
+        });
       } else {
         // todo: should display an error message
         setSelectedPsychologist(null);
