@@ -172,14 +172,27 @@ export const requestDossiersWithAnnotations = async (
   return request(query);
 };
 
+export const requestDossiersEnConstruction = async (
+  afterCursor: string | undefined
+): Promise<DSResponse> => {
+  return requestDossiersByState(DossierState.enConstruction, afterCursor);
+};
+
 export const requestDossiersEnInstruction = async (
+  afterCursor: string | undefined
+): Promise<DSResponse> => {
+  return requestDossiersByState(DossierState.enInstruction, afterCursor);
+};
+
+export const requestDossiersByState = async (
+  state: DossierState,
   afterCursor: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
   const query = gql`
   {
     demarche (number: ${config.demarchesSimplifiees.id}) {
-      dossiers (state: ${DossierState.enInstruction}${paginationCondition}) {
+      dossiers (state: ${state}${paginationCondition}) {
         pageInfo {
           hasNextPage
           endCursor
@@ -195,6 +208,10 @@ export const requestDossiersEnInstruction = async (
           instructeurs {
             id
             email
+          }
+          groupeInstructeur {
+            id
+            label
           }
           annotations {
             id

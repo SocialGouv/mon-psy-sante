@@ -1,6 +1,7 @@
 import * as Sentry from "@sentry/nextjs";
 
 import * as demarchesSimplifiees from "./demarchesSimplifiees";
+import { reportingDossierEligible } from "./reportingDossierEligible";
 import { reportingExpertWeekly } from "./reportingExpertWeekly";
 import { reportingStatsByDepartment } from "./reportingStatsByDepartment";
 
@@ -29,6 +30,7 @@ const cronJobs = {
   verifFolders: demarchesSimplifiees.verifFolders,
   reportingStatsByDepartment,
   reportingExpertWeekly,
+  reportingDossierEligible,
 };
 
 const jobName = process.argv[2];
