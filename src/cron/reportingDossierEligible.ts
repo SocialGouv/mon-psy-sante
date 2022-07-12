@@ -4,6 +4,7 @@ import {
   requestDossiersEnInstruction,
 } from "../services/demarchesSimplifiees/buildRequest";
 import { getAllPsychologistList } from "../services/demarchesSimplifiees/import";
+import { sendEmailWithAttachments } from "./cronUtils";
 
 const NOTIFICATION_SELECTION = "Q2hhbXAtMjMyMzA2Mg==";
 
@@ -30,7 +31,7 @@ export async function reportingDossierEligible() {
     })
     .map((psychologist) => {
       return {
-        id: psychologist.id,
+        number: psychologist.number,
         groupeInstructeur: psychologist.groupeInstructeur.label,
       };
     })
@@ -40,8 +41,21 @@ export async function reportingDossierEligible() {
       return 0;
     })
     .map((psychologist) => {
-      return [psychologist.groupeInstructeur, psychologist.id].join(";");
-    })
-    .join("\n");
-  console.log(psychologists);
+      return [psychologist.groupeInstructeur, psychologist.number].join(";");
+    });
+  return sendEmailWithAttachments({
+    subject: "Fichiers de suivi des dossiers éligibles",
+    textSlices: [
+      "Bonjour,",
+      "Ci-joint le fichier de suivi des dossiers éligibles.",
+    ],
+    attachments: [
+      {
+        filename: `dossiers-éligibles.csv`,
+        content: Buffer.from(
+          ["groupe instructeur;ID", ...psychologists].join("\n")
+        ),
+      },
+    ],
+  });
 }
