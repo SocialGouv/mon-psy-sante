@@ -1,3 +1,10 @@
+# [1.51.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.50.2...v1.51.0) (2022-07-12)
+
+
+### Features
+
+* **cron:** export dossier eligible ([#229](https://github.com/SocialGouv/mon-psy-sante/issues/229)) ([ff1f8bf](https://github.com/SocialGouv/mon-psy-sante/commit/ff1f8bf16dfe0dd64c917302f23aa880e693fc50))
+
 ## [1.50.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.50.1...v1.50.2) (2022-07-11)
 
 
