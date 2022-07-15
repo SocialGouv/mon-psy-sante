@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Psychologist {
+  id                       Int                                   @id
+  firstName                String                                @db.VarChar(255)
+  lastName                 String                                @db.VarChar(255)
+  email                    String?                               @db.VarChar(255)
+  displayEmail             Boolean
+  public                   String                                @db.VarChar(255)
+  archived                 Boolean
+  address                  String
+  secondAddress            String?
+  department               String                                @db.VarChar(255)
+  phone                    String                                @db.VarChar(255)
+  website                  String?
+  cdsmsp                   String?                               @db.VarChar(255)
+  languages                String?                               @db.VarChar(255)
+  teleconsultation         Boolean
+  coordinates              Unsupported("geometry(Point, 4326)")?
+  secondAddressCoordinates Unsupported("geometry(Point, 4326)")?
+  createdAt                DateTime                              @default(now())
+  updatedAt                DateTime                              @updatedAt
+  visible                  Boolean?                              @default(true)
+  state                    String                                @db.VarChar(255)
+  displayPhone             Boolean?                              @default(true)
+  addressAdditional        String?
+  secondAddressAdditional  String?
+}
