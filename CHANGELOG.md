@@ -1,3 +1,10 @@
+## [1.51.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.51.0...v1.51.1) (2022-07-21)
+
+
+### Bug Fixes
+
+* **faq:** change wording ([99c58ad](https://github.com/SocialGouv/mon-psy-sante/commit/99c58ad20626a4f27e8b463d399525fd937dddbe))
+
 # [1.51.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.50.2...v1.51.0) (2022-07-12)
 
 
