@@ -25,11 +25,13 @@ export default [
   },
   {
     answer:
-      "<p>Il n’est pas possible pour un psychologue salarié d’un établissement de santé de participer au dispositif MonPsy.</p>" +
-      "<p>En effet, seuls les psychologues libéraux ou salariés d’une structure d’exercice coordonné (maison de santé ou centre de santé), sont éligibles au dispositif.</p>" +
-      "<p>Toutefois, si le psychologue salarié d’un établissement de santé exerce à temps partiel, il peut participer au dispositif sur son temps d’activité libérale ou de salarié d’une structure d’exercice coordonné.</p>",
+      "<p>Peuvent participer :</p>" +
+      "<ul>" +
+      "<li>Les psychologues libéraux ou salariés d'une structure d'exercice coordonné (maison de santé ou centre de santé) dans le cadre de cet exercice.</li>" +
+      "<li>Les psychologues salariés à temps partiel dans un établissement de santé, dans le cadre de leur exercice dans une structure d'exercice coordonnée ou dans le cadre de leur activité libérale.</li>" +
+      "</ul>",
     question:
-      "Un psychologue salarié d’un établissement de santé peut-il participer au dispositif MonPsy ?",
+      "Les psychologues salariés peuvent-ils participer au dispositif MonPsy ?",
   },
   {
     answer:
