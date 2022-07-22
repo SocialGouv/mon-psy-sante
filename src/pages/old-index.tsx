@@ -1,9 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import HeadTag from "../components/HeadTag";
+import VideoButton from "../components/VideoButton";
 
 const Page = () => {
+  const [video, setVideo] = useState("hide");
   return (
     <>
       <HeadTag
@@ -16,23 +18,16 @@ const Page = () => {
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
             <div className="fr-col-12 fr-col-md-6 fr-pt-4w">
               <h1>
-                Vous rencontrez une situation difficile&nbsp;?
+                MonPsy&nbsp;
                 <span className="fr-text--lead d-block fr-mt-3w">
-                  Avec MonPsy, bénéficiez de 8 séances par an chez un ou une
-                  psychologue
+                  L’accès à un accompagnement psychologique pour tous (dès 3
+                  ans)
                 </span>
               </h1>
-              <p className="fr-text--xl fr-text--bold fr-mt-5w">
-                Les séances sont remboursées&nbsp;:
+              <p className="fr-mt-10w">
+                Sur orientation d’un médecin, jusqu’à 8 séances remboursées chez
+                un psychologue partenaire.
               </p>
-              <ul className="no-bullet">
-                <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
-                  par l’Assurance Maladie
-                </li>
-                <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
-                  Et votre mutuelle ou complémentaire santé
-                </li>
-              </ul>
             </div>
             <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-4">
               <img
@@ -40,47 +35,94 @@ const Page = () => {
                 src="/images/Psychologist-hero.svg"
                 alt="En parler, c’est déjà se soigner"
               />
+              {video === "hide" && (
+                <VideoButton onClick={() => setVideo("show")} />
+              )}
             </div>
           </div>
+          {video === "show" && (
+            <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
+              <div className="fr-col-8">
+                <video width="100%" controls autoPlay>
+                  <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
+                  <track
+                    kind="captions"
+                    srcLang="fr"
+                    src="/images/Video-MonPsy.mp4.vtt"
+                  />
+                </video>
+              </div>
+            </div>
+          )}
         </div>
       </section>
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-10w">
           <div className="fr-container">
-            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-              <div className="fr-col-12 fr-col-md-6">
-                <h2>Pourquoi consulter&nbsp;?</h2>
-                <ul>
-                  <li>Vous avez du mal à dormir ?</li>
-                  <li>Vous vous sentez dépassé·e ?</li>
-                  <li>Vous êtes dans une relation toxique ?</li>
-                  <li>
-                    Vous avez des difficultés à échanger avec votre entourage ?
-                  </li>
-                  <li>
-                    Vous avez besoin d’une personne à qui parler, sans jugement
-                  </li>
-                  <li>
-                    Vous avez besoin d’une personne à qui parler, sans jugement.
-                  </li>
-                </ul>
-                <p>
-                  Quelle que soit votre situation, trouvez des psychologues à
-                  votre écoute.
-                </p>
+            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+              <div className="fr-col-12 fr-col-md-3">
+                <div className="fr-card fr-enlarge-link fr-pt-3w">
+                  <div className="fr-card__body">
+                    <h2 className="fr-card__title">
+                      <Link href="/patients" passHref>
+                        <a href="/patients" className="fr-card__link">
+                          Je ne me sens pas bien
+                        </a>
+                      </Link>
+                    </h2>
+                    <p className="fr-card__desc">
+                      Bénéficiez de l’accompagnement d’un psychologue
+                    </p>
+                  </div>
+                  <div className="fr-card__img">
+                    <img
+                      src="/images/patient-home.svg"
+                      height="158"
+                      width="65"
+                      alt=""
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="fr-col-12 fr-col-md-6">
-                <p>MonPsy c’est&nbsp;:</p>
-                <ul>
-                  <li>
-                    Un annuaire de + de 900 psychologues partenaires
-                    expérimentés sélectionnés sur leur expérience
-                    professionnelle
-                  </li>
-                  <li>
-                    Un parcours de soins pris en charge par l’Assurance Maladie
-                  </li>
-                </ul>
+
+              <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-3">
+                <div className="fr-card fr-enlarge-link fr-pt-3w">
+                  <div className="fr-card__body">
+                    <h2 className="fr-card__title">
+                      <Link href="/psychologues" passHref>
+                        <a href="/psychologues" className="fr-card__link">
+                          Je suis psychologue
+                        </a>
+                      </Link>
+                    </h2>
+                    <p className="fr-card__desc">
+                      Rejoignez le réseau des psychologues partenaires
+                    </p>
+                  </div>
+                  <div className="fr-card__img">
+                    <img src="/images/psy-home.svg" height="158" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-3">
+                <div className="fr-card fr-enlarge-link fr-pt-3w">
+                  <div className="fr-card__body">
+                    <h2 className="fr-card__title">
+                      <Link href="/medecins" passHref>
+                        <a href="/medecins" className="fr-card__link">
+                          Je suis médecin
+                        </a>
+                      </Link>
+                    </h2>
+                    <p className="fr-card__desc">
+                      Orientez au mieux vos patients
+                    </p>
+                  </div>
+                  <div className="fr-card__img">
+                    <img src="/images/doctor-home.svg" height="158" alt="" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -105,32 +147,6 @@ const Page = () => {
                 Si je suis en détresse et/ou j’ai des pensées suicidaires, je
                 contacte sans attendre le <strong>3114</strong>
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="fr-container--fluid fr-bg--tilleul fr-py-10w">
-          <div className="fr-container">
-            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-              <div className="fr-col-12 fr-col-md-8">
-                <h2>Comment ça marche&nbsp;?</h2>
-                <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
-                  <div className="fr-card__body">
-                    <div className="fr-card__content">
-                      <h4 className="fr-card__title">
-                        1. Rencontrez un médecin
-                      </h4>
-                      <p className="fr-card__desc fr-text--md">
-                        Le médecin échange avec vous pour s’assurer que MonPsy
-                        est adapté à votre situation. Vous pouvez consulter
-                        différents types de médecins (généraliste, gynécologue,
-                        médecin scolaire, PMI, etc.)
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
