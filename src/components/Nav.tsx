@@ -5,7 +5,7 @@ const Nav = () => {
   const [modalMenuOpen, setModalMenuOpen] = useState(false);
   const items = [
     { title: "Accueil", href: "/" },
-    { title: "Je ne me sens pas bien", href: "/patients" },
+    { title: "Annuaire MonPsy", href: "/annuaire" },
     { title: "Je suis psychologue", href: "/psychologues" },
     { title: "Je suis médecin", href: "/medecins" },
     { title: "Foire aux questions", href: "/faq" },
