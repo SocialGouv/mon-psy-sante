@@ -2,11 +2,8 @@ import axios, { AxiosResponse } from "axios";
 
 import { AdeliData, AdeliRawResponse } from "../../types/adeli";
 import { zip } from "../../utils/array";
-import { removeNonNumericCharacters } from "../../utils/string";
 import config from "../config";
-
-const formatRequestedAdeli = (adeliId: string): string =>
-  removeNonNumericCharacters(adeliId || "").padStart(10, "0");
+import { formatAdeliId } from "./formatAdeliId";
 
 const rowColumnsToObject = <Column>(row: string[], columns: Column[]) =>
   Object.fromEntries(zip(columns, row));
@@ -24,7 +21,7 @@ export const requestAdeli = async (
     config.adeli.apiUrl,
     {
       params: {
-        "Identification nationale PP__exact": formatRequestedAdeli(numeroAdeli),
+        "Identification nationale PP__exact": formatAdeliId(numeroAdeli),
       },
     }
   );
