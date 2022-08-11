@@ -1,6 +1,7 @@
 import * as Sentry from "@sentry/nextjs";
 import pLimit from "p-limit";
 
+import { formatAdeliId } from "../services/adeli/formatAdeliId";
 import { requestAdeli } from "../services/adeli/request";
 import { addVerificationMessage } from "../services/demarchesSimplifiees/buildRequest";
 import filterDossiersToVerif from "../services/demarchesSimplifiees/dossiers";
@@ -20,7 +21,6 @@ import {
 } from "../services/psychologists";
 import { AdeliData } from "../types/adeli";
 import { Psychologist } from "../types/psychologist";
-import { removeNonNumericCharacters } from "../utils/string";
 
 const limit = pLimit(5);
 
@@ -74,6 +74,27 @@ export const importFromDS = async (): Promise<void> => {
   await importArchived();
 };
 
+function isAdeliIdValidDepartment(
+  adeliId: string,
+  department: string
+): boolean {
+  const departmentFromAdeli = formatAdeliId(adeliId).substring(0, 2);
+  switch (departmentFromAdeli) {
+    case "9A":
+      return department === "971";
+    case "9B":
+      return department === "972";
+    case "9C":
+      return department === "973";
+    case "9D":
+      return department === "974";
+    case "9F":
+      return department === "976";
+    default:
+      return departmentFromAdeli === department;
+  }
+}
+
 export const validateDossier = async (
   dossier: Psychologist,
   adeliData: AdeliData[]
@@ -84,10 +105,7 @@ export const validateDossier = async (
     return [`Numéro ADELI invalide : ${dossier.adeliId}`];
   }
 
-  const departmentFromAdeli = removeNonNumericCharacters(
-    dossier.adeliId || ""
-  ).substring(0, 2);
-  if (dossier.department !== departmentFromAdeli) {
+  if (!isAdeliIdValidDepartment(dossier.adeliId || "", dossier.department)) {
     errors.push(
       `Le numéro ADELI ${dossier.adeliId} ne correspond pas au département ${dossier.department}`
     );

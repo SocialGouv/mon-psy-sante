@@ -19,7 +19,3 @@ export const firstWordAreSimilar = (
 
   return areSimilar(firstWord1, firstWord2);
 };
-
-export function removeNonNumericCharacters(value: string): string {
-  return value.replace(/[^0-9]/g, "");
-}
