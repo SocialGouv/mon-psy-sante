@@ -303,19 +303,29 @@ const Page = () => {
           <div className="fr-container">
             <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--align-center">
               <div className="fr-col-12 fr-col-md-4 align-center">
-                <div className="fr-h2 fr-mb-2w">⭐</div>
+                <div className="fr-h2 fr-mb-2w">
+                  <img src="/images/icones/approval.svg" alt="" height="40" />
+                </div>
                 <h5 className="fr-mb-1w fr-text--dark-blue">
                   Pour tout le monde
                 </h5>
                 <p className="fr-mb-1w">À partir de 3 ans </p>
               </div>
               <div className="fr-col-12 fr-col-md-4 align-center">
-                <div className="fr-h2 fr-mb-2w">🤝</div>
+                <div className="fr-h2 fr-mb-2w">
+                  <img
+                    src="/images/icones/money_transfer.svg"
+                    alt=""
+                    height="40"
+                  />
+                </div>
                 <h5 className="fr-mb-1w fr-text--dark-blue">Remboursé</h5>
                 <p className="fr-mb-1w">Pris en charge ou sans frais </p>
               </div>
               <div className="fr-col-12 fr-col-md-4 align-center">
-                <div className="fr-h2 fr-mb-2w">📋</div>
+                <div className="fr-h2 fr-mb-2w">
+                  <img src="/images/icones/survey.svg" alt="" height="40" />
+                </div>
                 <h5 className="fr-mb-1w fr-text--dark-blue">
                   En présentiel et en distanciel
                 </h5>
@@ -411,7 +421,7 @@ const Page = () => {
                 >
                   <img
                     src="/images/logo-3114.svg"
-                    alt="Logo 3114"
+                    alt="Logo 3114, Souffrance Prévention Suicide"
                     height="65"
                   />
                 </a>
