@@ -156,7 +156,7 @@ const Page = () => {
                   <div className="fr-card__body">
                     <div className="fr-card__content">
                       <h4 className="fr-card__title fr-text--dark-blue">
-                        2. Prenez rendez-vous avec un psy partenaire
+                        2. Prenez rendez-vous avec un psychologue partenaire
                       </h4>
                       <p className="fr-card__desc fr-text--md">
                         Commencez vos 8 séances par an en présentiel ou à
