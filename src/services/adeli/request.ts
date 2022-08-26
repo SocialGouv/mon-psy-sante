@@ -21,7 +21,9 @@ export const requestAdeli = async (
     config.adeli.apiUrl,
     {
       params: {
-        "Identification nationale PP__exact": formatAdeliId(numeroAdeli),
+        "Identification nationale PP__exact": formatAdeliId(
+          numeroAdeli
+        ).padStart(10, "0"),
       },
     }
   );
