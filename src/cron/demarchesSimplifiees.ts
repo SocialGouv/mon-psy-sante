@@ -74,7 +74,7 @@ export const importFromDS = async (): Promise<void> => {
   await importArchived();
 };
 
-function isAdeliIdValidDepartment(
+export function isAdeliIdValidDepartment(
   adeliId: string,
   department: string
 ): boolean {
