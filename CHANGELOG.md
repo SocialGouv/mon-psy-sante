@@ -1,3 +1,10 @@
+## [1.51.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.51.3...v1.51.4) (2022-08-26)
+
+
+### Bug Fixes
+
+* **cron:** adeli number should match department ([#239](https://github.com/SocialGouv/mon-psy-sante/issues/239)) ([0ee15de](https://github.com/SocialGouv/mon-psy-sante/commit/0ee15de3fe692b3a5af6d436360b95e7d3511e68))
+
 ## [1.51.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.51.2...v1.51.3) (2022-08-11)
 
 
