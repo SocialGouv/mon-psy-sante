@@ -21,7 +21,7 @@
     "got": "12.1.0",
     "graphql": "^16.3.0",
     "graphql-request": "^4.0.0",
-    "helmet": "^5.0.2",
+    "helmet": "^6.0.0",
     "joi": "^17.6.0",
     "leaflet": "^1.7.1",
     "next": "12.1.6",
