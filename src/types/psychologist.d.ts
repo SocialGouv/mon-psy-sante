@@ -37,6 +37,11 @@ export interface DSPsychologist {
   archived: boolean;
   number: number;
   state: string;
+  dateTraitement?: string;
+  messages?: {
+    createdAt?: string;
+    body?: string;
+  }[];
   groupeInstructeur: {
     id: string;
     label: string;
