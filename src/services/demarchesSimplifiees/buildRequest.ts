@@ -178,6 +178,16 @@ export const requestDossiersEnConstruction = async (
   return requestDossiersByState(DossierState.enConstruction, afterCursor);
 };
 
+export const requestDossiersRefusesWithMessages = async (
+  afterCursor: string | undefined
+): Promise<DSResponse> => {
+  return requestDossiersByState(
+    DossierState.refuse,
+    afterCursor,
+    "messages { body, createdAt }"
+  );
+};
+
 export const requestDossiersEnInstruction = async (
   afterCursor: string | undefined
 ): Promise<DSResponse> => {
@@ -186,7 +196,8 @@ export const requestDossiersEnInstruction = async (
 
 export const requestDossiersByState = async (
   state: DossierState,
-  afterCursor: string | undefined
+  afterCursor: string | undefined,
+  extraInfos?: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
   const query = gql`
@@ -198,8 +209,10 @@ export const requestDossiersByState = async (
           endCursor
         }
         nodes {
-          id,
+          id
           number
+          dateTraitement
+          ${extraInfos ?? ""}
           champs {
             id
             label

@@ -2,6 +2,7 @@ import * as Sentry from "@sentry/nextjs";
 
 import * as demarchesSimplifiees from "./demarchesSimplifiees";
 import { reportingDossierEligible } from "./reportingDossierEligible";
+import { reportingDossierRefuse } from "./reportingDossierRefuse";
 import { reportingExpertWeekly } from "./reportingExpertWeekly";
 import { reportingStatsByDepartment } from "./reportingStatsByDepartment";
 
@@ -31,6 +32,7 @@ const cronJobs = {
   reportingStatsByDepartment,
   reportingExpertWeekly,
   reportingDossierEligible,
+  reportingDossierRefuse,
 };
 
 const jobName = process.argv[2];
