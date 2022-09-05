@@ -57,7 +57,7 @@ const Page = () => {
                     Vous avez du <strong>mal à dormir</strong>&nbsp;?
                   </li>
                   <li>
-                    Vous vous sentez <strong>dépassé·e</strong>&nbsp;?
+                    Vous vous sentez <strong>dépassé</strong>&nbsp;?
                   </li>
                   <li>
                     Vous êtes dans une <strong>relation toxique</strong>&nbsp;?
@@ -83,7 +83,7 @@ const Page = () => {
                 <h2 className="fr-h5">MonPsy c’est&nbsp;:</h2>
                 <ul className="no-bullet">
                   <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
-                    &nbsp;Un annuaire de + de 900{" "}
+                    &nbsp;Un annuaire de{" "}
                     <strong>psychologues partenaires expérimentés</strong>{" "}
                     sélectionnés sur leur expérience professionnelle.
                   </li>
@@ -141,11 +141,8 @@ const Page = () => {
                         Le médecin échange avec vous pour s’assurer que MonPsy
                         est adapté à votre situation. Vous pouvez consulter
                         différents types de médecins (généraliste, gynécologue,
-                        médecin scolaire,{" "}
-                        <abbr title="Protection maternelle et infantile">
-                          PMI
-                        </abbr>
-                        , etc.)
+                        médecin scolaire, protection maternelle et infantile,
+                        etc.)
                       </p>
                     </div>
                   </div>
@@ -197,7 +194,7 @@ const Page = () => {
                         3. Ou n’avancez aucun frais
                       </h4>
                       <p className="fr-card__desc fr-text--md">
-                        Si vous êtes éligible au Tiers payant obligatoire. (Voir
+                        Si vous êtes éligible au tiers payant obligatoire. (Voir
                         conditions{" "}
                         <Link href="#combien-ca-coute">
                           <a>ci-dessous</a>
@@ -246,7 +243,7 @@ const Page = () => {
                 </h5>
                 <p className="fr-text--dark-blue">
                   Envoyez votre feuille de soins et le courrier d’adressage de
-                  votre médecinà votre organisme d’Assurance Maladie (après
+                  votre médecin à votre organisme d’Assurance Maladie (après
                   chaque séance ou à la fin de plusieurs séances).
                 </p>
               </div>
@@ -329,7 +326,7 @@ const Page = () => {
                 <h5 className="fr-mb-1w fr-text--dark-blue">
                   En présentiel et en distanciel
                 </h5>
-                <p className="fr-mb-1w">En fonction des praticiens</p>
+                <p className="fr-mb-1w">En fonction des psychologues</p>
                 <p className="fr-text--sm">
                   Première séance obligatoirement en présentiel
                 </p>
@@ -360,7 +357,7 @@ const Page = () => {
                 className="fr-btn fr-mt-2w"
                 onClick={() => router.push("/annuaire")}
               >
-                Voir l’annuaire MonPsy
+                Annuaire MonPsy
               </button>
             </div>
             <div className="fr-col-12 fr-col-md-4 align-center">
