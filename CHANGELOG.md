@@ -1,3 +1,10 @@
+# [1.52.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.51.4...v1.52.0) (2022-09-05)
+
+
+### Features
+
+* **cron:** add dossier refuses ([#245](https://github.com/SocialGouv/mon-psy-sante/issues/245)) ([44c09a0](https://github.com/SocialGouv/mon-psy-sante/commit/44c09a0a4af98769a67131dabac6cd87f69d90b7))
+
 ## [1.51.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.51.3...v1.51.4) (2022-08-26)
 
 
