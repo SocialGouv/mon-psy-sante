@@ -6,7 +6,7 @@ metadata:
   labels:
     app: mon-psy
 spec:
-  schedule: "30 5 1 * *"
+  schedule: "30 5 15 * *"
   jobTemplate:
     spec:
       template:
