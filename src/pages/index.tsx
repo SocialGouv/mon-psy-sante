@@ -405,7 +405,7 @@ const Page = () => {
         <div className="fr-container fr-py-6w">
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
             <div className="fr-col-12">
-              <h2>Parlez à quelqu’un, gratuitement, à tout moment</h2>
+              <h2>D&apos;autres services à votre écoute</h2>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
               <div className="align-center fr-my-2w fr-py-4w">
