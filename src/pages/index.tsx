@@ -1,11 +1,11 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React from "react";
 
 import HeadTag from "../components/HeadTag";
-import VideoButton from "../components/VideoButton";
 
 const Page = () => {
-  const [video, setVideo] = useState("hide");
+  const router = useRouter();
   return (
     <>
       <HeadTag
@@ -18,16 +18,23 @@ const Page = () => {
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
             <div className="fr-col-12 fr-col-md-6 fr-pt-4w">
               <h1>
-                MonPsy&nbsp;
+                Vous rencontrez une situation difficile&nbsp;?
                 <span className="fr-text--lead d-block fr-mt-3w">
-                  L’accès à un accompagnement psychologique pour tous (dès 3
-                  ans)
+                  Avec MonPsy, bénéficiez de 8 séances par an chez un ou une
+                  psychologue
                 </span>
               </h1>
-              <p className="fr-mt-10w">
-                Sur orientation d’un médecin, jusqu’à 8 séances remboursées chez
-                un psychologue partenaire.
+              <p className="fr-text--xl fr-text--bold fr-mt-5w">
+                Les séances sont remboursées&nbsp;:
               </p>
+              <ul className="no-bullet">
+                <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                  &nbsp;par l’Assurance Maladie
+                </li>
+                <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                  &nbsp;et votre mutuelle ou complémentaire santé
+                </li>
+              </ul>
             </div>
             <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-4">
               <img
@@ -35,94 +42,56 @@ const Page = () => {
                 src="/images/Psychologist-hero.svg"
                 alt="En parler, c’est déjà se soigner"
               />
-              {video === "hide" && (
-                <VideoButton onClick={() => setVideo("show")} />
-              )}
             </div>
           </div>
-          {video === "show" && (
-            <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
-              <div className="fr-col-8">
-                <video width="100%" controls autoPlay>
-                  <source type="video/mp4" src="/images/Video-MonPsy.mp4" />
-                  <track
-                    kind="captions"
-                    srcLang="fr"
-                    src="/images/Video-MonPsy.mp4.vtt"
-                  />
-                </video>
-              </div>
-            </div>
-          )}
         </div>
       </section>
       <section>
         <div className="fr-container--fluid fr-bg--light fr-py-10w">
           <div className="fr-container">
-            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-              <div className="fr-col-12 fr-col-md-3">
-                <div className="fr-card fr-enlarge-link fr-pt-3w">
-                  <div className="fr-card__body">
-                    <h2 className="fr-card__title">
-                      <Link href="/patients" passHref>
-                        <a href="/patients" className="fr-card__link">
-                          Je ne me sens pas bien
-                        </a>
-                      </Link>
-                    </h2>
-                    <p className="fr-card__desc">
-                      Bénéficiez de l’accompagnement d’un psychologue
-                    </p>
-                  </div>
-                  <div className="fr-card__img">
-                    <img
-                      src="/images/patient-home.svg"
-                      height="158"
-                      width="65"
-                      alt=""
-                    />
-                  </div>
-                </div>
+            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
+              <div className="fr-col-12 fr-col-md-6">
+                <h2>Pourquoi consulter&nbsp;?</h2>
+                <ul>
+                  <li>
+                    Vous avez du <strong>mal à dormir</strong>&nbsp;?
+                  </li>
+                  <li>
+                    Vous vous sentez <strong>dépassé</strong>&nbsp;?
+                  </li>
+                  <li>
+                    Vous êtes dans une <strong>relation toxique</strong>&nbsp;?
+                  </li>
+                  <li>
+                    Vous avez des <strong>difficultés</strong> à échanger avec
+                    votre entourage&nbsp;?
+                  </li>
+                  <li>
+                    Vous avez besoin d’une personne à qui parler,{" "}
+                    <strong>sans jugement</strong>.
+                  </li>
+                </ul>
+                <p>
+                  Quelle que soit votre situation,{" "}
+                  <Link href="/annuaire">
+                    <a>trouvez des psychologues à votre écoute</a>
+                  </Link>
+                  .
+                </p>
               </div>
-
-              <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-3">
-                <div className="fr-card fr-enlarge-link fr-pt-3w">
-                  <div className="fr-card__body">
-                    <h2 className="fr-card__title">
-                      <Link href="/psychologues" passHref>
-                        <a href="/psychologues" className="fr-card__link">
-                          Je suis psychologue
-                        </a>
-                      </Link>
-                    </h2>
-                    <p className="fr-card__desc">
-                      Rejoignez le réseau des psychologues partenaires
-                    </p>
-                  </div>
-                  <div className="fr-card__img">
-                    <img src="/images/psy-home.svg" height="158" alt="" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-3">
-                <div className="fr-card fr-enlarge-link fr-pt-3w">
-                  <div className="fr-card__body">
-                    <h2 className="fr-card__title">
-                      <Link href="/medecins" passHref>
-                        <a href="/medecins" className="fr-card__link">
-                          Je suis médecin
-                        </a>
-                      </Link>
-                    </h2>
-                    <p className="fr-card__desc">
-                      Orientez au mieux vos patients
-                    </p>
-                  </div>
-                  <div className="fr-card__img">
-                    <img src="/images/doctor-home.svg" height="158" alt="" />
-                  </div>
-                </div>
+              <div className="fr-col-12 fr-col-md-6">
+                <h2 className="fr-h5">MonPsy c’est&nbsp;:</h2>
+                <ul className="no-bullet">
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                    &nbsp;Un annuaire de{" "}
+                    <strong>psychologues partenaires expérimentés</strong>{" "}
+                    sélectionnés sur leur expérience professionnelle.
+                  </li>
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                    &nbsp;Un parcours de soins{" "}
+                    <strong>pris en charge par l’Assurance Maladie</strong>.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -145,17 +114,298 @@ const Page = () => {
             <div className="fr-col-12 fr-col-md-5">
               <p>
                 Si je suis en détresse et/ou j’ai des pensées suicidaires, je
-                contacte sans attendre le <strong>3114</strong>
+                contacte sans attendre le{" "}
+                <strong>
+                  <a href="tel:3114">3114</a>
+                </strong>
               </p>
             </div>
           </div>
         </div>
       </section>
       <section>
+        <div className="fr-container--fluid fr-bg--tilleul fr-py-10w">
+          <div className="fr-container">
+            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
+              <div className="fr-col-12 fr-col-offset-md-2 fr-col-md-8">
+                <h2>Comment ça marche&nbsp;?</h2>
+              </div>
+              <div className="fr-col-12 fr-col-offset-md-2 fr-col-md-8">
+                <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
+                  <div className="fr-card__body">
+                    <div className="fr-card__content">
+                      <h4 className="fr-card__title fr-text--dark-blue">
+                        1. Rencontrez un médecin
+                      </h4>
+                      <p className="fr-card__desc fr-text--md">
+                        Le médecin échange avec vous pour s’assurer que MonPsy
+                        est adapté à votre situation. Vous pouvez consulter
+                        différents types de médecins (généraliste, gynécologue,
+                        médecin scolaire, protection maternelle et infantile,
+                        etc.)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="fr-col-12 fr-col-offset-md-2 fr-col-md-8">
+                <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
+                  <div className="fr-card__body">
+                    <div className="fr-card__content">
+                      <h4 className="fr-card__title fr-text--dark-blue">
+                        2. Prenez rendez-vous avec un psychologue partenaire
+                      </h4>
+                      <p className="fr-card__desc fr-text--md">
+                        Commencez vos 8 séances par an en présentiel ou à
+                        distance. La première séance doit obligatoirement être
+                        en présentiel.
+                      </p>
+                      <div className="align-center">
+                        <button
+                          className="fr-btn"
+                          onClick={() => router.push("/annuaire")}
+                        >
+                          Annuaire MonPsy
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="fr-col-12 fr-col-offset-md-2 fr-col-md-4">
+                <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
+                  <div className="fr-card__body">
+                    <div className="fr-card__content">
+                      <h4 className="fr-card__title fr-text--dark-blue">
+                        3. Faites vous rembourser
+                      </h4>
+                      <p className="fr-card__desc fr-text--md">
+                        L’Assurance Maladie et votre mutuelle vous remboursent.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="fr-col-12 fr-col-md-4">
+                <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
+                  <div className="fr-card__body">
+                    <div className="fr-card__content">
+                      <h4 className="fr-card__title fr-text--dark-blue">
+                        3. Ou n’avancez aucun frais
+                      </h4>
+                      <p className="fr-card__desc fr-text--md">
+                        Si vous êtes éligible au tiers payant obligatoire. (Voir
+                        conditions{" "}
+                        <Link href="#combien-ca-coute">
+                          <a>ci-dessous</a>
+                        </Link>
+                        )
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="fr-container--fluid fr-py-10w">
+          <div className="fr-container">
+            <div className="fr-grid-row fr-grid-row--gutters">
+              <div className="fr-col-12">
+                <h2 id="combien-ca-coute">Combien ça coûte&nbsp;?</h2>
+              </div>
+              <div className="fr-col-12 fr-col-md-6 fr-p-4w">
+                <h4 className="fr-text--dark-blue">
+                  Tarifs des séances des psychologues partenaires
+                </h4>
+                <ul className="no-bullet">
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                    &nbsp;<strong>Première séance (évaluation)</strong>&nbsp;:
+                    40 €
+                  </li>
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                    &nbsp;<strong>Les séances de suivi</strong>&nbsp;: 30 €
+                  </li>
+                </ul>
+                <h4 className="fr-text--dark-blue">Prise en charge</h4>
+                <ul className="no-bullet">
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                    &nbsp;60 % par l’Assurance Maladie
+                  </li>
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                    &nbsp;40 % par la complémentaire santé ou la mutuelle
+                  </li>
+                </ul>
+                <h5 className="fr-text--dark-blue fr-h6 fr-mb-1w fr-mt-3w">
+                  Comment s’effectuent les remboursements&nbsp;?
+                </h5>
+                <p className="fr-text--dark-blue">
+                  Envoyez votre feuille de soins et le courrier d’adressage de
+                  votre médecin à votre organisme d’Assurance Maladie (après
+                  chaque séance ou à la fin de plusieurs séances).
+                </p>
+              </div>
+              <div className="fr-col-12 fr-col-md-6 fr-bg--tilleul-light fr-p-4w">
+                <h4 className="fr-text--dark-blue">
+                  Qui peut bénéficier du Tiers payant obligatoire&nbsp;?
+                </h4>
+                <h5 className="fr-h6">
+                  Les personnes qui ont une souffrance en lien avec&nbsp;:
+                </h5>
+                <ul className="no-bullet">
+                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                    &nbsp;Une Affection Longue Durée (ALD)
+                  </li>
+                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                    &nbsp;Une grossesse (à partir du 6ème mois)
+                  </li>
+                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                    &nbsp;Un accident du travail ou une maladie professionnelle
+                    (AT-MP)
+                  </li>
+                </ul>
+                <h5 className="fr-h6">Mais aussi…</h5>
+                <ul className="no-bullet">
+                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                    &nbsp;Les bénéficiaires de la Complémentaire Santé Solidaire
+                    (CSS)
+                  </li>
+                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                    &nbsp;Les bénéficiaires de l’Aide Médicale de l’État (AME)
+                  </li>
+                </ul>
+                <p className="fr-text--dark-blue">
+                  Êtes-vous éligible à une aide&nbsp;?{" "}
+                  <Link href="https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/simulateur-de-droits">
+                    <a target="_blank" rel="noreferrer nofollow noopener">
+                      Simulateur Prestations sociales
+                    </a>
+                  </Link>{" "}
+                  et{" "}
+                  <Link href="https://www.mesdroitssociaux.gouv.fr/accueil/">
+                    <a target="_blank" rel="noreferrer nofollow noopener">
+                      Droits sociaux
+                    </a>
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="fr-container--fluid fr-py-5w fr-bg--light">
+          <div className="fr-container">
+            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--align-center">
+              <div className="fr-col-12 fr-col-md-4 align-center">
+                <div className="fr-h2 fr-mb-2w">
+                  <img src="/images/icones/approval.svg" alt="" height="40" />
+                </div>
+                <h5 className="fr-mb-1w fr-text--dark-blue">
+                  Pour tout le monde
+                </h5>
+                <p className="fr-mb-1w">À partir de 3 ans </p>
+              </div>
+              <div className="fr-col-12 fr-col-md-4 align-center">
+                <div className="fr-h2 fr-mb-2w">
+                  <img
+                    src="/images/icones/money_transfer.svg"
+                    alt=""
+                    height="40"
+                  />
+                </div>
+                <h5 className="fr-mb-1w fr-text--dark-blue">Remboursé</h5>
+                <p className="fr-mb-1w">Pris en charge ou sans frais </p>
+              </div>
+              <div className="fr-col-12 fr-col-md-4 align-center">
+                <div className="fr-h2 fr-mb-2w">
+                  <img src="/images/icones/survey.svg" alt="" height="40" />
+                </div>
+                <h5 className="fr-mb-1w fr-text--dark-blue">
+                  En présentiel et en distanciel
+                </h5>
+                <p className="fr-mb-1w">En fonction des psychologues</p>
+                <p className="fr-text--sm">
+                  Première séance obligatoirement en présentiel
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="fr-container fr-py-10w">
+          <div className="fr-grid-row fr-grid-row--center fr-index-box">
+            <div className="fr-col-12 fr-col-md-8 fr-pt-4w">
+              <h2>MonPsy pour les moins de 18 ans</h2>
+              <ul className="no-bullet">
+                <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                  &nbsp;À partir de <strong>3 ans</strong>.
+                </li>
+                <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                  &nbsp;<strong>Accord parental</strong> obligatoire.
+                </li>
+                <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                  &nbsp;Des psychologues qui reçoivent aussi les enfants et les
+                  adolescents.
+                </li>
+              </ul>
+              <button
+                className="fr-btn fr-mt-2w"
+                onClick={() => router.push("/annuaire")}
+              >
+                Annuaire MonPsy
+              </button>
+            </div>
+            <div className="fr-col-12 fr-col-md-4 align-center">
+              <img
+                className="fr-mt-2w"
+                height={250}
+                src="/images/children.svg"
+                alt="Je ne me sens pas bien, illustration d'un enfant sur une chaise"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="fr-container--fluid fr-py-7w fr-bg--tilleul-light">
+          <div className="fr-container">
+            <div className="fr-mb-2w">
+              <strong className="fr-text--lg">
+                La documentation à votre disposition&nbsp;:
+              </strong>
+              <a
+                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                target="_blank"
+                rel="noreferrer nofollow noopener"
+                href="/documents/MonPsy_Flyer grand public.pdf"
+              >
+                Flyer Grand Public
+              </a>
+            </div>
+            <div>
+              <strong className="fr-text--lg">Des questions&nbsp;?</strong>
+              <a
+                href="/faq?tab=patient"
+                className="fr-link fr-fi-question-line fr-link--icon-left fr-ml-2w"
+              >
+                Je consulte la FAQ
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <div className="fr-container fr-py-6w">
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
             <div className="fr-col-12">
-              <h2>Services d’écoute anonymes et gratuits</h2>
+              <h2>D&apos;autres services à votre écoute</h2>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
               <div className="align-center fr-my-2w fr-py-4w">
@@ -168,24 +418,33 @@ const Page = () => {
                 >
                   <img
                     src="/images/logo-3114.svg"
-                    alt="Logo 3114"
-                    height="70"
+                    alt="Logo 3114, Souffrance Prévention Suicide"
+                    height="65"
                   />
                 </a>
               </div>
-              <p>
-                Je suis en détresse et/ou j’ai des pensées suicidaires. Je veux
-                aider un proche en souffrance.
+              <p className="fr-h5">
+                En détresse&nbsp;? Témoin d’un proche en souffrance&nbsp;?
               </p>
               <p>
-                J’appelle le <a href="tel:3114">3114</a>, accessible 24h/24 et
-                7j/7 gratuitement en France entière
+                Des professionnels de santé formés à la prévention du suicide
+                vous écoutent. Ils peuvent proposer des ressources adaptées à
+                vos besoins.
               </p>
-              <p>
-                Un professionnel de soins formé spécifiquement à la prévention
-                du suicide sera à mon écoute afin de faire le point et me
-                proposer des ressources adaptées à mes besoins.
+              <p className="fr-text--sm fr-text--muted">
+                Disponible 7j/7, 24h/24, dans toute la France.
               </p>
+              <ul>
+                <li>
+                  <a
+                    target="_blank"
+                    rel="noreferrer nofollow noopener"
+                    href="tel:3114"
+                  >
+                    Appeler Souffrance Prévention du suicide
+                  </a>
+                </li>
+              </ul>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
               <div className="align-center fr-my-2w">
@@ -198,30 +457,50 @@ const Page = () => {
                 >
                   <img
                     src="/images/Filsantejeunes.jpg"
-                    height="140"
+                    height="130"
                     alt="Logo Fil santé jeunes"
                   />
                 </a>
               </div>
+              <p className="fr-h5">
+                Parler librement, sans jugement, de tout&nbsp;? C’est possible.
+              </p>
               <p>
-                Permanence d’écoute téléphonique tous les jours de 9h à 23h pour
-                les 12-25 ans sur les thèmes de la santé, de la sexualité, de
-                l’amour, du mal être, etc.
+                Chat et permanence téléphonique anonymes pour les 12-25 ans sur,
+                la santé, la sexualité, l’amour, le mal être, les relations
+                familiales ou scolaires...
+              </p>
+              <p className="fr-text--sm fr-text--muted">
+                Du lundi au dimanche de 9h à 23h.
               </p>
 
-              <p>
-                <a
-                  target="_blank"
-                  href="https://www.filsantejeunes.com/tchat-individuel"
-                  rel="noreferrer"
-                >
-                  Chat individuel
-                </a>{" "}
-                ouvert tous les jours de 9 h à 22h
-              </p>
+              <ul>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.filsantejeunes.com/tchat-individuel"
+                    rel="noreferrer"
+                  >
+                    Chater sur Fil Santé Jeunes
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+33800235236">Appeler Fil Santé Jeunes</a>
+                </li>
+
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.acce-o.fr/client/fil-sante-jeunes"
+                    rel="noreferrer"
+                  >
+                    Ligne pour les sourds et malentendants
+                  </a>
+                </li>
+              </ul>
             </div>
             <div className="fr-col-12 fr-col-md-4 fr-px-2w">
-              <div className="align-center fr-my-2w">
+              <div className="align-center align-middle fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
@@ -230,78 +509,46 @@ const Page = () => {
                   rel="noreferrer"
                 >
                   <img
-                    src="/images/SOSAmitie.png"
-                    height="140"
+                    height="130"
+                    src="/images/SOS-Amitie-logo.png"
                     alt="Logo SOS Amitié"
                   />
                 </a>
               </div>
-              <p>
-                Permanence d’écoute téléphonique 24h/24 et 7j/7 pour les
-                personnes en détresse (tel&nbsp;:&nbsp;
-                <a href="tel:+33972394050">
-                  09&nbsp;72&nbsp;39&nbsp;40&nbsp;50
-                </a>
-                )
+              <p className="fr-h5">
+                Besoin de parler à quelqu’un&nbsp;? Pensées suicidaires&nbsp;?
               </p>
-              <a
-                href="https://www.sos-amitie.com/chat/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Chat
-              </a>{" "}
-              du lundi au dimanche de 13h à 3h du matin.
-            </div>
-            <div className="fr-col-12">
-              <h2>Information sur la santé mentale</h2>
-            </div>
-            <div className="fr-col-12 fr-col-lg-4">
-              <div className="align-center fr-my-2w">
-                <a
-                  target="_blank"
-                  className="fr-link"
-                  title="Ameli"
-                  href="https://www.ameli.fr/paris/assure/sante/themes/depression-troubles-depressifs"
-                  rel="noreferrer"
-                >
-                  <img src="/images/cnam.png" alt="Logo CNAM" height="90" />
-                </a>
-              </div>
-            </div>
-            <div className="fr-col-12 fr-col-lg-4">
-              <div className="align-center fr-my-2w">
-                <a
-                  target="_blank"
-                  className="fr-link"
-                  title="Psycom"
-                  href="https://www.psycom.org/"
-                  rel="noreferrer"
-                >
-                  <img
-                    src="/images/Psycom.png"
-                    height="140"
-                    alt="Logo Psycom"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="fr-col-12 fr-col-lg-4">
-              <div className="align-center fr-my-2w">
-                <a
-                  target="_blank"
-                  className="fr-link"
-                  title="Santé publique France"
-                  href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/sante-mentale"
-                  rel="noreferrer"
-                >
-                  <img
-                    src="/images/Sante-publique-France-logo.svg"
-                    height="140"
-                    alt="Logo Santé publique France"
-                  />
-                </a>
-              </div>
+              <p>
+                Le service d’aide par l’écoute, dispensé par des bénévoles,
+                accueille la parole des personnes qui traversent une période
+                difficile.
+              </p>
+              <p className="fr-text--sm fr-text--muted">
+                Disponible 7j/7, 24h/24, dans 44 régions.
+              </p>
+              <ul>
+                <li>
+                  <a href="tel:+33972394050">Appeler SOS Amitié</a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.sos-amitie.com/chat/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Chater sur SOS Amitié
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.sos-amitie.com/messagerie/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Contacter par email
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

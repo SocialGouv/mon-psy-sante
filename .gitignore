@@ -11,4 +11,5 @@ out/
 
 tsconfig.tsbuildinfo
 
-cypress/
+cypress/videos
+cypress/screenshots

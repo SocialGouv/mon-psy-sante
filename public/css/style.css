@@ -7,11 +7,19 @@
 }
 
 .fr-bg--light {
-  background-color: var(--brown-cafe-creme-950);
+  background-color: var(--brown-cafe-creme-975);
 }
 
 .fr-bg--light2 {
   background-color: var(--pink-tuile-950);
+}
+
+.fr-bg--tilleul {
+  background-color: var(--green-tilleul-verveine-950);
+}
+
+.fr-bg--tilleul-light {
+  background-color: var(--green-tilleul-verveine-975);
 }
 
 .fr-bg--dark {
@@ -19,9 +27,16 @@
   color: white;
 }
 
+.fr-text--dark-blue {
+  color: var(--blue-france-113);
+}
+.fr-text--muted {
+  color: var(--grey-425);
+}
+
 .fr-callout.fr-callout-white {
   background-color: white;
-  box-shadow: inset .25rem 0 0 0 var(--border-default-pink-tuile);
+  box-shadow: inset 0.25rem 0 0 0 var(--border-default-pink-tuile);
 }
 
 h1 .fr-text--lead {
@@ -37,11 +52,11 @@ h1 .fr-text--lead {
 }
 
 .align-right {
-  text-align: right
+  text-align: right;
 }
 
 .align-left {
-  text-align: left
+  text-align: left;
 }
 
 .map {
@@ -72,4 +87,10 @@ h1 .fr-text--lead {
 .fr-card .fr-card__img img {
   width: auto;
   margin: auto;
+}
+
+.fr-index-box {
+  border: 3px solid var(--green-tilleul-verveine-950);
+  padding: 2rem;
+  border-radius: 1rem;
 }

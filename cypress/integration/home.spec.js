@@ -4,28 +4,17 @@ describe("Home & landing pages", () => {
 
     cy.get("h1").should(
       "have.text",
-      "MonPsy L’accès à un accompagnement psychologique pour tous (dès 3 ans)"
+      "Vous rencontrez une situation difficile ?Avec MonPsy, bénéficiez de 8 séances par an chez un ou une psychologue"
     );
 
     cy.get("nav#navigation-main-nav")
       .first()
       .should(
         "have.text",
-        "AccueilJe ne me sens pas bienJe suis psychologueJe suis médecinFoire aux questions"
+        "AccueilAnnuaire MonPsyJe suis psychologueJe suis médecinFoire aux questions"
       );
 
-    cy.get("h2").first().should("have.text", "Je ne me sens pas bien");
-  });
-
-  it("Patient page should be visible", () => {
-    cy.visit("/");
-
-    cy.get("h2 a").first().click();
-
-    cy.url().should("include", "/patients");
-
-    cy.get("h1").should("have.text", "Je ne me sens pas bien");
-    cy.get("h2").first().should("have.text", "Suis-je concerné(e) ?");
+    cy.get("h2").first().should("have.text", "Pourquoi consulter ?");
   });
 
   it("robots.txt should be visible", () => {
