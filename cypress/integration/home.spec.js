@@ -14,7 +14,7 @@ describe("Home & landing pages", () => {
         "AccueilAnnuaire MonPsyJe suis psychologueJe suis médecinFoire aux questions"
       );
 
-    cy.get("h2").first().should("have.text", "Je ne me sens pas bien");
+    cy.get("h2").first().should("have.text", "Pourquoi consulter ?");
   });
 
   it("robots.txt should be visible", () => {
