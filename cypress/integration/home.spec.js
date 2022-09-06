@@ -11,7 +11,7 @@ describe("Home & landing pages", () => {
       .first()
       .should(
         "have.text",
-        "AccueilJe ne me sens pas bienJe suis psychologueJe suis médecinFoire aux questions"
+        "AccueilAnnuaire MonPsyJe suis psychologueJe suis médecinFoire aux questions"
       );
 
     cy.get("h2").first().should("have.text", "Je ne me sens pas bien");
