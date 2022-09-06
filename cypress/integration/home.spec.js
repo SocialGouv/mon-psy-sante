@@ -4,7 +4,7 @@ describe("Home & landing pages", () => {
 
     cy.get("h1").should(
       "have.text",
-      "Vous rencontrez une situation difficile ?Avec MonPsy, bénéficiez de 8 séances par an chez un ou une psychologue"
+      "Vous rencontrez une situation difficile ?Avec MonPsy, bénéficiez de 8 séances par an chez un ou une psychologue"
     );
 
     cy.get("nav#navigation-main-nav")
