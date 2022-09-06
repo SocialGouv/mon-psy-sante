@@ -1,3 +1,10 @@
+# [1.54.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.53.0...v1.54.0) (2022-09-06)
+
+
+### Features
+
+* **accessibility:** new accessibility page following audit ([#246](https://github.com/SocialGouv/mon-psy-sante/issues/246)) ([18e3824](https://github.com/SocialGouv/mon-psy-sante/commit/18e38249dfbdb2944020bad4339842d8c0b25c01))
+
 # [1.53.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.52.0...v1.53.0) (2022-09-06)
 
 
