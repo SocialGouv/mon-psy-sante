@@ -1,3 +1,10 @@
+# [1.53.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.52.0...v1.53.0) (2022-09-06)
+
+
+### Features
+
+* new landing page (wip) ([#233](https://github.com/SocialGouv/mon-psy-sante/issues/233)) ([f22ce8e](https://github.com/SocialGouv/mon-psy-sante/commit/f22ce8e42ff07bfcd0e5366cef6f3d3a42f40884))
+
 # [1.52.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.51.4...v1.52.0) (2022-09-05)
 
 
