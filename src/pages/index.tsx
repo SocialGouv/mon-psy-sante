@@ -394,7 +394,7 @@ const Page = () => {
                 href="/faq?tab=patient"
                 className="fr-link fr-fi-question-line fr-link--icon-left fr-ml-2w"
               >
-                Je consulte la FAQ
+                Consultez la Foire Aux Questions
               </a>
             </div>
           </div>
