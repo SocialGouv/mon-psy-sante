@@ -1,3 +1,10 @@
+## [1.54.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.54.0...v1.54.1) (2022-09-08)
+
+
+### Bug Fixes
+
+* **wording:** remove je ([4abebb5](https://github.com/SocialGouv/mon-psy-sante/commit/4abebb5945a6b2b594cc71161a167b3cb95fa80e))
+
 # [1.54.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.53.0...v1.54.0) (2022-09-06)
 
 
