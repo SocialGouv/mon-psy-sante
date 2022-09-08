@@ -72,7 +72,7 @@ const Page = () => {
       </section>
       <section>
         <div className="fr-container">
-          <div className="fr-my-9w fr-mx-8w">
+          <div className="fr-my-9w fr-md-mx-8w">
             <ul className="no-bullet">
               <BulletPoint title="Un engagement social">
                 Vous permettez à des publics, qui ne bénéficiaient pas
@@ -109,7 +109,7 @@ const Page = () => {
           <div className="fr-container fr-mb-4w">
             <h2>Les étapes pour être psychologue partenaire</h2>
           </div>
-          <div className="fr-grid-row fr-grid-row--center fr-px-3w">
+          <div className="fr-grid-row fr-grid-row--center fr-md-px-3w">
             <CardStep title="Candidature" number="1">
               <p>
                 Complétez votre candidature en ligne en joignant les pièces
