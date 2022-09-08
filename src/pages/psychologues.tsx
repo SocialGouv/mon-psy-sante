@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HeadTag from "../components/HeadTag";
 
 const Page = () => {
+  const [video, setVideo] = useState<"hide" | "show">("hide");
   return (
     <>
       <HeadTag
@@ -14,514 +15,271 @@ const Page = () => {
         <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-12 fr-col-lg-7">
-              <h1>Je suis psychologue</h1>
-              <p>
-                Je souhaite rejoindre le réseau des psychologues partenaires
-              </p>
+              <h1>
+                Vous êtes psychologue,
+                <span className="fr-text--lead d-block fr-mt-3w">
+                  Rejoignez le réseau des psychologues partenaires&nbsp;!
+                </span>
+              </h1>
+              <a
+                className="fr-btn fr-fi-edit-line fr-btn--icon-left fr-mb-4w"
+                target="_blank"
+                href="https://www.demarches-simplifiees.fr/commencer/monpsy"
+                title="Je Candidate"
+                rel="noreferrer"
+              >
+                Candidater
+              </a>
             </div>
-            <div className="fr-col-12 fr-col-lg-5">
+            <div className="fr-col-12 fr-col-lg-5 align-center">
               <img
                 src="/images/psy.svg"
                 height="360"
                 alt="Je suis psychologue illustration"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="fr-container--fluid fr-bg--light2 fr-py-4w">
-          <div className="fr-container">
-            <h2>Rejoignez le réseau des psychologues partenaires&nbsp;!</h2>
-            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-              <div className="fr-col-12 fr-col-lg-7">
-                <p className="fr-mb-1v">
-                  <strong>Je souhaite m’engager&nbsp;?</strong>
-                </p>
-                <p>
-                  En rejoignant MonPsy, je permets à des publics, qui n’auraient
-                  pas pu venir me consulter, d’avoir recours à mon expertise et
-                  mes compétences, afin d’améliorer leur santé.
-                </p>
-
-                <p className="fr-mb-1v">
-                  <strong>
-                    Je souhaite participer à un échange
-                    pluriprofessionnel&nbsp;?
-                  </strong>
-                </p>
-                <p>
-                  Avec ce dispositif, les psychologues partenaires et les
-                  médecins construisent ensemble le parcours de soins en santé
-                  mentale de demain, dans une approche collaborative au bénéfice
-                  des patients.
-                </p>
-
-                <p className="fr-mb-1v">
-                  <strong>Je souhaite bénéficier de visibilité&nbsp;?</strong>
-                </p>
-                <p>
-                  Mes coordonnées apparaissent publiquement sur l’annuaire
-                  MonPsy mis en ligne par le Ministère de la Santé et
-                  l’Assurance Maladie.
-                </p>
-
-                <p className="fr-mb-1v">
-                  <strong>
-                    Je souhaite choisir mon niveau d’engagement&nbsp;?
-                  </strong>
-                </p>
-                <p>
-                  Je décide du temps consacré au dispositif MonPsy. L’activité
-                  conventionnée n’est pas exclusive, je peux réaliser des
-                  séances à tarif libre (non remboursées par l’Assurance
-                  Maladie).
-                </p>
-              </div>
-              <div className="fr-col-12 fr-col-lg-4 fr-col-offset-lg-1">
-                <div className="fr-callout fr-callout-white align-center">
-                  <a
-                    className="fr-btn fr-btn--lg fr-fi-edit-line fr-btn--icon-left fr-mb-4w"
-                    target="_blank"
-                    href="https://www.demarches-simplifiees.fr/commencer/monpsy"
-                    title="Je Candidate"
-                    rel="noreferrer"
+              {video === "hide" && (
+                <div className="align-left">
+                  <button
+                    onClick={() => setVideo("show")}
+                    title="Découvrir MonPsy en vidéo, via le témoignage d’Annie, psychologue partenaire"
+                    className="fr-btn fr-btn--lg fr-btn--secondary fr-fi-play-line fr-btn--icon-left fr-mt-4w"
                   >
-                    Candidater
-                  </a>
-                  <p>
-                    Pour accompagner des patients dans le cadre du dispositif
-                    MonPsy, il est nécessaire d’être conventionné avec
-                    l’Assurance Maladie et de déposer un dossier de candidature.
-                  </p>
-                  <p>
-                    <a
-                      className="fr-link fr-fi-download-line fr-link--icon-left fr-mt-2w"
-                      target="_blank"
-                      href="/documents/MonPsy_Flyer-Démarches simplifiées_2022.pdf"
-                    >
-                      Tutoriel Démarches Simplifiées
-                    </a>
-                    <a
-                      className="fr-link fr-fi-download-line fr-link--icon-left fr-mt-2w"
-                      target="_blank"
-                      href="/documents/MonPsy_Flyer-candidatures-psychologues_2022.pdf"
-                    >
-                      Brochure informative
-                    </a>
-                  </p>
+                    Découvrez le témoignage d’Annie, psychologue partenaire
+                  </button>
+                  <span className="d-block fr-mt-1w">Durée&nbsp;: 2min</span>
+                </div>
+              )}
+            </div>
+            {video === "show" && (
+              <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
+                <div className="fr-col-8">
+                  <video width="100%" controls autoPlay>
+                    <source
+                      type="video/mp4"
+                      src="/images/Video-Temoignage.mp4"
+                    />
+                    <track
+                      kind="captions"
+                      srcLang="fr"
+                      src="/images/Video-Temoignage.mp4.vtt"
+                    />
+                  </video>
                 </div>
               </div>
-              <div className="fr-col-12">
-                <h2>
-                  Quelles sont les étapes pour être psychologue
-                  partenaire&nbsp;?
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-3w">
-            <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card align-center fr-card--no-arrow">
-                <div className="fr-card__body">
-                  <strong className="fr-display-xs">1</strong>
-                  <h3 className="fr-card__title fr-mb-4w">Candidature</h3>
-                  <div className="fr-card__desc">
-                    <p>
-                      <strong>Je complète le formulaire</strong> et{" "}
-                      <a
-                        target="_blank"
-                        title="Je Candidate"
-                        href="https://www.demarches-simplifiees.fr/commencer/monpsy"
-                        rel="noreferrer"
-                      >
-                        dépose les pièces justificatives
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card align-center fr-card--no-arrow">
-                <div className="fr-card__body">
-                  <strong className="fr-display-xs">2</strong>
-                  <h3 className="fr-card__title fr-mb-4w">Éligibilité</h3>
-                  <div className="fr-card__desc">
-                    <p>
-                      <strong>Des experts analysent l’éligibilité :</strong>
-                    </p>
-                    <ul className="align-left no-bullet">
-                      <li>- psychologue inscrit au registre ADELI</li>
-                      <li>- parcours consolidé en psychologie clinique</li>
-                      <li>- au moins 3 ans d’expérience clinique</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card align-center fr-card--no-arrow">
-                <div className="fr-card__body">
-                  <strong className="fr-display-xs">3</strong>
-                  <h3 className="fr-card__title fr-mb-4w">Conventionnement </h3>
-                  <div className="fr-card__desc">
-                    <p>
-                      Si mon dossier est éligible, il est{" "}
-                      <strong>transmis à la CPAM </strong> de mon département
-                      d’exercice qui me conventionne
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card align-center fr-card--no-arrow">
-                <div className="fr-card__body">
-                  <strong className="fr-display-xs">4</strong>
-                  <h3 className="fr-card__title fr-mb-4w">
-                    Publication sur l’annuaire{" "}
-                  </h3>
-                  <div className="fr-card__desc">
-                    <p>
-                      Une fois conventionné, mes coordonnées sont publiées sur{" "}
-                      <a href="/annuaire" rel="nofollow">
-                        l’annuaire MonPsy
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="fr-col-10 fr-col-lg">
-              <div className="fr-card align-center fr-card--no-arrow">
-                <div className="fr-card__body">
-                  <strong className="fr-display-xs">5</strong>
-                  <h3 className="fr-card__title fr-mb-4w">
-                    Accueil des patients
-                  </h3>
-                  <div className="fr-card__desc">
-                    <p>
-                      Je peux recevoir des patients dans le cadre de
-                      MonPsy&nbsp;!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
       <section>
-        <div className="fr-container fr-my-6w">
-          <div className="fr-grid-row fr-grid-row--gutters">
-            <div className="fr-col-12">
-              <h2>Quel est le rôle du médecin&nbsp;?</h2>
-              <p>
-                Le médecin identifie les situations d’urgence, présentant un
-                risque suicidaire ou avec des critères de gravité pour orienter
-                vers une prise en charge adaptée&nbsp;: psychiatre, hôpital,
-                structure spécialisée dans la prise en charge de psycho-trauma…
-              </p>
-
-              <p>
-                C’est pourquoi, dans ce cadre,{" "}
-                <strong>
-                  le patient est nécessairement orienté par un médecin.
-                </strong>
-              </p>
-
-              <p>
-                Il peut s’agir, par exemple, d’un médecin (généraliste,
-                pédiatre, gériatre…), d’un médecin scolaire, de PMI (protection
-                maternelle et infantile), des services de santé des universités
-                ou encore d’un médecin hospitalier.
-              </p>
-            </div>
+        <div className="fr-container">
+          <div className="fr-my-9w fr-mx-8w">
+            <ul className="no-bullet">
+              <BulletPoint title="Un engagement social">
+                Vous permettez à des publics, qui ne bénéficiaient pas
+                jusqu’alors de suivi psychologique, d’avoir recours à votre
+                expertise et vos compétences.
+              </BulletPoint>
+              <BulletPoint title="Un acte préventif">
+                Vous contribuez au repérage précoce des troubles psychiques chez
+                les personnes qui ne consultaient pas de psychologue jusqu’à
+                présent.
+              </BulletPoint>
+              <BulletPoint title="Un écosystème pluridisciplinaire">
+                Grâce à votre conventionnement avec l’Assurance Maladie, vous
+                faites partie du parcours de soins des patients en relation avec
+                les autres professionnels de santé.
+              </BulletPoint>
+              <BulletPoint title="Une meilleure visibilité">
+                Vos coordonnées apparaissent publiquement sur l’annuaire MonPsy
+                mis en ligne par le Ministère de la Santé et l’Assurance
+                Maladie.
+              </BulletPoint>
+              <BulletPoint title="Une quotité de travail choisie">
+                Vous pouvez continuer à réaliser des séances à tarif libre (non
+                remboursées par l’Assurance Maladie) en dehors du dispositif
+                MonPsy.
+              </BulletPoint>
+            </ul>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-            <div className="fr-col-12">
-              <h2>
-                Quels patients vais-je recevoir dans le cadre du
-                dispositif&nbsp;?
-              </h2>
-            </div>
-            <div className="fr-col-12 fr-col-lg-3 align-center">
-              <img
-                src="/images/children-psy.svg"
-                height="160"
-                alt="Enfants illustration"
-              />
-            </div>
-            <div className="fr-col-12 fr-col-lg-9">
-              <p>
-                <strong>Des enfants dès 3 ans et des adolescents</strong>{" "}
-                présentant une situation de mal-être ou souffrance psychique
-                d’intensité légère à modérée, qui a pu susciter l’inquiétude de
-                l’entourage (famille, milieu scolaire, médecin, etc).
-              </p>
-            </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="fr-container--fluid fr-bg--light fr-my-4w fr-py-4w">
+          <div className="fr-container fr-mb-4w">
+            <h2>Les étapes pour être psychologue partenaire</h2>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-my-4w">
-            <div className="fr-col-12 fr-col-lg-8">
+          <div className="fr-grid-row fr-grid-row--center fr-px-3w">
+            <CardStep title="Candidature" number="1">
               <p>
-                <strong>Et des adultes</strong> en souffrance psychique
-                d’intensité légère à modérée présentant&nbsp;:
+                Complétez votre candidature en ligne en joignant les pièces
+                justificatives
               </p>
               <ul>
-                <li>Soit un trouble anxieux</li>
-                <li>Soit un trouble dépressif</li>
                 <li>
-                  Soit un mésusage lié à l’usage de tabac, d’alcool ou de
-                  cannabis (hors dépendance)
+                  <a
+                    href="/documents/MonPsy_Flyer-Démarches simplifiées_2022.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Tutoriel Démarches simplifiées
+                  </a>
                 </li>
                 <li>
-                  Soit un trouble du comportement alimentaire (sans critères de
-                  gravité).
+                  <a
+                    href="/documents/MonPsy_Flyer-candidatures-psychologues_2022.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Brochure informative
+                  </a>
                 </li>
               </ul>
-            </div>
-            <div className="fr-col-6 fr-col-lg-2">
-              <img
-                src="/images/patient-woman.svg"
-                height="280"
-                alt="Patient femme illustration"
-              />
-            </div>
-            <div className="fr-col-6 fr-col-lg-2">
-              <img
-                src="/images/patient-man.svg"
-                height="300"
-                alt="Patient homme illustration"
-              />
+            </CardStep>
+            <CardStep title="Éligibilité de votre dossier" number="2">
+              <p>
+                Des experts analysent l’éligibilité&nbsp;:
+                <ul>
+                  <li>
+                    être inscrit au registre ADELI en tant que psychologue
+                  </li>
+                  <li>parcours consolidé en psychologie clinique </li>
+                  <li>au moins 3 ans d’expérience clinique</li>
+                </ul>
+              </p>
+            </CardStep>
+            <CardStep title="Signature de la Convention" number="3">
+              <p>
+                Si votre dossier est éligible, il est transmis à la CPAM de
+                votre département d’exercice qui réalise votre conventionnement.
+              </p>
+            </CardStep>
+            <CardStep title="Publication sur l’annuaire" number="4">
+              <p>
+                Une fois conventionné, vos coordonnées sont publiées sur
+                l’annuaire MonPsy. Vous pouvez indiquer aux patients si vous
+                êtes ou non disponible.
+              </p>
+            </CardStep>
+            <CardStep title="Accueil des patients" number="5">
+              <p>
+                Une fois ces étapes réalisées, vous pouvez commencer à recevoir
+                des patients dans le cadre de MonPsy&nbsp;!
+              </p>
+            </CardStep>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="fr-container--fluid fr-pt-3w fr-mb-7w">
+          <div className="fr-container">
+            <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
+              <div className="fr-col-12">
+                <h2>L’accompagnement du patient</h2>
+              </div>
+              <PatientCard
+                title="1. Un 1er rendez-vous d’évaluation en présentiel"
+                image="/images/icones/survey.svg"
+              >
+                Le patient vous présente le{" "}
+                <strong>courrier d’adressage</strong> du médecin. Lors de cette
+                première séance, vous réalisez un entretien d’évaluation pour{" "}
+                <strong>déterminer le nombre de séances nécessaires</strong>.
+              </PatientCard>
+              <PatientCard
+                title="2. L’accompagnement"
+                image="/images/icones/communication.svg"
+              >
+                En fonction de l’état de santé du patient, vous réalisez jusqu’à{" "}
+                <strong>7 séances de suivi remboursées par an</strong>. Vous
+                pouvez proposer à votre patient de réaliser les séances de suivi
+                psychologique en téléconsultation si vous le souhaitez.
+              </PatientCard>
+              <PatientCard
+                title="3. Le paiement des séances"
+                image="/images/icones/money_transfer.svg"
+              >
+                <span>
+                  Le patient vous rémunère directement après chaque séance ou à
+                  la fin de plusieurs séances selon votre choix&nbsp;; et&nbsp;:
+                </span>
+                <li>
+                  Vous complétez et lui remettez une feuille de soins pour qu’il
+                  soit remboursé (Règles de facturation sans tiers payant)
+                </li>
+                <li>
+                  Certains patients n’avancent pas les frais (Règles de
+                  facturation avec tiers payant).
+                </li>
+                <p>
+                  <strong>
+                    40€ pour l’entretien d’évaluation et 30€ pour chaque séance
+                    de suivi
+                  </strong>
+                  .
+                </p>
+              </PatientCard>
+              <PatientCard
+                title="2. L’échange avec le médecin"
+                image="/images/icones/check.svg"
+              >
+                A la fin de l’accompagnement, en accord avec le patient, vous
+                adressez au médecin, un compte-rendu de fin de prise en charge.
+                En cas de non amélioration des symptômes, une concertation avec
+                le médecin et un psychiatre est nécessaire pour prévoir la suite
+                de la prise en charge.
+              </PatientCard>
             </div>
           </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-            <div className="fr-callout fr-callout--pink-tuile fr-my-2w fr-p-4w fr-col-12 fr-col-lg-8">
-              <p>
-                <strong>Les patients en situation d’urgence</strong>, présentant
-                un{" "}
-                <strong>
-                  risque suicidaire ou avec des critères de gravité
-                </strong>{" "}
-                (signes de décompensation psychiatrique aigus, par exemple)
-                doivent être orientés sans délai vers le psychiatre ou des
-                structures spécialisées.
-              </p>
+        </div>
+      </section>
 
-              <p>
-                Pour plus de précisions, je me réfère au{" "}
+      <section>
+        <div className="fr-container--fluid fr-py-7w fr-bg--tilleul-light">
+          <div className="fr-container">
+            <div className="fr-mb-2w">
+              <strong className="fr-text--lg">
+                La documentation à votre disposition&nbsp;:
+              </strong>
+              <div>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   href="/documents/MonPsy_Guide psychologue_2022.pdf"
                 >
-                  guide à destination des psychologues
+                  Guide pour les psychologues
                 </a>
-                .
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="fr-container--fluid fr-bg--light fr-py-4w">
-          <div className="fr-container">
-            <h2>
-              Quelles sont les étapes de l’accompagnement du patient&nbsp;?
-            </h2>
-          </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-            <div className="fr-col-10 fr-col-md fr-ml-md-4w">
-              <div className="fr-card align-center fr-card--no-arrow">
-                <div className="fr-card__body">
-                  <strong className="fr-display-xs">1</strong>
-                  <h3 className="fr-card__title fr-mb-4w">
-                    Je reçois un patient en présentiel pour un entretien
-                    d’évaluation{" "}
-                  </h3>
-                  <div className="fr-card__desc">
-                    <p>
-                      Le patient me présente le{" "}
-                      <strong>courrier d’adressage</strong> de son médecin.
-                    </p>
-
-                    <p>
-                      Lors d’une première séance remboursée, je réalise un
-                      entretien d’évaluation pour{" "}
-                      <strong>
-                        déterminer le nombre de séances nécessaires
-                      </strong>
-                      .
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="fr-col-10 fr-col-md">
-              <div className="fr-card align-center fr-card--no-arrow">
-                <div className="fr-card__body">
-                  <strong className="fr-display-xs">2</strong>
-                  <h3 className="fr-card__title fr-mb-4w">
-                    J’accompagne mon patient{" "}
-                  </h3>
-                  <div className="fr-card__desc">
-                    <p>
-                      En fonction de l’état de santé du patient, je réalise
-                      ensuite jusqu’à 7 séances de suivi remboursées
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="fr-col-10 fr-col-md">
-              <div className="fr-card align-center fr-card--no-arrow">
-                <div className="fr-card__body">
-                  <strong className="fr-display-xs">3</strong>
-                  <h3 className="fr-card__title fr-mb-4w">
-                    Je facture la séance directement au patient{" "}
-                  </h3>
-                  <div className="fr-card__desc">
-                    <p>
-                      <strong>Le patient me rémunère directement</strong> après
-                      chaque séance ou à la fin de plusieurs séances (selon mon
-                      choix).
-                    </p>
-                    <p>
-                      40€ pour l’entretien d’évaluation et 30€ pour chaque
-                      séance de suivi.
-                    </p>
-
-                    <p>
-                      Je complète et lui remets une{" "}
-                      <strong>feuille de soins</strong> pour qu’il soit
-                      remboursé.
-                    </p>
-
-                    <p>
-                      Certains patients n’avancent pas les frais (voir
-                      ci-dessous).
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="fr-col-10 fr-col-md fr-mr-md-4w">
-              <div className="fr-card align-center fr-card--no-arrow">
-                <div className="fr-card__body">
-                  <strong className="fr-display-xs">4</strong>
-                  <h3 className="fr-card__title fr-mb-4w">
-                    J’échange avec le médecin
-                  </h3>
-                  <div className="fr-card__desc">
-                    <p>
-                      A la fin de l’accompagnement, en accord avec le patient,
-                      j’adresse au médecin, un{" "}
-                      <strong>compte-rendu de fin de prise en charge</strong>.
-                    </p>
-
-                    <p>
-                      <strong>En cas de non amélioration des symptômes</strong>,
-                      une concertation avec le médecin et un psychiatre est
-                      nécessaire pour prévoir la suite de la prise en charge.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="fr-container fr-my-6w">
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-            <div className="fr-col-12">
-              <h2>
-                Dans quels cas, le patient ne me paie pas en fin de
-                séance&nbsp;?
-              </h2>
-              <p className="fr-mb-1v">
-                Pour les situations suivantes, le patient bénéficie du Tiers
-                Payant obligatoire&nbsp;:
-              </p>
-              <ul>
-                <li>Bénéficiaire de la Complémentaire Santé Solidaire (CSS)</li>
-                <li>Bénéficiaire de l’Aide Médicale d’Etat (AME)</li>
-                <li>Soins en lien avec une Affection de Longue Durée (ALD)</li>
-                <li>
-                  Soins en lien avec une maternité (à partir du 6ème mois de
-                  grossesse)
-                </li>
-                <li>
-                  Soins en lien avec un accident du travail ou une maladie
-                  professionnelle (AT-MP)
-                </li>
-              </ul>
-              <p>
-                Ces patients ne me paient pas en fin de séances, mais{" "}
-                <strong>doivent signer la feuille de soins</strong>.
-              </p>
-
-              <p>
-                Pour être rémunéré(e), j’envoie la feuille de soins papier
-                complétée et signée par le patient, accompagnée du courrier
-                d’adressage à l’organisme d’assurance maladie de mon patient.
-              </p>
-
-              <p>
-                <strong>
-                  Je suis alors rémunéré(e) directement par l’Assurance Maladie.
-                </strong>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="fr-container fr-my-6w">
-          <div className="fr-grid-row fr-grid-row--gutters">
-            <div className="fr-col-12">
-              <p className="fr-text--lead">
-                J’ai des questions&nbsp;?{" "}
                 <a
-                  href="/faq?tab=psychologue"
-                  className="fr-link fr-fi-question-line fr-link--icon-left"
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
                 >
-                  Je consulte la FAQ
+                  Echelles d’évaluation
                 </a>
-              </p>
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
+                >
+                  Comment compléter une feuille de soins&nbsp;?
+                </a>
+                <a
+                  className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
+                  target="_blank"
+                  href="/documents/MonPsy_Fiche-Memo_Psy.pdf"
+                >
+                  Fiche mémo pour les psychologues
+                </a>
+              </div>
             </div>
-            <div className="fr-col-12">
-              <p className="fr-text--lead">
-                Je souhaite accéder à la documentation&nbsp;?
-              </p>
+            <div>
+              <strong className="fr-text--lg">Des questions&nbsp;?</strong>
               <a
-                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                target="_blank"
-                href="/documents/MonPsy_Guide psychologue_2022.pdf"
+                href="/faq?tab=psychologue"
+                className="fr-link fr-fi-question-line fr-link--icon-left"
               >
-                Guide pour les psychologues
-              </a>
-              <a
-                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                target="_blank"
-                href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
-              >
-                Echelles d’évaluation
-              </a>
-              <a
-                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                target="_blank"
-                href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
-              >
-                Comment compléter une feuille de soins&nbsp;?
-              </a>
-              <a
-                className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
-                target="_blank"
-                href="/documents/MonPsy_Fiche-Memo_Psy.pdf"
-              >
-                Fiche mémo pour les psychologues
+                Consultez la Foire Aux Questions
               </a>
             </div>
           </div>
@@ -530,4 +288,52 @@ const Page = () => {
     </>
   );
 };
+
+function PatientCard({ title, image, children }) {
+  return (
+    <>
+      <div className="fr-col-12 fr-col-md-2 align-center">
+        <img src={image} alt="" height="60" />
+      </div>
+      <div className="fr-col-12 fr-col-md-10">
+        <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
+          <div className="fr-card__body">
+            <div className="fr-card__content">
+              <h4 className="fr-card__title fr-text--dark-blue">{title}</h4>
+              <div className="fr-card__desc fr-text--md">{children}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function BulletPoint({ children, title }) {
+  return (
+    <li className="flex-row">
+      <div aria-hidden="true" className="fr-fi-arrow-right-line fr-mt-1w" />
+      <div className="fr-ml-2w fr-mb-2w">
+        <div>
+          <strong>{title}</strong>
+        </div>
+        <div>{children}</div>
+      </div>
+    </li>
+  );
+}
+
+function CardStep({ children, title, number }) {
+  return (
+    <div className="fr-col-10 fr-col-md fr-my-1w">
+      <div className="fr-card align-center fr-card--no-arrow fr-mx-1w">
+        <div className="fr-card__body">
+          <strong className="fr-display-xs">{number}</strong>
+          <h3 className="fr-card__title fr-mb-4w">{title}</h3>
+          <div className="fr-card__desc align-left">{children}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
 export default Page;
