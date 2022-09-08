@@ -137,16 +137,12 @@ const Page = () => {
               </ul>
             </CardStep>
             <CardStep title="Éligibilité de votre dossier" number="2">
-              <p>
-                Des experts analysent l’éligibilité&nbsp;:
-                <ul>
-                  <li>
-                    être inscrit au registre ADELI en tant que psychologue
-                  </li>
-                  <li>parcours consolidé en psychologie clinique </li>
-                  <li>au moins 3 ans d’expérience clinique</li>
-                </ul>
-              </p>
+              <p>Des experts analysent l’éligibilité&nbsp;:</p>
+              <ul>
+                <li>être inscrit au registre ADELI en tant que psychologue</li>
+                <li>parcours consolidé en psychologie clinique </li>
+                <li>au moins 3 ans d’expérience clinique</li>
+              </ul>
             </CardStep>
             <CardStep title="Signature de la Convention" number="3">
               <p>
@@ -206,11 +202,26 @@ const Page = () => {
                 </span>
                 <li>
                   Vous complétez et lui remettez une feuille de soins pour qu’il
-                  soit remboursé (Règles de facturation sans tiers payant)
+                  soit remboursé (
+                  <a
+                    href="https://www.ameli.fr/psychologue/exercice-professionnel/facturation/regle-de-facturation-sans-tiers-payant"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Règles de facturation sans tiers payant
+                  </a>
+                  )
                 </li>
                 <li>
-                  Certains patients n’avancent pas les frais (Règles de
-                  facturation avec tiers payant).
+                  Certains patients n’avancent pas les frais (
+                  <a
+                    href="https://www.ameli.fr/psychologue/exercice-professionnel/facturation/regle-de-facturation-avec-tiers-payant"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Règles de facturation avec tiers payant
+                  </a>
+                  ).
                 </li>
                 <p>
                   <strong>
@@ -221,14 +232,15 @@ const Page = () => {
                 </p>
               </PatientCard>
               <PatientCard
-                title="2. L’échange avec le médecin"
+                title="4. L’échange avec le médecin"
                 image="/images/icones/check.svg"
               >
                 A la fin de l’accompagnement, en accord avec le patient, vous
-                adressez au médecin, un compte-rendu de fin de prise en charge.
-                En cas de non amélioration des symptômes, une concertation avec
-                le médecin et un psychiatre est nécessaire pour prévoir la suite
-                de la prise en charge.
+                adressez au médecin,{" "}
+                <strong>un compte-rendu de fin de prise en charge</strong>.
+                <strong>En cas de non amélioration des symptômes,</strong> une
+                concertation avec le médecin et un psychiatre est nécessaire
+                pour prévoir la suite de la prise en charge.
               </PatientCard>
             </div>
           </div>
