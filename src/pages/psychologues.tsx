@@ -175,7 +175,7 @@ const Page = () => {
                 <h2>L’accompagnement du patient</h2>
               </div>
               <PatientCard
-                title="1. Un 1er rendez-vous d’évaluation en présentiel"
+                title="1. Un premier rendez-vous d’évaluation en présentiel"
                 image="/images/icones/survey.svg"
               >
                 Le patient vous présente le{" "}
@@ -185,7 +185,7 @@ const Page = () => {
               </PatientCard>
               <PatientCard
                 title="2. L’accompagnement"
-                image="/images/icones/communication.svg"
+                image="/images/icones/calendar.svg"
               >
                 En fonction de l’état de santé du patient, vous réalisez jusqu’à{" "}
                 <strong>7 séances de suivi remboursées par an</strong>. Vous
@@ -233,11 +233,11 @@ const Page = () => {
               </PatientCard>
               <PatientCard
                 title="4. L’échange avec le médecin"
-                image="/images/icones/check.svg"
+                image="/images/icones/communication.svg"
               >
                 A la fin de l’accompagnement, en accord avec le patient, vous
                 adressez au médecin,{" "}
-                <strong>un compte-rendu de fin de prise en charge</strong>.
+                <strong>un compte-rendu de fin de prise en charge</strong>.{" "}
                 <strong>En cas de non amélioration des symptômes,</strong> une
                 concertation avec le médecin et un psychiatre est nécessaire
                 pour prévoir la suite de la prise en charge.
