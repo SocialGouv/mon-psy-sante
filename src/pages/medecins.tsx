@@ -16,10 +16,23 @@ const Page = () => {
         <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-12 fr-col-lg-7">
-              <h1>Je suis médecin</h1>
-              <p>Je souhaite orienter au mieux mes patients</p>
+              <h1>
+                Vous êtes médecin,
+                <span className="fr-text--lead d-block fr-mt-3w">
+                  Prenez connaissance du cadre du dispositif
+                </span>
+              </h1>
+              <a
+                className="fr-btn fr-mb-4w"
+                target="_blank"
+                href="/documents/MonPsy_Flyer grand public.pdf"
+                title="Je Candidate"
+                rel="noreferrer nofollow noopener"
+              >
+                Flyer de présentation
+              </a>
             </div>
-            <div className="fr-col-12 fr-col-lg-5">
+            <div className="fr-col-12 fr-col-lg-5 align-center">
               <img
                 src="/images/doctor.svg"
                 height="360"
@@ -30,286 +43,178 @@ const Page = () => {
         </div>
       </section>
       <section>
-        <div className="fr-container fr-my-6w">
-          <div className="fr-grid-row fr-grid-row--gutters">
-            <div className="fr-col-12">
-              <h2>Quels sont les patients concernés&nbsp;?</h2>
-            </div>
+        <div className="fr-container--fluid fr-bg--light fr-my-4w fr-py-4w fr-px-2w">
+          <div className="fr-container fr-mb-4w">
+            <h2>De l’évaluation à l’orientation du patient </h2>
           </div>
-
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
-            <div className="fr-col-12 fr-col-lg-3 align-center">
-              <img
-                src="/images/children-psy.svg"
-                height="160"
-                alt="Enfants illustration"
-              />
-            </div>
-            <div className="fr-col-12 fr-col-lg-9">
-              <p>
-                <strong>Les enfants dès 3 ans et des adolescents</strong>{" "}
-                présentant une situation de mal-être ou souffrance psychique
-                d’intensité légère à modérée, qui a pu susciter l’inquiétude de
-                l’entourage (famille, milieu scolaire, médecin, etc).
-              </p>
-            </div>
-          </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-my-4w">
-            <div className="fr-col-12 fr-col-lg-8">
-              <p>
-                <strong>Et les adultes</strong> en souffrance psychique
-                d’intensité légère à modérée présentant&nbsp;:
-              </p>
-              <ul>
-                <li>Soit un trouble anxieux</li>
-                <li>Soit un trouble dépressif</li>
-                <li>
-                  Soit un mésusage lié à l’usage de tabac, d’alcool ou de
-                  cannabis (hors dépendance)
-                </li>
-                <li>
-                  Soit un trouble du comportement alimentaire (sans critères de
-                  gravité).
-                </li>
-              </ul>
-            </div>
-            <div className="fr-col-6 fr-col-lg-2">
-              <img
-                src="/images/patient-woman.svg"
-                height="280"
-                alt="Patient femme illustration"
-              />
-            </div>
-            <div className="fr-col-6 fr-col-lg-2">
-              <img
-                src="/images/patient-man.svg"
-                height="300"
-                alt="Patient homme illustration"
-              />
-            </div>
-          </div>
-          <div className="fr-grid-row fr-grid-row--gutters">
-            <div className="fr-col-12">
-              <p>
-                <strong>
-                  Les patients en situation d’urgence, présentant un risque
-                  suicidaire ou avec des critères de gravité
-                </strong>{" "}
-                (signes de décompensation psychiatrique aigus, par exemple){" "}
-                <strong>
-                  doivent être orientés sans délai vers le psychiatre ou des
-                  structures spécialisées.
-                </strong>
-              </p>
-
-              <p>
-                Pour plus de précisions, référez vous au{" "}
-                <a
-                  className="fr-link fr-fi-download-line fr-link--icon-left "
-                  target="_blank"
-                  href="/documents/MonPsy_Guide médecin_2022.pdf"
-                >
-                  guide à destination des médecins
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="fr-container--fluid fr-bg--light fr-py-4w">
-          <div className="fr-container">
-            <h2>Comment j’accompagne mon patient dans son parcours&nbsp;?</h2>
-          </div>
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-            <div className="fr-col-12 fr-col-md-3">
-              <div className="fr-card align-center fr-card--no-arrow">
+          <div className="fr-grid-row fr-grid-row--center fr-md-px-3w">
+            <div className="fr-col-12 fr-col-md-4">
+              <div className="fr-card align-center fr-card--no-arrow fr-mx-1w">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">1</strong>
                   <h3 className="fr-card__title fr-mb-4w">
-                    Je reçois le patient et j’évalue son état de santé
+                    Evaluez la santé du patient
                   </h3>
-                  <div className="fr-card__desc">
+                  <div className="fr-card__desc align-left">
                     <p>
-                      Je suis médecin traitant ou non (généraliste, pédiatre,
-                      gériatre….), scolaire, de PMI, des services de santé des
-                      universités ou encore d’un médecin hospitalier.
+                      Vous évaluez l’état de santé du patient selon les critères
+                      d’inclusion (cf. Fiche mémo)&nbsp;:
                     </p>
-
                     <p>
-                      Si le patient présente des troubles psychiques d’intensité
-                      légère à modérée, je lui propose un{" "}
                       <strong>
-                        accompagnement par un psychologue partenaire.
+                        Enfants (de 3 ans ou plus) et adolescents en souffrance
+                        psychique
                       </strong>
                     </p>
-
+                    <ul>
+                      <li>
+                        Situation de mal être ou souffrance psychique pouvant
+                        susciter l’inquiétude de l’entourage
+                      </li>
+                    </ul>
                     <p>
-                      Le cas échéant, je m’assure du{" "}
-                      <strong>consentement</strong> des titulaires de l’autorité
-                      parentale.
+                      <strong>
+                        Adultes de 18 ans ou plus en souffrance psychique
+                      </strong>
                     </p>
+                    <ul>
+                      <li>Trouble anxieux d’intensité légère à modérée </li>
+                      <li>Trouble dépressif d’intensité légère à modérée</li>
+                      <li>Mésusage de tabac, d’alcool, de cannabis</li>
+                      <li>
+                        Trouble du comportement alimentaire sans critères de
+                        gravité
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="fr-col-12 fr-col-md-3">
-              <div className="fr-card align-center fr-card--no-arrow">
+            <div className="fr-col-12 fr-col-md-4">
+              <div className="fr-card align-center fr-card--no-arrow fr-mx-1w">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">2</strong>
                   <h3 className="fr-card__title fr-mb-4w">
-                    J’oriente mon patient vers le dispositif MonPsy{" "}
+                    Orientez le patient vers le dispositif
                   </h3>
-                  <div className="fr-card__desc">
-                    <p>Je remets à mon patient: </p>
-
-                    <ul className="align-left no-bullet">
+                  <div className="fr-card__desc align-left">
+                    <p>
+                      Si le patient peut bénéficier du dispositif, vous lui
+                      remettez&nbsp;:
+                    </p>
+                    <ul>
                       <li>
-                        - un <strong>courrier d’adressage</strong> nécessaire au
+                        <strong>un courrier d’adressage</strong> nécessaire au
                         remboursement de 8 séances maximum. Le nombre de séances
-                        est déterminé par le psychologue.
+                        est déterminé par le psychologue
                       </li>
                       <li>
-                        - un <strong>courrier d’accompagnement</strong> avec le
+                        <strong>un courrier d’accompagnement</strong> avec le
                         contexte, les éléments cliniques et le motif de
                         l’adressage à destination du psychologue partenaire du
-                        dispositif
+                        dispositif.
                       </li>
                     </ul>
-
                     <p>
-                      Un modèle de ces deux courriers accessible{" "}
+                      <strong>Un modèle</strong> de ces deux courriers est{" "}
                       <a
-                        className="fr-link fr-fi-download-line fr-link--icon-left"
-                        target="_blank"
                         href="/documents/Courrier_d_adressage.docx"
+                        target="_blank"
+                        rel="noreferrer nofollow noopener"
                       >
-                        ici
+                        accessible ici
                       </a>
+                      .
+                    </p>
+                    <p>
+                      Le cas échéant, vous vous assurez du{" "}
+                      <strong>
+                        consentement des titulaires de l’autorité parentale.
+                      </strong>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="fr-col-12 fr-col-md-3">
-              <div className="fr-card align-center fr-card--no-arrow">
+            <div className="fr-col-12 fr-col-md-4">
+              <div className="fr-card align-center fr-card--no-arrow fr-mx-1w">
                 <div className="fr-card__body">
                   <strong className="fr-display-xs">3</strong>
                   <h3 className="fr-card__title fr-mb-4w">
-                    J’échange avec le psychologue{" "}
+                    Échangez avec le psychologue
                   </h3>
-                  <div className="fr-card__desc">
+                  <div className="fr-card__desc align-left">
                     <p>
-                      <strong>A la fin de l’accompagnement</strong>, en accord
-                      avec le patient, le psychologue m’adresse, un compte-rendu
-                      de fin de prise en charge.
+                      A la fin de l’accompagnement, en accord avec le patient,
+                      le psychologue vous adresse{" "}
+                      <strong>un compte-rendu de fin de prise en charge</strong>
+                      .
                     </p>
                     <p>
                       <strong>En cas de non amélioration des symptômes</strong>,
                       une concertation avec le psychologue et un psychiatre est
-                      nécessaire pour prévoir de la suite de la prise en charge.
+                      nécessaire pour prévoir&nbsp;:
                     </p>
+                    <ul>
+                      <li>une évaluation plus approfondie</li>
+                      <li>
+                        la nécessité d’une prise en charge plus adaptée&nbsp;:
+                        Centre Médico-Psychologique (CMP), CMP
+                        infanto-juvéniles, service de psychiatrie ou
+                        pédopsychiatrie, maison des adolescents, …
+                      </li>
+                      <li>
+                        un nouvel accompagnement psychologique dans la{" "}
+                        <strong>
+                          limite de 8 séances remboursées par année civile.
+                        </strong>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="fr-container fr-my-4w">
-          <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-            <div className="fr-col-12">
-              <p>
-                A la fin de l’accompagnement,{" "}
-                <strong>je me concerte avec le psychologue partenaire </strong>{" "}
-                et, le cas échéant, avec un psychiatre pour réévaluer et adapter
-                la prise en charge du patient.
-              </p>
-              <p>Différents cas peuvent se présenter&nbsp;:</p>
-              <ul>
-                <li>
-                  la nécessité d’une consultation avec un psychiatre (en libéral
-                  ou à l’hôpital) pour une évaluation plus approfondie
-                </li>
-                <li>
-                  la nécessité d’une prise en charge la plus adaptée: centre
-                  médico-psychologique (CMP), CMP infanto-juvéniles, service de
-                  psychiatrie ou pédopsychiatrie, maison des adolescents…
-                </li>
-                <li>
-                  une évolution favorable ne nécessitant pas de nouvel
-                  accompagnement psychologique
-                </li>
-                <li>un nouvel accompagnement psychologique</li>
-              </ul>
-
-              <p>
-                Dans ce dernier cas, je peux ré-adresser le patient dans la
-                limite de 8 séances remboursées par année civile. Je vérifie
-                donc avec lui le nombre de séances réalisées dans l’année.
-              </p>
-
-              <p>
-                Le patient peut aussi décider de poursuivre avec son psychologue
-                dans un cadre non remboursé.
-              </p>
-            </div>
-          </div>
-          <button className="fr-btn" onClick={() => router.push("/annuaire")}>
-            <span className="fr-fi-search-line" aria-hidden="true" /> Trouver un
-            psychologue partenaire
-          </button>
-        </div>
       </section>
       <section>
         <div className="fr-container fr-my-6w">
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
             <div className="fr-col-12">
-              <h2>Je suis psychiatre </h2>
+              <h2>Vous êtes psychiatre</h2>
               <p>
                 Le dispositif MonPsy est né d’une volonté partagée entre les
-                acteurs de faciliter l’accès à une{" "}
-                <strong>prise en charge psychologique de 1er recours</strong>{" "}
-                pour les patients souffrant de troubles d’intensité légère à
-                modérée.
+                acteurs de faciliter l’accès à une prise en charge psychologique
+                de premier recours pour les patients souffrant de troubles
+                d’intensité légère à modérée.
               </p>
               <p>
-                A tout moment du parcours,{" "}
-                <strong>
-                  le psychologue et le médecin pourront solliciter mon avis
-                </strong>{" "}
-                et m’adresser le patient si des indicateurs de gravité
-                apparaissent. A la fin du parcours et en l’absence
-                d’amélioration, le patient devra m’être adressé(e) pour une
-                prise en charge adaptée.
+                A tout moment du parcours, le psychologue et le médecin pourront
+                solliciter votre avis et vous adresser le patient si des
+                indicateurs de gravité apparaissent. A la fin du parcours et en
+                l’absence d’amélioration, vous êtes consulté par le médecin et
+                le psychologue pour décider des suites de la prise en charge.
               </p>
               <p>
                 Ce dispositif a vocation de favoriser la coordination entre les
-                médecins de 1er recours, les psychologues et les psychiatres.
+                médecins, les psychologues et les psychiatres.
               </p>
             </div>
           </div>
         </div>
       </section>
       <section>
-        <div className="fr-container fr-my-6w">
-          <div className="fr-grid-row fr-grid-row--gutters">
-            <div className="fr-col-12">
-              <p className="fr-text--lead">
-                J’ai des questions&nbsp;?{" "}
-                <a
-                  href="/faq?tab=medecin"
-                  className="fr-link fr-fi-question-line fr-link--icon-left"
-                >
-                  Je consulte la FAQ
-                </a>
-              </p>
-            </div>
-            <div className="fr-col-12">
-              <p className="fr-text--lead">
-                Je souhaite accéder à la documentation&nbsp;?
+        <div className="fr-container--fluid fr-py-7w fr-bg--tilleul-light">
+          <div className="fr-container">
+            <div className="fr-mb-2w">
+              <strong className="fr-text--lg">
+                La documentation à votre disposition&nbsp;:
+              </strong>
+              <div>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
+                  rel="noreferrer nofollow noopener"
                   href="/documents/MonPsy_Guide médecin_2022.pdf"
                 >
                   Guide pour les médecins
@@ -317,6 +222,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
+                  rel="noreferrer nofollow noopener"
                   href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
                 >
                   Fiche mémo pour les médecins
@@ -324,11 +230,21 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
+                  rel="noreferrer nofollow noopener"
                   href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
                 >
-                  Echelles d’évaluation
+                  Échelles d’évaluation
                 </a>
-              </p>
+              </div>
+            </div>
+            <div>
+              <strong className="fr-text--lg">Des questions&nbsp;?</strong>
+              <a
+                href="/faq?tab=psychologue"
+                className="fr-link fr-fi-question-line fr-link--icon-left"
+              >
+                Consultez la Foire Aux Questions
+              </a>
             </div>
           </div>
         </div>
