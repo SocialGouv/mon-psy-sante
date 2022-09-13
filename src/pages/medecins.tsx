@@ -1,10 +1,8 @@
-import { useRouter } from "next/router";
 import React from "react";
 
 import HeadTag from "../components/HeadTag";
 
 const Page = () => {
-  const router = useRouter();
   return (
     <>
       <HeadTag
