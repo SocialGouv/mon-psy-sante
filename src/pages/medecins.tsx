@@ -56,7 +56,15 @@ const Page = () => {
                   <div className="fr-card__desc align-left">
                     <p>
                       Vous évaluez l’état de santé du patient selon les critères
-                      d’inclusion (cf. Fiche mémo)&nbsp;:
+                      d’inclusion (cf.{" "}
+                      <a
+                        target="_blank"
+                        rel="noreferrer nofollow noopener"
+                        href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                      >
+                        Fiche mémo
+                      </a>
+                      )&nbsp;:
                     </p>
                     <p>
                       <strong>
@@ -194,8 +202,8 @@ const Page = () => {
                 le psychologue pour décider des suites de la prise en charge.
               </p>
               <p>
-                Ce dispositif a vocation de favoriser la coordination entre les
-                médecins, les psychologues et les psychiatres.
+                Ce dispositif a pour vocation de favoriser la coordination entre
+                les médecins, les psychologues et les psychiatres.
               </p>
             </div>
           </div>
@@ -238,7 +246,7 @@ const Page = () => {
             <div>
               <strong className="fr-text--lg">Des questions&nbsp;?</strong>
               <a
-                href="/faq?tab=psychologue"
+                href="/faq?tab=medecin"
                 className="fr-link fr-fi-question-line fr-link--icon-left"
               >
                 Consultez la Foire Aux Questions
