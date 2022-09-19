@@ -7,13 +7,6 @@ describe("Home & landing pages", () => {
       "Vous rencontrez une situation difficile ?Avec MonPsy, bénéficiez de 8 séances par an chez un ou une psychologue"
     );
 
-    cy.get("nav#navigation-main-nav")
-      .first()
-      .should(
-        "have.text",
-        "AccueilAnnuaire MonPsyJe suis psychologueJe suis médecinFoire aux questions"
-      );
-
     cy.get("h2").first().should("have.text", "Pourquoi consulter ?");
   });
 
