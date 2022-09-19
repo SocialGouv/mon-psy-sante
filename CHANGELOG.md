@@ -1,3 +1,10 @@
+# [1.55.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.54.1...v1.55.0) (2022-09-19)
+
+
+### Features
+
+* **dashboard:** page psy, medecins and new header ([#247](https://github.com/SocialGouv/mon-psy-sante/issues/247)) ([1f382a6](https://github.com/SocialGouv/mon-psy-sante/commit/1f382a614986a78b3468ad57ab1f664b04c253ad))
+
 ## [1.54.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.54.0...v1.54.1) (2022-09-08)
 
 
