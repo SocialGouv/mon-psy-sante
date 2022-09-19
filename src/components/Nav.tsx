@@ -6,8 +6,8 @@ const Nav = () => {
   const items = [
     { title: "Accueil", href: "/" },
     { title: "Annuaire MonPsy", href: "/annuaire" },
-    { title: "Je suis psychologue", href: "/psychologues" },
-    { title: "Je suis médecin", href: "/medecins" },
+    { title: "Psychologue", href: "/psychologues" },
+    { title: "Médecin", href: "/medecins" },
     { title: "Foire aux questions", href: "/faq" },
   ];
   return (
@@ -15,7 +15,7 @@ const Nav = () => {
       <div className="fr-header__body">
         <div className="fr-container">
           <div className="fr-header__body-row">
-            <div className="fr-header__brand">
+            <div className="fr-header__brand fr-enlarge-link">
               <div className="fr-header__brand-top">
                 <div className="fr-header__logo">
                   <p className="fr-logo">
@@ -27,14 +27,6 @@ const Nav = () => {
                       </a>
                     </Link>
                   </p>
-                </div>
-                <div className="fr-header__operator">
-                  <img
-                    src="/images/cnam.png"
-                    alt="CNAM"
-                    width="200"
-                    height="66"
-                  />
                 </div>
                 <div className="fr-header__navbar">
                   <button
@@ -49,70 +41,98 @@ const Nav = () => {
                     Menu
                   </button>
                 </div>
+                <div className="fr-header__operator">
+                  <img
+                    src="/images/cnam.png"
+                    alt="CNAM"
+                    width="200"
+                    height="66"
+                  />
+                </div>
               </div>
               <div className="fr-header__service">
-                <Link href="/">
-                  <a title="MonPsy" target="_self">
-                    <p className="fr-header__service-title">MonPsy</p>
-                  </a>
-                </Link>
+                <p className="fr-header__service-title">MonPsy</p>
                 <p className="fr-header__service-tagline">
                   En parler, c’est déjà se soigner.
                 </p>
+              </div>
+            </div>
+            <div className="fr-header__tools">
+              <div className="fr-header__tools-links">
+                <ul
+                  className="fr-btns-group--inline fr-btns-group--right"
+                  style={{ gap: "1rem" }}
+                >
+                  <li>
+                    <Link href="/annuaire">
+                      <a className="fr-link fr-fi-attachment-line fr-link--icon-left fr-mt-1v">
+                        Annuaire MonPsy
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/psychologues">
+                      <a className="fr-btn">Psychologues</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/medecins">
+                      <a className="fr-btn">Médecins</a>
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div
-        className={
-          modalMenuOpen
-            ? "fr-header__menu fr-modal fr-modal--opened"
-            : "fr-header__menu fr-modal"
-        }
-        id="modal-main-nav"
-        aria-labelledby="fr-btn-menu-mobile-4"
-      >
-        <div className="fr-container">
-          <button
-            className="fr-link--close fr-link"
-            aria-controls="modal-main-nav"
-            onClick={() => setModalMenuOpen(false)}
-          >
-            Fermer
-          </button>
-          <div className="fr-header__menu-links" />
-          <nav
-            className="fr-nav"
-            id="navigation-main-nav"
-            role="navigation"
-            aria-label="Menu principal"
-          >
-            <ul className="fr-nav__list">
-              {items.map((item, index) => (
-                <li className="fr-nav__item" key={item.title}>
-                  <Link href={item.href}>
-                    <a
-                      className="fr-nav__link"
-                      role="menuitem"
-                      tabIndex={index + 1}
-                      onKeyPress={() => {
-                        setModalMenuOpen(false);
-                      }}
-                      onClick={() => {
-                        setModalMenuOpen(false);
-                      }}
-                    >
-                      {item.title}
-                    </a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+      {modalMenuOpen && (
+        <div
+          className="fr-header__menu fr-modal fr-modal--opened"
+          id="modal-main-nav"
+          aria-labelledby="fr-btn-menu-mobile-4"
+        >
+          <div className="fr-container">
+            <button
+              className="fr-link--close fr-link"
+              aria-controls="modal-main-nav"
+              onClick={() => setModalMenuOpen(false)}
+            >
+              Fermer
+            </button>
+            <div className="fr-header__menu-links" />
+            <nav
+              className="fr-nav"
+              id="navigation-main-nav"
+              role="navigation"
+              aria-label="Menu principal"
+            >
+              <ul className="fr-nav__list">
+                {items.map((item, index) => (
+                  <li className="fr-nav__item" key={item.title}>
+                    <Link href={item.href}>
+                      <a
+                        className="fr-nav__link"
+                        role="menuitem"
+                        tabIndex={index + 1}
+                        onKeyPress={() => {
+                          setModalMenuOpen(false);
+                        }}
+                        onClick={() => {
+                          setModalMenuOpen(false);
+                        }}
+                      >
+                        {item.title}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };

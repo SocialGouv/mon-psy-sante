@@ -80,6 +80,11 @@ h1 .fr-text--lead {
   height: 100%;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 .leaflet-popup-close-button {
   box-shadow: none !important;
 }
