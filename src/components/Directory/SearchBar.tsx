@@ -93,8 +93,8 @@ const SearchBar = ({
           </label>
           <div className="select-search-input">
             <ReactAutocomplete
-              id="city-search"
               inputProps={{
+                id: "city-search",
                 className: "fr-select",
                 placeholder: "Ville ou code postal",
               }}
@@ -132,13 +132,13 @@ const SearchBar = ({
         </div>
         <SubSearch>
           <div className="fr-select-group">
-            <label className="fr-label" htmlFor="select">
+            <label className="fr-label" htmlFor="select-type">
               Souhait du psychologue d&apos;accompagner des
             </label>
             <select
               className="fr-select"
               required
-              id="select"
+              id="select-type"
               name="select"
               value={otherFilters[FILTER.PUBLIC]}
               onChange={(e) =>
