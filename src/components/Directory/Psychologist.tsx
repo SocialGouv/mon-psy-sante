@@ -23,6 +23,7 @@ const Psychologist = ({
       <Modal
         aria-labelledby="fr-modal-title-modal"
         id="fr-modal-1"
+        ariaHideApp={false}
         isOpen={isOpen}
         style={{ overlay: { zIndex: 1000 } }}
         className="fr-modal fr-modal--opened"
