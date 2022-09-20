@@ -296,8 +296,7 @@ const Page = () => {
               </Link>
             </li>
             <li>
-              <del>Page Patients</del>
-              {" "}
+              <del>Page Patients</del>{" "}
               <em>
                 La page patients a été fusionnée avec la page d&apos;accueil
               </em>
@@ -332,7 +331,7 @@ const Page = () => {
           <ul>
             <li>
               Écrire un message au Défenseur des droits&nbsp;:
-              <br/>
+              <br />
               <a
                 href="https://formulaire.defenseurdesdroits.fr/"
                 target="_blank"
@@ -344,7 +343,7 @@ const Page = () => {
             <li>
               Contacter le délégué du Défenseur des droits dans votre
               région&nbsp;:
-              <br/>
+              <br />
               <a
                 href="https://www.defenseurdesdroits.fr/saisir/delegues"
                 target="_blank"
@@ -358,9 +357,9 @@ const Page = () => {
               timbre) :
               <address className="fr-mb-2w">
                 Défenseur des droits
-                <br/>
+                <br />
                 Libre réponse 71120
-                <br/>
+                <br />
                 75342 Paris CEDEX 07
               </address>
             </li>
