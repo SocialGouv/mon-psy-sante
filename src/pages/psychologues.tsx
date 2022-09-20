@@ -58,6 +58,7 @@ const Page = () => {
                       kind="captions"
                       srcLang="fr"
                       src="/images/Video-Temoignage.mp4.vtt"
+                      label="Activés"
                     />
                   </video>
                 </div>
