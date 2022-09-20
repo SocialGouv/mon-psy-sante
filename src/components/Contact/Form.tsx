@@ -185,6 +185,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
       </button>
       {result && (
         <div
+          role="status"
           className={
             result.type === "success"
               ? "fr-alert fr-alert--success fr-mt-4w"
