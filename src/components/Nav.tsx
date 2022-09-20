@@ -105,7 +105,7 @@ const Nav = () => {
             <div className="fr-header__menu-links" />
             <nav
               className="fr-nav"
-              id="navigation-main-nav"
+              id="header-navigation"
               role="navigation"
               aria-label="Menu principal"
             >

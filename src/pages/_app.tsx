@@ -31,7 +31,7 @@ class MyApp extends App {
       <>
         <div className="fr-skiplinks">
           <nav className="fr-container" aria-label="Accès rapide">
-            <ul className="fr-skiplinks__list" id="header-navigation">
+            <ul className="fr-skiplinks__list">
               <li>
                 <a className="fr-link" href="#contenu">
                   Contenu
