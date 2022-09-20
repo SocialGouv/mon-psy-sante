@@ -54,7 +54,7 @@ const Footer = () => (
   <footer className="fr-footer" role="contentinfo" id="footer">
     <div className="fr-container">
       <div className="fr-footer__body">
-        <div className="fr-footer__brand fr-enlarge-link">
+        <div className="fr-footer__brand fr-header__brand fr-enlarge-link">
           <p className="fr-logo">
             République
             <br />

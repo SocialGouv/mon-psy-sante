@@ -59,7 +59,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
     <form onSubmit={submit}>
       <div className="fr-input-group">
         <label className="fr-label" htmlFor="last-name-input">
-          Nom<span className="error"> *</span>
+          Nom<span> *</span>
         </label>
         <input
           data-test-id="last-name-input"
@@ -73,7 +73,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
       </div>
       <div className="fr-input-group">
         <label className="fr-label" htmlFor="first-name-input">
-          Prénom<span className="error"> *</span>
+          Prénom<span> *</span>
         </label>
         <input
           data-test-id="first-name-input"
@@ -87,7 +87,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
       </div>
       <div className="fr-input-group">
         <label className="fr-label" htmlFor="email-input">
-          Email<span className="error"> *</span>
+          Email<span> *</span>
         </label>
         <input
           data-test-id="email-input"
@@ -102,8 +102,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
       </div>
       <div className="fr-select-group">
         <label className="fr-label" htmlFor="select-departement">
-          Département
-          <span className="error"> *</span>
+          Département<span> *</span>
         </label>
         <select
           data-test-id="department-select"
@@ -127,8 +126,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
       {needReason(userType) && (
         <div className="fr-select-group">
           <label className="fr-label" htmlFor="select">
-            Motif
-            <span className="error"> *</span>
+            Motif<span> *</span>
           </label>
           <select
             data-test-id="reason-select"
@@ -152,7 +150,7 @@ const ContactForm = ({ userType }: { userType: string }) => {
       )}
       <div className="fr-input-group">
         <label className="fr-label" htmlFor="text-input-text">
-          Message<span className="error"> *</span>
+          Message<span> *</span>
           <span className="fr-hint-text">
             Merci de ne fournir que les données personnelles strictement
             nécessaires au traitement de la demande.{" "}

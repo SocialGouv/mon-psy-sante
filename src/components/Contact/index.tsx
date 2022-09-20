@@ -21,8 +21,7 @@ const Contact = () => {
         </p>
         <div className="fr-select-group">
           <label className="fr-label" htmlFor="select">
-            Je suis
-            <span className="error"> *</span>
+            Je suis<span> *</span>
           </label>
           <select
             data-test-id="user-type-select"
