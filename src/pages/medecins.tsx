@@ -24,7 +24,7 @@ const Page = () => {
                 className="fr-btn fr-mb-4w"
                 target="_blank"
                 href="/documents/MonPsy_Flyer grand public.pdf"
-                title="Je Candidate"
+                title="Réponse à vos questions en PDF"
                 rel="noreferrer nofollow noopener"
               >
                 Flyer de présentation

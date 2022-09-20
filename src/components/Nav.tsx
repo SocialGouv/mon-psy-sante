@@ -20,7 +20,7 @@ const Nav = () => {
                 <div className="fr-header__logo">
                   <p className="fr-logo">
                     <Link href="/">
-                      <a title="MonPsy" target="_self">
+                      <a title="Page d'accueil MonPsy" target="_self">
                         République
                         <br />
                         Française
@@ -44,7 +44,7 @@ const Nav = () => {
                 <div className="fr-header__operator">
                   <img
                     src="/images/cnam.png"
-                    alt="CNAM"
+                    alt="Logo Caisse Nationale d'Assurance Maladie"
                     width="200"
                     height="66"
                   />

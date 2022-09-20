@@ -40,7 +40,7 @@ const items = [
     documents: [
       {
         url: "/documents/MonPsy_Flyer grand public.pdf",
-        title: " Flyer Grand Public",
+        title: "Flyer Grand Public",
       },
     ],
   },

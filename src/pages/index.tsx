@@ -384,6 +384,7 @@ const Page = () => {
                 target="_blank"
                 rel="noreferrer nofollow noopener"
                 href="/documents/MonPsy_Flyer grand public.pdf"
+                title="Réponse à vos questions en PDF"
               >
                 Flyer Grand Public
               </a>
@@ -412,7 +413,7 @@ const Page = () => {
                 <a
                   target="_blank"
                   className="fr-link"
-                  title="3114"
+                  title="Appeler le 3114 la ligne souffrance prévention sucide"
                   href="https://www.3114.fr"
                   rel="noreferrer"
                 >
