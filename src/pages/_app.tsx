@@ -55,9 +55,9 @@ class MyApp extends App {
           </nav>
         </div>
         <Nav />
-        <div id="contenu">
+        <main id="contenu">
           <Component {...pageProps} />
-        </div>
+        </main>
         <Footer />
       </>
     );

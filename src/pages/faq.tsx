@@ -100,7 +100,7 @@ const Accordion = ({ section }) => {
     <div className="fr-accordions-group fr-mb-4w">
       {section.faq.map(({ question, answer }, index) => (
         <section className="fr-accordion" key={question}>
-          <h3 className="fr-accordion__title">
+          <h4 className="fr-accordion__title">
             <button
               className="fr-accordion__btn"
               aria-expanded={open === index}
@@ -109,7 +109,7 @@ const Accordion = ({ section }) => {
             >
               {question}
             </button>
-          </h3>
+          </h4>
           <div
             className={
               open === index
