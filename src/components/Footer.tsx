@@ -65,7 +65,12 @@ const Footer = () => (
             href="/"
             title="Retour à l’accueil"
           >
-            <img src="/images/cnam.png" alt="CNAM" width="200" height="66" />
+            <img
+              src="/images/cnam.png"
+              alt="Logo Caisse Nationale d'Assurance Maladie"
+              width="200"
+              height="66"
+            />
           </a>
         </div>
         <div className="fr-footer__content">

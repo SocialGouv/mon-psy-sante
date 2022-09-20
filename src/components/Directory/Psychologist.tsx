@@ -201,7 +201,6 @@ const Psychologist = ({
             <p className="fr-my-0 text-grey">
               <Icon
                 aria-hidden="true"
-                title="Langue(s) parlée(s) en plus du français"
                 alt=""
                 className="fr-mr-1w fr-mb-1v"
                 height="18"
