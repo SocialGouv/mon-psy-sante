@@ -227,7 +227,9 @@ const PsychologistTile = styled.div`
 
   ${(props) =>
     css`
-      ${props.selected ? "background: var(--pink-tuile-950)" : ""}
+      ${props.selected
+        ? "background: var(--pink-tuile-950); box-shadow: none; border: solid 3px var(--pink-tuile-main-556)"
+        : ""}
     `}
 `;
 
