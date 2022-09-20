@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HeadTag from "../components/HeadTag";
 
 const Page = () => {
+  const [video, setVideo] = useState<"hide" | "show">("hide");
   return (
     <>
       <HeadTag
@@ -36,7 +37,33 @@ const Page = () => {
                 height="360"
                 alt="Je suis médecin illustration"
               />
+              {video === "hide" && (
+                <div className="align-left">
+                  <button
+                    onClick={() => setVideo("show")}
+                    title="Découvrir MonPsy en vidéo, via le témoignage de M. Werner, médecin pédiatre"
+                    className="fr-btn fr-btn--lg fr-btn--secondary fr-fi-play-line fr-btn--icon-left fr-mt-4w"
+                  >
+                    Découvrez le témoignage de M. Werner, médecin pédiatre
+                  </button>
+                  <span className="d-block fr-mt-1w">Durée&nbsp;: 2min</span>
+                </div>
+              )}
             </div>
+            {video === "show" && (
+              <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
+                <div className="fr-col-8">
+                  <video width="100%" controls autoPlay>
+                    <source type="video/mp4" src="/images/Video-Medecin.mp4" />
+                    <track
+                      kind="captions"
+                      srcLang="fr"
+                      src="/images/Video-Medecin.mp4.vtt"
+                    />
+                  </video>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
