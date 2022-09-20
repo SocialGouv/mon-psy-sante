@@ -97,6 +97,7 @@ const Nav = () => {
             <button
               className="fr-link--close fr-link"
               aria-controls="modal-main-nav"
+              aria-label="Fermer le menu"
               onClick={() => setModalMenuOpen(false)}
             >
               Fermer

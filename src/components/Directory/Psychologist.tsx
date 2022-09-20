@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "react-modal";
 import styled, { css } from "styled-components";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
@@ -13,17 +14,18 @@ const Psychologist = ({
   onClick?: (psychologist: PsychologistType) => void;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <PsychologistTile
       selected={selected}
       className="fr-tile fr-tile--horizontal "
       onClick={() => onClick(psychologist)}
     >
-      <dialog
-        aria-labelledby="fr-modal-title-modal-1"
+      <Modal
+        aria-labelledby="fr-modal-title-modal"
         id="fr-modal-1"
-        className={isOpen ? "fr-modal fr-modal--opened" : "fr-modal"}
+        isOpen={isOpen}
+        style={{ overlay: { zIndex: 1000 } }}
+        className="fr-modal fr-modal--opened"
       >
         <div className="fr-container fr-container--fluid fr-container-md">
           <div className="fr-grid-row fr-grid-row--center">
@@ -41,7 +43,7 @@ const Psychologist = ({
                   </button>
                 </div>
                 <div className="fr-modal__content">
-                  <h1 id="fr-modal-title-modal-1" className="fr-modal__title">
+                  <h1 id="fr-modal-title-modal" className="fr-modal__title">
                     Pour prendre rendez-vous
                   </h1>
                   {psychologist.phone && (
@@ -101,7 +103,7 @@ const Psychologist = ({
             </div>
           </div>
         </div>
-      </dialog>
+      </Modal>
       <div className="fr-tile__body">
         <div className="fr-tile__title ">
           <p className="fr-text--lead highlight">
