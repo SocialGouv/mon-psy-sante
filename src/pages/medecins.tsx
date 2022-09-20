@@ -31,11 +31,7 @@ const Page = () => {
               </a>
             </div>
             <div className="fr-col-12 fr-col-lg-5 align-center">
-              <img
-                src="/images/doctor.svg"
-                height="360"
-                alt="Je suis médecin illustration"
-              />
+              <img src="/images/doctor.svg" height="360" alt="" />
             </div>
           </div>
         </div>
@@ -84,7 +80,7 @@ const Page = () => {
                       </strong>
                     </p>
                     <ul>
-                      <li>Trouble anxieux d’intensité légère à modérée </li>
+                      <li>Trouble anxieux d’intensité légère à modérée</li>
                       <li>Trouble dépressif d’intensité légère à modérée</li>
                       <li>Mésusage de tabac, d’alcool, de cannabis</li>
                       <li>

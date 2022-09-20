@@ -32,11 +32,7 @@ const Page = () => {
               </a>
             </div>
             <div className="fr-col-12 fr-col-lg-5 align-center">
-              <img
-                src="/images/psy.svg"
-                height="360"
-                alt="Je suis psychologue illustration"
-              />
+              <img src="/images/psy.svg" height="360" alt="" />
               {video === "hide" && (
                 <div className="align-left">
                   <button
@@ -140,7 +136,7 @@ const Page = () => {
               <p>Des experts analysent l’éligibilité&nbsp;:</p>
               <ul>
                 <li>être inscrit au registre ADELI en tant que psychologue</li>
-                <li>parcours consolidé en psychologie clinique </li>
+                <li>parcours consolidé en psychologie clinique</li>
                 <li>au moins 3 ans d’expérience clinique</li>
               </ul>
             </CardStep>
@@ -348,4 +344,5 @@ function CardStep({ children, title, number }) {
     </div>
   );
 }
+
 export default Page;
