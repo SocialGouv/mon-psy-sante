@@ -1,13 +1,11 @@
 import Head from "next/head";
 import React from "react";
 
-import Accessibility from "../components/Accessibility";
-
 const Page = () => {
   return (
     <>
       <Head>
-        <title>MonPsy pour les psychologues</title>
+        <title>Mentions légales | MonPsy</title>
       </Head>
       <div className="fr-container fr-my-6w">
         <h1 id="mentions-legales">Mentions légales</h1>
@@ -36,8 +34,6 @@ const Page = () => {
               92130 Issy-les-Moulineaux
             </p>
           </div>
-
-          <Accessibility />
 
           <div className="fr-mt-3w">
             <h2>Sécurité</h2>

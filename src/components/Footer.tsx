@@ -29,7 +29,7 @@ const footerBodyLinks = [
 
 const footerBottomLinks = [
   {
-    link: "/mentions-legales#accessibilite",
+    link: "/accessibilite",
     title: "Accessibilité : non conforme",
   },
   {
