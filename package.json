@@ -39,7 +39,6 @@
     "styled-components": "^5.3.3",
     "tough-cookie": "^4.0.0",
     "ts-node": "^10.5.0",
-    "url-exist": "^3.0.1",
     "zod": "^3.14.4"
   },
   "devDependencies": {
