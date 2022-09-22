@@ -1,5 +1,6 @@
 import * as Sentry from "@sentry/nextjs";
 import pLimit from "p-limit";
+import urlExist from "url-exist";
 
 import { formatAdeliId } from "../services/adeli/formatAdeliId";
 import { requestAdeli } from "../services/adeli/request";
@@ -109,6 +110,14 @@ export const validateDossier = async (
     errors.push(
       `Le numéro ADELI ${dossier.adeliId} ne correspond pas au département ${dossier.department}`
     );
+  }
+
+  const urlWithProtocol = dossier.website.startsWith("http")
+    ? dossier.website
+    : `https://${dossier.website}`;
+  const isUrlValid = await urlExist(urlWithProtocol);
+  if (!isUrlValid) {
+    errors.push(`Le site web renseigné (${dossier.website}) n'est pas valide`);
   }
 
   const identifier = dossier.id?.toString() ?? dossier.email;
