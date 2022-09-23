@@ -1,6 +1,6 @@
 // Source: https://stackoverflow.com/questions/35756479/does-jest-support-es6-import-export
 import http from "http";
-import { parse, URL } from "url";
+import { URL } from "url";
 
 // https://github.com/sindresorhus/is-url-superb/blob/main/index.js
 function isUrl(str: string): boolean {
@@ -25,18 +25,25 @@ function isUrl(str: string): boolean {
 export function urlExists(url: string): Promise<boolean> {
   return new Promise((resolve) => {
     if (!isUrl(url)) {
-      resolve(false);
+      return resolve(false);
     }
+
+    const { host, pathname } = new URL(url.trim());
 
     const options = {
       method: "HEAD",
-      host: parse(url).host,
-      path: parse(url).pathname,
-      port: 80,
+      host,
+      path: pathname,
+      timeout: 2000,
     };
 
     const req = http.request(options, (res) => {
       resolve(res.statusCode < 400 || res.statusCode >= 500);
+    });
+    req.on("error", () => resolve(false));
+    req.on("timeout", () => {
+      req.destroy();
+      resolve(false);
     });
 
     req.end();
