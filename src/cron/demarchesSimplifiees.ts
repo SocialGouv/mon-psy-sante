@@ -112,12 +112,16 @@ export const validateDossier = async (
     );
   }
 
-  const urlWithProtocol = dossier.website.startsWith("http")
-    ? dossier.website
-    : `https://${dossier.website}`;
-  const isUrlValid = await urlExists(urlWithProtocol);
-  if (!isUrlValid) {
-    errors.push(`Le site web renseigné (${dossier.website}) n'est pas valide`);
+  if (dossier.website) {
+    const urlWithProtocol: string = dossier.website?.startsWith("http")
+      ? dossier.website
+      : `https://${dossier.website}`;
+    const isUrlValid = await urlExists(urlWithProtocol);
+    if (!isUrlValid) {
+      errors.push(
+        `Le site web renseigné (${dossier.website}) n'est pas valide`
+      );
+    }
   }
 
   const identifier = dossier.id?.toString() ?? dossier.email;
