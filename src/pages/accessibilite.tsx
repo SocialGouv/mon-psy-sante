@@ -80,7 +80,6 @@ const Page = () => {
             <li>
               Critère 7.3&nbsp;: Chaque script est-il contrôlable par le clavier
               et par tout dispositif de pointage (hors cas particuliers)&nbsp;?
-              .
             </li>
             <li>
               Critère 7.4&nbsp;: Pour chaque script qui initie un changement de
