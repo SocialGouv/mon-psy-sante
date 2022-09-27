@@ -56,7 +56,7 @@ const Page = () => {
           <p>
             Après la correction de la majeure partie des problèmes soulevés par
             l’audit, 81.13% des critères du RGAA version 4.1 sont respectés. Le
-            taux moyen de conformité du service en ligne est de 92.15%.
+            taux moyen de conformité du service en ligne est de 94.87%.
           </p>
           <p>
             Nous avons pour objectif de garder un taux de conformité supérieur à
@@ -106,7 +106,16 @@ const Page = () => {
               bureautique en téléchargement possède-t-il, si nécessaire, une
               version accessible (hors cas particuliers) ?
             </li>
+            <li>
+              Critère 12.8 Dans chaque page web, l’ordre de tabulation est-il
+              cohérent ?
+            </li>
 
+            <li>
+              Critère 13.3 Dans chaque page web, chaque document bureautique en
+              téléchargement possède-t-il, si nécessaire, une version accessible
+              (hors cas particuliers) ?
+            </li>
             <li>
               Critère 13.9 Dans chaque page web, le contenu proposé est-il
               consultable quelle que soit l’orientation de l’écran (portait ou
