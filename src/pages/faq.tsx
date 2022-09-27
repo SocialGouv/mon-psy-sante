@@ -37,7 +37,7 @@ function Tabs({ items, currentTabIndex }) {
       <ul
         className="fr-tabs__list"
         role="tablist"
-        aria-label="[A modifier | nom du système d'onglet]"
+        aria-label="Rubriques de la FAQ"
       >
         {items.map((item, key) => (
           <li role="presentation" key={item.key}>
