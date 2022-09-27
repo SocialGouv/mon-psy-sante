@@ -85,7 +85,7 @@ const SearchBar = ({
 
   return (
     <div className="fr-grid-row fr-grid-row--middle fr-pb-2w">
-      <div className="fr-col-md-4 fr-col-12">
+      <div className="fr-col-md-4 fr-col-12 fr-pr-md-4w">
         <div className="fr-select-group">
           <label className="fr-label fr-mb-2v" htmlFor="city-search">
             Rechercher par ville ou code postal
@@ -130,7 +130,7 @@ const SearchBar = ({
           </div>
         </div>
       </div>
-      <div className="fr-col-md-4 fr-col-12 fr-px-2w">
+      <div className="fr-col-md-4 fr-col-12 fr-pr-md-4w">
         <div className="fr-select-group">
           <label className="fr-label" htmlFor="select-type">
             Souhait du psychologue d&apos;accompagner des
@@ -156,7 +156,7 @@ const SearchBar = ({
           </select>
         </div>
       </div>
-      <div className="fr-col-md-4 fr-col-12 fr-pl-2w">
+      <div className="fr-col-md-4 fr-col-12">
         <div className="fr-toggle">
           <input
             id="checkbox-teleconsultation"

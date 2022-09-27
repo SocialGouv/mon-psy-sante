@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-
 import HeadTag from "../components/HeadTag";
 
 const Page = () => {
@@ -134,9 +133,9 @@ const Page = () => {
                 <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
                   <div className="fr-card__body">
                     <div className="fr-card__content">
-                      <h4 className="fr-card__title fr-text--dark-blue">
+                      <h3 className="fr-card__title fr-text--dark-blue">
                         1. Rencontrez un médecin
-                      </h4>
+                      </h3>
                       <p className="fr-card__desc fr-text--md">
                         Le médecin échange avec vous pour s’assurer que MonPsy
                         est adapté à votre situation. Vous pouvez consulter
@@ -152,9 +151,9 @@ const Page = () => {
                 <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
                   <div className="fr-card__body">
                     <div className="fr-card__content">
-                      <h4 className="fr-card__title fr-text--dark-blue">
+                      <h3 className="fr-card__title fr-text--dark-blue">
                         2. Prenez rendez-vous avec un psychologue partenaire
-                      </h4>
+                      </h3>
                       <p className="fr-card__desc fr-text--md">
                         Commencez vos 8 séances par an en présentiel ou à
                         distance. La première séance doit obligatoirement être
@@ -176,9 +175,9 @@ const Page = () => {
                 <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
                   <div className="fr-card__body">
                     <div className="fr-card__content">
-                      <h4 className="fr-card__title fr-text--dark-blue">
+                      <h3 className="fr-card__title fr-text--dark-blue">
                         3. Faites vous rembourser
-                      </h4>
+                      </h3>
                       <p className="fr-card__desc fr-text--md">
                         L’Assurance Maladie et votre mutuelle vous remboursent.
                       </p>
@@ -190,9 +189,9 @@ const Page = () => {
                 <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
                   <div className="fr-card__body">
                     <div className="fr-card__content">
-                      <h4 className="fr-card__title fr-text--dark-blue">
+                      <h3 className="fr-card__title fr-text--dark-blue">
                         3. Ou n’avancez aucun frais
-                      </h4>
+                      </h3>
                       <p className="fr-card__desc fr-text--md">
                         Si vous êtes éligible au tiers payant obligatoire. (Voir
                         conditions{" "}
@@ -217,9 +216,9 @@ const Page = () => {
                 <h2 id="combien-ca-coute">Combien ça coûte&nbsp;?</h2>
               </div>
               <div className="fr-col-12 fr-col-md-6 fr-p-4w">
-                <h4 className="fr-text--dark-blue">
+                <h3 className="fr-text--dark-blue">
                   Tarifs des séances des psychologues partenaires
-                </h4>
+                </h3>
                 <ul className="no-bullet">
                   <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
                     &nbsp;<strong>Première séance (évaluation)</strong>&nbsp;:
@@ -229,7 +228,7 @@ const Page = () => {
                     &nbsp;<strong>Les séances de suivi</strong>&nbsp;: 30 €
                   </li>
                 </ul>
-                <h4 className="fr-text--dark-blue">Prise en charge</h4>
+                <h3 className="fr-text--dark-blue">Prise en charge</h3>
                 <ul className="no-bullet">
                   <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
                     &nbsp;60 % par l’Assurance Maladie
@@ -238,9 +237,9 @@ const Page = () => {
                     &nbsp;40 % par la complémentaire santé ou la mutuelle
                   </li>
                 </ul>
-                <h5 className="fr-text--dark-blue fr-h6 fr-mb-1w fr-mt-3w">
+                <h4 className="fr-text--dark-blue fr-h6 fr-mb-1w fr-mt-3w">
                   Comment s’effectuent les remboursements&nbsp;?
-                </h5>
+                </h4>
                 <p className="fr-text--dark-blue">
                   Envoyez votre feuille de soins et le courrier d’adressage de
                   votre médecin à votre organisme d’Assurance Maladie (après
@@ -248,12 +247,12 @@ const Page = () => {
                 </p>
               </div>
               <div className="fr-col-12 fr-col-md-6 fr-bg--tilleul-light fr-p-4w">
-                <h4 className="fr-text--dark-blue">
+                <h3 className="fr-text--dark-blue">
                   Qui peut bénéficier du Tiers payant obligatoire&nbsp;?
-                </h4>
-                <h5 className="fr-h6">
+                </h3>
+                <h4 className="fr-h6">
                   Les personnes qui ont une souffrance en lien avec&nbsp;:
-                </h5>
+                </h4>
                 <ul className="no-bullet">
                   <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
                     &nbsp;Une Affection Longue Durée (ALD)
@@ -266,7 +265,7 @@ const Page = () => {
                     (AT-MP)
                   </li>
                 </ul>
-                <h5 className="fr-h6">Mais aussi…</h5>
+                <h4 className="fr-h6">Mais aussi…</h4>
                 <ul className="no-bullet">
                   <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
                     &nbsp;Les bénéficiaires de la Complémentaire Santé Solidaire
@@ -303,9 +302,9 @@ const Page = () => {
                 <div className="fr-h2 fr-mb-2w">
                   <img src="/images/icones/approval.svg" alt="" height="40" />
                 </div>
-                <h5 className="fr-mb-1w fr-text--dark-blue">
+                <h4 className="fr-mb-1w fr-text--dark-blue">
                   Pour tout le monde
-                </h5>
+                </h4>
                 <p className="fr-mb-1w">À partir de 3 ans </p>
               </div>
               <div className="fr-col-12 fr-col-md-4 align-center">
@@ -316,16 +315,16 @@ const Page = () => {
                     height="40"
                   />
                 </div>
-                <h5 className="fr-mb-1w fr-text--dark-blue">Remboursé</h5>
+                <h4 className="fr-mb-1w fr-text--dark-blue">Remboursé</h4>
                 <p className="fr-mb-1w">Pris en charge ou sans frais </p>
               </div>
               <div className="fr-col-12 fr-col-md-4 align-center">
                 <div className="fr-h2 fr-mb-2w">
                   <img src="/images/icones/survey.svg" alt="" height="40" />
                 </div>
-                <h5 className="fr-mb-1w fr-text--dark-blue">
+                <h4 className="fr-mb-1w fr-text--dark-blue">
                   En présentiel et en distanciel
-                </h5>
+                </h4>
                 <p className="fr-mb-1w">En fonction des psychologues</p>
                 <p className="fr-text--sm">
                   Première séance obligatoirement en présentiel
