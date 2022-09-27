@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "react-modal";
 import styled, { css } from "styled-components";
 
 import { Psychologist as PsychologistType } from "../../types/psychologist";
@@ -13,17 +14,19 @@ const Psychologist = ({
   onClick?: (psychologist: PsychologistType) => void;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <PsychologistTile
       selected={selected}
       className="fr-tile fr-tile--horizontal "
       onClick={() => onClick(psychologist)}
     >
-      <dialog
-        aria-labelledby="fr-modal-title-modal-1"
+      <Modal
+        aria-labelledby="fr-modal-title-modal"
         id="fr-modal-1"
-        className={isOpen ? "fr-modal fr-modal--opened" : "fr-modal"}
+        ariaHideApp={false}
+        isOpen={isOpen}
+        style={{ overlay: { zIndex: 1000 } }}
+        className="fr-modal fr-modal--opened"
       >
         <div className="fr-container fr-container--fluid fr-container-md">
           <div className="fr-grid-row fr-grid-row--center">
@@ -41,7 +44,7 @@ const Psychologist = ({
                   </button>
                 </div>
                 <div className="fr-modal__content">
-                  <h1 id="fr-modal-title-modal-1" className="fr-modal__title">
+                  <h1 id="fr-modal-title-modal" className="fr-modal__title">
                     Pour prendre rendez-vous
                   </h1>
                   {psychologist.phone && (
@@ -101,7 +104,7 @@ const Psychologist = ({
             </div>
           </div>
         </div>
-      </dialog>
+      </Modal>
       <div className="fr-tile__body">
         <div className="fr-tile__title ">
           <p className="fr-text--lead">
@@ -201,7 +204,6 @@ const Psychologist = ({
             <p className="fr-my-0 text-grey">
               <Icon
                 aria-hidden="true"
-                title="Langue(s) parlée(s) en plus du français"
                 alt=""
                 className="fr-mr-1w fr-mb-1v"
                 height="18"
@@ -228,7 +230,9 @@ const PsychologistTile = styled.div`
 
   ${(props) =>
     css`
-      ${props.selected ? "background: var(--pink-tuile-950)" : ""}
+      ${props.selected
+        ? "background: var(--pink-tuile-950); box-shadow: none; border: solid 3px var(--pink-tuile-main-556)"
+        : ""}
     `}
 `;
 

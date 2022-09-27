@@ -95,3 +95,14 @@ h1 .fr-text--lead {
   padding: 2rem;
   border-radius: 1rem;
 }
+
+@media only screen and (max-width: 321px) {
+  body {
+    word-wrap: break-word;
+  }
+
+  .fr-header__operator img {
+    max-width: 120px;
+    height: auto;
+  }
+}

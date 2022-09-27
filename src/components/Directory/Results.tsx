@@ -52,20 +52,22 @@ const Results = ({
     <Desktop>
       <Psychologists
         ref={resultsRef}
+        role="grid"
         className="fr-col-12 fr-col-md-5 fr-mr-2w fr-mt-2w fr-mt-md-0"
       >
         {psychologists.map((psychologist) => (
           <div
+            role="gridcell"
             ref={psychologistsRefs.current[psychologist.id]}
             key={psychologist.id}
+            className="fr-mb-2w"
+            aria-selected={selectedPsychologist === psychologist.id}
           >
-            <div className="fr-mb-2w">
-              <Psychologist
-                psychologist={psychologist}
-                onClick={selectPsy}
-                selected={selectedPsychologist === psychologist.id}
-              />
-            </div>
+            <Psychologist
+              psychologist={psychologist}
+              onClick={selectPsy}
+              selected={selectedPsychologist === psychologist.id}
+            />
           </div>
         ))}
       </Psychologists>

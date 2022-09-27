@@ -40,7 +40,7 @@ const Page = () => {
               <img
                 className="fr-mt-2w"
                 src="/images/Psychologist-hero.svg"
-                alt="En parler, c’est déjà se soigner"
+                alt=""
               />
             </div>
           </div>
@@ -365,7 +365,7 @@ const Page = () => {
                 className="fr-mt-2w"
                 height={250}
                 src="/images/children.svg"
-                alt="Je ne me sens pas bien, illustration d'un enfant sur une chaise"
+                alt=""
               />
             </div>
           </div>
@@ -384,8 +384,9 @@ const Page = () => {
                 target="_blank"
                 rel="noreferrer nofollow noopener"
                 href="/documents/MonPsy_Flyer grand public.pdf"
+                title="Réponse à vos questions en PDF"
               >
-                Flyer Grand Public
+                Flyer Grand Public (PDF)
               </a>
             </div>
             <div>
@@ -412,7 +413,7 @@ const Page = () => {
                 <a
                   target="_blank"
                   className="fr-link"
-                  title="3114"
+                  title="Appeler le 3114 la ligne souffrance prévention sucide"
                   href="https://www.3114.fr"
                   rel="noreferrer"
                 >
