@@ -25,18 +25,14 @@ const Page = () => {
                 className="fr-btn fr-mb-4w"
                 target="_blank"
                 href="/documents/MonPsy_Flyer grand public.pdf"
-                title="Je Candidate"
+                title="Réponse à vos questions en PDF"
                 rel="noreferrer nofollow noopener"
               >
-                Flyer de présentation
+                Flyer de présentation (PDF)
               </a>
             </div>
             <div className="fr-col-12 fr-col-lg-5 align-center">
-              <img
-                src="/images/doctor.svg"
-                height="360"
-                alt="Je suis médecin illustration"
-              />
+              <img src="/images/doctor.svg" height="360" alt="" />
               {video === "hide" && (
                 <div className="align-left">
                   <button
@@ -89,8 +85,9 @@ const Page = () => {
                         target="_blank"
                         rel="noreferrer nofollow noopener"
                         href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                        title="Fiche mémo en PDF"
                       >
-                        Fiche mémo
+                        Fiche mémo (PDF)
                       </a>
                       )&nbsp;:
                     </p>
@@ -112,7 +109,7 @@ const Page = () => {
                       </strong>
                     </p>
                     <ul>
-                      <li>Trouble anxieux d’intensité légère à modérée </li>
+                      <li>Trouble anxieux d’intensité légère à modérée</li>
                       <li>Trouble dépressif d’intensité légère à modérée</li>
                       <li>Mésusage de tabac, d’alcool, de cannabis</li>
                       <li>
@@ -250,24 +247,27 @@ const Page = () => {
                   target="_blank"
                   rel="noreferrer nofollow noopener"
                   href="/documents/MonPsy_Guide médecin_2022.pdf"
+                  title="Guide pour les médecins en PDF"
                 >
-                  Guide pour les médecins
+                  Guide pour les médecins (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
                   href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                  title="Fiche mémo pour les médecins en PDF"
                 >
-                  Fiche mémo pour les médecins
+                  Fiche mémo pour les médecins (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
                   href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                  title="Échelles d’évaluation en PDF"
                 >
-                  Échelles d’évaluation
+                  Échelles d’évaluation (PDF)
                 </a>
               </div>
             </div>

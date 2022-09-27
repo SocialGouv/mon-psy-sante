@@ -32,11 +32,7 @@ const Page = () => {
               </a>
             </div>
             <div className="fr-col-12 fr-col-lg-5 align-center">
-              <img
-                src="/images/psy.svg"
-                height="360"
-                alt="Je suis psychologue illustration"
-              />
+              <img src="/images/psy.svg" height="360" alt="" />
               {video === "hide" && (
                 <div className="align-left">
                   <button
@@ -62,6 +58,7 @@ const Page = () => {
                       kind="captions"
                       srcLang="fr"
                       src="/images/Video-Temoignage.mp4.vtt"
+                      label="Activés"
                     />
                   </video>
                 </div>
@@ -121,8 +118,9 @@ const Page = () => {
                     href="/documents/MonPsy_Flyer-Démarches simplifiées_2022.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="Tutoriel Démarches simplifiées en PDF"
                   >
-                    Tutoriel Démarches simplifiées
+                    Tutoriel Démarches simplifiées (PDF)
                   </a>
                 </li>
                 <li>
@@ -130,8 +128,9 @@ const Page = () => {
                     href="/documents/MonPsy_Flyer-candidatures-psychologues_2022.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title=" Brochure informative en PDF"
                   >
-                    Brochure informative
+                    Brochure informative (PDF)
                   </a>
                 </li>
               </ul>
@@ -140,7 +139,7 @@ const Page = () => {
               <p>Des experts analysent l’éligibilité&nbsp;:</p>
               <ul>
                 <li>être inscrit au registre ADELI en tant que psychologue</li>
-                <li>parcours consolidé en psychologie clinique </li>
+                <li>parcours consolidé en psychologie clinique</li>
                 <li>au moins 3 ans d’expérience clinique</li>
               </ul>
             </CardStep>
@@ -259,29 +258,33 @@ const Page = () => {
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   href="/documents/MonPsy_Guide psychologue_2022.pdf"
+                  title="Guide pour les psychologues en PDF"
                 >
-                  Guide pour les psychologues
+                  Guide pour les psychologues (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                  title="Echelles d’évaluation en PDF"
                 >
-                  Echelles d’évaluation
+                  Echelles d’évaluation (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
+                  title="Comment compléter une feuille de soins en PDF"
                 >
-                  Comment compléter une feuille de soins&nbsp;?
+                  Comment compléter une feuille de soins&nbsp;? (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   href="/documents/MonPsy_Fiche-Memo_Psy.pdf"
+                  title="Fiche mémo pour les psychologues en PDF"
                 >
-                  Fiche mémo pour les psychologues
+                  Fiche mémo pour les psychologues (PDF)
                 </a>
               </div>
             </div>
@@ -348,4 +351,5 @@ function CardStep({ children, title, number }) {
     </div>
   );
 }
+
 export default Page;

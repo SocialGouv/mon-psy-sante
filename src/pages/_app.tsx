@@ -30,11 +30,7 @@ class MyApp extends App {
     return (
       <>
         <div className="fr-skiplinks">
-          <nav
-            className="fr-container"
-            role="navigation"
-            aria-label="Accès rapide"
-          >
+          <nav className="fr-container" aria-label="Accès rapide">
             <ul className="fr-skiplinks__list">
               <li>
                 <a className="fr-link" href="#contenu">
@@ -55,9 +51,9 @@ class MyApp extends App {
           </nav>
         </div>
         <Nav />
-        <div id="contenu">
+        <main id="contenu">
           <Component {...pageProps} />
-        </div>
+        </main>
         <Footer />
       </>
     );

@@ -29,8 +29,12 @@ const footerBodyLinks = [
 
 const footerBottomLinks = [
   {
-    link: "/mentions-legales#accessibilite",
-    title: "Accessibilité : non conforme",
+    link: "/plan-du-site",
+    title: "Plan du site",
+  },
+  {
+    link: "/accessibilite",
+    title: "Accessibilité : partiellement conforme",
   },
   {
     link: "/mentions-legales",
@@ -54,7 +58,7 @@ const Footer = () => (
   <footer className="fr-footer" role="contentinfo" id="footer">
     <div className="fr-container">
       <div className="fr-footer__body">
-        <div className="fr-footer__brand fr-enlarge-link">
+        <div className="fr-footer__brand fr-header__brand fr-enlarge-link">
           <p className="fr-logo">
             République
             <br />
@@ -63,9 +67,14 @@ const Footer = () => (
           <a
             className="fr-footer__brand-link"
             href="/"
-            title="Retour à l’accueil"
+            title="Page d'accueil MonPsy"
           >
-            <img src="/images/cnam.png" alt="CNAM" width="200" height="66" />
+            <img
+              src="/images/cnam.png"
+              alt="Logo Caisse Nationale d'Assurance Maladie"
+              width="200"
+              height="66"
+            />
           </a>
         </div>
         <div className="fr-footer__content">
