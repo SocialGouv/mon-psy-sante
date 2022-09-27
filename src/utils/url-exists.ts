@@ -38,7 +38,7 @@ export function urlExists(url: string): Promise<boolean> {
     };
 
     const req = http.request(options, (res) => {
-      resolve(res.statusCode < 400 || res.statusCode >= 500);
+      resolve(res.statusCode < 400);
     });
     req.on("error", () => resolve(false));
     req.on("timeout", () => {
