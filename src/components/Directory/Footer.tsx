@@ -13,7 +13,7 @@ const Footer = () => {
               </h3>
               <strong>
                 <span
-                  className="fr-fi-arrow-right-line fr-fi--md"
+                  className="fr-fi-arrow-right-line fr-fi--md fr-text--dark-blue"
                   aria-hidden="true"
                 />{" "}
                 Vous prenez rendez-vous avec un médecin{" "}
@@ -29,7 +29,7 @@ const Footer = () => {
               <ul className="no-bullet">
                 <li>
                   <span
-                    className="fr-fi-arrow-right-line fr-fi--md"
+                    className="fr-fi-arrow-right-line fr-fi--md fr-text--dark-blue"
                     aria-hidden="true"
                   />{" "}
                   <strong> Vous apportez le courrier d’adressage</strong> rédigé
@@ -38,7 +38,7 @@ const Footer = () => {
 
                 <li>
                   <span
-                    className="fr-fi-arrow-right-line fr-fi--md"
+                    className="fr-fi-arrow-right-line fr-fi--md fr-text--dark-blue"
                     aria-hidden="true"
                   />{" "}
                   Si vous n’avancez pas les frais en raison de soins en lien
@@ -47,7 +47,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <span
-                    className="fr-fi-arrow-right-line fr-fi--md"
+                    className="fr-fi-arrow-right-line fr-fi--md fr-text--dark-blue"
                     aria-hidden="true"
                   />{" "}
                   Certains psychologues peuvent réaliser des séances de suivi à
@@ -63,7 +63,7 @@ const Footer = () => {
               <ul className="no-bullet">
                 <li>
                   <span
-                    className="fr-fi-arrow-right-line fr-fi--md"
+                    className="fr-fi-arrow-right-line fr-fi--md fr-text--dark-blue"
                     aria-hidden="true"
                   />{" "}
                   Vous envoyez la{" "}
@@ -77,7 +77,7 @@ const Footer = () => {
 
                 <li>
                   <span
-                    className="fr-fi-arrow-right-line fr-fi--md"
+                    className="fr-fi-arrow-right-line fr-fi--md fr-text--dark-blue"
                     aria-hidden="true"
                   />{" "}
                   8 séances sont remboursées au maximum par année civile. A la
