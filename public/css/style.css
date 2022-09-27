@@ -30,6 +30,7 @@
 .fr-text--dark-blue {
   color: var(--blue-france-113);
 }
+
 .fr-text--muted {
   color: var(--grey-425);
 }
@@ -98,4 +99,17 @@ h1 .fr-text--lead {
   border: 3px solid var(--green-tilleul-verveine-950);
   padding: 2rem;
   border-radius: 1rem;
+}
+
+@media only screen and (max-width: 321px) {
+  body {
+    word-wrap: break-word;
+  }
+
+  .fr-header__operator img {
+    max-width: 120px;
+    height: auto;
+  }
+
+
 }
