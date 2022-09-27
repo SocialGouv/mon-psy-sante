@@ -29,8 +29,12 @@ const footerBodyLinks = [
 
 const footerBottomLinks = [
   {
+    link: "/plan-du-site",
+    title: "Plan du site",
+  },
+  {
     link: "/accessibilite",
-    title: "Accessibilité : non conforme",
+    title: "Accessibilité : partiellement conforme",
   },
   {
     link: "/mentions-legales",

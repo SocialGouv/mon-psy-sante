@@ -41,15 +41,26 @@ const Page = () => {
             <Link href="/">
               <a>MonPsy</a>
             </Link>{" "}
-            n’est pas conforme avec le référentiel général d’amélioration de
-            l’accessibilité (RGAA), version 4.1 en raison des non-conformités et
-            des dérogations énumérées ci-dessous.
+            est en conformité partielle avec le référentiel général
+            d’amélioration de l’accessibilité (RGAA) « version 4.1 » en raison
+            des non-conformités et des dérogations énumérées ci-dessous. Nous
+            tâchons de rendre dès la conception, ce site accessible à toutes et
+            à tous.
           </p>
           <h2>Résultats des tests</h2>
           <p>
             L’audit de conformité réalisé par URBILOG révèle que 49,06 % des
             critères du RGAA version 4.1 sont respectés. Le taux moyen de
             conformité du service en ligne est de 68%.
+          </p>
+          <p>
+            Après la correction de la majeure partie des problèmes soulevés par
+            l’audit, 81.13% des critères du RGAA version 4.1 sont respectés. Le
+            taux moyen de conformité du service en ligne est de 92.15%.
+          </p>
+          <p>
+            Nous avons pour objectif de garder un taux de conformité supérieur à
+            75%.
           </p>
           <h2>Contenus non-accessibles</h2>
           <p>
@@ -59,157 +70,54 @@ const Page = () => {
 
           <h4>Non conformité</h4>
 
-          <ol>
-            <li>
-              Images
-              <ul>
-                <li>Les images de décoration ne sont pas ignorées.</li>
-              </ul>
-            </li>
-
-            <li>
-              Cadres
-              <ul>
-                <li>Rien à signaler.</li>
-              </ul>
-            </li>
-
-            <li>
-              Couleurs
-              <ul>
-                <li>L’information n’est transmise que par la couleur.</li>
-                <li>Des taux de contraste sont insuffisants.</li>
-              </ul>
-            </li>
-
-            <li>
-              Multimédia
-              <ul>
-                <li>Une vidéo ne possède de transcription textuelle.</li>
-                <li>
-                  Un élément du lecteur multimédia n’est pas compatible avec les
-                  technologies d’assistance.
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              Tableaux
-              <ul>
-                <li>Rien à signaler.</li>
-              </ul>
-            </li>
-
-            <li>
-              Liens
-              <ul>
-                <li>Les intitulés des liens ne sont pas pertinents.</li>
-              </ul>
-            </li>
-
-            <li>
-              Scripts
-              <ul>
-                <li>
-                  Des scripts ne sont pas compatibles avec les technologies
-                  d’assistance.
-                </li>
-                <li>
-                  Des scripts ne sont pas contrôlables au clavier ou par tout
-                  dispositif de pointage.
-                </li>
-                <li>
-                  L’utilisateur n’est pas averti ou n’a pas le contrôle du
-                  changement de contexte.
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              Éléments obligatoires
-              <ul>
-                <li>Des titre de pages ne sont pas pertinents.</li>
-              </ul>
-            </li>
-
-            <li>
-              Structuration de l&apos;information
-              <ul>
-                <li>
-                  L’information n’est pas structurée par l’utilisation
-                  appropriée de titres.
-                </li>
-                <li>La structure du document n’est pas cohérente.</li>
-                <li>Des listes ne sont pas correctement structurées.</li>
-              </ul>
-            </li>
-
-            <li>
-              Présentation de l&apos;information
-              <ul>
-                <li>
-                  Des éléments porteurs d’informations disparaissent lorsque le
-                  CSS est désactivé.
-                </li>
-                <li>
-                  Présence d’une barre de défilement sur un écran de 320px de
-                  large.
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              Formulaires
-              <ul>
-                <li>Des champs de formulaires n’ont pas d’étiquettes.</li>
-                <li>Des intitulés des boutons non pertinents.</li>
-                <li>
-                  Le contrôle de saisie n’est pas utilisé de manière pertinente.
-                </li>
-                <li>
-                  Le contrôle de saisie n’est pas accompagné, si nécessaire, de
-                  suggestions facilitant la correction des erreurs.{" "}
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              Navigation
-              <ul>
-                <li>Absence de deux systèmes de navigation.</li>
-                <li>Le lien d’évitement n’est pas totalement utilisable.</li>
-                <li>L’ordre de tabulation n’est pas cohérent.</li>
-              </ul>
-            </li>
-
-            <li>
-              Consultation
-              <ul>
-                <li>
-                  Des documents offerts au téléchargement ne sont pas
-                  accessibles et/ou n’ont pas d’alternative accessible.
-                </li>
-                <li>
-                  Du contenu proposé n’est pas consultable quelle que soit
-                  l&apos;orientation de l&apos;écran (portait ou paysage).
-                </li>
-              </ul>
-            </li>
-          </ol>
-
-          <h4>Dérogation pour charge disproportionnée</h4>
           <ul>
-            <li>Rien à signaler</li>
-          </ul>
+            <li>
+              Critère 3.3 : Dans chaque page web, les couleurs utilisées dans
+              les composants d’interface ou les éléments graphiques porteurs
+              d’informations sont-elles suffisamment contrastées (hors cas
+              particuliers).
+            </li>
+            <li>
+              Critère 7.3 : Chaque script est-il contrôlable par le clavier et
+              par tout dispositif de pointage (hors cas particuliers) ? .
+            </li>
+            <li>
+              Critère 7.4 : Pour chaque script qui initie un changement de
+              contexte, l’utilisateur est-il averti ou en a-t-il le contrôle ?
+            </li>
+            <li>
+              Critère 9.3 : Dans chaque page web, chaque liste est-elle
+              correctement structurée ?
+            </li>
+            <li>
+              Critère 11.10 Dans chaque formulaire, le contrôle de saisie est-il
+              utilisé de manière pertinente (hors cas particuliers) ?
+            </li>
+            <li>
+              Critère 11.11 Dans chaque formulaire, le contrôle de saisie est-il
+              accompagné, si nécessaire, de suggestions facilitant la correction
+              des erreurs de saisie ?
+            </li>
+            <li>
+              Critère 12.1 Chaque ensemble de pages dispose-t-il de deux
+              systèmes de navigation différents, au moins (hors cas
+              particuliers) ? 12.8 Dans chaque page web, l’ordre de tabulation
+              est-il cohérent ? 13.3 Dans chaque page web, chaque document
+              bureautique en téléchargement possède-t-il, si nécessaire, une
+              version accessible (hors cas particuliers) ?
+            </li>
 
-          <h4>Contenus non-soumis à l&apos;obligation d&apos;accessibilité</h4>
-          <ul>
-            <li>Rien à signaler</li>
+            <li>
+              Critère 13.9 Dans chaque page web, le contenu proposé est-il
+              consultable quelle que soit l’orientation de l’écran (portait ou
+              paysage) (hors cas particuliers) ?
+            </li>
           </ul>
 
           <h2>Établissement de cette déclaration d&apos;accessibilité</h2>
           <p>
             Cette déclaration d&apos;accessibilité a été établie le 20/07/2022.
+            Mise à jour le 27/09/2022.
           </p>
 
           <p>
@@ -294,12 +202,6 @@ const Page = () => {
               <Link href="/annuaire">
                 <a>https://monpsy.sante.gouv.fr/annuaire</a>
               </Link>
-            </li>
-            <li>
-              <del>Page Patients</del>{" "}
-              <em>
-                La page patients a été fusionnée avec la page d&apos;accueil
-              </em>
             </li>
           </ul>
 
