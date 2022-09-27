@@ -1,3 +1,17 @@
+## [1.56.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.0...v1.56.1) (2022-09-27)
+
+
+### Bug Fixes
+
+* **demarches-simplifies:** check if url exists via HEAD request ([#252](https://github.com/SocialGouv/mon-psy-sante/issues/252)) ([14fbc8f](https://github.com/SocialGouv/mon-psy-sante/commit/14fbc8f60afbb9cd202f4e1187728f1eb36a8fa3))
+
+# [1.56.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.55.0...v1.56.0) (2022-09-20)
+
+
+### Features
+
+* video medecin ([#251](https://github.com/SocialGouv/mon-psy-sante/issues/251)) ([42f887b](https://github.com/SocialGouv/mon-psy-sante/commit/42f887b0818599a082c76c1bf58510aa190da6db))
+
 # [1.55.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.54.1...v1.55.0) (2022-09-19)
 
 

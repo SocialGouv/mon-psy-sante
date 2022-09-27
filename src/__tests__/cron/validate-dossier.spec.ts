@@ -91,19 +91,20 @@ describe("validateDossier", () => {
   });
 
   it.each`
-    input                  | isValid
-    ${undefined}           | ${true}
-    ${null}                | ${true}
-    ${""}                  | ${true}
-    ${"non"}               | ${false}
-    ${"doctolib"}          | ${false}
-    ${"doctolib."}         | ${false}
-    ${"doctolib. com"}     | ${false}
-    ${"doctolib/com"}      | ${false}
-    ${"shouldBeValid.com"} | ${false}
-    ${"https://valid.com"} | ${true}
-    ${"http://valid.com"}  | ${true}
-    ${"http://VALID.com"}  | ${true}
+    input                    | isValid
+    ${undefined}             | ${true}
+    ${null}                  | ${true}
+    ${""}                    | ${true}
+    ${"non"}                 | ${false}
+    ${"doctolib"}            | ${false}
+    ${"doctolib."}           | ${false}
+    ${"doctolib. com"}       | ${false}
+    ${"doctolib/com"}        | ${false}
+    ${"example.org"}         | ${true}
+    ${"www.example.org"}     | ${true}
+    ${"https://example.org"} | ${true}
+    ${"http://example.org"}  | ${true}
+    ${"http://EXAMPLE.org"}  | ${true}
   `("should handle website error", async ({ input, isValid }) => {
     const errors = await validateDossier(
       {

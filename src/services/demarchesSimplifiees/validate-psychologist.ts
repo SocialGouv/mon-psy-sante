@@ -70,14 +70,6 @@ export const validatePsychologist = (
   return z
     .object({
       psychologist: z.object({
-        website: z
-          .optional(
-            z
-              .string()
-              .url(webSiteIsInvalidMessage(psychologist.website))
-              .or(z.literal(""))
-          )
-          .or(z.literal("")),
         lastName: validateWithAdeliData({
           adeliData,
           message: psychologistLastNameDoesNotMatchMessage,
@@ -126,6 +118,3 @@ export const candidateIsNotAPsychologistMessage = (code) =>
 
 export const emailIsInvalidMessage = (email) =>
   `L'email renseigné (${email}) n'est pas valide`;
-
-export const webSiteIsInvalidMessage = (url) =>
-  `Le site web renseigné (${url}) n'est pas valide`;
