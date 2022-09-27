@@ -1,3 +1,10 @@
+## [1.56.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.1...v1.56.2) (2022-09-27)
+
+
+### Bug Fixes
+
+* RGAA issues ([#249](https://github.com/SocialGouv/mon-psy-sante/issues/249)) ([b2635d4](https://github.com/SocialGouv/mon-psy-sante/commit/b2635d4075371ab36efafa2f29e0f1cf32fe355f))
+
 ## [1.56.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.0...v1.56.1) (2022-09-27)
 
 
