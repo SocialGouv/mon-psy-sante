@@ -42,10 +42,10 @@ const Page = () => {
               <a>MonPsy</a>
             </Link>{" "}
             est en conformité partielle avec le référentiel général
-            d’amélioration de l’accessibilité (RGAA) « version 4.1 » en raison
-            des non-conformités et des dérogations énumérées ci-dessous. Nous
-            tâchons de rendre dès la conception, ce site accessible à toutes et
-            à tous.
+            d’amélioration de l’accessibilité (RGAA) «&nbsp;version 4.1&nbsp;»
+            en raison des non-conformités et des dérogations énumérées
+            ci-dessous. Nous tâchons de rendre dès la conception, ce site
+            accessible à toutes et à tous.
           </p>
           <h2>Résultats des tests</h2>
           <p>
@@ -72,54 +72,53 @@ const Page = () => {
 
           <ul>
             <li>
-              Critère 3.3 : Dans chaque page web, les couleurs utilisées dans
-              les composants d’interface ou les éléments graphiques porteurs
-              d’informations sont-elles suffisamment contrastées (hors cas
-              particuliers).
+              Critère 3.3&nbsp;: Dans chaque page web, les couleurs utilisées
+              dans les composants d’interface ou les éléments graphiques
+              porteurs d’informations sont-elles suffisamment contrastées (hors
+              cas particuliers).
             </li>
             <li>
-              Critère 7.3 : Chaque script est-il contrôlable par le clavier et
-              par tout dispositif de pointage (hors cas particuliers) ? .
+              Critère 7.3&nbsp;: Chaque script est-il contrôlable par le clavier
+              et par tout dispositif de pointage (hors cas particuliers)&nbsp;?
+              .
             </li>
             <li>
-              Critère 7.4 : Pour chaque script qui initie un changement de
-              contexte, l’utilisateur est-il averti ou en a-t-il le contrôle ?
+              Critère 7.4&nbsp;: Pour chaque script qui initie un changement de
+              contexte, l’utilisateur est-il averti ou en a-t-il le
+              contrôle&nbsp;?
             </li>
             <li>
-              Critère 9.3 : Dans chaque page web, chaque liste est-elle
-              correctement structurée ?
+              Critère 9.3&nbsp;: Dans chaque page web, chaque liste est-elle
+              correctement structurée&nbsp;?
             </li>
             <li>
-              Critère 11.10 Dans chaque formulaire, le contrôle de saisie est-il
-              utilisé de manière pertinente (hors cas particuliers) ?
+              Critère 11.10&nbsp;: Dans chaque formulaire, le contrôle de saisie
+              est-il utilisé de manière pertinente (hors cas
+              particuliers)&nbsp;?
             </li>
             <li>
-              Critère 11.11 Dans chaque formulaire, le contrôle de saisie est-il
-              accompagné, si nécessaire, de suggestions facilitant la correction
-              des erreurs de saisie ?
+              Critère 11.11&nbsp;: Dans chaque formulaire, le contrôle de saisie
+              est-il accompagné, si nécessaire, de suggestions facilitant la
+              correction des erreurs de saisie&nbsp;?
             </li>
             <li>
-              Critère 12.1 Chaque ensemble de pages dispose-t-il de deux
+              Critère 12.1&nbsp;: Chaque ensemble de pages dispose-t-il de deux
               systèmes de navigation différents, au moins (hors cas
-              particuliers) ? 12.8 Dans chaque page web, l’ordre de tabulation
-              est-il cohérent ? 13.3 Dans chaque page web, chaque document
+              particuliers)&nbsp;?
+            </li>
+            <li>
+              Critère 12.8&nbsp;: Dans chaque page web, l’ordre de tabulation
+              est-il cohérent&nbsp;?
+            </li>
+            <li>
+              Critère 13.3&nbsp;: Dans chaque page web, chaque document
               bureautique en téléchargement possède-t-il, si nécessaire, une
-              version accessible (hors cas particuliers) ?
+              version accessible (hors cas particuliers)&nbsp;?
             </li>
             <li>
-              Critère 12.8 Dans chaque page web, l’ordre de tabulation est-il
-              cohérent ?
-            </li>
-
-            <li>
-              Critère 13.3 Dans chaque page web, chaque document bureautique en
-              téléchargement possède-t-il, si nécessaire, une version accessible
-              (hors cas particuliers) ?
-            </li>
-            <li>
-              Critère 13.9 Dans chaque page web, le contenu proposé est-il
-              consultable quelle que soit l’orientation de l’écran (portait ou
-              paysage) (hors cas particuliers) ?
+              Critère 13.9&nbsp;: Dans chaque page web, le contenu proposé
+              est-il consultable quelle que soit l’orientation de l’écran
+              (portait ou paysage) (hors cas particuliers)&nbsp;?
             </li>
           </ul>
 
