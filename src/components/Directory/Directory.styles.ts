@@ -16,14 +16,6 @@ export const Desktop = styled.div`
   }
 `;
 
-export const SubSearch = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-`;
-
 export const Psychologists = styled.div`
   overflow-y: scroll;
   height: 100vh;

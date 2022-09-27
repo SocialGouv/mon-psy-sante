@@ -104,7 +104,7 @@ const Psychologist = ({
       </dialog>
       <div className="fr-tile__body">
         <div className="fr-tile__title ">
-          <p className="fr-text--lead highlight">
+          <p className="fr-text--lead">
             {psychologist.firstName} {psychologist.lastName}
           </p>
         </div>
@@ -220,7 +220,7 @@ const Psychologist = ({
 const PsychologistTile = styled.div`
   cursor: pointer;
   box-shadow: inset 0 0 0 1px var(--border-default-grey),
-    inset 0 -0.25rem 0 0 var(--pink-tuile-main-556);
+    inset 0 -0.25rem 0 0 var(--green-tilleul-verveine-925);
 
   &:hover {
     background-color: var(--pink-tuile-950);

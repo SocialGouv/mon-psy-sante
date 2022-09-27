@@ -9,7 +9,6 @@ import {
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
 import { allPublicsFilters } from "../../types/enums/public";
-import { SubSearch } from "./Directory.styles";
 
 const geoStatusEnum = {
   DENIED: -1,
@@ -86,7 +85,7 @@ const SearchBar = ({
 
   return (
     <div className="fr-grid-row fr-grid-row--middle fr-pb-2w">
-      <div className="fr-col-md-9 fr-col-12">
+      <div className="fr-col-md-4 fr-col-12">
         <div className="fr-select-group">
           <label className="fr-label fr-mb-2v" htmlFor="city-search">
             Rechercher par ville ou code postal
@@ -130,56 +129,58 @@ const SearchBar = ({
             />
           </div>
         </div>
-        <SubSearch>
-          <div className="fr-select-group">
-            <label className="fr-label" htmlFor="select">
-              Souhait du psychologue d&apos;accompagner des
-            </label>
-            <select
-              className="fr-select"
-              required
-              id="select"
-              name="select"
-              value={otherFilters[FILTER.PUBLIC]}
-              onChange={(e) =>
-                setOtherFilters({
-                  ...otherFilters,
-                  [FILTER.PUBLIC]: e.target.value,
-                })
-              }
-            >
-              {allPublicsFilters.map((option) => (
-                <option key={option.label || option.value} value={option.value}>
-                  {option.label || option.value}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="fr-toggle">
-            <input
-              id="checkbox-teleconsultation"
-              type="checkbox"
-              className="fr-toggle__input"
-              checked={otherFilters[FILTER.TELECONSULTATION]}
-              onChange={(e) =>
-                setOtherFilters({
-                  ...otherFilters,
-                  [FILTER.TELECONSULTATION]: e.target.checked,
-                })
-              }
-            />
-            <label
-              className="fr-toggle__label"
-              htmlFor="checkbox-teleconsultation"
-            >
-              Possibilité de séances à distance
-            </label>
-          </div>
-        </SubSearch>
       </div>
-      <div className="fr-col-md-3 fr-col-12 align-center">
+      <div className="fr-col-md-4 fr-col-12 fr-px-2w">
+        <div className="fr-select-group">
+          <label className="fr-label" htmlFor="select">
+            Souhait du psychologue d&apos;accompagner des
+          </label>
+          <select
+            className="fr-select"
+            required
+            id="select"
+            name="select"
+            value={otherFilters[FILTER.PUBLIC]}
+            onChange={(e) =>
+              setOtherFilters({
+                ...otherFilters,
+                [FILTER.PUBLIC]: e.target.value,
+              })
+            }
+          >
+            {allPublicsFilters.map((option) => (
+              <option key={option.label || option.value} value={option.value}>
+                {option.label || option.value}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <div className="fr-col-md-4 fr-col-12 fr-pl-2w">
+        <div className="fr-toggle">
+          <input
+            id="checkbox-teleconsultation"
+            type="checkbox"
+            className="fr-toggle__input"
+            checked={otherFilters[FILTER.TELECONSULTATION]}
+            onChange={(e) =>
+              setOtherFilters({
+                ...otherFilters,
+                [FILTER.TELECONSULTATION]: e.target.checked,
+              })
+            }
+          />
+          <label
+            className="fr-toggle__label"
+            htmlFor="checkbox-teleconsultation"
+          >
+            Possibilité de séances à distance
+          </label>
+        </div>
+      </div>
+      <div className="fr-col-12 fr-pt-2w">
         <button
-          className="fr-btn--md fr-ml-1w fr-mt-1w fr-btn"
+          className="fr-btn--md fr-btn"
           disabled={!coords || geoLoading}
           onClick={loadPsychologists}
         >
