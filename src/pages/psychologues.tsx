@@ -118,8 +118,9 @@ const Page = () => {
                     href="/documents/MonPsy_Flyer-Démarches simplifiées_2022.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="Tutoriel Démarches simplifiées en PDF"
                   >
-                    Tutoriel Démarches simplifiées
+                    Tutoriel Démarches simplifiées (PDF)
                   </a>
                 </li>
                 <li>
@@ -127,8 +128,9 @@ const Page = () => {
                     href="/documents/MonPsy_Flyer-candidatures-psychologues_2022.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title=" Brochure informative en PDF"
                   >
-                    Brochure informative
+                    Brochure informative (PDF)
                   </a>
                 </li>
               </ul>
@@ -256,29 +258,33 @@ const Page = () => {
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   href="/documents/MonPsy_Guide psychologue_2022.pdf"
+                  title="Guide pour les psychologues en PDF"
                 >
-                  Guide pour les psychologues
+                  Guide pour les psychologues (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                  title="Echelles d’évaluation en PDF"
                 >
-                  Echelles d’évaluation
+                  Echelles d’évaluation (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
+                  title="Comment compléter une feuille de soins en PDF"
                 >
-                  Comment compléter une feuille de soins&nbsp;?
+                  Comment compléter une feuille de soins&nbsp;? (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   href="/documents/MonPsy_Fiche-Memo_Psy.pdf"
+                  title="Fiche mémo pour les psychologues en PDF"
                 >
-                  Fiche mémo pour les psychologues
+                  Fiche mémo pour les psychologues (PDF)
                 </a>
               </div>
             </div>

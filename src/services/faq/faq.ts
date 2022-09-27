@@ -40,7 +40,7 @@ const items = [
     documents: [
       {
         url: "/documents/MonPsy_Flyer grand public.pdf",
-        title: "Flyer Grand Public",
+        title: "Flyer Grand Public (PDF)",
       },
     ],
   },
@@ -48,19 +48,19 @@ const items = [
     documents: [
       {
         url: "/documents/MonPsy_Guide psychologue_2022.pdf",
-        title: "Guide pour les psychologues",
+        title: "Guide pour les psychologues (PDF)",
       },
       {
         url: "/documents/MonPsy_Livret_échelles évaluations_2022.pdf",
-        title: "Echelles d’évaluation",
+        title: "Echelles d’évaluation (PDF)",
       },
       {
         url: "/documents/MonPsy_Flyer-Feuille de soin_2022.pdf",
-        title: "Comment compléter une feuille de soins ?",
+        title: "Comment compléter une feuille de soins ? (PDF)",
       },
       {
         url: "/documents/MonPsy_Fiche-Memo_Psy.pdf",
-        title: "Fiche mémo pour les psychologues",
+        title: "Fiche mémo pour les psychologues (PDF)",
       },
     ],
     key: "psychologue",
@@ -85,15 +85,15 @@ const items = [
     key: "medecin",
     documents: [
       {
-        title: "Guide pour les médecins",
+        title: "Guide pour les médecins (PDF)",
         url: "/documents/MonPsy_Guide médecin_2022.pdf",
       },
       {
-        title: "Fiche mémo pour les médecins",
+        title: "Fiche mémo pour les médecins (PDF)",
         url: "/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf",
       },
       {
-        title: "Echelles d’évaluation",
+        title: "Echelles d’évaluation (PDF)",
         url: "/documents/MonPsy_Livret_échelles évaluations_2022.pdf",
       },
     ],

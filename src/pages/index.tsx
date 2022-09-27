@@ -386,7 +386,7 @@ const Page = () => {
                 href="/documents/MonPsy_Flyer grand public.pdf"
                 title="Réponse à vos questions en PDF"
               >
-                Flyer Grand Public
+                Flyer Grand Public (PDF)
               </a>
             </div>
             <div>

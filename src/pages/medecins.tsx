@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import HeadTag from "../components/HeadTag";
 
@@ -28,11 +28,11 @@ const Page = () => {
                 title="Réponse à vos questions en PDF"
                 rel="noreferrer nofollow noopener"
               >
-                Flyer de présentation
+                Flyer de présentation (PDF)
               </a>
             </div>
             <div className="fr-col-12 fr-col-lg-5 align-center">
-              <img src="/images/doctor.svg" height="360" alt=""/>
+              <img src="/images/doctor.svg" height="360" alt="" />
               {video === "hide" && (
                 <div className="align-left">
                   <button
@@ -50,7 +50,7 @@ const Page = () => {
               <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
                 <div className="fr-col-8">
                   <video width="100%" controls autoPlay>
-                    <source type="video/mp4" src="/images/Video-Medecin.mp4"/>
+                    <source type="video/mp4" src="/images/Video-Medecin.mp4" />
                     <track
                       kind="captions"
                       srcLang="fr"
@@ -85,8 +85,9 @@ const Page = () => {
                         target="_blank"
                         rel="noreferrer nofollow noopener"
                         href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                        title="Fiche mémo en PDF"
                       >
-                        Fiche mémo
+                        Fiche mémo (PDF)
                       </a>
                       )&nbsp;:
                     </p>
@@ -246,24 +247,27 @@ const Page = () => {
                   target="_blank"
                   rel="noreferrer nofollow noopener"
                   href="/documents/MonPsy_Guide médecin_2022.pdf"
+                  title="Guide pour les médecins en PDF"
                 >
-                  Guide pour les médecins
+                  Guide pour les médecins (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
                   href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                  title="Fiche mémo pour les médecins en PDF"
                 >
-                  Fiche mémo pour les médecins
+                  Fiche mémo pour les médecins (PDF)
                 </a>
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
                   href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                  title="Échelles d’évaluation en PDF"
                 >
-                  Échelles d’évaluation
+                  Échelles d’évaluation (PDF)
                 </a>
               </div>
             </div>
