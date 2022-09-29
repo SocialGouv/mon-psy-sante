@@ -101,6 +101,14 @@ h1 .fr-text--lead {
   border-radius: 1rem;
 }
 
+.fr-tabs__panel:not(.fr-tabs__panel--selected) {
+  display: none;
+}
+
+span.error {
+  color: var(--error-main-525);
+}
+
 @media only screen and (max-width: 321px) {
   body {
     word-wrap: break-word;

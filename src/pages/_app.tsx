@@ -1,8 +1,7 @@
 import "@gouvfr/dsfr/dist/dsfr/dsfr.min.css";
-import "../../public/css/color.css";
-import "../../public/css/reset-dsfr.css";
-import "../../public/css/searchable.css";
-import "../../public/css/style.css";
+import "../styles/color.css";
+import "../styles/searchable.css";
+import "../styles/style.css";
 
 import * as Sentry from "@sentry/node";
 import { init } from "@socialgouv/matomo-next";
