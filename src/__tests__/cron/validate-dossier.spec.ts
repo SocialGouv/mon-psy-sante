@@ -141,4 +141,55 @@ describe("validateDossier", () => {
     expect(getAddressCoordinates).toHaveBeenCalledTimes(2);
     expect(errors).toStrictEqual([]);
   });
+
+  it("should return error when nir already exists", async () => {
+    const errors = await validateDossier(
+      {
+        ...psy,
+        nir: "1234567890123",
+      } as ParsedDSPsychologist,
+      adeliData as AdeliData[],
+      [{ id: 12345, value: "1234567890123" }]
+    );
+    expect(errors).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("numéro de sécurité sociale"),
+      ])
+    );
+  });
+
+  it("should not return error when nir already exists for same Psychologist", async () => {
+    const errors = await validateDossier(
+      {
+        ...psy,
+        nir: "1234567890123",
+      } as ParsedDSPsychologist,
+      adeliData as AdeliData[],
+      [{ id: 1, value: "1234567890123" }]
+    );
+    expect(errors).toEqual(
+      expect.not.arrayContaining([
+        expect.stringContaining("numéro de sécurité sociale"),
+      ])
+    );
+  });
+
+  it("should not return error when nir does not exists", async () => {
+    const errors = await validateDossier(
+      {
+        ...psy,
+        nir: "1234567890123",
+      } as ParsedDSPsychologist,
+      adeliData as AdeliData[],
+      [
+        { id: 123, value: "123" },
+        { id: 456, value: "456" },
+      ]
+    );
+    expect(errors).toEqual(
+      expect.not.arrayContaining([
+        expect.stringContaining("numéro de sécurité sociale"),
+      ])
+    );
+  });
 });

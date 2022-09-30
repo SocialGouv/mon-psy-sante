@@ -115,7 +115,9 @@ export const validateDossier = async (
   }
 
   if (dossier.nir) {
-    const nirAlreadyUsed = NIRs.find((nir) => nir.value === dossier.nir);
+    const nirAlreadyUsed = NIRs.find(
+      (nir) => nir.value === dossier.nir && nir.id !== dossier.id
+    );
     if (nirAlreadyUsed) {
       errors.push(
         `Le numéro de sécurité sociale ${dossier.nir} est déjà utilisé pour le dossier ${nirAlreadyUsed.id}`
