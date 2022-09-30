@@ -1,7 +1,8 @@
+import { DSPsychologist } from "../../types/psychologist";
 import filterDossiersToVerif from "../demarchesSimplifiees/dossiers";
 
 describe("Dossier service", () => {
-  const dossier = {
+  const dossier: Partial<DSPsychologist> = {
     archived: false,
     number: 123,
     state: "en construction",
@@ -57,7 +58,7 @@ describe("Dossier service", () => {
   );
 
   it('should filter dossiers with no text in "Conclusions Vérifications automatiques" annotations and no messages', () => {
-    const result = filterDossiersToVerif(listDossier);
+    const result = filterDossiersToVerif(listDossier as DSPsychologist[]);
     expect(result.length).toEqual(1);
     expect(result[0].annotations[0].stringValue).toEqual("");
   });
