@@ -1,10 +1,11 @@
 import pLimit from "p-limit";
 
-import { DSResponse } from "../../types/demarcheSimplifiee";
+import { DSResponse, DSResponseNIRNode } from "../../types/demarcheSimplifiee";
 import { DSPsychologist, Psychologist } from "../../types/psychologist";
 import { formatPsychologist } from "../format-psychologists";
 import {
   requestDossiersWithAnnotations,
+  requestNIR,
   requestPsychologistsFor,
 } from "./buildRequest";
 import parseDossiers from "./parse-psychologists";
@@ -75,4 +76,30 @@ export const getDossiersInConstruction = async (): Promise<
   console.timeEnd(time);
 
   return list.psychologists;
+};
+
+export const getNIRs = async (
+  cursor: string | undefined = undefined,
+  accumulator: DSResponseNIRNode[] = []
+): Promise<{
+  NIRs: DSResponseNIRNode[];
+  lastCursor: string;
+}> => {
+  const apiResponse = await requestNIR(cursor);
+
+  const { pageInfo, nodes } = apiResponse.demarche.dossiers;
+  console.log(
+    "NIR: Fetch",
+    apiResponse.demarche.dossiers.nodes.length,
+    "dossiers"
+  );
+  const nextAccumulator = accumulator.concat(nodes);
+
+  if (pageInfo.hasNextPage) {
+    return getNIRs(pageInfo.endCursor, nextAccumulator);
+  }
+  return {
+    lastCursor: pageInfo.endCursor,
+    NIRs: nextAccumulator,
+  };
 };

@@ -1,4 +1,8 @@
-import { DSPsychologist, Psychologist } from "../../types/psychologist";
+import {
+  DSPsychologist,
+  ParsedDSPsychologist,
+  Psychologist,
+} from "../../types/psychologist";
 import config from "../config";
 import { formatLanguage } from "../format-psychologists";
 
@@ -7,6 +11,7 @@ const extractDepartmentNumber = (dep: string): string => {
 };
 const CHAMPS = JSON.parse(config.demarchesSimplifiees.champs);
 const CHAMP_LANGUAGE_OTHER = "Q2hhbXAtMjM0NjQzNA==";
+export const CHAMP_NIR = "Q2hhbXAtMjM0NjQzNQ==";
 
 const PARSERS = {
   displayEmail: (value) => value === "true",
@@ -32,8 +37,10 @@ const addOtherLanguages = (
   }
 };
 
-export const parseDossierMetadata = (dossier: DSPsychologist): Psychologist => {
-  const psychologist: Partial<Psychologist> = {
+export const parseDossierMetadata = (
+  dossier: DSPsychologist
+): ParsedDSPsychologist => {
+  const psychologist: Partial<ParsedDSPsychologist> = {
     demarcheSimplifieesId: dossier.id,
     archived: dossier.archived,
     department: extractDepartmentNumber(dossier.groupeInstructeur.label),
@@ -41,6 +48,7 @@ export const parseDossierMetadata = (dossier: DSPsychologist): Psychologist => {
     id: dossier.number,
     lastName: dossier.demandeur.nom,
     state: dossier.state,
+    nir: getDossierChamp(dossier, CHAMP_NIR)?.stringValue?.trim(),
   };
 
   CHAMPS.forEach(([id, field]) => {
@@ -52,10 +60,12 @@ export const parseDossierMetadata = (dossier: DSPsychologist): Psychologist => {
   });
   addOtherLanguages(dossier, psychologist);
 
-  return psychologist as Psychologist;
+  return psychologist as ParsedDSPsychologist;
 };
 
-const parseDossiers = (dsPsychologists: DSPsychologist[]): Psychologist[] => {
+const parseDossiers = (
+  dsPsychologists: DSPsychologist[]
+): ParsedDSPsychologist[] => {
   console.log(`Parsing ${dsPsychologists.length} psychologists from DS API`);
   return dsPsychologists.map((dsPsychologist) =>
     parseDossierMetadata(dsPsychologist)

@@ -7,6 +7,7 @@ import { addVerificationMessage } from "../services/demarchesSimplifiees/buildRe
 import filterDossiersToVerif from "../services/demarchesSimplifiees/dossiers";
 import {
   getDossiersInConstruction,
+  getNIRs,
   getPsychologistList,
 } from "../services/demarchesSimplifiees/import";
 import parseDossiers from "../services/demarchesSimplifiees/parse-psychologists";
@@ -20,7 +21,7 @@ import {
   updateState,
 } from "../services/psychologists";
 import { AdeliData } from "../types/adeli";
-import { Psychologist } from "../types/psychologist";
+import { ParsedDSPsychologist } from "../types/psychologist";
 import { urlExists } from "../utils/url-exists";
 
 const limit = pLimit(5);
@@ -97,8 +98,9 @@ export function isAdeliIdValidDepartment(
 }
 
 export const validateDossier = async (
-  dossier: Psychologist,
-  adeliData: AdeliData[]
+  dossier: ParsedDSPsychologist,
+  adeliData: AdeliData[],
+  NIRs: { id: number; value: string }[] = []
 ): Promise<string[]> => {
   let errors = [];
 
@@ -110,6 +112,15 @@ export const validateDossier = async (
     errors.push(
       `Le numéro ADELI ${dossier.adeliId} ne correspond pas au département ${dossier.department}`
     );
+  }
+
+  if (dossier.nir) {
+    const nirAlreadyUsed = NIRs.find((nir) => nir.value === dossier.nir);
+    if (nirAlreadyUsed) {
+      errors.push(
+        `Le numéro de sécurité sociale ${dossier.nir} est déjà utilisé pour le dossier ${nirAlreadyUsed.id}`
+      );
+    }
   }
 
   if (dossier.website) {
@@ -149,10 +160,13 @@ export const validateDossier = async (
   return errors;
 };
 
-const verifyDossier = async (dossier: Psychologist): Promise<void> => {
+const verifyDossier = async (
+  dossier: ParsedDSPsychologist,
+  NIRs: { id: number; value: string }[] = []
+): Promise<void> => {
   const adeliData = await requestAdeli(dossier.adeliId);
 
-  const errors = await validateDossier(dossier, adeliData);
+  const errors = await validateDossier(dossier, adeliData, NIRs);
 
   const validationDate = Intl.DateTimeFormat("fr-FR").format(new Date());
   const validationText =
@@ -173,17 +187,25 @@ const verifyDossier = async (dossier: Psychologist): Promise<void> => {
 // to "En construction".
 export const verifFolders = async (): Promise<void> => {
   try {
+    // Get all the dossiers from demarche simplifiee.
     console.log("Starting verifFolders...");
-
     const dossiersInConstruction = await getDossiersInConstruction();
     const dossiersToVerify = parseDossiers(
       filterDossiersToVerif(dossiersInConstruction)
     );
 
+    // We have to get all NIR to check if a dossier is a duplicate.
+    console.log("Getting NIRs to check for duplicates...");
+    const NIRs = (await getNIRs()).NIRs.map((e) => ({
+      id: e.number,
+      value: e.champs[0].stringValue,
+    }));
+
+    // Run verification on each dossier.
     console.log(`Verifying ${dossiersToVerify.length} dossiers`);
     await Promise.all(
       dossiersToVerify.map(async (dossier) =>
-        limit(() => verifyDossier(dossier))
+        limit(() => verifyDossier(dossier, NIRs))
       )
     );
 

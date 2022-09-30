@@ -1,8 +1,9 @@
 import { gql } from "graphql-request";
 
-import { DSResponse } from "../../types/demarcheSimplifiee";
-import { Psychologist } from "../../types/psychologist";
+import { DSResponse, DSResponseNIR } from "../../types/demarcheSimplifiee";
+import { ParsedDSPsychologist } from "../../types/psychologist";
 import config from "../config";
+import { CHAMP_NIR } from "./parse-psychologists";
 import { request } from "./request";
 
 enum DossierState {
@@ -172,6 +173,30 @@ export const requestDossiersWithAnnotations = async (
   return request(query);
 };
 
+export const requestNIR = async (
+  afterCursor: string | undefined
+): Promise<DSResponseNIR> => {
+  const paginationCondition = getWhereConditionAfterCursor(afterCursor);
+  const query = gql`
+  {
+    demarche (number: ${config.demarchesSimplifiees.id}) {
+      dossiers ${paginationCondition ? `(${paginationCondition})` : ""} {
+      	pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          number
+          champs (id: "${CHAMP_NIR}") {
+            stringValue
+          }
+        }
+      }
+    }
+  }`;
+  return request(query);
+};
+
 export const requestDossiersEnConstruction = async (
   afterCursor: string | undefined
 ): Promise<DSResponse> => {
@@ -240,7 +265,7 @@ export const requestDossiersByState = async (
 };
 
 export const addVerificationMessage = (
-  dossierId: Psychologist["demarcheSimplifieesId"],
+  dossierId: ParsedDSPsychologist["demarcheSimplifieesId"],
   message: string
 ) => {
   const writeId = config.demarchesSimplifiees.writeAccess
