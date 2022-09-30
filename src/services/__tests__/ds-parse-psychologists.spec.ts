@@ -24,6 +24,11 @@ describe("parseDossierMetadata", () => {
         label: "Faites-vous de la téléconsultation ?",
         stringValue: "true",
       },
+      {
+        id: "Q2hhbXAtMjM0NjQzNQ==",
+        label: "Numéro de sécurité sociale (NIR)", // This is not the real label.
+        stringValue: "123456",
+      },
     ],
     demandeur: { nom: "Smith", prenom: "Anne" },
     groupeInstructeur: { id: "31", label: "31 - Haute-Garonne" },
@@ -38,6 +43,7 @@ describe("parseDossierMetadata", () => {
     expect(result).toEqual({
       address: "12 Rue Neuve 31000 Toulouse",
       demarcheSimplifieesId: "1",
+      nir: "123456",
       archived: false,
       department: "31",
       displayEmail: false,
