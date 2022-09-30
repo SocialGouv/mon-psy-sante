@@ -1,7 +1,7 @@
 import { validateDossier } from "../../cron/demarchesSimplifiees";
 import getAddressCoordinates from "../../services/getAddressCoordinates";
 import { AdeliData } from "../../types/adeli";
-import { ParsedDSPsychologist, Psychologist } from "../../types/psychologist";
+import { ParsedDSPsychologist } from "../../types/psychologist";
 
 jest.mock("../../services/getAddressCoordinates");
 
