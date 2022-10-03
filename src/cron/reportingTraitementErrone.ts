@@ -122,19 +122,22 @@ export async function reportingTraitementErrone() {
     subject: "Fichiers de suivi des traitements erronés",
     textSlices: [
       "Bonjour,",
-      "Ci-joint le fichier de suivi des traitements erronés.",
+      "Ci-joint le fichier de suivi des traitements erronés. Les trois fichiers concernent les trois demandes suivantes :",
+      "1. des dossiers en construction ouverts par un instructeur CPAM exclusivement",
+      "2. des dossiers tout statut confondu cochés éligibles (”OUI”) et non éligibles (”NON”) et dont la “notification de la sélection” n’a pas été cochée",
+      "3. des dossiers en instruction coché éligibles “Oui” ou “Non” sans l’instructeur INSTRUCTEUR_FB (dans les “instructeurs”)",
     ],
     attachments: [
       {
-        filename: `construction-cpam-only.csv`,
+        filename: `1-construction-cpam-only.csv`,
         content: Buffer.from(cpamOnlyList.join("\n")),
       },
       {
-        filename: `tous-etat-notification-selection-vide.csv`,
+        filename: `2-tous-etat-notification-selection-vide.csv`,
         content: Buffer.from(notificationSelectionNotCheckedList.join("\n")),
       },
       {
-        filename: `instruction-sans-instructeur-fb.csv`,
+        filename: `3-instruction-sans-instructeur-fb.csv`,
         content: Buffer.from(withoutInstructeurFBList.join("\n")),
       },
     ],
