@@ -9,6 +9,7 @@ import {
   getOne,
   update,
 } from "../../../../services/psychologists";
+import { PUBLIC } from "../../../../types/enums/public";
 
 const updateSchema = Joi.object({
   address: Joi.string().required(),
@@ -25,9 +26,7 @@ const updateSchema = Joi.object({
   lastName: Joi.string().required(),
   phone: Joi.string().required(),
   displayPhone: Joi.boolean().required(),
-  public: Joi.string()
-    .valid("Adultes", "Adultes et enfants/adolescents", "Enfants/adolescents")
-    .required(),
+  public: Joi.string().valid(Object.values(PUBLIC)).required(),
   teleconsultation: Joi.boolean().required(),
   visible: Joi.boolean().required(),
   website: Joi.string()

@@ -78,14 +78,14 @@ export const getAll = async (filters: {
 
   if (filters[FILTER.PUBLIC]) {
     where.public = {
-      [Op.or]: [filters[FILTER.PUBLIC], PUBLIC.BOTH],
+      [Op.or]: [filters[FILTER.PUBLIC], PUBLIC.ADULTES_ADOS_ENFANTS],
     };
   }
 
   // Search on both psychologists' addresses (via coordinates and second_address_coordinates).
   if (filters[FILTER.LONGITUDE] && filters[FILTER.LATITUDE]) {
     // Get longitude and latitude from filters as `geometry(Point,4326)`.
-    const { coordinates } = await sequelize.query(
+    const { coordinates } = (await sequelize.query(
       `select ST_SetSRID(ST_MakePoint(:lon,:lat), :srid)::text as coordinates;`,
       {
         replacements: {
@@ -96,7 +96,7 @@ export const getAll = async (filters: {
         type: Sequelize.QueryTypes.SELECT,
         plain: true,
       }
-    );
+    )) as { coordinates: string };
     // Adds custom attributes about distance to the query (distance and distanceBasedOn)
     query.attributes = {
       include: [

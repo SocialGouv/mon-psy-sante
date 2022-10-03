@@ -1,19 +1,23 @@
 export enum PUBLIC {
   ADULTES = "Adultes",
-  ENFANTS = "Enfants/adolescents",
-  BOTH = "Adultes et enfants/adolescents",
+  ADULTES_ADOS = "Adultes et adolescents",
+  ADULTES_ADOS_ENFANTS = "Adultes, adolescents et enfants",
+  ENFANTS = "Enfants",
 }
 
 export const allPublicsFilters = [
   {
-    value: "Adultes et enfants/adolescents",
+    value: PUBLIC.ADULTES_ADOS_ENFANTS,
     label: "Pas de filtre",
   },
   {
-    value: "Adultes",
+    value: PUBLIC.ADULTES_ADOS,
   },
   {
-    value: "Enfants/adolescents",
+    value: PUBLIC.ADULTES,
+  },
+  {
+    value: PUBLIC.ENFANTS,
   },
 ];
 

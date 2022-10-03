@@ -30,7 +30,7 @@ const Directory = () => {
   >("");
   const [otherFilters, setOtherFilters] = useState({
     [FILTER.TELECONSULTATION]: false,
-    [FILTER.PUBLIC]: PUBLIC.BOTH,
+    [FILTER.PUBLIC]: PUBLIC.ADULTES_ADOS_ENFANTS,
   });
 
   const APPROX_50_KM = 0.5;
@@ -59,7 +59,7 @@ const Directory = () => {
     if (otherFilters[FILTER.TELECONSULTATION]) {
       query = `${query}&${FILTER.TELECONSULTATION}=true`;
     }
-    if (otherFilters[FILTER.PUBLIC] !== PUBLIC.BOTH) {
+    if (otherFilters[FILTER.PUBLIC] !== PUBLIC.ADULTES_ADOS_ENFANTS) {
       query = `${query}&${FILTER.PUBLIC}=${otherFilters[FILTER.PUBLIC]}`;
     }
     axios.get(`/api/psychologists${query}`).then((response) => {

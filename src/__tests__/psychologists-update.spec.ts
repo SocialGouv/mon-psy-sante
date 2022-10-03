@@ -32,7 +32,7 @@ describe("updateIfExists", () => {
     lastName: "strOMan",
     phone: "02 71 94 65 55",
     displayPhone: false,
-    public: "Adultes et enfants/adolescents",
+    public: "Adultes, adolescents et enfants",
     teleconsultation: true,
     visible: true,
     website: "https://grotesque-proximity.info",
@@ -103,7 +103,7 @@ describe("updateIfExists", () => {
     expect(updatedPsy.lastName).toEqual("STROMAN");
     expect(updatedPsy.phone).toEqual("02 71 94 65 55");
     expect(updatedPsy.displayPhone).toEqual(false);
-    expect(updatedPsy.public).toEqual("Adultes et enfants/adolescents");
+    expect(updatedPsy.public).toEqual("Adultes, adolescents et enfants");
     expect(updatedPsy.addressAdditional).toEqual("Mon complément d'adresse");
     expect(updatedPsy.coordinates.coordinates).toEqual([123, 456]);
     expect(updatedPsy.coordinates.type).toEqual("Point");
