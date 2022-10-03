@@ -26,7 +26,9 @@ const updateSchema = Joi.object({
   lastName: Joi.string().required(),
   phone: Joi.string().required(),
   displayPhone: Joi.boolean().required(),
-  public: Joi.string().valid(Object.values(PUBLIC)).required(),
+  public: Joi.string()
+    .valid(...Object.values(PUBLIC))
+    .required(),
   teleconsultation: Joi.boolean().required(),
   visible: Joi.boolean().required(),
   website: Joi.string()
