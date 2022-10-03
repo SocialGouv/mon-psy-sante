@@ -31,12 +31,16 @@ async function cpamOnly() {
   });
 
   return result.psychologists
-    .filter(
-      (psychologist) =>
-        psychologist.instructeurs.filter(
-          (instructeur) => !INSTRUCTEURS[instructeur.id]
-        ).length > 1
-    )
+    .filter((psychologist) => {
+      const instructeurs = psychologist.instructeurs.map((i) => i.id);
+      const instructeursWithCpamOnly = instructeurs.filter(
+        (instructeur) => !INSTRUCTEURS[instructeur]
+      );
+      return (
+        instructeursWithCpamOnly.length === instructeurs.length &&
+        instructeursWithCpamOnly.length > 0
+      );
+    })
     .map((psychologist) => {
       return psychologist.number;
     });
