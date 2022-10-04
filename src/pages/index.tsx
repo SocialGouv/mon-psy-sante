@@ -301,11 +301,16 @@ const Page = () => {
             <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--align-center">
               <div className="fr-col-12 fr-col-md-4 align-center">
                 <div className="fr-h2 fr-mb-2w">
-                  <img src="/images/icones/approval.svg" alt="" height="40" />
+                  <img
+                    src="/images/icones/approval.svg"
+                    alt=""
+                    height="50"
+                    width="50"
+                  />
                 </div>
-                <h4 className="fr-mb-1w fr-text--dark-blue">
+                <p className="fr-mb-1w fr-text--dark-blue fr-h4">
                   Pour tout le monde
-                </h4>
+                </p>
                 <p className="fr-mb-1w">À partir de 3 ans </p>
               </div>
               <div className="fr-col-12 fr-col-md-4 align-center">
@@ -313,19 +318,25 @@ const Page = () => {
                   <img
                     src="/images/icones/money_transfer.svg"
                     alt=""
-                    height="40"
+                    width="50"
+                    height="50"
                   />
                 </div>
-                <h4 className="fr-mb-1w fr-text--dark-blue">Remboursé</h4>
+                <p className="fr-mb-1w fr-text--dark-blue fr-h4">Remboursé</p>
                 <p className="fr-mb-1w">Pris en charge ou sans frais </p>
               </div>
               <div className="fr-col-12 fr-col-md-4 align-center">
                 <div className="fr-h2 fr-mb-2w">
-                  <img src="/images/icones/survey.svg" alt="" height="40" />
+                  <img
+                    src="/images/icones/survey.svg"
+                    alt=""
+                    height="50"
+                    width="50"
+                  />
                 </div>
-                <h4 className="fr-mb-1w fr-text--dark-blue">
+                <p className="fr-mb-1w fr-text--dark-blue fr-h4">
                   En présentiel et en distanciel
-                </h4>
+                </p>
                 <p className="fr-mb-1w">En fonction des psychologues</p>
                 <p className="fr-text--sm">
                   Première séance obligatoirement en présentiel
@@ -364,6 +375,7 @@ const Page = () => {
               <img
                 className="fr-mt-2w"
                 height={250}
+                width={138}
                 src="/images/children.svg"
                 alt=""
               />
@@ -421,6 +433,7 @@ const Page = () => {
                     src="/images/logo-3114.svg"
                     alt="Logo 3114, Souffrance Prévention Suicide"
                     height="65"
+                    width="260"
                   />
                 </a>
               </div>
@@ -459,6 +472,7 @@ const Page = () => {
                   <img
                     src="/images/Filsantejeunes.jpg"
                     height="130"
+                    width="203"
                     alt="Logo Fil santé jeunes"
                   />
                 </a>
@@ -515,6 +529,7 @@ const Page = () => {
                 >
                   <img
                     height="130"
+                    width="130"
                     src="/images/SOS-Amitie-logo.png"
                     alt="Logo SOS Amitié"
                   />
