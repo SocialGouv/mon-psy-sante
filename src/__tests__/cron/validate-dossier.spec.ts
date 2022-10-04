@@ -119,8 +119,8 @@ describe("validateDossier", () => {
     ${"https://example.org"} | ${true}
     ${"http://example.org"}  | ${true}
     ${"http://EXAMPLE.org"}  | ${true}
-  `("should handle website error", async ({ input, isValid }) => {
-    const errors = await validateDossier(
+  `("should handle website error $input", async ({ input, isValid }) => {
+    const { errors } = await validateDossier(
       {
         ...psy,
         website: input,
