@@ -143,7 +143,7 @@ const Directory = () => {
                 Nous mettons à jour cette liste régulièrement. N&apos;hésitez
                 pas à dézoomer sur la carte (cliquer sur -) pour voir les
                 psychologues proches de chez vous. A noter, certains
-                psychologues acceptent les séances à distance après la 1ère
+                psychologues acceptent les séances à distance après la première
                 rencontre physique
               </p>
             </div>
