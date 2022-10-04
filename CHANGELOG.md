@@ -1,3 +1,10 @@
+## [1.56.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.2...v1.56.3) (2022-10-04)
+
+
+### Bug Fixes
+
+* **admin:** allow empty website ([#254](https://github.com/SocialGouv/mon-psy-sante/issues/254)) ([86a297e](https://github.com/SocialGouv/mon-psy-sante/commit/86a297ef13e34fe089e23d0eb63c4095c9d722c2))
+
 ## [1.56.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.1...v1.56.2) (2022-09-27)
 
 
