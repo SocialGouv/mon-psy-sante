@@ -130,7 +130,7 @@ const SearchBar = ({
           </div>
         </div>
       </div>
-      <div className="fr-col-md-4 fr-col-12 fr-pr-md-4w">
+      <div className="fr-col-md-4 fr-col-12 fr-pr-md-4w fr-pt-2w fr-pt-md-0">
         <div className="fr-select-group">
           <label className="fr-label" htmlFor="select-type">
             Souhait du psychologue d&apos;accompagner des
@@ -156,7 +156,7 @@ const SearchBar = ({
           </select>
         </div>
       </div>
-      <div className="fr-col-md-4 fr-col-12">
+      <div className="fr-col-md-4 fr-col-12 fr-pt-1w fr-pt-md-0">
         <div className="fr-toggle">
           <input
             id="checkbox-teleconsultation"
