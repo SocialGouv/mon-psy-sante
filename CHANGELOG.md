@@ -1,3 +1,10 @@
+# [1.59.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.58.0...v1.59.0) (2022-10-04)
+
+
+### Features
+
+* **contact:** modification des labels pour pouvoir être lisible sur toutes les tailles d'écran (RGAA) ([#260](https://github.com/SocialGouv/mon-psy-sante/issues/260)) ([d287a3a](https://github.com/SocialGouv/mon-psy-sante/commit/d287a3a267609e1b1ee57a81fdc50cfbffd41c99))
+
 # [1.58.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.57.0...v1.58.0) (2022-10-04)
 
 
