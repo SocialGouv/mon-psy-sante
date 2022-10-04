@@ -25,7 +25,7 @@ describe("parseDossierMetadata", () => {
         stringValue: "true",
       },
       {
-        id: "Q2hhbXAtMjM0NjQzNQ==",
+        id: "Q2hhbXAtMTg0MzU2Ng==",
         label: "Numéro de sécurité sociale (NIR)", // This is not the real label.
         stringValue: "123456",
       },
