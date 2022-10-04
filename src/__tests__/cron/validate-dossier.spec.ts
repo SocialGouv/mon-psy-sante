@@ -23,23 +23,35 @@ describe("validateDossier", () => {
     },
   ];
   it("should return one error when adeliData is missing", async () => {
-    const errors = await validateDossier(psy as ParsedDSPsychologist, []);
-    expect(errors).toStrictEqual(["Numéro ADELI invalide : 44123456789"]);
+    const { errors, valids } = await validateDossier(
+      psy as ParsedDSPsychologist,
+      []
+    );
+    expect(errors).toStrictEqual([
+      "Pas numéro de sécurité sociale fourni",
+      "Adresse principale non reconnue : undefined",
+      "Numéro ADELI invalide : 44123456789",
+    ]);
+    expect(valids).toStrictEqual([
+      "Le numéro ADELI 44123456789 correspond au département 44",
+    ]);
   });
 
   it("should return error when department does not match", async () => {
-    const errors = await validateDossier(
+    const { errors, valids } = await validateDossier(
       {
         ...psy,
         department: "35",
       } as ParsedDSPsychologist,
       adeliData as AdeliData[]
     );
-    expect(errors).toEqual(
-      expect.arrayContaining([
-        "Le numéro ADELI 44123456789 ne correspond pas au département 35",
-      ])
-    );
+    expect(errors).toStrictEqual([
+      "Le numéro ADELI 44123456789 ne correspond pas au département 35",
+      "Pas numéro de sécurité sociale fourni",
+      "Adresse principale non reconnue : undefined",
+      "L'email renseigné () n'est pas valide",
+    ]);
+    expect(valids).toStrictEqual(["Numéro ADELI valide : 44123456789"]);
   });
 
   it("should return error when address is not found", async () => {
@@ -48,7 +60,7 @@ describe("validateDossier", () => {
       .mockImplementationOnce(async () => {
         return Promise.resolve(null);
       });
-    const errors = await validateDossier(
+    const { errors } = await validateDossier(
       {
         ...psy,
         address: "test",
@@ -56,9 +68,11 @@ describe("validateDossier", () => {
       adeliData as AdeliData[]
     );
 
-    expect(errors).toEqual(
-      expect.arrayContaining(["Adresse principale non reconnue : test"])
-    );
+    expect(errors).toStrictEqual([
+      "Pas numéro de sécurité sociale fourni",
+      "Adresse principale non reconnue : test",
+      "L'email renseigné () n'est pas valide",
+    ]);
   });
 
   it("should return error when secondAddress is not found", async () => {
@@ -73,7 +87,7 @@ describe("validateDossier", () => {
       .mockImplementationOnce(async () => {
         return Promise.resolve(null);
       });
-    const errors = await validateDossier(
+    const { errors } = await validateDossier(
       {
         ...psy,
         address: "valid",
@@ -129,21 +143,46 @@ describe("validateDossier", () => {
           longitude: 0,
         });
       });
-    const errors = await validateDossier(
+    const { errors, valids } = await validateDossier(
       {
         ...psy,
         address: "valid",
         secondAddress: "valid",
         email: "test@example.org",
+        nir: "1234567890123",
       } as ParsedDSPsychologist,
       adeliData as AdeliData[]
     );
     expect(getAddressCoordinates).toHaveBeenCalledTimes(2);
     expect(errors).toStrictEqual([]);
+    expect(valids).toStrictEqual([
+      "Le numéro ADELI 44123456789 correspond au département 44",
+      "Le numéro de sécurité sociale 1234567890123 n'est pas déjà utilisé",
+      "Adresse principale reconnue : valid",
+      "Adresse secondaire reconnue : valid",
+      "Numéro ADELI valide : 44123456789",
+      "L'email est valide",
+      "Données Adeli valides : nom d'exercice, prénom d'exercice et code profession",
+    ]);
+  });
+
+  it("should return error when no nir", async () => {
+    const { errors } = await validateDossier(
+      {
+        ...psy,
+      } as ParsedDSPsychologist,
+      adeliData as AdeliData[],
+      []
+    );
+    expect(errors).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("Pas numéro de sécurité sociale fourni"),
+      ])
+    );
   });
 
   it("should return error when nir already exists", async () => {
-    const errors = await validateDossier(
+    const { errors } = await validateDossier(
       {
         ...psy,
         nir: "1234567890123",

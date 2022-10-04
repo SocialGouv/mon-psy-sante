@@ -83,7 +83,7 @@ const searchDepartments = async (
           `https://geo.api.gouv.fr/departements/${x}/communes?fields=population,centre,departement,nom,codesPostaux`
         )
       )
-  );
+  ).catch(() => []);
   const communes = results
     .flatMap((result) => result.data)
     .flatMap((commune) =>

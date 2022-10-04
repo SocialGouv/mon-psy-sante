@@ -101,16 +101,17 @@ export const validateDossier = async (
   dossier: ParsedDSPsychologist,
   adeliData: AdeliData[],
   NIRs: { id: number; value: string }[] = []
-): Promise<string[]> => {
+): Promise<{ errors: string[]; valids: string[] }> => {
   let errors = [];
-
-  if (adeliData.length === 0) {
-    return [`Numéro ADELI invalide : ${dossier.adeliId}`];
-  }
+  const valids = [];
 
   if (!isAdeliIdValidDepartment(dossier.adeliId || "", dossier.department)) {
     errors.push(
       `Le numéro ADELI ${dossier.adeliId} ne correspond pas au département ${dossier.department}`
+    );
+  } else {
+    valids.push(
+      `Le numéro ADELI ${dossier.adeliId} correspond au département ${dossier.department}`
     );
   }
 
@@ -122,7 +123,13 @@ export const validateDossier = async (
       errors.push(
         `Le numéro de sécurité sociale ${dossier.nir} est déjà utilisé pour le dossier ${nirAlreadyUsed.id}`
       );
+    } else {
+      valids.push(
+        `Le numéro de sécurité sociale ${dossier.nir} n'est pas déjà utilisé`
+      );
     }
+  } else {
+    errors.push(`Pas numéro de sécurité sociale fourni`);
   }
 
   if (dossier.website) {
@@ -130,7 +137,9 @@ export const validateDossier = async (
       ? dossier.website
       : `https://${dossier.website}`;
     const isUrlValid = await urlExists(urlWithProtocol);
-    if (!isUrlValid) {
+    if (isUrlValid) {
+      valids.push(`Le site web renseigné (${dossier.website}) est valide`);
+    } else {
       errors.push(
         `Le site web renseigné (${dossier.website}) n'est pas valide`
       );
@@ -141,6 +150,8 @@ export const validateDossier = async (
   const coordinates = await getAddressCoordinates(identifier, dossier.address);
   if (!coordinates) {
     errors.push(`Adresse principale non reconnue : ${dossier.address}`);
+  } else {
+    valids.push(`Adresse principale reconnue : ${dossier.address}`);
   }
   if (dossier.secondAddress) {
     const secondCoordinates = await getAddressCoordinates(
@@ -149,17 +160,29 @@ export const validateDossier = async (
     );
     if (!secondCoordinates) {
       errors.push(`Adresse secondaire non reconnue : ${dossier.secondAddress}`);
+    } else {
+      valids.push(`Adresse secondaire reconnue : ${dossier.secondAddress}`);
     }
   }
 
-  const psychologistValidation = validatePsychologist(dossier, adeliData);
-  if (psychologistValidation.success === false) {
-    errors = errors.concat(
-      psychologistValidation.error.issues.map(({ message }) => message)
-    );
-  }
+  if (adeliData.length === 0) {
+    errors.push(`Numéro ADELI invalide : ${dossier.adeliId}`);
+  } else {
+    valids.push(`Numéro ADELI valide : ${dossier.adeliId}`);
+    const psychologistValidation = validatePsychologist(dossier, adeliData);
 
-  return errors;
+    if (psychologistValidation.success === false) {
+      errors = errors.concat(
+        psychologistValidation.error.issues.map(({ message }) => message)
+      );
+    } else {
+      valids.push(`L'email est valide`);
+      valids.push(
+        `Données Adeli valides : nom d'exercice, prénom d'exercice et code profession`
+      );
+    }
+  }
+  return { errors, valids };
 };
 
 const verifyDossier = async (
@@ -168,7 +191,7 @@ const verifyDossier = async (
 ): Promise<void> => {
   const adeliData = await requestAdeli(dossier.adeliId);
 
-  const errors = await validateDossier(dossier, adeliData, NIRs);
+  const { errors, valids } = await validateDossier(dossier, adeliData, NIRs);
 
   const validationDate = Intl.DateTimeFormat("fr-FR").format(new Date());
   const validationText =
@@ -177,6 +200,10 @@ const verifyDossier = async (
       : `Validation auto erreur : ${validationDate}\n`.concat(
           ...errors.map((error) => `- ${error} \n`)
         );
+  if (valids.length) {
+    validationText.concat(...valids.map((msg) => `- ${msg} \n`));
+  }
+
   return await addVerificationMessage(
     dossier.demarcheSimplifieesId,
     validationText

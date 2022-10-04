@@ -108,6 +108,9 @@ const Directory = () => {
             longitude: coordinates[0],
           });
           setGeoLoading(false);
+        })
+        .catch(() => {
+          setGeoLoading(false);
         });
     } else if (Array.isArray(positionFilter)) {
       setCoords({
