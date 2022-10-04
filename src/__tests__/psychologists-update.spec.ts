@@ -130,4 +130,27 @@ describe("updateIfExists", () => {
     await updateIfExists("1", "01", { ...valideInput, languages: "" });
     await expectUpdatedPsy(null);
   });
+
+  it("should empty website when website is empty", async () => {
+    async function expectUpdatedPsy(expected) {
+      const updatedPsy = (await models.Psychologist.findOne({
+        where: { email: valideInput.email },
+      })) as unknown as Psychologist;
+      expect(updatedPsy.website).toEqual(expected);
+    }
+    getAddressCoordinatesStub.returns({ latitude: 456, longitude: 123 });
+    // Should add website.
+    await updateIfExists("1", "01", {
+      ...valideInput,
+      website: "https://example.org",
+    });
+    await expectUpdatedPsy("https://example.org");
+    // Should not alter website when nothing is provided.
+    const { website, ...inputWithoutWebsite } = valideInput;
+    await updateIfExists("1", "01", inputWithoutWebsite);
+    await expectUpdatedPsy("https://example.org");
+    // Should empty website when empty string is provided.
+    await updateIfExists("1", "01", { ...valideInput, website: "" });
+    await expectUpdatedPsy(null);
+  });
 });

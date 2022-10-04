@@ -82,8 +82,8 @@ describe("formatPsychologist", () => {
 
   it.each`
     input                  | resultValue
+    ${null}                | ${null}
     ${undefined}           | ${undefined}
-    ${null}                | ${undefined}
     ${"non"}               | ${undefined}
     ${"doctolib"}          | ${undefined}
     ${"doctolib."}         | ${undefined}
