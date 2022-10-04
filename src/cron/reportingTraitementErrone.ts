@@ -22,7 +22,7 @@ const DOSSIER_ELIGIBLE = "Q2hhbXAtMTg0NDM5NQ==";
 const NOTIFICATION_SELECTION = "Q2hhbXAtMjMyMzA2Mg==";
 
 // Original request: "des dossiers en construction ouverts par un instructeur CPAM exclusivement"
-async function cpamOnly() {
+export async function cpamOnly() {
   const result = await getAllPsychologistList(
     requestDossiersEnConstruction
   ).catch((e) => {
@@ -47,7 +47,7 @@ async function cpamOnly() {
 }
 
 // Original request: "des dossiers tout statut confondu cochés éligibles (”OUI”) et non éligibles (”NON”) et dont la “notification de la sélection” n’a pas été cochée"
-async function notificationSelectionNotChecked() {
+export async function notificationSelectionNotChecked() {
   const result = await getAllPsychologistList(requestDossiersAllState).catch(
     (e) => {
       console.log(e);
@@ -77,7 +77,7 @@ async function notificationSelectionNotChecked() {
 }
 
 // Original request: "des dossiers en instruction coché éligibles “Oui” ou “Non” sans l’instructeur INSTRUCTEUR_FB (dans les “instructeurs”)"
-async function withoutInstructeurFB() {
+export async function withoutInstructeurFB() {
   const result = await getAllPsychologistList(
     requestDossiersEnInstruction
   ).catch((e) => {
