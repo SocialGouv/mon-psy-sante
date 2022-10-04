@@ -480,12 +480,15 @@ const Page = () => {
                     target="_blank"
                     href="https://www.filsantejeunes.com/tchat-individuel"
                     rel="noreferrer"
+                    className="fr-pt-4w"
                   >
                     Chater sur Fil Santé Jeunes
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+33800235236">Appeler Fil Santé Jeunes</a>
+                  <a href="tel:+33800235236" className="fr-pt-4w">
+                    Appeler Fil Santé Jeunes
+                  </a>
                 </li>
 
                 <li>
@@ -493,6 +496,7 @@ const Page = () => {
                     target="_blank"
                     href="https://www.acce-o.fr/client/fil-sante-jeunes"
                     rel="noreferrer"
+                    className="fr-pt-4w"
                   >
                     Ligne pour les sourds et malentendants
                   </a>
@@ -528,13 +532,16 @@ const Page = () => {
               </p>
               <ul>
                 <li>
-                  <a href="tel:+33972394050">Appeler SOS Amitié</a>
+                  <a href="tel:+33972394050" className="fr-pt-4w">
+                    Appeler SOS Amitié
+                  </a>
                 </li>
                 <li>
                   <a
                     href="https://www.sos-amitie.com/chat/"
                     target="_blank"
                     rel="noreferrer"
+                    className="fr-pt-4w"
                   >
                     Chater sur SOS Amitié
                   </a>
@@ -544,6 +551,7 @@ const Page = () => {
                     href="https://www.sos-amitie.com/messagerie/"
                     target="_blank"
                     rel="noreferrer"
+                    className="fr-pt-4w"
                   >
                     Contacter par email
                   </a>

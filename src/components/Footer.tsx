@@ -85,6 +85,7 @@ const Footer = () => (
                 href="https://github.com/socialgouv/mon-psy-sante/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="fr-pt-4w"
               >
                 Voir le code source
               </a>
@@ -92,6 +93,7 @@ const Footer = () => (
               <a
                 href="https://storyset.com/work"
                 target="_blank"
+                className="fr-pt-4w"
                 rel="noreferrer nofollow noopener"
               >
                 Freepik Storyset
