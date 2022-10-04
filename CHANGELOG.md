@@ -1,3 +1,10 @@
+# [1.57.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.4...v1.57.0) (2022-10-04)
+
+
+### Features
+
+* **cron:** check nir duplicates on import and add a script to check duplicates manually ([#255](https://github.com/SocialGouv/mon-psy-sante/issues/255)) ([2ad59ea](https://github.com/SocialGouv/mon-psy-sante/commit/2ad59ea66436ca8ecc1a0f30b2c3832bd03077ab))
+
 ## [1.56.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.3...v1.56.4) (2022-10-04)
 
 
