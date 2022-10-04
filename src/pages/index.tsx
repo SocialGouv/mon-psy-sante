@@ -134,9 +134,9 @@ const Page = () => {
                 <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
                   <div className="fr-card__body">
                     <div className="fr-card__content">
-                      <h4 className="fr-card__title fr-text--dark-blue">
+                      <h3 className="fr-card__title fr-text--dark-blue">
                         1. Rencontrez un médecin
-                      </h4>
+                      </h3>
                       <p className="fr-card__desc fr-text--md">
                         Le médecin échange avec vous pour s’assurer que MonPsy
                         est adapté à votre situation. Vous pouvez consulter
@@ -152,9 +152,9 @@ const Page = () => {
                 <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
                   <div className="fr-card__body">
                     <div className="fr-card__content">
-                      <h4 className="fr-card__title fr-text--dark-blue">
+                      <h3 className="fr-card__title fr-text--dark-blue">
                         2. Prenez rendez-vous avec un psychologue partenaire
-                      </h4>
+                      </h3>
                       <p className="fr-card__desc fr-text--md">
                         Commencez vos 8 séances par an en présentiel ou à
                         distance. La première séance doit obligatoirement être
@@ -176,9 +176,9 @@ const Page = () => {
                 <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
                   <div className="fr-card__body">
                     <div className="fr-card__content">
-                      <h4 className="fr-card__title fr-text--dark-blue">
+                      <h3 className="fr-card__title fr-text--dark-blue">
                         3. Faites vous rembourser
-                      </h4>
+                      </h3>
                       <p className="fr-card__desc fr-text--md">
                         L’Assurance Maladie et votre mutuelle vous remboursent.
                       </p>
@@ -190,9 +190,9 @@ const Page = () => {
                 <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
                   <div className="fr-card__body">
                     <div className="fr-card__content">
-                      <h4 className="fr-card__title fr-text--dark-blue">
+                      <h3 className="fr-card__title fr-text--dark-blue">
                         3. Ou n’avancez aucun frais
-                      </h4>
+                      </h3>
                       <p className="fr-card__desc fr-text--md">
                         Si vous êtes éligible au tiers payant obligatoire. (Voir
                         conditions{" "}
@@ -217,9 +217,9 @@ const Page = () => {
                 <h2 id="combien-ca-coute">Combien ça coûte&nbsp;?</h2>
               </div>
               <div className="fr-col-12 fr-col-md-6 fr-p-4w">
-                <h4 className="fr-text--dark-blue">
+                <h3 className="fr-text--dark-blue">
                   Tarifs des séances des psychologues partenaires
-                </h4>
+                </h3>
                 <ul className="no-bullet">
                   <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
                     &nbsp;<strong>Première séance (évaluation)</strong>&nbsp;:
@@ -229,7 +229,7 @@ const Page = () => {
                     &nbsp;<strong>Les séances de suivi</strong>&nbsp;: 30 €
                   </li>
                 </ul>
-                <h4 className="fr-text--dark-blue">Prise en charge</h4>
+                <h3 className="fr-text--dark-blue">Prise en charge</h3>
                 <ul className="no-bullet">
                   <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
                     &nbsp;60 % par l’Assurance Maladie
@@ -238,9 +238,9 @@ const Page = () => {
                     &nbsp;40 % par la complémentaire santé ou la mutuelle
                   </li>
                 </ul>
-                <h5 className="fr-text--dark-blue fr-h6 fr-mb-1w fr-mt-3w">
+                <h4 className="fr-text--dark-blue fr-h6 fr-mb-1w fr-mt-3w">
                   Comment s’effectuent les remboursements&nbsp;?
-                </h5>
+                </h4>
                 <p className="fr-text--dark-blue">
                   Envoyez votre feuille de soins et le courrier d’adressage de
                   votre médecin à votre organisme d’Assurance Maladie (après
@@ -248,12 +248,12 @@ const Page = () => {
                 </p>
               </div>
               <div className="fr-col-12 fr-col-md-6 fr-bg--tilleul-light fr-p-4w">
-                <h4 className="fr-text--dark-blue">
+                <h3 className="fr-text--dark-blue">
                   Qui peut bénéficier du Tiers payant obligatoire&nbsp;?
-                </h4>
-                <h5 className="fr-h6">
+                </h3>
+                <h4 className="fr-h6">
                   Les personnes qui ont une souffrance en lien avec&nbsp;:
-                </h5>
+                </h4>
                 <ul className="no-bullet">
                   <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
                     &nbsp;Une Affection Longue Durée (ALD)
@@ -266,7 +266,7 @@ const Page = () => {
                     (AT-MP)
                   </li>
                 </ul>
-                <h5 className="fr-h6">Mais aussi…</h5>
+                <h4 className="fr-h6">Mais aussi…</h4>
                 <ul className="no-bullet">
                   <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
                     &nbsp;Les bénéficiaires de la Complémentaire Santé Solidaire
@@ -301,11 +301,16 @@ const Page = () => {
             <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--align-center">
               <div className="fr-col-12 fr-col-md-4 align-center">
                 <div className="fr-h2 fr-mb-2w">
-                  <img src="/images/icones/approval.svg" alt="" height="40" />
+                  <img
+                    src="/images/icones/approval.svg"
+                    alt=""
+                    height="50"
+                    width="50"
+                  />
                 </div>
-                <h5 className="fr-mb-1w fr-text--dark-blue">
+                <p className="fr-mb-1w fr-text--dark-blue fr-h4">
                   Pour tout le monde
-                </h5>
+                </p>
                 <p className="fr-mb-1w">À partir de 3 ans </p>
               </div>
               <div className="fr-col-12 fr-col-md-4 align-center">
@@ -313,19 +318,25 @@ const Page = () => {
                   <img
                     src="/images/icones/money_transfer.svg"
                     alt=""
-                    height="40"
+                    width="50"
+                    height="50"
                   />
                 </div>
-                <h5 className="fr-mb-1w fr-text--dark-blue">Remboursé</h5>
+                <p className="fr-mb-1w fr-text--dark-blue fr-h4">Remboursé</p>
                 <p className="fr-mb-1w">Pris en charge ou sans frais </p>
               </div>
               <div className="fr-col-12 fr-col-md-4 align-center">
                 <div className="fr-h2 fr-mb-2w">
-                  <img src="/images/icones/survey.svg" alt="" height="40" />
+                  <img
+                    src="/images/icones/survey.svg"
+                    alt=""
+                    height="50"
+                    width="50"
+                  />
                 </div>
-                <h5 className="fr-mb-1w fr-text--dark-blue">
+                <p className="fr-mb-1w fr-text--dark-blue fr-h4">
                   En présentiel et en distanciel
-                </h5>
+                </p>
                 <p className="fr-mb-1w">En fonction des psychologues</p>
                 <p className="fr-text--sm">
                   Première séance obligatoirement en présentiel
@@ -364,6 +375,7 @@ const Page = () => {
               <img
                 className="fr-mt-2w"
                 height={250}
+                width={138}
                 src="/images/children.svg"
                 alt=""
               />
@@ -421,6 +433,7 @@ const Page = () => {
                     src="/images/logo-3114.svg"
                     alt="Logo 3114, Souffrance Prévention Suicide"
                     height="65"
+                    width="260"
                   />
                 </a>
               </div>
@@ -459,6 +472,7 @@ const Page = () => {
                   <img
                     src="/images/Filsantejeunes.jpg"
                     height="130"
+                    width="203"
                     alt="Logo Fil santé jeunes"
                   />
                 </a>
@@ -481,12 +495,15 @@ const Page = () => {
                     target="_blank"
                     href="https://www.filsantejeunes.com/tchat-individuel"
                     rel="noreferrer"
+                    className="fr-pt-4w"
                   >
                     Chater sur Fil Santé Jeunes
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+33800235236">Appeler Fil Santé Jeunes</a>
+                  <a href="tel:+33800235236" className="fr-pt-4w">
+                    Appeler Fil Santé Jeunes
+                  </a>
                 </li>
 
                 <li>
@@ -494,6 +511,7 @@ const Page = () => {
                     target="_blank"
                     href="https://www.acce-o.fr/client/fil-sante-jeunes"
                     rel="noreferrer"
+                    className="fr-pt-4w"
                   >
                     Ligne pour les sourds et malentendants
                   </a>
@@ -511,6 +529,7 @@ const Page = () => {
                 >
                   <img
                     height="130"
+                    width="130"
                     src="/images/SOS-Amitie-logo.png"
                     alt="Logo SOS Amitié"
                   />
@@ -529,13 +548,16 @@ const Page = () => {
               </p>
               <ul>
                 <li>
-                  <a href="tel:+33972394050">Appeler SOS Amitié</a>
+                  <a href="tel:+33972394050" className="fr-pt-4w">
+                    Appeler SOS Amitié
+                  </a>
                 </li>
                 <li>
                   <a
                     href="https://www.sos-amitie.com/chat/"
                     target="_blank"
                     rel="noreferrer"
+                    className="fr-pt-4w"
                   >
                     Chater sur SOS Amitié
                   </a>
@@ -545,6 +567,7 @@ const Page = () => {
                     href="https://www.sos-amitie.com/messagerie/"
                     target="_blank"
                     rel="noreferrer"
+                    className="fr-pt-4w"
                   >
                     Contacter par email
                   </a>

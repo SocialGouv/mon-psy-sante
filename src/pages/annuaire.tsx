@@ -20,7 +20,7 @@ const Annuaire = () => (
       title="Annuaire des psychologues partenaires | MonPsy"
       description="Accéder rapidement aux coordonnées des psychologues partenaires du dispositif MonPsy."
     />
-    <div className="fr-container">
+    <div className="fr-container-fluid">
       <Directory />
     </div>
   </>

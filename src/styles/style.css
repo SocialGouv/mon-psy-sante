@@ -22,11 +22,6 @@
   background-color: var(--green-tilleul-verveine-975);
 }
 
-.fr-bg--dark {
-  background-color: var(--pink-tuile-main-556);
-  color: white;
-}
-
 .fr-text--dark-blue {
   color: var(--blue-france-113);
 }

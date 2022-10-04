@@ -8,7 +8,7 @@ import { PUBLIC } from "../../types/enums/public";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 import Spinner from "../Spinner";
 import { ResultWrapper } from "./Directory.styles";
-import Header from "./Header";
+import Footer from "./Footer";
 import Results from "./Results";
 import SearchBar from "./SearchBar";
 
@@ -119,48 +119,52 @@ const Directory = () => {
 
   return (
     <>
-      <Header />
+      <div className="fr-container fr-pt-7w">
+        <h1>Trouver un psychologue partenaire près de chez soi.</h1>
 
-      <SearchBar
-        positionFilter={positionFilter}
-        setPositionFilter={setPositionFilter}
-        otherFilters={otherFilters}
-        setOtherFilters={setOtherFilters}
-        coords={coords}
-        setCoords={setCoords}
-        geoLoading={geoLoading}
-        setGeoLoading={setGeoLoading}
-        loadPsychologists={loadPsychologists}
-      />
-      <ResultWrapper className="fr-mb-8w">
-        {noPsychologist && (
-          <div className="fr-alert fr-alert--info fr-mb-4w">
-            <p className="fr-alert__title">
-              Pas encore de psychologues partenaires dans cette zone
-            </p>
-            <p>
-              Nous mettons à jour cette liste régulièrement. N&apos;hésitez pas
-              à dézoomer sur la carte (cliquer sur -) pour voir les psychologues
-              proches de chez vous. A noter, certains psychologues acceptent les
-              séances à distance après la 1ère rencontre physique
-            </p>
-          </div>
-        )}
-        {psychologists?.length > 0 && (
-          <Results
-            psychologists={psychologists}
-            resultsRef={resultsRef}
-            psychologistsRefs={psychologistsRefs}
-            selectedPsychologist={selectedPsychologist}
-            setSelectedPsychologist={setSelectedPsychologist}
-            mapCenter={mapCenter}
-            setMapCenter={setMapCenter}
-            mapZoom={mapZoom}
-            setMapZoom={setMapZoom}
-          />
-        )}
-        {isLoading && <Spinner />}
-      </ResultWrapper>
+        <SearchBar
+          positionFilter={positionFilter}
+          setPositionFilter={setPositionFilter}
+          otherFilters={otherFilters}
+          setOtherFilters={setOtherFilters}
+          coords={coords}
+          setCoords={setCoords}
+          geoLoading={geoLoading}
+          setGeoLoading={setGeoLoading}
+          loadPsychologists={loadPsychologists}
+        />
+        <ResultWrapper className="fr-mb-8w">
+          {noPsychologist && (
+            <div className="fr-alert fr-alert--info fr-mb-4w" role="status">
+              <p className="fr-alert__title">
+                Pas encore de psychologues partenaires dans cette zone
+              </p>
+              <p>
+                Nous mettons à jour cette liste régulièrement. N&apos;hésitez
+                pas à dézoomer sur la carte (cliquer sur -) pour voir les
+                psychologues proches de chez vous. A noter, certains
+                psychologues acceptent les séances à distance après la première
+                rencontre physique
+              </p>
+            </div>
+          )}
+          {psychologists?.length > 0 && (
+            <Results
+              psychologists={psychologists}
+              resultsRef={resultsRef}
+              psychologistsRefs={psychologistsRefs}
+              selectedPsychologist={selectedPsychologist}
+              setSelectedPsychologist={setSelectedPsychologist}
+              mapCenter={mapCenter}
+              setMapCenter={setMapCenter}
+              mapZoom={mapZoom}
+              setMapZoom={setMapZoom}
+            />
+          )}
+          {isLoading && <Spinner />}
+        </ResultWrapper>
+      </div>
+      <Footer />
     </>
   );
 };
