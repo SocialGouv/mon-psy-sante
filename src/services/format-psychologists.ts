@@ -42,10 +42,13 @@ const FORMATTERS = {
       ? undefined
       : value.toLowerCase(),
   languages: formatLanguage,
-  website: (value) =>
-    websiteSchema.validate({ website: value }).error
+  website: (value) => {
+    if (value === undefined) return;
+    if (!value) return null;
+    return websiteSchema.validate({ website: value }).error
       ? undefined
-      : value.toLowerCase(),
+      : value.toLowerCase();
+  },
 };
 const parseChampValue = (field, value) =>
   FORMATTERS[field] ? FORMATTERS[field](value) : value;
