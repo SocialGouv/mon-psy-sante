@@ -57,7 +57,7 @@ const Footer = () => {
                     aria-hidden="true"
                   />{" "}
                   Si vous n’avancez pas les frais en raison de soins en lien
-                  avec une maladie, une maternité ou un AT-MP, vous apportez
+                  avec une maladie, une maternité ou un AT-MP, vous apportez{" "}
                   <strong>votre attestation de droits à jour</strong>.
                 </li>
                 <li>
