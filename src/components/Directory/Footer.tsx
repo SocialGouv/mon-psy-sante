@@ -66,8 +66,8 @@ const Footer = () => {
                     aria-hidden="true"
                   />{" "}
                   Certains psychologues peuvent réaliser des séances de suivi à
-                  distance excepté la première séance d’entretien initial réalisée{" "}
-                  <strong>uniquement en présentiel</strong>.
+                  distance excepté la première séance d’entretien initial
+                  réalisée <strong>uniquement en présentiel</strong>.
                 </li>
               </ul>
             </div>
