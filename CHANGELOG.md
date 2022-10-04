@@ -1,3 +1,10 @@
+## [1.56.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.3...v1.56.4) (2022-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency graphql-request to v5 ([#243](https://github.com/SocialGouv/mon-psy-sante/issues/243)) ([fd3aa7f](https://github.com/SocialGouv/mon-psy-sante/commit/fd3aa7f8e4a25c9db7bc9c174949010993514334))
+
 ## [1.56.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.2...v1.56.3) (2022-10-04)
 
 
