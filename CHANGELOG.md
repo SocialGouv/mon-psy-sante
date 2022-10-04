@@ -1,3 +1,31 @@
+## [1.60.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.60.0...v1.60.1) (2022-10-04)
+
+
+### Bug Fixes
+
+* cahmp NIR ([22d83d3](https://github.com/SocialGouv/mon-psy-sante/commit/22d83d3bff0bf67fde14dec2aa6a3c00b0339a7d))
+
+# [1.60.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.59.0...v1.60.0) (2022-10-04)
+
+
+### Features
+
+* **annuaire:** redesign ([#253](https://github.com/SocialGouv/mon-psy-sante/issues/253)) ([32e91bc](https://github.com/SocialGouv/mon-psy-sante/commit/32e91bc09738445a3678ee7c0b83de6d56b50be5))
+
+# [1.59.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.58.0...v1.59.0) (2022-10-04)
+
+
+### Features
+
+* **contact:** modification des labels pour pouvoir être lisible sur toutes les tailles d'écran (RGAA) ([#260](https://github.com/SocialGouv/mon-psy-sante/issues/260)) ([d287a3a](https://github.com/SocialGouv/mon-psy-sante/commit/d287a3a267609e1b1ee57a81fdc50cfbffd41c99))
+
+# [1.58.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.57.0...v1.58.0) (2022-10-04)
+
+
+### Features
+
+* **cron:** traitement errone ([#258](https://github.com/SocialGouv/mon-psy-sante/issues/258)) ([4ab79b9](https://github.com/SocialGouv/mon-psy-sante/commit/4ab79b9b43ae40dd7517987ae732027e241fde86))
+
 # [1.57.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.4...v1.57.0) (2022-10-04)
 
 

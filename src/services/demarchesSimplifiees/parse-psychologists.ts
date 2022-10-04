@@ -11,7 +11,7 @@ const extractDepartmentNumber = (dep: string): string => {
 };
 const CHAMPS = JSON.parse(config.demarchesSimplifiees.champs);
 const CHAMP_LANGUAGE_OTHER = "Q2hhbXAtMjM0NjQzNA==";
-export const CHAMP_NIR = "Q2hhbXAtMjM0NjQzNQ==";
+export const CHAMP_NIR = "Q2hhbXAtMTg0MzU2Ng==";
 
 const PARSERS = {
   displayEmail: (value) => value === "true",

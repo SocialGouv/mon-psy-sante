@@ -219,16 +219,33 @@ export const requestDossiersEnInstruction = async (
   return requestDossiersByState(DossierState.enInstruction, afterCursor);
 };
 
+export const requestDossiersAccepte = async (
+  afterCursor: string | undefined
+): Promise<DSResponse> => {
+  return requestDossiersByState(DossierState.accepte, afterCursor);
+};
+
+export const requestDossiersAllState = async (
+  afterCursor: string | undefined
+): Promise<DSResponse> => {
+  return requestDossiersByState(null, afterCursor);
+};
+
 export const requestDossiersByState = async (
-  state: DossierState,
+  state: DossierState | null,
   afterCursor: string | undefined,
   extraInfos?: string | undefined
 ): Promise<DSResponse> => {
   const paginationCondition = getWhereConditionAfterCursor(afterCursor);
+  const stateCondition = state ? `state: ${state}` : "";
   const query = gql`
   {
     demarche (number: ${config.demarchesSimplifiees.id}) {
-      dossiers (state: ${state}${paginationCondition}) {
+      dossiers ${
+        stateCondition || paginationCondition
+          ? "(" + stateCondition + paginationCondition + ")"
+          : ""
+      } {
         pageInfo {
           hasNextPage
           endCursor

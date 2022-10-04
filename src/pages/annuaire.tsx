@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import Script from "next/script";
 import React from "react";
 
 import HeadTag from "../components/HeadTag";
@@ -12,14 +13,14 @@ const Annuaire = () => (
   <>
     <Head>
       <link rel="stylesheet" href="/css/leaflet.css" />
-      <script src="/scripts/leaflet.js" async />
       <meta name="robots" content="noindex" />
     </Head>
+    <Script src="/scripts/leaflet.js" async />
     <HeadTag
       title="Annuaire des psychologues partenaires | MonPsy"
       description="Accéder rapidement aux coordonnées des psychologues partenaires du dispositif MonPsy."
     />
-    <div className="fr-container">
+    <div className="fr-container-fluid">
       <Directory />
     </div>
   </>

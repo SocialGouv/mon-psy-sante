@@ -314,7 +314,7 @@ function PatientCard({ title, image, children }) {
         <div className="fr-card fr-card--no-arrow fr-bg--tilleul-light">
           <div className="fr-card__body">
             <div className="fr-card__content">
-              <h4 className="fr-card__title fr-text--dark-blue">{title}</h4>
+              <h3 className="fr-card__title fr-text--dark-blue">{title}</h3>
               <div className="fr-card__desc fr-text--md">{children}</div>
             </div>
           </div>
