@@ -24,12 +24,17 @@ export interface Psychologist {
   secondAddressCoordinates: CoordinatesPostgis;
   department: string;
   state: string;
-  adeliId: string;
-  demarcheSimplifieesId?: string;
   // These two parameters are dynamically generated
   // by API when querying via latitude and longitude.
   distance?: number;
   distanceBasedOn?: DistanceBasedOn;
+}
+
+// These values are only used for check purpose (from DS), and should not be imported.
+export interface ParsedDSPsychologist extends Psychologist {
+  nir: string;
+  adeliId: string;
+  demarcheSimplifieesId: string;
 }
 
 export interface DSPsychologist {

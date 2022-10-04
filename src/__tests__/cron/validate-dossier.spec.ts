@@ -1,12 +1,12 @@
 import { validateDossier } from "../../cron/demarchesSimplifiees";
 import getAddressCoordinates from "../../services/getAddressCoordinates";
 import { AdeliData } from "../../types/adeli";
-import { Psychologist } from "../../types/psychologist";
+import { ParsedDSPsychologist } from "../../types/psychologist";
 
 jest.mock("../../services/getAddressCoordinates");
 
 describe("validateDossier", () => {
-  const psy: Partial<Psychologist> = {
+  const psy: Partial<ParsedDSPsychologist> = {
     id: 1,
     firstName: "John",
     lastName: "Doe",
@@ -23,7 +23,7 @@ describe("validateDossier", () => {
     },
   ];
   it("should return one error when adeliData is missing", async () => {
-    const errors = await validateDossier(psy as Psychologist, []);
+    const errors = await validateDossier(psy as ParsedDSPsychologist, []);
     expect(errors).toStrictEqual(["Numéro ADELI invalide : 44123456789"]);
   });
 
@@ -32,7 +32,7 @@ describe("validateDossier", () => {
       {
         ...psy,
         department: "35",
-      } as Psychologist,
+      } as ParsedDSPsychologist,
       adeliData as AdeliData[]
     );
     expect(errors).toEqual(
@@ -52,7 +52,7 @@ describe("validateDossier", () => {
       {
         ...psy,
         address: "test",
-      } as Psychologist,
+      } as ParsedDSPsychologist,
       adeliData as AdeliData[]
     );
 
@@ -78,7 +78,7 @@ describe("validateDossier", () => {
         ...psy,
         address: "valid",
         secondAddress: "invalid",
-      } as Psychologist,
+      } as ParsedDSPsychologist,
       adeliData as AdeliData[]
     );
     expect(getAddressCoordinates).toHaveBeenCalledTimes(2);
@@ -110,7 +110,7 @@ describe("validateDossier", () => {
       {
         ...psy,
         website: input,
-      } as Psychologist,
+      } as ParsedDSPsychologist,
       adeliData as AdeliData[]
     );
     expect(errors).toEqual(
@@ -135,10 +135,61 @@ describe("validateDossier", () => {
         address: "valid",
         secondAddress: "valid",
         email: "test@example.org",
-      } as Psychologist,
+      } as ParsedDSPsychologist,
       adeliData as AdeliData[]
     );
     expect(getAddressCoordinates).toHaveBeenCalledTimes(2);
     expect(errors).toStrictEqual([]);
+  });
+
+  it("should return error when nir already exists", async () => {
+    const errors = await validateDossier(
+      {
+        ...psy,
+        nir: "1234567890123",
+      } as ParsedDSPsychologist,
+      adeliData as AdeliData[],
+      [{ id: 12345, value: "1234567890123" }]
+    );
+    expect(errors).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("numéro de sécurité sociale"),
+      ])
+    );
+  });
+
+  it("should not return error when nir already exists for same Psychologist", async () => {
+    const errors = await validateDossier(
+      {
+        ...psy,
+        nir: "1234567890123",
+      } as ParsedDSPsychologist,
+      adeliData as AdeliData[],
+      [{ id: 1, value: "1234567890123" }]
+    );
+    expect(errors).toEqual(
+      expect.not.arrayContaining([
+        expect.stringContaining("numéro de sécurité sociale"),
+      ])
+    );
+  });
+
+  it("should not return error when nir does not exists", async () => {
+    const errors = await validateDossier(
+      {
+        ...psy,
+        nir: "1234567890123",
+      } as ParsedDSPsychologist,
+      adeliData as AdeliData[],
+      [
+        { id: 123, value: "123" },
+        { id: 456, value: "456" },
+      ]
+    );
+    expect(errors).toEqual(
+      expect.not.arrayContaining([
+        expect.stringContaining("numéro de sécurité sociale"),
+      ])
+    );
   });
 });
