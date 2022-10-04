@@ -197,11 +197,11 @@ const verifyDossier = async (
   let validationText =
     errors.length === 0
       ? `Validation auto OK : ${validationDate}`
-      : `Validation auto erreur : ${validationDate}\n`.concat(
+      : `❌ Validation auto erreur(s) : ${validationDate}\n`.concat(
           ...errors.map((error) => `- ${error} \n`)
         );
   if (valids.length) {
-    validationText += validationText.concat(
+    validationText += "\n✅ Éléments valides : \n".concat(
       ...valids.map((msg) => `- ${msg} \n`)
     );
   }
