@@ -41,7 +41,7 @@ describe("Contact controller", () => {
     sinon.assert.calledWith(
       sendMailStub,
       process.env.SUPPORT_MAIL,
-      "Psychologue - Question relative à mon éligibilité",
+      "Psychologue - Éligibilité",
       "Hello you !<br/><br/>Jane Dane -- 06 - Alpes-Maritimes<br/>jane.dane@msp.fr"
     );
   });
