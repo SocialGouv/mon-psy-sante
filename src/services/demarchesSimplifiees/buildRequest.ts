@@ -203,7 +203,7 @@ export const requestDossiersAccepte = async (
 export const requestDossiersAllState = async (
   afterCursor: string | undefined
 ): Promise<DSResponse> => {
-  return requestDossiersByState(DossierState.accepte, afterCursor);
+  return requestDossiersByState(null, afterCursor);
 };
 
 export const requestDossiersByState = async (
