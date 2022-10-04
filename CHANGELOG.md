@@ -1,3 +1,10 @@
+# [1.58.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.57.0...v1.58.0) (2022-10-04)
+
+
+### Features
+
+* **cron:** traitement errone ([#258](https://github.com/SocialGouv/mon-psy-sante/issues/258)) ([4ab79b9](https://github.com/SocialGouv/mon-psy-sante/commit/4ab79b9b43ae40dd7517987ae732027e241fde86))
+
 # [1.57.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.56.4...v1.57.0) (2022-10-04)
 
 
