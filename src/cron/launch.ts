@@ -5,6 +5,7 @@ import { reportingDossierEligible } from "./reportingDossierEligible";
 import { reportingDossierRefuse } from "./reportingDossierRefuse";
 import { reportingExpertWeekly } from "./reportingExpertWeekly";
 import { reportingStatsByDepartment } from "./reportingStatsByDepartment";
+import { reportingTraitementErrone } from "./reportingTraitementErrone";
 
 const runJob = async (job): Promise<void> => {
   const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
@@ -33,6 +34,7 @@ const cronJobs = {
   reportingExpertWeekly,
   reportingDossierEligible,
   reportingDossierRefuse,
+  reportingTraitementErrone,
 };
 
 const jobName = process.argv[2];
