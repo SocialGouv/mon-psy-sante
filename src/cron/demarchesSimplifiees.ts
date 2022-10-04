@@ -194,14 +194,16 @@ const verifyDossier = async (
   const { errors, valids } = await validateDossier(dossier, adeliData, NIRs);
 
   const validationDate = Intl.DateTimeFormat("fr-FR").format(new Date());
-  const validationText =
+  let validationText =
     errors.length === 0
       ? `Validation auto OK : ${validationDate}`
       : `Validation auto erreur : ${validationDate}\n`.concat(
           ...errors.map((error) => `- ${error} \n`)
         );
   if (valids.length) {
-    validationText.concat(...valids.map((msg) => `- ${msg} \n`));
+    validationText += validationText.concat(
+      ...valids.map((msg) => `- ${msg} \n`)
+    );
   }
 
   return await addVerificationMessage(
