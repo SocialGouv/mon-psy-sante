@@ -225,13 +225,13 @@ const PsychologistTile = styled.div`
     inset 0 -0.25rem 0 0 var(--green-tilleul-verveine-925);
 
   &:hover {
-    background-color: var(--pink-tuile-950);
+    background-color: var(--green-tilleul-verveine-975);
   }
 
   ${(props) =>
     css`
       ${props.selected
-        ? "background: var(--pink-tuile-950); box-shadow: none; border: solid 3px var(--pink-tuile-main-556)"
+        ? "background: var(--green-tilleul-verveine-975); box-shadow: none; border: solid 3px var(--green-tilleul-verveine-925)"
         : ""}
     `}
 `;

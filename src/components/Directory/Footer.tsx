@@ -11,16 +11,31 @@ const Footer = () => {
               <h3 className="fr-text--dark-blue">
                 Avant le RDV avec le psychologue
               </h3>
-              <strong>
-                <span
-                  className="fr-fi-arrow-right-line fr-fi--md fr-text--dark-blue"
-                  aria-hidden="true"
-                />{" "}
-                Vous prenez rendez-vous avec un médecin{" "}
-              </strong>{" "}
-              (généraliste, pédiatre, gériatre, spécialiste, médecin scolaire,
-              de PMI, des services de santé des universités ou encore d’un
-              médecin hospitalier).
+              <ul className="no-bullet">
+                <li>
+                  <strong>
+                    <span
+                      className="fr-fi-arrow-right-line fr-fi--md fr-text--dark-blue"
+                      aria-hidden="true"
+                    />{" "}
+                    Vous prenez rendez-vous avec un médecin{" "}
+                  </strong>{" "}
+                  (généraliste, pédiatre, gériatre, spécialiste, médecin
+                  scolaire, de PMI, des services de santé des universités ou
+                  encore d’un médecin hospitalier).
+                </li>
+                <li>
+                  <strong>
+                    <span
+                      className="fr-fi-arrow-right-line fr-fi--md fr-text--dark-blue"
+                      aria-hidden="true"
+                    />
+                  </strong>{" "}
+                  En cas d’imprévu, pensez à bien prévenir le psychologue de
+                  votre désistement. En informant rapidement de votre absence,
+                  vous permettez à un autre patient de bénéficier d’un suivi.
+                </li>
+              </ul>
             </div>
             <div className="fr-col-12 fr-col-md-4">
               <h3 className="fr-text--dark-blue">

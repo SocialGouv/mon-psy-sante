@@ -135,7 +135,7 @@ const Directory = () => {
         />
         <ResultWrapper className="fr-mb-8w">
           {noPsychologist && (
-            <div className="fr-alert fr-alert--info fr-mb-4w">
+            <div className="fr-alert fr-alert--info fr-mb-4w" role="status">
               <p className="fr-alert__title">
                 Pas encore de psychologues partenaires dans cette zone
               </p>
