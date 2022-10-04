@@ -1,3 +1,10 @@
+## [1.60.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.60.0...v1.60.1) (2022-10-04)
+
+
+### Bug Fixes
+
+* cahmp NIR ([22d83d3](https://github.com/SocialGouv/mon-psy-sante/commit/22d83d3bff0bf67fde14dec2aa6a3c00b0339a7d))
+
 # [1.60.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.59.0...v1.60.0) (2022-10-04)
 
 
