@@ -1,3 +1,10 @@
+## [1.60.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.60.1...v1.60.2) (2022-10-06)
+
+
+### Bug Fixes
+
+* fix test ([8e9fd15](https://github.com/SocialGouv/mon-psy-sante/commit/8e9fd1521ae3c148e2de7238ea57f75a645f806a))
+
 ## [1.60.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.60.0...v1.60.1) (2022-10-04)
 
 
