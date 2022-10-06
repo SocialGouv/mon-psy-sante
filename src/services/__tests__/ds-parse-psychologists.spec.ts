@@ -80,6 +80,32 @@ describe("parseDossierMetadata", () => {
     expect(result.website).toEqual("http://valid.com");
   });
 
+  // Retro-compatibility with old (before 2022-10-?) public field.
+  // See `src/db/migrations/20221003082106-change-public-values.js` for more info.
+  it.each`
+    input                                | expected
+    ${"Enfants/adolescents"}             | ${"Enfants"}
+    ${"Adultes et enfants/adolescents"}  | ${"Adultes, adolescents et enfants"}
+    ${"Adultes"}                         | ${"Adultes"}
+    ${"Adultes et adolescents"}          | ${"Adultes et adolescents"}
+    ${"Adultes, adolescents et enfants"} | ${"Adultes, adolescents et enfants"}
+    ${"Enfants"}                         | ${"Enfants"}
+  `(
+    "should parse public champs for $input",
+    async ({ input, expected }: { input: string; expected: string }) => {
+      const dossierWithWebsite = createDossier();
+      dossierWithWebsite.champs.push({
+        id: "Q2hhbXAtMjIyMjcwMg==",
+        label:
+          "Quels publics souhaitez-vous prendre en charge dans le cadre du dispositif ?",
+        stringValue: input,
+      });
+      const result = await parseDossierMetadata(dossierWithWebsite);
+
+      expect(result.public).toEqual(expected);
+    }
+  );
+
   it.each`
     languages                       | languagesOther | resultValue
     ${undefined}                    | ${undefined}   | ${undefined}
