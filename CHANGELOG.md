@@ -1,3 +1,10 @@
+## [1.60.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.60.2...v1.60.3) (2022-10-10)
+
+
+### Bug Fixes
+
+* **ci:** trigger deploy ([fa06714](https://github.com/SocialGouv/mon-psy-sante/commit/fa06714bad86730cfd85f8c81886a48fde1a53f4))
+
 ## [1.60.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.60.1...v1.60.2) (2022-10-06)
 
 
