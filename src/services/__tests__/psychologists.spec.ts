@@ -27,7 +27,7 @@ describe("Service psychologists", () => {
     const teleconsultations = [true, false];
     const departments = ["01", "02", "03"];
 
-    // 2 x 2 x 2 x 3 x 3 = 72 psys
+    // 2 (archived) x 3 (states) x 2 (visibles) x 3 (teleconsultations) x 3 (departments) x 4 (teleconsultations) = 432 psys
     psychologistsList = archiveds.flatMap((archived) =>
       states.flatMap((state) =>
         visibles.flatMap((visible) =>
@@ -80,7 +80,7 @@ describe("Service psychologists", () => {
   describe("getByDepartment", () => {
     it("Should return non archived psychologist of a department", async () => {
       const results = await getByDepartment("02");
-      expect(results.length).toEqual(12);
+      expect(results.length).toEqual(16);
       results.forEach((psychologist) => {
         expect(psychologist.department).toEqual("02");
         expect(psychologist.archived).toEqual(false);
@@ -141,7 +141,7 @@ describe("Service psychologists", () => {
   describe("countAll", () => {
     it("Should count non archived psychologists", async () => {
       const results = await countAll();
-      expect(results).toEqual(36);
+      expect(results).toEqual(48);
     });
   });
 
@@ -166,8 +166,8 @@ describe("Service psychologists", () => {
 
     it("Should return empty psychologists if extra page", async () => {
       const results = await getAll({
-        [FILTER.PAGE_INDEX]: "4",
-        [FILTER.PAGE_SIZE]: "10",
+        [FILTER.PAGE_INDEX]: "1",
+        [FILTER.PAGE_SIZE]: "48",
       });
       expect(results.length).toEqual(0);
     });
@@ -178,7 +178,7 @@ describe("Service psychologists", () => {
         [FILTER.TELECONSULTATION]: "true",
       });
 
-      expect(results.length).toEqual(18);
+      expect(results.length).toEqual(24);
       results.forEach((result) => expect(result.archived).toBe(false));
       results.forEach((result) => expect(result.teleconsultation).toBe(true));
     });

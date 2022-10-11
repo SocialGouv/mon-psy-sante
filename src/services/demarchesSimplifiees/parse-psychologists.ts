@@ -17,6 +17,14 @@ const PARSERS = {
   displayEmail: (value) => value === "true",
   languages: formatLanguage,
   teleconsultation: (value) => value === "true",
+  public: (value) => {
+    // Retro-compatibility with old (before 2022-10-?) public field.
+    // See `src/db/migrations/20221003082106-change-public-values.js` for more info.
+    if (value === "Enfants/adolescents") return "Enfants";
+    if (value === "Adultes et enfants/adolescents")
+      return "Adultes, adolescents et enfants";
+    return value;
+  },
 };
 const parseChampValue = (field, value) =>
   PARSERS[field] ? PARSERS[field](value) : value;

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
+import { PUBLIC } from "../../types/enums/public";
 import { Psychologist } from "../../types/psychologist";
 
 const editableFields = [
@@ -61,11 +62,7 @@ const editableFields = [
   {
     field: "public",
     label: "Public",
-    options: [
-      "Adultes",
-      "Adultes et enfants/adolescents",
-      "Enfants/adolescents",
-    ],
+    options: Object.values(PUBLIC),
     required: true,
     type: "select",
   },
