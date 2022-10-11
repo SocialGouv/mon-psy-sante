@@ -17,8 +17,8 @@ const Annuaire = () => (
     </Head>
     <Script src="/scripts/leaflet.js" async />
     <HeadTag
-      title="Annuaire des psychologues partenaires | MonPsy"
-      description="Accéder rapidement aux coordonnées des psychologues partenaires du dispositif MonPsy."
+      title="Annuaire des psychologues partenaires | ParcoursPsy"
+      description="Accéder rapidement aux coordonnées des psychologues partenaires du dispositif ParcoursPsy."
     />
     <div className="fr-container-fluid">
       <Directory />

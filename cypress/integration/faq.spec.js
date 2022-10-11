@@ -1,7 +1,10 @@
 describe("FAQ", () => {
   it("should display FAQ with default tab", () => {
     cy.visit("/faq");
-    cy.get("h1").should("have.text", "Information sur le dispositif MonPsy");
+    cy.get("h1").should(
+      "have.text",
+      "Information sur le dispositif ParcoursPsy"
+    );
 
     cy.get("h2").should("have.text", "PrésentationPatientPsychologueMédecin");
     cy.get('[role="tab"][aria-selected="true"]').should(

@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Mentions légales | MonPsy</title>
+        <title>Mentions légales | ParcoursPsy</title>
       </Head>
       <div className="fr-container fr-my-6w">
         <h1 id="mentions-legales">Mentions légales</h1>
