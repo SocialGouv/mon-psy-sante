@@ -1,3 +1,10 @@
+# [1.61.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.60.3...v1.61.0) (2022-10-11)
+
+
+### Features
+
+* new filters for adultes, ado, enfants ([#259](https://github.com/SocialGouv/mon-psy-sante/issues/259)) ([e6af209](https://github.com/SocialGouv/mon-psy-sante/commit/e6af209d11ce834f43aa45a9d9acbbfcf2819bae))
+
 ## [1.60.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.60.2...v1.60.3) (2022-10-10)
 
 
