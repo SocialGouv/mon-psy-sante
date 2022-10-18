@@ -1,11 +1,11 @@
 /* eslint-disable jest/no-conditional-expect */
-import {expect} from "@jest/globals";
+import { expect } from "@jest/globals";
 
-import {models} from "../../db/models";
-import {getOnePsychologist} from "../../db/seeds/psychologist";
-import {FILTER} from "../../types/enums/filters";
-import {allPublics, PUBLIC} from "../../types/enums/public";
-import {Psychologist} from "../../types/psychologist";
+import { models } from "../../db/models";
+import { getOnePsychologist } from "../../db/seeds/psychologist";
+import { FILTER } from "../../types/enums/filters";
+import { allPublics, PUBLIC } from "../../types/enums/public";
+import { Psychologist } from "../../types/psychologist";
 import {
   countAll,
   getAll,
