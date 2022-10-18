@@ -129,7 +129,7 @@ const SearchBar = ({
           </div>
         </div>
       </div>
-      <div className="fr-col-md-4 fr-col-12 fr-pt-1w fr-pt-md-0">
+      <div className="fr-col-md-3 fr-col-12 fr-pt-1w fr-pt-md-0">
         <div className="fr-toggle">
           <input
             id="checkbox-public"
@@ -148,7 +148,7 @@ const SearchBar = ({
           </label>
         </div>
       </div>
-      <div className="fr-col-md-4 fr-col-12 fr-pt-1w fr-pt-md-0">
+      <div className="fr-col-md-3 fr-col-12 fr-pt-1w fr-pt-md-0">
         <div className="fr-toggle">
           <input
             id="checkbox-teleconsultation"

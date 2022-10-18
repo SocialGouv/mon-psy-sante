@@ -4,7 +4,6 @@ import React, { createRef, useEffect, useRef, useState } from "react";
 import { trackEventDirectorySearch } from "../../services/matomo";
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
-import { PUBLIC } from "../../types/enums/public";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
 import Breadcrumb from "../Breadcrumb";
 import Spinner from "../Spinner";
@@ -31,7 +30,7 @@ const Directory = () => {
   >("");
   const [otherFilters, setOtherFilters] = useState({
     [FILTER.TELECONSULTATION]: false,
-    [FILTER.PUBLIC]: PUBLIC.ADULTES_ADOS_ENFANTS,
+    [FILTER.PUBLIC]: false,
   });
 
   const APPROX_50_KM = 0.5;
@@ -60,8 +59,8 @@ const Directory = () => {
     if (otherFilters[FILTER.TELECONSULTATION]) {
       query = `${query}&${FILTER.TELECONSULTATION}=true`;
     }
-    if (otherFilters[FILTER.PUBLIC] !== PUBLIC.ADULTES_ADOS_ENFANTS) {
-      query = `${query}&${FILTER.PUBLIC}=${otherFilters[FILTER.PUBLIC]}`;
+    if (otherFilters[FILTER.PUBLIC]) {
+      query = `${query}&${FILTER.PUBLIC}=true}`;
     }
     axios.get(`/api/psychologists${query}`).then((response) => {
       setIsLoading(false);
