@@ -5,20 +5,4 @@ export enum PUBLIC {
   ENFANTS = "Enfants",
 }
 
-export const allPublicsFilters = [
-  {
-    value: PUBLIC.ADULTES_ADOS_ENFANTS,
-    label: "Pas de filtre",
-  },
-  {
-    value: PUBLIC.ADULTES_ADOS,
-  },
-  {
-    value: PUBLIC.ADULTES,
-  },
-  {
-    value: PUBLIC.ENFANTS,
-  },
-];
-
 export const allPublics = Object.values(PUBLIC);

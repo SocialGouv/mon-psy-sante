@@ -1,11 +1,11 @@
 /* eslint-disable jest/no-conditional-expect */
-import { expect } from "@jest/globals";
+import {expect} from "@jest/globals";
 
-import { models } from "../../db/models";
-import { getOnePsychologist } from "../../db/seeds/psychologist";
-import { FILTER } from "../../types/enums/filters";
-import { allPublics, PUBLIC } from "../../types/enums/public";
-import { Psychologist } from "../../types/psychologist";
+import {models} from "../../db/models";
+import {getOnePsychologist} from "../../db/seeds/psychologist";
+import {FILTER} from "../../types/enums/filters";
+import {allPublics, PUBLIC} from "../../types/enums/public";
+import {Psychologist} from "../../types/psychologist";
 import {
   countAll,
   getAll,
@@ -186,14 +186,15 @@ describe("Service psychologists", () => {
     it("Should filter by public", async () => {
       const results = await getAll({
         [FILTER.PAGE_INDEX]: "0",
-        [FILTER.PUBLIC]: PUBLIC.ADULTES,
+        [FILTER.PUBLIC]: "true",
       });
 
       expect(results.length).toEqual(24);
       results.forEach((result) => expect(result.archived).toBe(false));
-      results.forEach((result) =>
-        expect(result.public).not.toBe(PUBLIC.ENFANTS)
-      );
+      results.forEach((result) => {
+        expect(result.public).not.toBe(PUBLIC.ADULTES);
+        expect(result.public).not.toBe(PUBLIC.ADULTES_ADOS);
+      });
     });
 
     it("Should filter by everything", async () => {
