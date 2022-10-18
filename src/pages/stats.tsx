@@ -1,5 +1,6 @@
 import React from "react";
 
+import Breadcrumb from "../components/Breadcrumb";
 import HeadTag from "../components/HeadTag";
 
 const Stats = () => {
@@ -10,6 +11,7 @@ const Stats = () => {
         description="Statistiques d'utilisation du site"
       />
       <div>
+        <Breadcrumb page="Statistiques d'utilisation du site" />
         <iframe
           src="https://matomo-metabase-monpsysante.fabrique.social.gouv.fr/public/dashboard/aff47619-c15c-42b7-84bc-98319283b5fb"
           frameBorder="0"

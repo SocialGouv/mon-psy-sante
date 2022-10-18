@@ -6,6 +6,7 @@ import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
 import { PUBLIC } from "../../types/enums/public";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
+import Breadcrumb from "../Breadcrumb";
 import Spinner from "../Spinner";
 import { ResultWrapper } from "./Directory.styles";
 import Footer from "./Footer";
@@ -122,7 +123,8 @@ const Directory = () => {
 
   return (
     <>
-      <div className="fr-container fr-pt-7w">
+      <div className="fr-container">
+        <Breadcrumb page="Annuaire" />
         <h1>Trouver un psychologue partenaire près de chez soi.</h1>
 
         <SearchBar
