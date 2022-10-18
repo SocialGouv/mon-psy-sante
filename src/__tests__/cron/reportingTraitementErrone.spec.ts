@@ -1,5 +1,6 @@
 import {
   cpamOnly,
+  notEligibleAccepted,
   notificationSelectionNotChecked,
   withoutInstructeurFB,
 } from "../../cron/reportingTraitementErrone";
@@ -129,6 +130,7 @@ describe("Cron import from DS", () => {
       ]);
       expect(await notificationSelectionNotChecked()).toHaveLength(0);
     });
+
     it("should include dossiers with notification selection not checked and dossier elligible OUI or NON", async () => {
       mockDSCall([
         {
@@ -163,6 +165,54 @@ describe("Cron import from DS", () => {
         },
       ]);
       expect(await notificationSelectionNotChecked()).toHaveLength(2);
+    });
+  });
+
+  describe("`notEligibleAccepted()`: dossiers accepted but not marked as eligible", () => {
+    it("should filter out dossiers elligible = OUI", async () => {
+      mockDSCall([
+        {
+          id: "1",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "oui",
+            },
+          ],
+        },
+      ]);
+      expect(await notEligibleAccepted()).toHaveLength(0);
+    });
+
+    it("should include dossiers dossier elligible !== OUI", async () => {
+      mockDSCall([
+        {
+          id: "1",
+          annotations: [],
+        },
+        {
+          id: "2",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "NON",
+            },
+          ],
+        },
+        {
+          id: "2",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "quelque chose",
+            },
+          ],
+        },
+      ]);
+      expect(await notEligibleAccepted()).toHaveLength(3);
     });
   });
 
