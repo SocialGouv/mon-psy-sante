@@ -330,12 +330,15 @@ function PatientCard({ title, image, children }) {
 function BulletPoint({ children, title }) {
   return (
     <li className="flex-row">
-      <div aria-hidden="true" className="fr-fi-arrow-right-line fr-mt-1w" />
+      <div
+        aria-hidden="true"
+        className="fr-fi-arrow-right-line fr-mt-1w fr-text--dark-blue"
+      />
       <div className="fr-ml-2w fr-mb-2w">
-        <div>
+        <p className="fr-text--lg fr-mb-0">
           <strong>{title}</strong>
-        </div>
-        <div>{children}</div>
+        </p>
+        <p>{children}</p>
       </div>
     </li>
   );
