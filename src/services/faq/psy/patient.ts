@@ -56,4 +56,12 @@ export default [
       "<p>Dans le cadre de leur exercice professionnel, les psychologues sont soumis à l’obligation vaccinale prévue par l’article 12 de la loi n° 2021-1040 du 5 août 2021 relative à la gestion de la crise sanitaire.</p>",
     question: "Suis-je soumis à l’obligation vaccinale ?",
   },
+  {
+    answer:
+      "<p>Comme toute personne à partir de 3 ans, vous pouvez bénéficier du dispositif MonPsy.</p>" +
+      "<p>Après consultation d'un médecin, vous prenez rendez-vous avec un psychologue partenaire et vous apportez le courrier d'adressage du médecin lors de la première séance. A l'issue de la séance, vous adressez la facture et le courrier d'adressage à l'Assurance Maladie et à votre complémentaire santé (sauf si vous n'avancez pas les frais) pour être remboursé(e).</p>" +
+      "<p>Jusqu'au 31 décembre 2022, vous pouvez également bénéficier du dispositif d'urgence SantéPsyEtudiants (faire lien vers le site). Aucune avance de frais n'est à prévoir.</p>",
+    question:
+      "Je suis étudiant, et j'ai besoin d'un soutien psychologique. Comment m'y prendre ?",
+  },
 ];
