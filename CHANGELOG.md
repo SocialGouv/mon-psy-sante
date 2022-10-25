@@ -1,3 +1,11 @@
+# [1.62.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.61.1...v1.62.0) (2022-10-25)
+
+
+### Features
+
+* **annuaire:** text changes + simplify public filter ([#265](https://github.com/SocialGouv/mon-psy-sante/issues/265)) ([dd4819d](https://github.com/SocialGouv/mon-psy-sante/commit/dd4819d2472e09fd841a99d26f783c34383a0a95))
+* **reportingTraitementErrone:** add check for all dossiers acceptés without being eligible or notified ([#264](https://github.com/SocialGouv/mon-psy-sante/issues/264)) ([6a56adf](https://github.com/SocialGouv/mon-psy-sante/commit/6a56adf3bfe3f68d349ebb13eb4f42352067837a))
+
 ## [1.61.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.61.0...v1.61.1) (2022-10-13)
 
 
