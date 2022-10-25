@@ -1,3 +1,10 @@
+# [1.63.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.62.0...v1.63.0) (2022-10-25)
+
+
+### Features
+
+* **FAQ:** add new questions ([#266](https://github.com/SocialGouv/mon-psy-sante/issues/266)) ([b3888e8](https://github.com/SocialGouv/mon-psy-sante/commit/b3888e81f64020b4adc76fe945ce14845ba3ad7d))
+
 # [1.62.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.61.1...v1.62.0) (2022-10-25)
 
 
