@@ -15,6 +15,7 @@ import billing from "./psy/billing";
 import psyDoctor from "./psy/doctor";
 import eligibility from "./psy/eligibility";
 import ending from "./psy/ending";
+import info from "./psy/info";
 import patient from "./psy/patient";
 import registration from "./psy/registration";
 
@@ -68,14 +69,9 @@ const items = [
       { faq: eligibility, title: "Éligibilité" },
       { faq: registration, title: "Candidature" },
       { faq: agreement, title: "Conventionnement avec l’Assurance Maladie" },
-      {
-        faq: patient,
-        title: "Accompagnement du patient",
-      },
-      {
-        faq: psyDoctor,
-        title: "Echanges d’informations avec le médecin",
-      },
+      { faq: info, title: "Informations dans l'annuaire" },
+      { faq: patient, title: "Accompagnement du patient" },
+      { faq: psyDoctor, title: "Echanges d’informations avec le médecin" },
       { faq: billing, title: "Facturation & remboursement" },
       { faq: ending, title: "Retrait du dispositif" },
     ],
