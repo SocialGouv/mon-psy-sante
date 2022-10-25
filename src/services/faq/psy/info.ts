@@ -6,7 +6,7 @@ export default [
       "<ul><li>les informations sur le public accompagné, les langues pratiquées ou encore la possibilité de suivi à distance</li>" +
       "<li>vos coordonnées : numéro de téléphone, adresse d'exercice, site internet, email</li></ul>",
     question:
-      "Je souhaite mettre à jour mes coordonnées et informations sur l'annuaire, vers qui me tourner ?",
+      "Je souhaite mettre à jour mes coordonnées et informations sur l'annuaire, vers qui me tourner&nbsp;?",
   },
   {
     answer:
