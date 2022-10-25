@@ -78,7 +78,7 @@ export const getAll = async (filters: {
 
   if (filters[FILTER.PUBLIC]) {
     where.public = {
-      [Op.or]: [filters[FILTER.PUBLIC], PUBLIC.ADULTES_ADOS_ENFANTS],
+      [Op.or]: [PUBLIC.ENFANTS, PUBLIC.ADULTES_ADOS_ENFANTS],
     };
   }
 
@@ -122,13 +122,13 @@ export const getAll = async (filters: {
         // (coordinates or second_address_coordinates).
         [
           Sequelize.literal(
-            `case 
-              when second_address_coordinates is null or 
+            `case
+              when second_address_coordinates is null or
                 ST_Distance(coordinates, ${sequelize.escape(
                   coordinates
                 )}) < ST_Distance(second_address_coordinates, ${sequelize.escape(
               coordinates
-            )}) then 'coordinates' 
+            )}) then 'coordinates'
             else 'second_address_coordinates' end`
           ),
           "distanceBasedOn",

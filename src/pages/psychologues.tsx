@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Breadcrumb from "../components/Breadcrumb";
 import HeadTag from "../components/HeadTag";
 
 const Page = () => {
@@ -12,7 +13,9 @@ const Page = () => {
         image="psy.svg"
       />
       <section>
-        <div className="fr-container fr-my-6w">
+        <div className="fr-container fr-mb-6w">
+          <Breadcrumb page="Vous êtes psychologue" />
+
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-12 fr-col-lg-7">
               <h1>
@@ -327,12 +330,15 @@ function PatientCard({ title, image, children }) {
 function BulletPoint({ children, title }) {
   return (
     <li className="flex-row">
-      <div aria-hidden="true" className="fr-fi-arrow-right-line fr-mt-1w" />
+      <div
+        aria-hidden="true"
+        className="fr-fi-arrow-right-line fr-mt-1w fr-text--dark-blue"
+      />
       <div className="fr-ml-2w fr-mb-2w">
-        <div>
+        <p className="fr-text--lg fr-mb-0">
           <strong>{title}</strong>
-        </div>
-        <div>{children}</div>
+        </p>
+        <p>{children}</p>
       </div>
     </li>
   );

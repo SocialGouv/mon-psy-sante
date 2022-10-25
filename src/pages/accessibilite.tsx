@@ -2,6 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
+import Breadcrumb from "../components/Breadcrumb";
+
 const Page = () => {
   return (
     <>
@@ -10,6 +12,7 @@ const Page = () => {
       </Head>
 
       <div className="fr-container fr-my-6w">
+        <Breadcrumb page="Déclaration d’accessibilité" />
         <h1>Déclaration d&apos;accessibilité</h1>
         <div className="fr-mt-3w">
           <p>

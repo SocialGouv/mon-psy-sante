@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
+import Breadcrumb from "../components/Breadcrumb";
 import items from "../services/faq/faq";
 
 const Page = () => {
@@ -18,9 +19,11 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Foire aux questions MonPsy</title>
+        <title>Foire aux questions | MonPsy</title>
       </Head>
       <div className="fr-container fr-my-6w">
+        <Breadcrumb page="Foire aux questions" />
+
         <h1>Information sur le dispositif MonPsy</h1>
         <div className="fr-mt-3w">
           {tabIndex >= 0 && <Tabs items={items} currentTabIndex={tabIndex} />}

@@ -1,7 +1,5 @@
 import { push } from "@socialgouv/matomo-next";
 
-import { PUBLIC } from "../types/enums/public";
-
 enum Dimension {
   SearchDepartment = 1,
   SearchPublic = 2,
@@ -41,7 +39,7 @@ export function trackEventDirectorySearch({
   teleconsultation,
 }: {
   department: string;
-  publicType: PUBLIC;
+  publicType: boolean;
   teleconsultation: boolean;
 }) {
   push([

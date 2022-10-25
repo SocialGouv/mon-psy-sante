@@ -72,6 +72,21 @@ h1 .fr-text--lead {
   list-style-type: none;
 }
 
+.list-blue-france-arrow li::before {
+  color: var(--blue-france-113);
+  vertical-align: -20%;
+}
+
+.list-brown-cafe-creme-main-arrow li::before {
+  color: var(--brown-cafe-creme-main-782);
+  vertical-align: -20%;
+}
+
+.list-green-bourgeonn-arrow li::before {
+  color: var(--green-bourgeon-main-640);
+  vertical-align: -20%;
+}
+
 .card {
   height: 100%;
 }

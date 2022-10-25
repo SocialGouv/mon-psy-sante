@@ -31,9 +31,12 @@ const Footer = () => {
                       aria-hidden="true"
                     />
                   </strong>{" "}
-                  En cas d’imprévu, pensez à bien prévenir le psychologue de
-                  votre désistement. En informant rapidement de votre absence,
-                  vous permettez à un autre patient de bénéficier d’un suivi.
+                  En cas d’imprévu, pensez à{" "}
+                  <strong>
+                    bien prévenir le psychologue de votre désistement
+                  </strong>
+                  . En l’informant rapidement de votre absence, vous permettez à
+                  un autre patient de bénéficier d’un suivi.
                 </li>
               </ul>
             </div>
@@ -97,7 +100,8 @@ const Footer = () => {
                   />{" "}
                   8 séances sont remboursées au maximum par année civile. A la
                   fin de l’accompagnement, avec votre accord, le psychologue
-                  adresse au médecin, un compte-rendu de fin de prise en charge.
+                  adresse au médecin,{" "}
+                  <strong>un compte-rendu de fin de prise en charge</strong>.
                 </li>
               </ul>
             </div>

@@ -186,14 +186,15 @@ describe("Service psychologists", () => {
     it("Should filter by public", async () => {
       const results = await getAll({
         [FILTER.PAGE_INDEX]: "0",
-        [FILTER.PUBLIC]: PUBLIC.ADULTES,
+        [FILTER.PUBLIC]: "true",
       });
 
       expect(results.length).toEqual(24);
       results.forEach((result) => expect(result.archived).toBe(false));
-      results.forEach((result) =>
-        expect(result.public).not.toBe(PUBLIC.ENFANTS)
-      );
+      results.forEach((result) => {
+        expect(result.public).not.toBe(PUBLIC.ADULTES);
+        expect(result.public).not.toBe(PUBLIC.ADULTES_ADOS);
+      });
     });
 
     it("Should filter by everything", async () => {

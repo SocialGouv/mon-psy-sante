@@ -27,11 +27,11 @@ const Page = () => {
               <p className="fr-text--xl fr-text--bold fr-mt-5w">
                 Les séances sont remboursées&nbsp;:
               </p>
-              <ul className="no-bullet">
-                <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+              <ul className="no-bullet list-brown-cafe-creme-main-arrow">
+                <li className="fr-li--icon-left fr-fi-arrow-right-line">
                   &nbsp;par l’Assurance Maladie
                 </li>
-                <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                <li className="fr-li--icon-left fr-fi-arrow-right-line">
                   &nbsp;et votre mutuelle ou complémentaire santé
                 </li>
               </ul>
@@ -81,13 +81,13 @@ const Page = () => {
               </div>
               <div className="fr-col-12 fr-col-md-6">
                 <h2 className="fr-h5">MonPsy c’est&nbsp;:</h2>
-                <ul className="no-bullet">
-                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                <ul className="no-bullet list-blue-france-arrow">
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line">
                     &nbsp;Un annuaire de{" "}
                     <strong>psychologues partenaires expérimentés</strong>{" "}
                     sélectionnés sur leur expérience professionnelle.
                   </li>
-                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line">
                     &nbsp;Un parcours de soins{" "}
                     <strong>pris en charge par l’Assurance Maladie</strong>.
                   </li>
@@ -220,21 +220,21 @@ const Page = () => {
                 <h3 className="fr-text--dark-blue">
                   Tarifs des séances des psychologues partenaires
                 </h3>
-                <ul className="no-bullet">
-                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                <ul className="no-bullet list-blue-france-arrow">
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line">
                     &nbsp;<strong>Première séance (évaluation)</strong>&nbsp;:
                     40 €
                   </li>
-                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line">
                     &nbsp;<strong>Les séances de suivi</strong>&nbsp;: 30 €
                   </li>
                 </ul>
                 <h3 className="fr-text--dark-blue">Prise en charge</h3>
-                <ul className="no-bullet">
-                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                <ul className="no-bullet list-blue-france-arrow">
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line">
                     &nbsp;60 % par l’Assurance Maladie
                   </li>
-                  <li className="fr-li--icon-left fr-fi-arrow-right-line fr-fi--sm">
+                  <li className="fr-li--icon-left fr-fi-arrow-right-line">
                     &nbsp;40 % par la complémentaire santé ou la mutuelle
                   </li>
                 </ul>
@@ -254,25 +254,25 @@ const Page = () => {
                 <h4 className="fr-h6">
                   Les personnes qui ont une souffrance en lien avec&nbsp;:
                 </h4>
-                <ul className="no-bullet">
-                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                <ul className="no-bullet list-green-bourgeonn-arrow">
+                  <li className="fr-li--icon-left fr-fi-check-line">
                     &nbsp;Une Affection Longue Durée (ALD)
                   </li>
-                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                  <li className="fr-li--icon-left fr-fi-check-line">
                     &nbsp;Une grossesse (à partir du 6ème mois)
                   </li>
-                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                  <li className="fr-li--icon-left fr-fi-check-line">
                     &nbsp;Un accident du travail ou une maladie professionnelle
                     (AT-MP)
                   </li>
                 </ul>
                 <h4 className="fr-h6">Mais aussi…</h4>
-                <ul className="no-bullet">
-                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                <ul className="no-bullet list-green-bourgeonn-arrow">
+                  <li className="fr-li--icon-left fr-fi-check-line">
                     &nbsp;Les bénéficiaires de la Complémentaire Santé Solidaire
                     (CSS)
                   </li>
-                  <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                  <li className="fr-li--icon-left fr-fi-check-line">
                     &nbsp;Les bénéficiaires de l’Aide Médicale de l’État (AME)
                   </li>
                 </ul>
@@ -352,14 +352,14 @@ const Page = () => {
           <div className="fr-grid-row fr-grid-row--center fr-index-box">
             <div className="fr-col-12 fr-col-md-8 fr-pt-4w">
               <h2>MonPsy pour les moins de 18 ans</h2>
-              <ul className="no-bullet">
-                <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+              <ul className="no-bullet list-brown-cafe-creme-main-arrow">
+                <li className="fr-li--icon-left fr-fi-check-line">
                   &nbsp;À partir de <strong>3 ans</strong>.
                 </li>
-                <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                <li className="fr-li--icon-left fr-fi-check-line">
                   &nbsp;<strong>Accord parental</strong> obligatoire.
                 </li>
-                <li className="fr-li--icon-left fr-fi-check-line fr-fi--sm">
+                <li className="fr-li--icon-left fr-fi-check-line">
                   &nbsp;Des psychologues qui reçoivent aussi les enfants et les
                   adolescents.
                 </li>
