@@ -1,6 +1,14 @@
+// See: https://github.com/PaulLeCam/react-leaflet/pull/885
+// We have to use a fork because a lot of people can't see Directory:
+// https://sentry.fabrique.social.gouv.fr/organizations/incubateur/issues/42409/?project=61&query=is%3Aunresolved
+import {
+  MapContainer,
+  Marker,
+  TileLayer,
+  useMap,
+} from "@monsonjeremy/react-leaflet";
 import * as L from "leaflet";
 import React, { useEffect, useState } from "react";
-import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 
 import { DistanceBasedOn } from "../../types/enums/psychologist";
 import { Psychologist as PsychologistType } from "../../types/psychologist";
