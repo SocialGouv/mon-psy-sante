@@ -1,3 +1,10 @@
+## [1.63.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.63.0...v1.63.1) (2022-10-27)
+
+
+### Bug Fixes
+
+* nullish-coalescing issue on old browser ([#267](https://github.com/SocialGouv/mon-psy-sante/issues/267)) ([ab5e500](https://github.com/SocialGouv/mon-psy-sante/commit/ab5e500442fc43cd447b6e5e2887815fadccddb8))
+
 # [1.63.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.62.0...v1.63.0) (2022-10-25)
 
 
