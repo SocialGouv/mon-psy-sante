@@ -16,7 +16,7 @@
     "@monsonjeremy/react-leaflet": "^3.2.2",
     "@sentry/nextjs": "^6.17.9",
     "@socialgouv/matomo-next": "^1.4.0",
-    "axios": "^0.27.0",
+    "axios": "^1.0.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.0",
     "got": "12.1.0",
