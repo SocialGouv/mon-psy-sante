@@ -9,7 +9,7 @@ jobs:
 
     services:
       postgres:
-        image: postgis/postgis:14-master
+        image: postgis/postgis:15-master
         env:
           POSTGRES_DB: monpsysante
           POSTGRES_USER: monpsysante
