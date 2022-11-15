@@ -282,16 +282,16 @@ describe("Cron import from DS", () => {
     });
   });
 
-  describe("`withoutInstructeurCPAM()`: dossiers en instruction elligible without CPAM as an inscructor", () => {
-    it("should filter out dossiers where dossier elligible is not OUI", async () => {
+  describe('`withoutInstructeurCPAM()`: dossiers en instruction Notifié "éligible" without CPAM as an inscructor', () => {
+    it("should filter out dossiers where dossier Notification Sélection is not 'Notifié \"éligible\"'", async () => {
       mockDSCall([
         { id: "0", annotations: [] },
         {
           id: "1",
           annotations: [
             {
-              id: DOSSIER_ELIGIBLE,
-              label: "Dossier elligible",
+              id: NOTIFICATION_SELECTION,
+              label: "Notification Sélection",
               stringValue: "peut-être",
             },
           ],
@@ -299,26 +299,27 @@ describe("Cron import from DS", () => {
       ]);
       expect(await withoutInstructeurCPAM()).toHaveLength(0);
     });
-    it("should filter out dossiers where dossier elligible is OUI and CPAM is an instructeur", async () => {
+
+    it('should filter out dossiers where dossier Notifié "éligible" and CPAM is an instructeur', async () => {
       mockDSCall([
-        {
-          id: "1",
-          annotations: [
-            {
-              id: DOSSIER_ELIGIBLE,
-              label: "Dossier elligible",
-              stringValue: "OUI",
-            },
-          ],
-          instructeurs: [{ id: "abc", email: "x@assurance-maladie.fr" }],
-        },
         {
           id: "2",
           annotations: [
             {
-              id: DOSSIER_ELIGIBLE,
-              label: "Dossier elligible",
-              stringValue: "NON",
+              id: NOTIFICATION_SELECTION,
+              label: "Notification Sélection",
+              stringValue: 'Notifié "éligible"',
+            },
+          ],
+          instructeurs: [{ id: "yyyyyyy", email: "y@assurance-maladie.fr" }],
+        },
+        {
+          id: "3",
+          annotations: [
+            {
+              id: NOTIFICATION_SELECTION,
+              label: "Notification Sélection",
+              stringValue: 'Notifié "éligible"',
             },
           ],
           instructeurs: [
@@ -329,18 +330,18 @@ describe("Cron import from DS", () => {
       ]);
       expect(await withoutInstructeurCPAM()).toHaveLength(0);
     });
-    it("should include dossiers where dossier elligible is OUI and there is no CPAM as instructeur", async () => {
+    it('should not include dossiers where dossier Notifié "éligible" and there is not CPAM as instructeur', async () => {
       mockDSCall([
         {
           id: "1",
           annotations: [
             {
-              id: DOSSIER_ELIGIBLE,
-              label: "Dossier elligible",
-              stringValue: "OUI",
+              id: NOTIFICATION_SELECTION,
+              label: "Notification Sélection",
+              stringValue: 'Notifié "éligible"',
             },
           ],
-          instructeurs: [{ id: "yyyyyyy", email: "y@example.org" }],
+          instructeurs: [{ id: "yyyyyyy", email: "y@not-cpam.fr" }],
         },
       ]);
       expect(await withoutInstructeurCPAM()).toHaveLength(1);

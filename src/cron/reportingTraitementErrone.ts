@@ -138,11 +138,11 @@ export async function withoutInstructeurCPAM() {
 
   return result.psychologists
     .filter((psy) => {
-      const dossierEligibleValue = psy.annotations.find(
-        (a) => a.id === DOSSIER_ELIGIBLE
+      const notificationSelectionValue = psy.annotations.find(
+        (a) => a.id === NOTIFICATION_SELECTION
       )?.stringValue;
       return (
-        (dossierEligibleValue || "").toUpperCase().trim() == "OUI" &&
+        notificationSelectionValue === 'Notifié "éligible"' &&
         psy.instructeurs.filter((i) => i.email.endsWith(EMAILS_CPAM)).length ===
           0
       );
