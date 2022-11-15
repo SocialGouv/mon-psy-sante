@@ -1,3 +1,10 @@
+# [1.64.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.63.2...v1.64.0) (2022-11-15)
+
+
+### Features
+
+* **report:** ajout d'un rapport contenant les dossiers elligible sans instructeurs CPAM ([#271](https://github.com/SocialGouv/mon-psy-sante/issues/271)) ([caf5bf1](https://github.com/SocialGouv/mon-psy-sante/commit/caf5bf14966f08a861e640d59ed9a4c3b3941438))
+
 ## [1.63.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.63.1...v1.63.2) (2022-10-31)
 
 
