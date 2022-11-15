@@ -17,10 +17,12 @@ const INSTRUCTEURS = {
   "SW5zdHJ1Y3RldXItNjMyMjg=": "SCO",
   "SW5zdHJ1Y3RldXItNjExNTM=": "Beta-Gouv-AG",
   "SW5zdHJ1Y3RldXItNDk3NDI=": "Beta-Gouv-LG",
+  "SW5zdHJ1Y3RldXItNzgwMjA=": "Beta-Gouv-CA",
 };
 const INSTRUCTEUR_FB = "SW5zdHJ1Y3RldXItNjQzNjI=";
 const DOSSIER_ELIGIBLE = "Q2hhbXAtMTg0NDM5NQ==";
 const NOTIFICATION_SELECTION = "Q2hhbXAtMjMyMzA2Mg==";
+const EMAILS_CPAM = "@assurance-maladie.fr";
 
 // Original request: "des dossiers en construction ouverts par un instructeur CPAM exclusivement"
 export async function cpamOnly() {
@@ -125,6 +127,31 @@ export async function withoutInstructeurFB() {
     });
 }
 
+// Original request: "dossiers en instruction coché "notifiés éligibles" sans l’instructeur CPAM"
+export async function withoutInstructeurCPAM() {
+  const result = await getAllPsychologistList(
+    requestDossiersEnInstruction
+  ).catch((e) => {
+    console.log(e);
+    process.exit(-1);
+  });
+
+  return result.psychologists
+    .filter((psy) => {
+      const notificationSelectionValue = psy.annotations.find(
+        (a) => a.id === NOTIFICATION_SELECTION
+      )?.stringValue;
+      return (
+        notificationSelectionValue === 'Notifié "éligible"' &&
+        psy.instructeurs.filter((i) => i.email.endsWith(EMAILS_CPAM)).length ===
+          0
+      );
+    })
+    .map((psychologist) => {
+      return psychologist.number;
+    });
+}
+
 export async function reportingTraitementErrone() {
   console.log("Récupération des traitements erronés");
 
@@ -145,6 +172,10 @@ export async function reportingTraitementErrone() {
   const withoutInstructeurFBList = await withoutInstructeurFB();
   console.log(withoutInstructeurFBList.join("\n"));
 
+  console.log("Récupération sans instructeur CPAM");
+  const withoutInstructeurCPAMList = await withoutInstructeurCPAM();
+  console.log(withoutInstructeurCPAMList.join("\n"));
+
   return sendEmailWithAttachments({
     subject: "Fichiers de suivi des traitements erronés",
     textSlices: [
@@ -154,6 +185,7 @@ export async function reportingTraitementErrone() {
       "2. des dossiers tout statut confondu cochés éligibles (”OUI”) et non éligibles (”NON”) et dont la “notification de la sélection” n’a pas été cochée",
       "3. des dossiers acceptés non coché “éligible”",
       "4. des dossiers en instruction coché éligibles “Oui” ou “Non” sans l’instructeur INSTRUCTEUR_FB (dans les “instructeurs”)",
+      "5. des dossiers en instruction coché éligibles “Oui” sans un instructeur CPAM (dans les “instructeurs”)",
     ],
     attachments: [
       {
@@ -171,6 +203,10 @@ export async function reportingTraitementErrone() {
       {
         filename: `4-instruction-sans-instructeur-fb.csv`,
         content: Buffer.from(withoutInstructeurFBList.join("\n")),
+      },
+      {
+        filename: `5-instruction-sans-instructeur-cpam.csv`,
+        content: Buffer.from(withoutInstructeurCPAMList.join("\n")),
       },
     ],
   });
