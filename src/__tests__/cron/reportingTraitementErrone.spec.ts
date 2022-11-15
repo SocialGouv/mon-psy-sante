@@ -2,6 +2,7 @@ import {
   cpamOnly,
   notEligibleAccepted,
   notificationSelectionNotChecked,
+  withoutInstructeurCPAM,
   withoutInstructeurFB,
 } from "../../cron/reportingTraitementErrone";
 import { request } from "../../services/demarchesSimplifiees/request";
@@ -278,6 +279,71 @@ describe("Cron import from DS", () => {
         },
       ]);
       expect(await withoutInstructeurFB()).toHaveLength(1);
+    });
+  });
+
+  describe("`withoutInstructeurCPAM()`: dossiers en instruction elligible without CPAM as an inscructor", () => {
+    it("should filter out dossiers where dossier elligible is not OUI", async () => {
+      mockDSCall([
+        { id: "0", annotations: [] },
+        {
+          id: "1",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "peut-être",
+            },
+          ],
+        },
+      ]);
+      expect(await withoutInstructeurCPAM()).toHaveLength(0);
+    });
+    it("should filter out dossiers where dossier elligible is OUI and CPAM is an instructeur", async () => {
+      mockDSCall([
+        {
+          id: "1",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "OUI",
+            },
+          ],
+          instructeurs: [{ id: "abc", email: "x@assurance-maladie.fr" }],
+        },
+        {
+          id: "2",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "NON",
+            },
+          ],
+          instructeurs: [
+            { id: "aaaaaa", email: "x@example.org" },
+            { id: "yyyyyyy", email: "y@assurance-maladie.fr" },
+          ],
+        },
+      ]);
+      expect(await withoutInstructeurCPAM()).toHaveLength(0);
+    });
+    it("should include dossiers where dossier elligible is OUI and there is no CPAM as instructeur", async () => {
+      mockDSCall([
+        {
+          id: "1",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "OUI",
+            },
+          ],
+          instructeurs: [{ id: "yyyyyyy", email: "y@example.org" }],
+        },
+      ]);
+      expect(await withoutInstructeurCPAM()).toHaveLength(1);
     });
   });
 });
