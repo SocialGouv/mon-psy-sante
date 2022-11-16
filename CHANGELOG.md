@@ -1,3 +1,10 @@
+## [1.64.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.64.0...v1.64.1) (2022-11-16)
+
+
+### Bug Fixes
+
+* remove broken domain ([76c358f](https://github.com/SocialGouv/mon-psy-sante/commit/76c358fb7e4687cf7b9bc43859439b9063606199))
+
 # [1.64.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.63.2...v1.64.0) (2022-11-15)
 
 
