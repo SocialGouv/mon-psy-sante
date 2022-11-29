@@ -1,6 +1,6 @@
 # MonParcoursPsy
 
-https://monpsy.sante.gouv.fr
+https://monparcourspsy.sante.gouv.fr
 
 ## Run locally
 

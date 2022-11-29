@@ -21,7 +21,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Accessibilité | MonPsy</title>
+        <title>Accessibilité | MonParcoursPsy</title>
       </Head>
 
       <div className="fr-container fr-my-6w">

@@ -35,7 +35,7 @@ export default [
   },
   {
     answer:
-      "<p>Vous serez informé(e) de l'avancement de l’examen de votre candidature via la messagerie de demarches-simplifiees (plateforme de dépôt des candidatures). Si besoin, un formulaire de contact est à votre disposition sur le site monpsy.sante.gouv.fr.<p><p>Pour trouver des informations utiles sur le dispositif, nous vous invitons à consulter les brochures mises à votre disposition.</p>",
+      "<p>Vous serez informé(e) de l'avancement de l’examen de votre candidature via la messagerie de demarches-simplifiees (plateforme de dépôt des candidatures). Si besoin, un formulaire de contact est à votre disposition sur le site monparcourspsy.sante.gouv.fr.<p><p>Pour trouver des informations utiles sur le dispositif, nous vous invitons à consulter les brochures mises à votre disposition.</p>",
     question:
       "Qui puis-je contacter pour avoir des informations sur ma candidature ?",
   },
