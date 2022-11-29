@@ -9,7 +9,7 @@ jobs:
 
     services:
       postgres:
-        image: postgis/postgis:14-master
+        image: postgis/postgis:15-master
         env:
           POSTGRES_DB: monpsysante
           POSTGRES_USER: monpsysante
@@ -28,7 +28,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          node-version: 16
           cache: yarn
 
       - name: Installing

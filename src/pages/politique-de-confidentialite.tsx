@@ -1,13 +1,17 @@
 import Head from "next/head";
 import React from "react";
 
+import Breadcrumb from "../components/Breadcrumb";
+
 const Page = () => {
   return (
     <>
       <Head>
         <title>Politique de confidentialité de MonPsy</title>
       </Head>
-      <div className="fr-container fr-my-6w">
+      <div className="fr-container fr-mb-6w">
+        <Breadcrumb page="Politique de confidentialité" />
+
         <h1>Politique de confidentialité de MonPsy</h1>
 
         <div className="fr-mt-6w">

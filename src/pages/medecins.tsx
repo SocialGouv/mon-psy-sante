@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Breadcrumb from "../components/Breadcrumb";
 import HeadTag from "../components/HeadTag";
 
 const Page = () => {
@@ -12,7 +13,9 @@ const Page = () => {
         image="doctor.svg"
       />
       <section>
-        <div className="fr-container fr-my-6w">
+        <div className="fr-container fr-mb-6w">
+          <Breadcrumb page="Vous êtes médecin" />
+
           <div className="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row--middle">
             <div className="fr-col-12 fr-col-lg-7">
               <h1>

@@ -1,3 +1,60 @@
+## [1.64.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.64.1...v1.64.2) (2022-11-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency axios to v1 ([#270](https://github.com/SocialGouv/mon-psy-sante/issues/270)) ([44d99b7](https://github.com/SocialGouv/mon-psy-sante/commit/44d99b77e5073ed8c33affa1a33b1906bdce5c56))
+
+## [1.64.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.64.0...v1.64.1) (2022-11-16)
+
+
+### Bug Fixes
+
+* remove broken domain ([76c358f](https://github.com/SocialGouv/mon-psy-sante/commit/76c358fb7e4687cf7b9bc43859439b9063606199))
+
+# [1.64.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.63.2...v1.64.0) (2022-11-15)
+
+
+### Features
+
+* **report:** ajout d'un rapport contenant les dossiers elligible sans instructeurs CPAM ([#271](https://github.com/SocialGouv/mon-psy-sante/issues/271)) ([caf5bf1](https://github.com/SocialGouv/mon-psy-sante/commit/caf5bf14966f08a861e640d59ed9a4c3b3941438))
+
+## [1.63.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.63.1...v1.63.2) (2022-10-31)
+
+
+### Bug Fixes
+
+* nbsp displayed ([d171fa0](https://github.com/SocialGouv/mon-psy-sante/commit/d171fa03d5fce03cc88771f9757b4783a84a0a8e))
+
+## [1.63.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.63.0...v1.63.1) (2022-10-27)
+
+
+### Bug Fixes
+
+* nullish-coalescing issue on old browser ([#267](https://github.com/SocialGouv/mon-psy-sante/issues/267)) ([ab5e500](https://github.com/SocialGouv/mon-psy-sante/commit/ab5e500442fc43cd447b6e5e2887815fadccddb8))
+
+# [1.63.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.62.0...v1.63.0) (2022-10-25)
+
+
+### Features
+
+* **FAQ:** add new questions ([#266](https://github.com/SocialGouv/mon-psy-sante/issues/266)) ([b3888e8](https://github.com/SocialGouv/mon-psy-sante/commit/b3888e81f64020b4adc76fe945ce14845ba3ad7d))
+
+# [1.62.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.61.1...v1.62.0) (2022-10-25)
+
+
+### Features
+
+* **annuaire:** text changes + simplify public filter ([#265](https://github.com/SocialGouv/mon-psy-sante/issues/265)) ([dd4819d](https://github.com/SocialGouv/mon-psy-sante/commit/dd4819d2472e09fd841a99d26f783c34383a0a95))
+* **reportingTraitementErrone:** add check for all dossiers acceptés without being eligible or notified ([#264](https://github.com/SocialGouv/mon-psy-sante/issues/264)) ([6a56adf](https://github.com/SocialGouv/mon-psy-sante/commit/6a56adf3bfe3f68d349ebb13eb4f42352067837a))
+
+## [1.61.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.61.0...v1.61.1) (2022-10-13)
+
+
+### Bug Fixes
+
+* **ci:** trigger deploy ([b6618a8](https://github.com/SocialGouv/mon-psy-sante/commit/b6618a89c7be365cc638e46a667d034e6b31801e))
+
 # [1.61.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.60.3...v1.61.0) (2022-10-11)
 
 

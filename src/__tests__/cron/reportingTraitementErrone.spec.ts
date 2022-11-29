@@ -1,6 +1,8 @@
 import {
   cpamOnly,
+  notEligibleAccepted,
   notificationSelectionNotChecked,
+  withoutInstructeurCPAM,
   withoutInstructeurFB,
 } from "../../cron/reportingTraitementErrone";
 import { request } from "../../services/demarchesSimplifiees/request";
@@ -129,6 +131,7 @@ describe("Cron import from DS", () => {
       ]);
       expect(await notificationSelectionNotChecked()).toHaveLength(0);
     });
+
     it("should include dossiers with notification selection not checked and dossier elligible OUI or NON", async () => {
       mockDSCall([
         {
@@ -163,6 +166,54 @@ describe("Cron import from DS", () => {
         },
       ]);
       expect(await notificationSelectionNotChecked()).toHaveLength(2);
+    });
+  });
+
+  describe("`notEligibleAccepted()`: dossiers accepted but not marked as eligible", () => {
+    it("should filter out dossiers elligible = OUI", async () => {
+      mockDSCall([
+        {
+          id: "1",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "oui",
+            },
+          ],
+        },
+      ]);
+      expect(await notEligibleAccepted()).toHaveLength(0);
+    });
+
+    it("should include dossiers dossier elligible !== OUI", async () => {
+      mockDSCall([
+        {
+          id: "1",
+          annotations: [],
+        },
+        {
+          id: "2",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "NON",
+            },
+          ],
+        },
+        {
+          id: "2",
+          annotations: [
+            {
+              id: DOSSIER_ELIGIBLE,
+              label: "Dossier elligible",
+              stringValue: "quelque chose",
+            },
+          ],
+        },
+      ]);
+      expect(await notEligibleAccepted()).toHaveLength(3);
     });
   });
 
@@ -228,6 +279,72 @@ describe("Cron import from DS", () => {
         },
       ]);
       expect(await withoutInstructeurFB()).toHaveLength(1);
+    });
+  });
+
+  describe('`withoutInstructeurCPAM()`: dossiers en instruction Notifié "éligible" without CPAM as an inscructor', () => {
+    it("should filter out dossiers where dossier Notification Sélection is not 'Notifié \"éligible\"'", async () => {
+      mockDSCall([
+        { id: "0", annotations: [] },
+        {
+          id: "1",
+          annotations: [
+            {
+              id: NOTIFICATION_SELECTION,
+              label: "Notification Sélection",
+              stringValue: "peut-être",
+            },
+          ],
+        },
+      ]);
+      expect(await withoutInstructeurCPAM()).toHaveLength(0);
+    });
+
+    it('should filter out dossiers where dossier Notifié "éligible" and CPAM is an instructeur', async () => {
+      mockDSCall([
+        {
+          id: "2",
+          annotations: [
+            {
+              id: NOTIFICATION_SELECTION,
+              label: "Notification Sélection",
+              stringValue: 'Notifié "éligible"',
+            },
+          ],
+          instructeurs: [{ id: "yyyyyyy", email: "y@assurance-maladie.fr" }],
+        },
+        {
+          id: "3",
+          annotations: [
+            {
+              id: NOTIFICATION_SELECTION,
+              label: "Notification Sélection",
+              stringValue: 'Notifié "éligible"',
+            },
+          ],
+          instructeurs: [
+            { id: "aaaaaa", email: "x@example.org" },
+            { id: "yyyyyyy", email: "y@assurance-maladie.fr" },
+          ],
+        },
+      ]);
+      expect(await withoutInstructeurCPAM()).toHaveLength(0);
+    });
+    it('should not include dossiers where dossier Notifié "éligible" and there is not CPAM as instructeur', async () => {
+      mockDSCall([
+        {
+          id: "1",
+          annotations: [
+            {
+              id: NOTIFICATION_SELECTION,
+              label: "Notification Sélection",
+              stringValue: 'Notifié "éligible"',
+            },
+          ],
+          instructeurs: [{ id: "yyyyyyy", email: "y@not-cpam.fr" }],
+        },
+      ]);
+      expect(await withoutInstructeurCPAM()).toHaveLength(1);
     });
   });
 });

@@ -8,7 +8,6 @@ import {
 } from "../../services/frontend/geo.api";
 import { Coordinates } from "../../types/coordinates";
 import { FILTER } from "../../types/enums/filters";
-import { allPublicsFilters } from "../../types/enums/public";
 
 const geoStatusEnum = {
   DENIED: -1,
@@ -130,33 +129,26 @@ const SearchBar = ({
           </div>
         </div>
       </div>
-      <div className="fr-col-md-4 fr-col-12 fr-pr-md-4w fr-pt-2w fr-pt-md-0">
-        <div className="fr-select-group">
-          <label className="fr-label" htmlFor="select-type">
-            Souhait du psychologue d&apos;accompagner des
-          </label>
-          <select
-            className="fr-select"
-            required
-            id="select-type"
-            name="select"
-            value={otherFilters[FILTER.PUBLIC]}
+      <div className="fr-col-md-3 fr-col-12 fr-pt-1w fr-pt-md-0">
+        <div className="fr-toggle">
+          <input
+            id="checkbox-public"
+            type="checkbox"
+            className="fr-toggle__input"
+            checked={otherFilters[FILTER.PUBLIC]}
             onChange={(e) =>
               setOtherFilters({
                 ...otherFilters,
-                [FILTER.PUBLIC]: e.target.value,
+                [FILTER.PUBLIC]: e.target.checked,
               })
             }
-          >
-            {allPublicsFilters.map((option) => (
-              <option key={option.label || option.value} value={option.value}>
-                {option.label || option.value}
-              </option>
-            ))}
-          </select>
+          />
+          <label className="fr-toggle__label" htmlFor="checkbox-public">
+            Pour enfants
+          </label>
         </div>
       </div>
-      <div className="fr-col-md-4 fr-col-12 fr-pt-1w fr-pt-md-0">
+      <div className="fr-col-md-3 fr-col-12 fr-pt-1w fr-pt-md-0">
         <div className="fr-toggle">
           <input
             id="checkbox-teleconsultation"
@@ -174,7 +166,7 @@ const SearchBar = ({
             className="fr-toggle__label"
             htmlFor="checkbox-teleconsultation"
           >
-            Possibilité de séances à distance
+            Séances à distance
           </label>
         </div>
       </div>
