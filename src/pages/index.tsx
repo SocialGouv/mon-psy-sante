@@ -608,7 +608,7 @@ const Page = () => {
                     className="fr-pt-4w"
                     rel="noreferrer"
                   >
-                    santepsy.etudiant.gouv.fr
+                    Rendez-vous sur Santé Psy Étudiant
                   </a>
                 </li>
               </ul>
