@@ -12,7 +12,7 @@ export default [
   },
   {
     answer:
-      "<p>Ce sont les CPAM qui transmettent les feuilles de soins. Ces feuilles de soins sont préidentifiées et ne sont transmises qu’aux psychologues conventionnés avec l’Assurance Maladie dans le cadre du dispositif ParcoursPsy.</p><p>Elles sont également disponibles sur votre espace <a href='https://authps-espacepro.ameli.fr/' target='_blank'>ameli.pro</a>.</p>",
+      "<p>Ce sont les CPAM qui transmettent les feuilles de soins. Ces feuilles de soins sont préidentifiées et ne sont transmises qu’aux psychologues conventionnés avec l’Assurance Maladie dans le cadre du dispositif MonParcoursPsy.</p><p>Elles sont également disponibles sur votre espace <a href='https://authps-espacepro.ameli.fr/' target='_blank'>ameli.pro</a>.</p>",
     question: "Comment obtenir des feuilles de soins ?",
   },
   {
@@ -22,7 +22,7 @@ export default [
   },
   {
     answer:
-      "<p>Dans le cadre du dispositif ParcoursPsy, vous facturez aux patients les séances aux tarifs définis par arrêté.<p>Les tarifs sont les suivants :<ul><li><b>40 euros pour une première séance</b> permettant la réalisation de l’entretien d’évaluation, </li><li><b>30 euros pour les séances de suivi</b> (7 au maximum). </li></ul></p><p>Aucun dépassement d’honoraires n’est possible.</p>",
+      "<p>Dans le cadre du dispositif MonParcoursPsy, vous facturez aux patients les séances aux tarifs définis par arrêté.<p>Les tarifs sont les suivants :<ul><li><b>40 euros pour une première séance</b> permettant la réalisation de l’entretien d’évaluation, </li><li><b>30 euros pour les séances de suivi</b> (7 au maximum). </li></ul></p><p>Aucun dépassement d’honoraires n’est possible.</p>",
     question: "Quels sont les tarifs ?",
   },
   {
@@ -32,7 +32,7 @@ export default [
   },
   {
     answer:
-      "<p>Dans le cadre du dispositif ParcoursPsy, si le patient ne vient pas à la séance, le psychologue ne peut pas facturer un acte à l’Assurance Maladie. Seuls les actes effectivement réalisés peuvent être facturés et remboursés.</p>",
+      "<p>Dans le cadre du dispositif MonParcoursPsy, si le patient ne vient pas à la séance, le psychologue ne peut pas facturer un acte à l’Assurance Maladie. Seuls les actes effectivement réalisés peuvent être facturés et remboursés.</p>",
     question:
       "Qu'est-il envisagé en cas d'absence d'un patient alors qu'il était attendu ?",
   },

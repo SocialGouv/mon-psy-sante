@@ -4,7 +4,7 @@ import React from "react";
 
 const items = [
   { title: "Accueil", href: "/" },
-  { title: "Annuaire ParcoursPsy", href: "/annuaire" },
+  { title: "Annuaire MonParcoursPsy", href: "/annuaire" },
   { title: "Psychologue", href: "/psychologues" },
   { title: "Médecin", href: "/medecins" },
   { title: "Foire aux questions", href: "/faq" },

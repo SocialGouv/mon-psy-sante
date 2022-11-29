@@ -1,4 +1,4 @@
-# ParcoursPsy
+# MonParcoursPsy
 
 https://monpsy.sante.gouv.fr
 

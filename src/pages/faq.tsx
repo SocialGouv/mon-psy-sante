@@ -33,7 +33,7 @@ const Page = () => {
   );
 };
 
-function Tabs({ items, currentTabIndex }) {
+function Tabs({items, currentTabIndex}) {
   const [currentTab, setCurrentTab] = useState(items[currentTabIndex].key);
   return (
     <div className="fr-tabs">
@@ -88,7 +88,7 @@ function Tabs({ items, currentTabIndex }) {
           {item.sections.map((section, i) => (
             <div key={i + item.title}>
               {section.title && <h3>{section.title}</h3>}
-              <Accordion section={section} />
+              <Accordion section={section}/>
             </div>
           ))}
         </div>
@@ -97,11 +97,11 @@ function Tabs({ items, currentTabIndex }) {
   );
 }
 
-const Accordion = ({ section }) => {
+const Accordion = ({section}) => {
   const [open, setOpen] = useState(null);
   return (
     <div className="fr-accordions-group fr-mb-4w">
-      {section.faq.map(({ question, answer }, index) => (
+      {section.faq.map(({question, answer}, index) => (
         <section className="fr-accordion" key={question}>
           <h4 className="fr-accordion__title">
             <button
@@ -125,7 +125,7 @@ const Accordion = ({ section }) => {
               "--collapse": "0px",
               maxHeight: open === index ? "none" : null,
             }}
-            dangerouslySetInnerHTML={{ __html: answer }}
+            dangerouslySetInnerHTML={{__html: answer}}
           />
         </section>
       ))}

@@ -7,7 +7,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Mentions légales | ParcoursPsy</title>
+        <title>Mentions légales | MonParcoursPsy</title>
       </Head>
       <div className="fr-container fr-mb-6w">
         <Breadcrumb page="Mentions légales" />
