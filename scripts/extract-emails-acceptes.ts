@@ -3,9 +3,9 @@
 import fs from "fs";
 import _ from "lodash";
 
-import { countAll, getAll } from "../src/services/psychologists";
+import {countAll, getAll} from "../src/services/psychologists";
 
-fs.createWriteStream("emails-monpsy-acceptes.csv");
+fs.createWriteStream("emails-monparcourspsy-acceptes.csv");
 
 let output = '"Email";"FirstName";"LastName"\n';
 (async () => {
@@ -27,7 +27,7 @@ let output = '"Email";"FirstName";"LastName"\n';
     console.log("!!!! some emails are not uniqs");
   }
 
-  fs.writeFileSync("emails-monpsy-acceptes.csv", output);
+  fs.writeFileSync("emails-monparcourspsy-acceptes.csv", output);
 
   console.log("Nombre total de dossier en accepté", accepte.length);
 
