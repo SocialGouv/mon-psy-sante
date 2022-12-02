@@ -2,12 +2,12 @@
 export default [
   {
     answer:
-      "<p>Pour devenir psychologue partenaire du dispositif MonPsy, il est nécessaire de : <ul><li>Etre inscrit sur le registre ADELI attestant du titre de psychologue;</li><li>Disposer d’une expérience professionnelle en psychologie clinique ou en psychopathologie de trois ans minimum ;</li><li>Avoir une expérience ou un diplôme permettant d’attester d’un parcours consolidé en psychologie clinique ou en psychopathologie.</li></ul></p><p>Ces critères ont été définis en accord avec les représentants des psychologues.</p>",
+      "<p>Pour devenir psychologue partenaire du dispositif MonParcoursPsy, il est nécessaire de : <ul><li>Etre inscrit sur le registre ADELI attestant du titre de psychologue;</li><li>Disposer d’une expérience professionnelle en psychologie clinique ou en psychopathologie de trois ans minimum ;</li><li>Avoir une expérience ou un diplôme permettant d’attester d’un parcours consolidé en psychologie clinique ou en psychopathologie.</li></ul></p><p>Ces critères ont été définis en accord avec les représentants des psychologues.</p>",
     question: "Quelles sont les conditions de participation au dispositif ?",
   },
   {
     answer:
-      "<p>Les psychothérapeutes agréés par les ARS ou les psychanalystes ne sont pas éligibles au dispositif MonPsy.</p>",
+      "<p>Les psychothérapeutes agréés par les ARS ou les psychanalystes ne sont pas éligibles au dispositif MonParcoursPsy.</p>",
     question:
       "Faut-il nécessairement être psychologue ? Qu’en est-il des psychothérapeutes agréés par les ARS ?",
   },
@@ -31,16 +31,16 @@ export default [
       "<li>Les psychologues salariés à temps partiel dans un établissement de santé, dans le cadre de leur exercice dans une structure d'exercice coordonnée ou dans le cadre de leur activité libérale.</li>" +
       "</ul>",
     question:
-      "Les psychologues salariés peuvent-ils participer au dispositif MonPsy ?",
+      "Les psychologues salariés peuvent-ils participer au dispositif MonParcoursPsy ?",
   },
   {
     answer:
-      "<p>Oui, un psychologue participant déjà à un autre dispositif (ex : la mesure 31 du Ségur de la Santé « renforcement en psychologues des MSP ») peut tout à fait devenir partenaire du dispositif MonPsy.</p>" +
+      "<p>Oui, un psychologue participant déjà à un autre dispositif (ex : la mesure 31 du Ségur de la Santé « renforcement en psychologues des MSP ») peut tout à fait devenir partenaire du dispositif MonParcoursPsy.</p>" +
       "<p>Dans ce cas, le psychologue devra distinguer :</p>" +
-      "<ul><li>Les patients suivis dans le cadre de MonPsy dont les séances feront l’objet d’un remboursement direct par la CPAM</li>" +
+      "<ul><li>Les patients suivis dans le cadre de MonParcoursPsy dont les séances feront l’objet d’un remboursement direct par la CPAM</li>" +
       "<li>Les patients suivis dans un autre cadre et bénéficiant donc de leurs propres modalités de financement (exemple pour la mesure 31 du Ségur : financement par dotation de l’ARS versée à la MSP)</li></ul>",
     question:
-      "Un psychologue participant à des dispositifs pré-existants (ex : mesure 31 du Ségur de la Santé) peut-il être partenaire dans le cadre de MonPsy ?",
+      "Un psychologue participant à des dispositifs pré-existants (ex : mesure 31 du Ségur de la Santé) peut-il être partenaire dans le cadre de MonParcoursPsy ?",
   },
   {
     answer:

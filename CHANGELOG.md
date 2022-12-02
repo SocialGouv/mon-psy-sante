@@ -1,3 +1,10 @@
+# [1.66.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.65.0...v1.66.0) (2022-12-02)
+
+
+### Features
+
+* **rename:** MonPsy devient MonParcoursPsy ([#262](https://github.com/SocialGouv/mon-psy-sante/issues/262)) ([4e194f3](https://github.com/SocialGouv/mon-psy-sante/commit/4e194f3728dcf081ddd7ee0525b0e48a74ec89ed))
+
 # [1.65.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.64.2...v1.65.0) (2022-11-29)
 
 

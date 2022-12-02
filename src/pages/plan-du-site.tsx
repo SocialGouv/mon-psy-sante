@@ -4,7 +4,7 @@ import React from "react";
 
 const items = [
   { title: "Accueil", href: "/" },
-  { title: "Annuaire MonPsy", href: "/annuaire" },
+  { title: "Annuaire MonParcoursPsy", href: "/annuaire" },
   { title: "Psychologue", href: "/psychologues" },
   { title: "Médecin", href: "/medecins" },
   { title: "Foire aux questions", href: "/faq" },
@@ -21,7 +21,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Accessibilité | MonPsy</title>
+        <title>Accessibilité | MonParcoursPsy</title>
       </Head>
 
       <div className="fr-container fr-my-6w">
