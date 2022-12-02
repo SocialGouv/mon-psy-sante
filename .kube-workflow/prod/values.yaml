@@ -1,10 +1,10 @@
 global:
-  appHost: monpsy.sante.gouv.fr
+  appHost: monparcourspsy.sante.gouv.fr
 
 app:
   host: "{{ .Values.global.appHost }}"
   redirectFrom:
-    - monparcourspsy.sante.gouv.fr
+    - monpsy.sante.gouv.fr
     - www.monpsy.sante.gouv.fr
     - psyenfantado.sante.gouv.fr
     - psy-enfant-ado.sante.gouv.fr
