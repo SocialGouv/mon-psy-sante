@@ -1,3 +1,10 @@
+# [1.67.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.66.0...v1.67.0) (2022-12-02)
+
+
+### Features
+
+* **domain:** update domaine name to be monparcourspsy ([#276](https://github.com/SocialGouv/mon-psy-sante/issues/276)) ([02eada2](https://github.com/SocialGouv/mon-psy-sante/commit/02eada24715a0dfacb615d357a1a3defcc60a058))
+
 # [1.66.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.65.0...v1.66.0) (2022-12-02)
 
 
