@@ -14,6 +14,18 @@ const Page = () => {
         image="Psychologist-hero.svg"
       />
       <section>
+        <div className="fr-container-fluid align-center">
+          <ul className="no-bullet list-blue-france-arrow">
+            <li className="fr-li--icon-left fr-fi-arrow-right-line fr-py-1w">
+              {" "}
+              Mon psy change de nom et devient{" "}
+              <strong className="fr-text--lg fr-text--dark-blue">
+                MonParcoursPsy
+              </strong>
+            </li>
+          </ul>
+          <hr />
+        </div>
         <div className="fr-container">
           <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-pb-8w">
             <div className="fr-col-12 fr-col-md-6 fr-pt-4w">
