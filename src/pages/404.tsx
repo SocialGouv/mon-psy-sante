@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 export default function Custom404() {
   useEffect(() => {
-    document.title = "Page non trouvée | MonPsy";
+    document.title = "Page non trouvée | MonParcoursPsy";
   }, []);
 
   return (

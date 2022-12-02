@@ -2,7 +2,7 @@
 export default [
   {
     answer:
-      "<p>La plateforme de candidature est ouverte depuis le 17 février 2022.</p><p>Pour participer au dispositif MonPsy, vous êtes invité(e) à compléter le formulaire de candidature disponible sur <a href='/psychologues'>la page « je suis psychologue »</a>, compléter et signer la convention avec l’Assurance Maladie, et joindre les pièces justificatives demandées.</p>",
+      "<p>La plateforme de candidature est ouverte depuis le 17 février 2022.</p><p>Pour participer au dispositif MonParcoursPsy, vous êtes invité(e) à compléter le formulaire de candidature disponible sur <a href='/psychologues'>la page « je suis psychologue »</a>, compléter et signer la convention avec l’Assurance Maladie, et joindre les pièces justificatives demandées.</p>",
     question: "Comment candidater ?",
   },
   {
@@ -29,13 +29,13 @@ export default [
   },
   {
     answer:
-      "<p>Le nouveau dispositif MonPsy est un dispositif pérenne, unifié, qui s’adresse à toute la population à partir de l’âge de 3 ans. </p><p>Les dispositifs expérimentés ou d’urgence avaient chacun certaines spécificités (territoires et publics) et modalités de prises en charge. C’est pourquoi il est nécessaire de soumettre une nouvelle candidature à partir de <a href='/psychologues'>la page « je suis psychologue »</a>.</p>",
+      "<p>Le nouveau dispositif MonParcoursPsy est un dispositif pérenne, unifié, qui s’adresse à toute la population à partir de l’âge de 3 ans. </p><p>Les dispositifs expérimentés ou d’urgence avaient chacun certaines spécificités (territoires et publics) et modalités de prises en charge. C’est pourquoi il est nécessaire de soumettre une nouvelle candidature à partir de <a href='/psychologues'>la page « je suis psychologue »</a>.</p>",
     question:
       "Je suis déjà engagé(e) dans un dispositif d’accompagnement psychologique d’urgence ou expérimental (ex : SantéPsyEtudiant). Dois-je soumettre une nouvelle candidature ?",
   },
   {
     answer:
-      "<p>Vous serez informé(e) de l'avancement de l’examen de votre candidature via la messagerie de demarches-simplifiees (plateforme de dépôt des candidatures). Si besoin, un formulaire de contact est à votre disposition sur le site monpsy.sante.gouv.fr.<p><p>Pour trouver des informations utiles sur le dispositif, nous vous invitons à consulter les brochures mises à votre disposition.</p>",
+      "<p>Vous serez informé(e) de l'avancement de l’examen de votre candidature via la messagerie de demarches-simplifiees (plateforme de dépôt des candidatures). Si besoin, un formulaire de contact est à votre disposition sur le site monparcourspsy.sante.gouv.fr.<p><p>Pour trouver des informations utiles sur le dispositif, nous vous invitons à consulter les brochures mises à votre disposition.</p>",
     question:
       "Qui puis-je contacter pour avoir des informations sur ma candidature ?",
   },
