@@ -1,3 +1,10 @@
+# [1.65.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.64.2...v1.65.0) (2022-11-29)
+
+
+### Features
+
+* **lien SPE:** ajout d'un nouvel encart dans la section "D'autres services à votre écoute" pour Santé Psy Etudiant ([#272](https://github.com/SocialGouv/mon-psy-sante/issues/272)) ([20ee62a](https://github.com/SocialGouv/mon-psy-sante/commit/20ee62ab6337d53076a41c1e691d8fb1fe070447))
+
 ## [1.64.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.64.1...v1.64.2) (2022-11-29)
 
 

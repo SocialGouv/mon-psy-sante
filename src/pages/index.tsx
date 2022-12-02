@@ -432,7 +432,7 @@ const Page = () => {
             <div className="fr-col-12">
               <h2>D&apos;autres services à votre écoute</h2>
             </div>
-            <div className="fr-col-12 fr-col-md-4 fr-px-2w">
+            <div className="fr-col-12 fr-col-md-6 fr-px-2w">
               <div className="align-center fr-my-2w fr-py-4w">
                 <a
                   target="_blank"
@@ -472,7 +472,7 @@ const Page = () => {
                 </li>
               </ul>
             </div>
-            <div className="fr-col-12 fr-col-md-4 fr-px-2w">
+            <div className="fr-col-12 fr-col-md-6 fr-px-2w">
               <div className="align-center fr-my-2w">
                 <a
                   target="_blank"
@@ -530,13 +530,13 @@ const Page = () => {
                 </li>
               </ul>
             </div>
-            <div className="fr-col-12 fr-col-md-4 fr-px-2w">
+            <div className="fr-col-12 fr-col-md-6 fr-px-2w">
               <div className="align-center align-middle fr-my-2w">
                 <a
                   target="_blank"
                   className="fr-link"
                   title="SOS Amitié"
-                  href="https://www.sos-amitie.com/ "
+                  href="https://www.sos-amitie.com/"
                   rel="noreferrer"
                 >
                   <img
@@ -582,6 +582,45 @@ const Page = () => {
                     className="fr-pt-4w"
                   >
                     Contacter par email
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="fr-col-12 fr-col-md-6 fr-px-2w">
+              <div className="align-center align-middle fr-my-2w">
+                <a
+                  target="_blank"
+                  className="fr-link"
+                  title="Santé Psy Étudiant"
+                  href="https://santepsy.etudiant.gouv.fr/"
+                  rel="noreferrer"
+                >
+                  <img
+                    height="130"
+                    width="130"
+                    src="/images/sante-psy-etudiant.png"
+                    alt="Logo Santé Psy Étudiant"
+                  />
+                </a>
+              </div>
+              <p className="fr-h5">
+                Étudiant(e), vous souhaitez bénéficier d’un suivi psychologique
+                sans avance de frais ?
+              </p>
+              <p>
+                Le dispositif Santé Psy Étudiant est une aide d’urgence pour les
+                étudiants du supérieur donnant accès jusqu’à 8 séances sans
+                avance de frais et entièrement prises en charge.
+              </p>
+              <ul>
+                <li>
+                  <a
+                    href="https://santepsy.etudiant.gouv.fr/"
+                    target="_blank"
+                    className="fr-pt-4w"
+                    rel="noreferrer"
+                  >
+                    Rendez-vous sur Santé Psy Étudiant
                   </a>
                 </li>
               </ul>
