@@ -1,3 +1,10 @@
+# [1.68.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.67.0...v1.68.0) (2022-12-06)
+
+
+### Features
+
+* **redirect:** add redirection from www.monparcourspsy.sante.gouv.fr ([eac3598](https://github.com/SocialGouv/mon-psy-sante/commit/eac3598cbfb4e6cfab7d1d3a5451f96282a9fbe6))
+
 # [1.67.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.66.0...v1.67.0) (2022-12-02)
 
 
