@@ -1,3 +1,10 @@
+# [1.69.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.68.0...v1.69.0) (2023-03-07)
+
+
+### Features
+
+* **report:** add BM as instructeur to exclude from report ([ab5cd89](https://github.com/SocialGouv/mon-psy-sante/commit/ab5cd89fbdee3b2e1bf53551d86a172552a11fd1))
+
 # [1.68.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.67.0...v1.68.0) (2022-12-06)
 
 
