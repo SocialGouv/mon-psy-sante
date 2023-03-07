@@ -81,15 +81,17 @@ export const formatPsychologist = async (
     ? formatCoordinates(coordinates)
     : null;
 
+  let secondAddressCoordinates;
   if (psychologist.secondAddress) {
-    const coordinates = await getAddressCoordinates(
+    secondAddressCoordinates = await getAddressCoordinates(
       identifier,
       psychologist.secondAddress
     );
-    psychologist.secondAddressCoordinates = coordinates
-      ? formatCoordinates(coordinates)
-      : null;
   }
+  psychologist.secondAddressCoordinates = secondAddressCoordinates
+    ? formatCoordinates(coordinates)
+    : null;
+
   return psychologist as Psychologist;
 };
 

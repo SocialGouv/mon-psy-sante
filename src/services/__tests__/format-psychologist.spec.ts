@@ -6,10 +6,19 @@ jest.mock("axios");
 describe("formatPsychologist", () => {
   beforeEach(() => {
     (axios.get as jest.MockedFunction<typeof axios.get>).mockImplementation(
-      () => Promise.resolve({ data: {} })
+      () =>
+        Promise.resolve({
+          data: {
+            features: [
+              { geometry: { coordinates: [1, 2] }, properties: { score: 10 } },
+            ],
+          },
+        })
     );
   });
-
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
   const partial = {
     address: "12 Rue Neuve 31000 Toulouse",
     demarcheSimplifieesId: "1",
@@ -22,13 +31,21 @@ describe("formatPsychologist", () => {
     state: "Accepted",
     teleconsultation: true,
   };
-
+  const DB_COORDINATES = {
+    coordinates: [1, 2],
+    crs: {
+      properties: { name: "EPSG:4326" },
+      type: "name",
+    },
+    type: "POINT",
+  };
   it("should format psychologist", async () => {
     const result = await formatPsychologist(partial);
     expect(result).toStrictEqual({
       address: "12 Rue Neuve 31000 Toulouse",
       archived: false,
-      coordinates: null,
+      coordinates: DB_COORDINATES,
+      secondAddressCoordinates: null,
       demarcheSimplifieesId: "1",
       department: "31",
       displayEmail: false,
@@ -54,12 +71,24 @@ describe("formatPsychologist", () => {
       secondAddress: "14 Rue Neuve 31000 Toulouse",
     });
     expect(result.secondAddress).toBe("14 Rue Neuve 31000 Toulouse");
+    expect(result.secondAddressCoordinates).toStrictEqual(DB_COORDINATES);
     expect(axios.get).toHaveBeenCalledWith(
       "https://httpbin.org/apiAdresse/?q=11%20Rue%20Neuve%2031000%20Toulouse&limit=1"
     );
     expect(axios.get).toHaveBeenCalledWith(
       "https://httpbin.org/apiAdresse/?q=14%20Rue%20Neuve%2031000%20Toulouse&limit=1"
     );
+  });
+
+  it("should set coordinate to null if second address is erased", async () => {
+    const result = await formatPsychologist({
+      ...partial,
+      address: "11 Rue Neuve 31000 Toulouse",
+      // @ts-ignore
+      secondAddressCoordinates: { type: "my old coordinate" },
+    });
+    expect(result.secondAddressCoordinates).toBe(null);
+    expect(axios.get).toHaveBeenCalledTimes(1);
   });
 
   it.each`
