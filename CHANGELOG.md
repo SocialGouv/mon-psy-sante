@@ -1,3 +1,10 @@
+## [1.69.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.0...v1.69.1) (2023-03-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency sequelize to v6.29.0 [security] ([#283](https://github.com/SocialGouv/mon-psy-sante/issues/283)) ([3c68e8b](https://github.com/SocialGouv/mon-psy-sante/commit/3c68e8bbb50ab2fccc88ff4affad7bcfedc834fb))
+
 # [1.69.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.68.0...v1.69.0) (2023-03-07)
 
 
