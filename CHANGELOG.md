@@ -1,3 +1,10 @@
+## [1.69.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.1...v1.69.2) (2023-03-07)
+
+
+### Bug Fixes
+
+* **remove second address:** make sure we remove the second coordinates if we remove the second address ([#284](https://github.com/SocialGouv/mon-psy-sante/issues/284)) ([aca0c63](https://github.com/SocialGouv/mon-psy-sante/commit/aca0c63b21fd068e5a2091eeada0add627358aad))
+
 ## [1.69.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.0...v1.69.1) (2023-03-07)
 
 
