@@ -18,6 +18,7 @@ const INSTRUCTEURS = {
   "SW5zdHJ1Y3RldXItNjExNTM=": "Beta-Gouv-AG",
   "SW5zdHJ1Y3RldXItNDk3NDI=": "Beta-Gouv-LG",
   "SW5zdHJ1Y3RldXItNzgwMjA=": "Beta-Gouv-CA",
+  "SW5zdHJ1Y3RldXItODM1Mzc=": "CNAM-BM",
 };
 const INSTRUCTEUR_FB = "SW5zdHJ1Y3RldXItNjQzNjI=";
 const DOSSIER_ELIGIBLE = "Q2hhbXAtMTg0NDM5NQ==";
