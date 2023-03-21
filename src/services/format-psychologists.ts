@@ -89,7 +89,7 @@ export const formatPsychologist = async (
     );
   }
   psychologist.secondAddressCoordinates = secondAddressCoordinates
-    ? formatCoordinates(coordinates)
+    ? formatCoordinates(secondAddressCoordinates)
     : null;
 
   return psychologist as Psychologist;
