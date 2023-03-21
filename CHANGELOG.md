@@ -1,3 +1,10 @@
+## [1.69.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.2...v1.69.3) (2023-03-21)
+
+
+### Bug Fixes
+
+* **second address:** fix error on second address coordinates ([2091a9d](https://github.com/SocialGouv/mon-psy-sante/commit/2091a9d03b1addf8d40de92f348b16f1e920a2a3))
+
 ## [1.69.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.1...v1.69.2) (2023-03-07)
 
 
