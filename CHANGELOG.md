@@ -1,3 +1,10 @@
+## [1.69.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.3...v1.69.4) (2023-04-24)
+
+
+### Bug Fixes
+
+* **ci:** add production workflow_dispatch ([60aa408](https://github.com/SocialGouv/mon-psy-sante/commit/60aa408a024f50e4829abeb5fc3f2959e066843e))
+
 ## [1.69.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.2...v1.69.3) (2023-03-21)
 
 
