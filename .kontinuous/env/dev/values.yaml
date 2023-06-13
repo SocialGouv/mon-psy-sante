@@ -1,15 +1,15 @@
 app:
-  needs: [seed]
+  ~needs: [build-app,seed]
 
 jobs:
   runs:
     db:
       use: create-db
     seed:
+      ~needs: [build-app,db]
       checkout: false # no need to checkout the repo as we use the docker image
-      needs: [db]
       shell: sh
-      image: "{{ .Values.global.registry }}/{{ .Values.global.imageRepository }}/app:{{ .Values.global.imageTag }}"
+      image: "{{ .Values.global.registry }}{{ if .Values.global.imageProject }}{{ print `/` .Values.global.imageProject }}{{ end }}/{{ .Values.global.imageRepository }}/app:{{ .Values.global.imageTag }}"
       run: "yarn db:init"
       envFrom:
         - secretRef:
