@@ -18,7 +18,7 @@ const Page = () => {
           <ul className="no-bullet list-blue-france-arrow">
             <li className="fr-li--icon-left fr-fi-arrow-right-line fr-py-1w">
               {" "}
-              Mon psy change de nom et devient{" "}
+              MonParcoursPsy change de nom et devient{" "}
               <strong className="fr-text--lg fr-text--dark-blue">
                 MonSoutienPsy
               </strong>
