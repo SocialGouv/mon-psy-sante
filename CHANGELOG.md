@@ -1,3 +1,10 @@
+## [1.69.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.4...v1.69.5) (2023-06-13)
+
+
+### Bug Fixes
+
+* **faq:** update one answer ([#294](https://github.com/SocialGouv/mon-psy-sante/issues/294)) ([19235cd](https://github.com/SocialGouv/mon-psy-sante/commit/19235cd334de13c2832f697311763df3e9b2f43d))
+
 ## [1.69.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.3...v1.69.4) (2023-04-24)
 
 
