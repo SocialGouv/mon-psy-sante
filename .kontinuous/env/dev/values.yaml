@@ -4,9 +4,7 @@ app:
 jobs:
   runs:
     db:
-      use: SocialGouv/kube-workflow/jobs/create-db
-      with:
-        pgAdminSecretRefName: azure-pg-admin-user
+      use: create-db
     seed:
       checkout: false # no need to checkout the repo as we use the docker image
       needs: [db]
@@ -15,22 +13,19 @@ jobs:
       run: "yarn db:init"
       envFrom:
         - secretRef:
-            name: "pg-user-{{ .Values.global.branchSlug }}"
+            name: "pg-user"
 
     db-keycloak:
-      use: SocialGouv/kube-workflow/jobs/create-db
+      use: create-db
       with:
-        pgAdminSecretRefName: azure-pg-admin-user
-        pgSecretName: "keycloak-db-{{ .Values.global.branchSlug32 }}"
+        pgSecretName: "keycloak-db"
         database: "keycloak_{{ .Values.global.branchSlug32 }}"
         pgUser: "keycloak_{{ .Values.global.branchSlug32 }}"
 
 keycloak:
-  statefulsetAnnotations:
-    # need db-keycloak
-    kapp.k14s.io/change-rule: "upsert after upserting kube-workflow/db-keycloak.{{ .Values.global.namespace }}"
+  ~needs: [db-keycloak]
   extraEnvFrom: |
     - secretRef:
-        name: "keycloak-db-{{ .Values.global.branchSlug32 }}"
+        name: "keycloak-db"
     - secretRef:
         name: keycloak-secrets
