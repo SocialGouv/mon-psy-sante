@@ -18,6 +18,7 @@ app:
       value: mon-psy-app
 
 keycloak:
+  ~chart: keycloak
   postgresql:
     enabled: false
 
