@@ -8,8 +8,8 @@ const Page = () => {
   return (
     <>
       <HeadTag
-        title="Rejoindre le réseau de psychologues partenaires | MonParcoursPsy"
-        description="Rejoignez le réseau de psychologues partenaires MonParcoursPsy, et proposez aux patients un accompagnement psychologique remboursé par l’Assurance Maladie."
+        title="Rejoindre le réseau de psychologues partenaires | MonSoutienPsy"
+        description="Rejoignez le réseau de psychologues partenaires MonSoutienPsy, et proposez aux patients un accompagnement psychologique remboursé par l’Assurance Maladie."
         image="psy.svg"
       />
       <section>
@@ -40,7 +40,7 @@ const Page = () => {
                 <div className="align-left">
                   <button
                     onClick={() => setVideo("show")}
-                    title="Découvrir MonParcoursPsy en vidéo, via le témoignage d’Annie, psychologue partenaire"
+                    title="Découvrir MonSoutienPsy en vidéo, via le témoignage d’Annie, psychologue partenaire"
                     className="fr-btn fr-btn--lg fr-btn--secondary fr-fi-play-line fr-btn--icon-left fr-mt-4w"
                   >
                     Découvrez le témoignage d’Annie, psychologue partenaire
@@ -91,13 +91,13 @@ const Page = () => {
               </BulletPoint>
               <BulletPoint title="Une meilleure visibilité">
                 Vos coordonnées apparaissent publiquement sur l’annuaire
-                MonParcoursPsy mis en ligne par le Ministère de la Santé et
+                MonSoutienPsy mis en ligne par le Ministère de la Santé et
                 l’Assurance Maladie.
               </BulletPoint>
               <BulletPoint title="Une quotité de travail choisie">
                 Vous pouvez continuer à réaliser des séances à tarif libre (non
                 remboursées par l’Assurance Maladie) en dehors du dispositif
-                MonParcoursPsy.
+                MonSoutienPsy.
               </BulletPoint>
             </ul>
           </div>
@@ -155,14 +155,14 @@ const Page = () => {
             <CardStep title="Publication sur l’annuaire" number="4">
               <p>
                 Une fois conventionné, vos coordonnées sont publiées sur
-                l’annuaire MonParcoursPsy. Vous pouvez indiquer aux patients si
+                l’annuaire MonSoutienPsy. Vous pouvez indiquer aux patients si
                 vous êtes ou non disponible.
               </p>
             </CardStep>
             <CardStep title="Accueil des patients" number="5">
               <p>
                 Une fois ces étapes réalisées, vous pouvez commencer à recevoir
-                des patients dans le cadre de MonParcoursPsy&nbsp;!
+                des patients dans le cadre de MonSoutienPsy&nbsp;!
               </p>
             </CardStep>
           </div>

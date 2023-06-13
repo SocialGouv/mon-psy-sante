@@ -26,7 +26,7 @@ export async function sendEmailWithAttachments({
   });
 
   const mail: SendMailOptions = {
-    from: `MonParcoursPsy <${config.supportMail}>`,
+    from: `MonSoutienPsy <${config.supportMail}>`,
     html: textSlices.join("<br />"),
     subject: subject,
     text: textSlices.join("\n"),

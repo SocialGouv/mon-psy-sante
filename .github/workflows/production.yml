@@ -39,7 +39,7 @@ jobs:
     needs: [ register ]
     environment:
       name: production
-      url: https://monparcourspsy.sante.gouv.fr
+      url: https://monsoutienpsy.sante.gouv.fr
     steps:
       - uses: SocialGouv/kube-workflow@master
         with:

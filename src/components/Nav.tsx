@@ -5,7 +5,7 @@ const Nav = () => {
   const [modalMenuOpen, setModalMenuOpen] = useState(false);
   const items = [
     { title: "Accueil", href: "/" },
-    { title: "Annuaire MonParcoursPsy", href: "/annuaire" },
+    { title: "Annuaire MonSoutienPsy", href: "/annuaire" },
     { title: "Psychologue", href: "/psychologues" },
     { title: "Médecin", href: "/medecins" },
     { title: "Foire aux questions", href: "/faq" },
@@ -20,7 +20,7 @@ const Nav = () => {
                 <div className="fr-header__logo">
                   <p className="fr-logo">
                     <Link href="/">
-                      <a title="Page d'accueil MonParcoursPsy" target="_self">
+                      <a title="Page d'accueil MonSoutienPsy" target="_self">
                         République
                         <br />
                         Française
@@ -51,7 +51,7 @@ const Nav = () => {
                 </div>
               </div>
               <div className="fr-header__service">
-                <p className="fr-header__service-title">MonParcoursPsy</p>
+                <p className="fr-header__service-title">MonSoutienPsy</p>
                 <p className="fr-header__service-tagline">
                   En parler, c’est déjà se soigner.
                 </p>
@@ -66,7 +66,7 @@ const Nav = () => {
                   <li>
                     <Link href="/annuaire">
                       <a className="fr-link fr-fi-attachment-line fr-link--icon-left fr-mt-1v">
-                        Annuaire MonParcoursPsy
+                        Annuaire MonSoutienPsy
                       </a>
                     </Link>
                   </li>

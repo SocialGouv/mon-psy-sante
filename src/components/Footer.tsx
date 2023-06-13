@@ -67,7 +67,7 @@ const Footer = () => (
           <a
             className="fr-footer__brand-link"
             href="/"
-            title="Page d'accueil MonParcoursPsy"
+            title="Page d'accueil MonSoutienPsy"
           >
             <img
               src="/images/cnam.png"
