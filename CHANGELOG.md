@@ -1,3 +1,10 @@
+# [1.70.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.5...v1.70.0) (2023-06-19)
+
+
+### Features
+
+* ci on kontinuous ([#296](https://github.com/SocialGouv/mon-psy-sante/issues/296)) ([d05e6b1](https://github.com/SocialGouv/mon-psy-sante/commit/d05e6b153fe7a0c39b406d43608b04d4bb276d97))
+
 ## [1.69.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.4...v1.69.5) (2023-06-13)
 
 
