@@ -1,3 +1,10 @@
+## [1.70.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.1...v1.70.2) (2023-06-19)
+
+
+### Bug Fixes
+
+* up .dockerignore ([9a5d5d2](https://github.com/SocialGouv/mon-psy-sante/commit/9a5d5d239fa045afb3c08bb634683f3da253c13c))
+
 ## [1.70.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.0...v1.70.1) (2023-06-19)
 
 
