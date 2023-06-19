@@ -1,0 +1,31 @@
+app:
+  ~needs: [build-app,seed]
+
+jobs:
+  runs:
+    db:
+      use: create-db
+    seed:
+      ~needs: [build-app,db]
+      checkout: false # no need to checkout the repo as we use the docker image
+      shell: sh
+      image: "{{ .Values.global.registry }}{{ if .Values.global.imageProject }}{{ print `/` .Values.global.imageProject }}{{ end }}/{{ .Values.global.imageRepository }}/app:{{ .Values.global.imageTag }}"
+      run: "yarn db:init"
+      envFrom:
+        - secretRef:
+            name: "pg-user"
+
+    db-keycloak:
+      use: create-db
+      with:
+        pgSecretName: "keycloak-db"
+        database: "keycloak_{{ .Values.global.branchSlug32 }}"
+        pgUser: "keycloak_{{ .Values.global.branchSlug32 }}"
+
+keycloak:
+  ~needs: [db-keycloak]
+  extraEnvFrom: |
+    - secretRef:
+        name: "keycloak-db"
+    - secretRef:
+        name: keycloak-secrets

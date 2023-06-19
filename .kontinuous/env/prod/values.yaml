@@ -37,3 +37,10 @@ keycloak:
       - hosts:
           - "keycloak-{{ .Values.global.host }}"
         secretName: keycloak-crt
+
+jobs:
+  runs:
+    build-app:
+      with:
+        buildArgs:
+          PRODUCTION: "true"

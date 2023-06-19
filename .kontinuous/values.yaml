@@ -1,4 +1,5 @@
 app:
+  containerPort: 3000
   probesPath: "/healthz"
   envFrom:
     - secretRef:
@@ -18,13 +19,6 @@ app:
 keycloak:
   postgresql:
     enabled: false
-
-  statefulsetAnnotations:
-    kapp.k14s.io/nonce: ''
-    kapp.k14s.io/update-strategy: fallback-on-replace
-    kapp.k14s.io/change-group: "kube-workflow/keycloak.{{ .Values.global.namespace }}"
-    kapp.k14s.io/disable-original: ''
-    kapp.k14s.io/create-strategy: fallback-on-update
 
   extraEnvFrom: |
     - secretRef:
@@ -107,3 +101,15 @@ keycloak:
         paths:
           - path: /
             pathType: Prefix
+
+deactivate:
+  jobs-deactivate:
+    runs:
+      deactivate:
+        with:
+          db: true
+      drop-db2:
+        use: drop-db
+        with:
+          database: "keycloak_{{.Values.global.branchSlug32}}"
+          databaseUser: "keycloak_{{ .Values.global.branchSlug32 }}"
