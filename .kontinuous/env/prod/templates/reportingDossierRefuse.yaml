@@ -7,6 +7,7 @@ metadata:
     app: mon-psy
 spec:
   schedule: "30 5 15 * *"
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
       template:
@@ -25,4 +26,3 @@ spec:
                 - cron:launch
                 - reportingDossierRefuse
           restartPolicy: Never
-          concurrencyPolicy: Forbid
