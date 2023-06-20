@@ -1,3 +1,10 @@
+## [1.70.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.2...v1.70.3) (2023-06-20)
+
+
+### Bug Fixes
+
+* cronjob images ([07e2225](https://github.com/SocialGouv/mon-psy-sante/commit/07e2225a1dec1f678ea530dacf7af96ecf42249c))
+
 ## [1.70.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.1...v1.70.2) (2023-06-19)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "monparcourspsy",
-  "version": "1.70.2",
+  "version": "1.70.3",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
