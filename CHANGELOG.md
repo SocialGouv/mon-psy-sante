@@ -1,3 +1,10 @@
+## [1.70.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.4...v1.70.5) (2023-07-12)
+
+
+### Bug Fixes
+
+* **DS:** update API TOKEN + make sure that the job fails if the script fails ([f633f68](https://github.com/SocialGouv/mon-psy-sante/commit/f633f688500e0a96c2405bffcf6930c5c4a00e8a))
+
 ## [1.70.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.3...v1.70.4) (2023-06-20)
 
 
