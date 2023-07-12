@@ -1,4 +1,6 @@
 // https://www.notion.so/fabnummas/Export-lundi-10h-dossier-ligibles-conventionner-c9dc9247bc0841e48dbd33513c03eb62
+import * as Sentry from "@sentry/nextjs";
+
 import {
   requestDossiersEnConstruction,
   requestDossiersEnInstruction,
@@ -13,8 +15,9 @@ export async function reportingDossierEligible() {
   const results = await Promise.all(
     [requestDossiersEnInstruction, requestDossiersEnConstruction].map(
       (request) =>
-        getAllPsychologistList(request).catch((e) => {
-          console.log(e);
+        getAllPsychologistList(request).catch((err) => {
+          Sentry.captureException(err);
+          console.error("ERROR reportingDossierEligible: ", err);
           process.exit(-1);
         })
     )

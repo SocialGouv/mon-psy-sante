@@ -1,3 +1,5 @@
+import * as Sentry from "@sentry/nextjs";
+
 import { requestDossiersEnInstruction } from "../services/demarchesSimplifiees/buildRequest";
 import { getAllPsychologistList } from "../services/demarchesSimplifiees/import";
 import { sendEmailWithAttachments } from "./cronUtils";
@@ -21,8 +23,9 @@ export async function reportingExpertWeekly() {
   console.log("Récupération des dossiers en instruction.");
   const result = await getAllPsychologistList(
     requestDossiersEnInstruction
-  ).catch((e) => {
-    console.log(e);
+  ).catch((err) => {
+    Sentry.captureException(err);
+    console.error("ERROR reportingExpertWeekly: ", err);
     process.exit(-1);
   });
 

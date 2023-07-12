@@ -48,6 +48,7 @@ export const importData = async (): Promise<void> => {
   } catch (err) {
     Sentry.captureException(err);
     console.error("ERROR: Could not import DS API data to PG", err);
+    process.exit(-1);
   }
 };
 
@@ -68,6 +69,7 @@ export const importArchived = async (): Promise<void> => {
   } catch (err) {
     Sentry.captureException(err);
     console.error("ERROR importArchived: ", err);
+    process.exit(-1);
   }
 };
 
@@ -243,6 +245,7 @@ export const verifFolders = async (): Promise<void> => {
     console.log("verifFolders done");
   } catch (err) {
     Sentry.captureException(err);
-    console.error("ERROR: Could verify dossiers from DS", err);
+    console.error("ERROR: Could not verify dossiers from DS", err);
+    throw err;
   }
 };

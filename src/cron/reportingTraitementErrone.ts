@@ -1,4 +1,6 @@
 // https://www.notion.so/fabnummas/Export-mardi-14h-traitement-erron-des-dossiers-96eb6d8b0f734556b7176758f68372fb
+import * as Sentry from "@sentry/nextjs";
+
 import {
   requestDossiersAccepte,
   requestDossiersAllState,
@@ -29,8 +31,9 @@ const EMAILS_CPAM = "@assurance-maladie.fr";
 export async function cpamOnly() {
   const result = await getAllPsychologistList(
     requestDossiersEnConstruction
-  ).catch((e) => {
-    console.log(e);
+  ).catch((err) => {
+    Sentry.captureException(err);
+    console.error("ERROR importArchived: ", err);
     process.exit(-1);
   });
 
@@ -53,8 +56,9 @@ export async function cpamOnly() {
 // Original request: "des dossiers tout statut confondu cochés éligibles (”OUI”) et non éligibles (”NON”) et dont la “notification de la sélection” n’a pas été cochée"
 export async function notificationSelectionNotChecked() {
   const result = await getAllPsychologistList(requestDossiersAllState).catch(
-    (e) => {
-      console.log(e);
+    (err) => {
+      Sentry.captureException(err);
+      console.error("ERROR notificationSelectionNotChecked: ", err);
       process.exit(-1);
     }
   );
@@ -83,8 +87,9 @@ export async function notificationSelectionNotChecked() {
 // Original request: "des dossiers acceptés ni coché “éligible” et/ou ni cochés “notifiés éligibles”"
 export async function notEligibleAccepted() {
   const result = await getAllPsychologistList(requestDossiersAccepte).catch(
-    (e) => {
-      console.log(e);
+    (err) => {
+      Sentry.captureException(err);
+      console.error("ERROR notEligibleAccepted: ", err);
       process.exit(-1);
     }
   );
@@ -106,8 +111,9 @@ export async function notEligibleAccepted() {
 export async function withoutInstructeurFB() {
   const result = await getAllPsychologistList(
     requestDossiersEnInstruction
-  ).catch((e) => {
-    console.log(e);
+  ).catch((err) => {
+    Sentry.captureException(err);
+    console.error("ERROR withoutInstructeurFB: ", err);
     process.exit(-1);
   });
 
@@ -132,8 +138,9 @@ export async function withoutInstructeurFB() {
 export async function withoutInstructeurCPAM() {
   const result = await getAllPsychologistList(
     requestDossiersEnInstruction
-  ).catch((e) => {
-    console.log(e);
+  ).catch((err) => {
+    Sentry.captureException(err);
+    console.error("ERROR withoutInstructeurCPAM: ", err);
     process.exit(-1);
   });
 

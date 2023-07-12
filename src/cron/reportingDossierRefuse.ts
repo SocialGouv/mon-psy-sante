@@ -1,4 +1,6 @@
 // https://www.notion.so/fabnummas/Notification-toutes-les-2-semaines-de-d-un-tat-des-dossiers-refus-s-d63ae90f8db54eeda2fb382e9416cb8c
+import * as Sentry from "@sentry/nextjs";
+
 import { requestDossiersRefusesWithMessages } from "../services/demarchesSimplifiees/buildRequest";
 import { getAllPsychologistList } from "../services/demarchesSimplifiees/import";
 import { sendEmailWithAttachments } from "./cronUtils";
@@ -38,8 +40,9 @@ export async function reportingDossierRefuse() {
 
   const result = await getAllPsychologistList(
     requestDossiersRefusesWithMessages
-  ).catch((e) => {
-    console.log(e);
+  ).catch((err) => {
+    Sentry.captureException(err);
+    console.error("ERROR reportingDossierRefuse: ", err);
     process.exit(-1);
   });
 
