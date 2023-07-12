@@ -1,3 +1,10 @@
+## [1.70.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.5...v1.70.6) (2023-07-12)
+
+
+### Bug Fixes
+
+* **sealed secret:** fix sealed secret ([31695ee](https://github.com/SocialGouv/mon-psy-sante/commit/31695ee2bc9959b196b5d241dfdd50fc65a7991a))
+
 ## [1.70.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.4...v1.70.5) (2023-07-12)
 
 
