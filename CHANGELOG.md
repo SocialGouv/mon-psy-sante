@@ -1,3 +1,10 @@
+## [1.70.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.6...v1.70.7) (2023-07-17)
+
+
+### Bug Fixes
+
+* up k8s cronjob apiversion ([#298](https://github.com/SocialGouv/mon-psy-sante/issues/298)) ([6031c4c](https://github.com/SocialGouv/mon-psy-sante/commit/6031c4cae437a26663aa78ca6fcea1ee216c5844))
+
 ## [1.70.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.5...v1.70.6) (2023-07-12)
 
 
