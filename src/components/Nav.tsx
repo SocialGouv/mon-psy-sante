@@ -17,7 +17,7 @@ const Nav = () => {
           <div className="fr-header__body-row">
             <div className="fr-header__brand fr-enlarge-link">
               <div className="fr-header__brand-top">
-                <div className="fr-header__logo">
+                <div className="fr-header__logo fr-mr-0">
                   <p className="fr-logo">
                     <Link href="/">
                       <a title="Page d'accueil MonSoutienPsy" target="_self">
@@ -41,12 +41,21 @@ const Nav = () => {
                     Menu
                   </button>
                 </div>
-                <div className="fr-header__operator">
+
+                <div className="fr-header__operator fr-mr-0 align-center">
                   <img
                     src="/images/cnam.png"
                     alt="Logo Caisse Nationale d'Assurance Maladie"
-                    width="200"
-                    height="66"
+                    width="150"
+                    height="50"
+                  />
+
+                  <img
+                    className="fr-mt-2w"
+                    src="/images/msa.svg"
+                    alt="Logo MSA"
+                    width="100"
+                    height="46"
                   />
                 </div>
               </div>

@@ -40,7 +40,7 @@ const items = [
     title: "Patient",
     documents: [
       {
-        url: "/documents/MonPsy_Flyer grand public.pdf",
+        url: "/documents/Mon soutien psy_Flyer grand public_2023-IMP.pdf",
         title: "Flyer Grand Public (PDF)",
       },
     ],
@@ -48,19 +48,19 @@ const items = [
   {
     documents: [
       {
-        url: "/documents/MonPsy_Guide psychologue_2022.pdf",
+        url: "/documents/Mon soutien psy_Guide psychologue_2023-IMP.pdf",
         title: "Guide pour les psychologues (PDF)",
       },
       {
-        url: "/documents/MonPsy_Livret_échelles évaluations_2022.pdf",
+        url: "/documents/Mon soutien psy_Livret_échelles évaluations_2023-IMP.pdf",
         title: "Echelles d’évaluation (PDF)",
       },
       {
-        url: "/documents/MonPsy_Flyer-Feuille de soin_2022.pdf",
+        url: "/documents/Mon soutien psy_Feuille de soin_2023-IMP.pdf",
         title: "Comment compléter une feuille de soins ? (PDF)",
       },
       {
-        url: "/documents/MonPsy_Fiche-Memo_Psy.pdf",
+        url: "/documents/Mon soutien psy_Fiche-Mémo_Psychologue_2023-IMP.pdf",
         title: "Fiche mémo pour les psychologues (PDF)",
       },
     ],
@@ -82,15 +82,15 @@ const items = [
     documents: [
       {
         title: "Guide pour les médecins (PDF)",
-        url: "/documents/MonPsy_Guide médecin_2022.pdf",
+        url: "/documents/Mon soutien psy_Guide médecin_2023_IMP.pdf",
       },
       {
         title: "Fiche mémo pour les médecins (PDF)",
-        url: "/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf",
+        url: "/documents/Mon soutien psy_Fiche-Mémo_médecin_2023-IMP.pdf",
       },
       {
         title: "Echelles d’évaluation (PDF)",
-        url: "/documents/MonPsy_Livret_échelles évaluations_2022.pdf",
+        url: "/documents/Mon soutien psy_Livret_échelles évaluations_2023-IMP.pdf",
       },
     ],
     sections: [

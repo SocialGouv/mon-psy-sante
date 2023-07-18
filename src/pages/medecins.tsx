@@ -27,7 +27,7 @@ const Page = () => {
               <a
                 className="fr-btn fr-mb-4w"
                 target="_blank"
-                href="/documents/MonPsy_Flyer grand public.pdf"
+                href="/documents/Mon soutien psy_Flyer grand public_2023-IMP.pdf"
                 title="Réponse à vos questions en PDF"
                 rel="noreferrer nofollow noopener"
               >
@@ -87,7 +87,7 @@ const Page = () => {
                       <a
                         target="_blank"
                         rel="noreferrer nofollow noopener"
-                        href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                        href="/documents/Mon soutien psy_Fiche-Mémo_médecin_2023-IMP.pdf"
                         title="Fiche mémo en PDF"
                       >
                         Fiche mémo (PDF)
@@ -249,7 +249,7 @@ const Page = () => {
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
-                  href="/documents/MonPsy_Guide médecin_2022.pdf"
+                  href="/documents/Mon soutien psy_Guide médecin_2023_IMP.pdf"
                   title="Guide pour les médecins en PDF"
                 >
                   Guide pour les médecins (PDF)
@@ -258,7 +258,7 @@ const Page = () => {
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
-                  href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                  href="/documents/Mon soutien psy_Fiche-Mémo_médecin_2023-IMP.pdf"
                   title="Fiche mémo pour les médecins en PDF"
                 >
                   Fiche mémo pour les médecins (PDF)
@@ -267,7 +267,7 @@ const Page = () => {
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
-                  href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                  href="/documents/Mon soutien psy_Livret_échelles évaluations_2023-IMP.pdf"
                   title="Échelles d’évaluation en PDF"
                 >
                   Échelles d’évaluation (PDF)

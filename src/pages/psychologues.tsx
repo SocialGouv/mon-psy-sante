@@ -118,7 +118,7 @@ const Page = () => {
               <ul>
                 <li>
                   <a
-                    href="/documents/MonPsy_Flyer-Démarches simplifiées_2022.pdf"
+                    href="/documents/Mon soutien psy_Démarches simplifiées_2023-IMP.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Tutoriel Démarches simplifiées en PDF"
@@ -128,7 +128,7 @@ const Page = () => {
                 </li>
                 <li>
                   <a
-                    href="/documents/MonPsy_Flyer-candidatures-psychologues_2022.pdf"
+                    href="/documents/Mon soutien psy_Flyer-candidatures-psychologues_2023-IMP.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     title=" Brochure informative en PDF"
@@ -260,7 +260,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Guide psychologue_2022.pdf"
+                  href="/documents/Mon soutien psy_Guide psychologue_2023-IMP.pdf"
                   title="Guide pour les psychologues en PDF"
                 >
                   Guide pour les psychologues (PDF)
@@ -268,7 +268,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                  href="/documents/Mon soutien psy_Livret_échelles évaluations_2023-IMP.pdf"
                   title="Echelles d’évaluation en PDF"
                 >
                   Echelles d’évaluation (PDF)
@@ -276,7 +276,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
+                  href="/documents/Mon soutien psy_Feuille de soin_2023-IMP.pdf"
                   title="Comment compléter une feuille de soins en PDF"
                 >
                   Comment compléter une feuille de soins&nbsp;? (PDF)
@@ -284,7 +284,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Fiche-Memo_Psy.pdf"
+                  href="/documents/Mon soutien psy_Fiche-Mémo_Psychologue_2023-IMP.pdf"
                   title="Fiche mémo pour les psychologues en PDF"
                 >
                   Fiche mémo pour les psychologues (PDF)
