@@ -1,6 +1,6 @@
 {
   "name": "monsoutienpsy",
-  "version": "1.69.4",
+  "version": "1.70.7",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"

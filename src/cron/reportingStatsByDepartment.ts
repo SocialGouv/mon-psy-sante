@@ -1,4 +1,5 @@
 // Todo: rename this file to reportingDepartment.ts (we have to rename in cron and delete previous cron).
+import * as Sentry from "@sentry/nextjs";
 import _ from "lodash";
 
 import { requestPsychologistsState } from "../services/demarchesSimplifiees/buildRequest";
@@ -18,6 +19,7 @@ export async function reporting() {
       department: extractDepNumber(dep),
     };
   });
+
   function log(text, count, countAcceptes = "") {
     console.log(text, ":", count, countAcceptes);
     data.push(`"${text}";${count};${countAcceptes}\n`);
@@ -34,8 +36,9 @@ export async function reporting() {
   );
   const result = await getAllPsychologistList(
     requestPsychologistsStateWithDep
-  ).catch((e) => {
-    console.log(e);
+  ).catch((err) => {
+    Sentry.captureException(err);
+    console.error("ERROR reportingStatsByDepartment: ", err);
     process.exit(-1);
   });
 

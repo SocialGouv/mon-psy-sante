@@ -1,19 +1,20 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
-  namespace: mon-psy-sante
-  name: reporting-expert-weekly
+  namespace: mon-psy-sante-preprod
+  name: verif-dossiers-ds
   labels:
     app: mon-psy
 spec:
-  schedule: "0 6 * * 2"
+  schedule: "0 */1 * * *"
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
       template:
         spec:
           containers:
             - name: mon-psy
-              image: ghcr.io/socialgouv/mon-psy-sante/app:{{ .Values.global.imageTag }}
+              image: {{ .Values.global.registry }}/{{ .Values.global.imageRepository }}/app:{{ .Values.global.imageTag }}
               envFrom:
                 - secretRef:
                     name: app-sealed-secret
@@ -23,6 +24,5 @@ spec:
                 - yarn
                 - run
                 - cron:launch
-                - reportingExpertWeekly
+                - verifFolders
           restartPolicy: Never
-          concurrencyPolicy: Forbid

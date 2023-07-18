@@ -1,3 +1,66 @@
+## [1.70.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.6...v1.70.7) (2023-07-17)
+
+
+### Bug Fixes
+
+* up k8s cronjob apiversion ([#298](https://github.com/SocialGouv/mon-psy-sante/issues/298)) ([6031c4c](https://github.com/SocialGouv/mon-psy-sante/commit/6031c4cae437a26663aa78ca6fcea1ee216c5844))
+
+## [1.70.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.5...v1.70.6) (2023-07-12)
+
+
+### Bug Fixes
+
+* **sealed secret:** fix sealed secret ([31695ee](https://github.com/SocialGouv/mon-psy-sante/commit/31695ee2bc9959b196b5d241dfdd50fc65a7991a))
+
+## [1.70.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.4...v1.70.5) (2023-07-12)
+
+
+### Bug Fixes
+
+* **DS:** update API TOKEN + make sure that the job fails if the script fails ([f633f68](https://github.com/SocialGouv/mon-psy-sante/commit/f633f688500e0a96c2405bffcf6930c5c4a00e8a))
+
+## [1.70.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.3...v1.70.4) (2023-06-20)
+
+
+### Bug Fixes
+
+* cronjob images ([727643c](https://github.com/SocialGouv/mon-psy-sante/commit/727643c5f7eec5a9acc562ba5f7c334e12ae91fb))
+
+## [1.70.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.2...v1.70.3) (2023-06-20)
+
+
+### Bug Fixes
+
+* cronjob images ([07e2225](https://github.com/SocialGouv/mon-psy-sante/commit/07e2225a1dec1f678ea530dacf7af96ecf42249c))
+
+## [1.70.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.1...v1.70.2) (2023-06-19)
+
+
+### Bug Fixes
+
+* up .dockerignore ([9a5d5d2](https://github.com/SocialGouv/mon-psy-sante/commit/9a5d5d239fa045afb3c08bb634683f3da253c13c))
+
+## [1.70.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.0...v1.70.1) (2023-06-19)
+
+
+### Bug Fixes
+
+* cronjob spec ([2562736](https://github.com/SocialGouv/mon-psy-sante/commit/2562736cfcf8610bd499d84795dc6ea83af4a061))
+
+# [1.70.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.5...v1.70.0) (2023-06-19)
+
+
+### Features
+
+* ci on kontinuous ([#296](https://github.com/SocialGouv/mon-psy-sante/issues/296)) ([d05e6b1](https://github.com/SocialGouv/mon-psy-sante/commit/d05e6b153fe7a0c39b406d43608b04d4bb276d97))
+
+## [1.69.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.4...v1.69.5) (2023-06-13)
+
+
+### Bug Fixes
+
+* **faq:** update one answer ([#294](https://github.com/SocialGouv/mon-psy-sante/issues/294)) ([19235cd](https://github.com/SocialGouv/mon-psy-sante/commit/19235cd334de13c2832f697311763df3e9b2f43d))
+
 ## [1.69.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.69.3...v1.69.4) (2023-04-24)
 
 ### Bug Fixes

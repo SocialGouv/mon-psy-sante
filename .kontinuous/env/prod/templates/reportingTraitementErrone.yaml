@@ -1,19 +1,20 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   namespace: mon-psy-sante
-  name: verif-dossiers-ds
+  name: reporting-traitement-errone
   labels:
     app: mon-psy
 spec:
-  schedule: "*/15 * * * *"
+  schedule: "0 11 * * 2"
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
       template:
         spec:
           containers:
             - name: mon-psy
-              image: ghcr.io/socialgouv/mon-psy-sante/app:{{ .Values.global.imageTag }}
+              image: {{ .Values.global.registry }}/{{ .Values.global.imageRepository }}/app:{{ .Values.global.imageTag }}
               envFrom:
                 - secretRef:
                     name: app-sealed-secret
@@ -23,6 +24,5 @@ spec:
                 - yarn
                 - run
                 - cron:launch
-                - verifFolders
+                - reportingTraitementErrone
           restartPolicy: Never
-          concurrencyPolicy: Forbid
