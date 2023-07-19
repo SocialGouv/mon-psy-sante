@@ -67,7 +67,7 @@ const Footer = () => (
           <a
             className="fr-footer__brand-link"
             href="/"
-            title="Page d'accueil MonSoutienPsy"
+            title="Page d'accueil Mon soutien psy"
           >
             <img
               src="/images/cnam.png"
@@ -79,7 +79,7 @@ const Footer = () => (
           <a
             className="fr-footer__brand-link"
             href="/"
-            title="Page d'accueil MonSoutienPsy"
+            title="Page d'accueil Mon soutien psy"
           >
             <img src="/images/msa.svg" alt="Logo MSA" width="100" height="46" />
           </a>

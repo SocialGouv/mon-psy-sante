@@ -7,22 +7,22 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Politique de confidentialité de MonSoutienPsy</title>
+        <title>Politique de confidentialité de Mon soutien psy</title>
       </Head>
       <div className="fr-container fr-mb-6w">
         <Breadcrumb page="Politique de confidentialité" />
 
-        <h1>Politique de confidentialité de MonSoutienPsy</h1>
+        <h1>Politique de confidentialité de Mon soutien psy</h1>
 
         <div className="fr-mt-6w">
           <h2>Traitement des données à caractère personnel</h2>
           <p className="fr-mb-0">
-            « MonSoutienPsy » est développé au sein de la Fabrique numérique des
-            ministères sociaux.
+            « Mon soutien psy » est développé au sein de la Fabrique numérique
+            des ministères sociaux.
           </p>
           <p className="fr-mb-0">
             Le responsable de traitement des données à caractère personnel
-            collectées par le site « MonSoutienPsy » est la Délégation
+            collectées par le site « Mon soutien psy » est la Délégation
             ministérielle à la santé mentale et à la psychiatrie, représenté par
             Monsieur Frank Bellivier, délégué ministériel.
           </p>
@@ -35,8 +35,8 @@ const Page = () => {
           <h2>Finalités</h2>
           <p className="fr-mb-2w">
             Dans le cadre de l’amélioration de la prise en charge de la santé
-            mentale et des troubles psychiques d’intensité légère, le site
-            MonSoutienPsy peut traiter des données à caractère personnelles pour
+            mentale et des troubles psychiques d’intensité légère, le site Mon
+            soutien psy peut traiter des données à caractère personnelles pour
             la mise en œuvre d’un annuaire de psychologues disponible
             gratuitement et publiquement en ligne.
           </p>

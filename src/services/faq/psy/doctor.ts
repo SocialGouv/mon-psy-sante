@@ -14,7 +14,7 @@ export default [
   },
   {
     answer:
-      "<p>En tant que partenaire du dispositif MonSoutienPsy, vous pouvez bénéficier de MSSanté.</p><p>MSSanté, ce sont des messageries sécurisées de santé qui permettent aux professionnels habilités (professionnels de santé, psychologues, établissements sanitaires, professionnels du secteur médico-social et social…) d’échanger en toute sécurité des données de santé à caractère personnel dans le cadre de la prise en charge des patients.</p><p>Si vous souhaitez plus d’informations sur ce sujet, vous pouvez contacter votre CPAM. Les conseillers informatique service (CIS) pourront vous accompagner dans la création de votre boîte aux lettres MSSanté.</p><p>Pour en savoir plus : <a href='https://mssante.fr/home' target='_blank'>https://mssante.fr/home</a></p>",
+      "<p>En tant que partenaire du dispositif Mon soutien psy, vous pouvez bénéficier de MSSanté.</p><p>MSSanté, ce sont des messageries sécurisées de santé qui permettent aux professionnels habilités (professionnels de santé, psychologues, établissements sanitaires, professionnels du secteur médico-social et social…) d’échanger en toute sécurité des données de santé à caractère personnel dans le cadre de la prise en charge des patients.</p><p>Si vous souhaitez plus d’informations sur ce sujet, vous pouvez contacter votre CPAM. Les conseillers informatique service (CIS) pourront vous accompagner dans la création de votre boîte aux lettres MSSanté.</p><p>Pour en savoir plus : <a href='https://mssante.fr/home' target='_blank'>https://mssante.fr/home</a></p>",
     question: "Ai-je accès à une messagerie sécurisée ?",
   },
 ];

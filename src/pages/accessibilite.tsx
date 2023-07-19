@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Accessibilité | MonSoutienPsy</title>
+        <title>Accessibilité | Mon soutien psy</title>
       </Head>
 
       <div className="fr-container fr-my-6w">
@@ -42,7 +42,7 @@ const Page = () => {
           <p>
             Ministère des Solidarités et de la Santé –{" "}
             <Link href="/">
-              <a>MonSoutienPsy</a>
+              <a>Mon soutien psy</a>
             </Link>{" "}
             est en conformité partielle avec le référentiel général
             d’amélioration de l’accessibilité (RGAA) «&nbsp;version 4.1&nbsp;»

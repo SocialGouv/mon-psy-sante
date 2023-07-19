@@ -8,8 +8,8 @@ const Page = () => {
   return (
     <>
       <HeadTag
-        title="Médecin : orienter mes patients vers le dispositif | MonSoutienPsy"
-        description="Orientez vos patients en souffrance psychique d’intensité légère à modérée, vers « MonSoutienPsy », un accompagnement remboursé avec un psychologue conventionné."
+        title="Médecin : orienter mes patients vers le dispositif | Mon soutien psy"
+        description="Orientez vos patients en souffrance psychique d’intensité légère à modérée, vers « Mon soutien psy », un accompagnement remboursé avec un psychologue conventionné."
         image="doctor.svg"
       />
       <section>
@@ -40,7 +40,7 @@ const Page = () => {
                 <div className="align-left">
                   <button
                     onClick={() => setVideo("show")}
-                    title="Découvrir MonSoutienPsy en vidéo, via le témoignage de M. Werner, médecin pédiatre"
+                    title="Découvrir Mon soutien psy en vidéo, via le témoignage de M. Werner, médecin pédiatre"
                     className="fr-btn fr-btn--lg fr-btn--secondary fr-fi-play-line fr-btn--icon-left fr-mt-4w"
                   >
                     Découvrez le témoignage de M. Werner, médecin pédiatre
@@ -217,8 +217,8 @@ const Page = () => {
             <div className="fr-col-12">
               <h2>Vous êtes psychiatre</h2>
               <p>
-                Le dispositif MonSoutienPsy est né d’une volonté partagée entre
-                les acteurs de faciliter l’accès à une prise en charge
+                Le dispositif Mon soutien psy est né d’une volonté partagée
+                entre les acteurs de faciliter l’accès à une prise en charge
                 psychologique de premier recours pour les patients souffrant de
                 troubles d’intensité légère à modérée.
               </p>

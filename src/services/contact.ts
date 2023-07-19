@@ -17,7 +17,7 @@ const mailTransport = nodemailer.createTransport({
 export const sendMail = (to: string, subject: string, html: string) => {
   const sanitizedHTML = sanitizeHtml(html);
   const mail = {
-    from: `MonSoutienPsy <${config.supportMail}>`,
+    from: `Mon soutien psy <${config.supportMail}>`,
     html: sanitizedHTML,
     subject,
     text: sanitizedHTML,

@@ -3,7 +3,7 @@ describe("FAQ", () => {
     cy.visit("/faq");
     cy.get("h1").should(
       "have.text",
-      "Information sur le dispositif MonSoutienPsy"
+      "Information sur le dispositif Mon soutien psy"
     );
 
     cy.get("h2").should("have.text", "PrésentationPatientPsychologueMédecin");

@@ -7,7 +7,7 @@ export default [
   },
   {
     answer:
-      "<p>Vous exercez dans un cadre libéral et vous êtes libre de décider du nombre de séances que vous consacrez au dispositif MonSoutienPsy et d’organiser le fonctionnement de votre cabinet.</p><p>Vous pouvez continuer à exercer par ailleurs votre activité avec vos tarifs propres, hors du dispositif de remboursement.</p>",
+      "<p>Vous exercez dans un cadre libéral et vous êtes libre de décider du nombre de séances que vous consacrez au dispositif Mon soutien psy et d’organiser le fonctionnement de votre cabinet.</p><p>Vous pouvez continuer à exercer par ailleurs votre activité avec vos tarifs propres, hors du dispositif de remboursement.</p>",
     question:
       "Puis-je conserver une activité non conventionnée à côté de ce dispositif ?",
   },
@@ -25,7 +25,7 @@ export default [
   },
   {
     answer:
-      "<p>L’Assurance Maladie met à votre disposition plusieurs services via votre espace <a href='https://authps-espacepro.ameli.fr/' target='_blank'>ameli.pro</a>.</p><p>Vous pourrez ainsi avoir accès à des services d’aide au suivi de votre activité :<ul><li>consulter les paiements effectués par l’Assurance Maladie (service PAM)</li><li>consulter les droits de base à l’Assurance Maladie de vos patients </li><li>commander vos feuilles de soins</li><li>recevoir vos relevés d’honoraires (nécessaires pour les déclarations d’impôts, URSSAF…)</li><li>accéder aux différents guides et supports sur le dispositif MonSoutienPsy.</li></ul></p><p>Vous aurez aussi accès à une messagerie sécurisée pour vos échanges avec les professionnels de santé.</p><p>Les équipes de l’Assurance Maladie assurent le support pour toute question ou demande.</p>",
+      "<p>L’Assurance Maladie met à votre disposition plusieurs services via votre espace <a href='https://authps-espacepro.ameli.fr/' target='_blank'>ameli.pro</a>.</p><p>Vous pourrez ainsi avoir accès à des services d’aide au suivi de votre activité :<ul><li>consulter les paiements effectués par l’Assurance Maladie (service PAM)</li><li>consulter les droits de base à l’Assurance Maladie de vos patients </li><li>commander vos feuilles de soins</li><li>recevoir vos relevés d’honoraires (nécessaires pour les déclarations d’impôts, URSSAF…)</li><li>accéder aux différents guides et supports sur le dispositif Mon soutien psy.</li></ul></p><p>Vous aurez aussi accès à une messagerie sécurisée pour vos échanges avec les professionnels de santé.</p><p>Les équipes de l’Assurance Maladie assurent le support pour toute question ou demande.</p>",
     question: "Quels services l’Assurance Maladie met-elle à ma disposition ?",
   },
   {
