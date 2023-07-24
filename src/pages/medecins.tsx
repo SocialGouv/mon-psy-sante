@@ -152,7 +152,7 @@ const Page = () => {
                     <p>
                       <strong>Un modèle</strong> de ces deux courriers est{" "}
                       <a
-                        href="/documents/Courrier_d_adressage.docx"
+                        href="/documents/Courrier-adressage-Mon soutien psy.docx"
                         target="_blank"
                         rel="noreferrer nofollow noopener"
                       >
