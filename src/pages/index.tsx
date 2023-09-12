@@ -9,8 +9,8 @@ const Page = () => {
   return (
     <>
       <HeadTag
-        title="MonParcoursPsy : Le dispositif de remboursement des séances chez le psychologue | Ministère de la Santé"
-        description="MonParcoursPsy est un dispositif du Ministère de la Santé permettant à chacun de bénéficier de séances remboursées avec un psychologue conventionné avec l’Assurance Maladie."
+        title="Mon soutien psy : Le dispositif de remboursement des séances chez le psychologue | Ministère de la Santé"
+        description="Mon soutien psy est un dispositif du Ministère de la Santé permettant à chacun de bénéficier de séances remboursées avec un psychologue conventionné avec l’Assurance Maladie."
         image="Psychologist-hero.svg"
       />
       <section>
@@ -18,9 +18,9 @@ const Page = () => {
           <ul className="no-bullet list-blue-france-arrow">
             <li className="fr-li--icon-left fr-fi-arrow-right-line fr-py-1w">
               {" "}
-              Mon psy change de nom et devient{" "}
+              MonParcoursPsy change de nom et devient{" "}
               <strong className="fr-text--lg fr-text--dark-blue">
-                MonParcoursPsy
+                Mon soutien psy
               </strong>
             </li>
           </ul>
@@ -32,8 +32,8 @@ const Page = () => {
               <h1>
                 Vous rencontrez une situation difficile&nbsp;?
                 <span className="fr-text--lead d-block fr-mt-3w">
-                  Avec MonParcoursPsy, bénéficiez de 8 séances par an chez un ou
-                  une psychologue
+                  Avec Mon soutien psy, bénéficiez de 8 séances par an chez un
+                  ou une psychologue
                 </span>
               </h1>
               <p className="fr-text--xl fr-text--bold fr-mt-5w">
@@ -92,7 +92,7 @@ const Page = () => {
                 </p>
               </div>
               <div className="fr-col-12 fr-col-md-6">
-                <h2 className="fr-h5">MonParcoursPsy c’est&nbsp;:</h2>
+                <h2 className="fr-h5">Mon soutien psy c’est&nbsp;:</h2>
                 <ul className="no-bullet list-blue-france-arrow">
                   <li className="fr-li--icon-left fr-fi-arrow-right-line">
                     &nbsp;Un annuaire de{" "}
@@ -150,8 +150,8 @@ const Page = () => {
                         1. Rencontrez un médecin
                       </h3>
                       <p className="fr-card__desc fr-text--md">
-                        Le médecin échange avec vous pour s’assurer que
-                        MonParcoursPsy est adapté à votre situation. Vous pouvez
+                        Le médecin échange avec vous pour s’assurer que Mon
+                        soutien psy est adapté à votre situation. Vous pouvez
                         consulter différents types de médecins (généraliste,
                         gynécologue, médecin scolaire, protection maternelle et
                         infantile, etc.)
@@ -177,7 +177,7 @@ const Page = () => {
                           className="fr-btn"
                           onClick={() => router.push("/annuaire")}
                         >
-                          Annuaire MonParcoursPsy
+                          Annuaire Mon soutien psy
                         </button>
                       </div>
                     </div>
@@ -363,7 +363,7 @@ const Page = () => {
         <div className="fr-container fr-py-10w">
           <div className="fr-grid-row fr-grid-row--center fr-index-box">
             <div className="fr-col-12 fr-col-md-8 fr-pt-4w">
-              <h2>MonParcoursPsy pour les moins de 18 ans</h2>
+              <h2>Mon soutien psy pour les moins de 18 ans</h2>
               <ul className="no-bullet list-brown-cafe-creme-main-arrow">
                 <li className="fr-li--icon-left fr-fi-check-line">
                   &nbsp;À partir de <strong>3 ans</strong>.
@@ -380,7 +380,7 @@ const Page = () => {
                 className="fr-btn fr-mt-2w"
                 onClick={() => router.push("/annuaire")}
               >
-                Annuaire MonParcoursPsy
+                Annuaire Mon soutien psy
               </button>
             </div>
             <div className="fr-col-12 fr-col-md-4 align-center">
@@ -407,7 +407,7 @@ const Page = () => {
                 className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
-                href="/documents/MonPsy_Flyer grand public.pdf"
+                href="/documents/Mon soutien psy_Flyer grand public_2023-IMP.pdf"
                 title="Réponse à vos questions en PDF"
               >
                 Flyer Grand Public (PDF)

@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Accessibilité | MonParcoursPsy</title>
+        <title>Accessibilité | Mon soutien psy</title>
       </Head>
 
       <div className="fr-container fr-my-6w">
@@ -35,14 +35,14 @@ const Page = () => {
             Cette déclaration d&apos;accessibilité s&apos;applique au Ministère
             des Solidarités et de la Santé&nbsp;:{" "}
             <Link href="/">
-              <a>https://monparcourspsy.sante.gouv.fr/</a>
+              <a>https://monsoutienpsy.sante.gouv.fr/</a>
             </Link>
           </p>
           <h2>État de conformité</h2>
           <p>
             Ministère des Solidarités et de la Santé –{" "}
             <Link href="/">
-              <a>MonParcoursPsy</a>
+              <a>Mon soutien psy</a>
             </Link>{" "}
             est en conformité partielle avec le référentiel général
             d’amélioration de l’accessibilité (RGAA) «&nbsp;version 4.1&nbsp;»
@@ -133,7 +133,7 @@ const Page = () => {
           <p>
             Technologies utilisées pour la réalisation de{" "}
             <Link href="/">
-              <a>https://monparcourspsy.sante.gouv.fr/</a>
+              <a>https://monsoutienpsy.sante.gouv.fr/</a>
             </Link>
             &nbsp;:
           </p>
@@ -172,45 +172,45 @@ const Page = () => {
             <li>
               Page Accueil{" "}
               <Link href="/">
-                <a>https://monparcourspsy.sante.gouv.fr/</a>
+                <a>https://monsoutienpsy.sante.gouv.fr/</a>
               </Link>
             </li>
             <li>
               Page Accessibilité{" "}
               <Link href="/mentions-legales#accessibilite">
                 <a>
-                  https://monparcourspsy.sante.gouv.fr/mentions-legales#accessibilite
+                  https://monsoutienpsy.sante.gouv.fr/mentions-legales#accessibilite
                 </a>
               </Link>
             </li>
             <li>
               Page Mentions légales{" "}
               <Link href="/mentions-legales">
-                <a>https://monparcourspsy.sante.gouv.fr/mentions-legales</a>
+                <a>https://monsoutienpsy.sante.gouv.fr/mentions-legales</a>
               </Link>
             </li>
             <li>
               Page Nous contacter{" "}
               <Link href="/contact">
-                <a>https://monparcourspsy.sante.gouv.fr/</a>
+                <a>https://monsoutienpsy.sante.gouv.fr/</a>
               </Link>
             </li>
             <li>
               Page FAQ{" "}
               <Link href="/faq">
-                <a>https://monparcourspsy.sante.gouv.fr/faq</a>
+                <a>https://monsoutienpsy.sante.gouv.fr/faq</a>
               </Link>
             </li>
             <li>
               Page Psychologue{" "}
               <Link href="/psychologues">
-                <a>https://monparcourspsy.sante.gouv.fr/psychologues</a>
+                <a>https://monsoutienpsy.sante.gouv.fr/psychologues</a>
               </Link>
             </li>
             <li>
               Page Annuaire{" "}
               <Link href="/annuaire">
-                <a>https://monparcourspsy.sante.gouv.fr/annuaire</a>
+                <a>https://monsoutienpsy.sante.gouv.fr/annuaire</a>
               </Link>
             </li>
           </ul>
@@ -220,7 +220,7 @@ const Page = () => {
             Si vous n’arrivez pas à accéder à un contenu ou à un service, vous
             pouvez contacter le responsable du site internet{" "}
             <Link href="/">
-              <a>https://monparcourspsy.sante.gouv.fr</a>
+              <a>https://monsoutienpsy.sante.gouv.fr</a>
             </Link>{" "}
             pour être orienté vers une alternative accessible ou obtenir le
             contenu sous une autre forme.

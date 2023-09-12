@@ -8,8 +8,8 @@ const Page = () => {
   return (
     <>
       <HeadTag
-        title="Médecin : orienter mes patients vers le dispositif | MonParcoursPsy"
-        description="Orientez vos patients en souffrance psychique d’intensité légère à modérée, vers « MonParcoursPsy », un accompagnement remboursé avec un psychologue conventionné."
+        title="Médecin : orienter mes patients vers le dispositif | Mon soutien psy"
+        description="Orientez vos patients en souffrance psychique d’intensité légère à modérée, vers « Mon soutien psy », un accompagnement remboursé avec un psychologue conventionné."
         image="doctor.svg"
       />
       <section>
@@ -27,7 +27,7 @@ const Page = () => {
               <a
                 className="fr-btn fr-mb-4w"
                 target="_blank"
-                href="/documents/MonPsy_Flyer grand public.pdf"
+                href="/documents/Mon soutien psy_Flyer grand public_2023-IMP.pdf"
                 title="Réponse à vos questions en PDF"
                 rel="noreferrer nofollow noopener"
               >
@@ -40,7 +40,7 @@ const Page = () => {
                 <div className="align-left">
                   <button
                     onClick={() => setVideo("show")}
-                    title="Découvrir MonParcoursPsy en vidéo, via le témoignage de M. Werner, médecin pédiatre"
+                    title="Découvrir Mon soutien psy en vidéo, via le témoignage de M. Werner, médecin pédiatre"
                     className="fr-btn fr-btn--lg fr-btn--secondary fr-fi-play-line fr-btn--icon-left fr-mt-4w"
                   >
                     Découvrez le témoignage de M. Werner, médecin pédiatre
@@ -87,7 +87,7 @@ const Page = () => {
                       <a
                         target="_blank"
                         rel="noreferrer nofollow noopener"
-                        href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                        href="/documents/Mon soutien psy_Fiche-Mémo_médecin_2023-IMP.pdf"
                         title="Fiche mémo en PDF"
                       >
                         Fiche mémo (PDF)
@@ -152,7 +152,7 @@ const Page = () => {
                     <p>
                       <strong>Un modèle</strong> de ces deux courriers est{" "}
                       <a
-                        href="/documents/Courrier_d_adressage.docx"
+                        href="/documents/Courrier-adressage-Mon soutien psy.docx"
                         target="_blank"
                         rel="noreferrer nofollow noopener"
                       >
@@ -217,8 +217,8 @@ const Page = () => {
             <div className="fr-col-12">
               <h2>Vous êtes psychiatre</h2>
               <p>
-                Le dispositif MonParcoursPsy est né d’une volonté partagée entre
-                les acteurs de faciliter l’accès à une prise en charge
+                Le dispositif Mon soutien psy est né d’une volonté partagée
+                entre les acteurs de faciliter l’accès à une prise en charge
                 psychologique de premier recours pour les patients souffrant de
                 troubles d’intensité légère à modérée.
               </p>
@@ -249,7 +249,7 @@ const Page = () => {
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
-                  href="/documents/MonPsy_Guide médecin_2022.pdf"
+                  href="/documents/Mon soutien psy_Guide médecin_2023_IMP.pdf"
                   title="Guide pour les médecins en PDF"
                 >
                   Guide pour les médecins (PDF)
@@ -258,7 +258,7 @@ const Page = () => {
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
-                  href="/documents/MonPsy_Fiche-Mémo_médecin_2022.pdf"
+                  href="/documents/Mon soutien psy_Fiche-Mémo_médecin_2023-IMP.pdf"
                   title="Fiche mémo pour les médecins en PDF"
                 >
                   Fiche mémo pour les médecins (PDF)
@@ -267,7 +267,7 @@ const Page = () => {
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
                   rel="noreferrer nofollow noopener"
-                  href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                  href="/documents/Mon soutien psy_Livret_échelles évaluations_2023-IMP.pdf"
                   title="Échelles d’évaluation en PDF"
                 >
                   Échelles d’évaluation (PDF)

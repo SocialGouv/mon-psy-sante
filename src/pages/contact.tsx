@@ -8,7 +8,7 @@ const contact = () => {
   return (
     <div className="fr-container">
       <HeadTag
-        title="Nous contacter | MonParcoursPsy"
+        title="Nous contacter | Mon soutien psy"
         description="Obtenir des informations sur le fonctionnement du dispositif accessible à tout public à partir de 3 ans ou en savoir plus sur les modalités de candidature pour les psychologues"
       />
       <Breadcrumb page="Nous contacter" />

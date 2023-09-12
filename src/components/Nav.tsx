@@ -5,7 +5,7 @@ const Nav = () => {
   const [modalMenuOpen, setModalMenuOpen] = useState(false);
   const items = [
     { title: "Accueil", href: "/" },
-    { title: "Annuaire MonParcoursPsy", href: "/annuaire" },
+    { title: "Annuaire Mon soutien psy", href: "/annuaire" },
     { title: "Psychologue", href: "/psychologues" },
     { title: "Médecin", href: "/medecins" },
     { title: "Foire aux questions", href: "/faq" },
@@ -17,10 +17,10 @@ const Nav = () => {
           <div className="fr-header__body-row">
             <div className="fr-header__brand fr-enlarge-link">
               <div className="fr-header__brand-top">
-                <div className="fr-header__logo">
+                <div className="fr-header__logo fr-mr-0">
                   <p className="fr-logo">
                     <Link href="/">
-                      <a title="Page d'accueil MonParcoursPsy" target="_self">
+                      <a title="Page d'accueil Mon soutien psy" target="_self">
                         République
                         <br />
                         Française
@@ -41,17 +41,26 @@ const Nav = () => {
                     Menu
                   </button>
                 </div>
-                <div className="fr-header__operator">
+
+                <div className="fr-header__operator fr-mr-0 align-center">
                   <img
                     src="/images/cnam.png"
                     alt="Logo Caisse Nationale d'Assurance Maladie"
-                    width="200"
-                    height="66"
+                    width="150"
+                    height="50"
+                  />
+
+                  <img
+                    className="fr-mt-2w"
+                    src="/images/msa.svg"
+                    alt="Logo MSA"
+                    width="100"
+                    height="46"
                   />
                 </div>
               </div>
               <div className="fr-header__service">
-                <p className="fr-header__service-title">MonParcoursPsy</p>
+                <p className="fr-header__service-title">Mon soutien psy</p>
                 <p className="fr-header__service-tagline">
                   En parler, c’est déjà se soigner.
                 </p>
@@ -66,7 +75,7 @@ const Nav = () => {
                   <li>
                     <Link href="/annuaire">
                       <a className="fr-link fr-fi-attachment-line fr-link--icon-left fr-mt-1v">
-                        Annuaire MonParcoursPsy
+                        Annuaire Mon soutien psy
                       </a>
                     </Link>
                   </li>

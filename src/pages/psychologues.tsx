@@ -8,8 +8,8 @@ const Page = () => {
   return (
     <>
       <HeadTag
-        title="Rejoindre le réseau de psychologues partenaires | MonParcoursPsy"
-        description="Rejoignez le réseau de psychologues partenaires MonParcoursPsy, et proposez aux patients un accompagnement psychologique remboursé par l’Assurance Maladie."
+        title="Rejoindre le réseau de psychologues partenaires | Mon soutien psy"
+        description="Rejoignez le réseau de psychologues partenaires Mon soutien psy, et proposez aux patients un accompagnement psychologique remboursé par l’Assurance Maladie."
         image="psy.svg"
       />
       <section>
@@ -40,7 +40,7 @@ const Page = () => {
                 <div className="align-left">
                   <button
                     onClick={() => setVideo("show")}
-                    title="Découvrir MonParcoursPsy en vidéo, via le témoignage d’Annie, psychologue partenaire"
+                    title="Découvrir Mon soutien psy en vidéo, via le témoignage d’Annie, psychologue partenaire"
                     className="fr-btn fr-btn--lg fr-btn--secondary fr-fi-play-line fr-btn--icon-left fr-mt-4w"
                   >
                     Découvrez le témoignage d’Annie, psychologue partenaire
@@ -90,14 +90,14 @@ const Page = () => {
                 les autres professionnels de santé.
               </BulletPoint>
               <BulletPoint title="Une meilleure visibilité">
-                Vos coordonnées apparaissent publiquement sur l’annuaire
-                MonParcoursPsy mis en ligne par le Ministère de la Santé et
+                Vos coordonnées apparaissent publiquement sur l’annuaire Mon
+                soutien psy mis en ligne par le Ministère de la Santé et
                 l’Assurance Maladie.
               </BulletPoint>
               <BulletPoint title="Une quotité de travail choisie">
                 Vous pouvez continuer à réaliser des séances à tarif libre (non
-                remboursées par l’Assurance Maladie) en dehors du dispositif
-                MonParcoursPsy.
+                remboursées par l’Assurance Maladie) en dehors du dispositif Mon
+                soutien psy.
               </BulletPoint>
             </ul>
           </div>
@@ -118,7 +118,7 @@ const Page = () => {
               <ul>
                 <li>
                   <a
-                    href="/documents/MonPsy_Flyer-Démarches simplifiées_2022.pdf"
+                    href="/documents/Mon soutien psy_Démarches simplifiées_2023-IMP.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Tutoriel Démarches simplifiées en PDF"
@@ -128,7 +128,7 @@ const Page = () => {
                 </li>
                 <li>
                   <a
-                    href="/documents/MonPsy_Flyer-candidatures-psychologues_2022.pdf"
+                    href="/documents/Mon soutien psy_Flyer-candidatures-psychologues_2023-IMP.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     title=" Brochure informative en PDF"
@@ -155,14 +155,14 @@ const Page = () => {
             <CardStep title="Publication sur l’annuaire" number="4">
               <p>
                 Une fois conventionné, vos coordonnées sont publiées sur
-                l’annuaire MonParcoursPsy. Vous pouvez indiquer aux patients si
+                l’annuaire Mon soutien psy. Vous pouvez indiquer aux patients si
                 vous êtes ou non disponible.
               </p>
             </CardStep>
             <CardStep title="Accueil des patients" number="5">
               <p>
                 Une fois ces étapes réalisées, vous pouvez commencer à recevoir
-                des patients dans le cadre de MonParcoursPsy&nbsp;!
+                des patients dans le cadre de Mon soutien psy&nbsp;!
               </p>
             </CardStep>
           </div>
@@ -260,7 +260,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Guide psychologue_2022.pdf"
+                  href="/documents/Mon soutien psy_Guide psychologue_2023-IMP.pdf"
                   title="Guide pour les psychologues en PDF"
                 >
                   Guide pour les psychologues (PDF)
@@ -268,7 +268,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Livret_échelles évaluations_2022.pdf"
+                  href="/documents/Mon soutien psy_Livret_échelles évaluations_2023-IMP.pdf"
                   title="Echelles d’évaluation en PDF"
                 >
                   Echelles d’évaluation (PDF)
@@ -276,7 +276,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Flyer-Feuille de soin_2022.pdf"
+                  href="/documents/Mon soutien psy_Feuille de soin_2023-IMP.pdf"
                   title="Comment compléter une feuille de soins en PDF"
                 >
                   Comment compléter une feuille de soins&nbsp;? (PDF)
@@ -284,7 +284,7 @@ const Page = () => {
                 <a
                   className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                   target="_blank"
-                  href="/documents/MonPsy_Fiche-Memo_Psy.pdf"
+                  href="/documents/Mon soutien psy_Fiche-Mémo_Psychologue_2023-IMP.pdf"
                   title="Fiche mémo pour les psychologues en PDF"
                 >
                   Fiche mémo pour les psychologues (PDF)

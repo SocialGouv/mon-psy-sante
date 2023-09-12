@@ -67,14 +67,21 @@ const Footer = () => (
           <a
             className="fr-footer__brand-link"
             href="/"
-            title="Page d'accueil MonParcoursPsy"
+            title="Page d'accueil Mon soutien psy"
           >
             <img
               src="/images/cnam.png"
               alt="Logo Caisse Nationale d'Assurance Maladie"
-              width="200"
-              height="66"
+              width="150"
+              height="50"
             />
+          </a>
+          <a
+            className="fr-footer__brand-link"
+            href="/"
+            title="Page d'accueil Mon soutien psy"
+          >
+            <img src="/images/msa.svg" alt="Logo MSA" width="100" height="46" />
           </a>
         </div>
         <div className="fr-footer__content">

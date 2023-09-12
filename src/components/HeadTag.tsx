@@ -19,7 +19,7 @@ const HeadTag = ({ title, description, image }: HeadProps) => (
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
-      content={`https://monparcourspsy.sante.gouv.fr/images/${image}`}
+      content={`https://monsoutienpsy.sante.gouv.fr/images/${image}`}
     />
   </Head>
 );

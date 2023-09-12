@@ -119,7 +119,11 @@ span.error {
   color: var(--error-main-525);
 }
 
-@media only screen and (max-width: 321px) {
+.fr-header__operator img {
+  display: inline-block;
+}
+
+@media screen and (max-width: 321px) {
   body {
     word-wrap: break-word;
   }

@@ -7,7 +7,7 @@ export default [
   },
   {
     answer:
-      "<p><b>Le psychiatre</b> est un médecin, spécialisé en psychiatrie. Ses consultations sont remboursées par l’Assurance Maladie. Il peut prescrire des médicaments.</p><p><b>Le psychologue clinicien</b> est un expert du comportement, des émotions et de la santé mentale. Il a suivi un cursus universitaire de 5 ans en psychologie (Master 2 Pro) et effectué au moins 500h de stage. Il n’est pas médecin et ne peut pas prescrire de médicaments. Dans le cadre du dispositif MonParcoursPsy, seuls les psychologues volontaires répondant aux critères de sélection (diplôme, expérience clinique de 3 ans minimum) et conventionnés avec l’Assurance Maladie peuvent participer au dispositif.</p><p><b>Le psychothérapeute agréé par l’ARS</b> a une formation soit de médecin, soit de psychologue.</p>",
+      "<p><b>Le psychiatre</b> est un médecin, spécialisé en psychiatrie. Ses consultations sont remboursées par l’Assurance Maladie. Il peut prescrire des médicaments.</p><p><b>Le psychologue clinicien</b> est un expert du comportement, des émotions et de la santé mentale. Il a suivi un cursus universitaire de 5 ans en psychologie (Master 2 Pro) et effectué au moins 500h de stage. Il n’est pas médecin et ne peut pas prescrire de médicaments. Dans le cadre du dispositif Mon soutien psy, seuls les psychologues volontaires répondant aux critères de sélection (diplôme, expérience clinique de 3 ans minimum) et conventionnés avec l’Assurance Maladie peuvent participer au dispositif.</p><p><b>Le psychothérapeute agréé par l’ARS</b> a une formation soit de médecin, soit de psychologue.</p>",
     question:
       "Quelle est la différence entre un psychiatre, un psychologue et un psychothérapeute ?",
   },

@@ -19,12 +19,12 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Foire aux questions | MonParcoursPsy</title>
+        <title>Foire aux questions | Mon soutien psy</title>
       </Head>
       <div className="fr-container fr-my-6w">
         <Breadcrumb page="Foire aux questions" />
 
-        <h1>Information sur le dispositif MonParcoursPsy</h1>
+        <h1>Information sur le dispositif Mon soutien psy</h1>
         <div className="fr-mt-3w">
           {tabIndex >= 0 && <Tabs items={items} currentTabIndex={tabIndex} />}
         </div>
