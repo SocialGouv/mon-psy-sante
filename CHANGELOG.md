@@ -1,3 +1,10 @@
+## [1.70.9](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.8...v1.70.9) (2023-09-12)
+
+
+### Bug Fixes
+
+* **annuaire:** update max number of psy returns ([8fb692a](https://github.com/SocialGouv/mon-psy-sante/commit/8fb692a31e797a1688bab737e395ae89b6155792))
+
 ## [1.70.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.7...v1.70.8) (2023-09-05)
 
 
