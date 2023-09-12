@@ -4,7 +4,7 @@ import { handleApiError } from "../../../services/api";
 import { getAll } from "../../../services/psychologists";
 import { API_ENDPOINT_FILTER } from "../../../types/enums/filters";
 
-const FILTERS = Object.values(API_ENDPOINT_FILTER);
+const FILTERS = Object.values(API_ENDPOINT_FILTER) as string[];
 
 function hasParamsNotAllowed(filters) {
   return Object.keys(filters).filter((q) => !FILTERS.includes(q)).length;

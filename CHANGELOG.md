@@ -1,3 +1,10 @@
+## [1.70.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.7...v1.70.8) (2023-09-05)
+
+
+### Bug Fixes
+
+* **instructeurs:** update instructeur id for Beatrice ([cc3b7b8](https://github.com/SocialGouv/mon-psy-sante/commit/cc3b7b8e4e857c64bd4234a6c86d419bff5c1436))
+
 ## [1.70.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.6...v1.70.7) (2023-07-17)
 
 
