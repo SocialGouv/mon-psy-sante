@@ -1,3 +1,10 @@
+## [1.70.10](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.9...v1.70.10) (2023-09-12)
+
+
+### Bug Fixes
+
+* **name:** MonParcoursPsy devient MonSoutienPsy ([#295](https://github.com/SocialGouv/mon-psy-sante/issues/295)) ([f288ad7](https://github.com/SocialGouv/mon-psy-sante/commit/f288ad7eb6e5f625bb7bbfd880e127927aa1b04a))
+
 ## [1.70.9](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.8...v1.70.9) (2023-09-12)
 
 
