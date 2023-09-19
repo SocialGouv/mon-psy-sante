@@ -407,7 +407,7 @@ const Page = () => {
                 className="fr-link fr-fi-download-line fr-link--icon-left fr-ml-2w"
                 target="_blank"
                 rel="noreferrer nofollow noopener"
-                href="/documents/Mon soutien psy_Flyer grand public_2023-IMP.pdf"
+                href="/documents/Mon soutien psy_Flyer grand public_2023.pdf"
                 title="Réponse à vos questions en PDF"
               >
                 Flyer Grand Public (PDF)
