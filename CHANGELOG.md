@@ -1,3 +1,10 @@
+# [1.71.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.10...v1.71.0) (2023-09-19)
+
+
+### Features
+
+* **documents:** put latest of documents ([15c92af](https://github.com/SocialGouv/mon-psy-sante/commit/15c92aff350656dba1ea4728f046d850b86eef4b))
+
 ## [1.70.10](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.9...v1.70.10) (2023-09-12)
 
 
