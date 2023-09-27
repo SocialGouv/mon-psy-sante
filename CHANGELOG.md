@@ -1,3 +1,10 @@
+## [1.71.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.0...v1.71.1) (2023-09-26)
+
+
+### Bug Fixes
+
+* **videos:** update videos with new name ([399eadb](https://github.com/SocialGouv/mon-psy-sante/commit/399eadbbce2e34099e571e153c4f6fb8fa0e7e95))
+
 # [1.71.0](https://github.com/SocialGouv/mon-psy-sante/compare/v1.70.10...v1.71.0) (2023-09-19)
 
 
