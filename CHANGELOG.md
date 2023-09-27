@@ -1,3 +1,11 @@
+## [1.71.2](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.1...v1.71.2) (2023-09-27)
+
+
+### Bug Fixes
+
+* **doc:** put back document ([b7d6b8e](https://github.com/SocialGouv/mon-psy-sante/commit/b7d6b8ec059cd5357730c3eac05c2975c0596135))
+* **documents:** put back right version of pdf ([d3794e9](https://github.com/SocialGouv/mon-psy-sante/commit/d3794e936f5f4b5353c03ffb804932cc7c87ee95))
+
 ## [1.71.1](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.0...v1.71.1) (2023-09-26)
 
 
