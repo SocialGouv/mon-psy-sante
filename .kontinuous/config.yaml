@@ -1,0 +1,7 @@
+projectName: mon-psy-sante
+ciNamespace: ci-mon-psy-sante
+
+dependencies:
+  fabrique:
+    extends:
+      - name: buildkit-service
