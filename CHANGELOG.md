@@ -1,3 +1,10 @@
+## [1.71.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.3...v1.71.4) (2023-11-22)
+
+
+### Bug Fixes
+
+* use CNPG in production ([#303](https://github.com/SocialGouv/mon-psy-sante/issues/303)) ([d7daa81](https://github.com/SocialGouv/mon-psy-sante/commit/d7daa81395aea2f09edcee5faaa058b3e96deeb6))
+
 ## [1.71.3](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.2...v1.71.3) (2023-11-22)
 
 
