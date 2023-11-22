@@ -1,9 +1,10 @@
 app:
   containerPort: 3000
+  ~needs: [pg, keycloak]
   probesPath: "/healthz"
   envFrom:
     - secretRef:
-        name: "{{ .Values.global.pgSecretName }}"
+        name: pg-app
     - secretRef:
         name: app-sealed-secret
     - secretRef:
@@ -16,13 +17,20 @@ app:
     - name: KEYCLOAK_ID
       value: mon-psy-app
 
+pg:
+  ~chart: pg
+
+pg-keycloak:
+  ~chart: pg
+
 keycloak:
+  ~needs: [pg-keycloak]
   postgresql:
     enabled: false
 
   extraEnvFrom: |
     - secretRef:
-        name: keycloak-db
+        name: pg-keycloak-app
     - secretRef:
         name: keycloak-secrets
 
@@ -55,7 +63,6 @@ keycloak:
     - name: keycloak-realm
       mountPath: "/realm/"
       readOnly: true
-
 
   extraInitContainers: |
     - name: compile-realm

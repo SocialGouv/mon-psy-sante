@@ -1,0 +1,15 @@
+projectName: mon-psy-sante
+ciNamespace: ci-mon-psy-sante
+
+dependencies:
+  fabrique:
+    extends:
+      - name: buildkit-service
+    dependencies:
+      contrib:
+        preDeploy:
+          importSecrets:
+            options:
+              secrets:
+                mon-psy-sante-dev-backups-access-key:
+                mon-psy-sante-prod-backups-access-key:
