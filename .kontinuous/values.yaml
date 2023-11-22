@@ -108,15 +108,3 @@ keycloak:
         paths:
           - path: /
             pathType: Prefix
-
-deactivate:
-  jobs-deactivate:
-    runs:
-      deactivate:
-        with:
-          db: true
-      drop-db2:
-        use: drop-db
-        with:
-          database: "keycloak_{{.Values.global.branchSlug32}}"
-          databaseUser: "keycloak_{{ .Values.global.branchSlug32 }}"
