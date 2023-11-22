@@ -28,13 +28,6 @@ app:
       value: "https://keycloak-{{ .Values.global.host }}/auth/realms/mon-psy-sante"
     - name: KEYCLOAK_ID
       value: mon-psy-app
-  envFrom:
-    - secretRef:
-        name: "{{ .Values.global.pgSecretName }}" # todo: change to pg-app after CNPG migration
-    - secretRef:
-        name: app-sealed-secret
-    - secretRef:
-        name: keycloak-secrets
 
 keycloak:
   ingress:
@@ -46,12 +39,6 @@ keycloak:
       - hosts:
           - "keycloak-{{ .Values.global.host }}"
         secretName: keycloak-crt
-  # todo: remove block after CNPG migration
-  extraEnvFrom: |
-    - secretRef:
-        name: keycloak-db  
-    - secretRef:
-        name: keycloak-secrets
 
 jobs:
   runs:
