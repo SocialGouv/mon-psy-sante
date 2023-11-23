@@ -5,7 +5,7 @@ import dbConfig from "../config/config";
 import psychologist from "./psychologist";
 
 const env = process.env.NODE_ENV || "development";
-const currentDbConfig = dbConfig[env];
+const currentDbConfig = dbConfig[env] || dbConfig["development"];
 
 export const sequelize = new Sequelize(
   currentDbConfig.database,
