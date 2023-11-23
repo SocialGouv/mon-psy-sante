@@ -43,7 +43,6 @@ export default {
   minScoreAddress: parseFloat(process.env.MIN_SCORE_ADDRESS || "0.30"),
   postgre: {
     logging: parseBoolean(process.env.DB_LOGGING_ENABLE),
-    url: process.env.DATABASE_URL || "postgres://localhost:5432/monpsysante",
   },
   supportMail: process.env.SUPPORT_MAIL,
   reportingMailRecipients: process.env.REPORTING_MAIL_RECIPIENTS,
