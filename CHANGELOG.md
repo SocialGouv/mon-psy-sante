@@ -1,3 +1,10 @@
+## [1.71.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.4...v1.71.5) (2023-11-23)
+
+
+### Bug Fixes
+
+* cronjobs ([#305](https://github.com/SocialGouv/mon-psy-sante/issues/305)) ([fbd774a](https://github.com/SocialGouv/mon-psy-sante/commit/fbd774af430717214c06868d9ddc7b613ca58405))
+
 ## [1.71.4](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.3...v1.71.4) (2023-11-22)
 
 
