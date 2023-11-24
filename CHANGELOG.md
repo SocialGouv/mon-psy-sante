@@ -1,3 +1,10 @@
+## [1.71.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.5...v1.71.6) (2023-11-24)
+
+
+### Bug Fixes
+
+* PG ssl ([#306](https://github.com/SocialGouv/mon-psy-sante/issues/306)) ([ba372c0](https://github.com/SocialGouv/mon-psy-sante/commit/ba372c070567e1d8f3082bf0f29863fd1505e469))
+
 ## [1.71.5](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.4...v1.71.5) (2023-11-23)
 
 
