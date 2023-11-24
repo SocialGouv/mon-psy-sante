@@ -1,6 +1,6 @@
 app:
   containerPort: 3000
-  ~needs: [pg, keycloak]
+  ~needs: [pg, keycloak, build-app]
   probesPath: "/healthz"
   envFrom:
     - secretRef:
