@@ -1,3 +1,10 @@
+## [1.71.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.6...v1.71.7) (2023-11-24)
+
+
+### Bug Fixes
+
+* preprod jobs image ([#307](https://github.com/SocialGouv/mon-psy-sante/issues/307)) ([fffda0e](https://github.com/SocialGouv/mon-psy-sante/commit/fffda0e53bdf329cf97f6121c32526e7ea452dce))
+
 ## [1.71.6](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.5...v1.71.6) (2023-11-24)
 
 
