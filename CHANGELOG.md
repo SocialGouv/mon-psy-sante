@@ -1,3 +1,10 @@
+## [1.71.8](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.7...v1.71.8) (2023-12-07)
+
+
+### Bug Fixes
+
+* use CNPG in crons ([#308](https://github.com/SocialGouv/mon-psy-sante/issues/308)) ([557118c](https://github.com/SocialGouv/mon-psy-sante/commit/557118c285ecb479ba547e978f26ca3e2a1cc595))
+
 ## [1.71.7](https://github.com/SocialGouv/mon-psy-sante/compare/v1.71.6...v1.71.7) (2023-11-24)
 
 
