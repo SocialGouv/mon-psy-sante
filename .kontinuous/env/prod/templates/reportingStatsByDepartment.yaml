@@ -19,7 +19,7 @@ spec:
                 - secretRef:
                     name: app-sealed-secret
                 - secretRef:
-                    name: pg-user
+                    name: pg-app
               command:
                 - yarn
                 - run
