@@ -1,6 +1,11 @@
 # Mon soutien psy
 
-https://monsoutienpsy.sante.gouv.fr
+| :exclamation:  Projet transféré à la CNAM |
+|-------------------------------------------|
+
+https://www.ameli.fr/assure/remboursements/rembourse/seances-avec-un-psychologue
+
+~~https://monsoutienpsy.sante.gouv.fr~~
 
 ## Run locally
 
